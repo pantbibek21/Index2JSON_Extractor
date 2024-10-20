@@ -32,20 +32,20 @@ def extract_metadata_from_html(file_path):
                 if property_attr.startswith('dc:'):
                     # Special handling for dc:subject to split into an array
                     if property_attr == 'dc:subject':
-                        metadata[property_attr] = [item.strip() for item in tag.get('content').split(',')]
+                        metadata[property_attr[3:]] = [item.strip() for item in tag.get('content').split(',')]
                     elif property_attr in ['dc:creator', 'dc:contributor']:
                         # Split the content by commas and strip whitespace
                         creators = [name.strip() for name in tag.get('content').split(',')]
                         
                         # If the property already exists, extend the list
-                        if property_attr in metadata:
-                            metadata[property_attr].extend(creators)
+                        if property_attr[3:] in metadata:
+                            metadata[property_attr[3:]].extend(creators)
                         else:
                             # Initialize with the creators list
-                            metadata[property_attr] = creators
+                            metadata[property_attr[3:]] = creators
                     else:
                         # For other properties, just set the value
-                        metadata[property_attr] = tag.get('content')
+                        metadata[property_attr[3:]] = tag.get('content')
 
             # Process <link> tags with relation attributes starting with "dc:"
             link_tags = head_tag.find_all('link', rel=True)
@@ -53,15 +53,15 @@ def extract_metadata_from_html(file_path):
                 relation_attr = tag.get('rel')[0]
                 if relation_attr.startswith('dc:'):
                     # If the key already exists, append the new value to the list
-                    if relation_attr in metadata:
+                    if relation_attr[3:] in metadata:
                         # Ensure it's a list
-                        if isinstance(metadata[relation_attr], list):
-                            metadata[relation_attr].append(tag.get('href'))
+                        if isinstance(metadata[relation_attr[3:]], list):
+                            metadata[relation_attr[3:]].append(tag.get('href'))
                         else:
-                            metadata[relation_attr] = [metadata[relation_attr], tag.get('href')]
+                            metadata[relation_attr[3:]] = [metadata[relation_attr], tag.get('href')]
                     else:
                         # Initialize with the href value
-                        metadata[relation_attr] = [tag.get('href')]
+                        metadata[relation_attr[3:]] = [tag.get('href')]
         
         return metadata
 
