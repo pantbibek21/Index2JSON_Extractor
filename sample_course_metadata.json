@@ -1,0 +1,135 @@
+[
+  {
+    "dc:title": "Validation of EO Products",
+    "dc:creator": ["Andrija Krtalic"],
+    "dc:publisher": "University of Zagreb, Faculty of Geodesy",
+    "dc:subject": [
+      "Copernicus",
+      "EO4GEO",
+      "WP4",
+      "Satellite",
+      "Earth Observation"
+    ],
+    "dc:abstract": "This is a lesson on Validation of EO products. Errors in satellite, aero and drone data products are known unknowns. However, quantifying the quality of these products by decomposing the inherent uncertainty components is a very challenging task. Validation refers to the process of assessing the uncertainty of higher level, satellite sensor derived products by analytical comparison to reference data, which is presumed to represent the true value of an attribute. This course provides an overview of EO data validation procedures and frameworks.",
+    "dc:tableOfContents": "Errors in satellites, aero and drone products, satellite sensors, data validation procedures and frameworks",
+    "dc:description": "Learning outcomes: Understand the basic terms in EO data validation; Understand and distinguish terms ‘’error’’ and ‘’uncertainty’’ of EO data; Understand EO data validation processes; Categorization of EO data validation methods; Understand goal of EO data validation.",
+    "dc:contributor": ["Andrija Krtalic"],
+    "dc:created": "2020-09-20",
+    "dc:type": "teaching material",
+    "dc:format": "html",
+    "dc:language": "EN",
+    "dc:SizeOrDuration": "45min",
+    "dc:audience": "students",
+    "dc:educationLevel": "EQF 6",
+    "dc:source": "",
+    "dc:rightsToHolder": "Andija Krtalic, University of Zagreb Faculty of Geodesy",
+    "dc:license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "dc:relation": ["eo4geo:GD4", "eo4geo:TA14", "eo4geo:IP4"],
+    "link": ""
+  },
+  {
+    "dc:title": "Active fire detection with Sentinel-3",
+    "dc:creator": [
+      "Tereza Roth",
+      "Bibek Pant",
+      "Jack Stone",
+      "Simran Pandey",
+      "Ewelina Dobrowolska",
+      "Georgia Karadimou"
+    ],
+    "dc:publisher": "SERCO UK&E",
+    "dc:subject": [
+      "Copernicus",
+      "EO4GEO",
+      "Sentinel-3",
+      "Satellite",
+      "Earth Observation",
+      "Active fire detection",
+      "Image processing"
+    ],
+    "dc:abstract": "These materials provides an introduction to concepts and methods of Sentinel-3 data processing and their application in active fires detection. The slides have been prepared for webinar organized by Serco EO Training and promoted by EO4GEO",
+    "dc:tableOfContents": "(1) Introduction to the exercise; \n                                         (2) Concepts of Copernicus Programme data and Services; \n                                         (3) Sentinel-3 characteristics and applications; \n                                         (4) Exercise - Active Fire Detection with Sentinel-3 data:\n                                         (4.1) Image preprocessing - Day and Night data; \n                                         (4.2) Active Fire Detection (day and night-time);\n                                         (4.3) Exporting results;\n                                         (4.4) Comparing results with operational monitoring\n                                         (5) Extra Steps\n                                         (6) Reference list;",
+    "dc:description": "Learning outcomes: Understand satellite data acquisition from Copernicus Open Access Hub; Understand principles of data processing; Understand the concept and characteristics of Sentinel-3 SLSTR instrument and data it provides; Become familiar with the concept of active fire detection using Sentinel-3 data (night and day-time detection); Create a fire detection algorithm (night and day-time) and visualize areas with active fires; Compare results with operational monitoring from Global Wildfire Information System",
+    "dc:contributor": [
+      "Tereza Roth",
+      "Bibek Pant",
+      "Cillian Murphy",
+      "Emma stone"
+    ],
+    "dc:created": "2021-10-28",
+    "dc:type": "teaching material",
+    "dc:format": "html",
+    "dc:language": "EN",
+    "dc:SizeOrDuration": "60 min",
+    "dc:audience": "Students, researchers, environmentalists interested in active fire detection and applications of Sentinel-3 data ",
+    "dc:educationLevel": "EQF 3",
+    "dc:source": "Existing youtube-video on ESA; existing presentation on EO4GEO project: https://eo4geocourses.github.io/GISIG_Introduction_to_EO4GEO/, websites: https://www.copernicus.eu/en/opportunities/education/copernicus-mooc;  https://sentinel.esa.int/web/sentinel/missions/sentinel-3; https://step.esa.int/main/; Serco EO Training website: https://eotraining-serco.com/tutorials/active-fire-detection-with-sentinel-3/",
+    "dc:rightsHolder": "Tereza Roth",
+    "dc:license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "dc:relation": [
+      "eo4geo:CF",
+      "eo4geo:IP6",
+      "eo4geo:GS3-4",
+      "eo4geo:TA12",
+      "eo4geo:TA12-1",
+      "eo4geo:TA13",
+      "eo4geo:TA13-3",
+      "eo4geo:TA13-3-2"
+    ]
+  },
+  {
+    "dc:title": "Classification: Random Forests",
+    "dc:creator": ["Mariana Belgiu", "Anurag Kulshrestha"],
+    "dc:publisher": "University of Twente",
+    "dc:subject": ["Random Forest"],
+    "dc:abstract": "Random Forests (RF) is one of the most popular machine learning classifiers due to its capability to obtain good classification results \n                with a relatively reduced number of training samples and because it relies on a reduced number of user-defined parameters. In addition, RF can easily address the\n                 Hughes phenomenon due to the two randomness dimensions: first, it randomly selects samples to create a user-defined number of decision trees and, second, a \n                randomly user-defined number of variables are used for splitting the decision tree nodes. In this lecture, we will be introducing the concept of ensemble classifier by \n                emphasizing the main methods used to build an ensemble: bootstrapping and bagging. We will explain how RF classifier is built and how the final decision is taken. \n                The concept of out-of-the-bag will be explained in detail especially in connection with its role for internal evaluation of the RF accuracy. We will also explain how RF \n                calculates the variable importance, a measure that can be used to discard the less relevant input variables. In the end, special attention is given to the proximity measure \n                used to identify either outliers or subclasses in the training samples.",
+    "dc:tableOfContents": "(1) Concept of ensemble classifiers; \n                                         (2) Random Forests; \n                                         (3) Random Forest hyperparameter; \n                                         (4) Fundamental differences between tree growth on decision trees and Random Forest;\n                                         Accuracy assessments in Random Forests.",
+    "dc:description": "Learning outcomes: LO1: Define the concept of ‘ensemble classifier’ LO2: Explain the concepts of bagging and bootstrapping LO3: Describe how variable importance is calculated in Random Forest classifier LO4: Explain the role of proximity measure for removing outliers from the training sample set LO5: List the main advantages and disadvantages of the RF classifier",
+    "dc:contributor": ["Mariana Belgiu", "Anurag Kulshrestha"],
+    "dc:created": "2020-07-27",
+    "dc:type": "teaching material",
+    "dc:format": "html",
+    "dc:language": "EN",
+    "dc:SizeOrDuration": "90 min",
+    "dc:audience": "students",
+    "dc:educationLevel": "EQF 6",
+    "dc:source": "",
+    "dc:rightsHolder": "Mariana Belgiu and Anurag Kulshrestha, University of Twente",
+    "dc:license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "dc:relation": [
+      "eo4geo:IP3-4-7",
+      "eo4geo:IP3-4-7-1",
+      "eo4geo:AM10-2",
+      "eo4geo:IP3-4-9"
+    ]
+  },
+  {
+    "dc:title": "Smart cities, UHI and urban green (workshop)",
+    "dc:creator": ["Greger Lindeberg", "Sara Wiman"],
+    "dc:publisher": "GIB",
+    "dc:subject": [
+      "Learning to interpret EO-derived temperature maps for use in urban planning. Learning to identify local heat islands and analyse them in an urban planning context. Discuss how EO-derived temperature maps can be used in spatial planning and how this information can be used when planning for particularly vulnerable groups (pre-school children",
+      "elderly)."
+    ],
+    "dc:abstract": "This is a slideset for city planners about Urban Heat Islands and the importance of their identification in a spatial planning context. The slideset introduces the EO surface temperature maps, with their potential and their limitations ",
+    "dc:tableOfContents": "Presentation of Thermal infrared time series, calibrated to surface temperatures, e.g. 5-year maximum summer temperature. Discuss how different urban planning principles can affect microclimate, and how green structure and water surfaces have a cooling effect. Discuss how nature-based solutions in planning can have a positive impact on the microclimate.",
+    "dc:description": "Understand the importance of identifying UHIs in a spatial planning context; Understand how EO surface temperature time series can support identification of UHIs; Understand how to interpret EO surface temperature time series to identify UHIs; Understand how to derive maps from EO surface temperature data, to be integrated with other relevant information related to UHI identification in a spatial planning context; Understand how to analyse information derived from EO surface temperature data integrated with other relevant information related to UHI identification in a spatial planning context; Understand the limitations of the EO surface temperature data due to the spatial resolution",
+    "dc:contributor": [""],
+    "dc:created": "2021-10-08",
+    "dc:type": "teaching material",
+    "dc:format": "html",
+    "dc:language": "SWE",
+    "dc:SizeOrDuration": "180 min",
+    "dc:audience": "Urban planners, Environmental managers",
+    "dc:educationLevel": "EQF 4",
+    "dc:source": "",
+    "dc:rightsHolder": "GIB",
+    "dc:license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "dc:relation": [
+      "eo4geo:PS2-2-2-3-2-4-8",
+      "eo4geo:PS2-2-2-3-2-4-20",
+      "eo4geo:PP1-6-5",
+      "eo4geo:P3-11"
+    ]
+  }
+]
