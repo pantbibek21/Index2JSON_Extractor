@@ -1,0 +1,1123 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Air Quality Monitoring and Management</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Air Quality Monitoring and Management" />
+		<meta property="dc:creator" content="Andreas Kazantzidis, Vasileios Salamalikis, Ioannis Kioutsioukis" /> 
+		<meta property="dc:publisher" content="University of Patras, UPAT" /> 
+		<meta property="dc:subject" content="Search, analysis, and synthesis, as well as a critical understanding of air pollution data and information. Existing EO technologies and data to collect spatiotemporal measurements and forecasts of air pollution. Construct/model satellite-derived and ground-based data into usable information. Determine relationships among emission sources, meteorological conditions, monitoring and modelling of air pollution for practical applications" />
+		<meta property="dc:abstract" content="This webinar addresses the concepts of air quality monitoring and management and its linkages to the urban environment and public health." />
+		<meta property="dc:tableOfContents" content="	(1) The basics of air quality; 
+							     	(2) Primary and secondary air pollutants; 
+							     	(3) Sources and emissions of air pollutants in regional, municipal and higher spatial scales; 
+							     	(4) Links of air pollution with human health, ecosystem and urban climate; 
+							    	(5) Air quality monitoring using ground-based and satellite instruments;
+								(6) Air quality modeling tools;
+								(7) Air Quality and Smart Cities" />
+		<meta property="dc:description" content="Identidy air pollution and its effects; Understand the harmful pollutants and their effects on human health, ecosystem and urban environment; Recognize the major emission sources of air pollutants in a specific region; Correlate effects of meteorology on air pollution; Designate the role of air quality monitoring and modeling for emission reductions; Interpret EO-derived air quality maps" /> 
+		<meta property="dc:contributor" content="UPATRAS" />
+		<meta property="dc:created" content="2021-05-25" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90 min" />
+		<meta property="dc:audience" content="Regional agencies/authorities, emergency responders, Stakeholders for air quality planning, abatement strategy and decision making" />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source” content="Existing slideset - Air Quality Monitoring and Management - by UPATRAS/>
+		<meta property="dc:rightsHolder" content="UPATRAS" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:CF4b" />
+		<link rel="dc:relation" href="eo4geo:DM1" />
+		<link rel="dc:relation" href="eo4geo:GD2" />
+		<link rel="dc:relation" href="eo4geo:OI1" />
+		<link rel="dc:relation" href="eo4geo:TA1" />
+		
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 10%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 20%;height : 12%" ></div>					 
+				 <!--<div  class = "presentation_title" style=" text-align: center " >Air Quality Monitoring and Management</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- CONTENT OF FIRST SLIDE --> 
+				<section >
+					<h1>Air Quality Monitoring and Management</h1>
+					<em>Laboratory of Atmospheric Physics, University of Patras (UPAT)</em>
+				</section>
+			
+				
+				<!-- INTRODUCTORY SECTION-->
+					
+					<!-- 1. Introduction: description of the workshop-->				
+				<section id="Introduction">
+				    <section>
+					<h1>Introduction</h1>
+					This webinar addresses the concepts of  <i>air quality monitoring and management</i> and its linkages to the urban environment and public health.
+                    </section>
+					
+					<!-- 2. Description of the Agenda-->	
+					<section>
+					<h2>Agenda</h2>
+					<br><br>
+					<h4>
+					<ul>
+					<li>The basics of air quality</li>
+                    <br>
+					<li>Primary and secondary air pollutants</li>
+                    <br>
+					<li>Sources and emissions of air pollutants in regional, municipal and higher spatial scales</li>
+                    <br>
+					<li>Links of air pollution with human health, ecosystem and urban climate</li>
+                    <br>
+					<li>Air quality monitoring using ground-based and satellite instruments</li>
+					<br>                    
+					<li>Air quality modeling tools</li>
+					<br>
+					<li>Air quality and Smart Cities</li>
+					</ul>
+					</section>
+					
+					<!-- 3. Description of the Learning Outcomes-->
+					<section>
+					<h2>Learning outcomes</h2>
+					<br><br>
+					<h4>
+					<ul>
+					<li>Identidy air pollution and its effects</li>
+                    <br>
+					<li>Understand the harmful pollutants and their effects on human health, ecosystem and urban environment</li>
+                    <br>
+					<li>Recognize the major emission sources of air pollutants in a specific region</li>
+                    <br>
+					<li>Correlate effects of meteorology on air pollution</li>
+                    <br>
+					<li>Designate the role of air quality monitoring and modeling for emission reductions</li>
+                    <br>
+					<li>Interpret EO-derived air quality maps</li>
+					</ul>
+					</h4>
+					</section>
+				</section>
+				
+				<!-- LABORATORY OF ATMOSPHERIC PHYSICS - UNIVERSITY OF PATRAS-->
+				<section>
+					<br>
+					<h1 style="text-align:CENTER"> Laboratory of Atmospheric Physics</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;"><img src="./resources/Air-quality-monitoring-and-management/resources/LAPUP_location.jpg" alt="" width="100%" /></td>
+					<td style="width: 500px;">
+					<h2 style="text-align:center">Research Axes</h2>
+					<ul>
+					<li>Measurements, processing and homogenization of meteorological and environmental time series
+					<li>Stable isotopes in rain and water vapor
+					<li>Ultraviolet and solar radiation 
+					<li>AI methods in atmospheric and environmental physics problems
+					<li>Weather and atmospheric pollution forecasting modeling 
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+                </section>
+
+				<!-- THE EO4GEO PROJECT-->
+				<section>
+				    <!-- 1. Overview of EO4GEO project-->
+					<section>
+					<img width="340" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/logo_big.png" alt="eo4geo logo">
+				    <h3>The Space/Geospatial Sector Skills Alliance</h3>
+					<h4>Towards an innovative strategy for skills development and capacity building in the space geo-information sector supporting Copernicus User Uptake</h4>					
+				    <img width="340" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/erasmus.jpg" alt="erasmus">
+                    </section>
+					
+					<!-- 2. EO4GEO Consortium and basic information-->
+					<section>
+                        <h1>The EO4GEO project</h1>					
+						<h4> 
+						<ul>
+							<li><b> Duration:</b>  4 years from January the 1st, 2018</li>
+							<li><b> Budget:</b>  3,87 million €</li>
+							<li><b> Partnership:</b>  25 Partners + 30+ Associated Partners (from 16 EU Countries) from Academia, Companies and networks </li>
+							<li><b> Coordinators:</b>  GISIG (General), KU Leuven (Scientific & Technological), PLUS (Education & Training), Climate-KIC (Exploitation)</li>
+						</ul>
+						</h4> 
+					<img width="680" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/consortium.jpg" alt="eo4geo consortium">
+					<br>
+					<citation>The EO4GEO Consortium. 30th May 2018, Castellón de la Plana, Spain</citation>
+					</section>
+					
+					<!-- 3. Vision and Mission of EO4GEO-->
+					<section>
+					<h1>The VISION </h1> 
+					<h3>To foster the growth of the European Earth Observation / Geographic Information (EO/GI) sector ensuring a workforce with the 
+					<b>right skills, in the right place, at the right time. </b>
+					</h3> 
+					<br><br>
+					<h1>The MISSION </h1> 
+					<h3>To ensure the strategic cooperation among stakeholders on skills development in the EO/GI sector.
+					</h3> 
+					</section>
+					
+					<!-- 4. EO4GEO is not only a project-->
+					<section>
+				    <h1>EO4GEO IS MUCH MORE </h1>
+					<br><br>
+					<h4> 
+					<ul>
+					<li>A series of <b>pre-defined curiculla</b> in support of Copernicus</li>
+					<br>
+					<li>A portfolio of <b>training modules</b> directly usable in the context of Copernicus and other relevant prograns</li>
+					<br>
+					<li>A series of <b>training actions (webinars, academic courses, etc.)</b> in the three sub-sectors - integrated applications, smart cities and climate change</li>
+					<br>
+					<li>A <b>mobility program</b> to promote internships and on-the-job training</li>
+					<br>
+					<li>A <b>Long-term Action plan</b> to sustain the proposed solutions</li>
+				    </ul>
+					</h4> 
+					</section>
+				</section>
+
+				<!-- 2nd Part: Basics of Air Pollutants -->
+				<section>
+				    <!-- 1. Introductory slide for basics-->
+					<section>
+                    <h1>Air Quality Monitoring and Management</h1>					
+					<img width="680" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/Basics.jpg" alt="basics">
+					<h2>
+					<em>Let's start from the basics...</em>
+					</h2>
+					</section>
+					
+					<!-- 2. The concept of air pollution-->
+					<section>
+					<h1>The Basics of Air Pollution</h1>
+					<h3 style="color: darkblue">Air Pollution</h3>
+					<ul>
+					<h4><b>EPA (US Environmental Agency)</b>:</ul>
+					<ul>The presence of contaminants or pollutant substances in the air that interfere with human health or welfare, 
+					or produce other harmful environmental effects.</ul></ul>
+					<ul></h4>
+					<h4>
+					<br><br>
+					<b>Other definition</b>:</ul>
+					<ul>The atmospheric condition where air pollutants are present in concentrations that are a concern,
+					or even an immediate danger for human health, ecosystems or infrastructure.</ul>
+					</ul></h4>
+					<br><br>
+					<h3 style="color: darkblue">Air Pollutants</h3>
+					<ul>The presence of contaminants or pollutant substances in the air that interfere with human health or welfare, 
+					or produce other harmful environmental effects.</ul>
+					</ul></h4>
+					</section>
+					
+					<!-- 3. Air quality and survival rules-->
+					<section>
+					<h1>The basics of air quality</h1>
+					<h3 style="color: darkblue">Air Quality</h3>
+					<h4><ul>Refers to the degree to which the air is suitable for humans and the environment.</ul></h4>
+					<br>
+					<h3 style="color: darkblue">Rules of three for survive (<em>Source: Wikipedia</em>)</h3>
+					<h4><ul>
+					<li>A human can survive <i><b style='color: darkblue'>three weeks</b></i> without <b><i style='color: darkblue'>food</b></i></li>
+                    <li>A human can survive <i><b style='color: darkblue'>three days</b></i> without <b><i style='color: darkblue'>drinkable water</b></i></li>
+					<li>A human can survive <i><b style='color: darkblue'>three hours</b></i> in <b><i style='color: darkblue'>extreme cold or heat</b></i></li>
+					<li>A human can survive <i><b style='color: darkblue'>three minutes</b></i> without <b><i style='color: darkblue'>breathable air</b></i></li>
+					</h4></ul>
+					<br>
+					<h3><b style='color: darkblue'>Breathable Air</b> is the first requirement</h3>
+					<h4><ul><ul>In terms of <b style='color: darkblue'>Air Quality</b>: Survival time differs depending on the type and concentration of 
+					the air pollutant and the exposure of the receptor.</h4>
+					</section>
+				
+					<!-- 4. The cycle of air pollution-->
+					<section>
+					<h1>The cycle of air pollution</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 600px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Air_pollution_cycle.jpg" alt="" width="100%" />
+					<citation>EEA (Environmental Protection Agency)</citation>
+					</td>
+					<td style="width: 400px;">
+					<h4 style="color: darkblue">Ask people what they regard as the defining characteristic of air pollution</h4>
+					<h4>
+					<ul>
+					<li>Refer to the degraded air quality</li> 
+					<br><li>Know that something amiss because of:
+					<br><br>
+					<ul><li>Reduced visibility</li>
+					<br><li>Unpleasant odor</li>
+					<br><li>Health impacts</li>
+					</li>
+					</ul>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 5. The sources of air pollution-->
+					<section>
+					<h1>Sources of Air Pollution</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Air_pollution_sources.jpg" alt="" width="100%" />
+					<citation>EEA (Environmental Protection Agency)</citation>
+					</td>
+					<td style="width: 500px;">
+					<h4>
+					<ul> 
+					<li>Man-made or anthropogenic sources:</li>
+					<br>
+					<ul><li>Agricultural activities</li>
+					<li>Energy production</li>
+					<li>Waste, coal mining</li>
+					<li>Transportation</li>
+					<li>Fuel combustion (businesses, public buildings, households)</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Natural sources</li>
+					<br>
+					<ul><li>Volcanoes, dust storms, sea-spray</li>
+					</ul></ul>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 6. Atmospheric Pollutants: Carbon Monoxide-->
+					<section>
+					<h1>Atmospheric Pollutants</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/CO_1.gif" alt="" width="500px" height="220 px" />
+					<citation>ESA (European Space Agency)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/CO_2.png" alt="" width="500px" height="200 px" />
+					<citation>Europe: Forecast for 25/05 12:00 UTC (Copernicus website)</citation>					
+					</td>
+					<td style="width: 500px;">
+					<h3 style="color: darkblue">Carbon Monoxide (CO)</h3>
+					<ul> 
+					<li>Characteristics:</li>
+					<ul><li>Colorless, Odorless, Tasteless, Non-corrosive, highly poisonus, very flammable</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Emission sources</li>
+					<ul><li>Combustion</li>
+					</ul></ul>
+					<ul>
+					<br><br>
+					<li>Climate impacts</li>
+					<ul><li>Contribution to the production of O<sub>3</sub> and CO<sub>2</sub></li>
+					</ul></ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+				
+					<!-- 7. Atmospheric Pollutants: Nitrogen Oxides-->
+					<section>
+					<h1>Atmospheric Pollutants</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/NO2_1.jpg" alt="" width="500px" height="200 px" />
+					<citation>ESA (European Space Agency)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/NO2_2.png" alt="" width="500px" height="200 px" />
+					<citation>Europe: Forecast for 25/05 12:00 UTC (Copernicus website)</citation>					
+					</td>
+					<td style="width: 500px;">
+					<h3 style="color: darkblue">Nitrogen Oxides (NO<sub>x</sub>)</h3>
+					<ul> 
+					<li>Characteristics:</li>
+					<ul><li>NO: Colorless, toxic gas</li>
+					<li>NO<sub>2</sub>: yellow, reddish-brown in high concentrations, toxic gas</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Emission sources</li>
+					<ul><li>Fuel combustion</li>
+					<li>Soils</li>
+					</ul>
+					</ul>
+					<ul>
+					<br><br>
+					<li>Climate impacts</li>
+					<ul><li>Production of O<sub>3</sub>, eutrophication (aquatic ecosystems), fertilization
+					</ul></ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+				
+					<!-- 8. Atmospheric Pollutants: Sulphur Dioxide-->
+					<section>
+					<h1>Atmospheric Pollutants</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/SO2_1.jpg" alt="" width="500px" height="200 px" />
+					<citation>Kilauea volcano eruptions in Hawaii (ESA - European Spase Agency)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/SO2_2.png" alt="" width="500px" height="200 px" />
+					<citation>Europe: Forecast for 25/05 12:00 UTC (Copernicus website)</citation>					
+					</td>
+					<td style="width: 500px;">
+					<h3 style="color: darkblue">Sulphur Dioxide (SO<sub>2</sub>)</h3>
+					<ul> 
+					<li>Characteristics:</li>
+					<ul><li>Colorless, odorful at high concentrations, soluble</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Emission sources</li>
+					<ul><li>Volcanoes</li>
+					<li>Combustion of coal, diesel, fuel oil</li>
+					<li>Industrial processing</li>
+					</ul>
+					</ul>
+					<ul>
+					<br><br>
+					<li>Climate impacts</li>
+					<ul><li>Contribution to the formation of ‘acid rain’ and particulate matter
+					</ul></ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 9. Atmospheric Pollutants: Tropospheric Ozone-->
+					<section>
+					<h1>Atmospheric Pollutants</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/O3_1.png" alt="" width="500px" height="200 px" />
+					<citation>South Pole: Forecast for 25/05 12:00 UTC (Copernicus website)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/O3_2.png" alt="" width="500px" height="200 px" />
+					<citation>Europe: Forecast for 25/05 12:00 UTC (Copernicus website)</citation>					
+					</td>
+					<td style="width: 500px;">
+					<h3 style="color: darkblue">Ozone (O<sub>3</sub>)</h3>
+					<ul> 
+					<li>Characteristics:</li>
+					<ul><li>Light blue gas, odorful, irritating, toxic, explosive, not released directly into the atmosphere, strongly oxidizing</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Emission sources</li>
+					<ul><li>Secondary pollutant formed in urban areas primarily from VOCs and NO<sub>x</sub></li>
+					</ul>
+					</ul>
+					<ul>
+					<br><br>
+					<li>Climate impacts</li>
+					<ul><li>Reduced primary productivity, changes in radiative budget
+					</ul></ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 10a. Atmospheric Pollutants: Particulate Matter-->
+					<section>
+					<h1>Atmospheric Pollutants</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 450px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_1.png" alt="" width="500px" height="400 px" />
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Particulate Matter (PM<sub>x</sub>)</h3>
+					<h4>
+					<ul> 
+					<li>Characteristics:</li>
+					<ul><li>Solid or liquid  atmospheric air substances</li> 
+					<li>Heterogeneous in shape, size and chemical composition</li> 
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Emission sources</li>
+					<ul><li>Combustion</li>
+					<li>Mechanical abrassion</li>
+					<li>Formation from condensation of gas-phase species, sea-salt and desert dust</li>
+					</ul>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Climate impacts</li>
+					<ul><li>Changes in the radiative transfer
+					<li>Reduction of visibility</li>
+					<li>Variation of  albedo</li>
+					</ul></ul>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 11. Urban and Local scale of Air pollution-->
+					<section>
+					<h1>Scales of Air Pollution</h1>
+					<table style="height: 364px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<citation>Local scale: Small number of large emitters</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Local_Air_pollution_1.jpg" alt="" width="500px" height="200 px" />
+					<citation>Local scale: Several number of small emitters</citation>					
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Local_Air_pollution_2.jpg" alt="" width="500px" height="200 px" />
+					</td>
+					<td style="width: 500px;">
+					<citation>Urban scale: Urban metabolism (Oke, 2017)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Urban_Air_pollution_3.jpg" alt="" width="500px" height="200 px" />
+					<citation>Urban scale: Photochemical smog</citation>					
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Urban_Air_pollution_4.jpg" alt="" width="500px" height="200 px" />
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+				
+					<!-- 12. Air pollution and health effects-->
+					<section>
+					<h1>Air Pollution & Human Health</h1>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Health_Impacts.png" alt="" width="1000px" width="800px" />
+					</section>
+					
+					<!-- 13. Atmospheric pollution and ecosystems -->
+					<section>
+					<h1>Air Pollution & Ecosystems</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Ecosystem_Impacts_1.png" alt="" width="500px" height="200 px" />
+					<citation>Acid Rain effects – Sources: Wikipedia (left) and USGS (right)</citation>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Ecosystem_Impacts_2.jpg" alt="" width="500px" height="200 px" />
+					<citation>International Atomic Energy Agency (IAEA)</citation>					
+					</td>
+					<td style="width: 500px;">
+					<h4><ul> 
+					<li>Air pollutants adversely affect downwind aquatic and terrestrial ecosystems, and structures</li>
+					</ul>
+					<br><br>
+					<ul>
+					<li>Water and soil acidification</li>
+					</ul>
+					<ul>
+					<br><br>
+					<li>lake eutrophication, fertilization and damage to agro- and forest ecosystems</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+				</section>
+					
+				<!-- 3rd Part: Air Quality in Patras - Ground based network -->
+				<section>
+					<!-- 1. The European Quality Index-->
+					<section>
+                    <h1>The European Air Quality Index</h1>					
+					<h4>
+					<ul>
+					<li>Allows users to understand more about air quality where they live, work or travel</li>
+					<li>The Index is based on concentration values for five key pollutants
+					(particulate matter (PM<sub>10</sub>, PM<sub>2.5</sub>), ozone (O<sub>3</sub>), nitrogen dioxide (NO<sub>2</sub>) and sulphur dioxide (SO<sub>2</sub>))</li>
+					</ul>
+					</h4> 
+					<img width="800" height='250' box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/Europe_AQI.png" alt="european aqi">
+					<br>
+					<citation>European Environmental Agency (EEA)</citation>
+					</section>
+					
+					<!-- 2. Reason for air quality network in Patras-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3><b style='color: darkblue'>The reason</b></h3>
+					<h4><ul>
+					<li>Very small number of stations, unable to cover the spatial and temporal variability of PM</li>
+					<li>The concern of citizens</li>
+					</h4></ul>
+					<h3><b style='color: darkblue'>The funding scheme</b></h3>
+					<h4><ul>
+					<li>Crowd & public funding</li>
+					</h4></ul>
+					<h3><b style='color: darkblue'>The basic issue</b></h3>
+					<h4><ul>
+					<li>Use of (low cost but not cheap) IoT sensors</li>
+					<li>Provide information in real-time & 24/7</li>
+					</h4></ul>
+					<h3><b style='color: red'>The added value</b></h3>
+					<h4><ul>You cannot manage if you do not measure</ul></h4>
+					</section>
+
+					<!-- 3a. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: Maps</h3>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_1.png" alt="" width="500px" height="400 px" />
+					</td>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_2.png" alt="" width="500px" height="400 px" />
+					</td>
+					</tr>
+					</tbody>
+					</table>      					
+					</section>
+					
+					<!-- 3b. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: Graphs for the last 24 hours/7days</h3>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_3.png" alt="" width="800" height="400 px" />
+					</section>
+					
+					<!-- 3c. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: The distribution of stations</h3>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_4.png" alt="" width="800" height="400 px" />
+					</section>
+					
+					<!-- 3d. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: The monhtly distribution of PM<sub>2.5</sub></h3>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_5.png" alt="" width="800" height="400 px" />
+					</section>
+					
+					<!-- 3e. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: The monhtly distribution of PM<sub>2.5</sub></h3>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_6.png" alt="" width="800" height="400 px" />
+					</section>
+					
+					<!-- 3f. Patras PM2.5 ground-based network-->
+					<section>
+                    <h1>The PM<sub>2.5</sub> network at Patras</h1>					
+					<h3 style='color: darkblue'><b>Presentation of Results</b>: The daily distribution of PM<sub>2.5</sub> (Winter)</h3>
+					<img src="./resources/Air-quality-monitoring-and-management/resources/PM_Patras_7.jpg" alt="" width="800" height="400 px" />
+					</section>
+				</section>
+				
+				<!-- 4th Part: Information for Copernicus -->
+				<section>
+				
+					<!-- 1. Description of Copernicus service -->
+					<section>
+                    <h1>Copernicus atmosphere monitoring service</h1>					
+					<h2 style="color: darkblue">What is Copernicus</h2>
+					<ul>
+					<li>Copernicus is an <b>EU programme</b> aimed at developing European information <b>services
+					based on</b> satellite Earth observation and in-situ (non-space) data.</li>
+					<p><p>
+					<li><b>Copernicus is implemented by</b> the European Comission with the support from the European Space Agency (ESA)
+					for the Space component and the European Environment Agency (EEA) for the in-situ component.</li>
+					</ul>
+					<br>
+					<br><a href='https://www.copernicus.eu/'><img width='200px' data-src="./resources/Air-quality-monitoring-and-management/resources/copernicus-logo.png" alt='copernicus'></a>
+					</section>
+					
+					<!-- 2. Objective of Copernicus-->
+					<section>
+                    <h1>Copernicus atmosphere monitoring service</h1>
+					<h2 style="color: darkblue">The objective of Copernicus</h2>
+                    <h4><ul>
+                    <li><b>To monitor</b> and forecast the state of the environment on land, sea and in the atmosphere, 
+					<b>in order to support</b> climate change mitigation<b> and</b> adaptation strategies, 
+					the efficient management of emergency situations and the improvement of the 
+					security of every citizen.
+					<p><small><a href="https://emergency.copernicus.eu/mapping/ems/what-copernicus"> https://emergency.copernicus.eu/mapping/ems/what-copernicus</a></small></li>
+                    </p>
+					<p></p>
+                    <li><b>It combines</b> satellite observation data with data from sensor networks on the Earth’s surface to build a 
+					comprehensive picture of our planet and its environment. 
+					<p><small><a href="https://www.eea.europa.eu/about-us/who/copernicus-1"> https://www.eea.europa.eu/about-us/who/copernicus-1</a></small>
+					</p>
+					</li>
+                    </h4></ul>
+                    </section>
+					
+					<!-- 3. What does Copernicus-->
+					<section>
+                    <h1>Copernicus atmosphere monitoring service</h1>
+					<h2 style="color: darkblue">What does the service do?</h2>
+                    <h4>
+					<p style='text-align: left'>
+                    The service adds value to observations, providing consistent information on the atmosphere anywhere in the world, allowing you to acess the past and to predict the next few days.
+					</p>
+                    <p style='text-align: left'>
+					At the core of the service is direct acess to reliable data and expertise related to air quality, solar energy, and the role atmospheric gases and particles play in climate change.
+                    </p>
+					<p style='text-align: left'>
+                    The services use satellite and ground-based observations with forecast models to support businesses, policy makers and scientists dealing with the challenges and opportunities related to the composition of the atmosphere.
+                    </p>
+                    </h4>
+                    <p><small><a href="https://atmosphere.copernicus.eu/what-we-do"> https://https://atmosphere.copernicus.eu/what-we-do</a></small>
+					</p>
+					</section>
+				
+					<!-- 4. CAMS-->
+					<section>
+                    <h1>Copernicus atmosphere monitoring service</h1> 
+                    <h4 style="text-align: left"><b>CAMS</b> is a collaboration of:</h4>
+					<ul> 
+					<li>European Centre for Medium-Range Weather Forecasts (ECMWF)</li>
+					<li>European Space Agency (ESA)</li>
+					<li>European Organisation for the Exploitation of Meteorological Satellites (EUMETSAT)</li>
+					<li>Many other organisations providing satellite and in-situ observations</li>
+					</ul>
+                    <img src="./resources/Air-quality-monitoring-and-management/resources/Copernicus_img.png" alt="" width="800px" height="200px" />
+                    </section>
+									
+				</section>
+
+				<!-- 5th Part: SMART-AQM, Smart Cities, IoT -->
+				<section>
+				
+					<!-- 1. Air Quality Models -->
+					<section>
+                    <h1>Modeling the fate of atmospheric pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Model_Air_Pollution_1.png" alt="model 1" width="500px" height='400px'/>
+					</td>
+					<td style="width: 500px;">
+					<ul> 
+					<h2 style="text-align: left; color: darkblue">Two approaches</h2>
+					<br><br>
+					<h3>
+					<ul><li>Deterministic</li>
+					<br>
+					<li>Data Driven</li>
+					</h3>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+					
+					<!-- 2. Chemical Air Quality Models  -->
+					<section>
+                    <h1>Modeling the fate of atmospheric pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Model_Air_Pollution_2.png" alt="model 1" width="500px" height='400px'/>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Chemical Weather Models</h3>
+					<h4>
+					<h4 style='text-align: left'>Deterministic,based on mathematical equations that represent the dynamical, 
+					chemical and physical processes of the atmosphere in relation to pollutants.</ul>
+					<br><br>
+					<ul><h4>
+					<li>Driven by meteorology and emissions, site and surrounding conditions</li>
+					<br>
+					<li>Simulate the chemical transformation and the dispersion, transport and removal of pollutants</li>
+					<br>
+					<li>Extract pollutant concentrations at time steps within grid cells at a user-specified domain</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 3a. Deterministic Air Quality Models  -->
+					<section>
+                    <h1>Modeling the fate of atmospheric pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Model_Air_Pollution_3.png" alt="model 2" width="300px" height='400px'/>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Data Driven Models</h3>
+					<h4>
+					<h4 style='text-align: left'>Seek input-output relationships in a historical database</ul>
+					<br><br>
+					<ul><h4>
+					<li>Require training prior to forecasting on the basis of past monitoring (air quality) data.</li>
+					<br>
+					<li>Provide forecast at the location of the monitoring stations.</li>
+					<br>
+					<li>Stand-alone models or as tools to improve the skill of deterministic air quality models</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 3b. Deterministic Air Quality Models - Analog Ensemble  -->
+					<section>
+                    <h1>Modeling the fate of atmospheric pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/AnEn.png" alt="Analog Ensemble" width="600px" height='250px'/>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Analog Ensemble (AnEn)</h3>
+					<ul><h4>
+					<li>Uses time-series of past predictions by an air quality model and their corresponding observations</li>
+					<br>
+					<li>Focuses on the current deterministic forecast</li>
+					<br>
+					<li>Selects the most similar historical forecasts to the current air quality forecast</li>
+					<br>
+					<li>Uses the mean value of their corresponding observations as the current AnEn forecast</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 3c. Deterministic Air Quality Models - Long Short Term Memoey  -->
+					<section>
+                    <h1>Modeling the fate of atmospheric pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/LSTM.png" alt="LSTM" width="400px" height='250px'/>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Long Short Term Memory network (LSTM)</h3>
+					<ul><h4>
+					<li>Has hidden layers and internal memory, which preserve the long-term information</li>
+					<br>
+					<li>Has the structure of a chain of repeating modules</li>
+					<br>
+					<li>Connects previous information with the current</li>
+					<br>
+					<li>Considers the past conditions to make the current forecast</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 4. Deterministic Air Quality Models - Long Short Term Memoey  -->
+					<section>
+                    <h1>Measuring air pollutants</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_network.png" alt="Net Patras" width="500px" height='350px'/>
+					<citation>Patras Air: Ground-based network for PM<sub>2.5</sub> in Patras</citation>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Low-Cost Sensors</h3>
+					<ul><h4>
+					<li>Low-cost sensors are used to monitor air quality in cities</li>
+					<br>
+					<li>Low-cost sensors gain popularity for:</li>
+					<ul><li>Potential to be installed in dense distribution</li>
+					</ul>
+					<ul><li>Affordable operational cost</li>
+					</ul>
+					<br>
+					<li>Calibrating them with the appropriate techniques can generate reliable data in increased spatial coverage.</li>
+					</ul></h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+				
+				</section>
+				
+				<!-- 6th part: Air Quality and Smart Cities-->
+				<section>
+				
+					<!-- 1. Air Quality and Smart Cities: Patras example  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_area_grid.png" alt="Grid Patras" width="400px" height='350px'/>
+					<citation>Ground-based network for PM<sub>2.5</sub> in Patras</citation>
+					</td>
+					<td style="width: 550px;">
+					<h3 style="color: darkblue">Low-Cost Sensors</h3>
+					<h4>
+					Patras: urban coastal Mediterranean city in western Greece
+					<br><br>
+					<ul>
+					<li>Characteristics: one of the largest ports in Greece, mediterranean climate</li>
+					<br>
+					<li>Anthropogenic sources: traffic (road, maritime), indoor activities (wood burning, cooking, etc.)</li>
+					<br>
+					<li>Patras Air is a dense network of low-cost sensors measuring air pollution.</li>
+					</ul>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+
+					<!-- 2. Air Quality and Smart Cities: Patras example  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h4 style="text-align: left">Through a hybrid-scheme utilizing deterministic & data-driven models with a dense monitoring network, 
+					we could obtain PM<sub>2.5</sub> and PM<sub>10</sub> forecasts at fine scale</h4>
+                    <img src="./resources/Air-quality-monitoring-and-management/resources/SMARTAQM_Model_Flowchart.png" alt="aq patras model" width="700px" height="400px" />
+					</section>
+					
+					<!-- 3a. Patras example: CAMS  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>PM<sub>2.5</sub>, PM<sub>10</sub> (CAMS)</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/CAMS_PM.png" alt="CAMS" width="1000px" height="300px" />
+					</section>
+
+					<!-- 3b. Patras example: CAMS + PatrasAir  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>PM<sub>2.5</sub>, PM<sub>10</sub> (CAMS & PatrasAir) </h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/CAMS_PM_2.png" alt="CAMS+PatrasAir" width="1000px" height="300px" />
+					</section>
+					
+					<!-- 3c. Patras example: CAMS + PatrasAir + Models -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>PM<sub>2.5</sub> & PM<sub>10</sub> (CAMS, PatrasAir & Models)</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/CAMS_PM_3.png" alt="CAMS+PatrasAir+Models" width="1000px" height="300px" />
+					</section>
+					
+					<!-- 4a. Patras example: CAMS  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>Spatial distribution of PM<sub>2.5</sub> & PM<sub>10</sub>: Feb 2019 00:00 UTC</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_Model_Spatial_1.png" alt="Model 00UTC" width="1000px" height="300px" />
+					</section>
+
+					<!-- 4b. Patras example: CAMS + PatrasAir  -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>Spatial distribution of PM<sub>2.5</sub> & PM<sub>10</sub>: Feb 2019 06:00 UTC</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_Model_Spatial_2.png" alt="Model 06UTC" width="1000px" height="300px" />
+					</section>
+					
+					<!-- 4c. Patras example: CAMS + PatrasAir + Models -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>Spatial distribution of PM<sub>2.5</sub> & PM<sub>10</sub>: Feb 2019 12:00 UTC</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_Model_Spatial_3.png" alt="Model 12UTC" width="1000px" height="300px" />
+					</section>
+					
+					<!-- 4d. Patras example: CAMS + PatrasAir + Models -->
+					<section>
+                    <h1>A case study in Patras</h1>					
+					<h3 style='color: darkblue'>Spatial distribution of PM<sub>2.5</sub> & PM<sub>10</sub>: Feb 2019 18:00 UTC</h3> 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/Patras_Model_Spatial_4.png" alt="Model 18UTC" width="1000px" height="300px" />
+					</section>
+					
+				</section>
+
+				<!-- 7th part: Internet of Things (IoT) and Smart Cities-->
+					<section>
+                    <h1>Internet of Things (IoT) & Smart Cities</h1>					
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Air-quality-monitoring-and-management/resources/IOT_Smart_Cities_2.png" alt="IoT+SmartCities" width="300px" height='400px'/>
+					</td>
+					<td style="width: 550px;">
+					<h4>
+					Our research could incorporate the Internet of Things (IoT) to convert the fine-scale forecasts into an application (app) 
+					for the Internet and mobile phone users, with obvious application in public health and impact assessment. 
+					<img src="./resources/Air-quality-monitoring-and-management/resources/IOT_Smart_Cities_1.png" alt="IoT+SmartCities" width="500px" height='200px'/>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+				<!-- 8th part: Air Pollution and Smart Cities-->
+					<section>
+                    <h1>Air Pollution & Smart Cities</h1>					
+					<h3><em>Monitor...Educate...Reduce air pollution...</em></h3>
+					<ul>
+					<li>Monitoring  air quality could be the first step to understand the importance of the air we breathe.</li>
+					<li>Air quality + Smart Cities platform can easily/rapidly inform the public on environmental issues and prevent health risks.</li>
+					</ul>
+					<br><br>
+					<h3 style='text-align: left'><em>Real time air quality tracking is an important component for any smart city</em></h3>
+					<ul>
+					<li>City planners, factory owners, construction foremen, event planners and other professionals can make more informed decisions on how to protect the health of workers, 
+					reduce emissions and meet clean air guidelines.</li>
+					</ul>
+					<br><br>
+					<em style='color: red; text-align: left'><b>The big issue</b></em> : Demand for accuracy & real-world monitoring and modelling
+					</section>
+				
+				<!-- 9th part: Air Pollution and Air Quality Management-->
+					<section>
+                    <h1>Air Pollution & Air Quality Management</h1>					
+					<img src="./resources/Air-quality-monitoring-and-management/resources/AirPollution_management.png" alt="Air Pollution Management" width="1000px" height='500px'/>
+					</section>
+		
+				<!-- 10th part: Final Slide-->
+				<section >
+					<h1>Thank you!</h1>
+						<table style="height: 150px;" width="847">
+						<h3 style ="text-align:center; font-size:25px">More <b>training material</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-material-catalogue/"> http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+						<br>
+						<h3 style ="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-actions/"> http://www.eo4geo.eu/training-actions/</a></strong></h3>
+							<tr>
+							<td>
+							<img width="70" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/link.png" alt="connection">
+							</td>
+							<td>
+							<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3> 
+							</td>
+							<td>
+							<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3> 
+							</td>
+							</tr>
+						</table>
+						<table style="height: 150px;" width="847">
+							<tr>
+							<td>
+							<img width="150" box-shadow="none" data-src="./resources/Air-quality-monitoring-and-management/resources/lapup.jpg" alt="connection">
+							</td>
+							<td>
+							<h3 style="font-size: 25px;"><strong><a href="https://www.atmosphere-upatras.gr/en/">https://www.atmosphere-upatras.gr/en/</a></strong></h3> 
+							</td>
+							</tr>
+						</table>
+				</section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1413 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... -->
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		 
+		<title>Solar potential maps at municipality level</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Solar potential maps at municipality level" />
+		<meta property="dc:creator" content="Andreas Kazantzidis, Katerina Kyratzi, Ioannis Kioutsioukis" /> 
+		<meta property="dc:publisher" content="University of Patras, UPAT" /> 
+		<meta property="dc:subject" content="Search, analysis, and synthesis, as well as a critical understanding of solar energy meteorology data and information. Explore existing EO technologies and data to collect spatiotemporal measurements and forecasts of solar energy. Construct/model satellite-derived and ground-based data into usable information to assess and forecast solar energy potential in urban scale" />
+		<meta property="dc:abstract" content="As solar-energy generation systems and smart-grid technology become more abundant, information about the future output of this power source become essential to operating the solar farms as wells as the electric grid economically and reliably. One of the most immediate needs is accurate forecasting for utility-scale solar facilities. The field of solar (PV and CSP) energy forecasting is rapidly evolving for time horizons ranging from a few minutes ahead to several days ahead. Diverse resources are used to generate solar energy forecasts, ranging from measured weather and operation system data to satellite observations of clouds and weather forecasting models. The usefulness of these resources varies depending on the forecast horizon considered: very short‐term forecasts (0.5 to 6 hours ahead) perform best when they make use of satellite data, while weather forecasting models become essential for forecast horizons beyond approximately six hours." />
+		<meta property="dc:tableOfContents" content="	- Webinar content/EO4GEO project
+								- Bringing together Earth Observation resources in Europe: the e-shape project
+								- Energy Meteorology: Terms and Definitions
+								- Earth Observation systems for Solar Energy
+								- Solar energy nowcasting and short-term forecasting
+								- Use of satellite data to assess and forecast solar energy potential in cities: from solar cadaster to PV variability at urban scale";/>
+		<meta property="dc:description" content="- Learn the concepts of Energy Meteorology and discuss what it offers to the solar sector / - Recognize the main atmospheric and solar-related parameters that contribute to the efficient use of PV and CSP systems / - Learn the basic principles of solar forecasting / - Discuss about Earth observations for solar nowcasting and forecasting / - Identify the use of solar energy tools for urban scale applications / - Learn about PV nowcasting and short-term forecasting in urban scale" /> 
+		<meta property="dc:contributor" content="UPATRAS" />
+		<meta property="dc:created" content="2021-09-11" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="video" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90 min" />
+		<meta property="dc:audience" content="master student" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content=""/>
+		<meta property="dc:rightsHolder" content="UPATRAS" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:AM10" />
+		<link rel="dc:relation" href="eo4geo:AM8" />
+		<link rel="dc:relation" href="eo4geo:CV1" />
+		<link rel="dc:relation" href="eo4geo:CV2" />
+		<link rel="dc:relation" href="eo4geo:CV5" />
+		<link rel="dc:relation" href="eo4geo:CV6" />
+		<link rel="dc:relation" href="eo4geo:IP2" />
+		<link rel="dc:relation" href="eo4geo:PP1-5" />
+		<link rel="dc:relation" href="eo4geo:PP1-6" />
+		<link rel="dc:relation" href="eo4geo:PS1" />
+		<link rel="dc:relation" href="eo4geo:PS2" />
+		<link rel="dc:relation" href="eo4geo:PS3" />
+		<link rel="dc:relation" href="eo4geo:TA1" />
+		<link rel="dc:relation" href="eo4geo:TA2" />
+		<link rel="dc:relation" href="eo4geo:PP1" />
+		<link rel="dc:relation" href="eo4geo:TA2" />
+
+
+	<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+	<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+	<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
+	<!-- white background design -->
+	<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+	<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design -->
+	<!-- EO4GEO FONT ROBOTO SLAB -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+	<link rel="stylesheet" href="partnerLogo.css" id="theme">
+	<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+	<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- FORMATTING FOR HEADER -->
+
+
+		<div class="eo4geologo" style="width: 10%;height : 11%"></div>
+
+		<div class="partnerlogo" style="width: 12%;height : 20%"></div>
+		<!--<div  class = "presentation_title" style=" text-align: center " >Solar Resource and Forecasting at Municipality Level</div>	<!--The title of the presentation appears on each slide-->
+
+
+		<div class="slides">
+
+
+			<!-- CONTENT OF FIRST SLIDE -->
+			<section>
+				<h1>Solar Resource and Forecasting at Municipality Level</h1>
+				<br>
+				<em>Co-organized by the <b>University of Patras</b> (in the frame of EO4GEO project) in collaboration
+					with the <b>e-shape</b> project.</em>
+			</section>
+
+
+			<!-- INTRODUCTORY SECTION-->
+
+			<!-- 1. Introduction: description of the workshop-->
+			<section id="Introduction">
+				<section>
+					<h1>Introduction</h1>
+					<h2>This webinar aims to designate the potential role of solar energy <i>resource</i> and
+						<i>forecasting</i> in solar farms' efficient <i>planning</i> and <i>operation</i>.
+					</h2>
+				</section>
+
+				<!-- 2. Description of the Agenda-->
+				<section>
+					<h2>Agenda</h2>
+					<br><br>
+					<h4>
+						<ul>
+							<li>Webinar content/EO4GEO project</li>
+							<br>
+							<li>Bringing together Earth Observation resources in Europe: the e-shape project</li>
+							<br>
+							<li>Energy meteorology: Terms and Definitions</li>
+							<br>
+							<li>Earth Observation systems for Solar Energy</li>
+							<br>
+							<li>Solar energy nowcasting and short-term forecasting</li>
+							<br>
+							<li>Use of satellite data to assess and forecast solar energy potential in cities: from
+								solar cadaster to PV variability at urban scale</li>
+						</ul>
+				</section>
+
+				<!-- 3. Description of the Learning Outcomes-->
+				<section>
+					<h2>Learning outcomes</h2>
+					<br><br>
+					<h4>
+						<ul>
+							<li>Learn the concepts of Energy Meteorology and discuss what it offers to the solar sector
+							</li>
+							<br>
+							<li>Recognize the main atmospheric and solar-related parameters that contribute to the
+								efficient use of PV and CSP systems</li>
+							<br>
+							<li>Learn the basic principles of solar forecasting</li>
+							<br>
+							<li>Discuss about Earth Observations (EO) for solar nowcasting and forecasting</li>
+							<br>
+							<li>Identify the use of solar energy tools for urban-scale applications</li>
+							<br>
+							<li>Learn about PV nowcasting and short-term forecasting in urban scale</li>
+						</ul>
+					</h4>
+				</section>
+			</section>
+
+			<!-- LABORATORY OF ATMOSPHERIC PHYSICS - UNIVERSITY OF PATRAS-->
+			<section>
+				<br>
+				<h1 style="text-align:CENTER"> Laboratory of Atmospheric Physics</h1>
+				<table style="height: 369px;" width="100%">
+					<tbody>
+						<tr>
+							<td style="width: 500px;"><img
+									src="./resources/LAPUP_location.jpg"
+									alt="" width="100%" /></td>
+							<td style="width: 500px;">
+								<h2 style="text-align:center">Research Axes</h2>
+								<ul>
+									<li>Solar Radiation resource forecasting
+									<li>Weather and atmospheric pollution monitoring and modeling
+									<li>AI methods in atmospheric and environmental physics problems
+									<li>Stable isotopes in rain and in atmospheric water vapor
+									<li>Ultraviolet radiation: Measurements, modeling and biological dose rates
+									<li>Early warning models of epidemic spread
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<!-- THE EO4GEO PROJECT-->
+			<section>
+				<!-- 1. Overview of EO4GEO project-->
+				<section>
+					<img width="340" box-shadow="none"
+						data-src="./resources/logo_big.png"
+						alt="eo4geo logo">
+					<h3>The Space/Geospatial Sector Skills Alliance</h3>
+					<h4>Towards an innovative strategy for skills development and capacity building in the space
+						geo-information sector supporting Copernicus User Uptake</h4>
+					<img width="340" box-shadow="none"
+						data-src="./resources/erasmus.jpg"
+						alt="erasmus">
+				</section>
+
+				<!-- 2. EO4GEO Consortium and basic information-->
+				<section>
+					<h1>The EO4GEO project</h1>
+					<h4>
+						<ul>
+							<li><b> Duration:</b> 4 years from January the 1st, 2018</li>
+							<li><b> Budget:</b> 3,87 million €</li>
+							<li><b> Partnership:</b> 25 Partners + 30+ Associated Partners (from 16 EU Countries) from
+								Academia, Companies and networks </li>
+							<li><b> Coordinators:</b> GISIG (General), KU Leuven (Scientific & Technological), PLUS
+								(Education & Training), Climate-KIC (Exploitation)</li>
+						</ul>
+					</h4>
+					<img width="680" box-shadow="none"
+						data-src="./resources/consortium.jpg"
+						alt="eo4geo consortium">
+					<br>
+					<citation>The EO4GEO Consortium. 30th May 2018, Castellón de la Plana, Spain</citation>
+				</section>
+
+				<!-- 3. Vision and Mission of EO4GEO-->
+				<section>
+					<h1>The VISION </h1>
+					<h3>To foster the growth of the European Earth Observation / Geographic Information (EO/GI) sector
+						ensuring a workforce with the
+						<b>right skills, in the right place, at the right time. </b>
+					</h3>
+					<br><br>
+					<h1>The MISSION </h1>
+					<h3>To ensure the strategic cooperation among stakeholders on skills development in the EO/GI
+						sector.
+					</h3>
+				</section>
+
+				<!-- 4. EO4GEO is not only a project-->
+				<section>
+					<h1>EO4GEO IS MUCH MORE </h1>
+					<br><br>
+					<h4>
+						<ul>
+							<li>A series of <b>pre-defined curiculla</b> in support of Copernicus</li>
+							<br>
+							<li>A portfolio of <b>training modules</b> directly usable in the context of Copernicus and
+								other relevant prograns</li>
+							<br>
+							<li>A series of <b>training actions (webinars, academic courses, etc.)</b> in the three
+								sub-sectors - integrated applications, smart cities and climate change</li>
+							<br>
+							<li>A <b>mobility program</b> to promote internships and on-the-job training</li>
+							<br>
+							<li>A <b>Long-term Action plan</b> to sustain the proposed solutions</li>
+						</ul>
+					</h4>
+					<table style="height: 150px;" width="847">
+						<tr>
+							<td>
+								<img width="70" box-shadow="none"
+									data-src="./resources/link.png"
+									alt="connection">
+							</td>
+							<td>
+								<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3>
+							</td>
+							<td>
+								<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+			</section>
+
+			<!-- 2nd Part: Energy Meteorology -->
+			<section>
+				<!-- 1. Introductory slide for basics-->
+				<section>
+					<img width="800" box-shadow="none"
+						data-src="./resources/Basics.jpg"
+						alt="basics">
+					<h2>
+						<em>Let's start from the basics...</em>
+					</h2>
+				</section>
+
+				<!-- 2. The concept of energy meteorology-->
+				<section>
+					<h1>What is Energy Meteorology?</h1>
+					<ul>
+						<h4>
+							<li><b>Energy Meteorology</b> is in the interface of <b>renewable energy</b> and
+								<b>atmospheric physics</b>
+							<li>Atmospheric physics is needed for the <b>assessment</b> and <b>forecasting</b> of the
+								power output from solar and wind energy systems as well as for the <b>planning</b>,
+								<b>monitoring</b>, and <b>efficient operation</b> of these systems.
+						</h4>
+					</ul>
+					<img width="580" height="280" box-shadow="none"
+						data-src="./resources/Energy_Meteorology_Concept.jpg"
+						alt="Energy Meteorology Concept">
+					<br>
+					<citation>Source: WEMC</citation>
+				</section>
+
+				<!-- 3. Energy Meteorology and solar sector-->
+				<section>
+					<h1>What energy meteorology offers to the solar sector?</h1>
+					<h4>
+						<ul>
+							<li>Higher penetration in the energy mix and efficient grid integration
+							<li>Efficient use of large-scale applications
+						</ul>
+					</h4>
+					<br>
+					<h3 style="color: darkblue">Most Important</h3>
+					<h4>
+						<ul>
+							<b><u>International and consensus collaboration</u></b>
+					</h4>
+					</ul>
+					<img width="200" box-shadow="none"
+						data-src="./resources/IEA_PVPS.png"
+						alt="IEA_PVPS">
+				</section>
+
+				<!-- 4. Earth observation systems and Solar Energy-->
+				<section>
+					<h1>Earth Observation systems for Solar Energy</h1>
+					<h4>Different space and time scales for solar resource assessment</h4>
+					<img src="./resources/EO_Solar_Energy.gif"
+						alt="EO_Solar_Energy" width="680" />
+				</section>
+
+				<!-- 5. Solar Irradiances components-->
+				<section>
+					<h1>Direct, Diffuse and Global Irradiance</h1>
+					<table style="height: 369px;" width="100%">
+						<tbody>
+							<td style="width: 450px;">
+								<h4>
+									<ul>
+										<li><b>Beam normal irradiance (BNI)</b>: measured using an instrument that
+											tracks the sun and shades out the diffuse, it only records the direct
+											component.</li>
+										<br>
+										<li><b>Diffuse horizontal irradiance (DHI)</b>: measured using an instrument
+											that has a shade to block out the direct radiation.</li>
+										<br>
+										<li><b>Global horizontal irradiance (GHI)</b>: measured with an instrument
+											mounted horizontally</li>
+								</h4>
+								</ul>
+							</td>
+							<td style="width: 550px;">
+								<h3>
+									GHI = BNI + DNI&timescos(θ)
+								</h3>
+								<img src="./resources/Solar_Irradiances_Components.jpg"
+									alt="BNI_DHI_GHI" width="100%" height="350px" />
+								<citation><a href="http://www.nrel.gov/midc/srrl_bms">
+										http://www.nrel.gov/midc/srrl_bms</a></citation>
+							</td>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 6. Concentrating solar power and photovoltaics-->
+				<section>
+					<h1>Concentrating solar power and photovoltaics</h1>
+					<img width="640" box-shadow="none"
+						data-src="./resources/Solar_Power_Photovoltaics.jpg"
+						alt="CSP_PV_Power">
+					<br>
+					<citation><a href="https://helioscsp.com/"> https://helioscsp.com/</a></citation>
+				</section>
+
+				<!-- 7. All-sky imager-->
+				<section>
+					<h1>The ground-truth</h1>
+					<citation><a href="https://deepsky-project.com/"> https://deepsky-project.com/</a></citation>
+					<br>
+					<video controls muted autoplay="autoplay" width="500" height="400"
+						data-src="./resources/All_Sky_Imager.mp4"
+						type="video/mp4" alt='ASI' />
+				</section>
+
+				<!-- 8a. Radiative transfer principle-->
+				<section>
+					<h1>The principle of radiative transfer and the satellite-derived solution</h1>
+					<img width="560" height="380" box-shadow="none"
+						data-src="./resources/Radiative_transfer_principal.jpg"
+						alt="RT_Principal">
+					<br>
+					<citation>Source: CRS User Guide</citation>
+				</section>
+
+				<!-- 8b. Radiative transfer principle-->
+				<section>
+					<h1>The principle of radiative transfer and the satellite-derived solution</h1>
+					<img width="640" height="380" box-shadow="none"
+						data-src="./resources/Radiative_transfer_principal_2.jpg"
+						alt="RT_Principal_2">
+					<br>
+					<citation>Source: CRS User Guide</citation>
+				</section>
+
+				<!-- 9. CAMS-SODA Portal -->
+				<section>
+					<h1>CAMS Radiation service (CRS)</h1>
+					<img width="800" height="400" box-shadow="none"
+						data-src="./resources/CAMS_SODA_PORTAL.png"
+						alt="CRS">
+					<br><br>
+					<citation><a href="www.soda-pro.com/web-services/radiation/cams-radiation-service">
+							www.soda-pro.com/web-services/radiation/cams-radiation-service</a></citation>
+					<br><br>
+					<i>You can select site, start/end date and time step and download your data</i>
+				</section>
+
+				<!-- 10. Challenge-->
+				<section>
+					<h1>The challenge</h1>
+					<table style="height: 369px;" width="100%">
+						<tbody>
+							<td style="width: 550px;">
+								<img src="./resources/Challenge.png"
+									alt="Challenge" width="100%" height="500px" />
+							</td>
+							<td style="width: 450px;">
+								<h3>
+									<ul>
+										<b>How we can use such a service?</b>
+										<br><br>
+										<b>How we can apply Earth Observation data to meet the demands for typical solar
+											energy applications?</b>
+										<br><br>
+										<b>What are the benefits and drawbacks of such an approach?</b>
+								</h3>
+								</ul>
+							</td>
+						</tbody>
+					</table>
+				</section>
+
+			</section>
+
+			<!-- 3rd Part: E-shape -->
+			<section>
+				<!-- 1. Introductory slide for the e-shape project-->
+				<section>
+					<img width="800" box-shadow="none"
+						data-src="./resources/Basics.jpg"
+						alt="basics">
+					<h2>
+						<em>The e-shape project</em>
+					</h2>
+				</section>
+
+				<!-- 2. The e-shape project -->
+				<section>
+					<h1>e-shape - EuroGEO Showcases Applications Powered by Europe</h1>
+					<h4>
+						<ul>
+							<li>European contribution to GEO establishing <b>EuroGEO</b></li>
+							<li>15M€, 69 partners, 7 showcases, <b>37 pilots</b></li>
+							<li><b>4 years</b> grant (2019-2023)</li>
+							<li><b>ARMINES</b> (France) coordinator – <a href="https://e-shape.eu/"> e-shape.eu</a></li>
+						</ul>
+					</h4>
+					<img width="800" box-shadow="none"
+						data-src="./resources/eshape_pilots.png"
+						alt="eshape pilots">
+					<h4>
+						<ul>
+							<li>Promoting <b>users’ uptake</b> of European Earth Observation (EO) resources</li>
+							<li>Building on <b>Copernicus</b> and <b>GEOSS</b> through the development of co-design
+								pilots</li>
+							<li>Built on a <b>user-centric</b> approach to deliver <b>economic</b>, <b>social</b> and
+								<b>policy value</b> to European citizens.</li>
+							<ul>
+					</h4>
+				</section>
+
+				<!-- 3. The e-shape objectives-->
+				<section>
+					<h1>Objectives</h1>
+					<h4>
+						<ul>
+							<li>O1: Develop <b>operational EO services with and for users</b> active in key societal
+								sectors</li>
+							<br>
+							<li>O2: Demonstrate the <b>benefits of the EO pilots</b> through the coordinated downstream
+								<b>exploitation of EO data</b> and the utilization of existing EO resources</li>
+							<br>
+							<li>O3: Promote the <b>uptake of pilots</b> at national and international scale, across
+								vertical markets (<b>private and public</b>) and amongst key user communities</li>
+							<br>
+							<li>O4: Enable the <b>long-term sustainability</b> of the numerous pilots, their penetration
+								in <b>public and private markets</b> and support their upscaling </li>
+							<br>
+							<li>O5: Increase uptake by <b>raising awareness</b> on the solutions developed through
+								tailored and well-targeted <b>communication</b>, <b>dissemination</b> and <b>outreach
+									activities</b></li>
+						</ul>
+					</h4>
+				</section>
+
+				<!-- 4. The e-shape showcases-->
+				<section>
+					<h1>e-shape - EuroGEO Showcases Applications Powered by Europe</h1>
+					<img width="600" height="400" box-shadow="none"
+						data-src="./resources/eshape_all.png"
+						alt="eshape showcases">
+				</section>
+
+			</section>
+
+			<!-- 4th Part: Solar radiation/energy nowcasting and short-term forecasting  -->
+			<section>
+				<!-- 1. Introductory slide for solar radiation nowcasting/forecasting-->
+				<section>
+					<img width="800" box-shadow="none"
+						data-src="./resources/Basics.jpg"
+						alt="basics">
+					<h2>
+						<em>Solar radiation/energy nowcasting and short-term forecasting</em>
+					</h2>
+				</section>
+
+				<!-- 2. PMOD-->
+				<section>
+					<h1>PMOD-WRC</h1>
+					<img width="800" height="400" box-shadow="none"
+						data-src="./resources/PMOD.jpg"
+						alt="PMOD_WRC">
+				</section>
+
+				<!-- 3a. Solar radiation forecasting basics-->
+				<section>
+					<h1>Solar radiation forecasting basics</h1>
+					<table style="height:200px width=650px">
+						<tbody>
+							<tr>
+								<td style="width:300px;">
+									<img src="./resources/Solar_radiation_basics_1.png"
+										alt="Solar spectrum" width="300px" height="200 px" />
+									<img src="./resources/Solar_radiation_basics_2.png"
+										alt="CSP-PV" width="300px" height="150 px" />
+									<img src="./resources/Solar_radiation_basics_3.png"
+										alt="GEOSS-logo" width="120px" height="50 px" />
+								</td>
+								<td style="width: 700px;">
+									<h4>Surface solar radiation is variable spatiotemporaly
+										<ul>
+											<li>Sun position (solar elevation)</li>
+											<li>Atmospheric composition (aerosols, gases, water vapor)</li>
+											<li>Clouds (coverage, on/off sun)</li>
+										</ul>
+										<h4>
+											Surface solar radiation used for solar-based energy production
+											<br>
+											<ul>
+												<li>Different components (GHI & DNI)</li>
+											</ul>
+											<h4>Solar variability affects:
+												<ul>
+													<li>National and regional electric grid stability</li>
+													<li>Solar contribution in the energy mix / (real time demand) </li>
+													<li>Planning and management of PV and CSP </li>
+													<li>Trading, distribution, storage, optimization</li>
+												</ul>
+												</h3>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 3b. Solar forecasting basics-->
+				<section>
+					<h1>Solar radiation forecasting basics</h1>
+					<table style="height: 150px;">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<h4>Forecasting approaches
+										<ul>
+											<li><b>Deterministic</b> (one value at its time)</li>
+											<li><b>Probabilistic</b> (ensemble with probability)</li>
+										</ul>
+									</h4>
+								</td>
+								<td style="width: 300px; height: 150px">
+									<img src="./resources/Solar_forecasting_basics_1.png"
+										alt="Forecasted intra-day GHI" width="250px" height="150px" />
+								</td>
+						</tbody>
+					</table>
+					</tr>
+					<img src="./resources/Solar_forecasting_basics_1_1.png"
+						alt="Forecasted time-scales" width="500px" height="300px" />
+				</section>
+
+				<!-- 3c. Solar forecasting basics-->
+				<section>
+					<h1>Solar radiation forecasting basics</h1>
+					<table style="height: 150px;">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<h4>Forecasting approaches
+										<ul>
+											<li><b>Deterministic</b> (one value at its time)</li>
+											<li><b>Probabilistic</b> (ensemble with probability)</li>
+										</ul>
+									</h4>
+								</td>
+								<td style="width: 300px; height: 150px">
+									<img src="./resources/Solar_forecasting_basics_1.png"
+										alt="Forecasted intra-day GHI" width="250px" height="150px" />
+								</td>
+						</tbody>
+					</table>
+					</tr>
+					<img src="./resources/Solar_forecasting_basics_2.png"
+						alt="Forecast-lead time image" width="500px" height="300px" />
+				</section>
+
+				<!-- 4. e-shape: solar forecasting-->
+				<section>
+					<h1>Solar radiation/energy forecasting and now-casting</h1>
+					<img width="600" height="400" box-shadow="none"
+						data-src="./resources/Solar_forecasting_basics_3.png"
+						alt="e-shape forecasting">
+				</section>
+
+				<!-- 5. The Sense system -->
+				<section>
+					<h1>EO and solar nowcasting/The Sense System</h1>
+					<img width="640" height="400" box-shadow="none"
+						data-src="./resources/Sense_project_nowcasting.png"
+						alt="The SENSE system">
+				</section>
+
+				<!-- 6. EO and solar Nowcasting/ Clouds -->
+				<section>
+					<h1>EO and solar Nowcasting/Clouds </h1>
+					<video controls muted autoplay="autoplay" width="700" height="500"
+						data-src="./resources/Cloud_Motion.mp4"
+						type="video/mp4" alt='Clouds example' />
+				</section>
+
+				<!-- 7. EO and solar Nowcasting/GHI -->
+				<section>
+					<h1>EO and solar Nowcasting </h1>
+					<citation><a href="http://solea.gr/real-time-service/"> http://solea.gr/real-time-service/</a>
+					</citation>
+					<br>
+					<video controls muted autoplay="autoplay" width="700" height="500"
+						data-src="./resources/EO-SolarNowcasting.mp4"
+						type="video/mp4" alt='GHI example' />
+				</section>
+
+				<!-- 8a. Aerosols -->
+				<section>
+					<h1>Aerosols</h1>
+					<img width="500" height="400" box-shadow="none"
+						data-src="./resources/Aerosols_1.jpg"
+						alt="Dust Aerosols">
+				</section>
+
+				<!-- 8b. Aerosols -->
+				<section>
+					<h1>Aerosols</h1>
+					<img width="1000" height="500" box-shadow="none"
+						data-src="./resources/Aerosols_2.png"
+						alt="Dust Aerosols 2">
+					<br>
+					<citation>Kazadzis, Kosmopoulos et al., 2018, Papachristopoulou under review</citation>
+				</section>
+
+				<!-- 8c. Aerosols -->
+				<section>
+					<h1>Aerosols</h1>
+					<img width="900" height="400" box-shadow="none"
+						data-src="./resources/Aerosols_3.png"
+						alt="DNI attenuation">
+					<br>
+					<citation>Kazadzis, Kosmopoulos et al., 2018, Papachristopoulou under review</citation>
+				</section>
+
+				<!-- 9. Sense validation -->
+				<section>
+					<h1>Sense validation</h1>
+					<img width="900" height="500" box-shadow="none"
+						data-src="./resources/Sense_validation.png"
+						alt="SENSE validation">
+					<br>
+					<citation>Kosmopoulos et al., 2018</citation>
+				</section>
+
+				<!-- 10. nextSense -->
+				<section>
+					<h1>nextSense Solar Forecasting</h1>
+					<h3>E-Shape: nextSENSE: introduction of Cloud motion vector forecasting</h3>
+					<img width="600" height="350" box-shadow="none"
+						data-src="./resources/next_Sense.png"
+						alt="nextSENSE forecasting">
+				</section>
+
+				<!-- 11. Cloud Motion Vectors -->
+				<section>
+					<h1>Cloud Motion Vectors</h1>
+					<table style="height: 364px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<img src="./resources/CMV_1.png"
+										alt="CMV_definition" width="320px" height="150 px" />
+									<img src="./resources/CMV_2.png"
+										alt="CMV map" width="400px" height="250 px" />
+								</td>
+								<td style="width: 600px;">
+									<img src="./resources/CMV_3.png"
+										alt="CMF" width="400px" height="200 px" />
+									<video controls muted autoplay="autoplay" width="500" height="250"
+										data-src="./resources/Cloud_Motion.mp4"
+										type="video/mp4" alt='CMV' />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<citation>Kosmopoulos et al., 2021</citation>
+				</section>
+
+				<!-- 12a. nextSense validation -->
+				<section>
+					<h1>nextSense Solar Forecasting validation</h1>
+					<img width="450" height="400" box-shadow="none"
+						data-src="./resources/nextSence_validation_1.png"
+						alt="nextSENSE validation 1">
+					<br>
+					<citation>Kosmopoulos et al., 2021; Papachristopoulou on going work</citation>
+				</section>
+
+				<!-- 12b. nextSense validation -->
+				<section>
+					<h1>nextSense Solar Forecasting validation</h1>
+					<img width="500" height="450" box-shadow="none"
+						data-src="./resources/nextSence_validation_2.png"
+						alt="nextSENSE validation 2">
+					<br>
+					<citation>Kosmopoulos et al., 2021; Papachristopoulou on going work</citation>
+				</section>
+
+				<!-- 13. nextSense demonstration -->
+				<section>
+					<h1>nextSense - demonstration</h1>
+					<img width="500" height="450" box-shadow="none"
+						data-src="./resources/next_Sense_demonstration.png"
+						alt="nextSENSE demonstration">
+					<br>
+					<citation><a href="http://solea.gr/solar-energy-management/">
+							http://solea.gr/solar-energy-management/</a></citation>
+					<br>
+					<citation><a href="http://solea.gr/#applications"> http://solea.gr/#applications</a></citation>
+				</section>
+
+				<!-- 14. EO & Solar Forecasting -->
+				<section>
+					<h1>EO and solar forecasting - Global</h1>
+					<img width="640" height="450" box-shadow="none"
+						data-src="./resources/EO_satellites.jpg"
+						alt="satellites">
+				</section>
+
+				<!-- 15. nextSense - a case study for India -->
+				<section>
+					<h1>Example nextSense approach for India</h1>
+					<table style="height: 369px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 500px;">
+									<h3>INSAT 3D satellite full domain</h3>
+									<img src="./resources/INSAT_3D_1.jpg"
+										alt="INSAT satellite" width="300px" height="300 px" />
+								</td>
+								<td style="width: 500px;">
+									<h3>INSAT 3D satellite use for India</h3>
+									<img src="./resources/INSAT_3D_India.png"
+										alt="INSAT satellite India" width="600px" height="300 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<citation>Massoom et al., 2020</citation>
+				</section>
+
+				<!-- 16. End-Users -->
+				<section>
+					<h1>Users and co-design aspect</h1>
+					<table style="height:200px width=650px">
+						<tbody>
+							<tr>
+								<td style="width:300px;">
+									<img src="./resources/users_co_design.png"
+										alt="Users" width="300px" height="500 px" />
+								</td>
+								<td style="width: 700px;">
+									<h4>
+										<ul>
+											<li><b>Greek TSO</b> &#8594 Direct use of nextSENSE as an EMS</li>
+											<br><br>
+											<li><b>Egyptian ministry of Electricity and Renewable Energy Authority</b>
+												&#8594 Energy management & Aswan renewable energy based hospital</li>
+											<br><br>
+											<li><b>National Grid Authority</b> &#8594 Solar forecasting</li>
+											<br><br>
+											<li>Commercial REN EPC contractors in Europe, Africa, Middle East and
+												Southern Asia &#8594 2021</li>
+										</ul>
+									</h4>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 17. Remarks -->
+				<section>
+					<h1>Remarks</h1>
+					<h4 style="text-align: left">
+						Solar power forecasting is essential for cost-effective energy system integration of solar
+						energy. Applications: specific requirements with respect to forecast horizon and spatiotemporal
+						resolution.
+						<br><br>
+						Forecasting solar irradiance should be evaluated in the context of strategies for the system
+						integration of solar power, which aim to provide the necessary power to cover demand at any
+						time.
+						<br><br>
+						Reliable short-term irradiance forecasts can be derived from EO based data using cloud
+						motion-based methodologies.
+						<br><br>
+						Forecast evaluations are important. Hybrid approaches on used methodologies could be beneficial
+					</h4>
+					<h4 style='color: red'>Choice of a forecast method depends on:
+						<ul>
+							<li>User needs</li>
+							<li>Measurement data and model availability</li>
+							<li>Spatiotemporal aspects</li>
+							<li>Evaluation – uncertainty of method</li>
+							<li>Technical aspects</li>
+					</h4>
+				</section>
+			</section>
+
+			<!-- 4th Part: Solar Cadaster  -->
+			<section>
+				<!-- 1. Introductory slide for solar radiation nowcasting/forecasting-->
+				<section>
+					<img width="800" box-shadow="none"
+						data-src="./resources/Basics.jpg"
+						alt="basics">
+					<h2>
+						<em>Use of satellite data to assess and forecast solar energy potential in cities: from solar
+							cadaster to PV variability at urban scale</em>
+					</h2>
+				</section>
+
+				<!-- 2. Solar Cadaster -->
+				<section>
+					<h1>Solar Cadaster: high resolution (metric) urban solar mapping</h1>
+					<img src="./resources/Solar_cadaster_1.jpg"
+						alt="Solar cadaster # 1" width="300px" height="160 px" />
+					<h4 style='text-align: left; font-size:20px'>Photovoltaic (PV) systems (rooftop, parking shades,
+						etc.) in urban areas are very interesting
+						<ul>
+							<li>Low cost since the price of PV modules are constantly and dramatically decreasing</li>
+							<li>No emission of pollutants nor GHGs during their exploitation</li>
+							<li>Production of electricity where this electricity is consumed</li>
+							<li>Added value to unused urban roofs/parking shades (e.g. commercial centre)</li>
+							<li>Positive impact on Urban Heat Island
+					</h4>
+					</ul>
+					<h4 style='text-align: left; font-size:20px'>Solar Cadasters enable to:
+						<ul>
+							<li>Analyse the solar potential of roofs/shades over a city w.r.t. the local electricity
+								consumption</li>
+							<li>Help public or private decision-makers and investors</li>
+					</h4>
+					</ul>
+				</section>
+
+				<!-- 3. Solar cadaster inSun -->
+				<section>
+					<h1>Solar Cadaster from In Sun We Trust</h1>
+					<table style="height: 364px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<h4><u><b>In Sun We Trust</b></u> is providing free, accurate and easy-to-use tool
+										for the general public to assess solar potential of rooftop PV systems with the
+										support of:
+										<ul>
+											<li>The French national mapping agency (IGN)</li>
+											<li>MINES ParisTech</li>
+											<li>Transvalor Innovation - SoDa</li>
+										</ul>
+										<img src="./resources/Solar_cadaster_2.png"
+											alt="Solar cadaster in sun 2" width="400px" height="200 px" />
+								</td>
+								<td style="width: 600px;">
+									<img src="./resources/InSun_logos.png"
+										alt="inSun users" width="250px" height="160 px" />
+									<img src="./resources/Solar_cadaster_3.png"
+										alt="Solar cadaster in sun 3" width="400px" height="250 px" />
+									<br>
+									<citation><a href="https://nantes-metropole.insunwetrust.solar">
+											nantes-metropole.insunwetrust.solar</a></citation>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 4. Solar cadaster urban scale -->
+				<section>
+					<h1>From Solar Cadaster to urban-scale solar variability</h1>
+					<table style="height: 369px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 500px;">
+									<h4>Static yearly irradiation on tilted plans (1-m res.)</h4>
+									<img src="./resources/Solar_cadaster_4.png"
+										alt="inSun example" width="500px" height="320 px" />
+								</td>
+								<td style="width: 500px;">
+									<h4>Near on-the-fly computation of intra-day irradiation on tilted plans (1-m res.)
+									</h4>
+									<img src="./resources/Solar_cadaster_5.gif"
+										alt="inSun example" width="500px" height="320 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 5. Renewable energy showcase:  Pilot #2 -->
+				<section>
+					<h1>Renewable Energy Showcase - Pilot #2: High PV penetration in urban area</h1>
+					<h4 style='font-size:20px'>
+						<ul>
+							<li><b>Objective</b>: develop GIS-tools dedicated to <b>high photovoltaic penetration</b> at
+								urban scale, providing <b>EO based information</b> about <b>urban energy system</b>
+								modeling, electric energy demand profiles and accurate electric production of fleet of
+								<b>PV rooftop systems</b></li>
+							<br>
+							<li><b>Expected user community</b>: Urban planners, grid operators, aggregator for energy
+								trading, researchers in Energy and Urban planning and citizens (self-consumption)></li>
+							<br>
+							<li><b>Two parts of the pilot</b>:</li>
+							<ul>
+								<li>Part 1: PV variability at urban scale (pilot in Nantes)</li>
+								<li>Part 2: EO-data for PV integration in the urban energy system (pilot in Oldenburg)
+								</li>
+							</ul>
+							<br>
+							<li><b>Supporting infrastructure</b>: DIAS WEkEO, Urban TEP</li>
+							<br>
+							<li><b>Partners</b>:
+								<br>
+								<center><img width="500px" height='50px' box-shadow="none"
+										data-src="./resources/Partners_pilot2.png"
+										alt="partners pilot 2"></center>
+						</ul>
+					</h4>
+				</section>
+
+				<!-- 6. EO data -->
+				<section>
+					<h1>EO data</h1>
+					<table style="height: 300px;">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<h4 style="font-size: 20px">
+										<ul>
+											<li>A decametric digital terrain model (DTM) to describe the orographic
+												shadow effects (e.g. SRTM, ASTER)</li>
+											<br>
+											<li>A high-accuracy 10 cm digital surface model (DSM) to provide 3D
+												description of buildings, vegetation and superstructures (IGN, using
+												aerial images correlation). A high-accuracy map of buildings to provide
+												location and contours of corresponding roofs (IGN - BDTOPO©)</li>
+										</ul>
+									</h4>
+								</td>
+								<td style="width: 400px; height: 200px">
+									<img src="./resources/EOdata_1.png"
+										alt="EOdata 1" width="300px" height="200px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<img src="./resources/EOdata_2.png"
+						alt="EOdata 2" width="800px" height="250px" />
+				</section>
+
+				<!-- 7a. EO data - clear sky modelling -->
+				<section>
+					<h1>The EO data for clear-sky irradiance modeling</h1>
+					<table style="height: 364px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 600px;">
+									<h4><i>Clouds are not the only source of solar variability</i>. The irradiance for
+										clear-sky (cloud-free) condition from McClear (CAMS), integrating aerosols,
+										water vapor depending on the Sun topocentric position
+									</h4>
+									<img src="./resources/EOdata_clear_1.png"
+										alt="EO data clear 1" width="400px" height="200 px" />
+								</td>
+								<td style="width: 600px;">
+									<img src="./resources/CAMS.jpg"
+										alt="CAMS" width="150px" height="50px" />
+									<img src="./resources/EOdata_clear_2.gif"
+										alt="EO data clear 2" width="500px" height="300 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 7b. EO data - clear sky modelling -->
+				<section>
+					<h1>The EO data for clear-sky irradiance modeling</h1>
+					<h3>Example with in-situ measurements under clear-sky in Shanghai</h3>
+					<table style="height: 500px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 500px;">
+									<h4 style='font-size: 20px'>Clear-Sky GHI with Climatology Monthly Linke Turbidity
+										(ESRA Model)</h4>
+									<img src="./resources/EOdata_ESRA.png"
+										alt="ESRA Shanghai" width="490px" height="400 px" />
+								</td>
+								<td style="width: 500px;">
+									<h4 style='font-size: 20px'>Clear-Sky GHI from McClear (Aerosol + WV from CAMS)</h4>
+									<img src="./resources/EOdata_McClear.png"
+										alt="McClear Shanghai" width="400px" height="400 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 7c. EO data - clear sky irradiance estimation -->
+				<section>
+					<h1>The EO data for all-sky irradiance estimation</h1>
+					<table style="height: 60px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 800px">
+									<h4>Satellite-based all-sky solar data HelioClim-3/CAMS Rad (3 km, 15 min, 2004-,
+										15+ years)
+										<ul>
+											<li>Heliosat-2 / Heliosat-4 methods</li>
+											<li>Applied on images from SEVIRI spaceborne by Meteosat Second Generation
+												Heliosat-2 / Heliosat-4 methods</li>
+										</ul>
+									</h4>
+								</td>
+								<td style="width: 400px">
+									<img src="./resources/CAMS.jpg"
+										alt="CAMS" width="150px" height="50px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="height: 200px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 400px">
+									<center><img
+											src="./resources/EO_satellite.png"
+											alt="EO satellite" width="300px" height="150 px" /></center>
+								</td>
+								<td style="width: 400px" border-style='none'>
+									<img src="./resources/EOclear_west_France.gif"
+										alt="EOclear France" width="200px" height="150 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="height: 60px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 600px">
+									<h4>At least one year of in-situ pyranometric measurements for local calibration
+									</h4>
+								</td>
+								<td style="width: 400px">
+									<img src="./resources/pyranometer.png"
+										alt="pyranometer" width="100px" height="100 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 8. DIAS system -->
+				<section>
+					<h1>Data and Information Access Services (DIAS)</h1>
+					<h4>
+						<ul>
+							<li>DIAS WEkEO</li>
+							<center><img width="100px" height='80px' box-shadow="none"
+									data-src="./resources/WEKEO.png"
+									alt="DIAS"></center>
+							<li>Providing <b>cloud processing</b> requested on-the-fly through asynchronous <b>OGC Web
+									Processing Services (WPS)</b></li>
+							<br>
+							<li>Hosting a <b>Jupyter Hub</b> with <b>Jupyter Notebooks</b> exemplifying in <b>Python
+									different use-cases</b> with:</li>
+							<ul>
+								<li>GIS-like interface</li>
+								<li>WPS asynchronous requests</li>
+								<li>Output data exploitation and representation</li>
+							</ul>
+							<center><img width="150px" height='70px' box-shadow="none"
+									data-src="./resources/jupyter_hub.jpg"
+									alt="jupyter"></center>
+						</ul>
+					</h4>
+				</section>
+
+				<!-- 9. Pilot 'core' service-->
+				<section>
+					<h1>Overview of the pilot organized around a “core” service</h1>
+					<img width="700" height="400" box-shadow="none"
+						data-src="./resources/core_pilot.gif"
+						alt="Core Pilot">
+				</section>
+
+				<!-- 10. Jupyter Notebook parts 1-9-->
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_1.png"
+						alt="jupyter notebook 1">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_2.png"
+						alt="jupyter notebook 2">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_3.png"
+						alt="jupyter notebook 3">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_4.png"
+						alt="jupyter notebook 4">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_5.png"
+						alt="jupyter notebook 5">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_6.png"
+						alt="jupyter notebook 6">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_7.png"
+						alt="jupyter notebook 7">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="750" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_8.png"
+						alt="jupyter notebook 8">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<img width="800" height="450" box-shadow="none"
+						data-src="./resources/jupyter_notebook_9.png"
+						alt="jupyter notebook 9">
+				</section>
+
+				<section>
+					<h1>Available pilot on Jupyter Notebook</h1>
+					<h3 style='text-align: left'> Hands-on session recording - Youtube:</h3>
+					<br>
+					<a href="https://www.youtube.com/watch?v=Sj9eMoLFi0g">
+						https://www.youtube.com/watch?v=Sj9eMoLFi0g</a>
+					<br><br>
+					<h3 style='text-align: left'>To get an account to test the pilot:</h3>
+					<br>
+					<h3 style='color: blue'>lionel.menard@mines-paristech.fr</h3>
+				</section>
+
+				<!-- 11. Urban PV planning -->
+				<section>
+					<h1>Local urban planning & PV</h1>
+					<table style="height: 364px; width:100%">
+						<tbody>
+							<tr>
+								<td style="width: 700px;">
+									<h4>Study of a PV parking shades (100 kWp) impacted by a “new” building
+										<ul>
+											<li>Before the “new building”: 1200 kWh/kWp</li>
+											<li>Impact of the new building:</li>
+											<ul>
+												<li>-18.3%</li>
+												<li>980 kWh/kWp</li>
+												<li>Annual loss: ~2000€/year</li>
+											</ul>
+										</ul>
+									</h4>
+									<img src="./resources/Urban_PV_1.png"
+										alt="Urban PV 1" width="350px" height="300 px" />
+								</td>
+								<td style="width: 600px;">
+									<img src="./resources/Urban_PV_2.png"
+										alt="Urban PV 2" width="300px" height="250 px">
+									<img src="./resources/Urban_PV_3.gif"
+										alt="Urban PV 3" width="400px" height="250 px">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 12. PV variability - case 2 -->
+				<section>
+					<h1>Historical analysis of PV variability (case #2)</h1>
+					<h4 style='text-align:left'>Usage: Simulated PV injection in different source points of the electric
+						grid for different scenarios of PV penetration (for DSO, e.g. ENEDIS)</h4>
+					<table style="height: 250px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 450px;">
+									<h4 style='text-align:left ; font-size: 20px'>Example:urban area of of 1.5 km x 1.5
+										km 20 % PV penetration:
+										<ul>
+											<li>35 related source points of ENEDIS (DSO)</li>
+											<li>14 ha of PV roof-top systems (~ 20+ MWp)</li>
+										</ul>
+									</h4>
+									<h4 style='font-size: 20px; color:blue'>Nameplate PV power injected in the source
+										points</h4>
+									<img src="./resources/PV_variability_2.png"
+										alt="PV variability 2a" width="250px" height="170 px" />
+								</td>
+								<td style="width: 600px;">
+									<h4 style='font-size: 20px; color:blue'>Temporal evolution of instantaneous PV power
+										potentially injected within a day</h4>
+									<img src="./resources/PV_variability_3.gif"
+										alt="PV variability 2b" width="350px" height="350 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 13a. PV variability - case 2 -->
+				<section>
+					<h1>PV nowcasting & short-term forecasting (case #3)</h1>
+					<h4 style='text-align:left; font-size:20px'>Usage: Energy trading with portfolio of PV rooftop
+						systems(e.g. Urban Solar Energy ?)
+						<br><br>
+						Use of Cloud Motion Vector (CMV) from two consecutive satellite images:
+						<ul>
+							<li>CAMS aerosol / water vapor forecasting (CAMS McClear)</li>
+							<li>3D shadowing effects from DSM</li>
+						</ul>
+						<br><br>
+						Potential use of some PV yield monitoring (in-situ) in the real time loop of forecasting
+						correction
+					</h4>
+					<table style="height: 250px;" width="100%">
+						<tbody>
+							<tr>
+								<td style="width: 400px;">
+									<img src="./resources/PV_variability_5.gif"
+										alt="PV variability 3a" width="400px" height="300 px" />
+								</td>
+								<td style="width: 600px;">
+									<img src="./resources/PV_variability_4.png"
+										alt="PV variability 3b" width="600px" height="300 px" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- 13b. PV variability - case 3 -->
+				<section>
+					<h1>PV nowcasting & short-term forecasting (case #3)</h1>
+					<img src="./resources/PV_variability_5.gif"
+						alt="PV variability 3a" width="700px" height="500 px" />
+				</section>
+
+			</section>
+
+			<!-- 5th part: Further Information-->
+			<section>
+				<h1>Further information...</h1>
+				<img src="./resources/More_information.png"
+					alt="Contacts" width="600px" height="300 px" />
+			</section>
+
+			<!-- 6th part: Final Slide-->
+			<section>
+				<h1>Thank you!</h1>
+				<table style="height: 150px;" width="847">
+					<h3 style="text-align:center; font-size:25px">More <b>training material</b> available at:</h3>
+					<h3 style="text-align:center; font-size:25px"><strong><a
+								href="http://www.eo4geo.eu/training-material-catalogue/">
+								http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+					<br>
+					<h3 style="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3>
+					<h3 style="text-align:center; font-size:25px"><strong><a
+								href="http://www.eo4geo.eu/training-actions/">
+								http://www.eo4geo.eu/training-actions/</a></strong></h3>
+					<tr>
+						<td>
+							<img width="70" box-shadow="none"
+								data-src="./resources/link.png"
+								alt="connection">
+						</td>
+						<td>
+							<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3>
+						</td>
+						<td>
+							<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3>
+						</td>
+					</tr>
+				</table>
+				<table style="height: 150px;" width="847">
+					<tr>
+						<td>
+							<img width="150" box-shadow="none"
+								data-src="./resources/lapup.jpg"
+								alt="connection">
+						</td>
+						<td>
+							<h3 style="font-size: 25px;"><strong><a
+										href="https://www.atmosphere-upatras.gr/en/">https://www.atmosphere-upatras.gr/en/</a></strong>
+							</h3>
+						</td>
+					</tr>
+				</table>
+			</section>
+
+		</div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' }, { src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+
+				]
+			});
+
+		</script>
+
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+				simplemenu: {
+					menuselector: '.menu a'
+				},
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false }
+				]
+			});
+		</script>
+
+</body>
+
+</html>

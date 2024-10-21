@@ -1,0 +1,134 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>The rise of Artificial Intelligence for Earth Observation</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="The rise of Artificial Intelligence for Earth Observation" />
+		<meta property="dc:creator" content="Daniela Iasillo " /> 
+		<meta property="dc:publisher" content="PLANETEK" /> 
+		<meta property="dc:subject" content="	Demonstrate existing EO technologies and data to collect spatial soil, canopy, and crop data Collect Spatial/temporal data
+							Apply satellite-derived and ground-based data into usable viticulture information
+							Understand Relationships from sensors and mapping to the vineyard for practical applications" />
+		<meta property="dc:abstract" content="	In agriculture, information-based systems that were unimaginable a generation ago are improving crop and farm management today. Precision Agriculture, for instance, is one area where sensor technology brings new capabilities that solve age-old problems.
+							In the vineyard, devastating diseases and pests adversely affect wine grape production and cause enormous economic damages annually. Unfortunately, traditional treatments incur additional costs for growers and are largely inefficient." />
+		<meta property="dc:tableOfContents" content="	Basics on Measuring/estimating the soil properties
+								Solar radiation, meteorological conditions and NDVI estimation Basics of yield monitoring from space and ground
+								GPS/GIS/DEM tools for satellite-based georeferencing and map-based analysis
+								Remote sensing and ground monitoring of climatic factors important for vine growth and grape ripening
+								Field Topography Analysis and Yield Trends" />
+		<meta property="dc:description" content="Learning outcomes: 	Recognize and explain at a basic level fundamental physical principles of remote sensing
+										Recognize and explain at a basic level fundamental physical principles of precision viticulture environmental data monitoring
+										Data sources - where to find relevant data, and how to access it
+										Data pre-processing - how to pre-process data to use it for further analysis" /> 
+		<meta property="dc:contributor" content="PLANETEK" />
+		<meta property="dc:created" content="2021-03-02" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="105 min" />
+		<meta property="dc:audience" content="students, Grape producers, Vineyard managers" />
+		<meta property="dc:educationLevel" content="EQF 3-4" />
+		<meta property="dc:source” content="" />
+		<meta property="dc:rightsHolder" content="PLANETEK" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:AM8" />
+		<link rel="dc:relation" href="eo4geo:CV2" />
+		<link rel="dc:relation" href="eo4geo:CF5" />	
+
+
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+
+	<body>
+
+		<div class="reveal" >
+
+			 <!-- FORMATTING FOR HEADER -->
+
+
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>
+
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>
+				 <div  class = "presentation_title" style=" text-align: center; margin-top: 2vh; font-size: 3vh; " >The rise of Artificial Intelligence for Earth Observation</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+
+
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE -->
+				<section >
+					<h1>The rise of Artificial Intelligence for Earth Observation</h1>
+					<br>
+					<a href="resources/EO4GEO_planetek_presentation.pdf">Link to the presentation</a>
+												 <br>
+				</section>
+
+
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+
+				]
+			});
+
+		</script>
+
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false }
+			]
+			});
+		</script>
+
+	</body>
+</html>

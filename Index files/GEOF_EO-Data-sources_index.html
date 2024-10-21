@@ -1,0 +1,844 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>EO4GEO_GEOF: EO Data Sources</title>
+		<meta property="dc:title" content= "EO Data Sources" /> 
+		<meta property="dc:creator" content= "Andrija Krtalic" /> 
+		<meta property="dc:publisher" content="University of Zagreb, Faculty of Geodesy" /> 
+		<meta property="dc:subject" content= "Copernicus, EO4GEO, WP4, Satellite, Earth Observation" /> 
+		<meta property="dc:abstract" content= "This is a lesson on Earth observation data that can be combined with administrative, social and economic data at multiple scales for in-depth analyses. It encompasses observation data from satellites, aircrafts and drones, in-situ measurements or ground-based monitoring stations, anc dan provide unique and timely source data. Within the lesson different Copernicus and other services were listed, along with the agencies and organisations that provide data." /> 
+		<meta property="dc:tableOfContents" content= "Earth observation data; Copernicus services; Other resources; Agencies and organisations" /> 
+		<meta property="dc:description" content= "Learning outcomes: Get to know Earth observation data; Familiarize with the existing Earth observation data and sensors; Understand the Copernicus ecosystem and services; Learn how to access the data; Understand the Earth observation initiatives" />
+		<meta property="dc:contributor" content= "Andrija Krtalic, kandrija@geof.hr" /> 
+		<meta property="dc:created" content= "2020-09-20" /> 
+		<meta property="dc:type" content= "teaching material" /> 
+		<meta property="dc:format" content= "html" /> 
+		<meta property="dc:language" content= "EN" /> 
+		<meta property="dc:SizeOrDuration" content= "45min" /> 
+		<meta property="dc:audience" content= "students" /> 
+		<meta property="dc:educationLevel" content= "EQF 6" /> 
+		<meta property="dc:source" content= " " /> 
+		<meta property="dc:rightsHolder" content= "Andrija Krtalic, University of Zagreb Faculty of Geodesy" /> 
+		<meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" /> 
+		
+		<link rel="dc:relation" href= "eo4geo:CV2-1" />
+		<link rel="dc:relation" href= "eo4geo:GD2-3" />
+		<link rel="dc:relation" href= "eo4geo:AM10-2" />
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 8%;height : 9%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >EO Data Sources</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>EO Data Sources</h1>
+					(EO4GEO - Faculty of Geodesy University of Zagreb)
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+				Earth Observation for decision-making
+				Targeted and efficient environmental policies need a strong evidence base that accounts for the geographical distribution of environmental phenomena and economic activity. The existing evidence base of environmental policies has traditionally suffered from data gaps or incoherent time series. Earth observation from satellites, aircrafts and drones, in-situ measurements or ground-based monitoring stations, can provide a unique and timely source of data that is commensurable across countries, regions and cities. It can help harmonise international reporting on natural resources, ecosystems and environmental sinks. It can be combined with other geo-referenced socio-demographic, economic and public administration data to make indicators and analysis more relevant and targeted. Earth observation is not new, but it is only recently that investments in satellite capabilities, open and free access to data and tools, and advances in algorithms and data processing have started to enable the widespread use of this information at scale, and beyond the specialised scientific community. These developments offer opportunities for improving the range and robustness of environmental data and indicators.
+				https://www.earthobservations.org/geoss.php
+				</aside>
+				</section>
+				
+
+				<section id="intro"> 
+
+					<section > 
+					<h1>Earth Observation Data</h1> 
+					<ul>
+					<li>Earth observation data - unique source of information.</li>
+					<li>It can be combined with administrative, social and economic data at multiple scales for in-depth policy analysis.</li>
+					<li><strong>Earth observation from satellites, aircrafts and drones, in-situ measurements or ground-based monitoring stations, can provide a unique and timely source of data that is commensurable across countries, regions and cities.</strong></li>
+					<li>It can help harmonise international reporting on natural resources, ecosystems and environmental risks.</li>
+					</ul>
+					<p><a href="https://www.oecd.org/environment/indicators-modelling-outlooks/Earth_Observation_for_Decision_Making.pdf">https://www.oecd.org/environment/indicators-modelling-outlooks/Earth_Observation_for_Decision_Making.pdf</a></p>
+					</section>
+				
+					<section > 
+					<br>
+					<h2>Main Data and Product Providers</h2> 
+					<ul>
+					<li>European Space Agency</li>
+					<li>NASA&rsquo;s Earth Observing System Data and Information System (EOSDIS)</li>
+					<li>Data Integration and Analysis System (DIAS, Japan)</li>
+					<li>Planet Labs Inc.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Global Earth Observation System of Systems</h2> 
+					<ul>
+					<li>The Group on Earth Observation (GEO) is a partnership of 104 national governments plus the European Commission and 118 Participating Organizations.</li>
+					<li>GEO implements a Global Earth Observation System of Systems (GEOSS) and envisions a future where decisions and actions for the benefit of humankind are informed by coordinated, comprehensive and sustained Earth observations. <a href="https://ec.europa.eu/info/sites/info/files/eurogeoss/eurogeoss_concept_paper-2017.pdf">https://ec.europa.eu/info/sites/info/files/eurogeoss/eurogeoss_concept_paper-2017.pdf</a></li>
+					<li>EuroGEO will not develop new resources.</li>
+					<li>Instead, it will bring together existing ones and enable them to work more effectively.</li>
+					</ul>					
+					</section>
+					
+					<section>
+					<br>
+					<h2>Parts of Copernicus used by EuroGEO</h2> 
+					<ul>
+					<li><a href="http://www.copernicus.eu/main/services">Copernicus Services</a>and their products for monitoring land, oceans, atmosphere and climate.</li>
+					<li><a href="https://www.copernicus.eu/en/access-data/dias">Copernicus Data and Information Access Services</a> (DIAS).</li>
+					<li>Other sources of Copernicus data
+					<ul>
+					<li><a href="http://www.copernicus.eu/main/contributing-missions">Copernicus contributing missions</a> &ndash;&nbsp;other space mission operators that make some of their data available for Copernicus</li>
+					<li><a href="http://copernicus.eu/main/copernicus-relays">The Copernicus Relays</a> &nbsp;&ndash; a network of ambassadors who coordinate and promote the Copernicus programme</li>
+					<li><a href="http://copernicus.eu/news/copernicus-academy-network-cornerstone-build-skills-sustainability-growth-and-jobs">Academy networks</a></li>
+					<li><a href="http://ec.europa.eu/growth/content/copernicus-incubation-programme-0_en">Copernicus incubation </a><a href="http://ec.europa.eu/growth/content/copernicus-incubation-programme-0_en">programme</a> &ndash; a programme that promotes start-up creation and growth</li>
+					</ul>
+					</li>
+					</ul>				
+					</section>
+					
+				</section>
+					
+				<section id="Copernicus services"> 
+
+					<section > 
+					<br>
+					<h1>Copernicus Services</h1> 
+					<br><img width="700" height="400" img src="./resources/EO-Data-sources/Slide_06-Copernicus_Services.jpg" alt="sat1">
+					<p><a href="https://www.copernicus.eu/en/services">https://www.copernicus.eu/en/services</a></p>
+					</section>
+
+					<section > 
+					<br>
+					<h1>Copernicus Services</h1> 
+					<br><img width="700" height="400" img src="./resources/EO-Data-sources/Slide_07-Copernicus_Open_Acces_Hub.jpg" alt="sat1">
+					<p><a href="https://scihub.copernicus.eu/dhus/#/home">https://scihub.copernicus.eu/dhus/#/home</a></p>
+					</section>
+
+				</section>	
+
+				<section id="Other resources"> 
+
+					<section>
+					<br>
+					<h1>Other resources</h1>
+					<h2>European Observation Resources</h2>
+					<ul>
+					<li><u><a href="https://inspire.ec.europa.eu/about-inspire/563">The Infrastructure for Spatial Information in Europe (INSPIRE)</a></u> enables the sharing of environmental spatial information among public sector organisations</li>
+					<li><u><a href="https://data.europa.eu/euodp/en/home/">The EU&nbsp;Open Data Portal</a></u> gives access to all open data published by EU institutions and bodies &ndash; including observation data</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h1>Other resources</h1>
+					<h2>Global Earth observation resources</h2>
+					<ul>
+					<li><u><a href="https://www.earthobservations.org/gci_gci.shtml">GEOSS Common Infrastructure</a></u> &nbsp;allows users of Earth observations to search and use the data, information, tools and services available through the Global Earth Observation System of Systems.</li>
+					<li>Use the <u><a href="http://www.geoportal.org/">GEOSS web portal</a></u> to look up Earth observation data.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br><img width="700" height="475" img src="./resources/EO-Data-sources/Slide_10-GEOSS_portal.jpg" alt="sat1">
+					<p><a href="https://www.geoportal.org/?f:dataSource=dab">https://www.geoportal.org/?f:dataSource=dab</a></p>
+					</section>					
+					
+				</section>
+	
+					
+				<section id="Agencies"> 
+				
+					
+					<section>
+					<br>
+					<h1>Agencies and organisations</h1> 
+					<ul>
+					<li><u><a href="http://www.esa.int/ESA">European Space Agency</a></u></li>
+					<li><u><a href="https://www.eumetsat.int/website/home/index.html">EUMETSAT</a></u> - a&nbsp;global satellite agency at the heart of Europe</li>
+					<li><u><a href="https://www.ecmwf.int/en/about">European Centre for Medium-Range Weather Forecasts</a></u></li>
+					<li><u><a href="https://www.mercator-ocean.fr/en/">Mercator-Ocean</a></u></li>
+					</ul>
+					</section>	
+					
+					<section>
+					<br>
+					<h2>NASA Earth Observation Data</h2> 
+					<ul>
+					<li>NASA promotes the full and open sharing of all its data to research and applications communities, private industry, academia, and the general public.</li>
+					<li>In order to meet the needs of these different communities, NASA&rsquo;s Earth Observing System Data and Information System (EOSDIS) has provided various ways to discover, access, and use the data.</li>
+					<li>You can also discover data for various instrument measurements by scientific <u><a href="https://earthdata.nasa.gov/discipline">discipline</a></u> or get information on the application of certain datasets to a given topic through our data pathfinders.</li>
+					</ul>					
+					</section>
+					
+					<section>
+					<br>
+					<h2>NASA - Find Data</h2> 
+					<ul>
+					<li>There are several different web-based options for searching and downloading datasets from all of NASA&rsquo;s data collections.
+					<ul>
+					<li>Search by keyword or instrument, geographical or temporal extents, and more through <u><a href="https://search.earthdata.nasa.gov/">Earthdata</a></u><u><a href="https://search.earthdata.nasa.gov/"> Search</a></u>;</li>
+					<li>Discover near real-time data through the Land, Atmosphere Near real-time Capability for EOS (<u><a href="https://earthdata.nasa.gov/lance">LANCE</a></u>) and the Fire Information for Resource Management System (<u><a href="https://earthdata.nasa.gov/firms">FIRMS</a></u>);</li>
+					<li>Use the Common Metadata Repository (<u><a href="https://earthdata.nasa.gov/cmr">CMR</a></u>), a metadata system that catalogs Earth Science data and associated service metadata records; or</li>
+					<li>Browse data and services through the Global Change Master Directory (<u><a href="https://earthdata.nasa.gov/gcmd">GCMD</a></u>).</li>
+					</ul>
+					</li>
+					</ul>					
+					</section>
+
+					<section>
+					<br><img width="700" height="475" img src="./resources/EO-Data-sources/Slide_14-EARTHDATA_portal.jpg" alt="sat1">
+					<p><a href="https://search.earthdata.nasa.gov/search">https://search.earthdata.nasa.gov/search</a></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>NASA - Use Data</h2> 
+					<ul>
+					<li>Discover tools and techniques for accessing, subsetting, filtering, visualizing, mapping, and analyzing data.</li>
+					<li><u><a href="https://earthdata.nasa.gov/recipes">Data recipes</a></u>, pathfinders, and <u><a href="https://earthdata.nasa.gov/webinars">webinars</a></u> provide guidance on how to use NASA data and <u><a href="https://earthdata.nasa.gov/tools">tools</a></u>.</li>
+					</ul>					
+					</section>
+
+					<section>
+					<br>
+					<h2>NASA - Visualize Data</h2> 
+					<ul>
+					<li>Someone will find several ways to find or create visual representations of the data.</li>
+					<li>Much of the instrument data is returned as quantitative values; to help users understand the data, EOSDIS has developed several ways to visualize the information.
+					<ul>
+					<li><u><a href="https://worldview.earthdata.nasa.gov/">Worldview</a></u> &mdash; an interactive web-based tool providing access to full-resolution, global satellite imagery.</li>
+					<li><u><a href="https://wvs.earthdata.nasa.gov/">Worldview Snapshots</a></u> &mdash; a lightweight tool for creating image snapshots from a selection of popular NASA satellite imagery layers.</li>
+					<li>Global Imagery Browse Services (<u><a href="https://earthdata.nasa.gov/gibs">GIBS</a></u>) &mdash; allows you to obtain imagery through your own client application by way of standards-based web services and formats.</li>
+					</ul>
+					</li>
+					</ul>					
+					</section>
+					
+					<section>
+					<br><img width="800" height="475" img src="./resources/EO-Data-sources/Slide_17-Worldview.jpg" alt="sat1">
+					<p><a href="https://worldview.earthdata.nasa.gov/">https://worldview.earthdata.nasa.gov/</a></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Planet Imagery and Archive</h2> 
+					<ul>
+					<li>Planet provides geospatial insights at the speed of change, equipping organizations with the data necessary to make informed, timely decisions.</li>
+					<li>Someone can monitor areas of interest, validate information on the ground, and discover trends relevant to his organization.</li>
+					<li>Planet operates more than 150 satellites that together provide an unprecedented dataset of Earth observation imagery.</li>
+					</ul>
+					<p><u><a href="https://www.planet.com/products/planet-imagery/">https://www.planet.com/products/planet-imagery/</a></u></p>					
+					</section>
+
+					<section>
+					<br>
+					<h2>Data Integration and Analysis System (DIAS, Japan)</h2> 
+					<ul>
+					<li>DIAS is an infrastructure for collecting and analyzing Earths Observations and socio-economic data to solve global environmental issue.</li>
+					<li>The goals of DIAS are:
+					<ul>
+					<li>to collect and store earth observation data;</li>
+					<li>to analyze such data in combination with socio-economic data, and</li>
+					<li>convert data into information useful for crisis management with respect to global-scale environmental disasters, and other threats;</li>
+					<li>and to make this information available within Japan and overseas.</li>
+					</ul>
+					</li>
+					</ul>
+					<p style="text-align: center;"><a href="https://diasjp.net/en/">https://diasjp.net/en/</a></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>(Some) Primary Image Sources </h2> 
+					<ul>
+					<li>DIAS is an infrastructure for collecting and analyzing Earths Observations and socio-economic data to solve global environmental issue.</li>
+					<ul>
+					<li><u><a href="http://earthexplorer.usgs.gov/">USGS Earth Explorer</a></u> - Satellite images, aerial photos, maps, and much more&nbsp;&nbsp;</li>
+					<li><u><a href="http://glovis.usgs.gov/">GloVIS</a></u> - USGS Global Visualization Viewer, a primary site for Landsat and ASTER</li>
+					<li><u><a href="https://search.earthdata.nasa.gov/search">NASA </a></u><u><a href="https://search.earthdata.nasa.gov/search">Earthdata</a></u><u><a href="https://search.earthdata.nasa.gov/search"> Search</a></u> - Access most NASA data - MODIS Land products, ASTER, AVHRR, other data</li>
+					<li><u><a href="http://eros.usgs.gov/satellite-imagery">USGS Satellite Image Catalog</a></u> - A list of the types of satellite images offered by the USGS&nbsp;</li>
+					<li><u><a href="http://landsatlook.usgs.gov/">LandsatLook</a></u><u><a href="http://landsatlook.usgs.gov/"> Viewer</a></u> - USGS browse for Landsat images from January 1999 to present - JPEG images only</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Ocean Data</h2> 
+					<ul>
+					<li><u><a href="http://www.nodc.noaa.gov/">National Oceanographic Data Center</a></u></li>
+					<li><u><a href="http://www.ioos.noaa.gov/">NOAA IOOS</a></u> - Integrated Ocean Observing System</li>
+					<li><u><a href="http://coastwatch.glerl.noaa.gov/">NOAA </a></u><u><a href="http://coastwatch.glerl.noaa.gov/">Coastwatch</a></u> - Great lakes Region</li>
+					<li><u><a href="http://oceancolor.gsfc.nasa.gov/">Ocean Color Products from NASA</a></u> - MODIS and SeaWiFS</li>
+					<li><u><a href="http://remss.com/">Remote Sensing Systems (RSS)</a></u> - Various enhanced research data for oceans</li>
+					<li><u><a href="http://www.northeastoceandata.org/">Northeast Ocean Data</a></u> - From the Northeast Regional Ocean Council</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Atmosphere Data</h2> 
+					<ul>
+					<li><u><a href="https://oco.jpl.nasa.gov/">OCO-2</a></u> - Orbiting Carbon Observatory-2 - JPL</li>
+					<li><u><a href="https://airs.jpl.nasa.gov/">AIRS</a></u> - Atmospheric Infrared Sounder</li>
+					<li><u><a href="http://aura.gsfc.nasa.gov/">AURA</a></u> - Atmospheric Chemistry</li>
+					<li><u><a href="http://www.gosat.nies.go.jp/en/">GOSAT</a></u> - Greenhouse Gases Observing Satellite "IBUKI"</li>
+					<li><u><a href="http://www.sciamachy.org/">SCIAMACHY</a></u> - <strong>SC</strong>anning <strong>I</strong>maging <strong>A</strong>bsorption spectro<strong>M</strong>eter for <strong>A</strong>tmospheric <strong>CH</strong>artograph<strong>Y</strong></li>
+					<li><u><a href="https://www.nasa.gov/mission_pages/calipso/mission/index.html">CALIPSO </a></u><strong>- </strong>Profile observations of cloud and aerosols and IR imagery</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Snow and Ice</h2> 
+					<ul>
+					<li><u><a href="http://nsidc.org/data/modis/index.html">NSIDC</a></u> - National Snow &amp; Ice Data Center - snow cover and sea ice products</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>NDVI Data</h2> 
+					<ul>
+					<li><u><a href="http://www.vito-eodata.be/PDF/portal/Application.html">Global SPOT Vegetation data</a></u> - 10-day composites from 1998 at 1 km resolution</li>
+					<li><u><a href="http://glcfapp.glcf.umd.edu:8080/esdi/index.jsp">GLFC data for the U.S.</a></u> - 16-day composites from 2001 at 250 m resolution</li>
+					<li><u><a href="http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb/modis_subset_order_global_col5.pl">MODIS Data Subsets</a></u> - MODIS Land Product time-series subsets - NDVI as well as other data</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>					
+					
+					
+					<section>
+					<br>
+					<h2>LiDAR</h2> 
+					<ul>
+					<li><u><a href="https://lta.cr.usgs.gov/lidar_digitalelevation">USGS LiDAR</a></u> - USGS LiDAR Information page</li>
+					<li><u><a href="http://lidar.cr.usgs.gov/">CLICK</a></u> - USGS Center for LiDAR Information Coordination and Knowledge - link no longer working</li>
+					<li><u><a href="http://forsys.cfr.washington.edu/">FUSION </a></u>- USFS and U. of Washington LiDAR visualization software</li>
+					<li><u><a href="http://rapidlasso.com/">rapidlasso</a></u> GmbH - Open source LAStools utilities</li>
+					<li><u><a href="http://www.lidarbasemaps.org/">LiDAR Links</a></u> - Where to find LiDAR data</li>
+					<li><u><a href="http://gliht.gsfc.nasa.gov/">NASA G-</a></u><u><a href="http://gliht.gsfc.nasa.gov/">LiHT</a></u> - NASA Goddard LiDAR, Hyperspectral &amp; Thermal Imager (and data)</li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>					
+					
+					
+					<section>
+					<br>
+					<h2>Commercial Image Distributors </h2> 
+					<ul>
+					<li><u><a href="http://www.digitalglobe.com/">DigitalGlobe</a></u> - QuickBird, Ikonos, GeoEye and WorldView (resolution under 1m )</li>
+					<li><u><a href="http://www.digitalglobefoundation.org/application-process">DigitalGlobe</a></u><u><a href="http://www.digitalglobefoundation.org/application-process"> Foundation</a></u> - Satellite imagery grants for academic research</li>
+					<li><u><a href="http://catalog.spotimage.com/PageSearch.aspx">SPOT Image catalog</a></u> - Search for data online</li>
+					<li><u><a href="http://www.astrium-geo.com/en/2-home">Astrium</a></u> - Part of Airbus Defence and Space for SPOT &amp; other European data</li>
+					<li><u><a href="http://www.ssc.se/">Swedish Space Corporation</a></u></li>
+					</ul>
+					<p><u><a href="https://yceo.yale.edu/image-sources">https://yceo.yale.edu/image-sources</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Remote Sensing Earth Observation Directory</h2> 
+					<ul>
+					<li>A list of interesting websites, browsers, books, data sources, etc in Remote Sensing / Earth Observation (RS/EO)</li>
+					<li>RS/EO directory is just another website (based on GitHub pages) where you can find some useful resources in Remote Sensing (RS) &amp; Earth Observation (EO).</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Commercial Satellite Data</h2> 
+					<ul>
+					<li>Airbus Satellite Imagery (<a href="https://www.intelligence-airbusds.com/optical-and-radar-data/">https://www.intelligence-airbusds.com/optical-and-radar-data/</a>)</li>
+					<li>ASTRO DIGITAL (<a href="https://astrodigital.co/">https://astrodigital.co</a>)</li>
+					<li>DigitalGlobe (<a href="https://www.digitalglobe.com/">https://www.digitalglobe.com/</a>)</li>
+					<li>Planet Labs (<a href="https://www.planet.com/">https://www.planet.com/</a>)</li>
+					<li>SkyWatch / Techstars (<a href="https://www.skywatch.com/">https://www.skywatch.com/</a>)</li>
+					<li>Urthecast (<a href="https://www.urthecast.com/">https://www.urthecast.com/</a>)</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Free satellite data</h2> 
+					<ul>
+					<li>Multi-platform
+					<ul>
+					<li>Earth Starts Beating (ESB) Global Mapping Application <a href="http://51.38.225.223/earthstartsbeating/">link</a></li>
+					<li>EOS Platform <a href="https://eos.com/platform/">link</a></li>
+					<li>EOS Land Viewer Data Analytics <a href="https://lv.eosda.com/">link</a></li>
+					<li>ESA EOLi (ESA client for Earth Observation Catalogue and Ordering Services / not web-based) <a href="https://earth.esa.int/web/guest/eoli">link</a></li>
+					<li>NASA Earth Observations (NEO) <a href="https://neo.sci.gsfc.nasa.gov/">link</a></li>
+					<li>NASA EarthData search <a href="https://search.earthdata.nasa.gov/">link</a></li>
+					</ul>
+					</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Free satellite data: Multi-platform</h2> 
+					<ul>
+					<li>Planet Explorer Beta <a href="https://www.planet.com/explorer">link</a></li>
+					<li>Rocket EO data browser <a href="https://mapshup.com/projects/rocket/">link 1</a> <a href="https://github.com/jjrom/resto">link 2</a></li>
+					<li>Sinergise EO Browser <a href="http://apps.sentinel-hub.com/eo-browser/">link</a></li>
+					<li>USGS EarthExplorer <a href="https://earthexplorer.usgs.gov/">link</a></li>
+					<li>USGS GloVis <a href="https://glovis.usgs.gov/">link</a></li>
+					<li>Vertex - Alaska Satellite Facility (ASF) Data Portal <a href="https://vertex.daac.asf.alaska.edu/">link</a></li>
+					<li>Vito Data Portal <a href="http://www.vito-eodata.be/PDF/portal/Application.html">link</a></li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>			
+
+					<section>
+					<br>
+					<h2>Free satellite data: Sentinel</h2> 
+					<ul>
+					<li>Awesome Sentinel curated list of Sentinel-related tools, tutorials and API&rsquo;s <a href="https://krstn.eu/awesome-Sentinel/">link</a></li>
+					<li>BOKU Sentinel-2 data pre-processing service <a href="https://s2.boku.eodc.eu/">link</a></li>
+					<li>ESA SciHub Sentinels Data <a href="https://scihub.copernicus.eu/dhus">link</a></li>
+					<li>IPSentinel - Sentinel data hub for Portugal <a href="https://ipsentinel.ipma.pt/">link</a></li>
+					<li>Sentinel-2 World cloudless mosaic browser <a href="https://s2maps.eu/">link</a></li>
+					<li>Theia/CNES Sentinel-2 data pre-processing service <a href="https://theia.cnes.fr/atdistrib/rocket/">link</a></li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Free satellite data: Landsat & MODIS </h2> 
+					<ul>
+					<li><strong>Landsat</strong>
+					<ul>
+					<li>USGS ESPA Landsat data ordering interface <a href="https://espa.cr.usgs.gov/">link</a></li>
+					<li>EarthNow! Landsat Image Viewer <a href="https://earthnow.usgs.gov/observer/">link</a></li>
+					</ul>
+					</li>
+					<li><strong>Modis</strong>
+					<ul>
+					<li>MODIS Web Earth Observation Monitor (webEOM) <a href="http://www.earth-observation-monitor.net/">link</a></li>
+					</ul>
+					</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>RS/EO-based data sets, data sources and ‘high-level’ products (1)</h2> 
+					<ul>
+					<li><strong>Digital Elevation/Surface Models</strong>
+					<ul>
+					<li>ASTER GDEM Elevation data link 1 link 2</li>
+					<li>JAXA ALOS Global Digital Surface Model &ldquo;ALOS World 3D - 30m&rdquo; (AW3D30) link</li>
+					</ul>
+					</li>
+					<li><strong>Land cover / land use</strong>
+					<ul>
+					<li>GLOBELAND30 (Global Land Cover data at 30m) <a href="http://www.globallandcover.com/GLC30Download/index.aspx">link</a></li>
+					<li>USGS 30 Meter Global Land Cover <a href="https://landcover.usgs.gov/glc/">link</a></li>
+					</ul>
+					</li>
+					<li><strong>Fused data sets</strong>
+					<ul>
+					<li>Harmonized Landsat / Sentinel data <a href="https://hls.gsfc.nasa.gov/">link</a></li>
+					</ul>
+					</li>
+					<li><strong>Fires </strong>
+					<ul>
+					<li>Global Fire Emissions Database, Version 4.1 (GFEDv4) <a href="https://daac.ornl.gov/VEGETATION/guides/fire_emissions_v4_R1.html">link</a></li>
+					</ul>
+					</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>RS/EO-based data sets, data sources and ‘high-level’ products (2)</h2> 
+					<ul>
+					<li><strong>Forest data layers</strong>
+					<ul>
+					<li>Global 1km Forest Canopy Height ICEsat/GLAS <a href="https://webmap.ornl.gov/ogc/dataset.jsp?ds_id=10023">link</a></li>
+					<li>Global Forest Cover Change v-1.4 (2000-2016) / U. Maryland <a href="https://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.4.html">link 1</a> <a href="https://earthenginepartners.appspot.com/science-2013-global-forest">link 2</a></li>
+					<li>Global PALSAR-2/PALSAR/JERS-1 Mosaic and Forest/Non-Forest map <a href="http://www.eorc.jaxa.jp/ALOS/en/palsar_fnf/fnf_index.htm">link</a></li>
+					<li>Global Tree Density dataset <a href="http://elischolar.library.yale.edu/yale_fes_data/1/">link</a></li>
+					<li>JRC Forest cover mapping (1990, 2000 and 2006) <a href="http://forest.jrc.ec.europa.eu/activities/forest-mapping">link</a></li>
+					</ul>
+					</li>
+					<li><strong>Surface Temperature</strong>
+					<ul>
+					<li>Sea Surface Temperature <a href="https://earthdata.nasa.gov/sea-surface-temperature">link</a></li>
+					</ul>
+					</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>RS/EO-based data sets, data sources and ‘high-level’ products (3)</h2> 
+					<ul>
+					<li><strong>Multiple themes (land cover, vegetation, water, energy, climate, &hellip;)</strong>
+					<ul>
+					<li>Copernicus Land Monitoring Service and high-level products <a href="http://land.copernicus.eu/">link</a></li>
+					<li>ESA Climate Change Initiative (CCI) / Open Data Portal <a href="http://cci.esa.int/">link</a></li>
+					<li>EarthEnv (global environmental layers for assessing status and trends in biodiversity, ecosystems, and climate) <a href="http://www.earthenv.org/">link</a></li>
+					<li>NOAA/EOG/NCEI (nighttime observations of lights and combustion sources worldwide) <a href="https://ngdc.noaa.gov/eog/index.html">link</a></li>
+					<li>SEDAAC (Socioeconomic Data and Applications Data Center) datasets (mangroves, fires, urban extent, demography, etc) <a href="http://sedac.ciesin.columbia.edu/data/sets/browse">link</a></li>
+					<li>WCMC-UNEP datasets (biodiversity, SST, ecoregions, protected areas, mangrove ecosystems, marine species, coral reefs, &hellip;) <a href="http://data.unep-wcmc.org/">link</a></li>
+					</ul>
+					</li>
+					</ul>
+					<p><u><a href="http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/">http://joaogoncalves.cc/Remote-Sensing-Earth-Observation-directory/</a></u></p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (1)</h2> 
+					<ul>
+					<li><strong>NASA Earth Observations (NEO)</strong>
+					<ul>
+					<li><a href="http://neo.sci.gsfc.nasa.gov/">NASA&rsquo;s Earth Observations (NEO)</a> strives to make global satellite imagery very accessible to all users. It is the best when it comes to accessing our local environment daily from space with over 50 global datasets from atmosphere, energy, land, life, ocean and a whole lot more.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="380" height="280" img src="./resources/EO-Data-sources/Slide_37-NASA Earth Observation.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ</a></strong></p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (2)</h2> 
+					<ul>
+					<li><strong>USSG Earth explorer</strong>
+					<ul>
+					<li>The <a href="http://earthexplorer.usgs.gov/">USGS Earth Explorer</a> remains an incredibly rich imagery data source from the remotest to the most urban location, anywhere around the world. For a number of reasons, USGS stands tallest in the provision of abundant free satellite images.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="450" height="340" img src="./resources/EO-Data-sources/Slide_38-USGS-Earth-Explorer.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ</a></strong></p>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (3)</h2> 
+					<ul>
+					<li><strong>ESA&rsquo;s Sentinel Satellite data</strong>
+					<ul>
+					<li>The official download headquarters for the European Space Agency&rsquo;s Sentinel satellite data, <a href="https://scihub.copernicus.eu/dhus">Sentinel&rsquo;s Scientific Data Hub</a>.</li>
+					<li>ESA&rsquo;s Copernicus Programme - five earth observing satellites made possible by <a href="https://sentinel.esa.int/web/sentinel/toolboxes/sentinel-2">tool box</a> &ndash; sentinel-2 further increases the source of acquiring data remotely from ESA&rsquo;s. </li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="450" height="300" img src="./resources/EO-Data-sources/Slide_39-Sentinel ​Satellite ​data Hub.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ</a></strong></p>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (4)</h2> 
+					<ul>
+					<li><strong>NOAA (National Oceanic and Atmospheric Administration) Class</strong>
+					<ul>
+					<li><a href="http://www.class.noaa.gov/">The Comprehensive Large Array-data Stewardship System (CLASS)</a> is really in a class of its own with abundance of data accumulated from other rich and viable sources such as the US Department of Defense (DoD) Polar-orbiting Operational Environmental Satellite (POES), Environmental Satellite (GOES), NOAA&rsquo;s Geostationary, Operational), and other derived data.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="450" height="300" img src="./resources/EO-Data-sources/Slide_40-NOAA-National-Oceanic-and-Atmospheric-Administration-Class.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (5)</h2> 
+					<ul>
+					<li><strong>Terra Populus</strong>
+					<ul>
+					<li><a href="https://www.terrapop.org/">Terra Populus</a> ability to integrate population and environmental data from over 160 countries around the world makes it very unique.</li>
+					<li>It combines spatiotemporal data covering population counts and surveys, satellite imagery of land cover, weather station data, Land use data.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_41-Terra-Populus.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (6)</h2> 
+					<ul>
+					<li><strong>NASA Reverb</strong>
+					<ul>
+					<li><a href="http://reverb.echo.nasa.gov/reverb">NASA&rsquo;s Reverb Data Hub</a> - NASA Reverb communicates with a plethora of satellites such as NASA DC, GPS satellites, SMAP, JASON, METEOSAT, ALOS, TRMM, Aura, Aqua and much more.</li>
+					<li>Tutorial for gain easy access to NASA Reverb Hub. (<a href="https://www.youtube.com/watch?v=ozbDfWnz9eg">https://www.youtube.com/watch?v=ozbDfWnz9eg</a>)</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_42-NASA-Reverb.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (7)</h2> 
+					<ul>
+					<li><strong>Earth Observation Link (</strong><strong>EOLi</strong><strong>)</strong>
+					<ul>
+					<li><a href="https://earth.esa.int/web/guest/eoli">The Earth Observation Link (</a><a href="https://earth.esa.int/web/guest/eoli">EOLi</a><a href="https://earth.esa.int/web/guest/eoli">)</a> is the European Space Agency&rsquo;s client for Earth Observation Catalog and Ordering Services.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_43-Earth-Observation-Link-EOLi.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (8)</h2> 
+					<ul>
+					<li><strong>National Institute for Space Research (INPE)</strong>
+					<ul>
+					<li><a href="http://www.dgi.inpe.br/CDSR/">INPE Image Catalogue</a> is combined satellite image source from Brazil and China which lets you download free satellite imagery data from their remote image catalog. In addition to their own Earth Resources (CBERS-2, CBERS-2b), they also tap into satellites of United States, United Kingdom as well as the Indian (Landsat, CBERS, Aqua, S-NPP) satellites.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_44-National-Institute-for-Space-Research-INPE.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (9)</h2> 
+					<ul>
+					<li><strong> JAXA&rsquo;s Global ALOS 3D World</strong>
+					<ul>
+					<li><a href="http://www.eorc.jaxa.jp/ALOS/en/aw3d30/">the JAXA Global ALOS link</a> - a 30-meter spatial resolution digital surface model (DSM) released for public access invented by the Japan Aerospace Exploration Agency&rsquo;s (JAXA).</li>
+					<li>Its great precision in global-scale elevation data using the Advanced Land Observing Satellite &ldquo;DAICHI&rdquo; (ALOS) &ndash; PALSAR&rsquo;s L-band makes it very unique.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_45-JAXA-s-Global-ALOS-3D-World.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (10)</h2> 
+					<ul>
+					<li><strong> NOAA Data Access Viewer</strong>
+					<ul>
+					<li>At <a href="https://coast.noaa.gov/dataviewer/%23">NOAA Data Access Viewer </a>someone cannot only find and download definitive datasets, there also given the flexibility to customize it, all free.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="450" height="400" img src="./resources/EO-Data-sources/Slide_46-NOA-DATA.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>	
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (11)</h2> 
+					<ul>
+					<li><strong> VITO Vision</strong>
+					<ul>
+					<li><a href="http://www.vito-eodata.be/PDF/portal/Application.html">VITO Vision</a> is a coarse resolution satellite best adapted for large scale applications.</li>
+					<li>It offers free satellite images which map out the Earth surface&rsquo;s vegetation patterns.</li>
+					<li>They are SPOT-Vegetation, PROBA-V and METOP.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="550" height="300" img src="./resources/EO-Data-sources/Slide_47-VITO.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (12)</h2> 
+					<ul>
+					<li><strong>DigitalGlobe</strong><strong> Free Product Samples</strong>
+					<ul>
+					<li>Free satellite imagery samples can also be found in <a href="http://www.digitalglobe.com/">DigitalGlobe</a>, which ranks as the largest and sharpest commercial satellite data supplier in the world.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="550" height="300" img src="./resources/EO-Data-sources/Slide_48-DIGITALGLOBE.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (13)</h2> 
+					<ul>
+					<li><strong> NOAA Digital Coast</strong>
+					<ul>
+					<li><a href="https://coast.noaa.gov/digitalcoast/">NOAA&rsquo;s Digital Coast</a> - coastal data.</li>
+					<li>The range of free satellite imagery dataset such as infrared, radar and true color composite can be download.</li>
+					<li>It provide also imagery, land cover, elevation, socio-economic and benthic data.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="600" height="300" img src="./resources/EO-Data-sources/Slide_49-NOAA-Digital-Coast.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>						
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (14)</h2> 
+					<ul>
+					<li><strong> Global Land Cover Facility</strong>
+					<ul>
+					<li><a href="http://landcover.org/">Landcover.org</a> - land cover data and land cover changes around the world (MODIS, AVHRR and Landsat satellite imagery)</li>
+					<li>Global Land Cover Facility encompassing both geologic, agriculture, hydrologic, vegetation, and urban areas on the earth&rsquo;s surface.</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="500" height="300" img src="./resources/EO-Data-sources/Slide_50-NOAA-Digital-Coast.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (14)</h2> 
+					<ul>
+					<li><strong>BlackBridge</strong><strong>/Geo-Airbus</strong>
+					<ul>
+					<li>Some satellites such as RapidEye, SPOT, and TerraSAR data are specific to some fields like oil &amp; gas, security, agriculture, environment, disaster mapping, mining and energy.</li>
+					<li>Blackbridge provides these specific satellites for Canadians only while Airbus Defense Systems provides for the rest of the world.</li>
+					<li>Sample data can be downloaded in some of the locations:
+					<ul>
+					<li><a href="http://www.blackbridge.com/rapideye/myrapideye/index.html">Free RapidEye Data from </a><a href="http://www.blackbridge.com/rapideye/myrapideye/index.html">BlackBridge</a></li>
+					<li><a href="http://www.geo-airbusds.com/satellite-image-gallery/">Airbus </a><a href="http://www.geo-airbusds.com/satellite-image-gallery/">Defense</a><a href="http://www.geo-airbusds.com/satellite-image-gallery/"> and Space Gallery Home</a></li>
+					<li><a href="http://www.geo-airbusds.com/en/23-sample-imagery">Airbus </a><a href="http://www.geo-airbusds.com/en/23-sample-imagery">Defense</a><a href="http://www.geo-airbusds.com/en/23-sample-imagery"> &amp; Space Sample Imagery Web Viewer.</a></li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					<br><img width="200" height="80" img src="./resources/EO-Data-sources/Slide_51-BlackBridge.jpg" alt="sat1">
+					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Top 20 Free Satellite Imagery Data Sources (15)</h2> 
+					<ul>
+					<li><strong> The National Map Viewer and Download Platform</strong> (<a href="https://viewer.nationalmap.gov/launch/">Topographic Information</a>)</li>
+					<li><strong>UNAVCO Research Data</strong> (<a href="http://www.unavco.org/data/imaging/sar/data-access-methods/SarArchive/flexweb/SearchSarScene.html">the UNAVCO SAR Archive</a>)</li>
+					<li><strong>LANCE: NASA NEAR REAL-TIME DATA AND IMAGERY</strong> (<a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time">this link</a>)</li>
+					<li><strong>Natural Earth&rsquo;s Data</strong> (<a href="http://www.naturalearthdata.com/downloads/">Natural Earth Data</a>)</li>
+					<li><strong>Bhuvan</strong><strong> Indian Geo-Platform of ISRO</strong> (<a href="http://bhuvan.nrsc.gov.in/data/download/index.php">Bhuvan</a><a href="http://bhuvan.nrsc.gov.in/data/download/index.php"> Indian Geo-Platform</a>)</li>
+					</ul>					<p><strong><a href="https://thewaternetwork.com/_/geographic-information-systems-gis/article-FfV/20-free-satellite-imagery-data-sources-zwPbhtw7UpYjy8HqXba2YQ">https://thewaternetwork.com/_/geographic-information-systems-gis/</a></strong></p>
+					</section>
+					
+					<section>
+					<br><img width="1024" height="550" img src="./resources/EO-Data-sources/Slide_53-full.jpg" alt="sat1">
+					</section>
+					
+			
+				</section>	
+
+
+<section id="Local"> 
+
+					<section>
+					<br>
+					<h1>Thank you</h1> 
+					<ul>
+					<li></li>
+					</ul>
+					</section>
+
+				</section>
+				
+
+				
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

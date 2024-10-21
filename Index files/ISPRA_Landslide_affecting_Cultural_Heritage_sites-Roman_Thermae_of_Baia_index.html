@@ -1,0 +1,416 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Landslide affecting Cultural Heritage sites - Roman Thermae of Baia</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Landslide affecting Cultural Heritage sites - Roman Thermae of Baia" />
+		<meta property="dc:creator" content="Gabriele Leoni" /> 
+		<meta property="dc:publisher" content="ISPRA" /> 
+		<meta property="dc:subject" content="	The first objective is to spread and encourage the use of satellite radar data for deformation analyses, not only in geological and environmental applications but also in the management and conservation of built heritage in cultural sites. The use case aims at proposing a simple and easy-to-use methodology to exploit Persistent Scatterer Interferometry (PSI) data related to the Roman Thermae of Baia.
+							Furthermore, the PSI processing will allow to perform PS spatial and velocity analysis focused on the detection of historical and recent deformation." />
+		<meta property="dc:abstract" content="[GD] Geospatial Data [GD2-2] Remote sensing, [GIST] Geographic Information Science and Technology" />
+		<meta property="dc:tableOfContents" content="The Roman Thermae of Baia is located in Bacoli municipality (Naples), close by the Phlegrean Fields caldera, representing a unique example of volcanic-related subsidence with unrest cycles characterized by intense ground uplift and down lift; it extends exactly along the inner side of the western sector of   the volcanic building of Baia. The particular location of the site, along the steep internal slopes of the volcano, required a strong control over the area development with massive terracing works. The instability phenomena seem to be related to the very high acclivity values of top sector of the slope favouring the activation of modest collapse phenomena as well as by ordinary management and maintenance of the area (e.g. invasive vegetation, absence of drainage systems). Preliminary InSAR analysis were performed exploiting ERS and COSMO Sky-Med datasets; the first dataset show ground lowering phenomena, highlighting that subsidence affected areas close Phlegrean Fields during that period (1993 – 2003). The deformation rates (5-10 mm/yr) recorded in the investigated time interval are consistent with the general down lift cycle, while time series show some small uplift events. InSAR data processing will take into consideration ERS and COSMO Sky-Med datasets and the most recent SENTINEL-1 data, allowing us to assess the instability phenomena evolution of the area in a recent  time interval."/>
+		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow including image acquisition, (pixel-based) image analysis, classification and validation; get to know online portals, data catalogues, and pricing schemes for satellite data; Familiarize with the European Copernicus Earth observation programme; Master standard image analysis routines as implemented in ArcGIS Pro" /> 
+		<meta property="dc:contributor" content="" />
+		<meta property="dc:created" content="2021-12-01" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsHolder" content="ISPRA" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:GIST" />
+		<link rel="dc:relation" href="eo4geo:IP1" />
+		<link rel="dc:relation" href="eo4geo:IP1-5" />
+		<link rel="dc:relation" href="eo4geo:CV" />	
+		<link rel="dc:relation" href="eo4geo:PS" />
+		<link rel="dc:relation" href="eo4geo:PS1-1" />
+		<link rel="dc:relation" href="eo4geo:PS1-3" />
+		<link rel="dc:relation" href="eo4geo:PS1-3-4-1" />
+		<link rel="dc:relation" href="eo4geo:GD" />
+		<link rel="dc:relation" href="eo4geo:GD2-2" />
+		<link rel="dc:relation" href="eo4geo:GD2" />
+		<link rel="dc:relation" href="eo4geo:GD11" />
+		<link rel="dc:relation" href="eo4geo:GD11-4" />
+		<link rel="dc:relation" href="eo4geo:GD11-3" />
+							    
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 7%;height : 7%" ></div>		
+				 <div  class = "presentation_title" style="text-align: center; margin-top: 2vh; font-size: 3vh;" >Landslide affecting Cultural Heritage sites - Roman Thermae of Baia</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- HEADER SLIDE --> 
+				<section >
+					<h1>Landslide affecting Cultural Heritage sites - Roman Thermae of Baia</h1> 
+					<br>
+					<h2>An EO4GEO MOOC<h2>
+					<br>
+				</section>
+
+				<!-- LINKS TO INDIVIDUAL COURSE LECTURES -->
+
+				<section id="intro1" class="scrollable">
+				<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+					   <h1 style="font-size:60px">Overview</h1>
+					</div><br><br><br>
+				
+					<table width="500px">
+
+						<br>
+						<tr></tr>
+						<tr><td><a href="#slide4">1</a></td><td>EO4GEO Project overview</td><td width="30%">
+							<a href="https://eo4geocourses.github.io/GISIG_Introduction_to_EO4GEO/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide10">2</a></td><td>COPERNICUS Programme data and services</td><td width="30%">
+							<a href="https://www.copernicus.eu/en/opportunities/education/copernicus-mooc">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">
+							</a></td></tr>
+						<tr><td><a href="#slide16">2.1</a></td><td>Copernicus Land Monitoring Service components and applications</td><td width="30%">
+							<a href="https://eo4geocourses.github.io/GEOF_Copernicus-Service-Land/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">
+							</a>	</td></tr>
+						<tr><td><a href="#slide29">3</a></td><td>Cultural Heritage - Phlegrean Fields Archaeological Park</td><td width="30%">	
+							<a href="resources/3.pdf"> 
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide29">3.1</a></td><td>Roman Thermae of Baia: history and monuments</td>
+						<td width="30%">
+							<a href="resources/31.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">4</a></td><td>Geohazard assessment - Background knowledge on natural risk management and assessment</td>
+						<td width="30%">
+							<a href="resources/4.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">4.1</a></td><td>Volcanic hazard - Geological, geomorphological and volcanic overview, volcanic and bradyseism hazard</td>
+						<td width="30%">
+							<a href="resources/41.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">4.2</a></td><td>Landslide hazard - Landslides hazard affecting Baia site</td>
+						<td width="30%">
+							<a href="resources/42.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5a</a></td><td>SAR interferometry (a) - Introduction to Remote Sensing</td>
+						<td width="30%">
+							<a href="https://eo4geocourses.github.io/IGIK_Introduction-to-Remote-Sensing/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5b</a></td><td>SAR interferometry (b) - EO Data Sources</td>
+						<td width="30%">
+							<a href="https://eo4geocourses.github.io/GEOF_EO-Data-sources/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5.1a</a></td><td>InSAR fundamentals (a) - Introduction to Radar Remote Sensing</td>
+						<td width="30%">
+							<a href="https://eo-college.org/courses/echoes-in-space/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5.1b</a></td><td>InSAR fundamentals (b) - SAR Imaging</td>
+						<td width="30%">
+							<a href="https://eo-college.org/resource/sar-imaging/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5.1c</a></td><td>InSAR fundamentals (c) - InSAR Basics</td>
+						<td width="30%">
+							<a href="https://eo-college.org/resource/insar_basics/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5.1d</a></td><td>InSAR fundamentals (d) - Introduction to SAR interferometry</td>
+						<td width="30%">
+							<a href="https://eo-college.org/resource/introduction-to-sar-interferometry/">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">5.2</a></td><td>InSAR analysis - PS and SBAS techniques, SNAP+StaMPS applications, InSAR calibration</td>
+						<td width="30%">
+							<a href="resources/52.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">6</a></td><td>Ground Motion Monitoring - InSAR & in-situ data interpretation</td>
+						<td width="30%">
+							<a href="resources/6.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">7</a></td><td>Integrated Application - methodology and application, lessons learnt more info references</td>
+						<td width="30%">
+							<a href="resources/7.pdf">
+								<img height="30px" data-src="resources/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+					</table>
+			
+			</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">01 | EO4GEO Project</h1></a><br>
+						<h2 style="font-size:30px">EO4GEO Project overview</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geocourses.github.io/GISIG_Introduction_to_EO4GEO/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>		
+
+			
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">02 | COPERNICUS</h1></a><br>
+						<h2 style="font-size:30px">COPERNICUS Programme data and services</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://www.copernicus.eu/en/opportunities/education/copernicus-mooc"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>	
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">02.1 | Copernicus Land Monitoring Service</h1></a><br>
+						<h2 style="font-size:30px">CLMS components and applications</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geocourses.github.io/GEOF_Copernicus-Service-Land/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">3 | Cultural Heritage</h1></a><br>
+						<h2 style="font-size:30px">Phlegrean Fields Archaeological Park</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/3.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">3.1 | Roman Thermae of Baia</h1></a><br>
+						<h2 style="font-size:30px">Roman Thermae of Baia: history and monuments</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/31.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">4 | Geohazard Assessment</h1></a><br>
+						<h2 style="font-size:30px">Background knowledge on natural risk management and assessment</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/4.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">4.1 | Volcanic hazard</h1></a><br>
+						<h2 style="font-size:30px">Geological, geomorphological and volcanic overview, volcanic and bradyseism hazard</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/41.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">4.2 | Landslide hazard</h1></a><br>
+						<h2 style="font-size:30px">Landslides hazard affecting Baia site</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/42.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5a | SAR interferometry (a)</h1></a><br>
+						<h2 style="font-size:30px">Introduction to Remote Sensing</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geocourses.github.io/IGIK_Introduction-to-Remote-Sensing/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5b | SAR interferometry (b)</h1></a><br>
+						<h2 style="font-size:30px">EO Data Sources</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geocourses.github.io/GEOF_EO-Data-sources/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5.1.a | InSAR fundamentals (b)</h1></a><br>
+						<h2 style="font-size:30px">Introduction to Radar Remote Sensing</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo-college.org/courses/echoes-in-space/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5.1.b | InSAR fundamentals (b)</h1></a><br>
+						<h2 style="font-size:30px">SAR Imaging</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo-college.org/courses/echoes-in-space/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5.1.c | InSAR fundamentals (c)</h1></a><br>
+						<h2 style="font-size:30px">InSAR Basics</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo-college.org/resource/insar_basics/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5.1.d | InSAR fundamentals (d)</h1></a><br>
+						<h2 style="font-size:30px">Introduction to SAR interferometry</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo-college.org/resource/introduction-to-sar-interferometry/"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">5.2 | InSAR analysis</h1></a><br>
+						<h2 style="font-size:30px">PS and SBAS techniques, SNAP+StaMPS applications, InSAR calibration </h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/52.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">06 | Ground Motion Monitoring</h1></a><br>
+						<h2 style="font-size:30px">InSAR & in-situ data interpretation</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/6.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro1"><h1 style="font-size:58px">07 | Integrated Application</h1></a><br>
+						<h2 style="font-size:30px">methodology and application, lessons learnt more info references</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="https://eo4geo.sbg.ac.at/ISPRA/MOOC/7.pdf"><img  class="plain" data-src="resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

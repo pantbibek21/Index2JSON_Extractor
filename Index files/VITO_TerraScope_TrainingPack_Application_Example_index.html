@@ -1,0 +1,373 @@
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Terrascope Application Development</title>
+    <meta property="dc:title" content= "Terrascope Application Development" />
+    <meta property="dc:creator" content= "VITO - Vlaamse Instelling voor Technologisch Onderzoek" />
+    <meta property="dc:publisher" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" />
+    <meta property="dc:subject" content= "Developing Applications using Terrascope Platform and Tools" />
+    <meta property="dc:abstract" content= "This slide set provides an overview of how researchers or students could utilize Terrascope Jupyter notebooks and web services API such as openEO to develop remote sensing algorithms and applications" />
+    <meta property="dc:tableOfContents" content= "Virtual Environments;
+						  Accessing Terrascope Notebooks;
+						  Warm-up Exercise;
+						  Interactive Exercise on Phenology Use Case" />
+    <meta property="dc:description" content= "Learning outcomes: Understand Terrascope development environments including Jupyter notebooks; Develop a simple application, step-by-step, using Terrascope and OpenEO API; Analyse Phenology Use Case implementation as an advanced exercise" />
+    <meta property="dc:contributor" content= "Jeroen Dries, Tamas Banyai, Hande Erdem" />
+    <meta property="dc:created" content= "2020-08-31" />
+    <meta property="dc:type" content= "teaching material" />
+    <meta property="dc:format" content= "html" />
+    <meta property="dc:language" content= "EN" />
+    <meta property="dc:SizeOrDuration" content= "45min" />
+    <meta property="dc:audience" content= "students" />
+    <meta property="dc:educationLevel" content= "EQF 4" />
+    <meta property="dc:source" content= "" />
+    <meta property="dc:rightsHolder" content= "VITO - Vlaamse Instelling voor Technologisch Onderzoek" />
+    <meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+    <link rel="dc:relation" href="eo4geo:IP5-1"/>
+    <link rel="dc:relation" href="eo4geo:IP3-11"/>
+    <link rel="dc:relation" href="eo4geo:IP3-1"/>
+
+    <link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+    <!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+    <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
+    <!-- white background design -->
+    <link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+    <!-- anthrazit background design -->
+    <!-- EO4GEO FONT ROBOTO SLAB -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link rel="stylesheet" href="partnerLogo.css" id="theme">
+    <link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+</head>
+<body>
+
+<div class="reveal">
+
+    <!-- FORMATTING FOR HEADER -->
+
+    <div class="eo4geologo" style="width: 11%;height : 11%"></div>
+
+    <div class="partnerlogo" style="width: 15%;height : 11%"></div>
+    <div class="presentation_title" style=" text-align: center ">Developing Applications using Terrascope Platform</div>
+    <!--The title of the presentation appears on each slide-->
+
+    <div class="slides">
+        <!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE -->
+        <section>
+            <h1>Developing Applications using Terrascope Platform</h1>
+        </section>
+        <section>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li>Virtual Environments</li>
+                <li>Accessing Terrascope Notebooks</li>
+                <li>Warm-up Exercise</li>
+                <li>Interactive Exercise on Phenology Use Case</li>
+            </ul>
+        </section>
+        <section id="ve">
+            <section>
+                <h2>Virtual Environments</h2>
+                <p class="fragment">Terrascope provides two virtual environments with necessary tools and data so that
+                    you can start
+                    coding immediately.</p>
+            </section>
+            <section>
+                <h2>Virtual Machines</h2>
+
+                <p class="fragment">
+                    Allows developers or scientists to </p>
+                <ul class="fragment">
+                    <li>access to the available data archives</li>
+                    <li>use powerful tool set and libraries for further
+                        data exploration
+                        and analysis (using e.g. the SNAP toolbox, GRASS GIS, and QGIS)
+                    </li>
+                    <li>develop-debug-test
+                        applications (in e.g. R, Python or Java)
+                    </li>
+                </ul>
+
+
+                <img src="resources/terrascope/vm.jpg" class="fragment">
+
+            </section>
+            <section>
+                <h2>Jupyter Notebooks</h2>
+                <p class="fragment">
+                    A Notebook is a web application that allows you to create and share scripts
+                    that contain live code, equations, visualizations, and narrative supporting text. It is basically a
+                    script broken down into several
+                    major blocks (cells) that can be executed sequentially. Together with the supporting text cells, the
+                    script should be rather easy to comprehend.
+                </p>
+                <p class="fragment">The Terrascope Notebooks are based on the Open Source
+                    Jupyter notebooks application and tailored to the needs of remote sensing users.
+                    Each notebook has direct access to the Terrascope datasets. A notebook facilitates a better and
+                    faster understanding of your algorithm by other users.
+                </p>
+
+                <p class="fragment">In this training, we will focus on the Notebooks.</p>
+            </section>
+        </section>
+        <section>
+            <h2>Accessing Terrascope Notebooks</h2>
+            In order to access the Terrascope Notebooks, go to <a href="https://notebooks.terrascope.be/">https://notebooks.terrascope.be/</a>
+            address.<br>
+            You can login if you have an existing account or register if you're a new user.
+            <img src="resources/terrascope/nb_login1.jpg" height="60%" width="60%">
+        </section>
+        <section>
+            <h2>Terrascope Notebooks</h2>
+            <p>Once you login, you will land on the home page:</p>
+            <img src="resources/terrascope/nb_home2.jpg" height="60%" width="60%">
+            <p>You can either create new notebooks or browse existing ones.</p>
+        </section>
+        <section id="warmup">
+            <section>
+                <h2>Warm Up</h2>
+                <p class="fragment">Let's start with a warm up exercise first and do a step-by-step simple band
+                    calculation on Sentinel-2 imagery using openEO API. </p>
+                <p class="fragment">We'll use OpenEO because it reduces the complexity of handling large amounts and
+                    variety of EO data by implementing a standard, with a focus on large scale processing and time
+                    series analysis. You can find more information at <a href="https://openeo.org/">openeo.org</a></p>
+            </section>
+            <section>
+                <h2>Warm Up</h2>
+                <p class="fragment"> As a first step, go to your Terrascope Notebook homepage and select "python36"
+                    notebook to create a new notebook.</p>
+                <img src="resources/terrascope/nbe1.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">As we are going to use the python client API for openEO, you must start by importing
+                    the necessary library.
+                    Click on the "+" icon to add a new cell. It will be added automatically as a "Code" cell.</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    import openeo</p>
+                <img src="resources/terrascope/nbe2.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">You can also add "Text" cells. These are useful for adding information but won't be
+                    executed by the kernel.</p>
+                <img src="resources/terrascope/nbe3.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">In the next step, we are going to create a new session by connecting to the openEO
+                    backend:</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    session =
+                    openeo.connect("https://openeo.vito.be/openeo/1.0.0")</p>
+                <img src="resources/terrascope/nbe4.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">Now that we have the session, we can ask openEO to return us a raster data cube of
+                    Sentinel-2 images for 6 May 2018.</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    sentinel2_data_cube =
+                    session.imagecollection("TERRASCOPE_S2_TOC_V2", temporal_extent=["2018-05-06","2018-05-06"],
+                    bands=["TOC-B02_10M","TOC-B04_10M","TOC-B08_10M"])</p>
+                <img src="resources/terrascope/nbe5.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">It is recommended to run the cells as you're adding them to make sure that there are
+                    no errors. You can do so by clicking on the "⏵" icon.</p>
+                <img src="resources/terrascope/nbe6.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">We can slice the data cube further by limiting it to a boundry box as shown
+                    below:</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    sentinel2_data_cube =
+                    sentinel2_data_cube.filter_bbox(west=5.15183687210083,east=5.153381824493408,<br>south=51.18192559252128,north=51.18469636040683,crs="EPSG:4326")
+                </p>
+                <img src="resources/terrascope/nbe7.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">You can extract the bands by calling "band" operation on the openEO data cube on
+                    which you can do arithmetic operations. Below, we are calculating the enhanced vegetation
+                    index: </p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    B02 = sentinel2_data_cube.band('TOC-B02_10M')<br>
+                    B04 = sentinel2_data_cube.band('TOC-B04_10M')<br>
+                    B08 = sentinel2_data_cube.band('TOC-B08_10M')<br>
+                    <br>
+                    evi_cube = (2.5 * (B08 - B04)) / ((B08 + 6.0 * B04 - 7.5 * B02) + 1.0)</p>
+                <img src="resources/terrascope/nbe8.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">The result can be downloaded after authenticating:</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    openeo_user= 'eo4geo'<br>
+                    openeo_pass= 'eo4geo123'<br>
+                    session.authenticate_basic(openeo_user, openeo_pass)<br>
+                    <br>
+                    evi_cube.download("out.geotiff",format="GTiff")</p>
+                <img src="resources/terrascope/nbe9.jpg" class="fragment">
+            </section>
+            <section>
+                <p class="fragment">You can visualize the output by using rasterio and matplotlib libraries:</p>
+                <p class="fragment"
+                   style="font-family: monospace;font-size: small;text-align: left;padding: 5px 5px 5px 5px;border: 2px solid black;border-radius: 5px;">
+                    import rasterio<br>
+                    from matplotlib import pyplot as plt<br>
+
+                    with rasterio.open('out.geotiff', 'r') as ds:<br>
+                    img = ds.read()<br>
+                    <br>
+                    plt.title("Band math")<br>
+                    plt.imshow(img[0])<br>
+                    plt.colorbar()<br>
+                    plt.show()</p>
+                <img src="resources/terrascope/nbe10.jpg" class="fragment">
+            </section>
+            <section
+                    data-background-iframe="https://nbviewer.jupyter.org/github/eo4geocourses/VITO_TerraScope_TrainingPack_Application_Example/blob/master/resources/terrascope/simple_band_math1.ipynb">
+            </section>
+
+        </section>
+        <section id="phenology">
+            <section>
+                <h2>Interactive Exercise on Phenology Use Case </h2>
+                <h3>Introduction</h3>
+                <p class="fragment">
+                    Phenology is an important supporting parameter of vegetation that can be derived from remote sensing
+                    data. It allows us to evaluate crop conditions, vegetation/crop type
+                    in agriculture, and is an indicator for climate change. </p>
+                <br>
+                <p class="fragment">
+                    Phenology is defined by:<br>
+                    - Start of season, a date and the corresponding value of the biophysical indicator<br>
+                    - End of season, a date and the corresponding value of the biophysical indicator.</p>
+            </section>
+            <section id="phenology2">
+                <h2>Interactive Exercise on Phenology Use Case </h2>
+                <h3>Introduction</h3>
+                <p>
+                    Deriving phenology accurately requires a sufficiently dense vegetation index time series for a
+                    given pixel or area. At the same time, a sufficiently high spatial resolution is needed, to avoid
+                    noise from sampling heterogeneous areas in a pixel or area. For time series analysis, high spatial
+                    accuracy is also an important requirement. <br><br></p>
+                <p class="fragment"> Today, no single sensor can really satisfy all these
+                    requirements, limiting the accuracy of the predicted phenology parameters. In this use case, we will
+                    use openEO's capability to easily merge multiple datasets with different resolutions: <br>
+                    <br>
+                    - <em style="color:#337acc;">Proba-V</em> 10-daily composites: low spatial resolution (300m), but
+                    high temporal resolution<br>
+                    - <em style="color:#337acc;">Sentinel-2</em>: high spatial resolution (10m), low temporal resolution<br>
+                    - <em style="color:#337acc;">Sentinel-1</em> Gamma0: high spatial & temporal resolution, but no
+                    direct link to phenological
+                    parameters </p>
+            </section>
+            <section id="phenology3">
+                <h2>Interactive Exercise on Phenology Use Case </h2>
+                <h3>Introduction</h3>
+                <p>
+                <p>
+                    This study will demonstrate the multi sensor data fusion approach by merging three datasets into a
+                    single dense vegetation index time series. This is provided as input to a phenology algorithm, which
+                    was
+                    implemented as a User-Defined Function (UDF), so that it can be easily replaced with other
+                    implementations.
+                </p>
+            </section>
+            <section>
+                <h2>Interactive Exercise on Phenology Use Case </h2>
+                <h3>Algorithm Overview</h3>
+                Below is a step-by-step overview of the workflow, together with the most important openEO processes
+                that were used to implement them.
+                <ol>
+                    <li>Pre-processing Sentinel-2 data</li>
+                    <ul>
+                        <li>Load scene classification (load_collection)</li>
+                        <li>Load- bands 8 and 4 (load_collection)</li>
+                        <li>Mask NDVI (mask)</li>
+                        <li>Transform scene classification to binary mask (reduce_dimension)</li>
+                        <li>Dilate cloud mask (apply_kernel)</li>
+                        <li> Compute NDVI (ndvi)</li>
+                    </ul>
+                    <li>Merging Sentinel-1 Gamma0: (load_collection/resample_cube_spatial/merge)</li>
+                    <li>Preprocessing and merging PROBA-V 10-daily composites to Sentinel-2
+                        resolution(load_collection/resample_cube_spatial/mask_polygon/merge)
+                    </li>
+                    <li>Apply Deep learning model (GAN) to generate single NDVI (apply_neighborhood/run_udf)</li>
+                    <li>Pixel wise smooth the resulting time series using Savitzky–Golay filter</li>
+                    <li>Pixel wise derivation of phenological parameters (apply_dimension/run_udf)</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Interactive Exercise on Phenology Use Case </h2>
+                <h3>Phenology Jupyter Notebook</h3>
+                <ol>
+                    <li>Login to your Terrascope Notebooks <a href="https://notebooks.terrascope.be/hub/login">
+                        account</a></li>
+                    <li>Navigate to <em>notebook-samples/openEo/ folder and open data_fusion.ipynb file</em></li>
+                    <li>Study and execute the following exercise step by step</li>
+                    <li>Do not forget to enter the credentials (eo4geo/eo4geo123) in cell #4 of the notebook</li>
+                </ol>
+            </section>
+            <section
+                    data-background-iframe="https://nbviewer.jupyter.org/github/Open-EO/openeo-usecases/blob/master/vito_phenology_usecase/notebook/data_fusion.ipynb">
+            </section>
+        </section>
+        <section>
+            Thank you
+        </section>
+
+    </div>
+
+    <script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+    <script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+
+
+
+
+
+    </script>
+
+    <!-- rauslöschen?? -->
+    <script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+
+
+
+
+
+    </script>
+</div>
+</body>
+</html>

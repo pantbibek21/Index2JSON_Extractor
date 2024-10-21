@@ -1,0 +1,869 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Identification of heat islands to support city planning</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Identification of heat islands to support city planning" />
+		<meta property="dc:creator" content="Greger Lindeberg, Sara Wiman, Giacomo Martirano, Lisa Bilotti" /> 
+		<meta property="dc:publisher" content="GIB, EPSIT" /> 
+		<meta property="dc:subject" content="Learning to interpret EO-derived temperature maps for use in urban planning. Learning to identify local heat islands and analyse them in an urban planning context. Discuss how EO-derived temperature maps can be used in spatial planning and how this information can be used when planning for particularly vulnerable groups (pre-school children, elderly)." />
+		<meta property="dc:abstract" content="This is a slideset for city planners about Urban Heat Islands and the importance of their identification in a spatial planning context. The slideset introduces the EO surface temperature maps, with their potential and their limitations " />
+		<meta property="dc:tableOfContents" content="(1) Intro UHI and local heat islands LHI; 
+							     (2) Addressing planning issues connected to UHI/LHI; 
+							     (3) Technical background EO derived data; 
+							     (4) Description of the selected case; 
+							     (5) Conclusions;" />
+		<meta property="dc:description" content="Understand the importance of identifying UHIs in a spatial planning context; Understand how EO surface temperature time series can support identification of UHIs; Understand how to interpret EO surface temperature time series to identify UHIs; Understand how to derive maps from EO surface temperature data, to be integrated with other relevant information related to UHI identification in a spatial planning context; Understand how to analyse information derived from EO surface temperature data integrated with other relevant information related to UHI identification in a spatial planning context; Understand the limitations of the EO surface temperature data due to the spatial resolution" /> 
+		<meta property="dc:contributor" content="SpaSe" />
+		<meta property="dc:contributor" content="GEOF" />
+		<meta property="dc:created" content="2021-03-21" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="65min" />
+		<meta property="dc:audience" content="city planners;climate adaption managers" />
+		<meta property="dc:educationLevel" content="EQF 4" />
+		<meta property="dc:source" content="Existing slideset "Urban Heat Islands" by SpaSe; existing slideset "Understanding the concept of EO time series" by GEOF" />
+		<meta property="dc:rightsHolder" content="SpaSe; GEOF, GIB, EPSIT" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:PS2-2-2-3-2-4-8" />
+		<link rel="dc:relation" href="eo4geo:PS2-2-2-3-2-4-20" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-5" />
+		<link rel="dc:relation" href="eo4geo:P3-11" />
+		
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 14%;height : 11%" ></div>					 
+				 <div  class = "presentation_title" style=" text-align: center " >Identification of heat islands to support city planning</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Identification of heat islands to support city planning</h1>
+					(A <em>Geografiska Informationsbyrån</em> and <em>Epsilon Italia</em> presentation)
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+				
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="Introduction">
+				    <section>
+					<h1>Introduction</h1>
+					This slidset addresses <i>city planners</i> and is about Urban Heat Islands and the importance of their identification in a spatial planning context. The slidset introduces the EO surface temperature maps, with their potential and their limitations.
+                    </section>
+					
+					<section>
+					<h2>Learning outcomes</h2>
+					<ul>
+					<li>Understand the importance of identifying UHIs in a spatial planning context (what are the consequences if, in a spatial planning context, the UHIs are not identified?)
+                    <li>Understand how EO surface temperature time series can support identification of UHIs
+                    <li>Understand how to interpret EO surface temperature time series to identify UHIs
+                    <li>Understand how to derive maps from EO surface temperature data, to be integrated with other relevant information related to UHI identification in a spatial planning context
+                    <li>Understand how to analyse information derived from EO surface temperature data integrated with other relevant information related to UHI identification in a spatial planning context
+                    <li>Understand the limitations of the EO surface temperature data due to the spatial resolution
+					</ul>
+					</section>
+				</section>
+				
+				<section id="Intro UHI and local heat islands LHI">
+					<section > 
+						<h1>What are Urban Heat Islands?</h1> 
+						<ul>
+						<li>a difference in temperature of urban and suburban areas compared to their outlying rural surroundings
+						<ul>
+						<li>E.g. the annual mean air temperature of a city with one million or more people can be 1 to 3&deg;C warmer than its surroundings,</li>
+						<li>Usually the difference decreases as city size decreases.</li>
+						</ul>
+						</li>
+						</ul>
+						<br><img width="800" height="200" img src="./resources/uhi1.jpg" alt="sat1">
+					</section>
+					
+					<section > 
+						<h2>Urban Heat Island: the phenomenon</h2> 
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<br><img width="700" height="400" data-src="./resources/uhi.png" alt="3SpaceComponents">
+                        <br>
+                        <p style ="text-align:right; font-size:15px">Source: M. Magoni, C. Cortinovis, «Interventi di mitigazione delle ondate di calore in contesti urbani», 2014</p>						
+						
+						<aside class="notes">
+						The physiological equivalent temperature (PET) is based on the Munich Energy-balance Model for Individuals (MEMI), which models the thermal conditions of the human body in a physiologically relevant way. PET is defined as the air temperature at which, in a typical indoor setting (without wind and solar radiation), the heat budget of the human body is balanced with the same core and skin temperature as under the complex outdoor conditions to be assessed. This way PET enables a layperson to compare the integral effects of complex thermal conditions outside with his or her own experience indoors. On hot summer days, for example, with direct solar irradiation the PET value may be more than 20 K higher than the air temperature, on a windy day in winter up to 15 K lower. [1]
+[1]: Höppe, P. The physiological equivalent temperature – a universal index for the biometeorological assessment of the thermal environment. Int J Biometeorol 43, 71–75 (1999). https://doi.org/10.1007/s004840050118
+						</aside>
+					</section>
+					
+					<section >
+						<h2 style="text-align:left"> History:</h2> 
+						
+						<p style ="text-align:left;">Urban heat islands have been recognized and described a long time ago:<br><br>
+						<i>“The generally higher temperatures inside towns have been noted for a long time, indeed Luke Roward (Roward, 1818), 
+						a pioneer of urban climatology though more famous for his work on cloud classification, first measured temperature 
+						differences in London as early as 1809. And yet, in spite of the numerous studies in urban temperatures, it still remains 
+						to quantify, even relatively, the heat exchange mechanisms leading to the excess heat of towns. There are obviously 
+						four contributory factors: changes in the thermal characteristics (albedo, heat conductivity and thermal capacity) of the 
+						surface following the substitution of buildings and roads for farms and fields; changes in the airflow patterns with a 
+						reduced diffusion of heat from streets and courtyards; changes in evaporation rates and heat losses and, the heat 
+						added by humans and human activities. These seem to be of differing importance in different cities so that the 
+						character of temporal variations also varies. In many cities of western Europe, heat islands are strongest in summer 
+						whilst in central and northern Europe there is, apparently, little difference between summer and winter intensities. In 
+						several Japanese cities, maximum heat island intensities occur in winter.”</i></p>
+						
+						<p style ="text-align:right; font-size:15px">(T. J. Chandler, Urban climatology - Inventory and prospect, Urban climates: proceedings of the WMO Symposium on Urban Climates 
+						and Building Climatology, WMO, 1970)</p>
+					</section>
+				</section>
+				
+				<!-- AUTHORS: INCLUDE AN IMAGE IN YOUR SLIDE: --> 
+				<section ><section >
+						<h1 style="text-align:center"> Why analyse urban heat islands? </h1> 
+						<br>
+						<div style ="text-align:left;">UHIs have several impacts on environment and population, for example:<br><br>
+						<ul>
+							<li>Increased Energy Consumption</li>
+							<li>Elevated Emissions of Air Pollutants and Greenhouse Gases</li>
+							<li>Compromised Human Health and Comfort</li>
+							<li>Impaired Water Quality</li>
+						</ul>
+						</div>
+						<br>
+						<p style ="text-align:right; font-size:15px">(Heat Island Impacts, <a href="https://www.epa.gov/heat-islands/heat-island-impacts"> https://www.epa.gov/heat-islands/heat-island-impacts </a>; 'Heat island' effect could double climate change costs 
+						for world's cities, <a href="https://phys.org/news/2017-05-island-effect-climate-world-cities.html"> https://phys.org/news/2017-05-island-effect-climate-world-cities.html </a>)</p>
+					</section>
+					
+					<section ><h2>The consequences of Urban Heat</h2>
+					<br><img width="700" height="400" data-src="./resources/consequencesuhi.png" alt="Consequences of UH">
+					<br>
+					
+					<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... -->
+					<p style ="text-align:right; font-size:15px">Source: M. Magoni, C. Cortinovis, «Interventi di mitigazione delle ondate di calore in contesti urbani», 2014</p>
+				    </section>
+					
+					<section >
+						<h2 style="text-align:left"> State of the art:</h2> 
+						<br>
+						<p style ="text-align:left;">Recently, the dependency of UHI on a city’s layout could be shown:<br><br>
+						<i>“The arrangement of a city's streets and buildings plays a crucial role in the local urban heat island effect, which causes 
+						cities to be hotter than their surroundings, researchers have found. The new finding could provide city planners and 
+						officials with new ways to influence those effects.<br>
+						Some cities, such as New York and Chicago, are laid out on a precise grid, like the atoms in a crystal, while others such 
+						as Boston or London are arranged more chaotically, like the disordered atoms in a liquid or glass. The researchers 
+						found that the "crystalline" cities had a far greater buildup of heat compared to their surroundings than did the "glass-
+						like" ones.<br>
+						The study […] found these differences in city patterns, which they call "texture," was the most important determinant 
+						of a city's heat island effect.” </i></p>
+						<br>
+						<p style ="text-align:right; font-size:15px">(Urban heat island effects depend on a city's layout, <a href="https://phys.org/news/2018-02-urban-island-effects-city-layout.html)"> https://phys.org/news/2018-02-urban-island-effects-city-layout.html </a></p>
+					</section>
+				</section>
+				
+				<section>
+						<h1 style="text-align:left"> 3 causes of UHI</h1> 
+						<br>
+						<p style ="text-align:left;">1) <i>Physical/material factors</i></p>
+						<li style ="text-align:left; margin-left: 200px">They depend on the materials with which the city is built</li>
+						<p style ="text-align:left;">2) <i>Morphological factors</i></p>
+						<li style ="text-align:left; margin-left: 200px">They depend on the shape of the city</li>
+						<p style ="text-align:left;">3) <i>Anthropogenic factors</i></p>
+						<li style ="text-align:left; margin-left: 200px">They depend on the functions and activities carried out in the city</li>
+						<br>
+				</section>
+				
+				<section>
+				<br>
+                <h1 style="text-align:center"> Presence of green areas</h1>
+                <table style="height: 369px;" width="847">
+                <tbody>
+                <tr>
+				<td style="width: 415.333px;"><img src="./resources/greenareas.png" alt="" width="350" height="550" /></td>
+                <td style="width: 415.333px;">
+				<h2 style="text-align:center">causes and effects</h2>
+                <ul>
+                <li><b>Evapotranspiration:</b> combined effect of evaporation of water from the soil and plant transpiration (photosynthesis)
+                <li><b>Water storage in the soil:</b> prolongation of the cooling effect due to evaporation
+                <li><b>Shading</b> and surface protection against direct irradiation
+                </ul>
+                </td>
+                </tr>
+                </tbody>
+                </table>      
+                </section>
+				
+				<section id="Addressing planning issues connected to UHI/LHI">
+						<h1 style="text-align:left"> Issues to address</h1> 
+						<br>
+						<li style ="text-align:left; margin-left: 200px">How can I monitor local heat islands?</li>
+						<li style ="text-align:left; margin-left: 200px">How can I benefit from EO-data when analysing heat island effects?</li>
+						<li style ="text-align:left; margin-left: 200px">How to interpret data?</li>
+						<li style ="text-align:left; margin-left: 200px">How can I use this in planning situations for the mitigation of urban heat?</li>
+						<li style ="text-align:left; margin-left: 200px">Benefits, limitations and errors</li>
+						<br>
+				</section >
+				
+			    <section id="Technical background EO derived data">
+				    <section >
+						<h1 style="text-align:left"> How to analyse urban heat islands?</h1> 
+						<br>
+						<p style ="text-align:left;">To detect UHIs it is used the land surface temperature (LST). Be aware that 
+						this is not equal to the air temperature that people will experience in that place. However, it is a good and easy-to-access indicator.<br><br>
+						It is possible to use data from Sentinel-3, which has thermal bands included and thus 
+						provides LST. Another alternative would be Landsat-8 which has a higher resolution 
+						(Sentinel-3: 500m, Landsat-8: 100m).</p>
+					</section>
+					
+					<section>
+						<h2>Remote sensing</h2> 
+						<ul>
+						<li>the acquisition of information about an object or phenomenon without making physical contact</li>
+						<li>used in numerous fields, including geography, land surveying and most Earth science disciplines (for example, hydrology,&nbsp;ecology, meteorology, oceanography, glaciology, geology); it also has military, intelligence, commercial, economic, planning, and humanitarian applications.</li>
+						<li>repeating satellite orbits enable continuous monitoring of the object, phenomenon or area in general, i.e. gathering <b>EO time series</b></li>
+						</ul>
+					</section>
+					
+					<section>
+						<br>
+						<h2>EO time series</h2>
+						<ul>
+						<li>Efficiently provide information on
+						<ul>
+						<li>Land cover change</li>
+						<li>Vertical and horizontal land movements</li>
+						<li>Sea level change</li>
+						<li>Ice sheet balance change</li>
+						<li>Temperature change over the season or different time</li>
+						<li>Specific events such as fires, floods, landslides, earthquakes, etc.</li>
+						<li>Enable global and local analysis (such as detecting and monitoring Urban Heat Islands, UHIs)</li>
+						</ul>
+						</li>
+						</ul>
+					</section>
+					
+					<section>
+						<br>
+						<h2>EO time series for UHI monitoring</h2>
+						<table style="height: 369px;" width="847">
+						<tbody>
+						<tr>
+						<td style="width: 415.333px;">
+						<ul>
+						<li>Satellite sensors can observe surface temperature using thermal sensors</li>
+						<li>Sensors available at different satellites</li>
+						</ul>
+						</td>
+						<td style="width: 415.333px;"><img src="./resources/thermalsensor.png" alt="" width="400" height="384" /></td>
+						</tr>
+						</tbody>
+						</table>						
+					</section>
+				</section >
+				
+				<section >	
+					<section>
+						<h1>Vegetation – UHI relationship</h1>
+						<ul>
+						<li>More the vegetation less the UHI effect</li>
+						<li>Methods on quantifying this
+						<ul>
+						<li>NDVI (Normalized Difference Vegetation Index)</li>
+						<li>Vegetation fraction</li>
+						<li>LAI (Leaf Area Index)</li>
+						<li>Other methods
+						<ul>
+						<li>Handheld temperature sensors</li>
+						<li>Aerial temperature measurements</li>
+						</ul>
+						</li>
+						</ul>
+						</li>
+						</ul>
+					</section>
+					
+					<section class="scrollable">
+						<br>
+						<h2>Vegetation – UHI relationship</h2>
+						<table style="height: 337px;" width="841">
+						<tbody>
+						<tr>
+						<td style="width: 830px; text-align: center;">
+						<p><strong>NDVI</strong></p>
+						<p>Numerical indicator showing live green vegetation</p>
+						<p>NDVI = (NIR &ndash; RED) / (NIR + RED)</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 830px; text-align: center;">
+						<p><strong>Vegetation fraction</strong></p>
+						<p>Derived from spectral mixture model</p>
+						<p>Uses LSMA to determine vegetation &ndash; at sub-pixel level</p>
+						<p>Sometimes more accurate than NDVI</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 830px; text-align: center;">
+						<p><strong>LAI</strong></p>
+						<p>Can be computed from NDVI</p>
+						<p>Can be derived from field measurements (collection of leaf litterfall or destructive harvesting of leaves within a vertical column passing upward through the entire tree canopy)</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+						<p style="text-align: center;">&nbsp;</p>
+						<p style="text-align: center;">&nbsp;</p>
+						<p style="text-align: center;">&nbsp;</p>
+					</section>
+				</section >
+				
+				<section>
+				    <h1>Learn more...</h1>
+				    <ul>
+					<li>About remote sensing - <a href="https://eo4geocourses.github.io/IGIK_Introduction-to-Remote-Sensing/#/">see presentation</a>
+					<li>About Sentinel-2 data and vegetation indices - <a href="https://eo4geocourses.github.io/IGIK_Sentinel2-Data-and-Vegetation-Indices/#/">see presentation</a>
+					<li>About EO data sources - <a href="https://eo4geocourses.github.io/GEOF_EO-Data-sources/#/">see presentation</a>
+					<li>About Copernicus services - <a href="https://www.copernicus.eu/en">see website</a>
+					</ul>
+				</section>
+				
+				<section id="Description of the selected case">
+				    <section>
+						<br>
+						<h1>Case: City of Stockholm, Sweden</h1>
+						<table style="height: 369px;" width="847">
+						<tbody>
+						<tr>
+						<td style="width: 415.333px;">
+						<ul>
+						<li>Population  ~1.0 million</li>
+						<li>Area 188 sq. km.</li>
+						<li>Summer temperatures normally 14-22 deg. celcius</li>
+						<li>Heatwave in 2018</li>
+						</ul>
+						</td>
+						<td style="width: 415.333px;"><img src="./resources/slide24.png" alt="" width="400" height="384" /></td>
+						</tr>
+						</tbody>
+						</table>						
+					</section>
+					
+					<section>
+					<table>
+							<tr>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide45.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<br>
+						<h2 style="width: 850px; text-align: center;">What are we going to do?</h2>
+						<ul>
+						<li>Screening of the city for LHI
+						<ul>
+						<li>Using surface temperature maps</li>
+						<ul>
+						<li>Using time series</li>
+						</ul>
+						<li>Make statistic measures from time series</li>
+						<ul>
+						<li>Max temp
+						<li>Mean temp
+						</ul>
+						<li>Locate and delineate main LHI</li>
+						<li>Locate cool structures</li>
+						<li>Describe how this can be related to planning issues</li>
+					</section>
+					
+					<section>
+						<br>
+						<h2>Data</h2>
+						<table style="height: 369px;" width="847">
+						<tbody>
+						<tr>
+						<td style="width: 415.333px;">
+						<ul>
+						<li>TIRS time-series Max temperature June Aug 2014-2020 </li>
+						<li>Buildings, residential areas</li>
+						<li>Green infrastructure</li>
+						<li>Pre-schools</li>
+						</ul>
+						</td>
+						<td style="width: 415.333px;"><img src="./resources/slide26.png" alt="" width="400" height="384" /></td>
+						</tr>
+						</tbody>
+						</table>						
+					</section>
+				</section>
+				
+				<section>
+				    <section>
+						<h1 style="text-align:left">Description of the selected case </h1> 
+						<br>
+						<p style ="text-align:left; margin-left: 100px">Residential areas and people living in or close to LHI</p>
+						<li style ="text-align:left; margin-left: 200px">Study area - South Stockholm</li>
+						<li style ="text-align:left; margin-left: 200px">Connection to buildings and planning</li>
+						<li style ="text-align:left; margin-left: 200px">Access to “cool structures”</li>
+						<li style ="text-align:left; margin-left: 200px">Access to green structures</li>
+						<li style ="text-align:left; margin-left: 200px">Schools and preschools</li>
+						<br>
+				    </section >
+					
+					<section >
+                        <br>					
+						<h2>Surface heat temperature map 2014-2020, Time series.</h2> 
+					    <table>
+							<tr>
+							<td>
+							<li style ="text-align:left; font-size: 20px">Max temperatures showing warm and cool areas
+							<li style ="text-align:left; font-size: 20px">Landsat 8 - Band 10 Thermal Infrared.
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide31.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+				    <br>
+                    <table style="height: 369px;" width="847">
+                    <tbody>
+                    <tr>
+				    <td style="width: 415.333px;"><img src="./resources/slide44.png" alt="" width="350" height="550" /></td>
+                    <td style="width: 415.333px;">
+                    <ul>
+                    <li>21°C - Trees provide both shade and evaporation, two important factors that explain that forests are cooler than grasslands
+                    <li>23°C - Abundance of trees in residential areas provide cooler outside and indoor temperatures.
+                    <li>25°C - As the number of trees and their height decreases, the temperature increases. 
+					<li>28°C - In environments with few trees and large open and impervious surfaces, the heat increases faster.
+                    <li>33°C - In environments with a small amount of green spaces and large open and  impervious surfaces, the heat increases faster.
+                    </ul>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>      
+                    </section>
+					
+					<section >  
+						<table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 20px; margin-right: 20px">Local Heat islands are delineated > 28°C</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide32.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section >  
+						<table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 20px; margin-right: 20px">Cool structures are delineated < 22°C Mostly water and forested areas</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide33.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section >  
+						<table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 20px; margin-right: 20px">Green structures - GIS layer from land cover mapping</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide34.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section >  
+						<table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 20px; margin-right: 20px">GIS layer with buildings</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide35.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Assessing the impact of LHI by the use of Surface temperature data and GIS-layers</h2>
+						<ul>
+                        Buildings within LHI
+						<ul>
+						<li>No green or cool structures nearby (>100m)</li>
+						<li>Green or cool structures nearby (<100m)</li>
+						</ul>
+						</ul>
+						<ul>
+						Buildings outside LHI
+						<ul>
+						<li>No green or cool structures nearby (>100m)</li>
+						<li>Cool and green structures nearby (<100m)</li>
+						<li>Green structures nearby (<100m)</li>
+						<li>Cool structures nearby (<100m)</li>
+						</ul>
+						</ul>
+					</section>
+					
+					<section > 
+						<table>
+							<tr>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide36.png" alt="connection">
+							</td>
+							</tr>
+						</table>	
+					</section>
+				</section>
+				
+				<section>
+				    <section >
+					<br>
+					<h2>Southeast of city</h2>
+					    <table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 18px"><b>Planning takeaways:</b> Caution - Residents in red areas can be affected by heat stress and little access to green or cool structures</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide37.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section >
+					<br>
+					<h2>Inner city south</h2>
+					        <table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 18px"><b>Planning takeaways:</b> Caution - Population in red areas can be affected by heat stress and little access to green or cool structures</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide38.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section >
+					<br>
+					<h2>Southwest of city</h2>
+					        <table>
+							<tr>
+							<td>
+						<p style ="text-align:left; font-size: 18px"><b>Planning takeaways:</b>
+						<li style ="text-align:left; font-size: 18px">Mainly industrial areas / workplaces
+						<li style ="text-align:left; font-size: 18px">Caution - Population in red areas can be affected by heat stress and little access to green or cool structures
+						</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide39.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Situation of the preschools in Stockholm</h2>
+					<table>
+					        <tr>
+						    <td>
+							<p style ="text-align:left; font-size: 18px">Location of preschools in South Stockholm</p>
+							</td>
+							<td>
+							<img width="9000" box-shadow="none" data-src="./resources/slide42.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Southeast of city</h2>
+					    <table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 18px"><b>Planning takeaways:</b> Caution - many Preschools within or close to LHI - lack of access to green structures</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide40.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Southwest of city</h2>
+					    <table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 18px"><b>Planning takeaways:</b> Better situation with preschools mostly outside of LHI and better access to green structures</p>
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide41.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+			
+				<section>	
+					<section>
+					<table>
+							<tr>
+							<td>
+							<p style ="text-align:left; font-size: 18px">Planning takeaways
+							<li style ="text-align:left; font-size: 15px">The majority of the preschools are located outside LHI, with access to green structures
+							<li style ="text-align:left; font-size: 15px">Many preschools in the inner city are located in LHI, with little access to green structures
+
+							</td>
+							<td>
+							<img width="15000" box-shadow="none" data-src="./resources/slide43.png" alt="connection">
+							</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+				
+				<section id = "Conclusions">
+				    <section><h1 style="text-align:left">Conclusions / Recap</h1> 
+						<br>
+						<li style ="text-align:left; margin-left: 200px">Urban heat can cause physical discomfort and health problems for its inhabitants
+						<li style ="text-align:left; margin-left: 200px">Urban heat can also deteriorate urban ecosystems and environment
+						<li style ="text-align:left; margin-left: 200px">Urban heat waves causes drought
+						<li style ="text-align:left; margin-left: 200px">Human perception of heat stress is a combination of several factors, e.g. air temperature, heat radiation from surfaces and personal conditions
+						<br>
+					</section>
+					
+					<section><h1 style="text-align:left">Conclusions / Recap</h1> 
+						<br>
+						<li style ="text-align:left; margin-left: 200px">Surface temperatures can be monitored by Sentinel-3, Landsat-8 and Aster, with different resolutions
+						<li style ="text-align:left; margin-left: 200px">In the current case we are using summer maximum temperatures from Landsat-8 during a time-series to illustrate local heat islands within the city and in the suburbs
+						<li style ="text-align:left; margin-left: 200px">The obvious correlation between dense building structures, lack of green structures and high surface temperatures is confirmed
+						<br>
+					</section>
+					
+					<section><h1 style="text-align:left">Conclusions / Recap</h1> 
+						<br>
+						<li style ="text-align:left; margin-left: 200px">Information presented here can be used on a general scale (block level) to identify areas potentially exposed to urban heat
+						<li style ="text-align:left; margin-left: 200px">Information presented in this case can be taken into consideration when planning for measures to mitigate urban heat
+						<li style ="text-align:left; margin-left: 200px">It is important to remember that local conditions like e.g. shading and cooling structures can have a large impact on perceived heat
+						<br>
+					</section>
+					
+					<section><h1 style="text-align:left">Conclusions / Recap</h1> 
+						<br>
+						<ul>
+						<li style ="margin-left: 150px">Examples of planning takeaways
+						<ul>
+						<li>Avoid further soil sealing and densification in areas close to heat islands
+						<li>Increase the share of green areas in certain “Hot spots”  in the urban environment
+						<li>Access to green and cool structures may be even more important for residents in areas exposed to urban heat
+						<li>Special consideration should be given to sensitive groups such as elderly, preschool children, etc
+						</ul>
+						</ul>
+						<br>
+					</section>
+					
+					<section><h1 style="text-align:left">Limitations of data</h1> 
+						<br>
+						<li style ="text-align:left; margin-left: 200px">Resolution of the thermal bands (Sentinel-3 500m, Landsat-8 100m)
+						<li style ="text-align:left; margin-left: 200px">Surface temperature from satellites can be seen as an indicator of urban heat, but there are more factors to be studied on a more detailed level
+						<li style ="text-align:left; margin-left: 200px">Depending on satellite revisiting times and atmospheric conditions information might be obtained on different temporal scales, reducing the efficiency
+						<br>
+					</section>
+				</section>
+				
+				<section>
+				    <section >
+						<br>
+						<p style ="text-align:left;"><i>“One of seven priority goals in The City of Stockholm Environment programme 2020-2023, is  a climate-adapted Stockholm. 
+						Working with climate adaption and urban heat issues, we need to integrate many different data sources to further increase our knowledge. 
+						Surface temperature measurements from satellite can together with data on e.g. census, land use and urban planning be an important tool 
+						for improving our basis of decision.”</i></p>
+						<br>
+						<p style ="text-align:right; font-size:15px">Peter Wiborn, Senior Project Manager - Ecosystem Services, Environment and health department, City of Stockholm</p>
+					</section>
+				</section>
+				
+				<section >
+					<h1>Thank you!</h1>
+						<table style="height: 150px;" width="847">
+						<h3 style ="text-align:center; font-size:25px">More <b>training material</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-material-catalogue/"> http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+						<br>
+						<h3 style ="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-actions/"> http://www.eo4geo.eu/training-actions/</a></strong></h3>
+							<tr>
+							<td>
+							<img width="70" box-shadow="none" data-src="./resources/link.png" alt="connection">
+							</td>
+							<td>
+							<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3> 
+							</td>
+							<td>
+							<img width="70" box-shadow="none" data-src="./resources/twitter.png" alt="connection">
+							</td>
+							<td>
+							<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3> 
+							</td>
+							</tr>
+						</table>
+						<table style="height: 150px;" width="847">
+							<tr>
+							<td>
+							<img width="300" box-shadow="none" data-src="./resources/partnerLogo.jpg" alt="connection">
+							</td>
+							<td>
+							<h3 style="font-size: 25px;"><strong><a href="https://www.geografiskainformationsbyran.se/">https://www.geografiska
+							informationsbyran.se/</a></strong></h3> 
+							</td>
+							<td width="20%">
+							<img width="150" box-shadow="none" data-src="./resources/partnerLogo3.png" alt="connection">
+							</td>
+							<td>
+							<h3 style="font-size: 25px;"><strong><a href="https://www.epsilon-italia.it/">https://www.epsilon-italia.it/</a></strong></h3> 
+							</td>
+							</tr>
+						</table>
+				</section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

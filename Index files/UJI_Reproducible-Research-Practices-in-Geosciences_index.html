@@ -1,0 +1,640 @@
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/
+              dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Reproducibility Research in the Geosciences</title>
+		<meta property="dc:title" content="Reproducibility Research in the Geosciences"/>
+		<meta property="dc:creator" content="Carlos Granell"/>
+		<meta property="dc:contributor" content="Carlos Granell"/>
+		<meta property="dc:publisher" content="Universitat Jaume I de Castelló, Spain" /> 
+		<meta property="dc:subject" content="Reproducibilility, Reproducible research, EO4GEO, WP5, Open Science"/>
+		<meta property="dc:abstract" content="In this course students will get an introduction to the main ideas and tools to acquire reproducible research practices. The material introduces the history of reproducibility, the concept of reproduction and an overview of reproducibility today, including literate programming and some ideas about how to create reproducible notebooks. "/>
+		<meta property="dc:tableOfContents" content="(1) Historical notes on reproduction
+		(2) The concept of reproduction
+		(3) Reproducibility today"/>
+		<meta property="dc:description" content="Learning outcomes: Apply a series of practices (steps and tasks) for reproducible research in different phases of a project; Plan a reproducibility project independently; Recognize the importance of reproducible research as a fundamental pillar of modern science; Understand the problems associated with the lack of reproducibility"/>
+		<meta property="dc:contributor" content="Carlos Granell"/>
+		<meta property="dc:created" content="2020-09-01"/>
+		<meta property="dc:type" content="teaching material"/>
+		<meta property="dc:format" content="html"/>
+		<meta property="dc:language" content="EN"/>
+		<meta property="dc:SizeOrDuration" content="45min"/>
+		<meta property="dc:audience" content="students"/>
+		<meta property="dc:educationLevel" content="EQF 8"/>
+		<meta property="dc:source" content="Existing material of the course: Reproducibility Research Practices"/>
+		<meta property="dc:rightsHolder" content="Carlos Granell, Universitat Jaume I de Castelló, Spain"/>
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en"/>
+		
+		<link rel="dc:relation" href="eo4geo:GC4" />
+		<link rel="dc:relation" href="eo4geo:IP4-1-6" />
+		
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">-->  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+    
+    
+    <style>
+      
+      #left {
+        margin: 10px 0 15px 20px;
+        text-align: center;
+        float: left;
+        z-index:-10;
+        width:48%;
+        font-size: 0.85em;
+        line-height: 1.5;
+      }
+      
+      #right {
+        margin: 10px 0 15px 0;
+        float: right;
+        text-align: center;
+        z-index:-10;
+        width:48%;
+        font-size: 0.85em;
+        line-height: 1.5;
+      }
+      
+      
+    </style>
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 5%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Reproducibility Research in the Geosciences</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+			
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Reproducibility Research in the Geosciences</h1>
+					
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<section class="scrollable">
+					<h1>Introduction to Reproducibility</h1> 
+					
+					<ul>
+						<li style="color:#337acc;">Historical notes on reproduction</li>
+						<li style="color:#337acc;">The concept of reproduction</li>
+						<li style="color:#337acc;">Reproducibility today</li>
+				  </ul>
+				</section>
+				
+				
+				<!-- Slides in Markdown language for item #1: Historical notes on reproduction -->
+				<!-- AUTHORS: for horizontally organised slides, use three dashes, for vertical slides two dashes -->
+				<section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				    <script type="text/template">
+                ## Historical notes on reproduction
+                Focus is the art of knowing what to ignore.
+
+                >The fastest way to raise your level of performance: Cut your number of commitments in half.
+                
+						    --
+						    
+    						## The profession of the scientist  
+
+    						### Why are you a scientist/researcher?
+
+                ### What are your motivations?
+                
+                --
+						    
+    						## The profession of the scientist  
+    						
+                </div>
+                
+                <div id="left">
+                 
+    						__Intrinsic__ motivations:
+                
+                >- eager to do research! 
+                >- advance knowledge     
+                >- make a better world!  
+                
+                </div>
+                 <div id="right">
+                
+                __Extrinsic__ motivations:
+                
+                >- financial incentives
+                >- move up the career ladder
+                >- recognition by peers, society
+                </div>
+               
+                
+                --
+                
+                ## Reproducibility in Science
+
+                Doubt is inherently human and we (scientists) always have doubts!
+
+                (Well, that doesn’t mean it’s OK to keep questioning climate change, evolution, and the power of vaccines...)
+
+                Advancing science and knowledge requires:
+
+                - __openness__,
+                - __transparency__,
+                - __reproduction__ and   
+                - __cumulative evidence__ (reviews)
+                
+                --
+                
+                ## Reproducibility in Science
+                
+                <img data-src="resources/figs/reproducible_funnel.jpg" width="80%"/>
+
+                --
+                
+                ## Is reproduciblity a new problem?
+
+                <div align="left">
+                
+                Going back to the 17th century, Boyle's [air-pump](https://en.wikipedia.org/wiki/Air_pump) was one of the first documented disputes over [reproducibility](https://en.wikipedia.org/wiki/Reproducibility):
+                
+                -  Dutch scientist [Christiaan Huygens](https://en.wikipedia.org/wiki/Christiaan_Huygens) reported an new effect he termed "anomalous suspension" in Amsterdam.
+                - [Robert Boyle](https://en.wikipedia.org/wiki/Robert_Boyle) in UK could not replicate this phenomenon in his own air pump.
+                - Huygens was invited to UK (1663) to personally help Boyle __replicate__ anomalous suspension of water.
+                </div>
+                
+                --
+                
+                ## Is reproduciblity a new problem?
+
+                <div align="left">
+                
+                Go back to 40 years ago, with the birth of personal computers, <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald E Knuth</a> (1938-) introduced the concept of <a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a>: 
+              
+                <ul>
+                <li>a new methodology of programming.</li>
+                <li>a programme combines human language and code snippets.</li>
+                <li>"Programs are meant to be read by humans, and only incidentally for computers to execute."</li>
+                </ul>
+                
+                </div>
+                --
+                
+                ## Is reproduciblity a new problem?
+
+                <div align="left">
+                
+                Let's go back to 30 years ago, with the birth of Internet...<a href="https://library.seg.org/doi/abs/10.1190/1.1822162">Claerbout and Karrenbach</a> claimed that <i>Electronic documents give reproducible research a new meaning</i> :
+                
+                <ul>
+                <li>Executable digital notebook</li>
+                <li>Be open + help others</li>
+                <li>Document for future self</li>
+                </ul>
+                
+                </div>
+                --
+                
+                ## It is not _new_, but it _is_ still a problem. 
+
+                <div id="left">
+                In 2015, <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">1,500 scientists lift the lid on reproducibility</a>:
+                <ul>
+						      <li>more than 70% of researchers have tried and failed to reproduce another scientist's experiments</li>
+						      <li>more than 50% have failed to reproduce their own experiments</li>
+				        </ul>
+                </div>
+                
+                <div id="right">
+                    <img data-src="resources/figs/reproducibility-graphic-online1.jpeg" width="80%"/>
+                </div>
+                
+                --
+                
+                ## It is not _new_, but it _is_ still a problem. 
+                
+                <div id="left">
+                    <img data-src="resources/figs/reproducibility-graphic-online4.jpg" width="65%"/>
+                </div>
+                
+                 <div id="right">
+                    <img data-src="resources/figs/reproducibility-graphic-online5.jpg" width="70%"/>
+                </div>
+                
+                --
+                
+                ## Is there a reproduciblity crisis?
+
+                <div id="left">
+                  <a href="https://doi.org/10.1038/nature.2015.17433">Baker (2015)</a> found that only 39 out ot 100 of the published studies in psychology could be reproduced.
+                </div>
+                
+                  <div id="right">
+                    <img data-src="resources/figs/replicatation-graphic-b.png" width="80%"/>
+                </div>
+
+                --
+                
+                ## Is there a reproduciblity crisis?
+
+                Some argue there is no such reproducibility crisis.
+
+                > The new “science is in crisis” narrative is not only empirically unsupported, but also quite obviously counterproductive. Instead of inspiring younger generations to do more and better science, it might foster in them cynicism and indifference. Instead of inviting greater respect for and investment in research, it risks discrediting the value of evidence and feeding antiscientific agendas. <a href="https://doi.org/10.1073/pnas.1708272114">Fanelli 2018</a>
+                
+            </script>
+        </section>
+    				
+			
+				
+				<section class="scrollable">
+					<h1>Introduction to Reproducibility</h1> 
+					
+					<ul>
+						<li style="color:#89b3e479;">Historical notes on reproduction & concept</li>
+						<li style="color:#337acc;">The concept of reproduction</li>
+						<li style="color:#337acc;">Reproducibility today</li>
+				  </ul>
+				</section>
+				
+				<!-- Slides in Markdown language for item #2: The concept of reproduction -->
+    		<!-- AUTHORS: for horizontally organised slides, use three dashes, for vertical slides two dashes -->
+    		<section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+			    <script type="text/template">
+              ## The concept of reproduction
+              Why focus on the process when the world is outcome driven? Don’t results matter? 
+
+              Yes, results do matter. 
+              
+              > But if you optimize for the outcome, you win one time.
+              > If you __optimize for a process that leads to great outcomes__, you can win again and again.
+              
+              --
+              
+              ## Fundamental objectives of scientific research
+
+              - Discover laws, axioms, rules, etc. and describe them and under which condition they apply
+              - Conduct case studies to prove a general principle (“proof-of-concept”)
+              - Transfer/publish results to prove validity, veracity, trust in findings
+              
+              Are you a _rationalist_ or an _empiricist_? 
+              
+              --
+              
+              ## We define _reproducibility_ to mean
+              
+              -- 
+              
+              ## _Computational Reproducibility_
+              
+              --
+              
+              ## _Computational Reproducibility_
+              
+              <div aling="left">
+              
+              <ul>
+              <li>Computation has a large and increasing role in scientific research. 
+                <ul><li>-informatics: bio-informatics, geo-informatics, ...</li></ul>
+              
+              <li>If results are produced by complex computational processes, the <i>methods</i> section of a <b>traditional</b> scientific paper is no longer sufficient.</li>
+              </ul>
+              </div>
+              
+              --
+              
+              ## _Re_{producible, plicable, creatable}
+              
+              <div align="left">
+              
+              - __Reproducible research__: Authors provide all the necessary data and the computer code to run the __same__ analysis again, re-creating the results.
+
+              - __Replication__: A study that arrives at similar scientific findings as another study, collecting new data (possibly with different methods) and completing new analyses.
+              
+              </div>
+              --
+              
+              ## The concept of reproduction 
+              
+               <div align="left">
+
+              If you read one article, read [Leek 2017](https://doi.org/10.1146/annurev-statistics-060116-054104):
+
+              - __Reproducibility__: A study is reproducible if all of the code and data used to generate the numbers and figures in the paper are available and exactly produce the published results.
+              
+              - __Replicability__: A study is replicable if an identical experiment can be performed like the first study and the statistical results are consistent.
+              
+              - __False discovery__: A study is a false discovery if the result presented in the study produces the wrong answer to the question of interest.
+              
+              </div>
+              
+              --
+              
+              ## The concept of reproduction 
+
+              Our definition: [Ostermann & Granell, 2017](https://doi.org/10.1111/tgis.12195), [Nüst et al, 2018](https://doi.org/10.7717/peerj.5072):
+
+              > A reproducible paper ensures a reviewer or reader can recreate the computational workflow of a study or experiment, including the prerequisite knowledge and the computational environment. The former implies the scientific argument to be understandable and sound. The latter requires a detailed description of used software and data, and both being openly available.
+              
+              --
+              
+              ## Reproducibility spectrum  
+
+              ([Peng, 2011](https://doi.org/10.1126/science.1213847)): _Reproducible Research in Computational Science_
+              
+              
+              <img data-src="resources/figs/spectrumreproducibility.jpg" width="80%"/>
+
+              --
+              
+              ## The concept of (pre-)reproduction 
+
+              <div id="left">
+                <a href="https://doi.org/10.1038/d41586-018-05256-0">Stark (2018)</a> stated:
+                
+                <ul>
+						      <li>"Science should be ‘show me’, not ‘trust me’; it should be ‘help me if you can’, not ‘catch me if you can’."</li>
+						      <li>"If I publish an advertisement for my work (that is, a paper long on results but short on methods) and it’s wrong, that makes me untrustworthy.". </li>
+						      <li>"If I say: ‘here’s my work’ and it’s wrong, I might have erred, but at least I am honest".</li>
+				        </ul>
+              </div>
+              
+              <div id="right">
+                  <img data-src="resources/figs/pre_producibility.png" width="60%"/>
+              </div>
+
+              --
+              
+              ## Summary
+              
+              <div id="left">
+                Reproducibility involves the <em>original</em> data and code:
+                 <ul>
+						      <li>checking the published manuscript, </li>
+						      <li>looking for published data and code, then  </li>
+						      <li>comparing the results of that data and code to the published results.</li>
+						      <li>if they are the same, the study is reproducible; otherwise, it is not.</li>
+				        </ul>
+              </div>
+              
+              <div id="right">
+                Replicability involves <em>new</em> data collection to test for consistency with previous results of a smiliar study.
+
+                <ul>
+						      <li>Even when a paper is computationally reproducible, it may fail to be replicated.</li>
+						    </ul>
+              </div>
+              
+
+          </script>
+        </section>
+				
+				
+		
+				<section class="scrollable">
+					<h1>Introduction to Reproducibility</h1> 
+					
+					<ul>
+						<li style="color:#89b3e479;">Historical notes on reproduction & concept</li>
+						<li style="color:#89b3e479;">The concept of reproduction</li>
+						<li style="color:#337acc;">Reproducibility today</li>
+				  </ul>
+				</section>
+				
+				
+				<!-- Slides in Markdown language for item #3: Reproducibility today -->
+				<!-- AUTHORS: for horizontally organised slides, use three dashes, for vertical slides two dashes -->
+				<section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				    <script type="text/template">
+                ## Reproducibility today
+                
+                ### You can't guarantee success, but you can guarantee failure: never try.
+                
+                --
+                
+                ## Research Ecosystem
+                
+                <img data-src="resources/figs/stodden_ecosystem.png" width="70%"/>
+                
+                --
+                
+                ## Research is a complex ecosystem
+
+                Community-driven approach to reproducibility ([Granell et al, 2018](https://doi.org/10.7287/peerj.preprints.27216v1))
+
+                <img data-src="resources/figs/OGRS2018Fig1.jpg" width="70%"/>
+                --
+                
+                ## Institutional/policy level
+
+                <div id="left">
+                US view (May 2019): <a href="https://www.nap.edu/catalog/25303/reproducibility-and-replicability-in-science">Reproducibility and Replicability in Science</a>:
+                <ul>
+                  <li>reproducibility <i>vs</i> replicability</li>
+                  <li>recommendatios to improve R&R across science</li>
+                  <li>target different actors</li>                  
+                  <li>education & training</li>
+                </ul>
+                </div>
+                
+                <div id="right">
+                   <img data-src="resources/figs/nap.jpg" width="55%"/>
+                </div>
+                
+                --
+                
+                ## Publisher level  
+
+                [TOP](https://cos.io/top/) (Transparency and Openness Promotion) Guidelines for journals and funders
+                <ul>
+                <li>8 modular standards x 3 levels of increasing implementation/adoption (<a href="https://www.topfactor.org/">TOP Factor</a>)</li>
+                <li>Check if journals of your discipline support TOP guidelines!</li>
+                </ul>
+                
+                --
+                
+                ## Publisher level - TOP Guidelines  
+
+                <img data-src="resources/figs/topguidelines.png" width="75%" />
+                
+                --
+                
+                ## Publisher level
+                
+                <div align="left">
+                
+                <ul>
+                <li>Software/code Journals: <a href="https://openresearchsoftware.metajnl.com/">Journal of Open Research Software</a> <a href="https://joss.theoj.org/">Journal of Open Source Software</a>, <a href="https://journal.r-project.org/">The R Journal</a>, <a href="https://www.journals.elsevier.com/softwarex">SoftwareX</a>.
+                </li>
+                
+                <li>
+                Reproducible experiments journals: <a href="http://rescience.org/x">ReScience X</a>, <a href="http://rescience.github.io/">ReScience C</a>, <a href="https://www.cambridge.org/core/journals/experimental-results">Experimental Results</a>, <a href="https://journals.sagepub.com/home/amp">Advances in Methods and Practices in Psychological Science</a>, <a href="https://www.nowpublishers.com/QJPS">Quarterly Journal of Political Science</a> 
+                </li>
+                
+                <li>Data journals: <a href="https://www.journals.elsevier.com/data-in-brief">Data in Brief</a>, <a href="https://www.nature.com/sdata/">Scientific Data</a>, <a href="https://academic.oup.com/gigascience">GigaScience</a>, <a href="https://www.mdpi.com/journal/data">Data</a>
+                </li>
+                </ul>
+                
+                </div>
+                --
+                
+                ## Institutional/Publisher level 
+
+                <div id="left">
+                If data <b>IS</b> a key outcome, publish it as a data journal
+                
+                <ul>
+                  <li>follow journal guidelines, either propietary (eg <a href="https://www.data-planet.com/">SAGE</a>) or public repositories</li>
+                </ul>
+                
+                </div>
+                
+                <div id="right">
+                If data <b>IS NOT</b> key but valuable, deposit/publish it in <i>public repositories</i>
+                
+                <ul>
+                <li>Find the right repository for your data: <a href="http://re3data.org/">re3data.org</a>, <a href="https://repositoryfinder.datacite.org/">Repository Finder</a></li>
+                <li>Use thematic repositories for your discipline</li>
+                <li>Use general-purpose repositories (<a href="https://zenodo.org/">Zenodo</a>, <a href="https://figshare.com/">figshare</a>) 
+                </ul>
+                </div>
+                
+                --
+                
+                ## Community level - Initiatives & Projects 
+                
+                <div align="left">
+
+                <ul>
+                  <li><a href="https://codecheck.org.uk/">Codecheck</a>: independent reproduction of computations in research papers.</li>
+                  <li><a href="https://o2r.info/">Opening Reproducible Research</a> (O2R): developing Research Compendium.</li>
+                  <li><a href="https://wholetale.org/">Whole Tale</a>: infrastructure for reproduction.</li>
+                  
+                  <li><a href="https://paperswithcode.com/">Papers with Code</a>: Machine Learning papers & code & evaluation tables.</li>
+                  <li><a href="http://frictionlessdata.io/reproducible-research/">Frictionless Data for reproducible research</a> (by OKF).</li>
+                </ul>
+
+                </div>
+                --
+                
+                ## Community level - Conferences & associations
+
+                <div>
+                <ul>
+                  <li><a href="https://www.acm.org/publications/policies/artifact-review-badging">ACM badges</a></li>
+                  <li><a href="https://neurips.cc/">NeurIPSConf</a></li>
+                  <li><a href="https://reproducibility.sigmod.org/">SIGMOD</a></li>
+                  <li><a href="https://vldb.org/pvldb/reproducibility/">PVLDB Reproducibility</a></li>
+                  <li><a href="https://agile-online.org/">AGILE</a></li>
+                </ul>
+                </div>
+
+                --
+                
+                ## Research Group level
+
+
+                <ul>
+                  <li><a href="http://www.stodden.net">Victoria Stodden</a></li>
+                  <li><a href="https://lorenabarba.com/">Lorena Barba</a></li>
+                  <li><a href="https://med.virginia.edu/faculty/faculty-listing/ban2b/">Brian Nosek</a></li>
+                  <li>...your research group!!!...</li>
+                </ul>
+
+
+                --
+                
+                ## Individual level
+
+                <div align="left">
+
+                <ul>
+                  <li>General recommendations:</li>
+                  <ul>
+                    <li><a href="https://collections.plos.org/ten-simple-rules">Ten simple rules collection</a>: must read!</li>
+                    <li><a href="https://dx.doi.org/10.1371/journal.pcbi.1003285">Ten simple rules for reproducible computational research</a></li>
+                    <li><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510">Good enough practices in scientific computing</a></li>
+                  </ul>
+                  <li>Specific recommendations:</li>
+                  <ul>
+                    <li>British Ecological Society (BES), <a href="https://www.britishecologicalsociety.org/publications/guides-to/">guides to better science</a></li>
+                    <li><a href="https://osf.io/cb7z8/">AGILE Reproducible Paper Guidelines</a></li>
+                    <li><a href="https://dx.doi.org/10.1371/journal.pcbi.1007007">Ten simple rules for reproducible research in Jupyter notebooks</a></li>
+                  </ul>
+                </ul>
+                
+                </div>
+            </script>
+        </section>
+        
+        
+        <!-- Last slide --> 
+				<section >
+					<h1>Reproducibility Research in the Geosciences</h1>
+					
+				</section>
+				
+				
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

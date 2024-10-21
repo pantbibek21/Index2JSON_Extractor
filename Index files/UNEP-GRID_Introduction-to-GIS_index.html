@@ -1,0 +1,1204 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Introduction to GIS</title>
+		<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+		
+		<meta property="dc:title" content="Introduction to GIS"/>
+		<meta property="dc:creator" content="Anna Adamowicz" />
+		<meta property="dc:publisher" content="UNEP/GRID-Warsaw Centre" />
+		<meta property="dc:subject" content="GIS, spatial data, coordinate systems, spatial analysis, map" />
+		<meta property="dc:abstract" content="This is an introductory course to GIS including basic information on: Geographic Information System, spatial data (raster and vector model), coordinate systems, attribute and spatial queries, simple analysis using geoprocessing tools, and data visualization" />
+		<meta property="dc:tableOfContents" content="(1) Basics of GIS; 
+							     (2) Spatial data; 
+							     (3) Spatial reference systems; 
+							     (4) Spatial data basic analysis; 
+							     (5) Data visualization;" />
+		<meta property="dc:description" content="Learning outcomes: Understand the basic concepts of Geographic Information Systems; Define terms related to raster and vector data models (e.g. pixel, grid, spatial resolution, attribute table, topology); Compare vector and raster data models; Understand the difference between geographic and projected coordinate systems; Select objects using attribute and spatial queries; Perform simple analysis with geoprocessing tools; List map elements and basic principles of map creation; Create a thematic map using different methods of symbolization;" />
+		<meta property="dc:contributor" content="Maria Andrzejewska, Ela Woloszynska-Wisniewska" />
+		<meta property="dc:created" content="2020-08-26" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html"/>
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90min" />
+		<meta property="dc:audience" content="students, public sector" />
+		<meta property="dc:educationLevel" content="EQF 4" />
+		<meta property="dc:source" content="Existing training materials of the course "GIS training"; Definitions according to: Wikipedia, ArcGIS, Esri Dictionary and Help, USGS, QGIS Documentation (https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/coordinate_reference_systems.html); 
+								Wikimedia (https://en.wikipedia.org/wiki/File:Latitude_and_Longitude_of_the_Earth.svg, https://en.wikipedia.org/wiki/Geographic_coordinate_system#/media/File:ECEF_ENU_Longitude_Latitude_relationships.svg); Directive INSPIRE; https://www.arcweb.com/; 
+								Shunji, 1999, GIS Work Book, NASDA; Robinson, et al, 1995, Elements of Cartography, NY: John Wiley & Sons; https://www.diffen.com/" />
+		<meta property="dc:rightsHolder" content="UNEP/GRID-Warsaw Centre" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:DM4" />
+		<link rel="dc:relation" href="eo4geo:DM3-2" />
+		<link rel="dc:relation" href="eo4geo:GD1-4" />
+		<link rel="dc:relation" href="eo4geo:AM2-2" />
+		<link rel="dc:relation" href="eo4geo:AM2-3" />
+		<link rel="dc:relation" href="eo4geo:AM4-2" />
+		<link rel="dc:relation" href="eo4geo:CF6-3" />
+		<link rel="dc:relation" href="eo4geo:CV3-1" />
+			
+			
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    		<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 168px;height : 100px" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 200px;height : 80px" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Introductory course to GIS</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section>
+					
+				<section>
+					<h1>Introduction to GIS</h1>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>				
+					
+					<section>
+						<h1>Overview course content</h1> 
+						<h2>Introduction to GIS</h2>
+						<table>
+							<tr><td><b>1</b></td><td><b><a href="#/1">Basics of GIS</a></b></td><td>2</td></tr>
+							<tr><td><b>2</b></td><td><b><a href="#/4">Spatial data</a></b></td><td>4</td></tr>
+							<tr><td><b>3</b></td><td><b><a href="#/9">Spatial reference systems</a></b></td><td>3</td></tr>
+							<tr><td><b>4</b></td><td><b><a href="#/13">Spatial data basic analysis</a></b></td><td>3</td></tr>
+							<tr><td><b>5</b></td><td><b><a href="#/17">Data visualization</a></b></td><td>2</td></tr>
+						</table>
+					</section>
+					
+					<section>
+						<h1>Overview course content</h1> 
+						<h2>Introduction to GIS</h2>
+						<p><em>Learning outcomes:</em></p>
+						<ul><li>Understand the basic concepts of Geographic Information Systems</li>
+						<li>Define terms related to raster and vector data models</li>
+						<li>Compare vector and raster data models</li>
+						<li>Understand the difference between geographic and projected coordinate systems</li>
+						<li>Select spatial objects using attribute and spatial queries</li>
+						<li>Perform simple analysis with geoprocessing tools</li>
+						<li>List map elements and basic principles of map creation</li>
+						<li>Create a thematic map using different methods of symbolization</li></ul>
+					</section>
+				
+				</section>
+				
+				
+				<!--- UNIT 1 STARTS HERE --->
+				
+				<section>
+					<h1>1 | Basics of GIS</h1>
+					<h2>Introduction to GIS</h2>
+					<table>
+						<tr><td><b>#</b></td><td><b>Content</b></td></tr>
+						<tr><td><b>1.1</b></td><td><b><a href="#/2">What is GIS?</a></b></td></tr>
+						<tr><td><b>1.2</b></td><td><b><a href="#/3">Uses of GIS</a></b></td></tr>
+					</table>
+					<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+					</a>
+				</section>
+				
+				<section>
+				
+					<section > 
+						<h1>1.1 | What is GIS?</h1> 
+				</section>
+					
+					<section>
+						<img style="background-color: transparent; box-shadow: none;" height="600" src="./resources/Introduction-to-GIS/gis.png" alt="Fig.GIS">
+					</section>
+					
+					<section>
+						<h2>GIS definition</h2>
+						<br><p><b><font style="color:#ea9b2d">Geographic Information System (GIS)</font></b></p>
+						<p>"is a computer system capable of capturing, storing, analyzing, and displaying geographically referenced information; that is, data identified according to location. 
+						Practitioners also define a GIS as including the procedures, operating personnel, and spatial data that go into the system."</p>
+						<citation>USGS (United States Geological Survey)</citation>
+						<p>"is a computer-based tool for mapping and analyzing things that exist and events that happen on earth. 
+						GIS technology integrates common database operations such as query and statistical analysis with the unique visualization and geographic analysis benefits offered by maps."</p>
+						<citation>ESRI</citation>
+						<p>The spatial (geographic) part differentiates a GIS from a standard computer database.</p>
+						<aside class="notes">A GIS is designed to efficiently capture, store, update, manipulate, analyze, and display all forms of geographically referenced information.
+						</aside>
+					</section>
+					
+					<section>
+						<h2>GIS components</h2>
+						<br><p>A GIS consists of five key components: hardware, software, data, people, and methods.</p>
+						<br><table>
+							<td class="fragment"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_component_hardware.png" alt="Fig.Hardware"></td>
+							<td class="fragment"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_component_software.png" alt="Fig.Software"></td>
+							<td class="fragment"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_component_data.png" alt="Fig.Data"></td>
+							<td class="fragment"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_component_people.png" alt="Fig.People"></td>
+							<td class="fragment"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_component_tools.png" alt="Fig.Methodes_Tools"></td>
+						</table>
+						<aside class="notes">
+						Hardware (Hardware usually means the computer on which a GIS operates.) 
+						Software (GIS software provides the functions and tools needed to store, analyze, and display geographic information.)
+						Data (The GIS data consists of any data bearing a definable relationship to space, including any data about things and events that occur in nature.)
+						People (GIS technology is of limited value without the people who manage the system and develop plans for applying it to real world problems. GIS users range from technical specialists who design and maintain the system to those who use it to help them perform their everyday work.) 
+						Methods (A GIS operates according to a well-designed plan and business rules, which are the models and operating practices unique to each organization.)
+						</aside>
+					</section>
+					
+					<section>
+						<h2>GIS: main idea</h2>
+						<br><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_schema_background.jpg" alt="Fig.GIS_Schema">
+						<p>The main goal of GIS is to provide <em>spatial</em> information to decision makers.</p>
+						<aside class="notes">
+						From real world to GIS: modelling and using different data sources (data that represent elements of real world), GIS 4 basic types of function according to the user's needs and requirements, different types of output information, information linked to knowledge and experience can provide a basis for decision making 
+						</aside>
+					</section>
+					
+					<section>
+						<h2>Data vs. Information</h2>
+						<br><p><b><font style="color:#ea9b2d">Data</font></b> means simply facts or figures - pieces of information, but not information itself.</p>
+						<p>Data is collected and stored in databases. When data are processed, interpreted, organized, structured or presented so as to make them meaningful or useful, they are called <font style="color:#ea9b2d"><b>information</font></b>. 
+						Information provides context for data.</p>
+						<p>In a GIS, spatial analysis and modelling are the main source of information.</p>
+						<p><b><font style="color:#ea9b2d">Spatial analysis</font></b> - a set of methods and tools for performing operations on spatial data in order to obtain additional information.</p>
+						<aside class="notes">
+						Explain: the difference between data and information.  
+						</aside>
+					</section>
+				
+				</section>
+					
+				<section>
+					
+					<section>
+						<h1>1.2 | Uses of GIS</h1>
+					</section>	
+					
+					<section>
+						<h2>Software</h2>
+						<p>Geospatial software and tools:</p>
+						<ul><li><b><font style="color:#83d6f2">Desktop GIS</font></b> (QGIS, SAGA GIS, GRASS GIS, ILWIS, IDRISI, Esri products: ArcGIS, ArcMap, ArcGlobe, GeoMedia, MapInfo, Bentley Systems: MicroStation, ENVI, ERDAS IMAGINE)</li>
+						<li><b><font style="color:#83d6f2">GIS as a service</font></b> (ArcGIS Online, Mapbox, OpenStreetMap, Google Maps, Apple Maps, Here Maps, Bing Maps)</li>
+						<li><b><font style="color:#83d6f2">Spatial database management systems</font></b> (MySQL, Oracle Spatial, Microsoft SQL Server, PostgreSQL)</li>
+						<li><b><font style="color:#83d6f2">Map servers</font></b> (Geoserver, MapServer, Mapnik)</li></ul>
+						<br><br>
+						<table><tr><td style="text-align: center" width="150">
+						<img height="100" style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/qgis_logo.png" alt="Fig.QGIS" /></td>
+						<td><img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/software.png" alt="Fig.Software"></td></tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Fields of GIS usage</h2>
+						<table>
+						<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/gis_example.PNG" alt="Fig.GIS_example"></td>
+						<td><ul><li>urban planning</li>
+						<li>environment protection and management</li>
+						<li>land use monitoring</li>
+						<li>agriculture</li>
+						<li>transportation/logistics</li>
+						<li>emergency management</li>
+						<li>network infrastructure management</li>
+						<li>tourism</li>
+						<li>...</li>
+						</ul></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Advantages of GIS</h2>
+						<br><ul><li>Ability to view, visualize and interpret data in the form of maps, charts and reports - relationhips and trends easy to see and understand</li>
+						<li>Improved decision making and problems solving through specific and detailed information regarding locations of features and phenomena</li>
+						<li>Reduce costs and increase efficiency</li>
+						<li>Improved communication between organisations or departments</li>
+						</ul>
+					</section>
+					
+				</section>					
+								
+				<!--- UNIT 1 ENDS HERE --->
+				
+				<!--- UNIT 2 STARTS HERE --->
+				
+				<section>
+					<h1>2 | Spatial data</h2>
+					<h2>Introduction to GIS</h2>
+					<table>
+						<tr><td><b>#</b></td><td><b>Content</b></td></tr>
+						<tr><td><b>2.1</b></td><td><b><a href="#/5">Definition and properties</a></b></td></tr>
+						<tr><td><b>2.2</b></td><td><b><a href="#/6">Vector data model</a></b></td></tr>
+						<tr><td><b>2.3</b></td><td><b><a href="#/7">Raster data model</a></b></td></tr>
+						<tr><td><b>2.4</b></td><td><b><a href="#/8">Comparing vector and raster data models</a></b></td></tr>
+					</table>
+					<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+					</a>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>2.1 | Definition and properties</h1>
+					</section>
+					
+					<section>
+						<h2>From real world...</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/world.png" alt="Fig.RealWorld">
+					</section>
+					
+					<section>
+						<h2>... to GIS</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/world_representation.png" alt="Fig.RealWorld_representation">
+					</section>
+					
+					<section>
+						<h2>Spatial data - definition</h2>
+						<br><p><font style="color:#ea9b2d"><b>Spatial object </b></font>means an abstract representation of a real-world phenomenon related to a specific location or geographical area.</p>
+						<p><font style="color:#ea9b2d"><b>Spatial data </b></font>means any data with a direct or indirect reference to a specific location or geographical area.</p>
+						<p><font style="color:#ea9b2d"><b>Spatial data set </b></font>means an identifiable collection of spatial data.</p>
+						<citation>DIRECTIVE 2007/2/EC of the European Parliament ad of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community 
+						<a href= "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32007L0002">(INSPIRE)</a></citation>
+					</section>
+					
+					<section>
+						<h2>Data model</h2>
+						<br><p><font style="color:#83d6f2"><b>Data model </b></font>is a set of guidelines to convert the real world (called entity) to the digitally and logically represented spatial objects consisting of the attributes and geometry.</p>
+						<p>The attributes are managed by thematic or semantic structure while the geometry is represented by geometric-topological structure.</p>
+						<citation>Shunji, 1999</citation>
+					</section>
+					
+					<section>
+						<h2>Spatial data - properties</h2>
+						<p>Spatial data describes <font style="color:#ea9b2d"><b>shape</b></font>, <font style="color:#ea9b2d"><b>location</b></font>, <font style="color:#ea9b2d"><b>spatial relationships </font></b>
+						and <b><font style="color:#0069b1">attributes </font></b>of features related to the Earth's surface.</p>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_data.png" alt="Fig.Spatial_data">
+					</section>
+					
+					<section>
+						<h2>Spatial data (representation) model</h2>
+						<p>Two common spatial data models:</p>
+						<h2><font style="color:#83d6f2">VECTOR</font></h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/data_model_vector.png" alt="Fig.Data_vector">
+						<h2><font style="color:#83d6f2">RASTER</font></h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/data_model_raster.png" alt="Fig.Data_raster">
+					</section>
+					
+				</section>
+					
+				<section>
+				
+					<section>
+						<h1>2.2 | Vector data model</h1>
+					</section>
+					
+					<section>
+						<h2>Three types of geometry</h2>
+						<p>A vector data model defines discrete objects such as fire hydrants, rivers, lakes.</p>
+						<p>A vector data models divided into three basic types:</p>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_types_of_geometry.png" alt="Fig.Types_of_geometry">
+						<p>All three of these types of vector data are composed of coordinates and attributes attached to the geometry.</p>
+					</section>
+					
+					<section>
+						<h2>Geometry: points</h2>
+						<table>
+							<tr><td style="text-align: center"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_types_of_geometry_points.png" alt="Fig.Geometry_points"></td></tr>
+							<tr><td><ul><li>0-dimension objects</li>
+							<li>represented by a single pair of coordinates (X,Y)</li>
+							<li>associated attribute information is attached to the center of the point</li>
+							<li>used to represent objects with no length or area (e.g. light poles, trees) or</li>
+							<li>used to represent a geographic feature too small to be displayed as a line or area (e.g. the location of a city on a small-scale map)</li>
+							<li>symbolized by a point or other sygnature (symbol) in different sizes and colors</li></ul></tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Geometry: lines</h2>
+						<table>
+							<tr><td style="text-align: center"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_types_of_geometry_lines.png" alt="Fig.Geometry_lines"></td></tr>
+							<tr><td><ul><li>1-dimension objects</li>
+							<li>defined by an ordered set of two or more coordinate pairs called vertices</li>
+							<li>used to model linear features with no area (e.g. county boundary lines) or</li>
+							<li>used to represent the shape of geographic features too narrow to be displayed as an area at the given scale (e.g. contours, street centrelines, streams)</li>
+							<li>symbolized by different types of line that have a color, width and style (solid, dashed, dotted, etc. ...)</li></ul></tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Geometry: polygons</h2>
+						<table>
+							<tr><td style="text-align: center"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_types_of_geometry_polygons.png" alt="Fig.Geometry_polygons">
+							<tr><td><ul><li>2-dimension objects</li>
+							<li>composed of three or more connected lines where the start and end point have the same coordinate</li>
+							<li>attribute information is attached to the center of the polygon</li>
+							<li>used to represent areas (e.g. lakes, forests, cities)</li>
+							<li>represent length and area, embody the idea of an inside and an outside</li></ul></tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Geometry: spaghetti vs. topological model</h2>
+						<table>
+							<tr><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_model_spaghetti_topology.png" alt="Fig.Model_spaghetti_topology"></tr>
+							<td style="text-align: center"><li>easy to implement</li>
+							<li>duplicate data</li>
+							<li>difficult modeling topological relations</li></td>
+							<td></td>
+							<td style="text-align: center"><li>easy to modify (update)</li>
+							<li>defined topological relationships</li></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Topology</h2>
+						<p><font style="color:#ea9b2d"><b>Topology</b></font> is required to determine spatial relationships between objects in a GIS.</p>
+						<p>If the features are deformed (e.g. through projections or datum transformations), some properties change: area, shape, direction, distance, relative proximities.</p>
+						<p>Other properties (<em>topological properties</em>) remain constant after distortion: adjacency, containment, connectivity.</p>
+						<p><b>Benefits of topology:</b></p>
+						<ul><li>storing data more effeciently</li>
+						<li>ensuring data quality</li>
+						<li>facilitating advanced spatial analysis (e.g. network analysis)</li></ul>
+					</section>	
+
+					<section>
+						<h2>Topology</h2>
+						<br><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/topology.png" alt="Fig.Topology">
+						<p><small>Three examples of properties that remain constant after deformation</small></p>
+					</section>
+					
+					<section>
+						<h2>Attribute table</h2>
+						<table>
+							<td>
+							<p>An <b><font style="color:#ea9b2d">attribute</font></b> is a nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier (ID).</p>
+							<p>A database or tabular file containing information about a set of geographic features, usually arranged so that:</p>
+							<ul><li>each row represents a feature</li>
+							<li>each column represents one feature attribute.</li></ul>
+							<p>The attribute values can be used to find, query, analyze and symbolize features.</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/attribute_table_structure.png" alt="Fig.Attribute_table"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Attribute table - data types</h2>
+						<p>Each column in the database may contain different type of data.</p>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/attribute_data_types.png" alt="Fig.Attr_tab_data_types">
+						<p><b>Basic data types:</b></p>
+						<ul><li>NUMERIC: INTEGER (long int, short int) - numbers, code list</li>
+						<li>NUMERIC: FLOAT (double, real) - floating-point numbers</li>
+						<li>STRING (char, varchar, text) - names and other texts</li>
+						<li>DATE/TIME (date, time, year, timestamp) - data and/or time</li>
+						<li>BOOLEAN (0/1, true/false, yes/no) - logical expression</li>
+						<li>BLOB - multimedia files</li><ul>
+					</section>
+					
+					<section>
+						<h2>Vector data sources</h2>
+						<br><table>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_eg_a_gps_measure.png" alt="Fig.GPS"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_eg_b_coordinates.png" alt="Fig.Coordinates"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_eg_c_analysis.png" alt="Fig.Vector_tools"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_eg_d_database1.png" alt="Fig.Database"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_eg_e_database2.png" alt="Fig.Map_topo"></td>
+						</table>
+						<small><p>Vector data sources</p>
+						<p>(A - GPS measurements, B - list of coordinates, C - digitizing and conversion tools <em>e.g. raster to vector</em>, D, E - existing databases)</p></small>
+					</section>
+					
+					<section>
+						<h2>Vector file formats</h2>
+						<ul><li><font style="color:#83d6f2"><b>ESRI Shapefile</b></font> - the most common geospatial file type developed by ESRI, consists of:</li>
+						<ul><li><b>shp</b> (feature geometry)</li>
+						<li><b>shx</b> (shape index position)</li>
+						<li><b>dbf</b> (attribute data)</li>
+						<li>prj (projection system metadata)</li>
+						<li>xml (associated metadata)</li></ul>
+						<li><font style="color:#83d6f2"><b>GML</b></font> (Geography Markup Language) - XML based open standard for GIS data exchange</li>
+						<li><font style="color:#83d6f2"><b>KML/KMZ</b></font> (Google Keyhole Markup Language) - XML based open standard for GIS data exchange</li>
+						<li><font style="color:#83d6f2"><b>GPX</b></font> (GPS eXchange Format) - GPS data file</li>
+						<li><font style="color:#83d6f2"><b>GeoJSON</b></font> (Geographic JavaScript Object Notation) - a lightweight format based on JSON, used by many open source GIS packages</li></ul>
+					</section>
+					
+				</section>
+				
+				<section>
+				
+					<section>						
+						<h1>2.3 | Raster data model</h1>
+					</section>
+					
+					<section>
+						<h2>Raster data model</h2>
+						<p>A raster data model defines continous data and phenomena.</p>
+						<p>Raster's are:</p>
+						<li>digital aerial photographs and satellites imagery (spectral data),</li>
+						<li>continuous data represents phenomena - e.g. temperature, precipitation, elevation, slope,</li>
+						<li>digital pictures, scanned maps and plans.</li>
+						<img height="300" src="./resources/Introduction-to-GIS/raster_data.PNG" alt="Fig.Orto">
+					</section>
+					
+					<section>
+						<h2>Raster data model: geometry</h2>
+						<table>
+							<td><p>A raster consists of a matrix of cells (or pixels) organized into rows and columns (or a grid) 
+							where each cell contains one value representing information such as temperature, elevation, or spectral data.</p>
+							<p><b><font style="color:#ea9b2d">Pixel</font></b> - smallest visible element of an image.</p>
+							<p><b><font style="color:#ea9b2d">Grid</font></b> - 2-D object feature that represents a single element of a continous surface.</p></td>
+							<td width="600"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_geometry.png" alt="Fig.Raster_geometry"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Raster data model: georeferencing</h2>
+						<table>
+							<td><p>Cells are identified by their positions in the grid.</p>
+							<p>Raster data is georeferenced by:</p>
+							<li>real world coordinates of the reference point,</li>
+							<li>cell size in real world distance,</li>
+							<li>using the upper-left or lower-left corner of grid as the reference point.</li></td>
+							<td width="600"><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_geometry.png" alt="Fig.Raster_geometry"></td>
+						</table>
+					</section>
+									
+					<section>
+						<h2>Spatial resolution</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_resolution.png" alt="Fig.Resolution">
+						<small>The same feature in images of different resolution</small>
+						<p>A <b><font style="color:#ea9b2d">spatial resolution</font></b> refers to the dimension of the cell size representing the area covered on the ground.
+						Higher resolution means better feature quality but it means also bigger raster file size.</p>
+					</section>
+					
+					<section>
+						<h2>Raster bands</h2>
+						<br><p>A raster dataset contains one or more layers called <b>bands</b>.</b>
+						<p>A band is represented by a single matrix of cell values.</p>
+						<p>For example, a digital elevation model (DEM) is a single-band raster (has one band holding elevation values)
+						while satellite imagery is a multispectral image and has multiple bands.</p>
+						<p>Three main ways to display single-band raster datasets:</p>
+						<li><b>binary image</b> (each cell has a value of 0 or 1 and is often displayed using black and white),</li>
+						<li><b>grayscale image</b> (each cell has a value from 0 to another number, such as 255),</li>
+						<li><b>color image</b> (a set of values is coded to match a defined set of red, green, and blue (RGB) values).</li>
+					</section>
+					
+					<section>
+						<h2>Raster bands</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_bands.png" alt="Fig.Raster_bands">
+						<p><small>Three ways to display raster dataset (binary image, grayscale image and color image)</small></p>
+					</section>
+					
+					<section>
+						<h2>Attribute table</h2>
+						<br><p>Raster data can also have attributes only if pixels are represented using a small set of unique integer values. Raster datasets that contain attribute tables typically have cell values that represent or define a class, group, category, or membership.</p>
+						<p>In raster datasets, each row of an attribute table corresponds to a certain zone of cells having the same value.</p>
+						<p>The attribute tables can be used to analyze datasets and symbolize raster cells.</p>
+						<p><b>Note:</b> Not all GIS raster data formats can store attribute information.</p>
+					</section>
+					
+					<section>
+						<h2>Attribute table</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_attribute_table.png" alt="Fig.Raster_attribute_table">
+						<p><small>An example of raster dataset with attribute table</small></p>
+					</section>
+					
+					<section>
+						<h2>Raster data sources</h2>
+						<br><table>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_eg_a_orto.png" alt="Fig.Ortophoto"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_eg_b_satellite.png" alt="Fig.Satellite"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_eg_c_dem.png" alt="Fig.DEM"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_eg_d_map.png" alt="Fig.Maps"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/raster_eg_e_analysis.png" alt="Fig.Raster_tools"></td>
+						</table>
+						<small>Raster data model sources</p>
+						<p>(A - orthophoto, B - satellite imagery, C - DEM, D - scanned maps and plans, E - conversion and analysis tools <em>e.g. vector to raster, interpolation</em>)</p></small>
+					</section>
+					
+					<section>
+						<h2>Raster file formats</h2>
+						<ul><li><font style="color:#83d6f2"><b>GeoTIFF</b></font> - TIFF variant enriched with GIS relevant metadata, may be accompanied by other files:
+						<ul><li><b>tfw</b> (raster geolocation)</li>
+						<li>xml (metadata)</li>
+						<li>aux (projections and other information)</li>
+						<li>ovr (pyramid files improves performance for raster display)</li></ul>
+						<li><font style="color:#83d6f2"><b>IMG</b></font> - ERDAS IMAGINE image file format</li>
+						<li><font style="color:#83d6f2"><b>ESRI Grid</b></font> - format developed by Esri, which has two varieties: binary or ASCII</li></ul>
+					</section>
+				
+				</section>
+			
+				<section>
+					
+					<section>
+						<h1>2.4 | Comparing vector and raster data models</h1>
+					</section>
+					
+					<section>
+						<h2>Comparing: vector vs. raster data model</h2>
+						<br><table>
+							<thead>
+								<tr>
+									<th>properties</th><th>vector</th><th>raster</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>depict</td><td><em>discrete features</em></td><td><em>continous data</em></td></tr>
+								<tr><td>geometry</td><td><em>coordinates</em></td><td><em>cells organized into a grid</em></td></tr>
+								<tr><td>attributes</td><td><em>attribute table (with many attributes)</em></td><td><em>cell value (only one attribute)</em></td></tr>
+								<tr><td>analysis</td><td><em>geoprocessing</em></td><td><em>map algebra, overlays</em></td></tr>
+								<tr><td>data structure</td><td><em>more complex</em></td><td><em>more simple</em></td></tr>
+								<tr><td>size</td><td><em>compact data structure – little storage space</em></td><td><em>greater storage needed</em></td></tr>
+								<tr><td>file formats</td><td><em>ESRI Shapefile, GML, KML, geoJSON, GPX</em></td><td><em>geoTIFF, IMG, grid</em></td></td>								
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Which one is better?</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_raster_1.png" alt="Fig.Comparing_vector_raster_1">
+					</section>
+					
+					<section>
+						<h2>Which one is better?</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/vector_raster_2.png" alt="Fig.Comparing_vector_raster_2"> 
+					</section>
+									
+				</section>
+				
+				<!--- UNIT 2 ENDS HERE --->
+				
+				<!--- UNIT 3 STARTS HERE --->
+				
+				<section > 
+					<h1>3 | Spatial reference systems</h1> 
+					<h2>Introduction to GIS</h2>
+					<table>
+						<tr><td><b>#</b></td><td><b>Content</b></td></tr>
+						<tr><td><b>3.1</b></td><td><b><a href="#/10">Definition</a></b></td></tr>
+						<tr><td><b>3.2</b></td><td><b><a href="#/11">Geographic Coordinate System</a></b></td></tr>
+						<tr><td><b>3.3</b></td><td><b><a href="#/12">Projected Coordinate System</a></b></td></tr>
+					</table>
+					<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+					</a>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>3.1 | Definition</h1>
+					</section>
+				
+					<section>
+						<h2>What is spatial reference?</h2>
+						<br><p>A <b><font style="color:#ea9b2d">spatial reference</font></b> describes where features are located in the real world. It is a key component of spatial data and applications, and differentiates a GIS from a standard databases.</p>
+						<p>A spatial reference system (SRS) or coordinate reference system (CRS) is a coordinate-based local, regional or global system used to locate geographical entities.</p>
+					</section>
+				
+					<section>
+						<h2>Eiffel Tower - where is it?</h2>
+						<img height="300" src="./resources/Introduction-to-GIS/eiffel_tower.PNG" alt="Fig.Eiffel_Tower">
+						<p>Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France</p>
+						<p>48° 51' 29.1348''N; 2° 17' 40.8984''E = 48.858093; 2.294694</p>
+						<p>448256.00 m E; 5411928.00 m N</p>	
+						<aside class="notes">
+						Different types of location (adress, coordinates) 
+						</aside>
+					</section>
+				
+					<section>
+						<h2>Types of coordinate systems used in a GIS</h2>
+						<br><p>Two common types of coordinate systems used in a GIS:</p>
+						<li><b>Geographical coordinate systems (GCS) </b>– a global or spherical coordinate system based on latitude and longitude coordinates.</li>
+						<br><li><b>Projected coordinate systems (PCS) </b>– such as Universal Transverse Mercator (UTM), provide different ways to project maps of the Earth’s spherical surface into a two-dimensional Cartesian coordinate plane.</li>
+						</br><p>Coordinate systems (both geographic and projected) provide a framework for defining real-world locations.</p>
+					</section>
+				
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>3.2 | Geographic Coordinate System</h1>
+					</section>
+						
+					<section>
+						<h2>Geographic Coordinate System</h2>
+						<p>A geographic coordinate system is a reference system for identifying locations on the curved surface of the earth. Locations on the earth’s surface are measured in <em>angular units</em> from the center of the earth relative to two planes: the plane defined by the equator and the plane defined by the prime meridian (which crosses Greenwich England). A location is therefore defined by two values: a latitudinal value and a longitudinal value.</p>
+						<img height="300" style="background-color: white; box-shadow: none;" src="./resources/Introduction-to-GIS/latitude_longitude.png" alt="Fig.Latitude_and_Longitude">
+						<p><small>Latitude and Longitude
+						<a href= "https://en.wikipedia.org/wiki/File:Latitude_and_Longitude_of_the_Earth.svg">(Wikimedia Commons)</a></small></p>
+					</section>
+					
+					<section>
+						<h2>Geographic Coordinate System</h2>
+						<table>
+							<td><ul>
+							<li>The <b><font style="color:#83d6f2">latitude</font></b> of a point on the Earth’s surface is the angle between the  equatorial plane and a line that passes through that point and is normal to the surface.</li>
+							<br><li>The <b><font style="color:#83d6f2">longitude</font></b> of a point on the Earth’s surface is the angle from a reference meridian to another meridian that passes through that point.</li></ul></td>
+							<td><img style="background-color: white; box-shadow: none;" src="./resources/Introduction-to-GIS/long_lat_relationships.png" alt="Fig.Latitude_Longitude_relationship">
+							<p><small>Latitude and Longitude - relationships 
+							<br><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system#/media/File:ECEF_ENU_Longitude_Latitude_relationships.svg">(Wikimedia Commons)</a></small></p></td>					
+						</table>
+						<p>Geographic Coordinate Systems can only be used to <b>measure angles</b>, not distances or areas.</p>
+					</section>
+					
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>3.3 | Projected Coordinate System</h1>
+					</section>
+					
+					<section>
+						<h2>Projection</h2>
+						<p><b><font style="color:#ea9b2d">Projection </font></b>is a method by which the curved surface of the Earth is portrayed on a flat surface.
+						This requires a systematic mathematical transformation of the Earth’s graticule of lines of longitude and latitude onto a plane. 
+						All projection types can be aggregated into three groups: planar, cylindrical and conical.</p>
+						<img height="200" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/projection.png" alt="Fig.Projection">
+						<p><small>The idea of projection - mapping the Earth on a flat surface</small></p>
+						<p>In a projected coordinate system, locations are identified by X, Y coordinates on a grid. </p>
+						<p>Unlike a geographic coordinate system, a projected coordinate system can be used to <b>measure distances and areas</b>.</p>
+					</section>					
+					
+					<section>
+						<h2>Planar projection</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/projection_planar.png" height="200" alt="Fig.Projection_planar">
+						<p><small>A planar projection maps the Earth's surface to a flat surface 
+						<a href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">(QGIS Documentation)</a></small></p>
+						<li>A <b>planar (azimuthal) projection</b> maps the Earth surface features to a flat surface that touches the Earth’s surface at a point or along a line of tangency.</li>
+						<li>This projection is often used in mapping polar regions but can be used for any location on the Earth’s surface.</li>
+					</section>
+					
+					<section>
+						<h2>Planar projection types</h2>
+						<p>Planar projections can be of three different types:</p>
+						<li>polar (using either north or south pole)</li>
+						<li>equatorial (using a point somewhere on the equator)</li>
+						<li>oblique (using any other point)</li>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/projection_planar_aspects.png" alt="Fig.Projection_aspects">
+						<p><small>Three different types of planar projection (polar, equatorial, oblique)</small></p>
+					</section>
+					
+					<section>
+						<h2>Cylindrical projection</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/projection_cylindrical.png" height="200" alt="Fig.Projection_cylindrical">
+						<p><small>A cylindrical projection maps the Earth's surface to a flat surface
+						<a href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">(QGIS Documentation)</a></small></p>
+						<li>A <b>cylindrical projection</b> maps the Earth surface onto a map rolled into a cylinder (which can then be flattened into a plane).</li>
+						<li>The cylinder can be tangent to the equator or it can be oblique.</li>
+						<li>This is a popular projection used in defining the Universal Transverse Mercator (UTM).</li>
+					</section>
+					 
+					 <section>
+						<h2>Conical projection</h2>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/projection_conical.png" height="200" alt="Fig.Projection_conical">
+						<p><small>A conical projection maps the Earth's surface to a flat surface
+						<a href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">(QGIS Documentation)</a></small></p>
+						<li>A <b>conical projection</b> maps the Earth surface onto a map rolled into a cone.</li>
+						<li>Conical projections are popular PCS’ in European maps (e.g. Europe Albers Equal Area Conic and Europe Lambert Conformal Conic).</li>
+					</section>
+					
+					<section>
+						<h2>EPSG code</h2>
+						<br><p>The <b><font style="color:#ea9b2d">EPSG codes</font></b> are 4-5 digit numbers that represent coordinate reference system definitions.</p>
+						<p>Most geographic information systems use EPSG codes as Spatial Reference System Identifiers (SRIDs) 
+						and EPSG definition data for identifying projections and performing transformations between these systems.</p>
+						<p>Common EPSG codes:</p>
+						<ul>
+						<li>EPSG:4258 - ETRS89 (European Terrestrial Reference System 1989), geodetic coordinate system for Europe</li>
+						<li>EPSG:4326 - WGS 84, latitude/longitude coordinate system based on the Earth's center of mass, used by the Global Positioning System among others</li>
+						<li>EPSG:3857 - Web Mercator projection used for display by many web-based mapping tools, including Google Maps and OpenStreetMap</li></ul>
+					</section>
+					
+				</section>
+				
+				<!--- UNIT 2 ENDS HERE --->
+				
+				<!--- UNIT 4 STARTS HERE --->
+				
+				<section>
+					<h1>4 | Basic analysis of spatial data</h1>
+					<h2>Introduction to GIS</h2></h2>
+					<table>
+						<tr><td><b>#</b></td><td><b>Content</b></td></tr>
+						<tr><td><b>4.1</b></td><td><b><a href="#/14">Attribute query</a></b></td></tr>
+						<tr><td><b>4.2</b></td><td><b><a href="#/15">Spatial query</a></b></td></tr>
+						<tr><td><b>4.3</b></td><td><b><a href="#/16">Geoprocessing</a></b></td></tr>
+					</table>
+					<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+					</a>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>4.1 | Attribute query</h1>
+					</section>
+				
+					<section>
+						<h2>Attribute query - definition</h2>
+						<p><b>Query</b> is a request to select features or records from a database. Often written as a statement or logical expression.</p>
+						<p><b><font style="color:#ea9b2d">Attribute query</font></b> is the process of searching and retrieving records of features in a database based on <em>desired attribute values</em>.</p>
+						<img height="400" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/query_def_attribute.png" alt="Fig.Attribute_query">
+					</section>
+					
+					<section>
+						<h2>Attribute query</h2>
+						<p>Typically, attribute query is performed using a criteria-based query language, most commonly SQL.<p>
+						<p><b>SQL (eng. Structured Query Language)</b> is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS).</p>
+						<p>In most cases, the desired information can be given as a set of criteria based on the available attributes.
+						These criteria are formatted in the appropriate query language as a Boolean expression, which can be validated as either true or false for each record in the database.</p> 
+						<p>Individual criteria can be constructed and combined using:</p>
+						<ul><li>logical operators such as comparisons (>, <, =, >=, <=),</li>
+						<li>Boolean algebra (and, or, not),</li>
+						<li>functions (sin, cos, sqrt, etc.).</li></ul>
+					</section>
+					
+					<section>
+						<h2>Where? How many? Which one? Whose?</h2>
+						<table>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/attribute_table_query.png" alt="Fig.Attribute_query"></td>
+							<td style="text-align: center">
+							<ul><li>Where is Mr. Black's house located?</li>
+							<li>Which buildings are smaller than 150 m2?</li>
+							<li>Where are the buildings owned by Evans family located?</li>
+							<li>How many houses belonging to Mr. Smith are located on the Bell Street?</li>
+							<li>Whose buildings are located on the Homer Street?</li>
+							<li>How many buildings on the Lisson Street are bigger than 100 m2?</li>
+							<li>...</li></td>
+						</table>
+					</section>
+				
+					<section>
+						<h2>How to create an attribute query?</h2>
+						<p>An attribute query consists of three basic elements: attribute field, operator, and attribute value.</p>
+						<p>1 element of the query is ALWAYS:</p>
+						<p>SELECT * FROM <b style="font-size: xx-large"><font style="color:#ea9b2d">"name of field"</font></b> 
+						WHERE <font style="color:#6ab42d"><b style="font-size: xx-large">operator</font></b> <font style="color:#83d6f2"><b style="font-size: xx-large" >'value'</font></b></p>
+						<p>Examples:</p>
+						<li>All buildings owned by Mr. Smith: <font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"><b>=</font></b> <font style="color:#83d6f2">'Smith'</font></li>
+						<li>All buildings smaller than 100 m2: <font style="color:#ea9b2d">"area"</font> <font style="color:#6ab42d"><b><</font></b> <font style="color:#83d6f2">100</font></li>
+						<p>Several elements of the query can be combined with operators: 
+						<font style="color:#0069b1"><b style="font-size: xx-large">OR</b></font> and <font style="color:#0069b1"><b style="font-size: xx-large">AND</b></font>.</p>
+					</section>
+					
+					<section>
+						<h2>Simple queries - operators</h2>
+						<br><p><b><font style="color:#6ab42d">LIKE</font></b> - search for a specified pattern in a column</p>
+						<li><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d">LIKE</font> <font style="color:#83d6f2">'Jones'</font></li>
+						<li><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d">LIKE</font> <font style="color:#83d6f2">'J%'</font></li>
+						<p><b><font style="color:#6ab42d">BETWEEN</font> ... <font style="color:#6ab42d">AND</font> ...</b> - select values within a given range (concerns numbers, text, or dates)</p>
+						<li><font style="color:#ea9b2d">"area"</font> <font style="color:#6ab42d">BETWEEN</font> <font style="color:#83d6f2">50</font> <font style="color:#6ab42d">AND</font> <font style="color:#83d6f2">100</font></li>
+						<p><b><font style="color:#6ab42d">IN (</font>...<font style="color:#6ab42d">,</font> ...<font style="color:#6ab42d">)</font></b> - specify multiple values</p>
+						<li><font style="color:#ea9b2d">"street"</font> <font style="color:#6ab42d">IN (</font><font style="color:#83d6f2">'Bell St.'</font><font style="color:#6ab42d">,</font> <font style="color:#83d6f2">'Homer St.'</font><font style="color:#6ab42d">)</font></li>
+						<p><b><font style="color:#6ab42d">IS (NOT) NULL</font></b> - test for (non)empty values</p>
+						<li><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d">IS NULL</font></li>
+					</section>
+					
+					<section>
+						<h2>Complex query - operator OR</h2>
+						<p><font style="color:#0069b1"><b style="font-size: xx-large">OR</b></font> - result of query contains features which have one or another attribute value</p>
+						<img height="350" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/operator_OR.png" alt="Fig.Attribute_query_OR">
+						<p><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Smith'</font>
+						<font style="color:#0069b1"><b> OR </font></b>
+						<font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Jones'</font>
+					</section>
+					
+					<section>
+						<h2>Complex query - operator AND</h2>
+						<p><font style="color:#0069b1"><b style="font-size: xx-large">AND</b></font> - result of query contains features which have two attributes at the same time</p>
+						<img height="350" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/operator_AND.png" alt="Fig.Attribute_query_AND">
+						<p><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Smith'</font>
+						<font style="color:#0069b1"><b> AND </font></b>
+						<font style="color:#ea9b2d">"street"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Lisson St.'</font>	
+					</section>
+					
+					<section>
+						<h2>Complex queries</h2>
+						<table>
+							<tr><td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/complex_query1.png" alt="Fig.Complex_attribute_query_1"></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/complex_query2.png" alt="Fig.Complex_attribute_query_2"></td></tr>
+							<tr><td>
+							<p><small>(<font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Evans'</font>
+							<font style="color:#0069b1"><b> OR </font></b><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Smith'</font>)
+							<font style="color:#0069b1"><b> AND </font></b><font style="color:#ea9b2d">
+							<font style="color:#ea9b2d">"street"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Lisson St.'</font></small></p></td>
+							<td>
+							<p><small><font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Evans'</font>
+							<font style="color:#0069b1"><b> OR </font></b>(<font style="color:#ea9b2d">"owner"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Smith'</font>
+							<font style="color:#0069b1"><b> AND </font></b><font style="color:#ea9b2d">
+							<font style="color:#ea9b2d">"street"</font> <font style="color:#6ab42d"> = </font> <font style="color:#83d6f2">'Lisson St.'</font>)<small></p></td></tr>
+						</table>
+					</section>
+				
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>4.2 | Spatial query</h2>
+					</section>
+					
+					<section>
+						<h2>Spatial query - definition</h2>
+						<p><b>Query</b> is a request to select features or records from a database. Often written as a statement or logical expression.</p>
+						<p><b><font style="color:#ea9b2d">Spatial query</font></b> is the process of searching and retrieving records of features in a database based on <em>location or spatial relationship</em>.</p>
+						<img height="400" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/query_def_spatial.png" alt="Fig.Spatial_query">
+					</section>
+					
+					<section>
+						<h2>Basic spatial relations</h2>
+						<table>
+							<td style="text-align: center"><p>Spatial relationships between objects:</p>
+							<li>disjont</li><li>overlaps</li><li>intersects</li><li>touches</li><li>equals</li><li>contains</li><li>within</li>
+							<p><em><small>Theoretical example: different spatial relations between objects A (buildings) and objects B (landslides)</small></em></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query.png" alt="Fig.Spatial_query_operators"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: disjoint</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings located outside of the landslide</p>
+							<p>Spatial relation: objects A and B do not have any common space</p>
+							<br><p>Result of request: 17 buildings</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_disjoint.png" alt="Fig.Operator_disjoint"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: overlaps</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings located partially within the landslide</p>
+							<p>Spatial relation: objects A and B overlap partially, but are not completely contained by each other</p>
+							<br><p>Result of request: 4 buildings</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_overlaps.png" alt="Fig.Operator_overlaps"></td>
+						</table>
+					</section>
+				
+					<section>
+						<h2>Operator: intersects</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings located either fully or partially within the landslide</p>
+							<p>Spatial relation: objects A and B share any portion of space</p>
+							<br><p>Result of request: 11 buildings</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_intersects.png" alt="Fig.Operator_intersects"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: contains</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings containing the landslide (theoretical case)</p>
+							<p>Spatial relation: objects A contain objects B within their boundaries</p>
+							<br><p>Result of request: 2 buildings</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_contains.png" alt="Fig.Operator_contains"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: within</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings located fully within the landslide</p>
+							<p>Spatial relation: objects A are completely inside objects B</p>
+							<br><p>Result of request: 5 buildings</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_within.png" alt="Fig.Operator_within"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: touches</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings touching the border of the landslide</p>
+							<p>Spatial relation: objects A and B have at least one point in common, but their interiors do not intersect</p>
+							<br><p>Result of request: 1 building</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_touches.png" alt="Fig.Operator_touches"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Operator: equals</h2>
+						<table>
+							<td style="text-align: center"><p>Select: buildings with the same geometry as the landslide (theoretical case)</p>
+							<p>Spatial relation: objects A and B have strictly equal geometries</p>
+							<br><p>Result of request: 1 building</p></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/spatial_query_operator_equals.png" alt="Fig.Operator_equals"></td>
+						</table>
+					</section>
+					
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>4.3 | Geoprocessing</h1>
+					</section>
+					
+					<section>
+						<h2>Buffer</h2>
+						<p>A <b><font style="color:#ea9b2d">buffer</font></b> is a zone around a map feature measured in units of distance or time.</p>
+						<p>A buffer is useful for proximity analysis.</p>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/buffer.png" height="400" alt="Fig.Buffer">
+						<p><small>Buffer tool and its parameters</small></p>
+					</section>
+					
+					<section>
+						<h2>Clip and Intersect</h2>
+						<img height="450" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/tools_clip_intersect.png" alt="Fig.Clip_intersect">
+					</section>
+					
+					<section>
+						<h2>Dissolve and Merge</h2>
+						<img height="450" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/tools_dissolve_merge.png" alt="Fig.dissolve_merge">
+					</section>
+					
+					<section>
+						<h2>Union and Erase</h2>
+						<img height="450" style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/tools_union_erase.png" alt="Fig.union_erase">
+					</section>
+					
+				</section>
+				
+				<!--- UNIT 4 ENDS HERE --->
+				
+				<!--- UNIT 5 STARTS HERE --->
+				
+				<section>
+				
+					<section>
+						<h1>5 | Data visualization</h1>
+						<h2>Introduction to GIS</h2>
+						<table>
+							<tr><td><b>#</b></td><td><b>Content</b></td></tr>
+							<tr><td><b>5.1</b></td><td><b><a href="#/18">Data visualization</a></b></td></tr>
+							<tr><td><b>5.2</b></td><td><b><a href="#/19">Creating maps</a></b></td></tr>
+						</table>
+						<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+						</a>
+					</section>
+				
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>5.1 | Data visualization</h2>
+					</section>
+					
+					<section>
+						<h2>Data visualization</h2>
+						<br><p><b>Data visualization</b> is the graphic representation of data.</p>
+						<p>Spatial data is usually presented in the form of maps. There are many different types of maps to show different types of information.</p>
+						<p>In a GIS, one of the most common types of maps are <b>thematic</b> maps that can represent a variety of information including 
+						climate, vegetation, population, and many others.</p>
+					</section>
+					
+					<section>
+						<h2>Main ways to represent spatial data</h2>
+						<p>A single vector layer can be represented in different ways.</p>
+						<p>A GIS software provides many different methods of symbolization, e.g.:</p>
+						<ul><li>single symbol</li>
+						<li>unique values</li>
+						<li>graduated colors</li>
+						<li>graduated symbols</li>
+						<li>charts</li>
+						<li>dot density</li>
+						<li>heat map</li></ul>
+						<p>You can also set other layer display properties such as:</p>
+						<ul><li>transparency (0-100%),</li>
+						<li>labels: names of objects (e.g. names of rivers, streets) and numbers,</li>
+						<li>display scale.</li></ul>
+					</section>
+					
+					<section>
+						<h2>Single symbol</h2>
+						<p><font style="color:#83d6f2">Single symbol</font> applies the same symbol to all features in a layer. 
+						This method of symbology is used for representing a layer with only one category.</p>
+						
+						<table>
+							<td><p>Properties of symbol according geometry types:</p>
+							<li>point: shape, color, size, angle, halo</li>
+							<li>line: color, line width, line style</li>
+							<li>polygon: color, shape fill, outline color, outline width</li></td>
+							<td><img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/symbology_single.png" alt="Fig.Single_symbology"></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Unique values</h2>
+						<p><font style="color:#83d6f2">Unique values</font> symbolize <em>qualitative</em> categories of values. Unique value symbology can be based on one or more attribute fields in the dataset, or you can write an expression to generate values on which to symbolize.</p>
+						<img style="background-color: transparent; box-shadow: none;" src="./resources/Introduction-to-GIS/unique_values.png" alt="Fig.Unique_values">
+					</section>
+					
+					<section>
+						<h2>Graduated colors</h2>
+						<p><font style="color:#83d6f2">Graduated colors symbology</font> is used to show a <em>quantitative</em> differences in features by varying the color of symbols. 
+						Data is classified into ranges that are each assigned a different color to represent the range.</p>
+						<img height="400" src="./resources/Introduction-to-GIS/graduated_color.png" alt="Fig.Graduated_color">
+						<p><small>An example of graduated color map</small></p>
+					</section>
+					
+					<section>
+						<h2>Graduated symbols</h2>
+						<p><font style="color:#83d6f2">Graduated symbols symbology</font> is used to show a <em>quantitative</em> differences in features by varying the size of symbols. 
+						Data is classified into ranges that are each assigned a symbol size to represent the range.</p>
+						<img height="400" src="./resources/Introduction-to-GIS/graduated_size.png" alt="Fig.Graduated_symbols">
+						<p><small>An example of graduated symbol map</small></p>
+					</section>
+					
+					<section>
+						<h2>Chart</h2>
+						<p>A chart is a type of statistical graphic that represents data.</p>
+						<p><font style="color:#83d6f2">Chart symbology</font> show <em>quantitative</em> differences between attributes, with each part of the chart representing an attribute value that contributes to the overall whole set of values.</p>
+						<img height="350" src="./resources/Introduction-to-GIS/chart_map.JPG" alt="Fig.Chart_map">
+						<p><small>An example of chart map</small></p>
+					</section>
+					
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>5.2 | Creating maps</h2>
+					</section>
+					
+					<section>
+						<h2>Map-making step by step</h2>
+						<br><ul><li><b>Content</b> (select layers: turn on/turn off the relevant layers, add missing thematic layers, rename layers)</li>
+						<li><b>Symbology</b> (choose the method of data visualization, add labels)</li>
+						<li><b>View setting</b> (determine the scale of map content display, adjust the extent of the map window)</li>
+						<li><b>Map composition</b> (create a new project in the print layout, compose a thematic map by adding elements such as map frame, legend, scale etc.)</li>
+						<li><b>Print</b> (set printout parameters, save print project)</li></ul>
+					</section>
+					
+					<section>
+						<h2>Map elements</h2>
+						<p>A map can be composed of many different map elements.</p>
+						<p>They may include:</p>
+						<ul><li>main map body</li>
+						<li>inset or location map(s)</li>
+						<li>legend - a visual explanation of the symbols used on the map</li>
+						<li>title - a subject of the map</li>
+						<li>map scale - the ratio of a distance on the map to the corresponding distance on the ground</li>
+						<li>orientation indicator - the relationship between the directions on the map and the corresponding compass directions in reality (e.g. north arrow, graticule)</li>
+						<li>map source and additional information (text, graphic, data source, credits, authors, etc.)</li></ul>
+					</section>
+					
+					<section>
+						<h2>Map</h2>
+						<img src="./resources/Introduction-to-GIS/map.png" alt="Fig.Map">
+					</section>
+					
+					<section>
+						<h2>Basic principles of map creation (1/2)</h2>
+						<br><ul><li><b>Balance</b> involves the organization of the map and other elements on the page. 
+						The various parts of a map layout should be distributed in a way that their weight is centered around the visual center of the map. Four  types of balance: symmetrical, asymmetrical, radial and mosaic.  </li>
+						<br><li><b>Legibility</b> is the ability to be seen and understood. Legibility depends on good decision-making for selecting symbols and choosing sizes so that the results are easily seen and understood.</li>
+						<br><li><b>Clarity</b> is the ease of recognition of map elements.</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Basic principles of map creation (2/2)</h2>
+						<br><ul><li><b>Visual contrast</b> relates how map features and page elements contrast with each other and their background.</li>
+						<br><li><b>Figure-ground organization</b> on the map is distinction between one or more objects of interest  in the foreground (figure) and the remainder of the map (the ground). 
+						Using figure-ground contrast is an effective method to focus the map reader's attention on the most important elements of the map.</li>
+						<br><li><b>Hierarchal organization</b> is to "separate meaningful characteristics and to portray likenesses, differences, and interrelationships" <citation>(Robinson, et al,. 1995)</citation>.
+						The internal graphic structuring of the map (and the page layout) is fundamental to helping people read your map.</li>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<!--- UNIT 5 ENDS HERE --->
+				
+
+				<section>
+					<p>Thank you for your attention!</p>
+					<br><a href="#/0/1">
+						<img style="background-color: transparent; box-shadow: none;"  src="./resources/Introduction-to-GIS/arrow.png" alt="Arrow">
+						</a>
+				</section>
+					
+					
+				
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

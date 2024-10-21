@@ -1,0 +1,610 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+        <!doctype html>
+        <html lang="en" >
+        
+            <head>
+                <meta charset="utf-8">
+                 
+                <title>Copernicus Atmosphere Monitoring Service</title>
+                
+            <!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+                <meta property="dc:title" content="Copernicus Atmosphere Monitoring Service" />
+                <meta property="dc:creator" content="Kevin Ramirez" /> 
+                <meta property="dc:publisher" content="Climate-KIC" /> 
+                <meta property="dc:subject" content="Copernicus, Atmosphere Monitoring, Satellite, Earth Observation, Atmosphere Monitoring Service" />
+                <meta property="dc:abstract" content="This course is an introduction to the European Union's Earth Observation Programme and focuses on the Copernicus Atmosphere Monitoring Service." />
+                <meta property="dc:tableOfContents" content="
+                                         (1) What is Copernicus?; 
+                                         (2) The objective of Copernicus; 
+                                         (3) The Components of Copernicus; 
+                                         (4) The Copernicus Atmosphere Monitoring Service; 
+                                            (a) What does the service do?
+                                            (b) Observations
+                                            (c) Satellite observations
+                                            (d) In situ observations
+                                            (e) Production systems
+                                            (f) Thematic output areas" />
+                <meta property="dc:description" content="Familiarise with the European Union's Earth Observation Programme; Understand the mission and goals of the Copernicus Atmosphere Monitoring Service; Learn about Earth observations and atmospheric production systems; Understand how the Copernicus Atmosphere Monitoring Service supports users in different societal domains- thematic output areas"/>
+                <meta property="dc:contributor" content="Kevin Ramirez" />
+                <meta property="dc:contributor" content="Aneta Zienkiewicz" />
+                <meta property="dc:created" content="2020-11-30" />
+                <meta property="dc:type" content="teaching material" /> 
+                <meta property="dc:type" content="self-learning material" /> 
+                <meta property="dc:format" content="html" />
+                <meta property="dc:language" content="EN" />
+                <meta property="dc:SizeOrDuration" content="45min" />
+                <meta property="dc:audience" content="general public" />
+                <meta property="dc:educationLevel" content="EQF 5" />
+                <meta property="dc:source" content="https://atmosphere.copernicus.eu/" />
+                <meta property="dc:rightsHolder" content="Kevin Ramirez" />
+                <meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+        
+                <link rel="dc:relation" href="eo4geo:TA13-1-1" />
+                <link rel="dc:relation" href="eo4geo:TA13-1-3" />
+        
+                <link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+                <!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+                <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+                <link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+                <!-- <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- santhrazit background design --> 
+                <!-- EO4GEO FONT ROBOTO SLAB -->
+                <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+                <link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+                <link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+        
+            <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+         
+            </head>
+        
+            <body>
+                  
+                <div class="reveal" >
+                
+                     <!-- FORMATTING FOR HEADER -->
+                    
+                            
+                         <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+                    
+                         <div class = "partnerlogo" style="width: 17%;height : 10%; padding-right: 20px; padding-top: 10px;" ></div>		
+                         <div  class = "presentation_title" style=" text-align: center " ></div>	<!--The title of the presentation appears on each slide-->
+                         
+        
+                        <div class="slides">
+                        
+                    
+                        <!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+                        <section>
+                                                    
+                            <h1>Copernicus Atmosphere Monitoring Service</h1>
+                            <h2> EIT Climate-KIC</h2>
+                            <a href="https://www.copernicus.eu/"><img width="200" data-src="resources\presentation_CAMS\S1_Copernicus_logo.jpg" alt="Copernicus"></a>
+                            <br><a href="https://www.climate-kic.org/"><img width="200" data-src="resources\presentation_CAMS\EIT Climate-KIC + EU flag white.jpg" alt="Climate-KIC"></a>
+                           <!-- (A demo slide deck using the <em>Reveal.js</em> framework) -->
+
+                        </section>
+                        
+                        
+                        <section id="Copernicus">
+                            <section> 
+                                <h2 style="color: #337acc;" >What is Copernicus</h2> 
+                                <ul>
+                                    <li style="color:#525b64;">Copernicus is an <strong>EU programme</strong> aimed at developing European information services based on <strong>satellite Earth Observation and in-situ (non-space) data</strong>.
+                                    </li>
+                                    <p></p>
+                                    <li style="color:#525b64;"><strong>Copernicus is implemented by the European Commission</strong> (EC) with the support from the European Space Agency (ESA) for the Space component and the European Environment Agency (EEA) for the in-situ component 
+                                    </li>
+                                </ul>
+                                <br>
+                                <br><a href="https://www.copernicus.eu/"><img width="200" data-src="resources\presentation_CAMS\S1_Copernicus_logo.jpg" alt="Copernicus"></a>
+                             </section>
+                            
+                            <section>
+                                <h2 style="color:#337acc;">The objective of Copernicus</h2>
+                                 
+                                <ul>
+                                    <li style="color:#525b64;"> <strong>To monitor and forecast the state of the environment</strong> on land, sea and in the atmosphere, to <strong>support climate change mitigation and adaptation strategies</strong>, the efficient management of emergency situations and the improvement of the security of every citizen <small><a href="https://emergency.copernicus.eu/mapping/ems/what-copernicus"> https://emergency.copernicus.eu/mapping/ems/what-copernicus</a></small> 
+                                    </li>
+                                    <p></p>
+                                    <li style="color:#525b64;"> It combines satellite observation data with data from sensor networks on the Earth’s surface to <strong>build a comprehensive picture of our planet and its environment</strong> <small><a href="https://www.eea.europa.eu/about-us/who/copernicus-1"> https://www.eea.europa.eu/about-us/who/copernicus-1</a></small>      
+                                    </li>
+                                </ul>
+                            </section>
+                            
+                            <section>
+                                <h2 style="color:#337acc;" >The Components of Copernicus</h2>
+                                <ul>
+                                    <li style="color:#525b64;"> <strong>Three components </strong>make up Copernicus: Space, Services and In Situ.
+                                    </li>
+                                    <p></p>
+                                    <li style="color:#525b64;"> The Services Component is made up of <strong>six thematic areas</strong>: land, marine, atmosphere, climate change, emergency management and security.
+                                    <br>   
+                                    <small><a href="https://www.eea.europa.eu/about-us/who/copernicus-1"> https://www.eea.europa.eu/about-us/who/copernicus-1</a></small>
+                                    </li>
+                                </ul>
+                                <br><a href="https://www.copernicus.eu/"><img width="600" height="300" data-src="resources\presentation_CAMS\S4.jpg" alt="Copernicus Services"></a>
+                            </section>
+                         </section>
+
+			 <section id="CAMS">   
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p style="text-align: justify;"> The Copernicus Atmosphere Monitoring Service (CAMS) provides <strong>consistent and quality-controlled information </strong>related to air pollution and health, solar energy, greenhouse gases and climate forcing, everywhere in the world.
+                                </p>
+                                <p style="text-align: justify;">CAMS is one of six services that form Copernicus, the European Union's Earth observation programme which looks at our planet and its environment for the ultimate benefit of all European citizens. Copernicus offers information services based on satellite Earth observation, in situ (non-satellite) data and modelling.
+                                </p>
+                                <a href="https://atmosphere.copernicus.eu/"><img width="200" data-src="resources\presentation_CAMS\S5-40_CAMS_logo.png" alt="Copernicus datasets" ></a>
+                             </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p style="text-align: justify;">CAMS is implemented by the European Centre for Medium-Range Weather Forecasts (ECMWF) on behalf of the European Commission. ECMWF is an independent intergovernmental organisation supported by 34 states. It is both a research institute and a 24/7 operational service, producing and disseminating numerical weather predictions to its member states. 
+                                </p>
+                                <p style="text-align: justify;">To provide and further develop the CAMS portfolio, ECMWF works with many service providers around Europe. By doing so, CAMS combines the expertise and infrastructure that exist in Europe to provide a range of services that are unequalled by any other organisation in the world.
+                                </p>
+                                <a href="https://atmosphere.copernicus.eu/"><img width="200" data-src="resources\presentation_CAMS\S5-40_CAMS_logo.png" alt="Copernicus datasets" ></a>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <a href="https://atmosphere.copernicus.eu/about-us"><img data-src="resources\presentation_CAMS\S7.png" alt="Atmosphere Monitoring Service" style="float: right; height:350px;" ></a>
+                                <div style="margin-right: 530px;">
+                                    <br>
+                                    <p style="text-align: justify;"> To acquire all the observations that are needed to produce the CAMS services, ECMWF collaborates with the European Space Agency (ESA) and the European Organisation for the Exploitation of Meteorological Satellites (EUMETSAT) as well as many other organisations providing satellite and in-situ observations.
+                                    </p>
+                                    <p style="text-align: justify;"> <small><a href="https://atmosphere.copernicus.eu/about-us"> https://atmosphere.copernicus.eu/about-us</a></small></p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p style="text-align: justify;">CAMS builds on many years of European research and development, and on existing European and national capacities, experience and know-how. The current portfolio of mature operational products was designed in close consultation with the (potential) users and developed through a series of EU-funded precursor projects starting in 2005.
+                                </p>
+                                <p style="text-align: justify;">CAMS has been fully operational since 1 July 2015. The current phase runs until the end of 2020, in alignment with the Multiannual Financial Framework (MFF) of the European Union. The scope of Copernicus after 2020 is currently under discussion as part of the definition of the new MFF. Based on strong support expressed by the European Member States, CAMS expects to secure continued provision of the existing services for the foreseeable future.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/about-us">https://atmosphere.copernicus.eu/about-us</a></small></p>
+                            </section>
+			    </section>
+
+			 <section id="what CAMS does"> 
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <strong>What does the service do?</strong>
+                                <p style="text-align: justify;">The service adds value to observations, providing consistent information on the atmosphere anywhere in the world, allowing you to assess the past and to predict the next few days.
+                                </p>
+                                <p style="text-align: justify;">At the core of the service is direct access to reliable data and expertise related to air quality, solar energy, and the role atmospheric gases and particles play in climate change.
+                                </p>
+                                <p style="text-align: justify;">The services use satellite and ground-based observations with forecast models to support businesses, policy makers and scientists dealing with the challenges and opportunities related to the composition of the atmosphere. 
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/what-we-do"> https://atmosphere.copernicus.eu/what-we-do</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>What does the service do?</strong>
+								</p>
+                                <a href="https://atmosphere.copernicus.eu/what-we-do"><img data-src="resources\presentation_CAMS\S10.png" alt="Atmosphere Monitoring Service" style=" height:250px;" ></a>
+								<br>
+								<small><a href="https://atmosphere.copernicus.eu/what-we-do"> https://atmosphere.copernicus.eu/what-we-do</a></small>
+                            </section>
+			    </section>
+			     
+			 <section id="GOS"> 
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                            	<a href="https://atmosphere.copernicus.eu/observations"><img data-src="resources\presentation_CAMS\S11.jpg" alt="Observations" style="float: right; height:290px;" ></a>
+                                <br>
+                                <div style="margin-right: 500px; margin-left: 80px;">
+                                    <p style="text-align: justify;"><strong>Global Observing System</strong></p>
+									<p style="text-align: justify;">CAMS adds value to observations by combining them with numerical models of the atmosphere to provide forecasts and consistent information for the past and present.
+                                    </p>
+                                    <p style="text-align: justify;"><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small></p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Global Observing System</strong></p>
+                                <p style="text-align: justify;">Observations are key to the production of the various CAMS services. CAMS combines information from these observations with computer models of the atmosphere to generate an accurate estimate of atmospheric variables such as temperature, ozone concentrations and amount of aerosol particles. Using these estimates as a starting point, the models can then produce forecasts for the coming days. Observations are also used to assess the quality of the CAMS products. For example, every day the CAMS forecasts are compared to observations to provide an estimate of how good the forecast actually was. This information is provided to users, and is also used to improve the forecast models.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+								<a href="https://atmosphere.copernicus.eu/observations"><img data-src="resources\presentation_CAMS\S13.jpg" alt="Observations" style="float: right; height:300px;" ></a>
+                                <div style="margin-right: 450px;">
+									<p style="text-align: justify;"><strong>Global Observing System</strong></p>
+									<p style="text-align: justify;">The atmosphere is continuously being observed by more than 40 satellites, thousands of ground-based observation stations, and aircraft, ships and balloons. Together they measure weather parameters, such as temperature, clouds and winds, and also atmospheric constituents, such as ozone, carbon monoxide and aerosols. The non-satellite observations are often grouped in one category called 'in situ observations'.
+                                    </p>
+                                    <p style="text-align: justify;"><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small></p>
+                                </div>
+                            </section>
+			    </section>
+			     
+			 <section id="satellite observations"> 
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Satellite observations</strong></p>
+                                <p style="text-align: justify;">Satellite observations are used every day by CAMS to ensure that the daily forecasts stay as close to reality as possible. Just as in weather forecasting, observations of atmospheric trace gases and aerosols from today are merged with the forecast from yesterday to describe the current state of the atmosphere and provide a better forecast for tomorrow. This process is called data assimilation.
+                                </p>
+                                <p style="text-align: justify;">CAMS also uses satellite observations to estimate daily emissions from wildfires and biomass burning. This provides a time series of incoming solar energy for any location in the world and allows monitoring of the exchange of carbon dioxide (CO₂), methane (CH₄) and nitrous oxide (N₂O) at the surface of the Earth.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="in-situ observations">
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>In situ observations</strong></p>
+                                <p style="text-align: justify;">In situ observations include:
+                                </p>
+                                <ul style="justify-content: left; display: table;">
+                                    <li> measurements of air quality in and around cities;
+                                    </li>
+                                    <p></p>
+                                    <li> measurements made by commercial and research aircraft;
+                                    </li>
+                                    <p></p>
+                                    <li> measurements of the vertical distribution of pollutants and aerosols by balloon sondes or ground-based instruments. 
+                                    </li>
+                                </ul>    
+                                <p style="text-align: justify;">These in situ observations are used by CAMS to improve the daily forecasts, to assess the quality of the forecasts and to monitor the exchange of carbon dioxide (CO₂), methane (CH₄) and nitrous oxide (N₂O) at the surface of the Earth.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="production systems">
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems</strong></p>
+                                <p style="text-align: justify;">CAMS uses a range of approaches to add value to observations, with the aim of providing consistent information about the composition of the atmosphere and related processes. The CAMS systems deliver forecasts and reanalyses of trace gases and aerosols on a global and European scale as well as estimates of emissions, surface fluxes and further supplementary products.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/production-systems"> https://atmosphere.copernicus.eu/production-systems</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="PS Global">
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;">The global production system is used to produce the daily forecasts of pollutants, aerosols and greenhouse gases across the globe. Satellite observations of atmospheric composition are merged with a detailed computer simulation of the atmosphere using a method called data assimilation. The resulting analyses, i.e. maps of atmospheric composition, are used as initial conditions for the daily forecasts of atmospheric composition. 
+				<p/>
+				<p style="text-align: justify;">The global production system is also used to re-process observations from many satellites for the last few decades, using the same data assimilation process. The result is called reanalysis and it provides a consistent data set that can be used for scientific studies and trend analyses.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/production-systems"> https://atmosphere.copernicus.eu/production-systems</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;">There are three main global production streams in CAMS. Analyses and forecasts for aerosols and chemical species are produced twice a day; analyses and forecasts for greenhouse gases are produced once a day at increased spatial resolution; and global reanalyses are produced every few years.
+                                </p>
+                                <ul style="justify-content: left; display: table;">
+                                    <li>Configuration for daily global analyses and forecasts
+                                    </li>
+                                    <p></p>
+                                    <li> Configuration for daily forecasts for greenhouse gases
+                                     </li>
+                                    <p></p>
+                                    <li> Configuration for global reanalysis
+                                    </li>
+                                    <p></p>
+                                    <li> Global production system
+                                    </li>
+                                </ul>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color:#525b64;">Configuration for daily global analyses and forecasts</strong> - Twice a day, CAMS issues a worldwide forecast of the composition of the atmosphere over the next five days. The forecast contains information about 56 reactive traces gases in the troposhere and the stratosphere (respectively the lowest layer and the ozone layer of the atmosphere). Traces gases are natural or anthropogenic gases degraded in the atmosphere via chemical reactions. The daily forecast also contains data about 5 types of aerosols: desert dust, sea salt, organic matter, black carbon and sulphate particles. 
+				</p>
+				<p style="text-align: justify;">The initial conditions of the forecast are obtained by blending a previous forecast with satellite observations of aerosol, ozone, carbon monoxide, nitrogen dioxide and sulphur dioxide through data assimilation.
+				</p>
+
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+								<p><strong style="color: #525b64;">Configuration for daily global analyses and forecasts</strong></p>
+								<a href="https://atmosphere.copernicus.eu/node/256"><img data-src="resources\presentation_CAMS\S20.png" alt="Production systems" style=" height:300px;" ></a>
+                                <br><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small>
+                            </section>
+
+							<section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+								<p style="text-align: justify;"><strong style="color: #525b64;">Configuration for daily forecasts for greenhouse gases</strong> - The greenhouse gases CO₂ and CH₄ are forecast as a separate production stream. The forecasts are run at a horizontal resolution of about nine kilometres globally on 137 levels from the surface up to eighty kilometres. This resolution is the same as the resolution of ECMWF's high-resolution numerical weather forecast. The initial conditions of the CO₂ and CH₄ forecast are improved by blending with CO₂ and CH₄ satellite retrievals available only for five days before the forecasts start. The CO₂ fluxes from vegetation are modeled on-line using the forecast using the meteorological and surface parameters within the IFS.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configuration for daily forecasts for greenhouse gases</strong> - The greenhouse gases CO₂ and CH₄ are implemented as simple tracers with prescribed fluxes at the surface and, in the case of CH₄, a parameterised loss rate due to OH and stratospheric radicals. The lower cost of the CO₂ and CH₄ makes it possible that they can be carried out at a higher resolution than the CAMS forecast of reactive gases and aerosols.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configuration for global reanalysis</strong> - The CAMS reanalyses are produced by re-processing satellite observations for a past extended period using the same data assimilation system that is used for the global forecasts. Every few years CAMS produces a new reanalysis using the latest version of the data assimilation system providing consistent data sets of atmospheric composition for the last few decades.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Global production system </strong> - To produce the CAMS global products (forecasts and reanalyses) we need to model the dynamics of the atmosphere (e.g., winds), the physical processes (e.g.,  the formation of clouds) and the processes that control the chemical composition of the atmosphere (e.g., emissions and chemical reactions). In addition, the model simulations are merged with satellite observations of the atmosphere to ensure the forecasts are as accurate as possible.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/256"> https://atmosphere.copernicus.eu/node/256</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configuration for global reanalysis</strong> - The CAMS reanalysis of atmospheric compositions are gridded data sets constructed by blending satellite observations with model simulations. This process is called data assimilation. 
+                                </p>
+                                <p style="text-align: justify;">The CAMS reanalysis was produced with the Integrated Forecasting System (IFS), which was also used for the preparation of meteorological reanalyses such as ERA5 and ERA-interim.
+                                </p>
+                                <p style="text-align: justify;">CAMS and earlier projects have so far produced three reanalysis data sets on atmospheric composition:
+                                </p>
+                                <ul style="justify-content: left; display: table;">
+                                    <li> MACC re-analysis for 2003–2012 (80 km x 80 km resolution)
+                                    </li>
+                                    <p></p>
+                                    <li>CAMS interim reanalysis for 2003–2017 (110 km x 110 km resolution)
+                                    </li>
+                                    <p></p>
+                                    <li>CAMS reanalysis reanalysis for 2003–present day (80 km x 80 km resolution)
+                                    </li>
+                                </ul>
+                                <p><small><a href="https://atmosphere.copernicus.eu/configuration-global-reanalysis"> https://atmosphere.copernicus.eu/configuration-global-reanalysis</a></small></p>
+                            </section>
+            
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Global</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Global production system</strong> - The global CAMS production system makes use of the Integrated Forecasting System (IFS) of the European Centre for Medium-Range Weather Forecasts. The IFS in CAMS configuration models the meteorological fields as well as the following processes of atmospheric composition:
+                                </p>
+                                <ul style="justify-content: left; display: table;">
+                                    <li>transport of trace gases and aerosols
+                                    </li>
+                                    <p></p>
+                                    <li>injection of emissions                                    
+                                    </li>
+                                    <p></p>
+                                    <li>uptake and release by vegetation and the land and sea surface
+                                    </li>
+                                    <p></p>
+                                    <li>removal by dry deposition at the surface                                    
+                                    </li>
+                                    <p></p>
+                                    <li>removal by scavenging in precipitation
+                                    </li><p></p>
+                                    <li>chemical conversion
+                                    </li>
+                                    <p></p>
+                                    <li>aerosol microphysics
+                                    </li>
+                                </ul>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/global-production-system">https://atmosphere.copernicus.eu/index.php/global-production-system</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="PS Regional">
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong>
+                                </p>
+                                <p style="text-align: justify;">The regional production systems are used to produce the daily forecasts for air quality across Europe. These systems are very similar to the global production system in the way that they combine atmospheric models with observations to produce accurate forecasts. However, instead of using one forecast model, seven different models are used. Each of these models the atmospheric processes slightly differently, reflecting the uncertainty in our knowledge of these processes. The regional production systems are also used to re-process observations for the last few years using the same data assimilation process. The result is called reanalysis and provides a consistent data set that can be used for assessing air quality in Europe and how it changes over time.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/production-systems"> https://atmosphere.copernicus.eu/production-systems</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong>
+                                </p> 
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Regional air quality production systems </strong>- The CAMS regional service are provided using a multi-model ensemble approach. The number of individual state-of-the-art systems used in the operational ensemble is currently 7. Using such an approach, it is possible to derive products that are more robust and are of overall better quality than the individual systems. The main products delivered are daily analyses and 4-day forecasts, as well as reanalyses of past years' surface air quality observations.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/node/257"> https://atmosphere.copernicus.eu/node/257</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Regional air quality production systems </strong>- There are seven operational forecasting and assimilation systems that contribute to the ENSEMBLE, and also the method used for the ENSEMBLE production. For each system, the main components of the model are specified: chemistry schemes, aerosol representation, emissions and deposition, resolved and sub-grid transport, boundary conditions, assimilation system.
+                                </p>
+                                <table>
+                                    <tr>
+                                    <ul>
+                                        <li>CHIMERE</li>
+                                        <li>DEHM</li>
+                                        <li>EMEP</li>
+                                        <li>EURAD-IM</li>
+                                        <li>GEM-AQ</li>
+                                    </ul>	
+                                    </tr>
+                                    <tr><ul>
+                                        <li>LOTOS-EUROS</li>
+                                        <li>MATCH</li>
+                                        <li>MOCAGE</li>
+                                        <li>SILAM</li>
+                                        <li>ENSEMBLE</li>
+                                    </ul></tr>
+                                </table>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/regional-air-quality-production-systems"> https://atmosphere.copernicus.eu/index.php/regional-air-quality-production-systems</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configurations for daily analyses and forecasts</strong> - The multi-model ensemble described above is operated daily for delivering analyses and forecasts at the scale of Europe. Every night, the systems are run to deliver in the early morning hours forecasts up to D+4 (96h) and, in end morning, analyses for the previous day based on surface air quality observations across Europe.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/regional-air-quality-production-systems"> https://atmosphere.copernicus.eu/index.php/regional-air-quality-production-systems</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configurations for daily analyses and forecasts</strong> - The same systems are used to deliver daily four-day forecasts and analyses of the previous day. The systems are updated once per year at the same time, generally in November. These annual changes are announced a few months in advance; from September onwards, users can access outputs from the upcoming systems' versions in order to be able to accommodate to the changes. The changes in the regional systems comprise elements that respond to expressed requirements by the CAMS users, as well as elements that reflect improvements in modelling (improved representation of physical or chemical processes...) or in computing (increased horizontal or vertical resolution, improved code scalability...).
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts"> https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong></p>
+                                <p><strong style="color: #525b64;">Configurations for daily analyses and forecasts</strong>
+                                </p>    
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Forecast</strong> - The same systems are used to deliver daily four-day forecasts and analyses of the previous day. The systems are updated once per year at the same time, generally in November. These annual changes are announced a few months in advance; from September onwards, users can access outputs from the upcoming systems' versions in order to be able to accommodate to the changes. The changes in the regional systems comprise elements that respond to expressed requirements by the CAMS users, as well as elements that reflect improvements in modelling (improved representation of physical or chemical processes...) or in computing (increased horizontal or vertical resolution, improved code scalability...).
+                                </p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Analyses</strong> - Analyses are performed independently by all the individual regional air quality systems. However, in order to make sure that all systems use the same observational dataset, observations are centrally acquired and disseminated to the different teams.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts"> https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Production systems - Regional</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Configurations for daily analyses and forecasts</strong> - It has been found that one year between these general upgrades is a good compromise: on the one hand, changes are not too frequent in order to minimise possible associated knock-on effects for the users; on the other hand, this allow a steady flow of updates and improvements that are needed to maintain the state-of-the-art nature of the CAMS regional systems. Apart from these planned changes, only bug fixes are possible in case an issue is detected and is detrimental to the quality of the products. 
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts"> https://atmosphere.copernicus.eu/index.php/configurations-daily-analyses-and-forecasts</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="output areas">
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <strong>Thematic output areas</strong>
+                                <p>The atmosphere service product supports users in different societal domains, which are known as thematic output areas
+                                </p>
+                                <a href="https://atmosphere.copernicus.eu/thematic-output-areas"><img data-src="resources\presentation_CAMS\S34.png" alt="Thematic output areas" style="height:250px;" ></a>
+                                <small><a href="https://atmosphere.copernicus.eu/thematic-output-areas"> https://atmosphere.copernicus.eu/thematic-output-areas</a></small>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Thematic output areas</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Air quality</strong> - The quality of the air we breathe can significantly impact our health and the environment. CAMS monitors and forecasts European air quality and worldwide long-range transport of pollutants.
+                                </p>
+                                <p style="text-align: justify;">Air quality is not a local problem. Just as clouds move through the sky, pollution is transported from one location to another by wind patterns in the atmosphere. Observations, both from satellites and from the ground, can provide a snapshot of the air quality, but have no real predictive capability. CAMS combines state-of-the-art computer models of the atmosphere, like the ones used for our daily weather forecasts, with satellite and non-satellite observations, providing daily forecasts of the composition of the air worldwide. This combination of millions of daily observations and the predictive power of computer models is the real strength of CAMS.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/air-quality"> https://atmosphere.copernicus.eu/air-quality</a></small></p>
+                            </section>
+
+			    <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+								<p><strong>Thematic output areas</strong></p>
+								<p style="text-align: justify;"><strong style="color: #525b64;">Air quality</strong> - CAMS provides daily analyses and forecasts of worldwide long-range transport of atmospheric pollutants as well as the background air quality for the European domain. These forecasts can be used as they are, but they also serve as input to a wide-range of downstream services, such as national air quality forecasts, smartphone applications and policy tools. As such, CAMS information on worldwide pollution and European air quality reaches millions of users.
+								</p>
+								<a href="https://atmosphere.copernicus.eu/air-quality"><img data-src="resources\presentation_CAMS\S36.png" alt="Air quality" style=" height:200px;" ></a>
+								<br><small><a href="https://atmosphere.copernicus.eu/observations"> https://atmosphere.copernicus.eu/observations</a></small>
+							</section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Thematic output areas</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Policy tools</strong> - Dealing with air quality issues requires timely and accurate information. CAMS helps policy makers in Europe by providing a range of policy tools and assessment reports.
+                                </p>
+                                <p style="text-align: justify;">Action to manage and improve air quality in Europe is largely driven by European Union legislation. The 2008 ambient air quality directive (2008/50/EC) sets legally binding limits for concentrations in outdoor air of major air pollutants that impact public health, such as particulate matter (PM<sub>10</sub> and PM<sub>2.5</sub>) and nitrogen dioxide (NO<sub>2</sub>). To monitor and manage their compliance, countries make accurate measurements of a range of atmospheric pollutants. In addition, some countries have established their own national air quality modelling capabilities.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/policy-tools"> https://atmosphere.copernicus.eu/policy-tools</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Thematic output areas</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Policy tools</strong> - Air pollution and therefore the exceedance or compliance of set limits is often not just a local problem. Transport within or from outside of Europe can be a major contribution to local air pollution episodes. With its European-scale infrastructure of air quality models, CAMS supports policy makers on national, regional and local levels with a set of tools and reports that describe air quality in Europe and its evolution over the years.
+                                </p>
+                                <p style="text-align: justify;">The reports, so-called Assessment reports, are produced each year and provide an overview of the quality of the air in Europe for the previous year. The policy tools are interactive web applications based on the CAMS air quality models and provide information about the effect of emission reductions on the European air quality (scenario tools) or information about where pollution is coming from during pollution episodes (source-receptor tools).
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/policy-tools"> https://atmosphere.copernicus.eu/policy-tools</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Thematic output areas</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Solar energy</strong> - Solar energy is a rapidly growing contribution to the global energy market. CAMS provides services that support the planning of installations, from solar farms to rooftop panels.
+                                </p>
+                                <p style="text-align: justify;">Solar energy is becoming an increasingly important source of renewable energy generation in Europe and the rest of the world. While the total share is still fairly low at just above 1% of global energy generation, the annual growth is almost exponential at about 30% per year. Large investments are made in building enormous solar energy power plants, but there is also a large increase in small-scale use of rooftop solar panels.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/solar-energy"> https://atmosphere.copernicus.eu/solar-energy</a></small></p>
+                            </section>
+
+                            <section>
+                                <h2 style="color:#337acc;">Atmosphere Monitoring Service</h2> 
+                                <p><strong>Thematic output areas</strong></p>
+                                <p style="text-align: justify;"><strong style="color: #525b64;">Solar energy</strong> - The amount of solar radiation that is available primarily depends on the season, time of day and the latitude of the location. However, the available amount is also affected by clouds, aerosol particles, ozone molecules and water vapour in the atmosphere. These all reflect or absorb part of the solar radiation and this has a significant impact on the efficiency of the power plants and rooftop solar panels.
+                                </p>
+                                <p style="text-align: justify;">CAMS uses information from satellites and its models of the atmosphere to provide climatologies (historical time series) of global and direct irradiance to give the renewable energy sector and policy makers accurate information on solar radiation in accessible, quality metrics. This helps the sector to plan both large solar power farms and smaller scale rooftop installations to maximise future outputs.
+                                </p>
+                                <p><small><a href="https://atmosphere.copernicus.eu/solar-energy"> https://atmosphere.copernicus.eu/solar-energy</a></small></p>
+                            </section>
+			    </section>
+			     
+			 <section id="CCL">
+                            <section >
+                                <h2 style="color:#337acc;"><strong>Thank you</strong></h2> 
+                            </section>
+                            
+                        </section>
+                        
+                      </div>
+        
+        
+                <script src="internal_restricted/v1.0/js/reveal.js"></script>
+        
+                <script>
+        
+                    Reveal.initialize({
+                        controls: true,
+                        progress: true,
+                        history: true,
+                        center: true,
+        
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                            { src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                            { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                            { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                            { src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+                            { src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+                            
+                        ]
+                    });
+        
+                </script>
+                
+                <!-- rauslöschen?? -->
+                <script>Reveal.initialize({
+                    simplemenu: {
+                        menuselector: '.menu a'
+                    },
+                    dependencies: [
+                        { src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+                    ]
+                    });
+                </script>
+        
+            </body>
+        </html>
+        

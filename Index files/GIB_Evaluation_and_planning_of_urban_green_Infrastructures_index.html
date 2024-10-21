@@ -1,0 +1,146 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Evaluation and planning of urban green structures</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Evaluation and planning of urban green structures" />
+		<meta property="dc:creator" content="Greger Lindeberg, Sara Wiman" /> 
+		<meta property="dc:publisher" content="GIB" /> 
+		<meta property="dc:subject" content="	Learning to analyse the context of green infrastructure given vegetation cover or tree points. Learning to interpret different types of data overlays.
+							Understand how to classify a satellite image to achieve vegetation cover. Know where to find suitable satellite data.
+							Learn how to analyse green infrastructure from a specific species point of view.
+							Learn how to analyse and visualize land cover and socio-economic data to get an understanding about the current situation.
+							Know the basics about ecosystem services and the algorithms for computing values for:
+							- Carbon dioxide storage
+							- Water interception
+							- Air pollutant removal
+							- Habitat networks" />
+		<meta property="dc:abstract" content="The values provided by the green infrastructure are often overlooked in the early stages of planning processes. That, and the fact it is often difficult to estimate and argue for green values in comparison to other values with a more commercial direction demands for an easy way to visualise green values at early stages. These could be used for calculating costs for compensation." />
+		<meta property="dc:tableOfContents" content="	- Introduction: ecosystem services provided by urban greenery and trees
+								- Compute EST values
+								- Access to green areas (population, statistics)
+								- Presentation of remote sensing derived land cover maps
+								- Access maps
+								- Green infrastructure, creating habitat network for forest birds
+								- Perform analysis for a specific specie
+								- How to introduce green areas and trees at early stages of the planning process
+								- Prepare maps and report according to the above subjects, for a specific plan" />
+		<meta property="dc:description" content= "	- Knowledge about different data sources and analyses available for in spatial planning context. Be aware of the resolution and limitations of the “green values” data. Discuss and find out how the data can be useful in a planning context.
+								- Understand how to acquire data on urban greenery using remote sensing methods
+								- Understand how the data acquired can be used to improve urban greenery management, especially in the context of climate change adaption
+								- Understand how EO-data in combination with other remote sensing data can contribute to the assessment of ecosystem services" /> 
+		<meta property="dc:contributor" content="" />
+		<meta property="dc:created" content="2021-06-08" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90min" />
+		<meta property="dc:audience" content="urban planner / bachelor/master student" />
+		<meta property="dc:educationLevel" content="EQF 4 / 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsHolder" content="SpaSe; GEOF, GIB, EPSIT" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:PS3-4" />
+		<link rel="dc:relation" href="eo4geo:PS2-2-2-3-2-4-19" />
+		<link rel="dc:relation" href="eo4geo:CF4-4b" />
+		<link rel="dc:relation" href="eo4geo:CV2" />
+		<link rel="dc:relation" href="eo4geo:CV3" />
+		<link rel="dc:relation" href="eo4geo:CV6" />
+		<link rel="dc:relation" href="eo4geo:IP1" />
+		<link rel="dc:relation" href="eo4geo:IP3-1" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+
+	<body>
+
+		<div class="reveal" >
+
+			 <!-- FORMATTING FOR HEADER -->
+
+
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>
+
+				 <div class = "partnerlogo" style="width: 8%;height : 11%" ></div>
+				 <div  class = "presentation_title" style=" text-align: center; margin-top: 2vh; font-size: 3vh; " >Evaluation and planning of urban green structures</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+
+
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE -->
+				<section >
+					<h1>Evaluation and planning of urban green structures</h1>
+					<br>
+					<a href="./resources/urbangreensm.pdf">Link to the presentation</a>
+												 <br>
+				</section>
+
+
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+
+				]
+			});
+
+		</script>
+
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false }
+			]
+			});
+		</script>
+
+	</body>
+</html>

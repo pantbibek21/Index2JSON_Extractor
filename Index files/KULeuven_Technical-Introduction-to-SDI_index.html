@@ -1,0 +1,274 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" ><head>
+		<meta charset="utf-8">
+		 
+		<title>Technical Introduction to Spatial Data Infrastructures (SDI)</title>
+		<meta property="dc:title" content="Introduction to SDI Architecture and Components" />
+		<meta property="dc:creator" content="Marc Olijslagers" />
+		<meta property="dc:creator" content="Danny Vandenbroucke" />
+		<meta property="dc:creator" content="Maria da Saudade De Brito Pontes" />
+		<meta property="dc:subject" content="Copernicus, EO4GEO, WP5, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="
+			Spatial data are widely used in public and private organisations. However, the data are often difficult to find, access, use and combine. Spatial data infrastructures (SDI) are a solution to this lack of accessibility and interoperability. An SDI is a set of technological and non-technological components meant to facilitate access, exchange and re-use of geospatial data within and between organisations.
+			The module introduces the concept of SDIs and explains the rationale behind it. It explains the  different technical and non-technical components of an SDI: data, services, metadata, standards, technology, organisational and institutional aspects (people), etc. and how the technological components work together. The module discusses also what SDI are used for, i.e. what are the objectives of a good functioning SDI.. The components and the benefits of an SDI are illustrated using real world examples. The access to SDIs through geoportals is demonstrated. Learners will visit several geoportals and will learn to browse for data.
+			The training material consist of presentations, exercises and supporting documents. The module is NOT a self-learning module, but needs class tutoring and interactions." />
+		<meta property="dc:tableOfContents" content="
+			(1) SDI Architecture and SDI components; 
+			(2) Reading and Understanding UML and XML; 
+			(3) SDI Standards; 
+			(4) Metadata and Catalog Services; 
+			(5) Data models and data specifications; 
+			(6) Web Services to Access Spatial Data" />
+		<meta property="dc:description" content="Learning outcomes:
+			To describe and explain the rationale and concepts of SDIs; 
+			To explain the requirements for building a successful SDI;
+			To recognise and describe the different components of an SDI; 
+			To interpret and explain the content of basic XML documents and UML diagrams; 
+			Explain the role of metadata in data sharing and data exchange;
+			To explain how geoportals are a user interface to SDIs and their specific functions; 
+			To design and set-up a simple WMS by making use of a sample dataset and simple portrayal rules; 
+			To search and find specific datasets" />
+		<meta property="dc:contributor" content="Santiago Molano" />
+		<meta property="dc:created" content="2020-08-04" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="In total the module will take approximately 9h with an average duration of 1.5h per lecture" />
+		<meta property="dc:audience" content="
+			The intended audience for this training encompasses individuals such as technical experts, IT experts, web masters, but also spatial data experts that manage, harmonize and publish geospatial data. The use and intensity of the different modules will depend on the expertise and previous knowledge of the user." />
+		<meta property="dc:educationLevel" content="EQF 4" />
+		<meta property="dc:source" content="
+			This series of lectures were prepared in the context of the project “EO4GEO – Towards an innovative strategy for skills development and capacity building in the space geo-information sector supporting Copernicus User Uptake”. They were based on materials developed during workshops for stakeholders of the project “Elaboration  of Standards, Norms and Procedures in the Acquisition  and Dissemination  of Geospatial Information  in Mozambique (MZ-UGPTC-85510-CS-CQS/18)”. Earlier versions of this training modules have been developed within the context of the KU Leuven Summer Schools, 2010-2011-2012 (KOI-VLIR), the Humboldt project (http://www.esdi-humboldt.eu) in 2010, the smespire project in 2014 (http://www.smespire.eu/), the LINKVIT project in 2017 (http://www.linkvit.eu/en/), the EnviSDI Summer School on SDI for environmental datasets in 2010 and 2011 and the giCASES.
+			The module on “XML and GML” is based in the course developed under previous projects including LINKVIT (http://www.linkvit.eu/en/) and the UML course developed as part of smeSpire and the “Basics of INSPIRE Network Services”. Module Geospatial Portals developed as part of project and part of the LINKVIT portfolio. The modules was partially based on the module on portals and catalogues of UNIGIS – www.unigis.net." />
+		<meta property="dc:rightsHolder" content="SADL, KU Leuven" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:OI3b" />
+		<link rel="dc:relation" href="eo4geo:GS3" />
+		<link rel="dc:relation" href="eo4geo:DM2" />
+		<link rel="dc:relation" href="eo4geo:GD4" />
+		<link rel="dc:relation" href="eo4geo:WB3-1" />
+		<link rel="dc:relation" href="eo4geo:OI4-1" />
+		<link rel="dc:relation" href="eo4geo:OI4-2" />
+		<link rel="dc:relation" href="eo4geo:WB1-4" />
+		<link rel="dc:relation" href="eo4geo:DM1-7" />
+		<link rel="dc:relation" href="eo4geo:DM1-8" />
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css"><!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " > Technical Introduction to SDI 
+				</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+
+			<div class="slides">
+				
+			
+			<section >
+					
+					<h1 style="font-size:60px">Technical introduction to Spatial Data Infrastructures </h1><br>
+					<h2 style="font-size:30px"> Spatial  data  infrastructures (SDI) are a set of technological and non-technological components meant to facilitate access, exchange and re-use of geospatial data within and between organisations.</h2><br> 
+					<img width="300" height="100" data-src="./resources/resources/template_WhatCopernicus/KULEUVEN_SADL_CMYK_LOGO.png" alt="KU Leuven" align=center-left>
+					<img width="100" height="100" data-src="./resources/resources/template_WhatCopernicus/logo_versie3.bmp" alt="KU Leuven" align=center-right>
+
+			</section>
+				
+
+			<section>
+				
+				<div class="ppt-txt" style="position: absolute; top: 80px; left: -40px; height: 400px; width: 1000px">
+				<h2>WELCOME! </h2> 
+						<p style="font-size:21px; text-align:justify;"><br>With the following modules and interactive material you will be able to take part in the journey to discover  <strong><span style="color: rgb(41, 105, 176);">Spatial Data Infrastructures</span></strong> (<em>SDI</em>) its components and benefits through the observation of multiple examples.<br><br>
+						This course material has been developed using tools, concepts and guidelines under the framework of the <a href="http://www.eo4geo.eu/">EO4GEO </a> project. Unless stated otherwise, all rights for figures and additional material are with the author(s).<br><br>
+						You can navigate through the different modules of this course using the horizontal arrows <span style="color: rgb(44, 130, 201);"><strong>(</strong></span><span style="color: rgb(41, 105, 176);"><strong>&larr; &rarr;)</strong>&nbsp;</span> and clicking on each <span style="color: rgb(230, 126, 34);"><b>TITLE</b></span> or on the linking icons on each page.</p>	
+				</div>
+				<div class="all-div" style="position: absolute; top: 450px; left: -40px; height: 100px; width: 1000px">
+					<img  height="70" data-src="./resources/resources/template_WhatCopernicus/KULEUVEN_SADL_CMYK_LOGO.png" alt="KU Leuven" align=center-left>
+						<img  height="70" data-src="./resources/resources/template_WhatCopernicus/logo_versie3.bmp" alt="KU Leuven" align=center-right>
+					<p style="font-size:15px; text-align:center;">Copyright <a href="http://sadl.kuleuven.be/">SADL</a>, KU Leuven<br>
+					August 2020</p>
+				</div>
+			</section>
+			</section>
+			<section id="intro1">
+				<div class="ppt-h2" style="position: absolute; top: 60px; left: 0px; height: 58px;  width: 1028px">
+					   <h2 style="font-size:60px">Technical introduction to Spatial Data Infrastructures </h2>
+					</div><br><br><br>
+					<div class="all-div" style="position: absolute; top: 220px; left: -80px; height: 400px; width: 400px">
+					<table width="500px">
+						<br>
+						<tr></tr>
+						<tr><td><a href="#01.1" target="_self">1</a></td><td>SDI Architecture and SDI components</td><td width="30%">
+							<a href="index_01_Lecture_General_Introduction_SDI.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#01.2" target="_self">2</a></td><td>Reading and Understanding UML and XML</td><td width="30%">
+							<a href="index_02_Lecture UML and XML.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+							</a></td></tr>
+						<tr><td><a href="#01.3" target="_self">3</a></td><td>SDI Standards</td><td width="30%">
+							<a href="index_03_Lecture Overview of SDI standards.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+							</a>	</td></tr>
+						</table>
+					</div>
+						<div div class="all-div" style="position: absolute; top: 245px; left: 480px; height: 400px; width: 500px">
+						<table>
+						<tr><td><a href="#slide29">4</a></td><td>Metadata and Catalog Services</td><td width="30%">	
+							<a href="index_04_Lecture_Metadata_and_catalogue_services.html"> 
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide29">5</a></td><td>Data models and data specifications</td>
+						<td width="30%">
+							<a href="index_05_Lecture_Data_models_and_data_specifications.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+						<tr><td><a href="#slide29">6</a></td><td>Web Services to Access Spatial Data</td>
+						<td width="30%">
+							<a href="index_06_Lecture_Web_services.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+					</table>
+					<div>
+	
+			</section>
+
+
+
+
+
+			<section id="01.1">									
+				<section >
+					<a href="index_01_Lecture_General_Introduction_SDI.html"><h1 style="font-size:60px">01 | SDI Architecture and SDI components</h1></a><br>
+					<h2 style="font-size:30px"> Elaboration of Standards, Norms and Procedures in the Acquisition and Dissemination of Geospatial Information </h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_01_Lecture_General_Introduction_SDI.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+
+			<section >
+				<section id="01.2">
+					<a href="index_02_Lecture UML and XML.html"><h1 style="font-size:58px">02 | Reading and Understanding UML and XML</h1></a><br>
+					<h2 style="font-size:30px"> What they are and what they are used for. Structure, components and applicationsin the geospatial world. </h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_02_Lecture UML and XML.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>			
+			</section>
+
+			<section>
+				<section id="01.3">
+					<a href="index_03_Lecture Overview of SDI standards.html"><h1 style="font-size:60px">03 | SDI Standards</h1></a><br>
+					<h2 style="font-size:40px"> Why they are needed, how they are created and how to work with them</h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_03_Lecture Overview of SDI standards.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+			</section>
+			<section>
+				<section id="01.4">
+					<a href="index_04_Lecture_Metadata_and_catalogue_services.html"><h1 style="font-size:60px">04 | Metadata and Catalog Services </h1></a><br>
+					<h2 style="font-size:30px"> What metada and data catalogs are, their use in geographic information, their quality and where to find them in geoportals</h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_04_Lecture_Metadata_and_catalogue_services.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section id="01.5">
+					<a href="index_05_Lecture_Data_models_and_data_specifications.html"><h1 style="font-size:60px">05 | Data models and data specifications</h1></a><br>
+					<h2 style="font-size:30px">Use of models, scope and specification objectives. Modelling frameworks and applied examples</h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_05_Lecture_Data_models_and_data_specifications.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+			<section>
+					<section id="01.6">
+					<a href="index_06_Lecture_Web_services.html"><h1 style="font-size:60px">06 | Web Services to Access Spatial Data</h1></a><br>
+					<h2 style="font-size:30px">How they work, tools use and examples. Recommended Software, relevant standards and exercises</h2><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_04_Lecture_Metadata_and_catalogue_services.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+			
+
+				
+			</div>
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1768 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Fundaments of optical remote sensing</title>
+		<meta property="dc:title" content="Fundaments of optical remote sensing" /> 
+		<meta property="dc:creator" content="Valerio Tramutoli" /> 
+		<meta property="dc:publisher" content="University of Basilicata" /> 
+		<meta property="dc:subject" content="Physical Priciples, Remote Sensing, EO4GEO, Satellite, Earth Observation"/> 
+		<meta property="dc:abstract" content="This course contains the basic elements of Earth observation from space, dealing with the basic physical principles, technologies and methodologies used. The main objective of the course is to provide students with the foundations for studying the processes and environmental parameters with space technologies." /> 
+		<meta property="dc:tableOfContents" content="(1) em radiation and radiometric measurements; (2) Blackbody Radiation; (3) Rayleigh-Jeans approssimation ; (4) Wien's Law; 
+													(5) Matter/Radiation interaction; (6) Kirchoff Law; (7) Matter/Radiation interaction in the visible range; (8) Spectral measurements, spectral signatures of soil, water, vegetation;
+													(9) Interpretation of vegetations spectral signatures; (10) NDVI index; (11) Atomic Spectroscopy; (12) Basic principles of multi-spectral remote sensing;
+													(13) From ground to space: sensor acquisition and digital image formation, EO sensors; (14) Natural sources of radiation for EO: the Sun and the Earth; (15) Passive and Active Earth Observing Techniques; (16) Interaction between radiation and atmosphere;
+													(17) Chemical-physical properties of atmosphere; (18) Scattering in the atmosphere; (19) Extinction of solar radiation in the atmosphere; (20) Atmospheric transmittance and atmospheric windows;
+													(21) Penetration of e.m. radiation into the matter; (22) A Remote Sensing application: sediments or shallow water?; 23() Cloud detection" /> 
+		<meta property="dc:description" content="Learning outcomes: Understand Physical Principles which are the basis of Remote Sensing; Understand basis of EM energy and its propagation through the space; Illustrate basic modern physics theory understanding their implications on the development of advanced sensors for EO;
+					       Illustrate basic radiation-matter interactions and related concepts of spectral reflectance, absorbance and transmittance as specific properties of the matter; Explain the concept of composition of spectral signatures and apply the 'linear mixing' models in some simple case; Illustrate the concept of spectral signatures of the matter;
+					       Illustrate the spectral response curves for basic environmental features (e.g., vegetation, concrete, bare soil);Illustrate basic features of spectral signatures of vegetation, water and bare soil; Illustrate e.m. radiation intercations with/within clouds; 
+					       Illustrate main spectral signatures of clouds and apply them in paractical cloud-detection exercise; Explain an application example where the spectral indices are used for vegetation, water or snow monitoring; Examine how the vegetation indices relates to the vegetation dynamics and health;
+					       Examine how the water-related spectral indices relates to changes in the vegetation and soil water content; Explain how the NDVI relates to vegetation activity/health; Explain sensitivity of NDVI to the chlorophyll content of vegetation;
+					       Knowledge of the basic (selective) mechanism of the absorption/emission of electromagnetic radiation by atoms; Demonstrate the relationships among measured multi-spectral radiation and specific chemical (e.g. composition) and physical (e.g. temperature, pressure, etc.) properties of the observed matter; Explain what microwave remote sensing is; 
+					       Explain differences between optical and radar remote sensing; Explain how radar images are used for specific applications; Discuss the main types of remote sensing sensors and platforms;
+					       Discuss the main types of remote sensing data; Distinguish and explain the different types of properties of digital imagery; Explain and discuss what the spectral resolution is;
+					       Explain and discuss what the spatial resolution is; Explain and discuss what the radiometric resolution is; Explain and discuss what the temporal resolution is;
+					       Compare common sensors by spatial resolution, spectral sensitivity, ground coverage, and temporal resolution [e.g., AVHRR, MODIS (intermediate resolution ~500 m, high temporal) Landsat, commercial high resolution (Ikonos and Quickbird); Demonstrate basic knowledge of the interaction between the solar radiation and atmospheric constituents; Discuss types and classes of remote sensing sensors;
+					       Select the type of remote sensing sensor appropriate for your application; Explain and discuss types of sensing mechanisms; Discuss advantages and disadvantages of passive and active sensors;
+					       Understand sun, sun angle, and sensor parameters that influence top of atmosphere (TOA) reflectance; Understand atmospheric parameters that influence bottom of atmosphere (BOA) reflectance; Discuss the basic principles of solar radiation;
+					       Demonstrate basic knowledge of the atmospheric absorption and scattering mechanisms; Illustrate the interaction of e.m. radiation in the thermal infrared with the atmosphere understanding specifc characteristics of radiative transfer in this specific spectral region;" /> 
+		<meta property="dc:contributor" content="Nicola Capece, Valeria Satriano" /> 
+		<meta property="dc:created" content="2020-08-27" /> 
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" /> 
+		<meta property="dc:language" content="EN" /> 
+		<meta property="dc:SizeOrDuration" content="270min + tutorials" /> 
+		<meta property="dc:audience" content="from VET up to doctoral students" /> 
+		<meta property="dc:educationLevel" content="EQF 5 to 8" /> 
+		<meta property="dc:source" content="" /> 
+		<meta property="dc:rightsHolder" content="Valerio Tramutoli" /> 
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" /> 		
+		
+		<link rel="dc:relation" href="eo4geo:PP1-1" />
+		<link rel="dc:relation" href="eo4geo:PP1-3" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-1" />
+		<link rel="dc:relation" href="eo4geo:PP1-1-4" />
+		<link rel="dc:relation" href="eo4geo:PP1-1-5" />
+		<link rel="dc:relation" href="eo4geo:PP1-2" />
+		<link rel="dc:relation" href="eo4geo:PP1-1-6" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-3" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-4" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-5" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-6" />
+		<link rel="dc:relation" href="eo4geo:IP3-1-2" />
+		<link rel="dc:relation" href="eo4geo:IP3-1-2-3" />
+		<link rel="dc:relation" href="eo4geo:PP1-2-1" />
+		<link rel="dc:relation" href="eo4geo:PP1" />
+		<link rel="dc:relation" href="eo4geo:PP2" />
+		<link rel="dc:relation" href="eo4geo:PS" />
+		<link rel="dc:relation" href="eo4geo:PS3-4" />
+		<link rel="dc:relation" href="eo4geo:GD11-2" />
+		<link rel="dc:relation" href="eo4geo:PP1-1-11" />				
+		<link rel="dc:relation" href="eo4geo:PP1-1-8" />
+		<link rel="dc:relation" href="eo4geo:PP1-1-9" />
+		<link rel="dc:relation" href="eo4geo:PS1" />
+		<link rel="dc:relation" href="eo4geo:PS1-2" />
+		<link rel="dc:relation" href="eo4geo:IP1-7-1-4" />
+		<link rel="dc:relation" href="eo4geo:IP1-7-1-1" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-2" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-3" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-5" />
+		<link rel="dc:relation" href="eo4geo:PP1-7-12" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-7" />
+		<link rel="dc:relation" href="eo4geo:PP1-6-8" />
+		<link rel="dc:relation" href="eo4geo:PP1-2-8" />
+		<link rel="dc:relation" href="eo4geo:IP4-3-1" />
+		<link rel="dc:relation" href="eo4geo:TA14-2-2-1-3" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/assets/css/theme/simplemenu.css">
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">-->  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+		<script id="MathJax-script" async src="customer_content/js/MathJax-master/es5/tex-mml-chtml.js"></script>
+
+		<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 10%;height : 20%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Fundaments of Optical Remote Sensing</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<!-- Update Brackets \left(\right) in all equations-->
+
+				<div class="slides">
+				
+						<!--
+						<script>
+
+						$(document).ready(function() {
+							console.log("sono nella function");
+							$('.navigate-down').click(function(){
+							console.log("sono in click");
+							if($('#t1_test').is(':hidden')){
+								console.log("t1_test is hidden");
+							} else {
+								console.log("t1_test is visible");
+							}});
+						});
+
+						
+						</script>-->
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section > <!-- Slide 0-->
+					<h2 style="color:#2D5595;">Introductory Course</h2>
+					<br/><br/>
+					<h1 style="display:inline; color:#FF6600;">Fundaments of Optical Remote Sensing</h1>
+					
+					<br>
+
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<!--
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>-->
+				</section>
+				
+				<section > <!-- Slide 1-->
+					<h2 style="color:#2D5595;">Module 1</h2>
+					<br/>
+					<h1 style="color:#FF6600;">Matter Radiation Interaction</h1>
+					<!--
+					<span style="color:#2D5595">Valerio Tramutoli (Lecture)</span>
+					<br/><br/>
+					<p>
+						<h6><b><i>University of Basilicata School of Engineering - Potenza - ITALY</i></b></h6>
+						<h6><b><i> & </i></b></h6>
+						<h6><b><i>IMAA - Institute of Methodologies for Environmental Analysis of the Italian National Research Council – Tito Scalo – ITALY</i></b></h6>
+					</p>
+					-->
+
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes"> 
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				<section > <!-- Slide 2 -->
+
+						<br/>
+						<h2 style="color:black;">Remote sensing or what ?</h2> 
+					
+						<span style="color:#C0504D; font-size:20px"><b>In our case we will consider only Space Technologies suitable for:</b></span>
+						<br/>
+						
+						<p class="fragment">
+							<span style="color:#C0504D; display:inline-block; font-size:24px;"><b>Telerilevamento</b></span>
+							<span style="font-size:12px;">(from the Vocabulary of Italian Language, Treccani, 2000)</span>
+
+							<br/>
+
+							<span style="color:#C00000; display:inline-block; font-size:18px;"><b>Télédétection</b></span>
+							<span style="font-size:12px;">in French language</span>
+						<p/>
+					
+						<p class="fragment" style="font-size:18px;">
+							<br/>
+							"...<b>long-distance</b> detection of the appearance and the situation of a <b>territory</b>, particularly its 
+							weather and environmental conditions ... its natural resources (forests, water, etc..) usually <b>by air</b> or, now, almost
+							exclusively from artificial satellites... "equipped with sensors sensitive to different types of <b>electromagnetic waves.</b>
+						</p>
+
+						<table class="fragment" style="border:none;" id="t1_test">
+							<tr>
+								<td>
+									<img style="width: 75%; position:relative;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/sonar.gif" alt="SONAR (Sound Navigation And Ranging)">
+									<img class="fragment" style="width: 26%; position:absolute; margin-top: 1.5%; margin-left:-26%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+									
+									<!--<figcaption style="font-size:12px; text-align:center;">SONAR (Sound Navigation And Ranging)</figcaption>-->
+								</td>
+								<td>
+									<img style="width: 75%; position:relative;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/LIDAR.jpg" alt="LIDAR (LIght Detection And Ranging)">
+									<img class="fragment" style="width: 24%; position:absolute; margin-top: 2%; margin-left:-24%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+
+									<!--<figcaption style="font-size:12px;">LIDAR (Light Detection And Ranging)</figcaption>-->
+								</td>
+								<td>
+									<img style="width: 110%; position:relative;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/radar.gif" alt="RADAR (RAdio Detection And Ranging)">
+									<img class="fragment" style="width: 24.5%; position:absolute; margin-top: 1.5%; margin-left:-24.5%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+
+									<!--<figcaption style="font-size:12px;">RADAR (RAdio Detection And Ranging)</figcaption>-->
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span style="font-size:12px; text-align:center;">SONAR (Sound Navigation And Ranging)</span>
+								</td>
+								<td>
+									<span style="font-size:12px; text-align:center;">LIDAR (LIght Detection And Ranging)</span>
+								</td>
+								<td>
+									<span style="font-size:12px; text-align:center;">RADAR (RAdio Detection And Ranging)</span>
+								</td>
+							</tr>
+							<!--
+							<tr style="font-size:12px;">
+								<td>
+									<citation> Add references here...</citation>
+								</td>
+								<td>
+									<citation> Add references here...</citation>
+								</td>
+								<td>
+									<citation> Add references here...</citation>
+								</td>
+							</tr>
+							-->
+						</table>
+
+					<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... -->
+					<!--<citation>(St Lang & A Traun, 2015) [set border to zero, set background to transparent, figure to be obtained via JQuery from pic/caption collection]</citation>-->
+				</section>
+
+				<section > <!-- Slide 3 -->
+
+					<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="display:inline-block; float:left;">
+					<h2 style="margin-top:10%; color:#2D5595; font-weight:bold;"> THEORETICAL TOOLS:
+						<br/>
+						Basic Definitions and Physical Laws
+					</h2>
+
+					
+					<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... -->
+					<!--<citation> Add references here...</citation>-->
+				</section>
+
+				<section> <!-- Slide 4 -->
+						<h2 style="color:#2D5595; font-weight:bold;">Solid angle &Omega;</h2>
+						<p style="text-align:left; float:left; margin-left:-5%; width:50%; font-size:20px;">
+							<b>The solid angle \(\Omega\) is the ratio of the area \(\sigma\) intercepted on the surface of a sphere 
+							   of radius R by a cone with the vertex in the center of the sphere and the square of the sphere radius 
+							   (\(R^2\)). The measuring unit is the <i>steradian</i> [sr]
+							</b>
+						</p>
+
+						<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/solid_Angle.png">
+						<span style="font-size:40px;">\(\bbox[5px, border: 2px solid #2D5595]{\Omega = \frac{\sigma}{R^2}}\) <br/></span>
+
+						<div class="eq-container fragment">
+							<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/sphere.png" style="display:inline-block; float:right;">
+							<div class="eq-text-block">
+								<p style="font-size:30px;">\(\Omega=\frac{\sigma}{R^2}=\frac{\sigma '}{R^{ '2}}\)</p>
+							</div>
+						</div>
+						
+						<div class="fragment">
+						<span style="font-size:24px; float:left;">In the case of a sphere:</span>
+						<br/><br/>
+						<span style="float:left; font-size:30px;">\(\Omega = \frac{\sigma}{R^2}=\frac{4\pi R^2}{R^2}=4\pi sr\)</span>
+						</div>
+				</section>
+
+				<section> <!-- Slide 5 -->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Monochromatic Radiance</h2>
+						<p style="text-align:left; float:left; width:50%; font-size:21px;">
+							The <i>monochromatic radiance</i> represents the energy collected 
+							in a unit of time and solid angle when the unit of surface of a detector is 
+							crossed by e.m. radiation of wavelength in between \(\lambda\) and \(\lambda + d\lambda\) and 
+							directed <b>orthogonally</b> to the surface A.
+						</p>
+
+						<span style="font-size:20px; float:right;">Hortogonally Incident Radiation</span>
+						<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/h_radiation.png" style="display:inline-block; float:right;">
+
+
+						<br/><br/><br/><br/>
+						<span style="float:left; font-size:30px;">\(\bbox[5px, border: 2px solid #2D5595]{I_\lambda = \frac{dE_\lambda}{dt \cdot dA \cdot d\lambda \cdot d\Omega}} \)</span>
+						<span style="float:left; font-size:15px; margin-top:4%;">\( [I_\lambda]=[Watt  \cdot m^{-2} \mu m^{-1} sr^{-1}]\)</span>
+
+						<br/><br/><br/><br/><br/>
+						<span style="float:left; font-size:16px;"><b>\( dE_\lambda=\)energy, <i>[J]</i>; \(dt=\)time<i>[s]; </i>\(dA=\)collecting area <i>[\(m^2\)];</i></b></span>
+						<br/>
+						<span style="float:left; font-size:16px;"><b>\(d_\lambda=\)wavelength interval <i>[\(\mu m\)]</i>; \(d\Omega=\)collecting solid angle <i>[ster]</i></b></span>
+						
+						<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/oblique.png" style="display:inline-block; float:right; margin-top:-2%;">
+						<br/><br/>
+						<span style="margin-left:10%; font-size:20px; float:left; color:#2D5595;"><b>In general \( \Theta \ne 0\)</b></span>
+						
+						<br/><br/>
+						<span style="font-size:30px; position:relative; float:left;">\(\bbox[15px, border: 2px solid #003366]{I_\lambda = \frac{dE_\lambda}{dt \cdot dA \cdot \cos{\Theta} \cdot d\lambda \cdot d\Omega}} \)</span>
+						<div class="fragment">
+						<img class="myimage" width="7%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/green-square.png" style="position:absolute; margin-top:4.5%; margin-left:-34.5%;">
+						</div>
+						<!--
+						<span class="fragment" style="font-size:30px; position:absolute;">\(\bbox[15px, border: 2px solid #003366]{I_\lambda = \frac{dE_\lambda}{dt \cdot dA \cdot \bbox[2px, #00CC99]{\cos{\Theta}} \cdot d\lambda \cdot d\Omega}} \)</span>
+						-->
+				</section>
+				
+				<section> <!-- Slide 6 -->
+					<h2 style="color:#2D5595; font-weight:bold;">From sensors to radiation sources</h2>
+					<table class="mytable">
+						<tr>
+							<td>
+								<span style="display:inline-block; float:left;">To the sensor</span>
+								<img class="myimage" data-src="./resources/UNIBAS_Remote-Sensing-Environment/to_sensor.png" width="50%" style="float:right;"/>
+							</td>
+							<td>
+								<span style="display:inline-block; float:left;">From the source</span>
+								<img class="myimage" data-src="./resources/UNIBAS_Remote-Sensing-Environment/to_source.png" height="50%" style="float:right;"/>
+							</td>
+							<td>
+								<span>EXEMPLE:THE SUN</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>RADIANT POWER</span>
+								<br/><br/>
+								<span>\(f = dE / dt\)</span>
+								<br/><br/>
+								<span>[W]</span>
+							</td>
+							<td>
+								<span>LUMINOSITY</span>
+								<br/><br/>
+								<span>\(f = dE / dt\)</span>
+								<br/><br/>
+								<span>[W]</span>
+							</td>
+							<td>
+								<span>Ex.: Sun Luminosity</span>
+								<br/><br/>
+								<span>\(f = 3.90 \times 10^{26} W\)</span>
+								<br/><br/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>IRRADIANCE</span>
+								<br/><br/>
+								<span>\(F = dE / dt / dA\)</span>
+								<br/><br/>
+								<span>\([W m^{-2}]\)</span>
+							</td>
+							<td>
+								<span>(RADIANT) EXISTANCE</span>
+								<br/><br/>
+								<span>\(F = dE / dt /dA\)</span>
+								<br/><br/>
+								<span>\([W m^{-2}]\)</span>
+							</td>
+							<td>
+								<span>Ex: Sun Exitance for a Sun radius \(R = 7 \times 10^8m\)</span>
+								<br/><br/>
+								<!--
+								<span>\(3.90 \times 10^{26}\)</span>
+								<br/><br/>
+								<span>\(F(Sun) = \)_____________\( = 6.34 \times 10^7 W m^{-2}\)</span>
+								<br/><br/>
+								<span>\(4\pi (7 \times 10^8)^2\)</span>-->
+								<span>\(F(Sun) = \frac{3.90 \times 10^{26}}{4\pi (7 \times 10^8)^2} = 6.34 \times 10^7 W m^{-2}\)</span> <!--Revision 1-->
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>RADIANCE</span>
+								<br/><br/>
+								<span>\(I = dE / dt / d\Omega\)</span>
+								<br/><br/>
+								<span>\([W m^{-2}st^{-1}]\)</span>
+							</td>
+							<td>
+								<span>RADIANCE (BRILLANCE)</span>
+								<br/><br/>
+								<span>\(I = dE / dt / dA / d\Omega\)</span>
+								<br/><br/>
+								<span>\([W m^{-2}st^{-1}]\)</span>
+							</td>
+							<td>
+								<span>Ex.: Radiance leaving from Sun surface <br/> (assumed Lambertian i.e. isotropic)</span>
+								<br/><br/>
+								<span>\(I = F/\pi = 2.02 \times 10^7 W m^{-2} st^{-1}\)</span>
+							</td>
+						</tr>
+					</table>
+
+				</section>
+
+				<section><!-- Slide 7 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Inverse square law</h2>
+					<p style="font-size:21px;">\(f_\lambda=\frac{dE_\lambda}{dt \cdot d\lambda \cdot}=\int F_\lambda dA = \int dA \int I_\lambda(\Theta, \phi) cos\Theta d\Omega\)</p>
+				
+					<p style="text-align:left; float:left; font-size:21px;">
+						\(f_\lambda =\) <b>cost</b> \(\leftarrow\) <b>cons. of the Energy</b>
+						<br/><br/>
+						\(f_\lambda = F_\lambda \int dA = F_\lambda \cdot 4\pi d^2 = F_\lambda^{'} \cdot 4\pi d^{'2} = f_\lambda^{'}\)
+						<br/><br/>
+						<b>for a punctual Lambertian source</b>
+						<br/><br/>
+						\(F_\lambda (d) = \frac{f_\lambda}{4\pi d^2}\)
+						<br/><br/>
+						\(F_\lambda(d) \propto \frac{f_\lambda}{d^2}\)
+						<br/><br/>
+						\(\frac{F_\lambda (d_2)}{F_\lambda (d_1)} = \frac{d_1^2}{d_2^2}\)
+					</p>
+					<img class="myimage" width="45%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/inv_square_law.png" style="display:inline-block; float:right; margin-top:15%">
+
+				</section>
+
+				<section> <!-- Slide 8 -->
+					<h2 style="color:#2D5595; font-weight:bold;">Blackbody Radiation</h2>
+					
+					<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/black-body-radiation.png" style="display:inline-block; float:right;">
+					<span style="font-size:24px; float:left; margin-top:15%; display:inline-block; color:#2D5595;"><b>Planck's function</b></span>
+					<br/><br/><br/><br/><br/><br/>
+					<span style="font-size:30px; float-left; margin-left:-30%;">\(\bbox[5px, border: 2px solid #003366]{B_\lambda(T) = \frac{2~~h~~c^2}{\lambda^5(e^{\frac{h~~c}{\lambda~~k~~T}}-1)}}\)</span>
+					<p style="font-size:16px; float-left; text-align:left; margin-left:-7%">
+						\(B_\lambda(T)=\) monochromatic radiance emitted at the <br/> 
+						wavelength \(\lambda\) by a blackbody at the absolute <br/> 
+						temperature \(T [W/m^3]\) <br/>
+						\(c=2.998 \cdot 10^8 m/s\) speed of light in the vacuum <br/>
+						\(h=6.626 \cdot 10^{-34} Js\) Planck’s constant <br/>
+						\(k=1.380 \cdot 10^{-23} J/K\) Boltzman constant 
+					</p>
+				</section>
+
+				<section> <!-- Slide 9 -->
+					<h2 style="color:#2D5595; font-weight:bold;">Reyleigh-Jeans approximation</h2>
+					<br/>
+					<span style="font-size:24px; float:left; display:inline-block;">\(B_\lambda=\frac{2~~h~~c^2}{\lambda^5{(e^{\frac{h~~c}{\lambda~~k~~T}}-1)}}\)</span>
+					<span style="font-size:24px; float:right;"><b>if \(\lambda>0.001m\) &nbsp&nbsp&nbsp&nbsp \(T\)~\(300K\)</b></span>
+					<br/><br/>
+					<span style="font-size:24px; float:left; color:#2D5595;"><b>Planck</b></span>
+					<p style="float:right;">
+						<span style="font-size:24px; float:left;">\(x=\frac{h~~c}{\lambda~~k~~T}\rightarrow 0\)</span>
+						<br/><br/>
+						<span style="font-size:24px; float:left;">\(e^x = 1 + x + ....\) <i>Taylor</i></span>
+						<br/><br/>
+						<span style="font-size:24px; float:left;">\(e^{\frac{h~~c}{\lambda~~k~~T}}\approx 1 + \frac{h~~c}{\lambda~~k~~T}\)</span>
+					</p>
+					<img class="myimage" width="25%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/ob_arrow.png" style="float:center; margin-top:5%; margin-left:15%;">
+					<br/>
+					<span style="font-size:24px; float:left; margin-top:-4%;">\(B_\lambda(T)\approx \frac{2~~h~~c^2}{\lambda^5(1+\frac{h~~c}{\lambda~~k~~T}-1)}\)</span>
+					<br/><br/>
+					<span style="font-size:30px; float:left;">\(\bbox[5px, border: 1px solid #003366, #CCCCFF]{B_\lambda(T) \approx \frac{2 k c T}{\lambda^4} \propto T}\)</span>
+					<div class="text-block"
+						<span style="font-size:24px; float:right;"><b>Radiation law of</b></span>
+						<br/>
+						<span style="font-size:28px; float:right;"><b>Reyleigh-Jeans</b></span>
+					</div>
+				</section>
+
+				<section> <!-- Slide 10 -->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Emissivity </h2>
+						<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/emissivity.png" style="float:center;">
+						<span style="font-size:30px; float:right; margin-top:-55%;">\(B_\lambda(T) = \frac{2~~h~~c^2}{\lambda^5(e^{\frac{h~~c}{\lambda~~k~~T}}-1)}\)</span>
+
+						<div class="fragment">
+							<span style="font-size:30px; float:right; margin-top:-30%; color:#2D5595;"><b>Thermally emitted radiation</b></span>
+							<span style="font-size:30px; float:right; margin-top:-25%; margin-right:5%;">\(\bbox[5px, border: 2px solid #008080]{I_\lambda(T)=\epsilon_\lambda B_\lambda(T)}\)</span>
+						</div>
+						<div class="fragment">
+							<span style="font-size:30px; float:left; margin-top:-19.5%; margin-left:30%; color:#2D5595;"><b>Emissivity</b></span>
+							<span style="font-size:30px; float:left; margin-top:-14.5%; margin-left:25%;">\(\bbox[5px, border: 2px solid #2D5595]{\epsilon_\lambda = \frac{I_\lambda(T)}{B_\lambda(T)} \leq 1}\)</span>
+						</div>
+				</section>
+
+				<section> <!-- slide 11 -->
+						<h2 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h2>
+						<p style="float:left; display:inline-block;">
+							<span style="font-size:24px; color:#2D5595; font-weight:bold;">Planck's function</span>
+							<br/>
+							<span style="font-size:30px;"> \(\bbox[5px, border: 2px solid #003366]{B_\lambda(T) = \frac{2~~h~~c^2}{\lambda^5(e^{\frac{h~~c}{\lambda~~k~~T}}-1)}}\)</span>
+						</p>
+						<div class="fragment">
+						<p style="font-size:30px; float:right;">
+							<span style="font-size:24px; color:#2D5595; font-weight:bold;">Blackbody Temperature</span>
+							<br/>
+							<span style="font-size:30px;"> \(\bbox[5px, border: 2px solid #003366]{T = \frac{hc}{\lambda k} \frac{1}{\ln[1+\frac{2~hc^2}{\lambda^5 B_\lambda(T)}]}}\)</span>
+						</p>
+						</div>
+						<div class="fragment">
+						<img class="myimage" width="25%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/inversion.png" style="float:center; margin-top:15%;">
+						</div>
+
+						<div class="fragment">
+						<p style="font-size:30px; float:left; margin-top:-5%;">
+							<span style="font-size:24px; color:#2D5595; font-weight:bold;">Brightness Temperature</span>
+							<br/>
+							<span style="font-size:30px;"> \(\bbox[5px, border: 2px solid #003366]{T_B = \frac{hc}{\lambda k} \frac{1}{\ln[1~+~\frac{2~hc^2}{\lambda^5 I_\lambda(T)}]}}\)</span>
+						</p>
+						<span style="font-size:30px; float:right; margin-right:18%;">\(\bbox[5px, border: 2px solid #2D5595]{T_B \leq T}\)</span>
+						</div>
+						<div class="fragment">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:3.5%; margin-left:-26%;">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:-25.5%; margin-left:40%;">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 12 -->
+						<br/>
+						<h4 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h4>
+						<h2 style="color:#2D5595; font-weight:bold;">Exercise: Moon surface temperature</h2>
+						<p style="float:left; display:inline-block;">
+							<span style="font-size:21px; float:left;">\( T_s = \frac{hc}{\lambda~k} \frac{1}{\ln[1~+~\frac{2~hc^2}{\lambda^5~I_\lambda(T)}]} \)</span>
+							<br/><br/>
+							<span class="fragment" style="font-size:21px; float:left;">\( \bbox[5px, border: 2px solid #003366]{I_{\lambda=10\mu} = 3 \cdot 10^4 erg \cdot s^{-1} \cdot cm^{-2} \mu m^{-1} sr^{-1}}\)</span>
+							<br/><br/>
+							<span class="fragment" style="font-size:21px; float:left; text-align:left;">
+								<b>monochromatic radiance emitted at the <br/>
+								   wavelength \( \lambda = 10\mu \) by he Moon surface <br/>
+								   \( c\sim 3 \cdot 10^{10} cm/s\) speed of light in the vacuum <br>
+								   \( h\sim 6,6 \cdot 10^{-27} erg \cdot s\) Planck's constant <br>
+								   \( k\sim 1,4 \cdot 10^{-16} erg/K\) Boltzman constant
+								</b>
+							</span>
+						</p>
+						<img class="myimage" width="37%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/moon.png" style="float:right;">
+
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<div class="fragment">
+						<h3 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h3>
+						<div style="border: 2px solid #003366; width:100%; padding-top:1%; padding-left:1%; padding-bottom:10%;">
+						<span style="font-size:21px; float:left;">
+							\(T_B = \frac{hc}{\lambda k} \frac{1}{\ln[1~+~\frac{2~hc^2}{\lambda^5 I_\lambda(T)}]} = \frac{6,6 ~\cdot~ 10^{-27} erg ~\cdot~ s ~\cdot~ 3 ~\cdot~ 10^{10} cm~/~s}{10 ~\cdot~ 10^{-4} cm ~\cdot~ 1,4 ~\cdot~ 10^{-16} erg~/~K} \frac{1}{\ln[1~+~\frac{2 ~\cdot~ 6,6 ~\cdot~ 10^{-27} erg ~\cdot~ s ~\cdot~ (3 ~\cdot~ 10^{10})^2 cm^2 / s^2}{10 \mu m ~\cdot~ (10 ~\cdot~ 10^{-4} cm)^4 ~\cdot~ 3 ~\cdot~ 10^4 erg ~\cdot~ s^{-1} ~\cdot~ cm^{-2} \mu m^{-1} sr^{-1}}]}=\)		
+						</span>
+						<br/>
+						<span style="font-size:21px; float:left;">
+							\(=\frac{6,6~\cdot~3~\cdot~10^2}{1,4}\frac{1}{\ln[1~+~\frac{2~\cdot~6,6~\cdot~9}{3}sr]}K= \frac{6,6~\cdot~3~\cdot~10^2}{1,4}\frac{1}{3,7}K \approx 382~K\)
+						</span>
+						</div>
+						</div>
+						<div class="fragment">
+							<span style="font-size:21px; float:center;">\( \bbox[5px, border: 2px solid #2D5595]{T \geq T_B}\)</span>
+						</div>
+				</section>
+				
+				<section> <!-- Slide 13 -->
+						<br/>
+						<h4 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h4>
+						<h2 style="color:#2D5595; font-weight:bold;">Exercise: Earth's surface temperature</h2>
+						<p style="float:left; display:inline-block;">
+							<br/><br/>
+							<span style="font-size:21px; float:left;">\( \bbox[5px, border: 2px solid #003366]{I_{\lambda=10\mu} = 10^4 erg \cdot s^{-1} \cdot cm^{-2} \mu m^{-1} sr^{-1}}\)</span>
+							<br/><br/>
+							<span class="fragment" style="font-size:21px; float:left; text-align:left;">
+								<b>monochromatic radiance emitted at the <br/>
+								   wavelength \( \lambda = 10\mu \) by he Moon surface <br/>
+								   \( c\sim 3 \cdot 10^{10} cm/s\) speed of light in the vacuum <br>
+								   \( h\sim 6,6 \cdot 10^{-27} erg \cdot s\) Planck's constant <br>
+								   \( k\sim 1,4 \cdot 10^{-16} erg/K\) Boltzman constant
+								</b>
+							</span>
+						</p>
+						<img class="myimage" width="37%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/earth.png" style="float:right;">
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<div class="fragment">
+						<h3 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h3>
+						<div style="border: 2px solid #003366; width:100%; padding-top:1%; padding-left:1%; padding-bottom:10%;">
+						<span style="font-size:21px; float:left;">
+							\(T_B = \frac{hc}{\lambda k} \frac{1}{\ln[1~+~\frac{2~hc^2}{\lambda^5 I_\lambda(T)}]} = \frac{6,6 ~\cdot~ 10^{-27} erg ~\cdot~ s ~\cdot~ 3 ~\cdot~ 10^{10} cm~/~s}{10 ~\cdot~ 10^{-4} cm ~\cdot~ 1,4 ~\cdot~ 10^{-16} erg~/~K} \frac{1}{\ln[1~+~\frac{2 ~\cdot~ 6,6 ~\cdot~ 10^{-27} erg ~\cdot~ s ~\cdot~ (3 ~\cdot~ 10^{10})^2 cm^2 / s^2}{10 \mu m ~\cdot~ (10 ~\cdot~ 10^{-4} cm)^4 ~\cdot~ 1 ~\cdot~ 10^4 erg ~\cdot~ s^{-1} ~\cdot~ cm^{-2} \mu m^{-1} sr^{-1}}]}=\)		
+						</span>
+						<br/>
+						<span style="font-size:21px; float:left;">
+							\(=\frac{6,6~\cdot~3~\cdot~10^2}{1,4}\frac{1}{\ln[1~+~\frac{2~\cdot~6,6~\cdot~9}{1}sr]}K= \frac{6,6~\cdot~3~\cdot~10^2}{1,4}\frac{1}{4,8}K \approx 296~K\)
+						</span>
+						</div>
+						</div>
+							
+						<div class="fragment">
+							<span style="font-size:21px; float:center;">\( \bbox[5px, border: 2px solid #2D5595]{T \geq T_B}\)</span>
+						</div>
+				</section>
+				
+				<section> <!-- Slide 14 -->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Brightness Temperature</h2>
+						<h3 style="color:#2D5595; font-weight:bold;">(Reyleigh-Jeans approximation)</h3>
+						<p style="float:left; display:inline-block;">
+							<span style="font-size:24px; color:#2D5595; font-weight:bold;">Planck's function</span>
+							<br/>
+							<span style="font-size:30px;"> \(\bbox[5px, border: 2px solid #003366]{B_\lambda(T) \approx \frac{2~kcT}{\lambda^4} ~\propto~T}\)</span>
+						</p>
+
+						<div class="fragment">
+						<p style="font-size:30px; float:right;">
+							<span style="font-size:24px; color:#2D5595; font-weight:bold;">Blackbody Temperature</span>
+							<br/>
+							<span style="font-size:30px;"> \(\bbox[5px, border: 2px solid #003366]{T \approx \frac{\lambda^4}{2~kc} B_\lambda(T)}\)</span>
+						</p>
+						</div>
+						
+						<div class="fragment">
+							<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/inversion.png" style="float:center; margin-top:10%;">
+						</div>
+
+						<div class="fragment">
+						<span style="font-size:30px;">\( T_B \approx \frac{\lambda^4}{2kc}I_\lambda(T)\approx\frac{\lambda^4}{2kc}\epsilon_\lambda B_\lambda(T)\approx\frac{\lambda^4}{2kc}\epsilon_\lambda\frac{2kc}{\lambda^4}T=\epsilon_\lambda T\)</span>
+						<br/><br/>
+						<span style="font-size:30px; float:left; margin-left:30%;">\(\bbox[5px, border: 2px solid #2D5595]{T_B\sim\epsilon_\lambda T}\)</span>
+						<span style="font-size:30px; float:right; margin-right:30%;">\(\bbox[5px, border: 2px solid #2D5595]{T_B\leq T}\)</span>
+						</div>
+						
+						<div class="fragment">
+						<img class="myimage" width="11%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:-11.5%; margin-left:-27.5%;">
+						<img class="myimage" width="11%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:-39%; margin-left:35.5%;">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 15 -->
+					<h2 style="color:#2D5595; font-weight:bold;">Wien's Displacement Law</h2> 
+					<span style="font-size:30px; float:left; display:inline-block; margin-top:5%;">\(\bbox[5px, border: 2px solid #2D5595]{\lambda_{MAX}(\mu m)=\frac{2898}{T(K)}}\)</span>
+					<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/wien-law.png" style="float:right; margin-right:-5%;">
+					<br/><br/><br/><br/><br/>
+					<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/wavelength.png" style="float:left; margin-left:-5%;">
+				</section>
+				
+				<section> <!-- Slide 16 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Wien's Displacement Law</h2> 
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/im-wien.png">
+				</section>
+				
+				<section> <!-- Slide 17 -->
+						<br/>
+						<h3 style="color:#2D5595; font-weight:bold;">Wien's Displacement Law</h3>
+						<h2 style="display:inline-block; color:#2D5595; font-weight:bold;">Exercise: choosing the best spectral range</h2>
+						<img class="myimage" width="10%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="float:right; margin-top:-5%;">
+						<br/>
+						<p style="float:left; display:inline-block; text-align:left; border: 1px solid black; width:46%; padding-top:1%; padding-left:1%; padding-bottom:5%; background-color:yellow;">
+							<span style="font-size:24px;"><b>Earth surface \(T=300K\)</b></span>
+							<br/></br>
+							<span style="font-size:24px;"><b>\(\lambda_{MAX}=10\mu m=\)TIR</b></span>
+							<br/><br/><br/>
+							<span style="font-size:24px;"><b>fires, lava flows \(T=800~~-1000~K\)</b></span>
+							<br/><br/>
+							<span style="font-size:24px;"><b>\(\lambda_{MAX}=3-4\mu m = \)MIR</b></span>
+							<br/><br/><br/>
+							<span style="font-size:24px;"><b>Sun photosphere \(T=6000~K\)</b></span>
+							<br/><br/>
+							<span style="font-size:24px;"><b>\(\lambda_{MAX} = 0,5\mu m =\) VIS</b></span>
+						</p>
+						<span style="font-size:24px; float:right;">\(\lambda_{MAX}(\mu m)\approx\frac{3000}{T(K)}\)</span>
+						<img class="myimage" width="47.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/best_spectral_range.png" style="float:right;">
+				</section>
+				
+				<section> <!--  Slide 18 animated -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Matter/Radiation Interaction</h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/matter-radiation.gif">
+					<br/>
+					<span style="font-size:21px; color:black;"><b>Conservation of the Energy</b></span>
+					<br/>
+					<span style="font-size:24px;"><b>\(\bbox[5px, border: 1px solid black]{E_i = E_{rif} + E_{ads} + E_{tras}}\)</b></span>
+				</section>
+					
+				<section> <!-- Slide 19 -->
+						<h2 style="color:#2D5595; font-weight:bold;">Matter/Radiation Interaction</h2>
+						<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/matter-radiation-base.png" style="display:inline-block; float:left;">
+						<p style="float:right;">
+							<span style="font-size:21px; color:black;"><b>Conservation of the energy</b></span>
+							<br/>
+							<span style="font-size:30px;">\(\bbox[5px, border: 1px solid black]{E_{rif} + E_{ads} + E_{trans} = E_i}\)</span>
+							<br/>
+							<img class="myimage" width="15%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/down-arrow.png" style="float:center;">
+							<br/>
+							<span class="fragment" style="font-size:30px;">\(\bbox[5px, border: 1px solid black]{I_\lambda^R + I_\lambda^A + I_\lambda^T = I_\lambda^I}\)</span>
+							<br/><br/>
+							<span class="fragment" style="font-size:30px;">\(\bbox[5px, border: 1px solid black]{\frac{I_\lambda^R}{I_\lambda^I}+\frac{I_\lambda^A}{I_\lambda^I}+\frac{I_\lambda^T}{I_\lambda^I}=\frac{I_\lambda^I}{I_\lambda^I}=1}\)</span>
+						</p>
+						<div class="fragment">
+						<p style="float:left; text-align:left; border: 1px solid black; width:20%; padding-top:1%; padding-left:1%; padding-bottom:1%;">
+							<span style="font-size:30px">\(\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}\)</span>
+							<br/><br/>
+							<span style="font-size:30px">\(\alpha_\lambda=\frac{I_\lambda^A}{I_\lambda^I}\)</span>
+							<br/><br/>
+							<span style="font-size:30px">\(\Im_\lambda=\frac{I_\lambda^T}{I_\lambda^I}\)</span>
+						</p>
+						<p style="float:left; margin-top:4%; margin-left:5%; text-align:left; border: 1px solid black; width:23%; padding-top:1%; padding-left:1%; padding-bottom:1%;">
+							<span style="font-size:30px"><b>Reflectance</b></span>
+							<br/><br/><br/>
+							<span style="font-size:30px"><b>Absorbance</b></span>
+							<br/><br/><br/>
+							<span style="font-size:30px"><b>Transmittance</b></span>
+						</p>
+						</div>
+						<div class="fragment">
+						<img class="myimage" width="7%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/huge-bracket.jpg" style="margin-top:4%; float:left;">
+						<span style="font-size:30px; float:left; margin-top:2%; margin-left:10%;"><b>monochromatic</b></span>
+						</div>
+						<br/><br/>
+						<span class="fragment" style="font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda+\alpha_\lambda+\Im_\lambda = 1}\)</span>
+				</section>
+			
+				<section> <!-- Slide 20 -->
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral Signatures in the laboratory</h2>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/spectral-signatures.png" style="display:inline-block; float:left;">
+					<p style="float:left; margin-left:15%; text-align:left; font-size:30px;">
+						<span>\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^D}{I_\lambda^S}}\)</span>
+						<br/><br/><br/><br/>
+						<span>\(\bbox[5px, border: 1px solid black]{\epsilon_\lambda=\frac{I_\lambda^D}{B_\lambda(T)}}\)</span>
+						<br/><br/><br/><br/>
+						<span>\(\bbox[5px, border: 1px solid black]{\Im_\lambda=\frac{I_\lambda^D}{I_\lambda^S}}\)</span>
+					</p>
+				</section>
+				
+				<section> <!-- Slide 21 -->
+						<h2 style="color:#2D5595; font-weight:bold;">Kirchoff law</h2>
+						<p style="background-color: #00CC99; text-align:left; display:inline-block; width:120%; margin-left:-10%; padding-top:3%; padding-bottom:3%; font-size:30px;">&nbsp;&nbsp;&nbsp;&nbsp; at the thermodynamic equilibrium:</p>
+						<span style="float:right; font-size:30px; margin-top:-10%;">\(\bbox[15px, border: 2px solid blue, white]{\epsilon_\lambda = \alpha_\lambda}\)</span>
+						<br/>
+						<div class="fragment">
+						<span style="float:left; font-size:30px;">\(\bbox[15px, border: 1px solid black]{\rho_\lambda+\alpha_\lambda + \Im_\lambda = 1}\)</span>
+						<img class="myimage" width="15%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/dobule-arrows.png" style="float:center; margin-top:-0.5%;">
+						<span style="float:right; font-size:30px;">\(\bbox[15px, border: 1px solid black]{\rho_\lambda+\epsilon_\lambda + \Im_\lambda = 1}\)</span>
+						</div>
+						<div class="fragment">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:-6.9%; margin-left:-41%;">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:-6.9%; margin-left:28%;">
+						</div>
+						<div class="fragment">
+						<span style="float:left; font-size:30px;">for not transparent materials: \(\Im_\lambda \approx 0\)</span>
+						<img class="myimage" width="15%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/left-curve-arrow.png" style="float:left; margin-left:10%;">
+						<span style="float:right; font-size:30px; margin-right:45%; margin-top:-5%;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda + \alpha_\lambda = 1}\)</span>
+						</div>
+						<br/><br/><br/><br/><br/>
+						<span class="fragment" style="float:left; font-size:30px;">at the termodynamic equilibrium (Kirchoff)</span>
+						<br/><br/>
+						<span class="fragment" style="float:left; font-size:30px; margin-left:10%;">\(\bbox[15px, border: 1px solid black]{\epsilon_\lambda = \alpha_\lambda = 1 - \rho_\lambda}\)</span>
+						<div class="fragment">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:0.75%; margin-left:-60.5%;">
+						<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/fuchsia-oval.png" style="position:absolute; margin-top:0.75%; margin-left:-51%;">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 22 -->
+						<h3 style="display:inline-block; color:#2D5595; font-weight:bold;">Our daily remote sensing experience<br/>
+							in the visible (VIS) spectral range
+						</h3>
+						<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/vis-part-1.png" style="float:right; margin-right:-7.5%; position:relative;">
+						<div class="fragment">
+							<img class="myimage" width="51%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/vis_complete.png" style="position:absolute; margin-left:17.8%; margin-top:-8.3%;">
+						</div>
+						<br/>
+						<img class="myimage" width="35%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/newton-prims.png" style="float:left;">
+						<div class="fragment">
+							<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/visible-spectral-range.png" style="margin-top:-2.5%;">
+						</div>
+						<br/>
+						<span style="float:left; font-size:30px; margin-left:-40%; margin-top:50%;">Newton prism and light colors</span>
+				</section>
+				
+				<section><!-- Slide 23 -->
+					<br/>
+					<h3 style="color:#2D5595; font-weight:bold;">Our daily remote sensing experience<br/>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/vis-eyes.png">
+				</section>	
+				
+				<section><!-- Slide 24 -->
+						<h2 style="color:#2D5595; font-weight:bold;">What?</h2>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what1.png" style="position:relative;">
+						<div class="fragment">
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what2.png" style="position:absolute; margin-top:-49.5%; margin-left:-40%">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 25 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">How?</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/how.png">
+				</section>
+				
+				<section> <!-- Slide 26 -->
+						<h2 style="color:#2D5595; font-weight:bold;">What? better?</h2>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what1.png" style="position:relative;">
+						<div class="fragment">
+							<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what-better-1.png" style="position:absolute; margin-top:-49.5%; margin-left:-40%">
+						</div>
+						<div class="fragment">
+							<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what2.png" style="position:absolute; margin-top:-49.5%; margin-left:-40%">
+						</div>
+						<div class="fragment">
+							<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/what-better-2.png" style="position:absolute; margin-top:-49.5%; margin-left:-40%">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 27 -->
+					<h2 style="color:#2D5595; font-weight:bold;">How?</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/how-2.png">
+				</section>
+				
+				<section>	<!-- Slide 28-->
+					<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+					<span style="display:inline-block; float:left; font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+					<span style="float:left; font-size:30px; margin-left:10%; margin-top:2.5%;"><b>Reflectance</b></span>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance.gif" style="margin-top:5%;">
+				</section>
+				
+				<!--
+				<section> 
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<span style="display:inline-block; float:left; font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-left:10%; margin-top:2.5%;"><b>Reflectance</b></span>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-part-1.png" style="margin-top:14%; margin-left:-68%;">				
+					</section>
+					
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<span style="display:inline-block; float:left; font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-left:10%; margin-top:2.5%;"><b>Reflectance</b></span>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-part-2.png" style="margin-top:14%; margin-left:-68%;">				
+					</section>
+					
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<span style="display:inline-block; float:left; font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-left:10%; margin-top:2.5%;"><b>Reflectance</b></span>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-part-3.png" style="margin-top:14%; margin-left:-68%;">				
+					</section>
+					
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<span style="display:inline-block; float:left; font-size:30px;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda=\frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-left:10%; margin-top:2.5%;"><b>Reflectance</b></span>
+						<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance.png" style="margin-top:5%;">				
+					</section>
+				</section> -->
+				 
+				<section> <!-- Slide 29-->
+					<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-2.gif" style="display:inline-block; float:left;">	
+					<span style="float:left; font-size:30px; margin-top:10%; margin-left:-30%; position:abosolute;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda = \frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+					<span style="float:left; font-size:30px; margin-top:-32%; margin-left:70%; position:abosolute;"><b>Reflectance</b></span>
+				</section>
+				
+				<!--
+				<section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-2-part-1.png" style="display:inline-block; float:left;">	
+						<span style="float:left; font-size:30px; margin-top:10%;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda = \frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-top:5%; margin-left:10%;"><b>Reflectance</b></span>
+					</section>
+					
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-2-part-2.png" style="display:inline-block; float:left;">	
+						<span style="float:left; font-size:30px; margin-top:10%;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda = \frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-top:5%; margin-left:10%;"><b>Reflectance</b></span>
+					</section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-2-part-3.png" style="display:inline-block; float:left;">	
+						<span style="float:left; font-size:30px; margin-top:10%;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda = \frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-top:5%; margin-left:10%;"><b>Reflectance</b></span>
+					</section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-2.png" style="display:inline-block; float:left;">	
+						<span style="float:left; font-size:30px; margin-top:10%;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda = \frac{I_\lambda^R}{I_\lambda^I}}\)</span>
+						<span style="float:left; font-size:30px; margin-top:5%; margin-left:10%;"><b>Reflectance</b></span>
+						<img class="myimage" width="43%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/one-layer-leaves.png" style="float:right; margin-right:-15%;">	
+					</section>
+				</section>-->
+				
+				<section> <!-- Slide 30-->
+					<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-3.gif">	
+				</section>
+				
+				<!--
+				<section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-3-part1.png">	
+					</section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+						<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-3.png">	
+					</section>
+				</section>-->
+				
+				<section > <!-- Slide 31-->
+					<img class="myimage" width="30%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="display:inline-block; float:left;">
+					<h1 style="margin-top:15%; color:red;">Beyond visible.</h1>
+				</section>
+				
+				<section > <!-- Slide 32-->
+					<h2 style="position:absolute; top:15%; right:60%; display:inline-block; color:#2D5595; font-weight:bold;">visible and....</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/visible-and.png" style="float:left;">
+					<h3 style="position:absolute; top:87%; right:40%;"><b>Aerial color picture</b></h3>
+				</section>
+				
+				<section > 
+					<section> <!-- Slide 33-->
+						<h2 style="position:absolute; top:10%; right:50%; display:inline-block; color:#2D5595; font-weight:bold;">beyond visible....</h2>
+						<img class="myimage" width="94%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/beyond-visible.png" style="float:left; position:relative;">
+						<div class="fragment">
+						<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/beyond-visible-2.gif" style="float:left; position:absolute; margin-left:-97.7%; margin-top:1.2%;">
+						</div>
+						<h3 class="fragment" style="background-color:white; position:absolute; top:42%; "><b>the vegetation “colour” is (near) infrared more than green !</b></h3>
+						<h3  style="position:absolute; top:87%; right:30%;"><b>Infrared aerial color picture</b></h3>
+					</section>
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold; ">TUTORIAL RGB Landsat-ETM</h2>
+						<br/>
+						<ul>
+							<li><b>RGB true color on MODIS image</b></li>
+							<br/>
+							<li><b>RGB false color to enhance vegetation (RED &#8594; NIR)</b></li>
+						</ul>
+					</section>
+				</section>
+				
+				<section> <!-- Slide 34-->
+					<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the laboratory</h3>
+					<img class="myimage" width="93.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-3.gif" style="position:relative;">
+					<div class="fragment" style="position:absolute; margin-top:-61.3%; margin-left:-1%;" width="100%">
+						<img class="myimage" width="1400" data-src="./resources/UNIBAS_Remote-Sensing-Environment/measuring-reflectance-4.gif">
+						<span style="font-family: Arial, Helvetica, sans-serif; position:absolute; width:50%; margin-left:-78%; margin-top:38%; font-size:39px; font-weight:bold; color:#FF0066;">Which "colors" <br/> beyond visible?</span>
+					</div>
+				</section>
+
+				<section> <!-- Slide 35-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Measuring reflectances in the lab & in the field<h2> 
+					<h4 style="color:#2D5595; font-weight:bold;">(Field Spec ASD Spectrometer)</h4>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-41.png">
+				</section>
+				
+				<section><!-- Slide 36-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of soil, water, <br/>vegetation (in reflectance)<h2> 
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-42.png" style="position:relative;">
+						<img class="myimage fragment" width="5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/down-red-arrow.png" style="position:absolute; margin-left:-68.8%; margin-top:25%;">
+				</section>
+				
+				<section> <!-- Slide 37-->	
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signature of water</h2>
+						<span class="fragment" style="font-size:30px; font-weight:bold;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda + \alpha_\lambda + \Im_\lambda = 1}\)</span>
+						<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-44.png">
+						<h4 style="color:blue; position:absolute; margin-top:-35%; margin-left:25%;">Hight transmittance</h4>
+						<h4 style="color:blue; position:absolute; margin-top:-25%; margin-left:60%;">Very low transmittance</h4>
+				</section>
+				
+				<section> <!-- Slide 38-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of (clean/turbid) water <br/>(in reflectance) </h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-45.png">
+				</section>
+				
+				<section> <!-- Slide 39-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of snow <br/> (in reflectance)</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-46.png">
+				</section>
+				
+				<section> <!-- Slide 40-->
+					<section> 
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of snow and Clouds  <br/> (in reflectance)</h2>
+						<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-47.png">
+					</section>
+					
+					<section>
+						<li style="text-align:left; font-size:40px; font-weight:bold; float:left; color:#003399; font-family:Roboto Slab, sans-serif;">
+							TUTORIAL <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RGB MODIS FOR <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DISCRIMINATING SNOW FROM <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLOUDS
+						</li>
+					</section>
+				</section>
+				
+				<section> <!-- Slide 41-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of soil, water, <br/>
+						<span style="color:#FF6600;">vegetation</span> (in reflectance)</h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-49.png">
+				</section>
+			
+				<section> <!-- Slide 42-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold; position:absolute; margin-left:21%;">Spectral signatures of vegetation <br/>(in reflectance)</h2>
+					<img class="myimage" width="90%" style="margin-top:6%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-50.png">
+				</section>
+				
+				<section> <!-- Slide 43-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of vegetation</h2>
+						<span style="font-size:30px; font-weight:bold;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda + \alpha_\lambda + \Im_\lambda = 1}\)</span>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-51.png">
+						<img class="myimage fragment" width="16%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/big-vertical-oval.png" style="position:absolute; margin-left:-75%; margin-top:5%;">
+				</section>
+				
+				<section> <!-- Slide 44 -->
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-52.png">
+					<span style="position:absolute; font-size:50%; margin-left:-10%; margin-top:18%; font-weight:bold;">
+						Total <br/> Chlorophyll <br/>
+						Concentration <br/> (\(\mu g \, cm^{-2}\))  <br/>
+					</span>
+				</section>
+				
+				<section> <!-- Slide 45 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Monitoring vegetation disease</h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-53.png">
+				</section>
+				
+				<section> <!-- Slide 46 -->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of vegetation</h2>
+						<span style="font-size:30px; font-weight:bold;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda + \alpha_\lambda + \Im_\lambda = 1}\)</span>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-51.png">
+						<img class="myimage fragment" width="51%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/big-horizontal-oval.png" style="position:absolute; margin-left:-46%; margin-top:3%;">
+				</section>
+				
+				<section> <!-- Slide 47 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of vegetation <br/>(reflectance) and water (absorption)</h2>
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-55.png">
+				</section>
+				
+				<section> <!-- Slide 48 -->
+					<br/>
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-56.png">
+						<span style="position:absolute; font-size:50%; margin-left:-10%; margin-top:22%; font-weight:bold;">
+						Water depth <br/> [\(cm^{2}\)]  <br/>
+					</span>
+				</section>
+				
+				<section> <!-- Slide 49 -->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold; position:absolute; margin-left:20%;">Spectral signatures of vegetation in <br/> different condition of water stress <br/>water content % </h2>
+					<br/>
+					<img class="myimage" width="85%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-57.png">
+				</section>
+				
+				<section> <!-- Slide 50 -->
+					<br/>
+					<h3 style="color:#2D5595; font-weight:bold; position:absolute; margin-left:20%;">
+						Measuring reflectances in the lab & in the field</h3><h4 style="color:#2D5595; font-weight:bold; position:absolute; margin-left:40%; margin-top:5%;"> (Field Spec ASD Spectrometer)</h4>
+					<br/><br/>
+					<img class="myimage" width="85%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-58.png">
+				</section>
+				
+				<section> <!-- 51 -->
+					<section>
+						<br/>
+						<span style="font-size:30px; font-weight:bold; display:inline-block; float:right;">\(\bbox[15px, yellow]{NDVI = \frac{R_{NIR}-R_{VIS}}{R_{NIR} + R_{VIS}}}\)</span>
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold; float:center; margin-left:35%;">NDVI</h2>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">(Normalized Difference Vegetation Index)</h3>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-59.png">
+						<img class="myimage fragment" width="34%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/green-scheme.png" style="position:absolute; margin-left:-92%; margin-top:18%">
+						<img class="myimage fragment" width="34%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/orange-scheme.png" style="position:absolute; margin-left:-92%; margin-top:26%">
+						<img class="myimage fragment" width="34%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/blue-scheme.png" style="position:absolute; margin-left:-92%; margin-top:42%">
+					</section>
+					<section>
+						<br/>
+						<li style="text-align:left; font-size:40px; font-weight:bold; float:left; color:black; font-family:Roboto Slab, sans-serif;">
+							TUTORIAL <br/><br/><br/>
+							<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NDVI <br/>-->
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on NDVI computation and applications <br/><!--Revision 2-->
+						</li>
+					</section>
+					<section> <!--Revision 3-->
+						<br/>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">Example of NDVI reduction after fires</h3>
+						<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_1.png">
+						<h5 style="font-weight:bold; float:center; margin-top:-42%;">High <br/> NDVI</h5>
+						<h5 style="font-weight:bold; float:center; margin-top:13%;">Mid</h5>
+						<h5 style="font-weight:bold; float:center; margin-top:15%;">Low</h5>
+						<table border="1" width="90%" style="font-size:70%;">
+							<tr style="background-color:#bfc0c0;">
+								<th style="text-align:left;"><span style="color:red;">Burned Areas</span></th>
+								<th style="text-align:center;"><span style="color:red;">Wooded (ha)</span></th>
+								<th style="text-align:center;"><span style="color:red;">Mixed Covers (ha)</span></th>
+							</tr>
+							<tr>
+									<td style="text-align:left">A - Motta S.Giovanni e Melito di Porto Salvo</td>
+									<td style="text-align:center">141</td>
+									<td style="text-align:center">3320</td>
+							</tr>
+							<tr>
+									<td style="text-align:left">B - Bova e Bova Marina</td>
+									<td style="text-align:center">3600</td>
+									<td style="text-align:center">3300</td>
+							</tr>
+							<tr>
+									<td style="text-align:left">C - Grotteria e Roccella Ionica</td>
+									<td style="text-align:center">1150</td>
+									<td style="text-align:center">2413</td>
+							</tr>
+							<tr>
+									<td style="text-align:left">D - Bivongi</td>
+									<td style="text-align:center">500</td>
+									<td style="text-align:center">1000</td>
+							</tr>
+						</table>
+					</section>
+					<section> <!--Revision 4-->
+						<h2 style="color:#2D5595; font-weight:bold; float:center;">Applications</h2>
+						<h3 style="color:#2D5595; font-weight:bold; float:left; margin-left:10%;">Vegetation (Normalised Difference Vegetation Index)</h3>
+						<br/>
+						<span style="font-size:30px; font-weight:bold; float:center;">\(\bbox[15px, yellow]{NDVI = \frac{R_{NIR}-R_{VIS}}{R_{NIR} + R_{VIS}}}\)</span>
+						<br/>
+						<h3 style="color:#2D5595; font-weight:bold; float:left; margin-left:10%;">Problems?</h3>
+						<br/>
+						<h3 style="font-weight:bold; float:left; margin-left:10%;">Clouds, Atmospheric Effects, View Angle Effects</h3>
+						<br/>
+						<h3 style="color:#2D5595; font-weight:bold; float:left; margin-left:10%;">Solution?</h3>
+						<br/><br/><br/>					
+						<h3 style="font-weight:bold; float:left; margin-left:-14.25%; margin-top:1.75%;">Maximum Value Composite (MVC)</h3>
+						<br/><br/>
+						<div style="margin-left:-10%;">
+							<div>
+								<img class="myimage" width="18%" style="margin-left:-80%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png">
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-2%; margin-top:1.4%;">1</span>
+								<img class="myimage" width="18%" style="margin-left:-17%; margin-bottom:-0.25%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png">
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-2%; margin-top:3.4%;">2</span>
+								<img class="myimage" width="18%" style="margin-left:-17%; margin-bottom:-2.15%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png">
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-2%; margin-top:5.4%;">3</span>
+								<img class="myimage" width="18%" style="margin-left:-17%; margin-bottom:-4.0%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png">
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-2%; margin-top:7.4%;">4</span>
+								<img class="myimage" width="18%" style="margin-left:-17%; margin-bottom:-5.8%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png">
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-1.5%; margin-top:9.4%;">5</span>
+							</div>
+							<div style="margin-top:-12.85%; margin-left:60%;">
+								<table width="100%">
+									<tr>
+										<td><img class="myimage" width="63%" class="myimage" data-src="./resources/UNIBAS_Remote-Sensing-Environment/down-arrow.png" style="transform: rotate(-90deg);"></td>
+										<td><img class="myimage" width="63%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_2.png"></td>
+									</tr>
+								</table>
+								<span style="font-size:60%; font-weight:bold; position:absolute; margin-left:-1.6%; margin-top:-20.5%;">MAX (1,2,3,4,5)</span>
+							</div>
+						<div>
+					</section>
+					<section> <!--Revision 5-->
+						<h2 style="color:#2D5595; font-weight:bold; float:center;">SEASONAL CHANGE AT REGIONAL SCALE</h2>
+						<img class="myimage" width="40%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_3.png">
+						<img class="myimage" width="39.6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_3a.png">
+						<br/>
+						<span style="font-size:85%; border-style:solid; border-color:black; border-width:thin; font-weight:bold; float:left; margin-left:17.5%;">&nbsp JUNE &nbsp </span>
+						<span style="font-size:85%; border-style:solid; border-width:thin; border-color:black; font-weight:bold; float:right; margin-right:20%;">&nbsp NOVEMBER &nbsp </span>
+						<br/>
+						<img class="myimage" style="margin-right:-1.5%; width:750px; height:30px; margin-top:-0.27%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_4.png">
+						<br>
+						<div style="margin-top:-2%;">
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:15.5%;">CLOUDS 0.0</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.5%;">0.15</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.3%;">0.25</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.1%;">0.35</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.0%;">0.45</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.1%;">0.55</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:7.0%;">0.60</span>
+							<span style="font-size:50%; font-weight:bold; float:left; margin-left:8.0%;">0.70</span>
+						</div>
+						<br/>
+						<span style="font-size:30px; font-weight:bold; float:center; margin-left:30%;">\(\bbox[15px, yellow]{NDVI = \frac{R_{NIR}-R_{VIS}}{R_{NIR} + R_{VIS}}}\)</span>
+					</section>
+					<section> <!--Revision 6-->
+						<h2 style="color:#2D5595; font-weight:bold; float:center;">Applications</h2>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">Vegetation (Normalized Difference Vegetation Index</h3>
+						<br/>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">MONITORING OF DEFORESTATION</h3>
+						<div style="display:inline-block;">
+							<span style="font-size:30px; font-weight:bold; float:left; margin-left:-15%; margin-top:25%;">\(\bbox[15px, yellow]{NDVI = \frac{R_{NIR}-R_{VIS}}{R_{NIR} + R_{VIS}}}\)</span>
+							<img class="myimage" style="float:right; margin-right:-20%;" width="75%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_5.png">
+						</div>
+					</section>
+					<section> <!--Revision 7-->
+						<h2 style="color:#2D5595; font-weight:bold; float:center;">Applications</h2>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">Vegetation (Normalized Difference Vegetation Index)</h3>
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">MONITORING OF DESERTIFICATION</h3>
+						<div style="display:inline-block;">
+							<img class="myimage" style="float:left; margin-left:-7.5%; margin-top:-2.0%;" width="73%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_6.png">
+							<span style="float:right; text-align:left; margin-right:-5%; margin-top:27.5%;">From the analysis <br/> of long (ten-year) time <br/> series of NDVI </span>
+						</div>
+					</section>
+					<section> <!--Revision 8-->
+						<h3 style="color:#2D5595; font-weight:bold; float:center;">Seasonal change at continental scale</h3>
+						<div style="display:inline-block;">
+							<div style="float:left; font-weight:bold; margin-left:-20%; margin-top:20%;">
+								<p style="text-align:left;">
+									A. April 12-May 2, 1982;<br/>
+									B. B. July 5-25, '82;<br/>
+									C. Sept. 27-Oct. 17, '82;<br/>
+									D. Dec. 20, '82-Jan. 9, '83<br/>
+								</p>
+								<br/>
+								<span style="font-size:26px; font-weight:bold; float:left;">\(\bbox[15px, yellow]{NDVI = \frac{R_{NIR}-R_{VIS}}{R_{NIR} + R_{VIS}}}\)</span>
+							</div>
+							<img class="myimage" style="float:right; margin-right:-20%;" width="85%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/tutorial_NDVI_7.png">
+						</div>
+					</section>
+				</section>
+				
+				<section> <!-- Slide 52 -->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of vegetation</h2>
+						<span style="font-size:30px; font-weight:bold;">\(\bbox[5px, border: 1px solid black]{\rho_\lambda + \alpha_\lambda + \Im_\lambda = 1}\)</span>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-51.png">
+						<div class="fragment">
+							<img class="myimage" width="17%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/big-vertical-oval.png" style="position:absolute; margin-top:-55%; margin-left:-21%">
+							<img class="myimage" width="11%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/big-horizontal-oval.png" style="position:absolute; margin-top:-34%; margin-left:1%">
+						</div>
+						<div class="fragment">
+							<h3 style="color:yellow; font-size:30px; position:absolute; margin-left:35%; margin-top:-44.5%;">high transmittance</h3>
+							<img class="myimage" width="1.75%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/yellow-arrow.png" style="position:absolute; margin-top:-50%; margin-left:-14%">
+							<img class="myimage" width="1.75%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/yellow-arrow2.png" style="position:absolute; margin-top:-50%; margin-left:6%">
+						</div>
+				</section>
+				
+				<section> <!-- Slide 53-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Dependence of reflected radiation on <br/>vegetation density (Leaf Area Index)</h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-62.png">
+				</section>
+				
+				<section> <!-- Slide 54-->		
+					<h2 style="color:#2D5595; font-weight:bold; position:absolute; margin-left:22%; margin-top:2.5%;">Reflectance increases with vegetation <br/> density where transmittance is higher</h2>
+					<br/><br/><br/>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-63.png">
+				</section>
+				
+				<section> <!-- Slide 55-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of vegetation <br/> (in reflectance)</h2>
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-64.png">
+				</section>
+				
+				<section> <!-- Slide 56-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of <span style="color:#FF6600;">soil</span>, water, <br/> vegetation (in reflectance) </h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-65.png">
+				</section>
+				
+				<section> <!-- Slide 57-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Spectral signatures of different soils <br/> (in reflectance) <br/> Mixing</h2>
+					<img class="myimage" width="110%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-66.png">
+				</section>
+				
+				<section> <!-- Slide 58-->
+					<br/>
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-67.png">
+				</section>
+				
+				<section> <!-- Slide 59-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Atoms and molecule adsorb and emits at specific wavelength</h2>
+					<span style="font-size:24; display:inline-block; float;left;">atomic spectra</span>
+					<span style="font-size:24; float;left; margin-left:50%;">molecular spectra</span>
+					<br/><br/>
+					<p style="position:absolute; margin-top:-2%; background-color:#CCFFFF; width:50%; float:left; text-align:left; padding-left:2%;">
+						<span style="font-size:24px; font-weight:bold;">\(\frac{Ze^2}{r^2} = \frac{mv^2}{r} ~~~\Rightarrow~~~ r=\frac{Ze^2}{mv^2}\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(l_n = mvr_n = n\hbar ~~~\Rightarrow~~~ r_n = \frac{n^{2}\hbar^{2}}{me^2Z}\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E=-\frac{Ze^2}{r}+\frac{1}{2}mv^2=-\frac{1}{2}\frac{Ze^2}{r}\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E_n = -\frac{m_e e^4}{2\hbar^2} \cdot \left(\frac{1}{n^2}\right)Z^2\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E_n = -\frac{m_e e^4}{2\hbar^2} \cdot \left(\frac{1}{n^2}\right)Z^2~~~\)</span><span style="font-size:16px;">energy of Bohr orbit</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(v_{jk} = R \cdot \left(\frac{1}{n_j^2}-\frac{1}{n_k^2}\right)Z^2\)</span>
+						<br></br>
+						<span style="font-size:16px;">with &nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<span style="font-size:24px; font-weight:bold;">\(R=\)</span>
+						<span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp; Rydberg constant</span>
+						<span style="font-size:24px; font-weight:bold">\(~~~=\frac{2 \cdot \pi^2 \cdot m_e \cdot e^4}{h^3}\)</span>
+					</p>
+					
+					<p style="position:absolute; margin-top:-2%; margin-left:50%; background-color:#CCFFFF; width:60%; float:left; text-align:left;">
+						<span style="font-size:24px; font-weight:bold;">\(E_{mol}=E_{trasl}+E_{ele}+E_{vib}+E_{rot}\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E_{trasl}~\propto~KT\)</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E_{vib}^v = \hbar\sqrt{\frac{K}{\mu}}\left(V+\frac{1}{2}\right)~~~\Delta V = \pm 1\)</span><span style="font-size:16px">&nbsp;&nbsp;&nbsp;&nbsp; with overtones</span>
+						<br/><br/>
+						<span style="font-size:24px; font-weight:bold;">\(E_{rot}^J = \frac{\hbar^2}{2I}J(J+1)~~~\Delta J=\pm 1\)</span>
+						<br/><br/>
+					</p>
+					<p style="position:absolute; width:40%; padding-top:2%; padding-bottom:2%; font-size:48px; font-weight:bold; background-color:yellow; margin-left:60%; margin-top:33%;">\(v_{jk} = \frac{E_k-E_j}{h}\)</p>
+				</section>
+				
+				<section> <!-- Slide 60-->
+					<h2 style="color:#2D5595; font-weight:bold;">Basic principle of multi-spectral <br/> remote sensing</h2>
+					<ul>
+						<li style="font-size:27px; color:black;">
+							Every material emits, absorbs, transmits or reflects differently at different wavelengths, the em radiation, according to their chemical and physical characteristics 
+						</li>
+						<br/>
+						<li style="font-size:27px; color:black;">
+							The spectral response curve represents, in this sense, its spectral signature 
+						</li>
+						<br/>
+						<li style="font-size:27px; color:black;">
+							The availability of multi-spectral observations allows, in theory, to trace back to the chemical and physical characteristics of the material that has emitted, absorbed, transmitted or reflected measured em radiation.
+						</li>
+					</ul>
+				</section>
+				
+				<section> <!-- Slide 61-->
+					<h1 style="color:red;">From the lab <br>to the space.</br></h1>
+				</section>
+				
+				<section> <!-- Slide 62-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">From ground to space</h2>
+
+						<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-71b.png">
+						<img class="myimage fragment" width="51%" height="38%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-71a.gif" style="position:absolute; margin-left:-52%; margin-top:0%">
+
+						<br/>
+						<img class="myimage fragment" style="margin-left:-35%;" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-71b.gif">
+				</section>
+				
+				<section> <!-- Slide 63-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">beyond visible  </h2>
+					<img class="myimage" style="margin-left:-35%;" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-72a.png">
+					<img class="myimage" style="position:absolute; margin-left:5%; margin-top:-8%;" width="35%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-72b.gif">
+				</section>
+				
+				<section> <!-- Slide 64-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Multispectral digital image</h2>
+						<img class="myimage" width="40%" style="display:inline-block; float:left;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-73-part-1.png">
+						<img class="myimage fragment" width="6%" style="float:center; margin-top:10%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/yellow-arrow-right.png">
+						<img class="myimage fragment" width="40%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-73-part-2.png" style="float:right;">
+						<br/><br/><br/><br/>
+						<img class="myimage fragment" width="6%" style="float:right; transform: rotate(90deg); margin-right:21%; margin-top:-1%;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/yellow-arrow-right.png">
+						<img class="myimage fragment" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-73-part-3.png" style="float:right; margin-top:-1%;">
+				</section>
+				
+				<section> <!-- Slide 65-->
+					<br/>
+					<span style="font-size:36px; color:#3333CC;">EO Sensors</span>
+					<br/>
+					<span style="font-size:30px; color:red; font-weight:bold;">Image systems and multispectral images</span>
+					<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-74.png">
+					<br/>
+					<!--<citation style="font-size:15px;">Advanced Satellite Techniques for Environmental Monitoring, 6-10 July, Cape Town</citation>-->
+				</section>
+				
+				<section> <!-- Slide 66-->
+					<section>
+						<br/>
+						<span style="font-size:36px; color:#3333CC;">EO Sensors</span>
+						<br/>
+						<span style="font-size:30px; color:red; font-weight:bold;">Image systems and multispectral images</span>
+						<img class="myimage" width="75%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-75.png">
+						<br/>
+						<!--<citation style="font-size:15px;">Advanced Satellite Techniques for Environmental Monitoring, 6-10 July, Cape Town</citation>-->
+					</section>
+					<section>
+						<li style="text-align:left; font-size:40px; font-weight:bold; float:left; color:#003399; font-family:Roboto Slab, sans-serif;">
+							TUTORIAL <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spectral Signatures from <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MODIS
+						</li>
+					</section>
+				</section>
+				
+				<section> <!-- Slide 67-->
+					<br/>
+					<span style="color:#2D5595; font-weight:bold; font-size:27px; font-family:Roboto Slab, sans-serif;">Natural sources of radiation for Earth Observation</span><br/>
+					<span style="color:#2D5595; font-weight:bold; font-size:36px; font-family:Roboto Slab, sans-serif;">The Sun</span><span style="color:#2D5595; font-weight:bold; font-size:21px; font-family:Roboto Slab, sans-serif;">(only daytime !)</span>
+					<br/>
+					<span style="color:black; font-weight:bold; font-size:42px; float:left; margin-left:15%;">Wien</span>
+					<br/><br/><br/>
+					<span style="font-weight:bold; font-size:30px; float:left;">\(\bbox[15px, border: 1px solid black]{\lambda_{MAX}=\frac{2898}{T(K)}\approx\frac{3000}{6000}=0,5\mu m}\)</span>
+					<img class="myimage" width="35%" style="float:right;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/sun.png">
+					<span style="font-weight:bold; font-size:42px; position:absolute; color:yellow; margin-top:25%; margin-left:15%;">\(T\approx 6000K\)</span>
+					<img class="myimage" width="65%" style="float:left;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-77.png">
+				</section>
+				
+				<section> <!-- Slide 68-->
+					<br/>
+					<span style="color:#2D5595; font-weight:bold; font-size:27px; font-family:Roboto Slab, sans-serif;">Natural sources of radiation for Earth Observation</span><br/>
+					<span style="color:#2D5595; font-weight:bold; font-size:36px; font-family:Roboto Slab, sans-serif;">The Earth itself</span><span style="color:#2D5595; font-weight:bold; font-size:21px; font-family:Roboto Slab, sans-serif;">&nbsp(day and night !)</span>
+					<br/>
+					<span style="color:black; font-weight:bold; font-size:42px; float:left; margin-left:15%;">Wien</span>
+					<br/><br/><br/>
+					<span style="font-weight:bold; font-size:30px; float:left;">\(\bbox[15px, border: 1px solid black]{\lambda_{MAX}=\frac{2898}{T(K)}\approx\frac{3000}{300}=10\mu m}\)</span>
+					<img class="myimage" width="35%" style="float:right;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/earth-78.png">
+					<span style="font-weight:bold; font-size:36px; position:absolute; margin-top:12.5%; margin-left:20%;">\(T\sim 300K\)</span>
+					<img class="myimage" width="65%" style="float:left;" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-78.png">
+				</section>
+				
+				<section> <!-- Slide 69 Tradotta da Nicola Capece-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Solar and Terrestrial radiation</h2>
+					<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-79.png">
+					<table style="border:1px solid black; position:absolute; margin-left:18%; margin-top:-2.5%; width:65%; font-size:18px;">
+						<tr>
+							<td style="border:none;"></td>
+							<td style="border:none;">Peak Wavelength</td>
+							<td style="border:none;">Max. Intensity</td>
+						</tr>
+						<tr>
+							<td style="border:none;">Sun</td>
+							<td style="border:none;">\(0.5\) micrometers</td>
+							<td style="border:none;">\(7.35 \times 10^7 W/m^2\)</td>
+						</tr>
+						<tr>
+							<td style="border:none;">Earth</td>
+							<td style="border:none;">\(10\) micrometers</td>
+							<td style="border:none;">\(390 W/m^2\)</td>
+						</tr>
+					</table>
+				</section>
+				
+				<section> <!-- Slide 70-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Natural sources of radiation <br/> actually available for EO</h2>
+						<img class="myimage" width="10%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="float:right; margin-top:-12%; margin-right:12%;">
+						<br/><br/><br/>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-80.png" style="float:center; margin-top:-10%;">
+												
+						<table style="border:1px solid black; position:absolute; margin-left:18%; width:65%; font-size:18px;">
+						<tr>
+							<td style="border:none;"></td>
+							<td style="border:none;">Peak Wavelength</td>
+							<td style="border:none;">Max. Intensity</td>
+						</tr>
+						<tr>
+							<td style="border:none;">Sun</td>
+							<td style="border:none;">\(0.5\) micrometers</td>
+							<td style="border:none;">\(7.35 \times 10^7 W/m^2\)</td>
+						</tr>
+						<tr>
+							<td style="border:none;">Earth</td>
+							<td style="border:none;">\(10\) micrometers</td>
+							<td style="border:none;">\(390 W/m^2\)</td>
+						</tr>
+						</table>
+						<img class="myimage fragment" width="79%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-80b.png" style="position:absolute; margin-left:-79.6%; margin-top:-10.8%;">
+
+				</section>
+				
+				<section><!-- Slide 71--> 
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Passive Earth Observing Techniques</h2>
+						<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-81a.png" style="display:inline-block; float:left;">
+						<p style="float:right; font-size:30px;">
+							Natural source of <br/>
+							radiation (Sun) different <br/>
+							from the target <br/><br/>
+							Diagnostic parameter: <br/>
+							\(\rho_\lambda\)
+						</p>
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<div class="fragment">
+						<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-81b.png" style="float:left;">
+						<p style="float:right; font-size:30px;">
+							Natural source of <br/>
+							radiation (Earth) <br/>
+							coincident with the target <br/><br/>
+							Diagnostic parameters: <br/>
+							\(\epsilon_\lambda, T\)
+						</p>
+						</div>
+				</section>
+				
+				<section> <!-- Slide 72-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Active Earth Observing Techniques</h2>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-82a.png" style="display:inline-block; float:left; margin-top:-2%;">
+					<p style="float:right; font-size:30px; font-weight:bold;">
+						The signal is generated <br/>
+						by the observation <br/>
+						system itself <br/>
+					</p>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-82b.jpg" style="float:left; margin-top:-1%;">
+					<p style="float:right; font-size:30px;">
+						<span style="font-weight:bold;">Diagnostic Parameter</span><br/><br/>
+						\(I_\lambda^{back} \propto\) roughness<br/>
+						\(\frac{c\Delta t}{2}=d=\) distance<br/><br/>
+						<span style="font-weight:bold;">e.g. SAR (Synthetic <br/>
+						Aperture Radar)</span>
+					</p>
+				</section>
+				
+				<section> <!-- Slide 73-->
+					<h2 style="color:#2D5595; font-weight:bold;">Different spectral region different capabilities</h2>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-83.png" style="display:inline-block; float:left;">
+					<p style="text-align:left; width:45%; float:right; margin-right:-5%; font-size:24px;">
+						This pair of images demonstrates some of the differences between passive and active sensors. The top image is an aerial photograph (which records reflected light) of Amundsen-Scott Station, a research facility built on the South Pole. The bottom image is the same area, at approximately the same scale and orientation, from RADARSAT. RADARSAT is an active remote sensing instrument. Microwaves are generated by the sensor, reflected from the Earth's surface and back to the sensor. The radar image reveals an abandoned cluster of buildings (to the lower left of the bright dome) that are now buried under Antarctic ice. (RADARSAT image courtesy Canadian Space Agency)
+					</p>
+				</section>
+				
+				<section> <!-- Slide 74-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Atoms and molecule in atmosphere interact <br/> selectively with (modifying) the radiation leaving <br/> Earth surface and directed toward the sensor.</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-84.png" />
+				</section>
+				
+				<section> <!-- Slide 75-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Chemical-physical properties of <br/> atmosphere: temperature profile</h2>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-85.jpg" />
+				</section>
+				
+				<section> <!-- Slide 76-->
+					<br/>
+					<h6 style="color:black; font-weight:bold;">Chemical composition</h6>
+					<h2 style="color:#2D5595; font-weight:bold;">Chemical composition of <br/> atmosphere</h2>
+					<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-86.jpg" />
+				</section>
+				
+				<section> <!-- Slide 77-->
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Scattering in the atmosphere</h2>
+						<img class="myimage" width="40%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-87a.png" style="display:inline-block; float:left;"/>
+						<p style="float:right; margin-left:-25%; text-align:left;">
+							In general we can have scattering for whatever <br/>
+							wavelength \(0 < \lambda < \infty \) <br/>
+							in the atmosphere we have scattering from particle <br/>
+							having dimension like:
+						</p>
+						<br/><br/><br/><br/><br/>
+						<p style="float:right; margin-right:-15%; text-align:left;">
+							\(10^{-8} < d < 1 \quad cm\) <br/>
+							\( [X~rays]~~~~~[microwaves]\)
+						</p>
+						<div class="fragment">
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-87b.png" style="margin-top:-2.5%"/>
+						</div>
+						<div class="fragment">
+						<img class="myimage" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-87c.png" style="margin-top:-2.5%"/>
+						</div>
+				</section>
+
+				<section> <!-- Slide 78-->
+					<br/><br/>
+					<h2 style="font-weight:bold; color:blue; display:inline-block; float:left;">What about clouds?</h2> 
+					<img class="myimage" width="40%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-88a.png" style="margin-top:-3%; float:right;"/>
+					<img class="myimage" width="45%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-88b.png" style="float:left;"/>
+					<img class="myimage" width="7%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="float:center; margin-top:10%;">
+					
+					<br/><br/><br/><br/><br/>
+					<p style="text-align:left; font-weight:bold; float:right;">
+						Attenuation to radiation of		<br/>
+						different wavelengths by		<br/>
+						common atmospheric constituents	<br/>
+						and other particles (<span style="font-style:italic">Source:</span> <br/>
+						Tomlinson 1972)
+					</p>
+					<!--<img class="myimage" width="45%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-88c.jpg" style="float:right; margin-top:20%;"/>-->
+				</section>
+
+				<section> <!-- Slide 79-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">Extinction of solar radiation <br/> in the atmosphere</h2>
+					<img class="myimage" width="75%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-89.png" />
+				</section>
+
+				<section> <!-- Slide 80-->
+					<br/>
+					<img class="myimage" width="55%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-90.jpg" style="display:inline-block; float:left;"/>
+					<span style="color:blue; font-weight:bold; float:right; font-size:30px; font-family:Roboto Slab, sans-serif; text-align:right">Atmospheric <br/> Transmittance and<br/> atmospheric windows</span>
+					<br/><br/><br/><br/><br/>
+					<img class="myimage" width="10%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/theoretical_tools.png" style="float:right; margin-right:12%;">
+				</section>
+				
+				<section> <!-- Slide 81-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">LANDSAT-TM all bands in atmospheric windows !</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-91.png" />
+					<br/>
+					<!--<citation style="font-size:15px;">Advanced Satellite Techniques for Environmental Monitoring, 6-10 July, Cape Town</citation>-->
+				</section>
+				
+				<section> <!-- Slide 82-->
+					<br/>
+					<h2 style="color:#2D5595; font-weight:bold;">AVHRR: <br/> all bands in atmospheric windows !</h2>
+					<img class="myimage" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-92.png" />
+					<br/>
+					<li style="font-weight:bold; font-size:24px; font-family:Roboto Slab, sans-serif;"> The 5/6 AVHRR channels spectral positions compared <br/> with corresponding atmospheric transmittance</li>
+				</section>
+				
+				<section> <!-- Slide 83-->
+					<section>
+						<h2 style="color:#2D5595; font-weight:bold;">Penetration of e.m. radiation into the matter</h2>
+						<br/><br/>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-93.jpg" style="margin-top:-1%;"/>
+						<img class="myimage fragment" width="93.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-93.gif" style="margin-top:-7.0%; position:absolute; margin-left:-89.9%"/>
+					</section>
+					<section>
+						<span style="color:#003399; font-weight:bold; font-size:50px;">More in depth</span>
+						<p style="text-align:left; color:#003399; font-weight:bold; font-size:30px; margin-left:20%;">
+							Penetration of em radiation in a medium <br/>
+							with complex refractive index
+						</p>
+					</section>
+				</section>
+				
+				<section><!-- Slide 84-->
+					<section>
+						<li style="text-align:left; font-size:40px; font-weight:bold; float:left; color:#003399; font-family:Roboto Slab, sans-serif;">
+							TUTORIAL <br/><br/><br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sediments or shallow water?
+						</li>
+					</section>
+				
+					<section> 
+						<br/>
+						<h2 style="color:#2D5595; font-weight:bold;">Sediments or shallow water ?</h2>
+						<img class="myimage" width="80%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-94.png" />
+						<br/>
+						<span style="font-size:30px;">LANDSAT -MSS</span>
+						<p style="font-size:24px;">
+							<span>Band 4 = </span><span style="color:blue;">Blue</span><span>&nbsp;&nbsp;&nbsp;&nbsp;Band 5 = </span><span style="color:green;">Green</span><span>&nbsp;&nbsp;&nbsp;&nbsp;Band 7 = </span><span style="color:red;">Red</span>
+						</p>
+					</section>
+				
+					<section>
+							<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-95b.PNG" style="display:inline-block; float:right;"/>
+							<img class="myimage fragment" width="17.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/red-circle.png" style="position:absolute; margin-left:-7.5%; margin-top:36.5%;"/>
+							<div class="myimage fragment">
+								<img class="myimage" width="17.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/red-circle.png" style="position:absolute; margin-left:-23%; margin-top:35.5%;"/>
+								<img class="myimage" width="7.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/up-orange-arrow.png" style="position:absolute; margin-left:36.5%; margin-top:6%;"/>
+							</div>
+							<div class="fragment">
+								<img class="myimage" width="11%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/left-double-arrow.png" style="position:absolute; margin-left:-21.2%; margin-top:41.2%;"/>
+								<img class="myimage" width="16%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/center-double-arrow.png" style="position:absolute; margin-left:-6%; margin-top:41%;"/>
+								<img class="myimage" width="11.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/right-double-arrow.png" style="position:absolute; margin-left:10.9%; margin-top:41%;"/>
+								<img class="myimage" width="7.5%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/up-red-arrow-nir.png" style="position:absolute; margin-left:55.5%; margin-top:48.7%;"/>
+							</div>
+							<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-95a.PNG" style="float:left; margin-top:20%;"/>
+							<br/>
+							<img class="myimage" width="50%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-95b.PNG" style="float:right;"/>
+					</section>
+				
+					<section>
+							<p style="font-weight:bold; width:100%; border:1px solid black; text-align:right;">
+								<u style="text-decoration:none !important;">Multitemporal approach (Di Polito et al., 2016) </u>
+							</p>
+							<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96a.PNG" />
+							<div class="myimage fragment">
+								<img class="myimage" width="16%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/red-circle.png" style="position:absolute; margin-left:-27%; margin-top:-29%;"/>
+								<img class="myimage" width="6%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/up-red-arrow.png" style="position:absolute; margin-left:8.5%; margin-top:-43.5%;"/>
+							</div>
+							<img class="myimage fragment" width="17%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/red-circle.png" style="position:absolute; margin-left:-42%; margin-top:-32%;"/>
+							<img class="myimage fragment" width="100%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96d.PNG" style="position:absolute; margin-top:-48%; margin-left:-45%"/>
+							<img class="myimage fragment" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96e-part-1.png" style="position:absolute; margin-top:-12.5%; margin-left:-21%"/>
+							<img class="myimage fragment" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96f-part-1.png" style="position:absolute; margin-top:-12.5%; margin-left:-21%"/>
+							<img class="myimage fragment" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96g-part-1.png" style="position:absolute; margin-top:-12.5%; margin-left:-21%"/>
+							<img class="myimage fragment" width="70%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-96h-part-1.png" style="position:absolute; margin-top:-12.5%; margin-left:-21%"/>
+					</section>
+				</section>
+				
+				<section> <!-- Slide 85-->
+					<section>
+						<br/>
+						<span style="color:blue; font-weight:bold; font-family:Roboto Slab, sans-serif; font-size:40px;">
+							What about clouds?
+						</span>
+						<img class="myimage" width="90%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-98a.gif" />
+						<img class="myimage fragment" width="85%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-98b.gif" style="position:absolute; margin-left:-88%; margin-top:0.7%;"/>
+						<img class="myimage fragment" width="87%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-98c.gif" style="position:absolute; margin-left:-88.5%; margin-top:1.2%;"/>
+						<img class="myimage fragment" width="86%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-98d.gif" style="position:absolute; margin-left:-87.5%; margin-top:0.3%;"/>
+						<img class="myimage fragment" width="88%" data-src="./resources/UNIBAS_Remote-Sensing-Environment/slide-98e.gif" style="position:absolute; margin-left:-88.8%; margin-top:0.6%;"/>
+					</section>
+					<section>
+						<li style="text-align:left; font-size:40px; font-weight:bold; float:left; color:#003399; font-family:Roboto Slab, sans-serif;">
+							TUTORIAL <br/><br/><br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cloud mask
+						</li>
+					</section>
+				</section>
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> <!-- Revision 9-->
+					<h2> Reference list </h2>
+					<br>
+					<reference_list>
+					K. N. Liou  An Introduction to Atmospheric Radiation  – Academic Press (2002, 1980)
+					<br>
+					R. P. Gupta Remote Sensing Geology, Springer & Verlag, (1991). 
+					<br>
+					W.G. Rees, Physical Principles of Remote Sensing, Cambridge University Press (1990) 
+					<br>
+					Il telerilevamento da aereo e da satellite libro Brivio P. A. (cur.)  Lechi G. M. (cur.)  Zilioli E. (cur.) edizioni Delfino Carlo Editore collana Scienza & tecnica , 1992
+					</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section> <!-- Slide 86-->
+			
+                </section>
+
+              </div>
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

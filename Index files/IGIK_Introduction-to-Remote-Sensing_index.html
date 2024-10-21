@@ -1,0 +1,923 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		<title> </title>
+		<meta property="dc:title" content="Introduction to Remote Sensing" />
+		<meta property="dc:creator" content="Agata Hościło" />
+		<meta property="dc:publisher" content="Institute of Geodesy and Cartography" /> 
+		<meta property="dc:subject" content="Remote Sensing, Image properties, Copernicus, EO4GEO, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="This is a training material on Introduction to Remote Sensing containing basic definitions, satellite data sources and brief description of Copernicus services with particular focus on the Copernicus Land Monitoring Service" />
+		<meta property="dc:tableOfContents" content="(1) Basic definitions: what is remote sensing? type of sensors, electromagnetic radiation and its interaction with atmosphere and target, spectral reflectance; 
+							     (2) Image properties; 
+							     (3) Multispectlar imegery; 
+							     (4) Satelite data sources; 
+							     (3) Copernicus Land Monitoring Services: Global, Pan-European, and Local Components" />
+		<meta property="dc:description" content="Get to know the physical concepts of remote sensing; Familiarized with terms such as: electromagnetic radiation, spectral reflectance, interaction of electromagnetic radiation with atmosphere and target; Lear about image properties, spatial resolution, radiometric resolution, temporal resolution and the spectral characteristics of the Earth’s surface resolution; Get to know where to look for satellite data; Get to know about the Copernicus Land Monitoring Service, in particular about the Global, pan-European and Local Component" />
+		<meta property="dc:contributor" content="contributor: Valerio Tramutoli, Nicola Capece, Valeria Satriano - University of Basilicata" />
+		<meta property="dc:created" content="2020-09-04" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="45min" />
+		<meta property="dc:audience" content="students"/>
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsHolder" content="Agata Hościło, Institute of Geodesy and Cartography" />
+		<meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:IP1-3-2" />
+		<link rel="dc:relation" href="eo4geo:IP1-7" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 12%;height : 10%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Introductory exercise course to remote sensing</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+<!-- Slide 1 --> 
+				<section >
+					<h1>Introduction to Remote Sensing</h1>
+
+					<br><img width="700" height="300" data-src="./resources/IntroductionToRemoteSensing/HRL_Warsaw2.jpeg" alt="sat1">
+					<!--<small>Ewentualne miejsce na opis obrazka i  <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródło</a>.  -->  </small>
+					<br>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+<!-- Slide 2 -->
+				<section id="EO">
+					<h2>Outline</h2> 
+					<ul>
+						<li>Remote Sensing - basic definitions:</li>
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+							<ul>
+								<li style="color:#89b3e479;">What is Remote Sensing?</li>
+								<li style="color:#89b3e479;">Type of sensors</li>
+								<li style="color:#89b3e479;">Electromagnetic Radiation and its interaction with atmosphere and targets</li>
+								<li style="color:#89b3e479;">Spectral reflectance</li>
+							</ul>
+						<p></p>
+						<li>Image properties </li>
+						<li>Multispectral imagery </li>
+						<li>Satellite data sources</li>
+						<li>Copernicus Land Monitoring Service: Global, Pan-European, and Local Components </li>
+					</ul>
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+					
+					<aside class="notes">
+					You can find your presenter notes here (hit »S« on your keyboard).
+					</aside>
+				</section>
+<!-- Slide 2_1 -->
+				<section id="EO">
+					<h2>Learning outcomes</h2> 
+					<ul>
+						<li>Get to know the physical concepts of remote sensing</li>
+						<li>Familiarized with terms: electromagnetic radiation, spectral reflectance, interaction of electromagnetic radiation with atmosphere and targets </li>
+						<li>Learn about image properties, spatial resolution, radiometric resolution, temporal resolution and the spectral characteristics of the Earth’s surface </li>
+						<li>Get to know where to look for satellite data</li>
+						<li>Get to know about the Copernicus Land Monitoring Service: Global, Pan-European, and Local Components </li>
+					</ul>
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+					
+				</section>				
+<!-- Slide 2_2 -->
+				<section id="EO">
+					<h2>BoK Concepts</h2> 
+					<ul>
+						<li>[GD10-2] Platforms and sensors</li>
+						<li>[PP] Physical principles</li>
+						<li>[PP1-1] EM radiation</li>
+						<li>[PP1-2] Radiation - Matter interaction</li>
+						<li>[PS3-4] Properties of digital imagery</li>
+					</ul>
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+					
+				</section>				
+							
+				
+<!-- Slide 3 -->
+				<section>
+					<h2>What is Remote Sensing?</h2>
+					<p><b>Remote sensing</b> is the collection of information about an object or phenomenon without making physical contact with the object.</p>
+					<p>The sensors must be in some distance from the object.</p>
+					<p>In our case the object an area of the Earth surface and the sensor is measuring electromagnetic radiation leaving the Earth from a satellite platform. </p>
+
+					<table class="fragment" style="border:none;" id="t1_test">
+							<tr>
+								<td style="width:25%">
+									<img style="height: 200px; position:relative;" data-src="./resources/Unibas_intro/sonar.gif" alt="SONAR (Sound Navigation And Ranging)">
+
+									<img class="fragment" style="width: 200px; height: 200px; position:absolute; margin-top: 1.5%; margin-left:-21%;" data-src="./resources/Unibas_intro/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+									
+									<!--<figcaption style="font-size:12px; text-align:center;">SONAR (Sound Navigation And Ranging)</figcaption>-->
+								</td>
+								<td style="width:25%">
+									<img style="height: 200px; position:relative;" data-src="./resources/Unibas_intro/LIDAR.jpg" alt="LIDAR (LIght Detection And Ranging)">
+									<img class="fragment" style="width: 200px; height: 200px; position:absolute; margin-top: 2%; margin-left:-21.2%;" data-src="./resources/Unibas_intro/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+
+									<!--<figcaption style="font-size:12px;">LIDAR (Light Detection And Ranging)</figcaption>-->
+								</td>
+								<td style="width:25%">
+									<img style="height: 200px; position:relative;" data-src="./resources/Unibas_intro/radar.gif" alt="RADAR (RAdio Detection And Ranging)">
+									<img class="fragment" style="width: 200px; height: 200px; position:absolute; margin-top: 1.5%; margin-left:-21.5%;" data-src="./resources/Unibas_intro/cross.png" alt="SONAR (Sound Navigation And Ranging)"> 
+
+									
+									<!--<figcaption style="font-size:12px;">RADAR (RAdio Detection And Ranging)</figcaption>-->
+								</td>
+								
+								<td style="width:25%">
+									<img style="height: 200px; position:relative;" data-src="./resources/IntroductionToRemoteSensing/Sentinel-2.jpg" alt="Sent2">
+								</td>
+								
+								<!--data-src="./resources/IntroductionToRemoteSensing/Sentinel-2.jpg" alt="Sent2">-->
+								
+							</tr>
+							
+							<tr>
+								<td>
+									<span style="font-size:12px; text-align:center;">SONAR (Sound Navigation And Ranging)</span>
+								</td>
+								<td>
+									<span style="font-size:12px; text-align:center;">LIDAR (LIght Detection And Ranging)</span>
+								</td>
+								<td>
+									<span style="font-size:12px; text-align:center;">RADAR (RAdio Detection And Ranging)</span>
+								</td>
+								<td>
+									<span style="font-size:12px; text-align:center;">SPACE Remote Sensing</span>
+								</td>
+							</tr>
+					
+						</table>
+											
+				</section>
+								
+<!-- Slide 4 -->	
+				<section >-
+					<h2>What is Remote Sensing?</h2>
+					
+					<p>The remote sensor samples emitted, reflected or scattered electromagnetic radiation (EMR).  </p>
+
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/emission_and_absorbtion.jpeg" alt="sat1">
+					<!--<small>Ewentualne miejsce na opis obrazka i  <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródło</a>.</small>-->
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+				
+<!-- Slide 5 -->
+				
+				<section >
+					<h2>Remote Sensing Sensors</h2>
+					<ul>
+						<p><li><b>Passive  Sensor</b> detects natural energy (radiation) that is emitted or reflected by the object. Reflected sunlight is the primary source of radiation measured by passive sensors, e.g. radiometers.</li></p>
+						<p><li><b>Active Sensor</b> generates energy in order to scan objects and areas. The sensor measures the amount of energy returned from the target e.g. synthetic-aperture radar (SAR).</p>
+					<img width="300" height="300" data-src="./resources/IntroductionToRemoteSensing/pasted-from-clipboard.png" alt="sat1"> 
+					<br><small>Arkajun (2013) </small>
+					<br>
+
+				</section>
+				
+<!-- Slide 6 -->
+			
+				<section >
+					<h2>Electromagnetic Radiation (EMR)</h2>
+
+					<ul>
+						<li>wave of the electromagnetic field propagating through space</li>
+						<li>travels in a straight line at the speed of light: c = 3 x 108 m/s</li>
+						<li>characterized by its frequency (f) and wavelength &lambda;</li>
+					</ul>
+
+					<h2 style="color:#FFFFFF;">&lambda; = c / f </h2>
+
+					<br><img width="600" height="200" data-src="./resources/IntroductionToRemoteSensing/wave_travel.png" alt="sat1">
+					<br>
+					<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>-->
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+				
+<!-- Slide 7 -->
+			
+				<section >
+					<h2>Electromagnetic Spectrum</h2>
+
+					<p>Electromagnetic radiation is classified by wavelength into gamma rays, X-rays, ultraviolet, visible, infrared, microwave and radio.</p>
+
+					<br><img width="608" height="275" data-src="./resources/IntroductionToRemoteSensing/eletromagnetic_spectrum.png" alt="sat1">
+					<br>
+					<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small> -->
+					<br>
+	
+				</section>
+
+<!-- Slide 8 -->
+				
+				<section>
+						<h2>Our daily remote sensing experience in the visible (VIS) spectral range</h2>
+													
+						<!--<img class="myimage" width="30%" data-src="./resources/Unibas_intro/vis-part-1.png" style="float:right; margin-right:-0.5%; position:relative;"> -->
+						<div class="fragment">
+							<img class="myimage" width="50%" data-src="./resources/Unibas_intro/vis_complete.png" style="position:absolute; margin-left:16.8%; margin-top:0.3%;">
+						</div>
+						<br/>
+						<img class="myimage" width="30%" data-src="./resources/Unibas_intro/newton-prims.png" style="float:left;"> 
+						<div class="fragment">
+							<img class="myimage" width="45%" data-src="./resources/Unibas_intro/visible-spectral-range.png" style="margin-top:-2.5%;">  -->
+						</div>
+						<span style="float:left; font-size:30px; margin-left:-30%; margin-top:50%;">Newton prism and light colors</span>
+				</section>
+				
+<!-- Slide 9 -->	
+				
+				<section>
+					<br/>
+					<h2>Our daily remote sensing experience</h2>
+					<img class="myimage" width="70%" data-src="./resources/Unibas_intro/vis-eyes.png">
+				</section>	
+				
+<!-- Slide 10 -->
+				
+				<section>
+					<h2> Our daily remote sensing experience</h2>
+					<img class="myimage" width="100%" data-src="./resources/Unibas_intro/how-2.png">
+				</section>
+
+<!-- Slide 11 -->				
+				
+				<section> 
+				<h2>Beyond visible spectral range</h2>
+						
+						<img class="myimage" width="94%" data-src="./resources/Unibas_intro/beyond-visible.png" style="float:left; position:relative;">
+						<div class="fragment">
+						<img class="myimage" width="100%" data-src="./resources/Unibas_intro/beyond-visible-2.gif" style="float:left; position:absolute; margin-left:-97.7%; margin-top:1.2%;">
+						</div>
+						<!--<h3 class="fragment" style="background-color:white; position:absolute; top:42%; "><b>the vegetation “colour” is (near) infrared more than green !</b></h3>-->
+						<h3  style="position:absolute; top:87%; right:30%;"><b>Infrared aerial color picture</b></h3>
+				</section>
+				
+<!-- Slide 12 -->
+				
+				<section >
+					<h2>Interaction of EMR with Atmosphere</h2>
+
+					<p>Electromagnetic radiation passing through the atmosphere interacts with gas molecules and particulate matter. Effects of interaction:</p>
+					
+						<li>Absorption by gases like water vapor, CO2, O3</li>
+						<li>Scattering depends on the wavelength and dimensions of particles</li>
+					
+					<p>Atmospheric windows is the area of spectrum not severely influenced by the atmosphere. </p>
+					<img width="608" height="275" data-src="./resources/IntroductionToRemoteSensing/atmospheric_window_2.jpeg" alt="sat1">
+					<br>
+					<small> Lewis and Henderson (1998) </small>
+					<!--<small>© Lewis and Henderson 1998 oraz ewentualny link do <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>-->
+					<br>
+
+				</section>
+<!-- Slide 13 -->
+				
+				<section >
+					<h2>Interaction with target</h2>
+
+					<p>Radiation not absorbed or scattered in the atmosphere can reach and interact with the Earth’s surface.</p>
+
+					<p>It can be absorbed by a target, transmitted through a target or reflected. The proportion of each depends on the wavelength and  surface features.</p>
+					<br><img width="400" height="200" data-src="./resources/IntroductionToRemoteSensing/plant_spectral_properties.jpeg" alt="sat1">
+					<img width="400" height="200" data-src="./resources/IntroductionToRemoteSensing/water_responce.jpeg" alt="sat1">
+					<br>
+					<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>-->
+					<br>
+
+				</section>
+<!-- Slide 14 -->
+				
+				<section >
+					<h2>Spectral Reflectance</h2>
+
+					<p><b>Spectral Reflectance</b> is the amount of energy reflected from a surface at a specific wavelength. The analysis of the spectral reflectance signatures allows to distinguish different surface feature or materials.</p>
+
+					<p><b>Spectral reflectance</b> curve presents the reflectance of objects as a function of wavelengths.   </p>
+
+
+					<br><img width="600" height="300" data-src="./resources/IntroductionToRemoteSensing/spectral_curve_2.jpg" alt="sat1">
+					<br>
+					<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>-->
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 15 -->
+				
+				<section >
+					<h2>Image Properties</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<p><b>Spatial resolution</b> - the size of the smallest area observed on the ground (ground resolution cell)</p>
+								<p> Object is usually detectable if it is equal or larger than the pixel size. The smaller objects could be still detectable as the average brightness of all objects within the pixel.</p>
+							</td>
+							<td style="width:50%">
+								
+								<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/spatial_resolution.jpeg" alt="sat1">
+								<br>
+								<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small-->
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 16 -->
+				<section >
+					<h2>Image Properties</h2>
+
+					<p><b>Spectral resolution</b> – refers to the spectral bandwidth and the number of bands.</p>
+
+					<p>The finer spectral resolution, the narrower the wavelength range for the particular band.</p>
+
+
+					<br><img width="600" height="300" data-src="./resources/IntroductionToRemoteSensing/S2-2020_ESA.jpeg" alt="sat1">
+					<br>
+					<small>Sentinel-2 spectral characteristics, © ESA <!--oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.--></small>
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 17 -->
+				<section >
+					<h2>Image Properties</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:40%">
+								<p><b>Radiometric resolution</b> - the sensitivity to the magnitude of the electromagnetic energy. It describes the actual information content in an image, expressed in units of bits.</p>
+								
+								<p>The finer the radiometric resolution, the more sensitive it is to detect small differences in reflected or emitted energy.</p>
+							</td>
+							<td style="width:40%">
+								
+								<br><img width="950" height="400" data-src="./resources/IntroductionToRemoteSensing/radiometric_resol.jpeg" alt="sat1">
+								<br>
+								<!--<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>-->
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 18 -->
+				<section >
+					<h2>Image Properties</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:40%">
+								<p><b>Temporal resolution</b> – frequency at which the same place is observed (revisit capability).
+									<br>NOAA = 1 day
+									<br>Landsat = 16 days
+									<br>Sentinel-2 = 5 days
+								</p>
+								
+								<p>It is particularly important for change mapping.</p>
+							</td>
+							<td style="width:60%">
+								
+								<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/S-2_revisit_time.jpeg" alt="sat1">
+								<br>
+								<small>Maximum effective coverage time for Sentinel-2 (days) (<15% cloud cover, 68% confidence) (Spoto et al., 2012).</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+				</section>
+<!-- Slide 19 -->
+				<section>
+					<h2>Multispectral imagery</h2>
+					
+					<img class="myimage" width="65%" data-src="./resources/Unibas_intro/slide-74.png">
+					<br/>
+					<citation style="font-size:15px;">© Advanced Satellite Techniques for Environmental Monitoring, 6-10 July, Cape Town</citation>
+				</section>
+<!-- Slide 20 -->
+
+				<section >
+					<h2>Multispectral imagery</h2>
+
+					<!-- <p>Sentinel-2</p>-->
+					<table style="width:60%">
+						<tr>
+							<td style="width:53%">
+								<p>natural color composite     (R,G,B)</p>
+							</td>
+							<td style="width:47%">
+								<p>infrared false color composite (IR,R,G)</p>
+							</td>
+						</tr>
+					</table>
+
+					<br><img width="700" height="350" data-src="./resources/IntroductionToRemoteSensing/S-2_natural_and_false_colour_composite.jpeg" alt="sat1">
+					<!-- <br>
+					<!--<small>© IGIK </small>
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 21 -->
+				<section >
+					<h2>Satellite data source</h2>
+					<p> USGS Earth Explorer </p>
+						<!--<br>USGS Earth Explorer-->
+						<br><a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a>
+					<!--</p>-->
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/usgs.jpeg" alt="sat1">
+				
+				</section>
+<!-- Slide 22 -->
+				<section >
+					<h2>Satellite data source</h2>
+
+					<p> LANDVIEWER </p>
+						<br><a href="https://eos.com/landviewer/">https://eos.com/landviewer/</a>
+
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/Land_viewer.jpeg" alt="sat1">
+					
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 23 -->
+				<section >
+					<h2>Satellite data source</h2>
+
+					<p> SENTINEL HUB </p>
+						<br><a href="https://apps.sentinel-hub.com/eo-browser/">https://apps.sentinel-hub.com/eo-browser/</a>
+
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/eo_browser.jpeg" alt="sat1">
+
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 24 -->
+				<section >
+					<h2>Satellite data source</h2>
+
+					<p>To facilitate and standardise access to data, the European Commission has funded the deployment of five cloud-based platforms called DIAS providing centralised access to Copernicus data and information, as well as to processing tools.</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<p>All DIAS platforms provide access to Copernicus Sentinel data, as well as to the information products from Copernicus’ six operational services, together with cloud-based tools (open source and/or on a pay-per-use basis).</p>
+							</td>
+							<td style="width:50%">
+								<img width="350" height="350" data-src="./resources/IntroductionToRemoteSensing/DIAS.jpeg" alt="sat1">
+								<br>
+								<small>https://www.copernicus.eu/en/access-data/dias <a href="https://www.copernicus.eu/en/access-data/dias">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+
+
+				</section>
+<!-- Slide 25 -->
+				<section >
+					<h2>Satellite data source</h2>
+
+					<p> CREODIAS 
+						<br><a href="https://finder.creodias.eu/">https://finder.creodias.eu/</a>
+
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/creodias.jpeg" alt="sat1">
+
+				</section>
+<!-- Slide 26 -->
+				<section >
+					<h2>Copernicus services</h2>
+					<br><a href="https://www.copernicus.eu/en/services">https://www.copernicus.eu/en/services</a>
+					
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/Copernicus_services.jpeg" alt="sat1">
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 27 -->
+				<section >
+					<h2>Copernicus Land Monitoring Service (CLMS)</h2>
+				<br><a href="https://land.copernicus.eu/">https://land.copernicus.eu/</a>
+
+					<br><img width="800" height="400" data-src="./resources/IntroductionToRemoteSensing/CLMS.jpg" alt="sat1">
+					
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 28 -->
+				<section >
+					<h2>Copernicus Global Land Service</h2>
+					<br><a href="https://land.copernicus.eu/global/">https://land.copernicus.eu/global/</a>
+
+					<br><img width="700" height="400" data-src="./resources/IntroductionToRemoteSensing/Copernicus_Global.jpeg" alt="sat1">
+					
+				</section>
+
+<!-- Slide 29 -->
+
+				<section >
+					<h2>CLMS Pan-European component</h2>
+					<br><a href="https://land.copernicus.eu/pan-european">https://land.copernicus.eu/pan-european</a>
+
+					<br><img width="500" height="400" data-src="./resources/IntroductionToRemoteSensing/Copernicus_pan_Europe.jpeg" alt="sat1">
+					<!--<br>
+					<small>Miejsce na opis obrazka oraz ewentualne <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>
+					<br>-->
+				</section>
+<!-- Slide 30 -->
+				<section >
+					<h2>CLMS Pan-European component</h2>
+					
+					<p><b>CORINE Land Cover (CLC)</b> inventory was initiated in 1985 (reference year 1990). </p>
+					</p> Updates produced in 2000, 2006, 2012, and 2018.</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:60%">
+								<ul>
+									<li>44 land cover classes</li>
+									<li>MMU = 25 ha for areal features</li>
+									<li>MMW = 100 m for linear features</li>
+									<li>MMU for CLC-change = 5 ha.</li>
+								</ul>
+
+								<p>
+									<br>Due to differences in MMUs the difference between two status layers is not equal to the corresponding CLC-Changes layer.
+									<br>If you are interested in CLC-Changes between two neighbour surveys always use the CLC-Change layer.
+								</p>
+							</td>
+							<td style="width:40%">
+								<img width="300" height="300" data-src="./resources/IntroductionToRemoteSensing/CLC_Europe.jpg" alt="sat1">
+								<br>
+								<small>https://land.copernicus.eu/pan-european/corine-land-cover <a href="https://land.copernicus.eu/pan-european/corine-land-cover">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+
+
+				</section>
+<!-- Slide 31 -->
+				<section >
+					<h2>CLMS Pan-European component</h2>
+
+					<p><b>High Resolution Layers (HRL)</b> provide information on specific land cover characteristics, and are complementary to land cover/land use (LC/LU) mapping such as in the CORINE land cover (CLC) datasets.</p>
+
+					<p>Produced from satellite imagery through a combination of automatic processing and interactive rule based classification.</p>
+
+
+					<br><img width="800" height="150" data-src="./resources/IntroductionToRemoteSensing/HRLs.jpeg" alt="sat1">
+					<br>
+					<small>https://land.copernicus.eu/pan-european/high-resolution-layers <a href="https://land.copernicus.eu/pan-european/high-resolution-layers">source</a>.</small>
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 32 -->
+				<section >
+					<h2>CLMS Pan-European component</h2>
+
+					<p>HRL Imperviousness Density and Changes</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<img width="400" height="300" data-src="./resources/IntroductionToRemoteSensing/IMP_Density.jpeg" alt="sat1">
+								<br>
+								<small> HR Imperviousness Density - status maps <a href="https://land.copernicus.eu/pan-european/high-resolution-layers/imperviousness">source</a>.</small>
+								<br>
+							</td>
+							<td style="width:50%">
+								<img width="400" height="300" data-src="./resources/IntroductionToRemoteSensing/IMP_change.jpeg" alt="sat1">
+								<br>
+								<small> HR Imperviousness - change maps <a href="https://land.copernicus.eu/pan-european/high-resolution-layers/imperviousness">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+				</section>
+<!-- Slide 33 -->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<p>
+						<br>Local component aims to provide specific and more detailed information that is complementary to the information obtained through the Pan-European component.
+						<br>There focuses on different hotspots, i.e. areas that are prone to specific environmental challenges and problems. It is based on very high resolution imagery (2,5 x 2,5 m pixels) in combination with other available datasets over the pan-European area.
+					</p>
+
+					<br><img width="700" height="150" data-src="./resources/IntroductionToRemoteSensing/CLMS_local_component.jpeg" alt="sat1">
+					<br>
+					<small>Local component <a href="https://land.copernicus.eu/local">source</a>.</small>
+					<br>
+				</section>
+<!-- Slide 34 -->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<p>
+						
+						<br><b>Urban Atlas 2006, 2012 and 2018</b>
+						<br>785 Functional Urban Areas (FUA) covering EU28 + EFTA countries + West Balkans + Turkey
+					</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:30%">
+								<p>17 Urban LC/LU classes -  MMU 0.25 ha</p>
+								<p>10 Rural LC/LU classes -  MMU 1ha</p>
+							</td>
+							<td style="width:80%">
+								<img width="700" height="350" data-src="./resources/IntroductionToRemoteSensing/URban_Atlas.jpeg" alt="sat1">
+								<br>
+								<small>Urban Atlas <a href="https://land.copernicus.eu/local/urban-atlas">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 35-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:30%; vertical-align: text-top;">
+								<p style="vertical-align: text-top;">
+									<br>Urban Atlas 2012
+									<br>Example:
+									<br>Wroclaw, Poland
+								</p>
+							</td>
+							<td style="width:70%">
+								<img width="600" height="400" data-src="./resources/IntroductionToRemoteSensing/UA_Wroclaw.jpeg" alt="sat1">
+								<br>
+								<small>© IGIK </small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 36-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<p><b>Riparian Zones (RZ)</b> represent transitional areas occurring between land and freshwater ecosystems, characterised by distinctive hydrology, soil and biotic conditions and strongly influenced by the stream water.</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:40%">
+								<p>The LC/LU classification is tailored to the needs of biodiversity monitoring in a variable buffer zone of selected rivers (Strahler levels 2-9 derived from EU-Hydro)</p>
+							</td>
+							<td style="width:60%">
+								<img width="310" height="310" data-src="./resources/IntroductionToRemoteSensing/RZ_Copernicus.jpeg" alt="sat1">
+								<br>
+								<small>Riparial Zones - Land Cover / Land Use <a href="https://land.copernicus.eu/local/riparian-zones/land-cover-land-use-lclu-image">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 37-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:70%">
+								<ul><b>Riparian Zones (RZ)</b>
+									<li>Land Cover / Land Use (LC/LU)</li>
+									<li>Delineation of Riparian Zones (raster)</li>
+									<li>Green Linear Elements</li>
+									<li> reference year 2012 </li>
+								</ul>
+
+								<p style="text-align: left">
+									<br>LC/LU classes follow the pre-defined nomenclature on the basis of Mapping and Assessment of Ecosystems and their Services (MAES) typology of ecosystems (Level 1 to Level 4) and Corine Land Cover
+									<br>56 LC/LU classes
+								</p>
+
+								<p style="text-align: left">
+									<br>MMU = 0.5 ha
+									<br>MMW = 10 m
+								</p>
+
+							</td>
+							<td style="width:30%">
+								<img width="400" height="400" data-src="./resources/IntroductionToRemoteSensing/Riparian_zones_2.jpg" alt="sat1">
+								<br>
+								<small>Riparial Zones - Land Cover / Land Use and Delineation of RZ <a href="https://land.copernicus.eu/local/riparian-zonespg">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 38-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%; vertical-align: text-top;">
+													
+								<ul><b>Natura 2000 (N2K)</b> 
+									<li>reference year 2000 and 2006 </li> 
+									<li>55 Land Cover/Land Use classes
+								</ul>
+								
+							</td>
+							<td style="width:50%">
+								<img width="340" height="340" data-src="./resources/IntroductionToRemoteSensing/N2K_1.jpeg" alt="sat1">
+								<br>
+								<small>N2K 2012 - Land Cover/Land Use <a href="https://land.copernicus.eu/local/natura/natura-2000-2012">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+
+					<p>
+						<ul>A selection grassland-rich sites (chosen within five grassland habitats types: 6210, 6240, 6250, 6510 and 6520).
+							Approx. 630.000 km2 including a 2km buffer to allow for an analysis of pressures and threats
+						</ul>
+					</p>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 39-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:30%; vertical-align: text-top;">
+
+								<p>Riparian Zones</p>
+								<p>and</p>
+								<p>Natura2000</p>
+								<p>nomenclature for Land Cover / Land Use</p>
+
+							</td>
+							<td style="width:70%">
+								<img width="700" height="450" data-src="./resources/IntroductionToRemoteSensing/MAES_leg1.jpg" alt="sat1">
+								<br>
+								<small>N2K_Nomenclature_Guidelines <a href="https://land.copernicus.eu/user-corner/technical-library/N2K_Nomenclature_Guidelines.pdf">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 39_2-->
+				<section >
+					<h2>CLMS Local Component</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%; vertical-align: text-top;">
+													
+								<ul><b>Coastal Zones</b> 
+									<li>reference year 2012 and 2018 </li> 
+									<li>Coastal Zones changes 2012 - 2018 </li> 
+									<li>71 Land Cover/Land Use classes </li> 
+									<li> MMU = 0.5 ha </li> 
+									<li> MMW = 10 m </li> 
+								</ul>
+							</td>
+							<td style="width:50%">
+								<img width="340" height="340" data-src="./resources/IntroductionToRemoteSensing/Coastal_zone.jpg" alt="sat1">
+								<br>
+								<small>Coastal Zones <a href="https://land.copernicus.eu/local/coastal-zones">source</a>.</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+
+					<p>
+						<ul>The map covers a buffer zone of coastline derived from EU-Hydro. LC/LU is extracted from Very High Resolution (VHR) satellite data and other available data.
+							The class definitions follow the pre-defined nomenclature on the basis of Mapping and Assessment of Ecosystems and their Services (MAES) typology of ecosystems (Level 1 to Level 4) and CORINE Land Cover adapted to the specific characteristics of coastal zones.
+						</ul>
+					</p>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>				
+				
+				
+<!-- Slide 40-->
+				<section >
+					<h2>CLMS Imagery and reference data</h2>
+
+					<p>Copernicus land services need both satellite images and in-situ data in order to create reliable products and services.</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+
+								<img width="400" height="300" data-src="./resources/IntroductionToRemoteSensing/Referenc_datasets.jpeg" alt="sat1">
+								<br>
+								<small>Imagery and reference data <a href="https://land.copernicus.eu/imagery-in-situ">source</a>.</small>
+								<br>
+
+							</td>
+							<td style="width:50%; vertical-align: text-bottom;">
+								<p>EU-DEM – pan European digital surface model and EU-Hydro provides a photo-interpreted river network and a modelled drainage network for EEA39 countries.</p>
+							</td>
+						</tr>
+					</table>
+
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+<!-- Slide 41-->
+
+				</section>
+				
+				
+				<section>Thank you for your attention</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,488 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Supervised classification</title>
+		<meta property="dc:title" content="Classification: Decision Trees"  />
+		<meta property="dc:creator" content="Mariana Belgiu"  />
+		<meta property="dc:publisher" content="Faculty of Geo-Information Science and Earth Observation (ITC), University of Twente" /> 
+		<meta property="dc:subject" content="Supervised classification methods: Decision Trees"  />
+		<meta property="dc:abstract" content="Decision Trees (DT) is a non-parametric classifier that gained popularity in different domains because its structure is explicit and easily interpretable. A DT is built by recursively splitting each tree node using a statistical procedure such as Gini impurity measure, information gain (for classification scenarios), or variance (for prediction problems).In this lecture, we will be introducing the main steps required for building a DT.  Two procedures used to select the best variables for splitting the tree nodes will be discussed by making use of a practical example. These procedures include Gini impurity and information gain. The overfitting and underfitting concepts will be explained in the second part of the lecture when we will introduce two solutions to build the optimal DT, i.e. a DT that does not overfit: (1) stop growing the DT early before overfitting and (2)pruning or reducing the size of the tree. The lecture ends up by listing the main advantages and disadvantages of DT."   />
+		<meta property="dc:tableOfContents" content="(1) General Information; (2) Decision Trees components; (3) Criteria for nodes splitting; 
+			(4) Overfitting and underfitting concepts; (5)  Decision Trees pruning; (6) Decision Trees algorithms"  />
+		<meta property="dc:description" content="Learning outcomes LO1: Explain how information gain and Gini impurity is calculated LO2: Present the main advantages and disadvantages of decision trees classifier LO2: Describe the concept of over-fitting and under-fitting LO4: Define the main solutions that can be applied to avoid decision trees over-fitting"  />
+		<meta property="dc:contributor" content="Mariana Belgiu"  />	
+		<meta property="dc:created" content="2020-06-20"  />
+		<meta property="dc:type" content="teaching material"  />
+		<meta property="dc:format" content="html"  />
+		<meta property="dc:language" content="EN"  />
+		<meta property="dc:SizeOrDuration" content="90 min"  />
+		<meta property="dc:audience" content="students"  />
+		<meta property="dc:educationLevel" content="EQF 6;"  />
+		<meta property="dc:source" content="The following book was used for creating this learning unit: Russell, S., & Norvig, P. (2002). Artificial intelligence: a modern approach"  />
+		<meta property="dc:rightsHolder" content="Mariana Belgiu, Faculty of Geo-Information Science and Earth Observation (ITC), University of Twente"  />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en"  />
+		
+		<link rel="dc:relation" href="eo4geo:IP3-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-5" />
+		<link rel="dc:relation" href="eo4geo:AM10-2" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-9" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Decision Trees</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Decision Trees</h1>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+				
+			
+				
+								
+				<!-- Learning Unit outline--> 
+				<section > 
+						<h2>Decision Trees</h2> 
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#ea9b2d;">General Information</li>
+							<li style="color:#ea9b2d;">Decision Trees Components</li>
+							<li style="color:#ea9b2d;">Criteria for nodes splitting</li>
+							<li style="color:#ea9b2d;">Overfitting/underfitting concepts</li>
+							<li style="color:#ea9b2d;">Decision Trees pruning</li>
+							<li style="color:#ea9b2d;">Decision Trees types</li>
+						</ul>
+						
+				</section>
+				
+					<!-- General Information about Decision Trees--> 
+				<section id="DT">
+					<section > 
+						<h2>General Information</h2> 
+						<p>Decision Trees is a supervised non-parametric classifier that takes as input a vector of attribute values and returns a decision</p>
+					</section >
+					     <section>
+						<h2>Main characteristics</h2>
+						<ul>
+							<li style="color:#ea9b2d;">Input/output values can be both numerical and categorical</li>
+							<li style="color:#ea9b2d;">Missing values are allowed</li>
+							<li style="color:#ea9b2d;">Classification structure is explicit and easily interpretable (Friedl & Brodley, 1997)</li>
+						</ul>
+						</section>
+					
+						<aside class="notes">
+						You can find your presenter notes here (hit »S« on your keyboard).
+						</aside>
+					
+					
+					<section >
+						<h2>Decision Trees definition</h2>
+						<p>“A classification procedure that  recursively partitions a data set into smaller subdivisions on the basis of a sets of tests defined at each branch (or node)” (Friedl & Brodley, 1997)</p>
+					</section>	
+				
+				</section>
+				<!-- Decision Trees examples--> 
+				<section > 
+						<h2>Decision Trees example</h2> 
+						<br><img width="600" height="350" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/DecionTrees_Example_RS2.png" alt="Example">	
+						<small>Decision Trees classification model generated in R using PlanetScope image as input (Digital Number-DN)</a>.</small>
+				</section>
+				<!-- Decision Trees components--> 
+				<section > 
+						<h2>Decision Trees components</h2> 
+						<ul>
+							<li style="color:#ea9b2d;">Nodes: testing different attributes for splitting</li>
+							<li style="color:#ea9b2d;">Edges: connecting to the next node or leaf</li>
+							<li style="color:#ea9b2d;">Leaves: terminal nodes predicting the outcomes</li>
+						<br><img width="250" height="350" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/DecisionTrees_Components2.png" alt="DT_Components">	
+				</section>
+				<!-- Decision Trees types--> 
+				<section id="DT_3"> 
+					<section > 
+						<h2>Decision Trees types</h2> 
+						<ul>
+							<li style="color:#ea9b2d;">Classification problems: predicting discrete values</li>
+							<li style="color:#ea9b2d;">Regression problems: predicting continuous values</li>
+						
+				</section>
+				<section>
+					<h2>Can you give examples of classification and regression problems?</h2>	
+				</section>
+				</section>
+								
+				<!-- How to construct Decision Trees--> 
+
+					<section>
+					
+						<h2>How to construct Decision Trees?</h2> 
+						<p>The mains steps are:</p>
+						<ul>
+							<li style="color:#ea9b2d;">select the best attribute as the root node</li>
+							<li style="color:#ea9b2d;">for each value of this attribute, create new child node</li>
+							<li style="color:#ea9b2d;">split samples to child nodes</li>
+							<li style="color:#ea9b2d;">if subset is pure, then terminal node</li>
+							<li style="color:#ea9b2d;">else: continue splitting</li>
+						</ul>							
+						<aside class="notes">
+						You can find your presenter notes here (hit »S« on your keyboard).
+						</aside>
+					
+
+				
+				</section>
+				
+			<!-- How to construct Decision Trees--> 
+
+					<section id="DT_3">
+										
+					<section >
+						<h2>Input variables example</h2>
+						<br><img width="600" height="350" data-src="./resources/DecisionTrees/DecisionTrees_InputVariables.jpg " alt="Variables">	
+						<small>Source: Artificial Intelligence: a modern approach (Stuart Russel and Peter Norvig, 2009)</small>
+					</section>	
+					<section >
+						<h2>Decision Trees example</h2>
+						(contructed based on the previous presented variables)
+						<br><img width="600" height="350" data-src="./resources/DecisionTrees/DecisionTrees_Example.jpg" alt="DT_Example">	
+						<small>Source: Artificial Intelligence: a modern approach (Stuart Russel and Peter Norvig, 2009)</small>
+					</section>	
+					<section > 
+						<h2>How to select the best variable as the root node?</h2> 
+						<p>Patrons variable</p>	
+                                                <br><img width="600" height="350" data-src="./resources/DecisionTrees/OutlookAttribute.jpg" alt="OutlookAttribute">							
+						<aside class="notes">
+						You can find your presenter notes here (hit »S« on your keyboard).
+						</aside>
+					</section>
+					
+					<section >
+						<h2>Rain variable</h2>
+						<br><img width="600" height="350" data-src="./resources/DecisionTrees/RainAttribute.jpg" alt="RainAttribute">	
+					</section>	
+					<section >
+						<h2>Hungry variable</h2>
+						<br><img width="600" height="350" data-src="./resources/DecisionTrees/HungryAttribute.jpg" alt="HungryAttribute">	
+					</section>	
+				</section>
+					
+				<!--Measures used to split the decision trees nodes-->
+				<section>
+					<h2>Measures used to split the tree nodes</h2>
+					<p> The splits defined at each internal node of decision trees are estimated from training data by using a statistical procedure</p>
+						<ul>
+							<li style="color:#ea9b2d;">Information gain</li>
+							<li style="color:#ea9b2d;">Variance reduction (regression problem)</li>
+							<li style="color:#ea9b2d;">Gini impurity</li>
+							<br><img width="150" height="55" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/Gini.png " alt="Gini">	
+						<br><small>𝑝𝑖 = probability of an object being classified as a particular class</small>
+
+						</ul>
+				</section>
+				
+					
+				<!-- How to construct Decision Trees--> 
+
+					<section id="DT_4">
+										
+					<section >
+						<h2>Information gain</h2>
+						<p>Entropy</>
+						<ul>
+							<li style="color:#ea9b2d;">a measure of uncertainty/how pure a subset/tree node is</li>
+							<li style="color:#ea9b2d;">units used to measure it: bits</li>
+
+						</ul>	
+							
+						<br><img width="300" height="55" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/Entropy.png" alt="Entropy">	
+						<small>
+							<br>p = number of positive examples
+							<br>n = number of negative examples
+						</small>
+					</section>	
+					<section >
+						<h2>Information gain (II)</h2>
+										
+						<br><img width="300" height="60" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/InformationGain.png " alt="Information Gain">	
+						<small>
+							<br>H = entropy
+							<br>k = values an attribute can take
+						</small>
+					</section>	
+				</section>
+				<!-- Entropyexample--> 
+                                <section >
+															
+					<section >
+						<h2>Calculation of information gain - example</h2>
+						<p>Entropy</p>
+						<br><img width="600" height="350" data-src="./resources/DecisionTrees/DecisionTrees_InputVariables.jpg" alt="InputVariables">	
+																
+						<br><img width="400" height="55" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/Entropy_Example.png " alt="EntropyExample">	
+
+					</section>	
+				<section class="scrollable">
+					<h2>Calculation of information gain for 'patrons' variable</h2>
+					<br><img width="600" height="350" data-src="./resources/DecisionTrees/OutlookAttribute.jpg" alt="OutlookAttribute">
+					<br><img width="100" height="35" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/None.png" alt="NoneAtttribute">
+					<br><img width="100" height="35" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/Some.png" alt="SomeAtttribute">
+					<br><img width="400" height="55" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/Full.png" alt="SomeAtttribute">
+										
+				</section>
+				<section class="scrollable">
+					<h2>Calculation of information gain for'patrons' variable (II)</h2>
+					<br><img width="400" height="55" style="background-color: transparent; box-shadow: none;" data-src="./resources/DecisionTrees/InformationGain_Patrons.png" alt="InformationGainPatrons">
+					<br><img width="400" height="55"style="background-color: transparent; box-shadow: none;"  data-src="./resources/DecisionTrees/InformationGain_Patrons2.png" alt="InformationGainPatrons_Final">
+					
+				</section>
+				</section>
+							
+				<!--Question-->
+				<section>
+					<h2>Calculate the information gain when the variable ‚type‘ is used for splitting the tree nodes </h2>
+
+				</section>
+			<!--Splitting nodes for continuous variables-->
+				<section>
+					<h2>Splitting tree nodes using continuous variables</h2>
+					<p> There are two main options</p>
+						<ul>
+							<li style="color:#ea9b2d;">Binay decision = consider all possible splits according to the attributes values (-)</li>
+							<li style="color:#ea9b2d;">Discretization: ordinal categorical feature (+)</li>
+
+						</ul>
+				</section>
+			<!--Overfitting and underfitting-->
+				<section>
+					<section>
+					<h2>Overfitting and underfitting</h2>
+					<p>Overfitting: learning noise on top of the signal</p>
+						<ul>
+							<li style="color:#ea9b2d;">Presence of noise</li>
+							<li style="color:#ea9b2d;">Lack of representative samples</li>
+
+						</ul>
+					<p>Underfitting: the model is too simple to find the patterns in the data</p>
+					</section>
+				
+					<section>
+					<h2>Optimal size of decision trees</h2>
+					<p>Too large: overfitting</p>
+						<ul>
+							<li style="color:#ea9b2d;">Poor generalization to new samples (low bias/high variance)</li>							
+							
+						</ul>
+						<br><img width="100" height="100" style="background-color: transparent; box-shadow: none;"data-src="./resources/DecisionTrees/Overfitting.png " alt="Overfitting">
+							<br><small>overfitting</small>
+					<p>Too small: underfitting</p>
+						<ul>
+							<li style="color:#ea9b2d;">Poor fit to the data (high bias/low variance)</li>
+							
+						</ul>
+							<br><img width="100" height="100" style="background-color: transparent; box-shadow: none;"data-src="./resources/DecisionTrees/Underfitting.png " alt="Underfitting">
+							<br><small>Underfitting</small>
+					</section>
+				
+				</section>
+				<!--Optimal decision trees-->
+				<section>
+					<h2>Optimal Decision Trees</h2>
+					
+						<ul>
+							<li style="color:#ea9b2d;">Do not grow a tree that is too large</li>
+							<li style="color:#ea9b2d;">Pruning: reducing the size of the decision tree</li>
+
+						</ul>
+				</section>
+				<!--Decision trees-->
+				<section>
+					<h2>Decision Trees pros and cons</h2>
+					<p>Pros</p>
+					
+						<ul>
+							<li style="color:#ea9b2d;">Not a black-box classifier: i.e. users can easily understand the decisions</li>
+							<li style="color:#ea9b2d;">Can handle both categorical and numerical data</li>
+					                 <li style="color:#ea9b2d;">Can handle missing data</li>
+                                                         <li style="color:#ea9b2d;">Irrelevant attributes are easily discarded</li>
+					                 <li style="color:#ea9b2d;">fast</li>
+
+						</ul>
+					<p>Cons</p>
+					
+						<ul>
+							<li style="color:#ea9b2d;">Axis-aligned splitting of data</li>
+
+						</ul>
+				</section>
+				<!--Decision trees types-->
+				<section>
+					<h2>Decision Trees types</h2>
+					<p>'Simple' decision trees</p>
+					
+						<ul>
+							<li style="color:#ea9b2d;">Classification and Regression Tree (CART) (Breiman et al., 1984)</li>
+						</ul>
+					<p>Ensemble of Decision Trees (weak learners):</p>
+					
+						<ul>
+							<li style="color:#ea9b2d;">Boosting: weighted average of the results</li>
+							<li style="color:#ea9b2d;">Bagging: averaging the results for the end prediction: e.g. Random Forests (Breiman, 2001)</li>
+
+						</ul>
+				</section>
+					
+								<!--Decision trees types-->
+				<section>
+					<h2>Summary</h2>
+					
+					
+						<ul>
+							<li style="color:#ea9b2d;">Non-parametric and transparent classifier</li>
+							<li style="color:#ea9b2d;">Addresses both classification and regression problems</li>
+							<li style="color:#ea9b2d;">Different options for splitting the decision trees nodes: information gain, Gini impurity, variance</li>
+							<li style="color:#ea9b2d;">Best decision trees : overfitting/underfitting problems</li>
+							<li style="color:#ea9b2d;">Popular implementations of decision trees: CART, Random Forests</li>
+						</ul>
+
+				</section>
+				
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>
+				<br>Breiman, L. (2001). Random Forest. Machine Learning, 45
+				<br>Friedl, M.A., & Brodley, C.E. (1997). Decision tree classification of land cover from remotely sensed data. Remote Sensing of Environment, 61, 399-409
+				<br> Russell, S., & Norvig, P. (2009). Artificial intelligence: a modern approach. (3 edition ed.). Pearson
+				<!--<a href="https://doi.org/10.1016/S0034-4257(97)00049-7">10.1016/S0034-4257(97)00049-7</a>-->
+				</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

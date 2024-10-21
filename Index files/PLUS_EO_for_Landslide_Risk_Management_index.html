@@ -1,0 +1,844 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		Learning Material Author: Florian Albrecht - PLUS
+		Learning Material Creation Date: September 2020 to April 2021
+		
+		Rename to "PLUS_EO_Fuer_Hangrutschungen-->
+		
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>eo4geo - EO für Hangrutschungen</title>
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!-- <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Optische Satellitendaten für das Risikomanagement von Hangrutschungen</div>	<!--The title of the presentation appears on each slide-->
+				 <!-- <div  class = "presentation_title" style=" text-align: center; margin-top: 2vh; font-size: 3vh; " >Optical Earth observation data for landslide risk management</div>	<!--English title-->
+				 					
+			<meta property="dc:title" content="EO-derived geospatial information for natural hazards management" />
+			<meta property="dc:creator" content="Florian Albrecht" /> 
+			<meta property="dc:publisher" content="University of Salzburg" /> 
+			<meta property="dc:subject" content="After attending the workshop, participants will be able to: 
+				- Identify different types of optical EO satellite images and related processing methods that are capable of extracting landslide information,
+				- Understand what kind of landslide information the optical satellite images can provide,
+				- Compare the quality of landslide information to the needs of landslide risk management,
+				- Discuss the suitability of EO-derived landslide information for landslide documentation,
+				- Understand the requirements of geohazard zoning in hiking trail management,
+				- Understand the meaning of landslide susceptibility and its GIS-based statistical modelling methods,
+				- Compare the quality of landslide susceptibility maps to the needs of hiking trail management,
+				- Discuss the suitability of landslide susceptibility maps for geohazard zoning." />
+			<meta property="dc:abstract" content="This introductory course in remote sensing and (satellite) image analysis covers the basic analysis workflow. It requires a lecture or any other introductory class in the theoretical fundamentals of remote sensing" />
+			<meta property="dc:tableOfContents" content="(1) Organisational issues and introduction; 
+					(2) Image repositories and data access; 
+					(3) Specifics of image data; 
+					(4) Visualising and exploring image data; 
+					(5) Spatial referencing; 
+					(6) Radiometric correction;
+					(7) Image pre-processing; 
+					(8) Image classification; 
+					(9) Validation; 
+					(10) Publishing results" />
+			<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow including image acquisition, (pixel-based) image analysis, classification and validation; get to know online portals, data catalogues, and pricing schemes for satellite data; Familiarize with the European Copernicus Earth observation programme; Master standard image analysis routines as implemented in ArcGIS Pro" /> 
+			<meta property="dc:contributor" content="University of Salzburg" />
+			<meta property="dc:created" content="2021-04-15" />
+			<meta property="dc:type" content="teaching material" /> 
+			<meta property="dc:format" content="html" />
+			<meta property="dc:language" content="DE" />
+			<meta property="dc:SizeOrDuration" content="120 min" />
+			<meta property="dc:audience" content="students" />
+			<meta property="dc:educationLevel" content="EQF 6" />
+			<meta property="dc:source" content="Existing training material of the course: Practice: image processing and analysis" />
+			<meta property="dc:rightsHolder" content="University of Salzburg" />
+			<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+						
+			<link rel="dc:relation" href="eo4geo:TA13-3-4" />
+			<link rel="dc:relation" href="eo4geo:PS1-7" />
+			<link rel="dc:relation" href="eo4geo:PS3-4" />
+			<link rel="dc:relation" href="eo4geo:PS3-4-4" />
+			<link rel="dc:relation" href="eo4geo:IP3-13-1" />
+			<link rel="dc:relation" href="eo4geo:IP4-3-3" />
+			<link rel="dc:relation" href="eo4geo:IP3-11" />
+			<link rel="dc:relation" href="eo4geo:IP3-1-2-3" />
+			<link rel="dc:relation" href="eo4geo:AM4-4" />
+			<link rel="dc:relation" href="eo4geo:AM5-2" />
+			<link rel="dc:relation" href="eo4geo:IP3-4" />
+			<link rel="dc:relation" href="eo4geo:IP3-7" />
+			<link rel="dc:relation" href="eo4geo:IP4-2" />
+			<link rel="dc:relation" href="eo4geo:IP11-3-4" />
+			<link rel="dc:relation" href="eo4geo:AM5-7" />
+			<link rel="dc:relation" href="eo4geo:AM7" />
+			<link rel="dc:relation" href="eo4geo:AM4-3" />
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Optische Satellitendaten für das Risikomanagement von Hangrutschungen</h1>
+					<img src="./resources/EO_for_Landslide_Risk_Management/01_titelslide.png" alt="Titelfoto" />
+					Online Workshop am 15. April 2021 | 
+					Florian Albrecht, Universität Salzburg
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					.
+				</aside>
+				</section>
+				
+				<section>
+						<h2>Allgemeines</h2><br>
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#337acc;">Der Workshop wird aufgenommen!</li><br>
+							<li style="color:#337acc;">Bitte denken Sie daran, Ihr Mikrofon auszuschalten.</li><br>
+							<li style="color:#337acc;">Fragen sind jederzeit möglich und können auch im Chat für die Diskussion gesammelt werden.</li><br>
+						</ul>
+					<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+					<aside class="notes">
+						Keine Notizen enthalten.
+					</aside>
+				</section>
+
+				<!--section >
+						<h2>Ziele des Workshops</h2>
+						<ul>
+							<li style="color:#337acc;">Austausch zwischen Wissenschaft und Praxis über Methoden für Hangrutschungsinformationen</li>
+							<li style="color:#337acc;">Verstehen was optische Satellitenbilder für die Erkennung und Überwachung von Hangrutschungen leisten können</li>
+							<li style="color:#337acc;">Verstehen was GIS-Modelle für Rutschanfälligkeit leisten können</li>
+							<li style="color:#337acc;">Verstehen welche Qualitätsansprüche das Risikomanagement von Hangrutschungen an Informationen stellt, die aus Satellitendaten abgeleitet wurden</li>
+						</ul>
+				</section-->
+					
+				<section id="Intro">
+					<section>
+						<h2>Agenda</h2><p> 
+						<ul style="color:#337acc;">
+							<li>Einleitung, Agenda und Ziele</li><br>
+							<li>Präsentation #1: Kartierung und Überwachung von Hangrutschungen mit optischen Satellitendaten</li><br>
+							<li>Diskussion #1: Nutzen für das Risikomanagement</li><br>
+							<li>Präsentation #2: GIS-Modellierung von Rutschanfälligkeit</li><br>
+							<li>Diskussion #2: Bedeutung und Nutzen für die Gefahrenzonenplanung</li><br>
+							<li>Zusammenfassung und Ausblick</li>
+						</ul>
+					</section>
+
+					<section>
+							<h2>Kurze Vorstellungsrunde</h2>
+					</section>
+
+					<section>
+						<h2>Projekthintergrund</h2>
+						<div class="monteo" style="align: left; position: absolute; top: 130px; left: 10px; height: 150px;  width: 400px">
+							<img src="./resources/EO_for_Landslide_Risk_Management/05_monteo.png" alt="Monteo" />
+								<br>	
+								<ul>
+									<li> MontEO – The impact of mass movements on alpine trails and huts assessed by EO data</li><br>  
+									<li><a href=https://monteo.zgis.at>https://monteo.zgis.at</a></li>
+								</ul> <p>
+						</div>
+						<div class="monteo" style="align: left; position: absolute; top: 130px; left: 450px; height: 150px;  width: 450px">
+							<img src="./resources/EO_for_Landslide_Risk_Management/05_eo4geo.png" alt="EO4GEO_Logo" />
+								<br>	
+								<ul>
+									<li> The Space/Geospatial Sector Skills Alliance</li> 
+									<ul><li>Entwicklung von Schulungen für Erdbeobachtung und Geoinformatik</ul></li><br>
+									<li><a href=http://www.eo4geo.eu/training-actions>http://www.eo4geo.eu/training-actions/</a></li>
+								</ul> <p>
+						</div>
+					</section>
+
+					<section>
+						<h2>Phasen im Katastrophenmanagementzyklus</h2>
+						<figure>
+							<img width="40%" height="40%"src="./resources/EO_for_Landslide_Risk_Management/06_phasen.png" alt="Phasen" />
+							<figcaption>© F. Albrecht</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Services für Informationen über Hangrutschungenaus Erdbeobachtungsdaten</h2>
+						<figure>
+							<img width="75%" height="75%"src="./resources/EO_for_Landslide_Risk_Management/07_services.png" alt="Services" />
+							<figcaption>© F. Albrecht</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Z_GIS-Projekte mit Bezug zum Risikomanagement von Hangrutschungen</h2>
+						<figure>
+							<img width="75%" height="75%"src="./resources/EO_for_Landslide_Risk_Management/08_projekte_bezug_hangrutschungen.png" alt="Services" />
+							<figcaption>© F. Albrecht</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Ziele des Workshops</h2>
+						<figure>
+							<img width="75%" height="75%"src="./resources/EO_for_Landslide_Risk_Management/09_workshopziele.png" alt="Workshopziele" />
+							<figcaption>© F. Albrecht</figcaption>
+						</figure>
+						<br><br>
+						<ul style="font-size: 22px;">
+							<li> Austausch zwischen Wissenschaft und Praxis</li> 
+							<li>Diskussion des Potenzials optischer Satellitenbilder für die Dokumentation von Hangrutschungen</li>
+							<li>Diskussion des Potenzials von GIS-Modellen für Rutschanfälligkeit für die Gefahrenzonenplanung</li>
+							<li>Diskussion der Qualitätsansprüche im Risikomanagement von Hangrutschungen</li>
+						</ul>
+					</section>
+				</section>
+					
+				<section>
+					<h2>Präsentation #1</h2><br>
+					<ul style="font-size: 22px;"><strong>
+						<li style="color: #5f6263;"> Einleitung, Agenda und Ziele</li> <br>
+						<li style="color: #0a7697;"><u>Präsentation #1: Kartierung und Überwachung von Hangrutschungen mit optischen Satellitenbildern</u></strong>
+							<ul>
+								<li style="font-size: 20px;">Potenzial von Satellitenbildern am Beispiel Pongau 2019, Salzburg</li>
+								<li style="font-size: 20px;">Satellitensysteme</li>
+								<listyle="font-size: 20px;>Methoden für die Kartierung von Hangrutschungen</li>
+							</ul> </li><strong>
+						<li style="color: #5f6263;">Diskussion #1: Nutzen für die Dokumentation von Hangrutschungen</li><br>
+						<li style="color: #5f6263;">Präsentation #2: GIS-Modellierung von Rutschanfälligkeit</li>
+						<li style="color: #5f6263;">Diskussion #2: Bedeutung und Nutzen für die Gefahrenzonenplanung</li><br>
+						<li style="color: #5f6263;">Zusammenfassung und Ausblick</li>
+					</strong></ul>
+
+				</section>
+
+				<section id="presentation 1">
+					<section>
+						<div style="color:#5f6263;"><strong>Präsentation #1</strong></div><br><br>
+						<h2>Potenzial von Satellitenbildern am Beispiel Pongau 2019, Salzburg</h2>
+					</section>
+
+					<section>
+						<h2>Starkregenereignis am 05./06.08.2017:<br> Murgang im Kleinarltal </h2>
+						<figure>
+						<img width="90%" height="90%"src="./resources/EO_for_Landslide_Risk_Management/12_kleinarltal.png" alt="Kleinarltal" />
+						<figcaption>Fotos: F. Albrecht 2017</figcaption>	
+						</figure>
+					</section>
+
+					<section>
+						<h2>Starkregenereignis November 2019:<br>Gasteiner Tal</h2>
+						<figure>
+						<img width="80%" height="80%"src="./resources/EO_for_Landslide_Risk_Management/13_gasteinertal.png" alt="Gasteinertal" />
+						<figcaption>Foto: F. Albrecht 2020</figcaption>	
+						</figure>
+					</section>
+
+					<section>
+						<h2>Ereignisse 2019, Pongau, Salzburg – <br>ausgewählte Sentinel-2-Aufnahmen für Hüttschlag </h2>
+						<figure>
+						<img width="80%" height="80%"src="./resources/EO_for_Landslide_Risk_Management/14_huettschlag.png" alt="Gasteinertal" />
+						<figcaption>Abbildung: F. Albrecht; Quelle: EO-Browser von Synergise, 2020</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Grenzen/Potenzial optischer Satelliten</h2>
+
+						<div class="ppt-txt" style="position: absolute; top: 100px; left: 10px; height: 150px;  width: 400px">
+							<p>
+								<ul>
+								<li style="color: #5f6263; font-size: 22 px";> <strong>Verfügbarkeit eingeschränkt durch: </strong> 
+									<ul style="font-size: 20px;">
+									<li>Wolken (zufällig)</li>  
+									<li style> Schnee (saisonal) </li>
+									<li style> Schatten (in gewissen Lagen)	</ul></li>
+								</li><br>
+								<li style="font-size: 22px; color:#5f6263"> <strong>Erkennbarkeit von Hangrutschungen abhängig von </strong>
+									<ul style="font-size: 20px;">
+										<li>Auflösung</li>  
+										<li style> Kontrast zur Umgebung (Landbedeckung wie etwa Vegetation) </li>
+								</li>
+								</ul> <p>
+							</div>
+							<figure>
+								<div class="r-stack" style="position:relative; top: 35px; left: 240px; width:800px; height:420px; margin:0 auto;" >
+								<img src="./resources/EO_for_Landslide_Risk_Management/15_optische_satelliten.png" alt="Regions" />
+								<figcaption> Quelle: EO-Browser von Synergise, 2020.</figcaption>
+								</div>
+							</figure>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<div style="color:#5f6263;"><strong>Präsentation #1</strong></div><br><br>
+						<h2>Satellitensysteme</h2>
+					</section>
+
+					<section>
+						<br>
+						<h2>Satellitendaten „High resolution“ (HR): Sentinel-2</h2>
+						<table>
+							<tr><td width="50%"><image src="./resources/EO_for_Landslide_Risk_Management/17_sentinel2text.png" alt="Sentinel2 Text" align=left> </td>
+							<td> 
+							<figure>
+							<image width="60%" height="60%" src="./resources/EO_for_Landslide_Risk_Management/17_highresolution.png" alt="HighResolution" align=left> 
+							<figcaption>Aufnahme: Sentinel-2.</figcaption>
+							</figure></td>
+							</tr></table>
+					</section>
+
+					<section>
+						<br>
+						<h2>Verfügbare Satellitendaten: Planet.com</h2>
+						<table>
+							<tr><td width="50%"><image src="./resources/EO_for_Landslide_Risk_Management/18_planettext.png" alt="Planet Labs Text" align=left> </td>
+							<td> 
+							<figure>
+							<image width="70%" height="70%" src="./resources/EO_for_Landslide_Risk_Management/18_planetlabs.png" alt="HighResolution" align=left> 
+							<figcaption>Quelle: Planet Labs, 2020.</figcaption>
+							</figure></td>
+							</tr></table>
+					</section>
+
+					<section>
+						<h2>Animation der Satellitenbilder von Planet.com</h2>
+
+					</section>
+
+					<section>
+						<br>
+						<h2>Satellitendaten „Very high resolution“ (VHR): <br>VHR-Daten (Pléiades, etc.)</h2>
+						<table>
+							<tr><td width="50%"><image src="./resources/EO_for_Landslide_Risk_Management/20_pleiades.png" alt="Planet Labs Text" align=left> </td>
+							<td> 
+							<figure>
+							<image width="50%" height="50%" src="./resources/EO_for_Landslide_Risk_Management/20_vhr.png" alt="HighResolution" align=left> 
+							<figcaption>Quelle: Planet Labs, 2020.</figcaption>
+							</figure></td>
+							</tr></table>
+					</section>
+
+					<section>
+						<h2>Details in Pléiades</h2>
+
+						<table>
+							<tr><td>
+								<ul>
+									<li style="color: #5f6263; font-size: 22 px";> <strong>Hüttschlag, Großarl Valley</strong> 
+										<ul style="font-size: 20px;">
+										<li>26.03.2019 :   2.500 m³	</li>  
+										<li style> 16. 07. 2019:   5.000 m³	</li>
+										<li style> 24. 10. 2019: 15.000 m³	</ul></li>
+									</li>
+									</ul></p>
+								<figure>
+									<image width="70%" src="./resources/EO_for_Landslide_Risk_Management/21_huettschlag.png" alt="Hüttschlag" align=left> </td>
+									</figure>
+							<td> 
+								<figure>
+								<image width="80%" height="80%" src="./resources/EO_for_Landslide_Risk_Management/21_detailspleiades.png" alt="Pleiades" align=left>
+								<figcaption>Aufnahme: Pléiades 09.08.2019.</figcaption>
+								</figure></td>
+							</tr></table>
+					</section>
+
+					<section>
+						<h2>Eigenschaften von Satellitensystemen zur Bildaufnahme</h2>
+						<ul>
+							<li style="color: #5f6263; font-size: 22 px";> <strong>Räumliche Auflösung	</strong> 
+								<ul style="font-size: 20px;">
+								<li>HR ----- VHR</li>  
+								</li></ul>
+							<br>
+							<li style="font-size: 22px; color:#5f6263"> <strong>Räumliche Abdeckung	</strong>
+								<ul style="font-size: 20px;">
+									<li>Global flächendeckend ----vs---- an Einzelorten auf Bestellung	</li>
+							</li></ul>
+							<br>
+							<li style="font-size: 22px; color:#5f6263"> <strong>Wiederholrate (zeitliche Auflösung):</strong>
+								<ul style="font-size: 20px;">
+									<li>Jährlich ------vs------wöchentlich ------vs------ täglich*</li>
+							</li></ul>
+							<br>
+							<li style="font-size: 22px; color:#5f6263"> <strong>Radiometrische Eigenschaften:</strong>
+								<ul style="font-size: 20px;">
+									<li>Hohe vs. niedrige Bit-Auflösung	</li>
+									<li>Gute vs. schlechte Kalibrierung </li>
+							</li></ul>
+							<br>
+							<li style="font-size: 22px; color:#5f6263"> <strong>*Einschränkungen: </strong>
+								<ul style="font-size: 20px;">
+									<li>Wolken können Untersuchungsgebiet überdecken</li>
+									<li>VHR-Satelliten sind schwenkbar – Aufnahmewinkel sollte für gebirgiges Gelände möglichst klein sein</li>
+							</li></ul>
+							</ul> 
+					</section>
+
+				</section>
+
+			<section id="Methoden Kartierung Hangrutschungen">
+			
+				<section>
+					<strong>Präsentation #1</strong>
+					<br><br><br>
+					<h2>Methoden für die Kartierung von Hangrutschungen </h2>
+				</section>
+
+				<section>
+					<h2>Manuelle Identifikation von Veränderungen</h2>
+					<ul style="color: #5f6263; font-size: 22 px";>
+							<li>Ein Interpret vergleicht Vorher-Nachher-Aufnahmen </li>  
+							<li>Visuelles Identifizieren von Veränderungen</li>
+							<li>Manuell wird die Position der Veränderung markiert</li>
+					</ul>
+					<figure>
+						<image width="70%" height="70%" src="./resources/EO_for_Landslide_Risk_Management/24_manuelle_identifikation.png" alt="Manuelle Identifikation">
+						<figcaption>xxx</figcaption>
+					
+						</figure>
+				</section>
+
+				<section>
+					<h2>Zwischen 2015 und 2020 identifizierte Massenbewegungen im Großarltal und Kleinarltal</h2>
+					<figure>
+						<img src="./resources/EO_for_Landslide_Risk_Management/25_gross_kleinarltal.png" alt="Groß- und Kleinarltal" style="width:70%; height:70%">
+						<figcaption>xxx</figcaption>
+					</figure>
+				</section>
+
+				<section>
+					<h2>Zeitreihenanalyse zur Identifikation des Ereigniszeitpunkts</h2>
+					<br>
+					<ul>
+						<li style="color: #5f6263; font-size: 22 px";> <strong>Detektion des Ereigniszeitpunkts in Sentinel-2 Bildern mit einem semantischen Data Cube </strong> <br>
+							<ul style="font-size: 20px;"><br>
+							<li>Input: Punktdatensatz mit visuell identifizierten Massenbewegungen </li><br>  
+							<li>Methode: durchsuchen der Historie aller Sentinel-2-Bilder auf der sen2cube.at Plattform (ermöglicht die Erstellung zeitlicher Abfragen)</li><br><br>
+							<li>Zusammenarbeit mit dem Z_GIS-Projekt Sen2Cube</li>	
+							<li>Forschungsarbeit von Larisa Paulescu</li>
+						</li></ul>
+				</section>
+
+				<section>
+					<h2>Zeitreihenanalyse zur Identifikation des Ereigniszeitpunkts</h2>
+					<figure>
+						<img src="./resources/EO_for_Landslide_Risk_Management/27_zeitreihenanalyse.png" alt="Zeitreihenanalyse" style="width:70%; height:70%">
+						<figcaption>xxx</figcaption>
+					</figure>
+				</section>
+
+				<section>
+					<h2>Hotspot-Identifikation: Großarl & Kleinarltal</h2>
+					<figure>
+						<img src="./resources/EO_for_Landslide_Risk_Management/28_hotspot_identifikation.png" alt="Hotspot-Identifikation" style="width:70%; height:70%">
+						<figcaption>xxx</figcaption>
+					</figure>
+				</section>
+
+				<section>
+					<h2>Hotspot-Identifikation: Großarl & Kleinarltal</h2>
+					<figure>
+						<img src="./resources/EO_for_Landslide_Risk_Management/29_hotspot_identifikation.png" alt="Hotspot-Identifikation" style="width:70%; height:70%">
+						<figcaption>xxx</figcaption>
+					</figure>
+				</section>
+
+				<section>
+					<h2>Objektbasierte Kartierung von Hangrutschungen</h2>
+					<div class="ppt-txt" style="position: absolute; top: 100px; left: 10px; height: 150px;  width: 450px">
+						<p>
+							<ul>
+							<li style="color: #5f6263; font-size: 22 px";> <strong>Ansatz der objektbasierten Klassenmodellierung</strong> 
+								<ul style="font-size: 20px;">
+								<li>Ansätze für wissensbasierte und statistische Klassifikation</li>  
+								<li style> Anpassbar auf Untersuchungsgebiet und Daten</li>
+								<li style> Wo es möglich ist kann lokales Expertenwissen einfließen</li>
+							</ul></li>
+							</li><br>
+							<li style="font-size: 22px; color:#5f6263"> <strong>Unterscheidung in die folgenden Klassen</strong>
+								<ul style="font-size: 20px;">
+									<li>Landslides (source area)</li>  
+									<li style> Debris flows (transport area)</li>
+									<li>River bed filled with debris (accumulation area)</li>
+							</li>
+							</ul> <p>
+						</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 35px; left: 240px; width:600px; height:420px; margin:0 auto;" >
+							<img src="./resources/EO_for_Landslide_Risk_Management/30_objektbasierte_kartierung.png" alt="Regions" />
+							<figcaption> xxx</figcaption>
+							</div>
+						</figure>
+				</section>
+
+				<section>
+					<figure>
+						<img class="fragment" data-fragment-index="0" src="./resources/EO_for_Landslide_Risk_Management/31_transition1.png" alt="Karte" />
+						<img class="fragment fade-in" data-fragment-index="1" src="./resources/EO_for_Landslide_Risk_Management/31_transition2.png" alt="Karte" />
+					</figure>
+				</section>
+
+				<section><br><br>
+					<h2>Land@Slide – OBIA Ergebnisse</h2>
+					<figure>
+						<img width="75%" height="75%" src="./resources/EO_for_Landslide_Risk_Management/32_landatslide.png" alt="Regions" />
+						<figcaption>xxx</figcaption>
+					</figure>
+				</section>
+
+				<section><br><br>
+					<h2>Land@Slide – OBIA Ergebnisse (1/4)</h2><br>
+					<ul>
+						<li style="color: #5f6263; font-size: 22 px";> <strong>Pinzgau - Hundstein</strong> 
+							<ul style="font-size: 20px;">
+							<li>Gelb: semi-automatisierte Kartierung mit OBIA</li>  
+							<li style> Rot: manuelle Kartierung </li>
+							</ul>
+					</ul>
+
+					<figure>
+						<img width="85%" height="85%" src="./resources/EO_for_Landslide_Risk_Management/33_hundstein.png" alt="Regions" />
+						<figcaption>Hölbling, D., Eisank, C., Albrecht, F., Vecchiotti, F., Friedl, B., Weinke, E., Kociu, A., 2017. Comparing Manual and Semi-Automated Landslide Mapping Based on Optical Satellite Images from Different Sensors. Geosciences, 7(2), 37</figcaption>
+					</figure>
+				</section>
+
+				<section><br><br>
+					<h2>Land@Slide – OBIA Ergebnisse (2/4)</h2>
+					<ul>
+						<li style="color: #5f6263; font-size: 22 px";> <strong>Bregenzerwald</strong> 
+						</li></ul>
+
+					<figure>
+						<img width="85%" height="85%" src="./resources/EO_for_Landslide_Risk_Management/34_bregenzerwald.png" alt="Regions" />
+						<figcaption>Hölbling, D., Eisank, C., Albrecht, F., Vecchiotti, F., Friedl, B., Weinke, E., Kociu, A., 2017. Comparing Manual and Semi-Automated Landslide Mapping Based on Optical Satellite Images from Different Sensors. Geosciences, 7(2), 37</figcaption>
+					</figure>
+				</section>
+
+				<section><br><br>
+					<h2>Land@Slide – OBIA Ergebnisse (3/4)</h2>
+					<ul>
+						<li style="color: #5f6263; font-size: 22 px";> <strong>Montafon</strong> 
+						</li></ul>
+
+					<figure>
+						<img width="85%" height="85%" src="./resources/EO_for_Landslide_Risk_Management/35_montafon.png" alt="Regions" />
+						<figcaption>Hölbling, D., Eisank, C., Albrecht, F., Vecchiotti, F., Friedl, B., Weinke, E., Kociu, A., 2017. Comparing Manual and Semi-Automated Landslide Mapping Based on Optical Satellite Images from Different Sensors. Geosciences, 7(2), 37.
+						</figcaption>
+					</figure>
+				</section>
+
+				<section><br><br>
+					<h2>Land@Slide – OBIA Ergebnisse (4/4)</h2>
+					<ul>
+						<li style="color: #5f6263; font-size: 22 px";> <strong>Gadertal, Südtirol</strong> 
+						</li></ul>
+					<figure>
+						<img width="50%" height="50%" src="./resources/EO_for_Landslide_Risk_Management/36_gadertal.png" alt="Regions" />
+						<figcaption>Hölbling, D., Eisank, C., Albrecht, F., Vecchiotti, F., Friedl, B., Weinke, E., Kociu, A., 2017. Comparing Manual and Semi-Automated Landslide Mapping Based on Optical Satellite Images from Different Sensors. Geosciences, 7(2), 37.
+						</figcaption>
+					</figure>
+				</section>
+
+				<section>
+					<h2>Zusammenfassung: mögliche Ergebnisse aus Satellitenbildern</h2>
+					<div style="align: left; position: absolute; top: 130px; left: 10px; height: 150px;  width: 500px">
+							<br>	
+							<ul>
+								<li style="color: #5f6263; font-size: 22 px;"><strong>Punktdatensätze</strong> <br>  
+									<ul>
+									<li>XY-Position</li>
+									<li>Kategorie „Veränderung“	</li>
+									<li>Aufnahmezeitpunkt </li></ul>
+								</li></ul> <p>
+							<ul>
+								<li style="color: #5f6263; font-size: 22 px;"><strong>Hotspot-Karten</strong> <br>  
+									<ul>
+									<li>XY-Bereiche mit gehäuftem Auftreten von Veränderungen	</li>
+									</ul>
+								</li></ul> <p>
+							<ul>
+								<li style="color: #5f6263; font-size: 22 px;"><strong>Rutschungen als Flächen	</strong> <br>  
+									<ul>
+									<li>Polygon</li>
+									<li>Unterscheidung der Rutschungsfläche in mehrere Klassen möglich </li>
+									</ul>
+								</li></ul> <p>		
+					</div>
+					<div class="monteo" style="align: left; position: absolute; top: 170px; left: 550px; height: 350px;  width: 350px">
+						<img src="./resources/EO_for_Landslide_Risk_Management/37_zusammenfassung.png" alt="Zusammenfassung" />
+							<br>	
+					</div>
+			</section>
+		</section>
+
+
+		<section id="Diskussion #1">
+			<section>
+				<h2>Diskussion #1</h2><br>
+				<ul style="font-size: 22px;"><strong>
+					<li style="color: #789ba7;"> Einleitung, Agenda und Ziele</li> <br>
+					<li style="color: #789ba7;">Präsentation #1: Kartierung und Überwachung von Hangrutschungen mit optischen Satellitenbildern<br>
+					<li style="color:  #0a7697;"><u>Diskussion #1: Nutzen für die Dokumentation von Hangrutschungen</u></li><br>
+					<li style="color: #5f6263;">Präsentation #2: GIS-Modellierung von Rutschanfälligkeit</li>
+					<li style="color: #5f6263;">Diskussion #2: Bedeutung und Nutzen für die Gefahrenzonenplanung</li><br>
+					<li style="color: #5f6263;">Zusammenfassung und Ausblick</li>
+				</strong></ul>
+			</section>
+
+			<section>
+				<h2>Fragen zur Diskussion</h2>
+			</section>
+
+			<section>
+				<h2>Fragen zur Diskussion</h2>
+
+				<ul>
+					<li style="color: #5f6263; font-size: 22 px;"><strong>Wie gut treffen die Bildkartierungen die Information in Ereignisdokumentationen?</strong> <br>  
+						<ul>
+						<li style="font-size: 20px;">Vollständigkeit: Welche Rutschungen können übersehen werden? / Wie sicher können Rutschungen erkannt werden? </li>
+							<ul><li style="font-size: 18px;">Wie groß müssen Rutschungen sein, dass sie in Satellitenbildern erkannt werden?	</li>
+								<li style="font-size: 18px;">Wie lange bleiben Rutschungen in Satellitenbildern sichtbar?</li>
+								<li style="font-size: 18px;">Manuell vs. Automatisiert -> Wie wirkt sich das auf die Vollständigkeit aus?</li>
+							</ul>
+						<li style="font-size: 20px;">Detailgrad: Welche Rutschtypen werden erkannt?</li>	
+							<ul><li style="font-size: 18px;">Welche Typen kann man erkennen und wie gut lassen sie sich voneinander unterscheiden? Welche Teilbereiche/-elemente einer Rutschung sind relevant?</li>
+							</ul>
+						<li style="font-size: 20px;">Konsistenz: 
+							<ul><li style="font-size: 18px;">Welche für Ereignisdokumentation relevanten Informationen werden erkannt, welche fehlen? </li>
+							<li style="font-size: 18px;">Welche vagen Informationen aus EO-Daten müssen durch Erhebung im Gelände verifiziert werden, welche noch fehlenden Infos ergänzt werden?</li>
+							</li>
+							</ul>
+					</li></ul> <p>
+			</section>
+
+		</section>
+
+		
+			<section>
+				<h2>Präsentation #2</h2>
+				<ul style="font-size: 22px;"><strong>
+					<li style="color: #789ba7;"> Einleitung, Agenda und Ziele</li> <br>
+					<li style="color: #789ba7;">Präsentation #1: Kartierung und Überwachung von Hangrutschungen mit optischen Satellitenbildern<br>
+					<li style="color:  #789ba7;">Diskussion #1: Nutzen für die Dokumentation von Hangrutschungen</li><br>
+					<li style="color: #0a7697;"><u>Präsentation #2: GIS-Modellierung von Rutschanfälligkeit</u></li></strong>
+						<ul style="font-size:20px; color:#5f6263">
+							<li>Anwendungsfall Wegemanagement (MontEO)</li>
+							<li>Definitionen Rutschanfälligkeit	</li>
+							<li>Methodik der Rutschanfälligkeitsmodellierung </li>
+							<li>Anwendungsszenarien für Wegemanagement 	</li><br>
+						</ul><strong>
+					<li style="color: #5f6263;">Diskussion #2: Bedeutung und Nutzen für die Gefahrenzonenplanung</li><br>
+					<li style="color: #5f6263;">Zusammenfassung und Ausblick</li>
+				</strong></ul>
+			</section>
+
+			<section id="Präsentation#2">
+				<h2>Starkregenereignis am 05./06.08.2017: Blockierte Wanderwege im Großarltal </h2>
+
+				Nach Informationen des Wegewarts der ÖAV Sektion Hüttschlag: Die betroffene Stelle war etwa 10 Meter breit und erforderte 
+				ein paar Tage Arbeit um den Weg wieder freizugeben. Viele Wege waren betroffen. Die verbliebene Sommersaison 2017 reichte 
+				nicht mehr aus um alle Wegschäden im Arbeitsgebiet der Sektion zu beseitigen.
+
+			</section>
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<!--section id="EO">
+					<section > 
+						<h2>Introduction to EO for natural hazards</h2> 
+						<p><em>Natural hazards</em> are natural phenomena with potential negative effects for the society. </p>
+						
+						<ul>
+							<li style="color:#89b3e479;">Types of hazards</li>
+							<li style="color:#89b3e479;">Statistics for disasters caused by hazards</li>
+							<li style="color:#337acc;">The disaster management cycle</li>
+							<li style="color:#337acc;">Stakeholders of natural hazards management and their tasks to deal with hazards</li>
+							<li style="color:#337acc;">EO services and products for natural hazards management</li>
+						</ul>
+						<br><img width="600" height="316" data-src="http://eo4geo.sbg.ac.at/PLUS/EO_for_Natural_Hazards/Cred_and_UNSDR_2018.png" alt="Number of disasters per type 1998-2017">	
+						<br>
+						<citation>CRED & UNISDR (2018). “Economic Losses, Poverty and Disasters 1998-2017” </citation> <!-- ; https://www.cred.be/sites/default/files/CRED_Economic_Losses_10oct.pdf; https://www.emdat.be -->
+						<!--aside class="notes">
+							The overview on natural hazards identifies which hazards there are that can be addressed with EO. 
+							It explains when a hazard situation turns into a disaster. 
+							Disaster management and natural hazards management.
+							In the conceptual part, an overview on natural hazards management is presented, 
+							introducing the disaster cycle that treats disasters resulting from natural hazards as re-occuring events 
+							where the community can learn from previous events to address potential future events. 
+							It covers the diverse natural hazard management activities in the phases of response, recovery, mitigation and preparation 
+							and the support that EO derived information can provide for weather-related natural hazards. 
+						</aside>
+					</section>
+					
+					<section >
+						<h2 style="color:#89b3e479;">Types of hazards</h2>
+						<!-- <p>The European SatNav programme is called <em>Galileo</em>. With EGNOS, the European differential global positioning system, it belongs to the world spanning <em>global navigation satellite systems</em> (GNSS).</p>
+						<br><img width="600" height="200" data-src="resources\template_WhatCopernicus\UseGalileo.jpg" alt="sat1">
+						<small>Galileo-enabled smartphones can be used in many different <a href="https://www.usegalileo.eu/">applications</a>.</small> 
+						-->
+					<!--/section>
+					
+					<section >
+						<h2 style="color:#89b3e479;">Statistics for disasters caused by hazards</h2>
+						<!-- <p>SatCom allows <em>telecommunication</em> all around the globe. Communication satellites receive signals from Earth and retransmit them by a <em>transponder</em>.</p>
+						<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\SatComIntelsat.jpg" alt="sat1"></a>
+						<small>The satellite as a self-contained communications system, the example of <a href="https://www.intelsatgeneral.com/satellite-basics/">IntelSat</a>.</small>
+						-->
+					<!--/section>
+					
+					<section >
+						<h2 style="color:#337acc;">The disaster management cycle</h2>
+						<!-- <p>Earth observation is the systematic usage of <em>satellite remote sensing</em> technology for continuous or on-demand <em>imaging</em> or <em>measuring</em> the Earth surface </p>
+						<br><a href="#/EO"><img width="500" height="250" data-src="resources\template_WhatCopernicus\ISS_AstroAlex.jpg" alt="sat1"></a>
+						<small>A view from the Cupola, the observation deck of the ISS. Photograph by astronaut <a href="https://twitter.com/astro_alex">A. Geerst</a>.</small>
+						<br>
+						<a href="#/EO"> Back to top </a>
+						-->
+					<!--/section>
+					<section>
+						<h2 style="color:#337acc;">Stakehoders of natural hazards management and their tasks to deal with hazards</h2>
+					</section>
+					<section>
+						<h2 style="color:#337acc;">EO services and products for natural hazards management</h2>
+					</section>
+				</section>
+				
+				<!-- AUTHORS: INCLUDE AN IMAGE IN YOUR SLIDE: --> 
+				<!--section>
+					<section ><h2>EO/GI technologies for monitoring natural hazards</h2>
+						<br>This lecture teaches the EO data concepts and sources and the information processing tools that enable the extraction of natural hazards related information from EO data.
+						<!-- <br><img width="600" height="300" data-src="resources\template_WhatCopernicus\EOlever.jpg" alt="Copernicus allegory"> -->
+						
+						
+						<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... -->
+
+						<!--aside class="notes">
+							In the practical second part, the first objective is to make participants aware of different types of EO satellite images (both optical and SAR data) 
+							and related processing methods that are capable of mapping landslides. 
+							The second objective is to make them understand the most essential theoretical background and the functional principles for EO processing. 
+						</aside>
+					</section>
+					
+					<section>
+						<h2 style="color:#337acc;">EO data</h2>
+						<br> EO imagery products, e.g. optical and SAR, different resolutions
+					</section>
+					
+					<section>
+						<h2 style="color:#337acc;">EO information extraction methods</h2>
+						<br> This is about image segmentation, image classification, object-based image analysis (OBIA)
+						<br> Image segmentation is the division of an image into connected regions or categories which correspond to different objects or parts of objects.
+					
+						<aside class="notes">
+							OBIA is an iterative method that starts with the segmentation of satellite imagery into homogeneous and contiguous image segments (also called image objects). 
+							In the next step, resulting image segments are assigned to the target classes.
+							More explanation about class modelling.
+						</aside>
+					
+					</section>
+					
+					<section>
+						<h2 style="color:#337acc;">Multiresolution segmentation </h2>
+						<br> This is about image segmentation, image classification, object-based image analysis (OBIA)
+						<br> Multi-resolution segmentation is a region-growing algorithm. 
+						It relies on several parameters, which need to be tuned. 
+						These include the scale parameter (SP), which dictates the size and homogeneity of the resultant objects. 
+					
+						<aside class="notes">
+							examples how multiresolution segmentation parameters influence the segmentation result.
+						</aside>
+					
+					</section>
+					
+					<section>
+						<h2 style="color:#337acc;">Comparison to and integration with other data</h2>
+						<br> This is about using reference data to validate EO results, etc.
+						<br>
+						<!-- <br><a href="#/EO"> Back to top </a> <!-- does not point to the right section yet!--> 
+						<!--aside class="notes">
+							the complementary character of EO data
+						</aside>
+					
+					</section>
+					
+				</section>
+				
+
+					
+				<section >
+					<section>
+						<h2>Case example landslide documentation</h2>
+						<p>Copernicus comprises two major  <em>components</em>.</p>
+						<ul>
+							<li style="color:#337acc;">Space component</li>
+							<li style="color:#33b5cc;">(Integrated) Ground segment</li>
+						</ul>
+						<br><img width="400" height="200" data-src="resources\template_WhatCopernicus\sat1.jpg" alt="sat1">
+
+					</section-->
+		
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

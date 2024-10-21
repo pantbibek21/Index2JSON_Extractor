@@ -1,0 +1,312 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Random Forests</title>
+		
+		<meta property="dc:title" content="Classification: Random Forests" />
+		<meta property="dc:creator" content="Mariana Belgiu" />
+		<meta property="dc:creator" content="Anurag Kulshrestha" />
+		<meta property="dc:publisher" content="University of Twente" />
+		<meta property="dc:subject" content="Random Forest" />
+		<meta property="dc:abstract" content="Random Forests (RF) is one of the most popular machine learning classifiers due to its capability to obtain good classification results 
+		with a relatively reduced number of training samples and because it relies on a reduced number of user-defined parameters. In addition, RF can easily address the
+		 Hughes phenomenon due to the two randomness dimensions: first, it randomly selects samples to create a user-defined number of decision trees and, second, a 
+		randomly user-defined number of variables are used for splitting the decision tree nodes. In this lecture, we will be introducing the concept of ensemble classifier by 
+		emphasizing the main methods used to build an ensemble: bootstrapping and bagging. We will explain how RF classifier is built and how the final decision is taken. 
+		The concept of out-of-the-bag will be explained in detail especially in connection with its role for internal evaluation of the RF accuracy. We will also explain how RF 
+		calculates the variable importance, a measure that can be used to discard the less relevant input variables. In the end, special attention is given to the proximity measure 
+		used to identify either outliers or subclasses in the training samples." />
+		<meta property="dc:tableOfContents" content="(1) Concept of ensemble classifiers; 
+							     (2) Random Forests; 
+							     (3) Random Forest hyperparameter; 
+							     (4) Fundamental differences between tree growth on decision trees and Random Forest;
+							     Accuracy assessments in Random Forests." />
+		<meta property="dc:description" content="Learning outcomes: LO1: Define the concept of ‘ensemble classifier’ LO2: Explain the concepts of bagging and bootstrapping LO3: Describe how variable importance is calculated in Random Forest classifier LO4: Explain the role of proximity measure for removing outliers from the training sample set LO5: List the main advantages and disadvantages of the RF classifier" />
+		<meta property="dc:contributor" content="Mariana Belgiu" />
+		<meta property="dc:contributor" content="Anurag Kulshrestha" />
+		<meta property="dc:created" content="2020-07-27" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90 min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsHolder" content="Mariana Belgiu and Anurag Kulshrestha, University of Twente" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-7" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-7-1" />
+		<link rel="dc:relation" href="eo4geo:AM10-2" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-9" />
+	
+		
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme"> --> <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Random Forests</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Random Forests
+					</h1>
+					<!--!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Random Forests has gained an increasing popularity in the remote sensing community due to its robustness to overfitting.
+				</aside>
+				</section>
+			
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="RF_1">
+					<section > 
+						<h2>What are ensemble classifiers?</h2> 
+						<p>Combination of multiple <em>submodels</em> relying on the hypothesis that combining multiple "weak" predictor models together can often produce a powerful model</p>
+					<br><img width="500" height="305" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/EnsembleClassifiers.png" alt="EnsembleClassifiers">
+					</section>
+					<section>
+						<h2> How to create ensemble classifiers?</h2>
+						<ul>
+							<li style="color:#ea9b2d;">Bagging</li>
+							<li style="color:#ea9b2d;">Boosting</li>
+						</ul>
+					</section>
+					<section >	
+					<h2> Ensemble of uncorrelated outcomes</h2>
+					<p> Let's play: pick a random number (A) in range [1, 100].The outcome of the game is:</p>
+					<ul>
+							<li style="color:#ea9b2d;">Win if A > 40</li>
+							<li style="color:#ea9b2d;">Loss otherwise</li>
+						</ul>
+					<p><b>Game 1: </b> place 100 times, betting $1 each time</p>
+					<p><b>Game 2: </b> place 10 times, betting $10 each time</p>
+					<p><b>Game 3: </b> place one time, betting $100</p>
+					<p> We stimulate each game 10000 times. What do you expect?</p>
+					</section>
+					<section class="scrollable">
+						<h2> Game results</h2>
+					<br><img width="500" height="110" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Games.png" alt="Example_1">
+                    <br><img width="580" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Games2.png" alt="Ecampe_2">					
+						<p> Variance decreases as number of games increases</p>
+					</section>
+					
+				</section>
+					<!--Boostrap aggregation-->
+					<section>
+					<section>
+						<h2>Bagging (Bootstrap Aggregating)</h2>
+						<p>Suppose we use the same training algorithm for every predictor in the ensemble. However, to train them, we use different random subsets of the training set. The samples are selected randomly with replacement. It means that some samples can be selected seevral times, whereas others might not be selected at all.</em></p>
+					<br><img width="520" height="280" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging.png" alt="Bagging_1">
+					</section>	
+					<section>
+						<h2> How does this work?</h2>
+						<p> Let's consider the following:</p>
+						<ul>
+							<li style="color:#ea9b2d;">N = number of samples in training set</li>
+							<li style="color:#ea9b2d;">L = number of predictors</li>
+							<li style="color:#ea9b2d;">TR = training set for each predictor</li>
+							<li style="color:#ea9b2d;">TR<em>i</em> = sample of N randomly selected samples with replacement</li>
+						</ul>
+						<br><img width="520" height="300" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging2.png" alt="Bagging_2">
+					</section>
+					<section>
+						<h2>Bagging of decision trees</h2>
+						<p>What if these predictors are decision trees?</p>
+						<br><img width="500" height="280" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/Bagging3.png" alt="Bagging_3">
+					</section>
+					
+					</section>
+					
+					<!--Random Forests-->
+					<section>
+					<section>
+						<h2>What is Random Forests?</h2>
+						<ul>
+							<li style="color:#ea9b2d;">It is an ensemble of decision trees</li>
+							<li style="color:#ea9b2d;"> It grows many classification trees (n_estimators)</li>
+							<li style="color:#ea9b2d;">Input vector goes through all the trees</li>
+							<li style="color:#ea9b2d;">Each tree votes for a class for each input vector</li>
+							<li style="color:#ea9b2d;">Class is chosen based on majority of votes</li>
+						</ul>						
+					</section>	
+					<section>
+						<h2> How an individual tree is grown?</h2>
+						<p> From an <em>m</em> number of feature, a <em> max_features</em> are selected randomly at each node. Usually the number of features tested for spliting the tree nodes is represented by the square root of the total number of available features. Each node is split into two nodes only and there is no pruning</p>
+					</section>
+					<section>
+						<h2>How is this procedure different from tree growing in Decision Trees?</h2>
+					</section>
+					
+					</section>
+					<!--Random Forests error rate-->
+					<section>
+					<section>
+						<h2>Forest error rate</h2>
+						<p> This is highly influenced by:</p>
+						<ul>
+							<li style="color:#ea9b2d;">Correlation between trees: increasing the correlation increases forest error rate</li>
+							<li style="color:#ea9b2d;"> Strength of individual forest tree: increasing the tree strength decreases the forest error rate</li>
+						</ul>						
+					</section>
+					<section>
+						<h2>Forest error rate(2)</h2>
+						<p>Correlation and strength are controlled by <em>max_features</em>. If max_features increases, both correlation between and strength of trees increase. Therefore, we have to find an optimal range of max_features.</p>
+					</section>					
+					</section>
+					
+					<!--Random Forests error rate-->
+					
+					<section>
+						<h2>Features of Random Forests</h2>
+						<p> The main features of Random Forests are listed below</p>
+						<ul>
+							<li style="color:#ea9b2d;">It runs efficiently on large data bases</li>
+							<li style="color:#ea9b2d;">Not affected by the curse of dimensionality (Hughes phenomenon)</li>
+							<li style="color:#ea9b2d;">It gives estimates of what variables are important in the classification</li>
+							<li style="color:#ea9b2d;">It is distributed, i.e. each tree can run with a separate subset on a different machine</li>
+						</ul>						
+				
+					</section>
+					<!--Out of bag (oob) evaluation-->
+					<section>
+					<section>
+						<h2>Out of bag (oob) evaluation</h2>
+						<p> During bagging, approximately one-third of the data samples are left out of TR<em>i</em>. Why?</p>
+						<img width="500" height="65" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob.png" alt="OOB_1">
+						<br><p>These samples are called out-of-bag (oob) samples.</p>
+						
+					</section>
+					<section>
+						<h2>Why do we need oob?</h2>
+						<p>OOB sample is used for estimating unbiased classification error (oob error estimate) and variable importance</p>
+						<img width="500" height="300" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob2.png" alt="OOB_2">
+					</section>
+					<section>
+						<h2>Unbiased oob error estimates</h2>
+						<img width="400" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/oob3.png" alt="OOB_2">
+					</section>						
+					</section>
+					<!--Variable importance-->
+					<section>
+						<h2>Variable importance</h2>
+						<p> Mean Decrease Accuracy is the commonly used variable importance measure </p>
+						<p> Let's consider <em>α</em> the number of votes cast for the correct class for all oob samples in all trees. If we permute values of variable <em>m</em> in the oob cases randomly and push them down the tree, then <em>avg(α−β) = raw VI (Variable Importance)</em> score for variable <em>m</em>.</p>
+						<ul>
+						<li style="color:#ea9b2d;">β = number of cases with correct classification</li>
+						</ul>	
+						
+					</section>
+					<!--Proximity-->
+					<section>
+						<h2>Proximities</h2>
+						<p> Imagine that you send all training samples (including oob samples) down all trees, count the number of times when sample <em> n </em> and sample <em> k </em> are in the same terminal node and normalize by dividing it by number of trees. What does this tell you?</p>
+					</section>
+					<!--Summary-->
+					<section>
+						<h2>Random Forests summary (I)</h2>
+						<p> (1) Random Forests is an ensemble classifiers that consists of several decision trees</p>
+						<p> (2) Decision trees are built by randomly selecting samples through replacement</p>
+						<p> (3) The most important hyperparamters are the number of decision trees and the number of variables used to split the decision tree nodes</p>
+						<p> (4) About 1/3 of the samples called out-of-bag samples (OOB) are used for assessing the accuracy of the trained model</p>
+						<p> (5) OOB is used to calculate the importance of the input variables (e.g. Mean Decrease Accuracy) </p>
+		                        </section>
+		                        <section>
+						<h2>Random Forests summary (II)</h2>
+						<img width="700" height="400" style="background-color: transparent; box-shadow: none;" data-src="./resources/RandomForests/RandomForest_Overview.png" alt="Random Forest Overview">
+					</section>
+					<!--End-->
+					
+									
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>
+				<br>Belgiu, M., & Drǎguţ, L. (2014). Comparing supervised and unsupervised multiresolution segmentation approaches for extracting buildings from very high resolution imagery. ISPRS Journal of Photogrammetry and Remote Sensing, 96, 67-75
+				<br>Mather, P., & Tso, B. (2009). Classification methods for remotely sensed data (Second Edition), CRC Press
+				<br>Richards, J. A. (2013). Remote Sensing Digital ImageAnalysis. In Springer. (Section 8.18)
+				
+				</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

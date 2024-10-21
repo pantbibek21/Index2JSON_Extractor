@@ -1,0 +1,558 @@
+<!-- 	Author: Stefan Lang - PLUS 
+		Creation Date: Apr 2021
+		Latest Update: Apr 2022 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Copernicus - a multi-lingual intro</title>
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body onLoad="linkFunction()">
+
+		<script type="text/javascript" src="internal_restricted/js/eo4geo.js"></script>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 11%;height : 11%" ></div>	
+				 <div  class = "presentation_title" style=" text-align: center " ><small style="color: rgb(134, 134, 134);">What is Copernicus?</small></div>
+				 
+
+			<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->
+			<meta name="DCTERMS.title" content="What is Copernicus?">
+			<meta name="DCTERMS.author" content="Stefan Lang">
+			<meta name="DCTERMS.subject" content="Copernicus, EO4GEO, WP5, Sattelite, Earth Observation">
+			<meta name="DCTERMS.description" content="Getting to know Copernicus as European Earth Observation programme">
+			<meta name="DCTERMS.publisher" content="Stefan Lang">
+			<meta name="DCTERMS.contributors" content="Barbara Hofer, Eva-Maria Missoni-Steinbacher">
+			<meta name="DCTERMS.date" content="2020-04-20">
+			<meta name="DCTERMS.resource_type" content="slide presentation">
+			<meta name="DCTERMS.resource_format" content="html">
+			<meta name="DCTERMS.resource_uri" content="//localhost/EO4GEO/4_3_TrainingMaterial/Reveal/eo4geo_reveal_template/template.html">
+			<meta name="DCTERMS.language" content="EN"> <!-- please stick to the two-letter ISO 639-1 language codes -->
+			<meta name="DCTERMS.source" content="Workpackage 5">
+			<meta name="DCTERMS.relation" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<meta name="DCTERMS.coverage" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<meta name="DCTERMS.rights_management" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<!--<meta name="DCTERMS.bok_concepts" content="https://bok.eo4geo.eu/TA7-5-2, https://bok.eo4geo.eu/TA7-5-1, https://bok.eo4geo.eu/GS3"-->
+			
+			<meta name="rdf" content="
+					@prefix dc: <http://purl.org/dc/terms/>.
+					@prefix eo4geo: <http://bok.eo4geo.eu/>.
+					<>dc:hasPart [ dc:type "Module";
+							dc:title "EO";
+							dc:relation eo4geo:TA7-5-1;
+							dc:relation eo4geo:TA7-5-2;
+							dc:relation eo4geo:GS3]. " >
+			 
+			
+			<meta name="DCTERMS.bok_skills" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			
+			<div class="slides">
+				
+				<!-- AUTHORS: DEFINE METADATA FOR EACH SLIDE OF THE SLIDESET (copy and modify this section for each single slide!) -->
+				<meta name="DCTERMS.author" content="Stefan Lang">
+				<meta name="DCTERMS.slide_title" content="What is Copernicus?">
+				<meta name="DCTERMS.slide_subject" content="EO4Geo,Copernicus">
+				<meta name="DCTERMS.slide_description" content="Cover Slide">
+				<meta name="DCTERMS.slide_uri" content="//localhost/EO4GEO/4_3_TrainingMaterial/Reveal/eo4geo_reveal_template/template.html#/">
+
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>What is "Copernicus"?</h1>
+					<br><h3 style="color:#89b3e479;">An overview of the European Earth observation programme </h3>
+					<img src="resources/C_CopernicusLogo.png" width=60% height=60% alt="Copernicus logo">
+					<br><p>Stefan LANG, University of Salzburg</p>
+						<p><small>NB: This course is optimised for multi-lingual usage. With the "translate" function of your browser, you should be able to follow this course in your own language.</small></p>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				<!-- AUTHORS: DEFINE METADATA FOR THE FOLLOWING FIRST SLIDE OF THE SLIDESET (copy and modify this section for each single slide!) -->
+				<meta name="DCTERMS.slide_title" content="Copernicus Intro">
+				<meta name="DCTERMS.slide_subject" content="Copernicus">
+				<meta name="DCTERMS.slide_description" content="2nd Slide - Introduction">
+				<meta name="DCTERMS.slide_uri" content="//localhost/EO4GEO/4_3_TrainingMaterial/eo4geo_reveal_template_SL/eo4geo_reveal_template_SL.htmltemplate.html#/2">
+				
+					
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="space assets">
+					<section ><h2>Copernicus</h2>
+						<p>Owing to the legacy of Nikolaus Kopernikus, Copernicus is the name of the European Earth observation programme. Next to Galileo, <a href="https://www.copernicus.eu">Copernicus</a> is the flagship of the <em>European Space Policy</em>. It comprises <b>Space infrastructure</b>, 
+							 an <b>integrated ground segment</b> and a dedicated portfolio for so-called <b>information services</b>. Copernicus is a key 
+							 strategic element in the emerging <b>Earth observation / Geospatial (EO*GI)</b> sector.
+							
+						</p>
+						<img src="resources/C_KopernikusStatue.JPG" width=20% height=20% alt="Kopernikus statue">
+						<p><citation>Nikolaus Kopernikus (1473 – 1543) was a Renaissance mathematician and astronomer, who formulated 
+							a model of the universe that placed the Sun rather than Earth at its center [Wikipedia] (Photo: S Lang)</citation>
+					<aside class="notes">
+						You can find your presenter notes here (hit »s« on your keyboard).
+					</aside>				
+					</section>
+
+					<section > 
+						<h2>Space Research and Engineering</h2>
+						<img width="800" height="500" data-src="resources/C_SpaceResearch.png" alt="Space assets">
+						
+						<small>There are many space-related research domains comprising the <b>upstream</b> and <b>downstream sector</b>.</p>
+						</small>
+					</section>
+
+					<section > 
+						<h2>Space Assets</h2> 
+						<p>The peaceful use of Outer Space is a one of the great achievements of humankind. Today, there is an increasing
+							number of pivate commercial activites in Space. There are three main <b>space assets</b>:</p>
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#89b3e479;"><p>Satellite Navigation (<b>SatNav</b>)</p></li>
+							<li style="color:#89b3e479;"><p>Satellite Communication (<b>SatCom</b>)</p></li>
+							<li style="color:#337acc;"><p>Satellite (Earth) Observation (<b>SatObs</b>)</p></li>
+						</ul>
+						<img width="600" height="200" data-src="resources/C_SpaceAssets.png" alt="Space assets">
+						<aside class="notes">
+						You can find your presenter notes here (hit »s« on your keyboard).
+						</aside>
+					</section>
+					
+					<section >
+						<h2 style="color:#89b3e479;">[1] Satellite Navigation (SatNav)</h2>
+						<p>The European <b>SatNav</b> programme is called <em>Galileo</em>. SatNav technology comprises <b>positioning</b>, <b>navigation</b> and <b>timing</b> (PNT). More then twenty operating satellites guarantee location-based services 
+							for various <a href="https://www.usegalileo.eu/">applications</a>. Together with <b>EGNOS</b>, the European differential global positioning system, Galileo belongs to the world spanning 
+						global navigation satellite systems (<b>GNSS</b>).</p>
+						<br><img width="600" height="200" data-src="resources/C_UseGalileo.JPG" alt="Use Galileo">
+						<small>Galileo-enabled smartphones can be used in many different applications.</small>
+					</section>
+					
+					<section >
+						<h2 style="color:#89b3e479;">[2] Satellite Communication (SatCom)</h2>
+						<p>SatCom allows <b>telecommunication</b> all around the globe. Communication satellites receive signals from Earth and retransmit them by a <b>transponder</b>.</p>
+						<br><img width="600" height="300" data-src="resources/C_SatComIntelsat.jpg" alt="IntelSat"></a>
+						<small>The satellite as a self-contained communications system, the example of <a href="https://www.intelsatgeneral.com/satellite-basics/">IntelSat</a>.</small>
+						
+					</section>
+					
+					<section >
+						<h2 style="color:#337acc;">[3] Earth Observation (EO)</h2>
+						<p>Earth observation is the systematic usage of <b>satellite remote sensing</b> technology for continuous or on-demand 
+							<b>imaging</b> and <b>measuring</b> of the Earth surface. EO satellites operate since more than 40 years in sun-synchronous or geo-stationary mode (e.g. 
+							weather satellites).</p> 
+
+						<br><a href="#/EO"><img width="500" height="250" data-src="resources/C_ISS_AstroAlex.jpg" alt="ISS view"></a>
+						<small>A view from the Cupola, the observation deck of the ISS. Photograph by astronaut <a href="https://twitter.com/astro_alex">A. Geerst</a>.</small>
+						
+						<!--a href="#/space assets"><small>[top]</small> </a>-->
+					</section>
+				</section>
+				
+				<section>
+					<section ><h2 style="color:#cc9c33;"> Benefits of Copernicus</h2>
+						<p>This little allegory illustrates the benefits of Copernicus. New EO data, depicted by the database symbol on 
+						the opposite side of the seesaw, make <b>Mr*s Copernicus</b> better positioned for doing observations. 
+						The moral is, Copernicus <em>leverages</em> a better overview and understanding of our Earth's phenomena and challenges.</p>
+						<img width="600" height="300" data-src="resources/C_EOLever.png"  alt="Copernicus allegory">
+						<br>
+						<citation>(S Lang & A Traun, 2015) </citation>
+					</section>
+
+					<section ><h2 style="color:#cc9c33;"> Benefits of Copernicus</h2>
+						<p>Copernicus is a <b>multi-purpose</b> tool, serving all kinds of geospatial information needs in various application 
+							domains and <b>benefit areas</b>. </p>
+						<img width="450" height="400" data-src="resources/C_Benefit.png"  alt="Copernicus for citizen">
+						<br>
+						<small>The examples shown illustrate the potential scope: agriculture, forestry & fishery | 
+							biodiversity & environmental protection | climate & energy | civil protection & humanitarian aid | public health | 
+						tourism | transport & safety | urban & regional planning ...</small>
+						
+					</section>
+				</section>
+				
+				
+				<section>
+					<section>
+						<h2>The Copernicus Idea</h2>
+						<p>Copernicus comprises three major technical components. What is specific to this space programme is a comprehensive
+							space data <b>exploitation strategy</b>, including the establishment of main (previously: core) information services and downstream services.
+						</p>
+						<ul>
+							<li style="color:#337acc;"><p>Space component</p></li>
+							<li style="color:#33b5cc;"><p>Ground segment</p></li>
+							<li style="color:#ad33cc;"><p>Information services</p></li>
+						</ul>
+						<br><img width="500" height="250" data-src="resources/C_SpaceComponent.png" alt="Space component">
+
+					</section>
+
+					<section >
+						<h2 style="color:#337acc;">Space Component</h2>
+						<p>The Space component refers to the infrastructure of satellite missions in orbit. The so-called <b>Sentinel satellites</b> 
+							are the backbone of the Copernicus EO space component.</p>
+						
+						<img width="600" height="400" data-src="resources/C_SentinelMissions.jpg" alt="Sentinel missions">
+						<br><small>Sentinel deployment plan</small>
+					</section>
+					
+					<section >
+						<h2 style="color:#337acc;">Space Component <i>(cont.)</i></h2>
+						<p>The <b>Sentinel satellites</b> are designed to fulfill specific information needs.</p>
+						<img width="800" height="150" data-src="resources/C_Sentinel1-6.jpg" alt="Sentinel 1-6">
+						<small>
+							<table>
+								<tr><td>Sentinel-1</td><td>Sentinel-2</td><td>Sentinel-3</td><td>Sentinel-4</td><td>Sentinel-5(P)</td><td>Sentinel-6</td></tr>
+								<tr><td>All weather, day and night observations to support services for sea ice monitoring, marine environment surveillance, 
+									ship detection, land surface motion risks, mapping of forest, water and soils, humanitarian aid and crisis management</td>
+									<td>Agriculture/vegetation monitoring, soil and water cover, forest management, border and maritime surveillance, emergency management: floods, fires</td>
+									<td>Ocean forecast, climate change and operational oceanography : sea surface height, ocean color, oceanic carbon fluxes, monitoring river or lakes level</td>
+									<td>Continuous monitoring of atmospheric composition focused on air quality over Europe, with main products Ozone (O3), Nitrogen Dioxide (NO2), Sulphur Dioxide 
+										(SO2), Formaldehyde (HCHO) and aerosol properties</td>
+									<td>Daily global monitoring for climate , air quality and ozone/surface UV applications, with key parameters O3, NO2, SO2, HCHO, CHOCHO, Aerosols, CH4 and stratospheric ozone</td>
+									<td>Ocean forecast, climate change and real time ocean topography : wave height, ocean surface, wind speed</td></tr>
+							</table>
+						<br>Source: European Commission</small>
+					</section>
+
+					<section >
+						<h2 style="color:#33b5cc;">Integrated Ground Segment</h2>
+						<p>The Copernicus ground segment includes the network of <b>ground receiving stations</b> and the <b>satellite data storage 
+							systems</b>. In addition, it comprises the in-situ observation network, the contributing missions, as well as access
+							to the Copernicus services. It is therefore called <b>integrated ground segment</b>.
+						</p>
+						<img width="600" height="150" data-src="resources/C_IntGroundSegment.png" alt="Copernicus IGS">
+						<br><small>Copernicus integrated ground segment (IGS)</small>
+
+					</section>
+
+					<section >
+						<h2 style="color:#33b5cc;">Data and Information Access Service (DIAS)</h2>
+						<p>To facilitate and standardize access to data, <b>cloud-based platforms</b> provide access to Copernicus data and information products, 
+							as  well as to processing tools. The five so-called <a href="https://www.copernicus.eu/en/access-data/dias">DIAS</a> platforms allow users to <b>discover, manipulate, process and download </b>data and 
+							products. A competitive funding scheme by the European Commission has stimulated different profiles and prorities among the DIAS.
+						</p>
+						<img width="400" height="250" data-src="resources/C_DIAS.jpg" alt="Copernicus DIAS">
+						<br><small>The (currently) five Copernicus DIAS </small>
+
+					</section>
+					
+
+				</section>
+
+				<section >
+					<section >
+						<h2>Beyond Space Assets and Data</h2>
+						<p>The main driver of Copernicus is to support <em>global policies and conventions</em> and <em>EU regulations and directives</em> 
+							with a <b>defined portfolio</b> of geospatial information services serving specific <b>benefit areas</b></p>
+						<br><img width="600" height="300" data-src="resources/C_CopernicusServices.png" alt="Copernicus services">
+						
+					</section>
+				
+					<section>
+						<h2  style="color:#cc9c33;">Copernicus Services</h2>
+						<p>There are six <b>Copernicus services</b> addressing major thematic areas. Earlier, these priority areas were 
+							called <b>core services</b> highlighting their general significance. </p>
+						<table>
+							<tr>
+							<ul>
+								<li><p style="color:#33cc78;">Land monitoring</p></li>
+								<li><p style="color:#3363cc;">Ocean monitoring</p></li>
+								<li><p style="color:#33c7cc;">Atmosphere monitoring</p></li>
+							</ul>	
+							</tr>
+							<tr><ul>
+								<li><p style="color:#dd0b0bc4;">Climate change</p></li>
+								<li><p style="color:#cc9c33;">Emergency management</p></li>
+								<li><p style="color:#5a5c5b;">Human security</p></li>
+							</ul></tr>
+	
+						</table>
+						<img width="800" height="150" data-src="resources/C_6services.png" alt="Copernicus Services">
+					</section>
+					<section>
+						<img width="150" height="60" data-src="resources/CLMS_logo.png" alt="CLMS logo">
+						<h2 style="color:#33cc80;">Land Monitoring (CLMS)</h2>
+						<p>The Copernicus Land Monitoring <a href="https://land.copernicus.eu">Service</a> aims at monitoring the land surface. 
+							There are four service components, the global, the pan-European, and the local component as well as reference data.</p>
+						<img width="800" height="300" data-src="resources/C_LandM.jpg" alt="CLMS">
+						<small>The Copernicus land monitoring service portfolio. Source: European Commission</small>
+						
+					</section>
+					<section>
+						<img width="100" height="100" data-src="resources/CMEMS_logo.png" alt="CMEMS logo">
+						<h2 style="color:#334acc;">Ocean Monitoring (CMEMS)</h2>
+						<p>The Copernicus Marine Environment Monitoring <a href="http://marine.copernicus.eu/services-portfolio/access-to-products">Service</a> 
+							observes the global ocean.</p>
+						<img width="800" height="300" data-src="resources/C_MarineM.jpg" alt="CMEMS">
+						<small>The Copernicus marine environment monitoring service portfolio. Source: European Commission</small>
+					</section>
+					<section>
+						<img width="250" height="60" data-src="resources/CAMS_logo.png" alt="CAMS logo">
+						<h2 style="color:#33adcc8c;">Atmosphere Monitoring (CAMS)</h2>
+						<p>The Copernicus Marine Environment Monitoring <a href="https://atmosphere.copernicus.eu/">Service</a> focuses on the conditions 
+						of our atmosphere.</p>
+						<img width="800" height="300" data-src="resources/C_AtmM.jpg" alt="CAMS">
+						<small>The Copernicus atmosphere monitoring service portfolio. Source: European Commission</small>
+					</section>
+					<section>
+						<h2 style="color:#cc4533d3;">Climate Change Service (C3)</h2>
+						<p>The Copernicus Climate Change <a href="https://climate.copernicus.eu">Service</a> focuses on climate change and 
+							related measures. The focus is on essential climate variables (<b>ECV</b>), <b>mitigation and adaptation strategies</b>, and <b>forecasts</b></p>
+							<img width="800" height="300" data-src="resources/C_ClmCh.jpg" alt="C3">
+							<small>The Copernicus climate change monitoring service portfolio. Source: European Commission</small>
+					</section>
+					<section>
+						<h2 style="color:#caae60b9;">Emergency Management (CEMS)</h2>
+						<p>The Copernicus Emergency Management <a href="https://emergency.copernicus.eu">Service</a> focuses on
+							emergency response. It has two components, <b>rapid mapping</b> and <b>risk & recovery</b></p>
+							<img width="800" height="300" data-src="resources/C_EmergMgmt.jpg" alt="EMS">
+							<small>The Copernicus emergency management service portfolio. Source: European Commission</small>
+					</section>
+					<section>
+						<h2 style="color:#33adcc49;">Human Security</h2>
+						<p>The Copernicus Security <a href="https://www.copernicus.eu/en/copernicus-services/security">Service</a> focuses on human 
+							security. It consists of three components: <b>border surveillance</b>, <b>maritime surveillance</b>, <b>support to EU external action</b>.</p>
+							<img width="800" height="300" data-src="resources/C_HumSec.jpg" alt="Security">
+							<small>The Copernicus security service portfolio. Source: European Commission</small>						
+					</section>
+
+					<section>
+						<h2>Validation</h2>
+						<p>The geospatial information products undergo a rigorous validation process. It includes, broadly speaking, technical validation and 
+							user validation. <em>Technical validation</em> comprises aspects of quality assurance (QA) of the actual information product, such as as (1)
+							<b>reliability</b> of the information content; (2) <b>usability</b> (incl. readability); (3) <b>consistency</b> in representation; 
+							(4) <b>efficiency</b> (incl. delivery time, update). <em>User validation</em> refers to the appraisal of the products by clients and the uptake 
+							in established <b>business processes</b>. 
+						</p>
+						<img width="700" height="300" data-src="resources/C_Valid.png" alt="Validation">
+						<br><small>Validation components</small>						
+					</section>
+				</section>
+
+				<section >
+					<section >
+						<h2>The Copernicus Ecosystem</h2>
+						<p>The Copernicus programme engages different <b>actor groups</b>.</p>
+						<ul>
+							<li style="color:#bbb7a8;"><p>Data Providers</p></li>
+							<li style="color:#c5b2ca8f;"><p>Service providers</p></li>
+							<li style="color:#cc5733;"><p>Users and stakeholders</p></li>
+						</ul>
+						<br><img width="800" height="200" data-src="resources/C_UserUptake.png" alt="User uptake">
+						<small>The Copernicus user uptake sub-ecosystem </small>
+					</section>
+					
+					<section>
+						<h2 style="color:#bbb7a8;">Data Providers</h2>
+						<p>Next to the Sentinel satellites there is a series of contributing missions, including commercial providers of very high (spatial) resolution (VHR)  data.</p>
+						<br><img width="800" height="300" data-src="resources/C_ContribMission.png" alt="Contributing mission">
+						<small> Copernicus contributing mission, e.g. commercial satellite data provider; here: Worldview-2 by Maxar (formerly DigitalGlobe) </small>
+					</section>
+					
+					<section>
+						<h2 style="color:#c5b2ca8f;">Service Providers</h2>
+						<p>The <b>standardised information products</b> are usually provided commercial bidding consortia. Regular <b>procurement procedures </b>guarantee a fair 
+							competition. In addition, private companies develop and offer <b>tailor-made products</b> in the emerging downstream services sector.</p>
+						<img width="800" height="300" data-src="resources/C_Downstream.png" alt="Downstream project">
+						<small> A conceptualisation of a downstream service in the agricultural application domain, using <a href="opendatacube.org">Open Data Cube</a>, Copernicus and EGNOS data.
+						Idea proposed by a Kenyan start-up at the EU Space Week 2020. </small>
+					
+					</section>
+					
+					<section>
+						<h2 style="color:#cc5733;">Users and Stakeholders</h2>
+						<p>Copernicus User Uptake activities address all potential user groups, from <b>public authorities to NGOs</b>, from <b>business
+							partners</b> to ultimately <b>every citizen</b>. Next to excellence, quality, and technical versatility, trust-building and communication 
+							are major cornerstones of the process towards a marketable and competitive product. The matching triangle between the user/client side, the adaptability of the service provider, and the agility of the academic backbone, 
+							has to meet the fine line between <b>understanding existing user needs</b> and <b>demand creation</b>. </p>
+						<img width="600" height="150" data-src="resources/C_ideaslab.png" alt="iDEAS lab">
+						<small> To overcome barriers between the private vs. the public sector, the industry vs. the academic sector, is a long process but key to the success
+							 of Copernicus. </small>
+					</section>
+
+					<section>
+						<img width="160" height="80" data-src="resources/CAcad_logo.png" alt="Academy logo">
+						<h2 style="color:#3375cc;">Copernicus Academy</h2>
+						<p> The Copernicus Academy comprises academic institutions, research organisations, public authorities, and industry and is creating a stimulating and open atmosphere to share ideas and solutions.</p>
+						<img width="650" height="280" data-src="resources/C_Academy.jpg" alt="Copernicus Academy">
+						<small> The foundation of the Copernicus Academy was laid in 2012 by the Salzburg Declaration.</small>
+					</section>
+
+					<section>
+						<h2 style="color:#3375cc;">Distributed Capacities</h2>
+						<p> The Copernicus Academy is a network of more than 160 organisations worldwide, based on the principles of <b>active exchange, open innovation, and 
+							trust</b>. The distributed capacities can be visualised in a dynamic <b>knowledge landscape</b></p>
+						<img width="650" height="350" data-src="resources/C_AcadCapacity.jpg" alt="Copernicus Academy capacities">
+						<small>Engagement of Copernicus Academy members, as investigated in the <a href="www.cophub-ac.eu">CopHub.AC</a> project.</small>
+					</section>
+				</section>
+
+				<section >
+					<section >
+						<h2>Data & Information Access</h2>
+						<p>The Copernicus programme enables access to standardised <b>data and information products</b>. For this purpose, interoperable 
+						(geospatial) web services are key.</p>
+						<img width="800" height="400" data-src="resources/C_DataInfo.jpg" alt="Data & Information">
+						<br><small>Data vs. information </small>
+					</section>
+					
+					<section>
+						<h2 style="color:#bbb7a8;">Interoperable Web Services and Specifications</h2>
+						<p>Web services as defined by the <b> Open Geospatial Consortium</b> <a href="http://www.opengis.net/ogc">(OGC)</a> enable geospatial 
+							information to be sourced from the web, independent of the software environment or browser. Interoperable web services such as 
+							<b>WMS</b>, <b>WCS</b>, etc. are distinguished according to certain usage scenarios and related capabilities (viewing/background, analysis, etc.)</p>
+						<small>
+							<table>
+								<tr><td>Web service</td><td>Key command</td><td>Returns</td><td>Remark</td></tr>
+									<tr><td>Catalogue service for the web (<b>CSW</b>)</td><td>GetRecords or GetRecordById (by identifier, title, geographic extent, 
+										time period and free text, e.g. keywords)</td><td>XML metadata records or summary or count</td><td>INSPIRE discovery service</td></tr>
+								<tr><td>Web map service (<b>WMS</b>)</td><td>GetCapabilities</td><td>coloured images for visualization (JPEG, PNG, etc), at different zoom levels</td>
+									<td>for visualisation purposes or background layer </td></tr>
+								<tr><td>Web map tile service (<b>WMTS</b>)</td><td>GetCapabilities</td><td>same as WMS, but tiled (acting as a file cache)</td>
+									<td>for visualisation purposes (fast access)</td></tr>
+								<tr><td>Web coverage service (<b>WCS</b>)</td><td>GetCapabilities</td><td>multi-dimensional coverages (spatial / temporal raster subsets), in raster format (e.g. GeoTIFF) for analysis
+								</td><td>for analysis purposes</td></tr>
+							</table>
+							<br>OGC web services</small>
+						 <p>Other OGC efforts relate to <b>implementation standards</b> and specifications, e.g. <a href="https://www.ogc.org/standards/eo-geojson"><b>GeoJSON</b></a>
+							for EO dataset metadata encoding or the <b>Ordering Service Framework for EO products</b> <a href="https://www.ogc.org/standards/oseo">(OSEO)</a>.
+						 </p>
+					</section>
+					
+					<section>
+						<h2 style="color:#bbb7a8;">Example #1: SentinelHub (plug-in) for QGIS</h2>
+						<p>The Sentinel Hub provides access to Sentinel-1, Sentinel-2, Landsat and MODIS image archives with a range of pre-defined 
+							band combinations and visualisation techniques. </p>
+						<a href="sentinel-hub.com/develop/api/ogc/standard-parameters/"></a>
+						<img width="800" height="300" data-src="resources/C_SentinelHub.png" alt="QGIS Sentinel Hub">
+						<small> The Sentinel Hub plug-in enables you to directly access Sentinel-2 data in QGIS. </small>
+					
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Example #2: Copernicus Global Land Monitoring (global CLMS component) </h2>
+						<p>Different products are <a href="https://land.copernicus.eu/global/access">accessible</a> including <i>interactive notebooks</i>, <i>web services</i>, <i>virtual machines</i>, <i>manifest files</i>, etc.</p>
+						<img width="800" height="200" data-src="resources/C_CLMS_access.png" alt="CLMS product access">
+						<small>Product access of the CLMS global component</small>
+					
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Example #2: [cont.]</h2>
+						<p><b>Interactive notebooks</b> realised as Jupyter Notebooks in the VITO Terrascope environment, querying Proba-V data stacks using OpenEO functions and libraries.
+						<img width="800" height="400" data-src="resources/C_CLMS_access2.png" alt="CLMS product access">
+						<small>Proba-V MEP refers to the mission exploitation platform of the Proba-V experimental satellite (operated by ESA and VITO). Open EO is an open AI to connect clients to big EO cloud back-ends.</small>
+					
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Example #2: [cont.]</h2>
+						<p><b>Web services</b> are web-based application programming interfaces (API) that allow for a flexible access of web-based sources based on standardised interfaces. 
+						<img width="800" height="300" data-src="resources/C_CLMS_access3.png" alt="CLMS product access">
+						<small>A series of web services are available for harvesting web sources in a GIS environment (ArcGIS, QGIS, etc.)</small>
+					
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Example #3: C3S Climate Data Store </h2>
+						<p>The C3S Climate Data Store <a href="https://cds.climate.copernicus.eu/#!/home">(CDS)</a> provides an API for Python-based 
+						data access</p>
+						<img width="800" height="400" data-src="resources/C_C3S_DataStore.jpg" alt="C3S data store">
+						<br><small>The C3S Climate Data Store interface</small>
+					
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Example #4: CAMS air quality maps</h2>
+						<p>CAMS provides services for continous monitoring the air quality in Europe and globally. 
+							The <a href="https://atmosphere.copernicus.eu/european-air-quality-information-support-covid-19-crisis">service</a> integrates satellite and ground-based observations and advanced numerical models air quality maps </p>
+						<img width="600" height="400" data-src="resources/C_CAMS_Airqual.jpg" alt="CLMS WMS">
+						<br><small>Continuous information products on air quality</small>
+					
+					</section>
+					
+					<!--<section>
+						<h2 style="color:#bbb7a8;">Example: CreoDIAS sample applications </h2>
+						<p>....</p>
+						<img width="800" height="300" data-src="resources/C_CreoDIAS.png" alt="CreoDIAS sample applications">
+						<br><small> ... </small>
+					
+					</section>-->
+
+				</section>
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: 
+				<section> 
+				<h2>Further information</h2>
+				<br>
+				<reference_list><p>... </p>
+				</reference_list>
+				</section>-->
+				
+
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

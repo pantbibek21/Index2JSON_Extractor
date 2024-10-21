@@ -1,0 +1,275 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" ><head>
+		<meta charset="utf-8">		 
+		<title>Management view on Spatial Data Infrastructures</title>
+		<meta property="dc:title" content="Management view on Spatial Data Infrastructures" />
+		<meta property="dc:creator" content="Glenn Vancauwenberghe" />
+		<meta property="dc:publisher" content="SADL, KU Leuven" /> 
+		<meta property="dc:subject" content="Spatial Data Infrastructures" />
+		<meta property="dc:abstract" content="This module gives an overview of the non-technical aspects related to Spatial Data Infrastructures (SDI). In SDI several technical and non-technical components work together. This module focuses on the non-technical components and is targeting decision makers, managers and process owners.
+		The module starts with a general introduction to Spatial Data Infrastructures, followed by several lectures on specific non-technological aspects and components of SDIs. The module looks at the legal framework of SDIs, and the relevance and importance of data policies, and open data policies in particular. It addresses governance and task allocation in the context of SDIs, by explaining the meaning of both concepts and presenting approaches for governing and allocating tasks in the development and implementation of SDIs. The module also looks at SDIs from a process perspective, as processes are key to the development and use of SDIs. The final part of the module deals with the assessment and evaluation of SDIs, i.e. how to measure and manage the performance of SDIs. 
+		The training material consist of several presentations. The module is NOT a self-learning module, but needs class tutoring and interactions." />
+		<meta property="dc:tableOfContents" content="
+		(1) General introduction to Spatial Data Infrastructures; 
+		(2) SDI and data policies; 
+		(3) SDI governance and allocation of tasks; 
+		(4) SDI and processes; 
+		(5) SDI performance and assessment" />
+		<meta property="dc:description" content="Learning outcomes: 
+			Explain the relevant technological issues around development and implementation of Spatial Data Infrastructures (SDI);
+			Identify and discuss the different components of an SDI;
+			Develop a strategy to improve the performance of an SDI initiative; 
+			Use the models of ‘SDI generations’ and ‘SDI components’ to describe the main elements of an existing SDI initiative;			
+			Apply the essential elements of business process management to SDI processes; 
+			Explain the evolution towards open data policies;
+			Design an effective governance structure for a national SDI;
+			Describe political, economic, administrative, and other social forces in agencies, organizations, and citizens that inhibit or promote sharing of geospatial and other data;
+			Identify barriers for data sharing in your own organisation;
+			Explain the link between SDI and other (open) data policies;
+			Discuss the governance structure in place of a particular country;
+			Explain what SDI governance is and why it is important in the development and implementation of SDIs;
+			List and execute the main tasks to be executed in SDI implementation;
+			Apply different models of tasks allocation to real SDIs;
+			Explain the different instruments for SDI governance;
+			Provide examples of existing SDI governance instruments;
+			Identify the benefits of an SDI for your organisation;
+			Explain the importance of work processes in the context of SDI;
+			Prepare a model of an SDI work process; 
+			Compare different frameworks for assessing Spatial Data Infrastructures; 
+			Design an SDI assessment framework and methodology for assessing and evaluating an SDI; 
+			Explain the main objectives of an SDI;
+			Explain the results of an SDI assessment" />
+		<meta property="dc:contributor" content="Santiago Molano" />
+		<meta property="dc:created" content="2020-09-03" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="8 hrs" />
+		<meta property="dc:audience" content="Students" />
+		<meta property="dc:educationLevel" content="EQF 4" />
+		<meta property="dc:source" content="This module was prepared in the context of the project “EO4GEO – Towards an innovative strategy for skills development and capacity building in the space geo-information sector supporting Copernicus User Uptake”. The module contains elements from existing training modules developed under previous projects such as ““Elaboration of standards, norms and procedures in the acquisition and dissemination of geospatial information in Mozambique (MZ-UGPTC-85510-CS-CQS/18)”, “E-GOS - Effective Governance of Open Spatial data” and “LINKVIT - Leveraging Inspire Knowledge into Vocational Innovative Training”." />
+		<meta property="dc:rightsToHolder" content="SADL, KU Leuven" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		
+
+	<meta property="dc:relation" content="eo4geo:OI3" />
+		<link rel="dc:relation" href="eo4geo:OI3b" />
+		<link rel="dc:relation" href="eo4geo:OI4-5b" />
+		<link rel="dc:relation" href="eo4geo:GS1" />
+		<link rel="dc:relation" href="eo4geo:GS2" />
+		<link rel="dc:relation" href="eo4geo:OI3" />
+		<link rel="dc:relation" href="eo4geo:GS3" />
+		<link rel="dc:relation" href="eo4geo:OI4-7" />
+		<link rel="dc:relation" href="eo4geo:OI4-3" />
+
+		
+		
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css"><!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center; font-size:30px " > Management view on SDI
+				</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+			
+			<div class="slides">
+				
+			
+			<section >
+					
+					<h1 style="font-size:60px">Management view on SDI</h1><br>
+					<h2 style="font-size:30px"> The following modules give an overview of the non-technical aspects related to Spatial Data Infrastructures (SDI). This training material aims to guide and improve skilles of SDI owners and managers.</h2><br> 
+					<img width="300" height="100" data-src="./resources/resources/template_WhatCopernicus/KULEUVEN_SADL_CMYK_LOGO.png" alt="KU Leuven" align=center-left>
+					<img width="100" height="100" data-src="./resources/resources/template_WhatCopernicus/logo_versie3.bmp" alt="KU Leuven" align=center-right>
+
+			</section>
+				
+					
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+			<section>
+				
+				<div class="ppt-txt" style="position: absolute; top: 80px; left: -40px; height: 400px; width: 1000px">
+				<h2>WELCOME! </h2> 
+						<p style="font-size:21px; text-align:justify;"><br>The following modules give an overview of the non-technical aspects related to Spatial Data Infrastructures (SDI). This training material aims to guide and improve skills of SDI owners and managers.<br><br>
+						This course material has been developed using tools, concepts and guidelines under the framework of the <a href="http://www.eo4geo.eu/">EO4GEO </a> project. Unless stated otherwise, all rights for figures and additional material are with the author(s).<br><br>
+						You can navigate through the different modules of this course using the horizontal arrows <span style="color: rgb(44, 130, 201);"><strong>(</strong></span><span style="color: rgb(41, 105, 176);"><strong>&larr; &rarr;)</strong>&nbsp;</span> and clicking on each <span style="color: rgb(230, 126, 34);"><b>TITLE</b></span> or on the linking icons on each page.</p>	
+				</div>
+				<div class="all-div" style="position: absolute; top: 450px; left: -40px; height: 100px; width: 1000px">
+					<img  height="70" data-src="./resources/resources/template_WhatCopernicus/KULEUVEN_SADL_CMYK_LOGO.png" alt="KU Leuven" align=center-left>
+						<img  height="70" data-src="./resources/resources/template_WhatCopernicus/logo_versie3.bmp" alt="KU Leuven" align=center-right>
+					<p style="font-size:15px; text-align:center;">Copyright <a href="http://sadl.kuleuven.be/">SADL</a>, KU Leuven<br>
+					August 2020</p>
+				</div>
+			</section>
+			<section id="intro1">
+				<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+					   <h1 style="font-size:60px">Management View on SDI</h1>
+					</div><br><br><br>
+				
+					<table width="500px">
+						<br>
+						<tr></tr>
+						<tr><td><a href="#slide4">1</a></td><td>General introduction to Spatial Data Infrastructures</td><td width="30%">
+							<a href="https://eo4geocourses.github.io/KULeuven_Technical-Introduction-to-SDI/index_01_Lecture_General_Introduction_SDI.html#/">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide10">2</a></td><td>SDI and data policies</td><td width="30%">
+							<a href="index_02_SDI_data policies.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+							</a></td></tr>
+						<tr><td><a href="#slide16">3</a></td><td>SDI governance and allocation of tasks</td><td width="30%">
+							<a href="index_03_SDIgovernance.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+							</a>	</td></tr>
+						<tr><td><a href="#slide29">4</a></td><td>SDI and processes</td><td width="30%">	
+							<a href="index_04_SDI_processes.html"> 
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide29">5</a></td><td>SDI performance and assessment</td>
+						<td width="30%">
+							<a href="index_05_SDI_performance.html">
+								<img height="30px" data-src="./resources/resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a> </td></tr>
+					</table>
+			
+
+			</section>
+			<section id="01.01">									
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="https://eo4geocourses.github.io/KULeuven_Technical-Introduction-to-SDI/index_01_Lecture_General_Introduction_SDI.html#/"><h1 style="font-size:60px">01 | General introduction to Spatial Data Infrastructures</h1></a><br>
+						<h2 style="font-size:30px">Spatial data infrastructures (SDI) are a set of technological and non-technological components meant to facilitate access, exchange and re-use of geospatial data within and between organisations.</h2>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_01_General_Introduction_SDI.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+
+			<section >
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="index_02_SDI_data policies.html"><h1 style="font-size:58px">02 | SDI and data policies</h1></a><br>
+						<h2 style="font-size:30px">Legal frameworks on SDIs, open data, data ecosystems and arrangements for sharing</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_02_SDI_data policies.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>			
+			</section>
+
+			<section>
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="index_03_SDIgovernance.html"><h1 style="font-size:60px">03 | SDI governance and allocation of tasks</h1></a><br>
+						<h2 style="font-size:40px">How SDI perfom in comparison with others SDI's, learning from best practices and options for improvement </h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_03_SDIgovernance.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+			</section>
+			<section>
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="index_04_SDI_processes.html"><h1 style="font-size:60px">04 | SDI and processes </h1></a><br>
+						<h2 style="font-size:30px">Business process management, government and SDI process modelling</h2><br>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_04_SDI_processes.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+					<a href="index_05_SDI_performance.html"><h1 style="font-size:60px">05 | SDI performance and assessment</h1></a><br>
+					<h2 style="font-size:30px">How SDI perfom in comparison with others SDI's, learning from best practices and options for improvement</h2>
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="index_05_SDI_performance.html"><img  class="plain" data-src="./resources/resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+	
+
+				
+			</div>
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: 'c/t',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

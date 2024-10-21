@@ -1,0 +1,281 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>CO2 budgets for municipalities - An introduction</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="CO2 budgets for municipalities - An introduction" />
+		<meta property="dc:creator" content="Anders Östman" /> 
+		<meta property="dc:publisher" content="Novogit AB" /> 
+		<meta property="dc:subject" content="	Explain what a CO2 budget is
+							Describe the basic content of a CO2 budget
+							Describe how CO2 budgets may be used
+							Describe different methods for setting targets
+							Explain some data problems related to impact modelling
+							Describe data sources for monitoring of CO2 emissions and content
+							Describe data sources of related sectors (air quality, traffic, ...)
+							Explain pro's and con's of Copernicus Climate Change Services
+							Explain basic principles of forecasting" />
+		<meta property="dc:abstract" content="A global CO2 budget (carbon budget) is the upper limit of CO2 emissions in order to remain below a specific average global temperature.  The global CO2 budget can be split in space and time, for instance as a national CO2 budget for the period 2020 – 2050. The budget may also include targets and a plan on how to reach the goals. 
+                      The concept of local CO2 budgets are now increasingly being introduced at municipal level, as a tool for planning, initiating and 
+                      monitoring activities having an impact on climate change and CO2 emissions
+                      This course deals with data problems related to the problems of impact modelling, emission monitoring and forecasting"  /> 
+		<meta property="dc:tableOfContents" content="(1) Current status of CO2 emissions;
+							     (2) Impact modelling; 
+							     (3) Monitoring CO2 emissions;"  />
+		<meta property="dc:description" content="Learning outcomes: Explain what a CO2 budget is. Describe the basic content of a CO2 budget. 
+                      Describe how CO2 budgets may be used. Describe different methods for setting targets. 
+                      Explain some data problems related to impact modelling. Describe data sources for monitoring of CO2 emissions and content-
+                      Describe data sources of related sectors (air quality, traffic, ...). Explain pro's and con's of Copernicus Climate Change Services.
+                      Explain basic principles of forecasting" /> 
+		<meta property="dc:contributor" content="Anders Östman" />
+		<meta property="dc:created" content="2021-11-25" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="" />
+		<meta property="dc:audience" content="urban planners, GIS engineers" />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source” content="" />
+		<meta property="dc:rightsHolder" content="Anders Östman" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:IP5-3-1" />
+		<link rel="dc:relation" href="eo4geo:DM4-5" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<! link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    		<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+		<!-- FORMATTING FOR HEADER -->
+			
+					
+		<div class = "eo4geologo" style="width: 11%;height : 11%" ></div>				
+		<div class = "partnerlogo" style="width: 15%;height : 6%" ></div>		
+		<div  class = "presentation_title" style=" text-align: center " >CO2 budgets for municipalities - An introduction</div>	<!--The title of the presentation appears on each slide-->
+		<div class="slides">
+<!-- 	URL to the image hosting web page: ./resources , instead of resources/	--> 				
+			
+		<!-- OVERVIEW OF THE COURSE --> 
+
+			<section>		
+				<div class="ppt-txt" style="position: absolute; top: 80px; left: -40px; height: 400px; width: 1000px">
+					<h2>WELCOME! </h2> 
+					<p style="font-size:21px; text-align:justify;"><br>With the following modules and interactive material you will be able to take part in an introductory journey to discover how to work with <strong><span style="color: rgb(41, 105, 176);">CO2 budgets</span></strong> in municipalities.<br><br>
+					This course material has been developed using tools, concepts and guidelines under the framework of the <a href="http://www.eo4geo.eu/">EO4GEO </a> project. Unless stated otherwise, all rights for figures and additional material are with the author(s).<br><br>
+					You can navigate through the different modules of this course using the horizontal arrows <span style="color: rgb(44, 130, 201);"><strong>(</strong></span><span style="color: rgb(41, 105, 176);"><strong>&larr; &rarr;)</strong>&nbsp;</span> and clicking on each <span style="color: rgb(230, 126, 34);"><b>TITLE</b></span> or on the linking icons on each page.</p>	
+
+					<br><br>
+					Please switch on your audio equipment and play the audios on each slide
+					<br>For the time being, Google Chrome has disabled automatic start of audio clips
+					<br>This means that You have to start each audio clip manually <br><br>
+
+					<audio id="player" controls >
+						<source src="./resources/L0 - Introduction/Welcome.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>				
+			</section>
+
+			<section class="scrollable">
+				<br><h1>What is a CO2 budget?</h1> 
+				<ul>
+					<li> <a href="http://www.globalcarbonproject.org/carbonbudget">Global Carbon Project (2019): </a> A CO2 budget (carbon budget) is the upper limit of CO2 emissions in order to remain below a specific average global temperature </li>
+					<li> <a href="http://dictionary.cambridge.org/dictionary/english/carbon-budget">Cambridge Dictionary: </a>An amount of carbon dioxide that a country, company, or organization has agreed is the largest it will produce in a particular period of time </li>
+					<li>The global CO2 budget can be split in space and time, for instance as a national CO2 budget for the period 2020 – 2050</li>
+					<li>The budget may also include targets and a plan on how to reach the goals</li>
+					<li>The Paris agreement has a two-headed temperature goal. It pledge to keep the average global surface temperature “well below 2 °C” and “pursue efforts” to limit the increase since preindustrial times to 1.5 °C</li>
+				</ul>
+				<br><audio id="player" controls >
+					<source src="./resources/L0 - Introduction/What is CO2 budget.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</section>		
+
+			<section class="scrollable">
+				<br><h1>Implementing CO2 budgets</h1> 
+				<ul>
+					<li>We need data for describing the current status, option analysis and evaluation of the implementation </li>
+					<li>This course has a focus on data (supply, needs, usage, modelling, processing services, …) </li>
+					<li>In recent years, the data supply issues have been addressed by Spatial Data Infrastructures (SDI) at various levels.</li>
+					<li>At European level this is manifested by the INSPIRE directive </li> 
+				</ul>
+				<br> <audio id="player" controls >
+					<source src="./resources/L0 - Introduction/Implementing CO2 budgets.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</section>		
+
+			<section class="scrollable">
+				<br><h1>New European Initiatives</h1> 
+				<ul>
+					<li>The European Green Deal: 
+						<ul><li>Accessible and interoperable data are at the heart of datadriven innovation. This data, combined with digital infrastructure … and artificial intelligence solutions, facilitate evidence-based decisions and expand the capacity to understand and tackle environmental challenges.</li>
+					</ul></li>
+					<li>A European Strategy for data: 
+						<ul><li>A Common European Green Deal data space, to use the major potential of data in support of the Green Deal priority actions on climate change, circular economy, zero pollution, biodiversity, deforestation and compliance assurance.  </li>
+					</ul></li>
+					<li>The data spaces are often described as business ecosystems</li>
+					<li> <a href="https://www.investopedia.com/terms/b/business-ecosystem.asp">Investopedia: </a>A business ecosystem is the network of organizations—including suppliers, distributors, customers, competitors, government agencies, and so on—involved in the delivery of a specific product or service through both competition and cooperation. The idea is that each entity in the ecosystem affects and is affected by the others, creating a constantly evolving relationship in which each entity must be flexible and adaptable in order to survive as in a biological ecosystem. </li>
+				</ul>
+
+					<br><br><img data-src="https://ec.europa.eu/information_society/newsroom/image/document/2021-4/common_data_space_7A1DE7EE-B82D-CED4-81023032AA813AB0_73004.png"><br>						
+					<br><img data-src="https://eur-lex.europa.eu/resource.html?uri=comnat:COM_2019_0640_FIN.ENG.xhtml.COM_2019_0640_FIN_ENG_12002.jpg"><br>						
+					<small>Source: European Union, 2020 </small>
+
+				<br> <audio id="player" controls >
+					<source src="./resources/L0 - Introduction/EU initiatives.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</section>		
+							
+			<section>
+				<br><h2>Learning Objectives</h2>
+				<h3>The goal of this course is that you should be able to create CO2 budgets to be used by municipal administrations</h3>
+				<br> <br>
+				<p>The course consists of three lectures</p> <br>
+				<ul>
+					<li>Current status of CO2 emissions</li>
+					<li>Impact modelling</li>
+					<li>Monitoring CO2 emissions</li>
+					<br>
+				</ul> 	
+				<br><br>
+				<audio id="player" controls >
+					<source src="./resources/L0 - Introduction/Learning Objectives.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</section>
+
+
+			<section id="intro1">
+				<div class="ppt-h2" style="position: absolute; top: 60px; left: 0px; height: 58px;  width: 1028px">
+					<h2 style="font-size:60px">Content of the course</h2>
+				</div><br><br><br>
+				
+				<div class="all-div" style="position: absolute; top: 220px; left: -80px; height: 400px; width: 400px">
+					<table width="500px">
+						<br><tr></tr>
+						<tr><td><a href="#Status-CO2" target="_self">1</a></td><td>Current status of CO2 emissions</td><td width="30%">
+							<a href="Status_CO2_Lecture.html">
+								<img height="30px" data-src="./resources/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>	
+
+						<tr><td><a href="#Impact_Modelling" target="_self">2</a></td><td>Impact Modelling</td><td width="30%">
+							<a href="Impact_Modelling_Lecture.html">
+								<img height="30px" data-src="./resources/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>	
+
+						<tr><td><a href="#Monitoring-CO2" target="_self">3</a></td><td>Monitoring CO2 emissions</td><td width="30%">
+							<a href="Monitoring_CO2_Lecture.html">
+								<img height="30px" data-src="./resources/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>						</table>
+				</div>
+			</section>
+
+
+
+
+
+			<section id="Status-CO2">									
+				<section >
+					<a href="Status_CO2_Lecture.html"><h1 style="font-size:60px">L1 | Current status of CO2 emissions</h1></a><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="Status_CO2_Lecture.html"><img  class="plain" data-src="./resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+
+			<section id="Impact_Modelling">									
+				<section >
+					<a href="Impact_Modelling_Lecture.html"><h1 style="font-size:60px">L2 | Impact Modelling</h1></a><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="Impact_Modelling_Lecture.html"><img  class="plain" data-src="./resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+
+			<section id="Monitoring-CO2">									
+				<section >
+					<a href="Monitoring_CO2_Lecture.html"><h1 style="font-size:60px">L3 | Monitoring CO2 emissions</h1></a><br>
+					<div class="img-icons" style="position: absolute; top: 300px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="Monitoring_CO2_Lecture.html"><img  class="plain" data-src="./resources/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+			</section>
+
+
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

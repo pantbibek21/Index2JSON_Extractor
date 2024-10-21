@@ -1,0 +1,574 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Flood mapping with Synthetic Aperture Radar (SAR)</title>
+	
+		<meta property="dc:title" content="Flood mapping with Synthetic Aperture Radar"/>
+		<meta property="dc:creator" content="Martyna Stelmaszczuk-Górska" />
+		<meta property="dc:publisher" content="University of Jena" />
+		<meta property="dc:subject" content="Synthetic Aperture Radar, Flood, Copernicus, Earth Observation, Sentinel-1, EO4GEO, WP5"/>
+		<meta property="dc:abstract" content="This presentation gives a basic overview on the use of Earth observation data from Synthetic Aperture Radar (SAR) systems for flood mapping. It was prepared using modified EO College resources."/>
+		<meta property="dc:tableOfContents" content="(1) What is a flood?; 
+							     (2) Why use radar remote sensing?; 
+							     (3) Physical properties of water; 
+							     (4) Principles of imaging radar; 
+							     (5) Parameters influencing radar image; 
+							     (6) SAR backscatter from water;
+							     (7) Flood mapping: best practice; 
+							     (8) Flood mapping: hands-on; 
+							     (9) Reference list" />
+		<meta property="dc:description" content="Learning outcomes: Understand the basics of imaging radar; Understand interaction bewteen Synthetic Aperture Radar (SAR) signal and water; Apply flood mapping using SAR data" />
+		<meta property="dc:contributor" content="Clémence Dubois, Carsten Pathe" />
+		<meta property="dc:created" content="2020-11-13" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:audience" content="professionals" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="EO College" />
+		<meta property="dc:rightsHolder" content="EO College" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo: PP2" />
+		<link rel="dc:relation" href="eo4geo: PS1-3-1-1" />
+		<link rel="dc:relation" href="eo4geo: TA13-3-1" />	
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 16%;height: 8%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Flood mapping with Synthetic Aperture Radar (SAR)</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+			<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) >
+				@prefix dc: <http://purl.org/dc/terms/>.
+				@prefix eo4geo: <http://bok.eo4geo.eu/>.
+				<>  	dc:title "Flood mapping with Synthetic Aperture Radar";
+					dc:creator "Martyna Stelmaszczuk-Górska, University of Jena";
+					dc:subject "Synthetic Aperture Radar, Copernicus, EO4GEO, WP5, Flood, Earth Observation";
+					dc:abstract "This presentation gives a basic overview on the use of Earth observation data from Synthetic Aperture Radar (SAR) systems for flood mapping. It was prepared using modified EO College materials available at https://eo-college.org/resources/#results";
+					dc:tableOfContents "(1) What is a flood?; (2) Why use radar remote sensing?; (3) Physical properties of water; (4) Principles of imaging radar; 
+					(5) Parameters influencing radar image; (6) SAR backscatter from water;(7) Flood mapping: best practice; (8) Flood mapping: hands-on; (9) Reference list";
+					dc:description "Learning outcomes: Understand the basics of imaging radar; Understand interaction bewteen Synthetic Aperture Radar (SAR) signal and water; Apply flood mapping using SAR data;";
+					dc:contributor "Clémence Dubois, Carsten Pathe";
+					dc:created "2020-10-30";
+					dc:type "StaticResource";
+					dc:format "html";
+					dc:language "EN"; 
+					dc:SizeOrDuration "90min"
+					dc:audience "students and professionals";
+					dc:educationLevel "EQF 6";
+					dc:source "EO College";
+					dc:rightsHolder "EO College, University of Jena";
+					dc:license "CC BY-SA 4.0";
+					dc:relation eo4geo:PP2;
+					dc:relation eo4geo:PS1-3-1-1;
+					dc:relation eo4geo:TA13-3-1.	
+								-->
+
+
+				<div class="slides">
+				
+			
+				<!-- Introductory slides --> 
+				<section>
+					<h1 style="color:#34495E">Flood mapping with Synthetic Aperture Radar</h1>
+					<br><img width="575" height="325" data-src="./resources/SAR_Flood_Mapping/\FloodSentinel1.jpg" alt="Flood on Sentinel-1">
+					<small>(© contains modified Copernicus Sentinel data (2019), processed by ESA, CC BY-SA 3.0 IGO, 
+					<a href="https://www.esa.int/ESA_Multimedia/Images/2019/03/Floods_imaged_by_Copernicus_Sentinel-1#.X5w0pnb7xYc.link">source</a>)</small>	
+				</section>
+				
+				<section>
+					<h1 style="color:#34495E">Welcome to this course</h1>
+					<h2>This course is a basic course on mapping of floods using radar remote sensing data.</h2>
+					<h4><i>It has been prepared primarily using modified <a href="https://eo-college.org/">EO College</a> resources available under CC BY-SA 4.0 license. 
+					In case of using other materials, appropriate references / copyrights have been provided.</i></h4>
+					You can navigate through vertical slides by pressing the Down / Up keys on your keyboard or the navigation arrows at the bottom-right of each slide.
+					You can get the overview of all slides by pressing ESC key.</h2>
+				</section>
+				<section>
+					<h1 style="color:#34495E">Learning Objectives</h1>
+					<ul>
+						<li><h2>Understand basics of imaging radar</h2></li>
+						<li><h2>Understand interaction between Synthetic Aperture Radar (SAR) signal and water</h2></li> 
+						<li><h2>Apply flood mapping using SAR data</h2></li>
+				</section>
+				<section class="scrollable">
+					<h1 style="color:#34495E">Content of this course</h1>
+						<h3 style="text-align:left; color:#34495E">1. What is a flood?</h3>
+						<h3 style="text-align:left; color:#34495E">2. Why use radar remote sensing?</h3>
+						<h3 style="text-align:left; color:#34495E">3. Physical properties of water</h3>
+						<h3 style="text-align:left; color:#34495E">4. Principles of imaging radar</h3>
+						<h3 style="text-align:left; color:#34495E">5. Parameters influencing SAR image: sensor parameters</h3>
+						<h3 style="text-align:left; color:#34495E">5. Parameters influencing SAR image: object parameters</h3>
+						<h3 style="text-align:left; color:#34495E">6. SAR backscatter from water</h3>
+						<h3 style="text-align:left; color:#34495E">7. Flood mapping: best practice</h3>
+						<h3 style="text-align:left; color:#34495E">8. Flood mapping: hands-on</h3>	
+						<h3 style="text-align:left; color:#34495E">9. References</h3>
+
+				</section>
+
+				<!-- I. SLIDEs--> 
+				<section id="What is a flood?">	
+					<section class="scrollable">
+					<h2>What is a flood?</h2>
+					<ul>
+						<li>Water submerging usually dry land</li>
+						<li>Occurs along rivers, lakes, sea shores or in flat areas saturated with water (e.g. after heavy rain)</li>
+						<li>Causes physical damage and affects water, food and crops supplies and supports spread of water-borne diseases</li>				
+					</ul>
+					<br><img width="400" height="250" data-src="./resources/SAR_Flood_Mapping/FloodSentinel1.jpg" alt="Floods imaged by Copernicus Sentinel-1">
+					<small>Floods caused by Cyclone Idai imaged by Copernicus Sentinel-1 (© contains modified Copernicus Sentinel data (2019), processed by ESA, CC BY-SA 3.0 IGO, 
+					<a href="https://www.esa.int/ESA_Multimedia/Images/2019/03/Floods_imaged_by_Copernicus_Sentinel-1#.X5w0pnb7xYc.link">source</a>).</small>
+					</section>
+				</section>
+
+				<!-- II. SLIDEs-->  
+				<section id="Why use radar remote sensing?">
+					<section class="scrollable">
+					<h2>Why use radar remote sensing?</h2>
+					<p>Mapping water with the microwave portion of the electromagnetic spectrum is one of the major application fields of 
+					radar remote sensing.</p>
+						<ul>
+							<li>All weather capability - penetrates clouds</li>
+							<li>Independent of sun illumination - day and nigth operation</li>
+							<li>Sensitivity to dielectric properties - sensitivity to water content</li>
+							<li>Clear distiction between water surfaces and land</li>
+						</ul>
+					<br><img width="420" height="350" data-src="./resources/SAR_Flood_Mapping/FloodMap.jpg" alt="Copernicus Sentinel-1 maps floods from Idai">
+					<br><small>Copernicus Sentinel-1 maps floods from Idai (© contains modified Copernicus Sentinel data (2019), Cosmo-SkyMed, processed 
+					by GAF AG/e-GEOS/CMEMS, <a href="https://www.esa.int/ESA_Multimedia/Images/2019/03/Copernicus_Sentinel-1_maps_floods_from_Idai#.X5wttUC8IJg.link">source</a>).</small>
+					</section>
+				</section>				
+				<!-- III. SLIDEs-->  
+				<section id="Water - Physical properties">
+					<section class="scrollable">
+						<h2>Water - Physical properties</h2>
+					<ul>
+						<li>H<sub>2</sub>O acts as a dipole.</li>
+							<ul>
+								<li>Dipole = pair of two commensurate and opposite electric charges</li>
+							</ul>
+						<li>It can be orientational polarized.</li>
+					<div style="width: 50%; float: left;">					
+						<p>Polar H<sub>2</sub>O molecules are randomly oriented when no electric field is present.</p>
+						<br>
+						<br>
+						<br><img width="300" height="200" data-src="./resources/SAR_Flood_Mapping/Polar1.png" alt="PolarMolecule1">
+					</div>
+					<div style="width: 50%; float: left;">
+						<p>If an external electric field (E<sub>0</sub>) is applied, the H<sub>2</sub>O molecules partially align with the field: they are orientational polarized.</p>
+						<br><img width="300" height="250" data-src="./resources/SAR_Flood_Mapping/Polar2.png" alt="PolarMolecule2">
+					</div>
+					<p><small>Orientational polarization of polar molecules (Serway & Beichner, 2004)</small></p>
+							<li>Orientational polarization depends on:</li>
+							<ul>
+								<li>Temperature</li>
+									<ul>
+										<li>In ice (frozen water) the H<sub>2</sub>O dipole are immobilized and therefore show no orientational polarization</li>
+									</ul>
+								<li>Frequency of the alternating electric field</li>
+								<ul>
+									<li>Above a certain frequency – the relaxation frequency – the dipoles cannot follow 
+									the oscillations of the electric field any longer → Microwave remote sensing of water / soil moisture is possible only below 
+									the relaxation frequency of water (≈10 GHz)! </li>
+								</ul>
+							</ul>
+						</ul>
+					</section>	
+					<section class="scrollable">
+						<h2>Water - Dielectric properties</h2>
+						<ul>
+							<li>If dipoles are orientational polarized they show strong interaction with electric field → high dielectric constant (&#949<sub>r</sub>).</li>
+							<li>Dielectric constant of a material (e.g. soil) is directly related to its water content.</li>
+							<li>Dielectric properties determine scattering and attenuation characteristics of a medium. (attenuation = decrease in the 
+							strength of a signal as an electromagnetic wave travels through a medium)</li>
+							<li>Dielectric constant is a dimensionless parameter. It is low for dry and high for wet mediums / objects.</li> 
+							<li>Examples:</li>
+							<ul>
+								<li>dry soil: &#949<sub>r</sub> ≈ 2-4</li>
+								<li>water: &#949<sub>r</sub> ≈ 73 (at 5 GHz [C-band, e.g. Sentinel-1] and 20°C)</li>									
+							</ul>
+							<br>
+							<li>As an electromagnetic wave travels through a medium (water) its energy is exponentially attenuated.</li>
+							<li>Penetration depth into water surfaces is very small (in the range of a few millimeters).</li>
+							<ul>
+								<li>Penetration depth is defined as a function of the dielectric constant and the wavelength.</li>
+								<ul>
+									<li>The longer the wavelength the greater the penetration depth at a given dielectric constant.</li>
+									<li>The larger dielectric constant the smaller the penetration depth at a given wavelength.</li>
+								</ul>
+							</ul>
+						</ul>
+								<aside class="notes">
+						
+						</aside>			
+					</section>
+					<section class="scrollable">
+						<h2>Water - Summary</h2>
+						<ul>
+							<li>Liquid water as an abundant natural material shows orientational polarization.</li>
+							<li>Water surfaces or very wet soils show high dielectric constant.</li>
+							<li>Impinging wave on calm water is scattered back almost entirely.</li>
+							<p><img width="600" height="400" data-src="./resources/SAR_Flood_Mapping/Water.jpg" alt="Water"></p>
+							<p><small>© pixbay (<a href="https://phys.org/news/2019-02-water-splitting-catalyst.html">source</a>)</small></p>
+						</ul>
+					</section>
+				</section>
+
+				<!-- IV. SLIDEs-->  
+				<section id="Principles of imaging radar">
+					<section class="scrollable">
+						<h2>Principles of imaging radar</h2>
+						<ul>
+							<li>RADAR: RAdio Detection And Ranging</li>
+							<li>Active microwave imaging system - system transmits energy (pulses) and detects reflected responses (echos) from objects</li>
+							<p><img width="600" height="400" data-src="./resources/SAR_Flood_Mapping/ElectromagneticSpectrum.jpg" alt="Electromagnetic Spectrum"></p>
+							<p><small>The electromagnetic spectrum (© EO Collge)</small></p>
+							<p><small>Learn more about the microwaves in this <a href="https://www.youtube.com/watch?v=UZeBzTI5Omk&feature=youtu.be">video</a> (Tour of the EMS 03 - Microwaves, © ScienceAtNASA)</small></p>
+							<li>Energy is tranmitted and recorded by radar antenna: Real Aperture Radar (RAR, airborne), Synthetic Aperture Radar (SAR, satellite) systems.</li>
+				
+					</section>
+					<section>
+					<h2>Side-looking acquisition geometry</h2>
+					<p>To distinguish between objects, Synthetic Aperture Radar (SAR) systems operate in side-looking geometry.</p>
+					<div style="width: 50%; float: left;">
+						<br><img width="420" height="350" data-src="./resources/SAR_Flood_Mapping/RadarGeometry.png" alt="Side-looking geometry">
+						<br><small>Radar Imaging Geometry (© DLR)</small>
+					</div>
+					<div style="width: 50%; float: left;">
+						<br>
+						<p style="text-align:left">Azimuth: along-track direction, parallel to the radar flight path</p>
+						<p style="text-align:left">Range: across-track direction, perpendicular to the radar fligth path</p>
+						<p style="text-align:left">Ground range: range direction projected onto the Earth`s reference plane</p>
+						<p style="text-align:left"> <small>Learn more about the basics of radar imaging geometry in <a href="https://www.geos.ed.ac.uk/~ihw/hype/radar/intro2radar.html">
+						these animations.</a> They were created by Iain H. Woodhouse, <a href="https://forestplanet.wordpress.com/">forestplanet.wordpress.com</a>.</small></p>
+					</div>
+					</section>
+					<section class="scrollable">
+					<h2>Synthetic Aperture Radar (SAR)</h2>
+					<ul>
+						<li>The spatial resolution in azimuth direction is directly related to the ratio of the sensor wavelength (<i>&#955</i>) to the 
+						length of the sensor's antenna (<i>L<sub>real</sub></i>): the larger the antenna, the finer the resolution.</li>
+						<li>For a wavelength of about 5 cm (e.g. Sentinel-1), a radar antenna of approximately 3.5 km would be needed in order to get spatial resolution of 10 m.</li>
+						<li>To enable the development of high-resolution radar systems in space, the concept of synthetic aperture radar was developed.</li>
+						<li>Synthetic aperture is simulated through multiple subsequent positions of the real antenna along the fligth path.</li>
+						<p><img width="550" height="350" data-src="./resources/SAR_Flood_Mapping/SAR.png" alt="SAR"></p>
+						<p><small>Concept of the Synthetic Aperture Radar; <i>L<sub>synth</sub></i> represents a length of the synthetic radar antenna, <i>L<sub>real</sub></i> is a 
+						length of the real radar antenna, <i>V</i> is sensor velocity, <i>&#916a<sub>real</sub></i> represents real resolution, <i>&#916a<sub>synth</sub></i> is synthetic resolution, <i>R</i> represents distance between the sensor and target, 
+						<i>&#955</i> is a sensor wavelength (modified after DLR)</small></p>
+					</ul>
+					<p>Learn more about the Spaceborne Synthetic Aperture Radar in <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">this paper</a> (Meyer, 2019).</p>
+					</section>
+					<section class="scrollable">
+					<h2>SAR backscatter</h2>
+					<ul>
+						<li>Basic SAR measurements provide the amplitude and phase as a complex image.</li>
+						<ul>
+							<li>Amplitude represents the amount of returning energy.</li>
+							<ul>
+								<li><i>A</i> is the amplitude image and <i>I</i>=<i>A<sup>2</sup></i> the intensity image.</li>
+							</ul>
+							<li>Phase represents time delay information.</li>
+							<ul>
+								<li>The phase of a single image is not exploitable.</li>
+							</ul>
+						<li>To better interpret the SAR backscatter image, it is streched into the decibel values (dB). Low values represent flat water surfaces, high values man-made objects.</li> 
+					<p><img width="600" height="500" data-src="./resources/SAR_Flood_Mapping/Sentinel1.png" alt="Sentinel-1"></p>
+					<p><small>Example of a SAR intensity image, Thorn (Poland), the city of the birth of Nicolaus Copernicus (© contains modified Copernicus Sentinel data (2019), processed by FSU Jena)</small></p>
+						</ul>
+					</ul>
+					</section>
+				</section>
+				<!-- V. SLIDEs-->  
+				<section id="Parameters influencing SAR image - Sensor parameters">
+					<section class="scrollable">
+					<h2>Parameters influencing SAR image</h2>
+					<h2>Sensor parameters</h2>
+					<ul>
+						<li>Wavelength/Frequency (X, C, L, P bands)</li>						
+						<li>Polarization (HH, VV, HV, VH)</li>	
+						<li>Incidence angle</li>
+						<p><img width="600" height="350" data-src="./resources/SAR_Flood_Mapping/Sentinel-1_radar_modes.jpg" alt="SAR Sensor"></p>
+						<p><small>Sentinel-1 (© ESA/ATG medialab)</small></p>
+					</ul>
+					</section>
+					<section class="scrollable">
+					<h2>Wavelength/Frequency</h2>
+					<p><img width="450" height="125" data-src="./resources/SAR_Flood_Mapping/SARWavelength.png" alt="SAR Wavelength"></p>
+					<small>Typical radar frequency bands: marked in red (modified after Ouchi, 2013)</small>
+					<ul>
+						<li>The radar signals interacts with objects as large as or larger than the used wavelength. 
+						Smaller Objects are transparent to the radar signal.</li>
+						<li>The wavelength is linked to the penetration depth of the transmitted signal. 
+						Larger wavelengths can penetrate deeper into medium.</li>
+						<li>Water surfaces can be well detected with all typical SAR wavelengths.</li>
+						<li>For the detection of flooded vegetation, L-band wavelength or larger are preferred.</li>
+					</ul>
+					<p><img width="600" height="200" data-src="./resources/SAR_Flood_Mapping/Frequency.png" alt="Frequency"></p>
+					<small>Detection of flooded areas with different frequencies (Podest, 2018; <a href="https://appliedsciences.nasa.gov/sites/default/files/session2-%20AdvSAR_0.pdf">source</a>)</small>
+					</section>
+					<section class="scrollable">
+					<h2>Polarization</h2>
+					<div style="width: 50%; float: left;">
+						<p>Polarization characterizes the orientation of the transmitted and received electric field. 
+						The polarization of a transmitted wave can change through interaction with specific objects on the Earth’s surface.</p>
+						<ul>
+							<li>HH: horizontally transmitted, horizontally received</li>
+							<li>VV: vertically transmitted, vertically received</li>
+							<li>VH: vertically transmitted, horizontally received</li>
+							<li>HV: horizontally transmitted, vertically received</li>
+					</div>
+					<div style="width: 50%; float: left;">
+						<p><img width="410" height="400" data-src="./resources/SAR_Flood_Mapping/Polarization.png" alt="Polarization"></p>
+						<p><small>Examples of radar systems operating in VV and HH polarization (Jensen, 2000)</small></p>
+					</div>
+					<p><img width="500" height="250" data-src="./resources/SAR_Flood_Mapping/Polarization_Lband.png" alt="L band image"></p>
+					<small>Detection of flooded areas with different polarization (Podest, 2018; <a href="https://appliedsciences.nasa.gov/sites/default/files/session2-%20AdvSAR_0.pdf">source</a>)</small>
+					<p>Co-polarized signals (HH, VV) area preferred for flood mapping under canopy cover, 
+					cross-polarized (HV, VH) signals are suitable for mapping open water surfaces.</p>
+					</section>
+					<section class="scrollable">
+					<h2>Incidence angle</h2>
+					<ul>
+						<li>The incidence angle characterizes the angle between the direction of illumination and the normal to the Earth’s surface. 
+						For a flat terrain, steeper incidence angles are usually found in near range and shallow incidence angles in far range.</li>
+						<li>The signal path through a medium (e.g. vegetation canopy) is longer for shallow angles than for steep angles.</li>
+						<li>The amount of returning signal is usually larger for steeper angles than for shallower angles.</li>
+						<p><img width="600" height="240" data-src="./resources/SAR_Flood_Mapping/IncidenceAngle.png" alt="Incidence Angle"></p>
+						<p><small>Effect of incidence angle variation (Podest, 2018; <a href="https://appliedsciences.nasa.gov/sites/default/files/session2-%20AdvSAR_0.pdf">source</a>)</small></p>
+					</section>
+				</section>
+				<!-- VI. SLIDEs-->  
+				<section id="Parameters influencing SAR image - Object parameters">		
+					<section class="scrollable">
+					<h2>Parameters influencing SAR image</h2>
+					<h2>Object parameters</h2>
+					<ul>
+						<li>Water content</li>
+						<li>Surface structure and roughness</li>
+						<li>Local slope and orientation</li>
+						<p><img width="600" height="330" data-src="./resources/SAR_Flood_Mapping/HurricaneHarvey.jpg" alt="Hurrican Harvey"></p>
+						<p><small>Example of flooded land by Hurricane Harvey in Texas in 2017 (© SC NATIONAL GUARD/FLICKR; <a herf="https://www.sciencenews.org/article/climate-change-economic-cost-united-states">source</a>)</small></p>
+						</ul>
+					</section>
+					<section class="scrollable">	
+					<h2>Water content</h2>
+					<ul>
+					<li>The backscattered signal depends on the dielectric properties of illuminated objects.</li>
+					<li>Dielectric properties of soil depends on:</li>
+						<ul>
+							<li>Water content</li>
+							<li>Mineral and organic composition</li>
+							<li>Soil air</li>
+							<li>Salt content</li>
+						</ul>
+					<li>The wetter a soil, the more signal is returned and the brighter it appears in the SAR image (diffuse scattering).</li>
+					<li>If a soil is flooded, another backscattering mechanism happens and it appears dark in the SAR image (specular reflection).</li>
+					</ul>
+						<p><img width="500" height="445" data-src="./resources/SAR_Flood_Mapping/DielectricConstant.png" alt="Dielectric Constant"></p>
+						<p><small>Water content and scattering mechanisms (© Humboldt State Univeristy, <a href="http://gis.humboldt.edu/OLM/Courses/GSP_216_Online/lesson7-2/interpreting-radar.html">source</a>)</small></p>
+					</section>
+					<section class="scrollable">	
+					<h2>Surface structure and roughness</h2>
+					<ul>
+						<li>The backscattered signal depends also on the surface roughness.</li>
+						<li>A surface is rough for a specific wavelength 
+						(cf. Parameter influencing SAR image – Sensor parameters – Wavelength).</li>
+						<li>Different scattering mechanisms can be observed depending on the surface roughness.</li>
+					<p><img width="567" height="264" data-src="./resources/SAR_Flood_Mapping/\SurfaceRoughness.jpg" alt="Surface Roughness"></p>
+					<p><small>Surface roughness and scattering mechanisms (© Humboldt State Univeristy, 
+					<a href="http://gis.humboldt.edu/OLM/Courses/GSP_216_Online/lesson7-2/interpreting-radar.html">source</a>)</small></p>
+						<li>Rough surfaces show diffuse scattering. The amount of backscatter increases with surface’s roughness.</li>
+						<li>Smooth surfaces show specular reflection: the signal is mirrored and nothing comes back to the sensor. 
+						Flooded areas appear dark in the SAR image.</li>
+						<li>Corner reflections happen when the signal undergoes two subsequent specular reflections on perpendicular surfaces. It happens usually in urban areas, or at tree trucks in flooded vegetation areas. 
+						Almost all the incoming signal is scattered back to the sensor. It appears very bright in the SAR image.</li>
+					</ul>
+					<br>
+					<p>Learn more about how surface structure and roughness affect the SAR image in 
+					<a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">this paper</a> (Meyer, 2019).</p>
+					</section>
+					<section class="scrollable">	
+					<h2>Local slope and orientation</h2>
+					<p style="text-align: left;">Due to the side-looking acquisition geometry, the SAR image appears geometrically distorted.</p>
+					<p><img width="450" height="450" data-src="./resources/SAR_Flood_Mapping/GeometricDistortion.png" alt="Geometric Distortion"></p>
+					<p><small>SAR geometric distortions (© ESA, <a href="https://earth.esa.int/handbooks/asar/CNTR1-1-2.html">source</a>)</small></p>
+					<p style="text-align: left;">Three distinct phenomena occurs in the SAR image of relief areas:</p>
+					<ul>
+						<li>Foreshortening areas appear bright in the SAR image. They occur on slope sides facing the sensor, 
+						when the terrain is inclined at a slope smaller than the incidence angle. The hillside appears “compressed” in the SAR image.</li>
+						<li>Layover areas appear very bright in the SAR image. Layover occur on slopes facing the satellite sensor, when the terrain slope is larger than the incidence angle. 
+						The hillside appears “flipped” in the SAR image, as the signal from the top comes back to the sensor before the signal of the base.</li>
+						<li>Shadow areas appear dark in the SAR image. They are situated behind a high feature and characterize areas 
+						that are not reached by the signal.  </li>
+					</ul>
+					</section>
+				</section>
+				<!--VII . SLIDEs-->  
+				<section id="SAR backscatter from water">
+					<section class="scrollable">
+					<h2>SAR backscatter from water</h2>
+					<p> Mapping of water surfaces (waterbodies, wetlands, flooded areas) is based on different backscatter regimes of water 
+						surface and land surface.</p>
+					<ul>
+						<li>Calm water surfaces appear smooth and cause specular reflection leading to low backscatter.</li>
+						<li>Surrounding land surface appears much rougher causing higher backscatter.</li>
+					</ul>
+					<p><img width="649" height="325" data-src="./resources/SAR_Flood_Mapping/BackscatterFromwater.png" alt="Backscatter from water"></p>
+					<p><small>Difference in backscatter mechanisms for open water surfaces and dry land surfaces (after Solbø & Solheim, 2004)</small></p>
+					</section>
+					<section class="scrollable">
+					<h2>SAR backscatter from flooded land</h2>
+						<img width="900" height="200" data-src="./resources/SAR_Flood_Mapping/\FloodedSoil.png" alt="Flooded soils">
+						<p><small>Changes in radar signal scattered back to the sensor from dry, wet and flooded soil (after Bourgeau-Chavez et al., 2009)</small></p>
+					<ul>
+						<li>A to B: First backscatter increases with increasing soil moisture.</li>
+						<li>C: then with increasing water level, backscatter becomes weaker with more and more specular reflection 
+						(scattering away from the sensor).</li>
+					</ul>
+					</section>
+				</section>
+				<!--VIII. SLIDEs-->  
+				<section id="Flood mapping: mbest practice">
+					<section class="scrollable">
+					<h2>Flood mapping: best practice</h2>
+					<ul>
+						<li>One simple and common method for floods mapping is thresholding.</li>
+						<ul>
+							<li>Backscatter below threshold classified as flooded land</li>
+							<li>Backscatter above threshold classified as dry land</li>
+							<li>Thresholds derived from image histograms</li>
+							<li>Results in binary mask (0 = land, 1 = water)</li>				
+					<p><img width="810" height="350" data-src="./resources/SAR_Flood_Mapping/\Threshold.png" alt="Threshold"</p>
+					<p><small>Histogram of two Radarsat  SAR images of the same region acquired under different incidence angles (Solbø & Solheim, 2004)</small></p>
+							<li>Contrast between land and open water surface increases with increasing incidence angle.</li>
+						</ul>
+					</ul>
+					</section>
+				</section>
+				<!--XI. SLIDEs-->  
+				<section id="Flood mapping: example">
+					<section>
+					<h2>Flood mapping: hands-on</h2>
+					<p><small>(Source: <a href="https://eo-college.org/courses/echoes-in-space/">ESA Echoes in Space - Hazard: Flood mapping with Sentinel-1</a>)</small></p>
+					<p>In this tutorial you are going to learn how to generate a flood map from SAR images. You will use SNAP software to process two Sentinel-1 images of Myanmar.</p>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/derOXkPCH80" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<form action="http://step.esa.int/main/download/snap-download/">
+					<input type="submit" value="Download Software"/>
+					</form>
+					<form action="https://eo-college.org/Data/Echoes_in_Space/Subsets/07_Floods.zip">
+					<input type="submit" value="Download Data"/>
+					</form>
+					</section>
+				</section>
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section class="scrollable"> 
+				<h2> Reference list </h2>
+				<div align="left">
+				<br>Bourgeau-Chavez, L.L, Riordan, K., Powell, R.B., Miller, N., Nowels, M. (2009). Improving Wetland Characterization with Multi-Sensor, Multi-Temporal SAR and Optical/Infrared Data Fusion, 
+				Advances in Geoscience and Remote Sensing, Gary Jedlovec (Ed.), InTech; ISBN: 978-953-307-005-6, DOI: 
+				<a href="https://www.intechopen.com/books/advances-in-geoscience-and-remote-sensing/improving-wetland-characterization-with-multi-sensor-multi-temporal-sar-and-optical-infrared-data-fu">10.5772/8327</a> 
+				<br>
+				<br>EO College materials:
+				<ul>
+					<li>Pathe, C. (2015). Hydrosphere. An Introduction; Availabe at: <a href="https://eo-college.org/resource/hydrosphere_introduction/">Link</a></li>
+					<li>Pathe, C. (2015). Hydrosphere Applications – Wetlands, Waterbodies,  Floods,  Precipitation & River Velocity; 
+					Availabe at: <a href="https://eo-college.org/resource/hydrosphere_applications/">Link</a></li>
+					<li>ESA (2017). Echoes in space. Introduction to Radar Remote Sensing; Available at: <a href="https://eo-college.org/courses/echoes-in-space/">Link</a></li>
+				</ul>
+				<br>
+				<br>Jensen, J.R. (2000). Remote Sensing of the Environment: An Earth Resource Perspective. Prentice Hall, Saddle River.
+				<br>
+				<br>Meyer, F. (2019). Spaceborne Synthetic Aperture Radar: Principles, data access, and basic processing techniques. Synthetic Aperture Radar (SAR) Handbook: 
+				Comprehensive Methodologies for Forest Monitoring and Biomass Estimation; Available at: <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">Link</a>
+				<br>
+				<br>Ouchi, K. (2013). Recent Trend and Advance of Synthetic Aperture Radar with Selected Topics, Remote Sensing 2013, 5(2), 716-807; DOI <a href="https://doi.org/10.3390/rs5020716">10.3390/rs5020716</a>
+				<br>
+				<br>Serway, R. A., Beichner, R. J., & Jewett, J. W. (1999). Physics for Scientists and Engineers with Modern Physics (5th edition). Orlando: Saunders College Publishing.
+				<br>
+				<br>Solbø S. & Solheim, I. (2004). Towards operational flood mapping with satellite SAR, ENVISAT/ERS Symposium, Salzburg, Sep. 2004.
+				<br>
+				<br>Podest, E. (2018). SAR for Flood Mapping. NASA's Applied Remote Sensing Training Program; Available at: <a href="https://appliedsciences.nasa.gov/sites/default/files/session2-%20AdvSAR_0.pdf">Link</a>
+				</div>
+				</section>
+				
+				
+				<!--section>Slide show ends</section-->
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

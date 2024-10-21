@@ -1,0 +1,977 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>EO4GEO_GEOF: Preprocessing of EO data - Radiometry</title>
+		<meta property="dc:title" content="Preprocessing of EO Data" />
+		<meta property="dc:creator" content="Andrija Krtalic" />
+		<meta property="dc:publisher" content="University of Zagreb, Faculty of Geodesy" /> 
+		<meta property="dc:subject" content="Copernicus, EO4GEO, WP4, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="This course introduces preprocessing operations, sometimes referred to as image restoration and correction, used to correct radiometric and geometric data distortions specific to sensors used in EO. Radiometric corrections are required due to variations in scene lighting and viewing geometry, atmospheric conditions and noise, and sensor response. Each will vary depending on the particular sensor and platform used for data collection and the conditions during data collection. It may also be desirable to convert and/or calibrate the data into known (absolute) units of radiation or reflection to facilitate data comparison. Geometric corrections are intended to compensate for geometric distortions so that the geometric representation of the imagery will be as close as possible to the real world. Many of these variations are systematic, or predictable in nature and can be accounted for by accurate modeling of the sensor and platform motion and the geometric relationship of the platform with the Earth. Other unsystematic, or random, errors cannot be modeled and corrected in this way. Therefore, geometric registration of the imagery to a known ground coordinate system must be performed." />
+		<meta property="dc:tableOfContents" content="Preprocessing operations; Radiometric corrections; Geometric corrections; Processing methods and procedures" />
+		<meta property="dc:description" content="Learning outcomes: Understand how radiometric and geometric distortions occur; Categorize sources of radiometric and geometric distortions; Define geometric correction methods; Understand goal and principle of georeferencig of EO data; Define and distinguish terms: digital number, radiance and reflectance" />
+		<meta property="dc:contributor" content="Andrija Krtalic, kandrija@geof.hr" />
+		<meta property="dc:created" content="2020-09-20" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="45min" />
+		<meta property="dc:audience"content="students" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsHolder" content="Andrija Krtalic, University of Zagreb Faculty of Geodesy" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:GD" />			
+		<link rel="dc:relation" href="eo4geo:GIST" />
+		<link rel="dc:relation" href="eo4geo:IP" />
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 8%;height : 9%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Preprocessing of EO data - Radiometry</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Preprocessing of EO data - Radiometry</h1>
+					(EO4GEO - Faculty of Geodesy University of Zagreb)
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+				Earth Observation for decision-making
+				Targeted and efficient environmental policies need a strong evidence base that accounts for the geographical distribution of environmental phenomena and economic activity. The existing evidence base of environmental policies has traditionally suffered from data gaps or incoherent time series. Earth observation from satellites, aircrafts and drones, in-situ measurements or ground-based monitoring stations, can provide a unique and timely source of data that is commensurable across countries, regions and cities. It can help harmonise international reporting on natural resources, ecosystems and environmental sinks. It can be combined with other geo-referenced socio-demographic, economic and public administration data to make indicators and analysis more relevant and targeted. Earth observation is not new, but it is only recently that investments in satellite capabilities, open and free access to data and tools, and advances in algorithms and data processing have started to enable the widespread use of this information at scale, and beyond the specialised scientific community. These developments offer opportunities for improving the range and robustness of environmental data and indicators.
+				https://www.earthobservations.org/geoss.php
+				</aside>
+				</section>
+				
+
+				<section id="intro"> 
+
+					<section > 
+					<h1>What is Preprocessing?</h1> 
+					<ul>
+					<li>In the context of digital analysis of remotely sensed data, <em>preprocessing </em>refers to those operations that are preliminary to the primary analysis (processing).</li>
+					<li>Typical preprocessing operations could include:</li>
+					<li>(1) radiometric preprocessing to adjust digital values for effects of a hazy atmosphere and/or</li>
+					<li>(2) geometric preprocessing to bring an image into registration with a map or another image.</li>
+					<li>Once corrections have been made, the data can then be subjected to the primary analyses.</li>
+					<li>Preprocessing forms a preparatory phase that improves image quality.</li>
+					</ul>
+					</section>
+				
+					<section > 
+					<br>
+					<h2>Preprocessing facts</h2> 
+					<ul>
+					<li><strong>It should be emphasized that</strong><strong>:</strong> there can be no definitive list of &ldquo;standard&rdquo; preprocessing steps.</li>
+					<li>The quality of image data varies greatly, so <strong>some data may not require </strong><strong>the </strong><strong>some</strong> <strong>type</strong> <strong>of</strong> <strong>preprocessing </strong>that would be necessary in other instances.</li>
+					<li>Also, <strong>preprocessing alters image da</strong><strong>t</strong><strong>a</strong><strong>!!!</strong></li>
+					<li>Although we may assume that such changes are beneficial, <strong>the analyst should remember that preprocessing may create artifacts</strong> that are not immediately obvious.</li>
+					<li>The analyst should tailor preprocessing to the data at hand and the needs of specific projects
+					<ul>
+					<li>Using only those preprocessing operations essential to obtain a specific result.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Preprocessing Operations</h2> 
+					<ul>
+					<li>Preprocessing operations, sometimes referred to as <strong>image restoration</strong> and <strong>rectification</strong>, are intended to correct for sensor- and platform-specific radiometric and geometric distortions of data.</li>
+					<li>Radiometric corrections may be necessary due to variations in scene illumination and viewing geometry, atmospheric conditions, and sensor noise and response.</li>
+					<li>Each of these will vary depending on the specific sensor and platform used to acquire the data and the conditions during data acquisition.</li>
+					<li>Also, it may be desirable to convert and/or calibrate the data to known (absolute) radiation or reflectance units to facilitate comparison between data.</li>
+					</ul>					
+					</section>
+					
+					
+				</section>
+
+			
+				<section id="Erorrs"> 
+				
+					<section>
+					<br>
+					<h2>Geometric and Radiometric errors</h2> 
+					<ul>
+					<li>When image data is recorded by sensors on satellites and aircraft <strong>it can contain</strong> <strong>errors in geometry</strong>, <strong>and</strong> in the measured <strong>brightness values </strong>of the pixels.</li>
+					<li>The second are referred to as <strong>radiometric errors </strong>and can result from
+					<ul>
+					<li>the instrumentation used to record the data the wavelength dependence of solar radiation and</li>
+					<li>the effect of the atmosphere.</li>
+					</ul>
+					</li>
+					<li>Geometric errors can also arise in several ways.
+					<ul>
+					<li>the relative motions of the platform.</li>
+					<li>non-idealities in the sensors themselves,</li>
+					<li>the curvature of the earth and uncontrolled variations in the position,</li>
+					<li>velocity and attitude of the remote sensing platform can all lead to geometric errors of varying degrees of severity.</li>
+					</ul>
+					</li>
+					</ul>				
+					</section>
+
+					<section>
+					<br>
+					<h2>Geometric and Radiometric errors (2)</h2> 
+					<ul>
+					<li>It is usually important to correct errors in image brightness and geometry.</li>
+					<li>That is certainly the case if the image is to be as representative as possible of the scene being recorded.</li>
+					<li>It is also important if the image is to be interpreted manually.</li>
+					<li>If an image is to be analysed automaticali (by machine), using the specific algorithms, it is not always necessary to correct the data beforehand;
+					<ul>
+					<li>that depends on the analytical technique being used.</li>
+					</ul>
+					</li>
+					<li>Some institutions (experts) of thought recommend against correction when analysis is based on pattern recognition methods.</li>
+					</ul>				
+					</section>				
+
+					<section>
+					<br>
+					<h2>Instrumentation Radiometric Errors</h2> 
+					<ul>
+					<li>Mechanisms that affect the measured brightness values of the pixels in an image can lead to <strong>two broad types of radiometric distortion</strong>.</li>
+					<li><strong>First</strong>, the distribution of brightness over an image in a given band can be different from that in the ground scene.</li>
+					<li><strong>Secondly</strong>, the relative brightness of a single pixel from band to band can be distorted compared with the spectral reflectance character of the corresponding region on the ground.</li>
+					<li>Both types can result from the presence of the atmosphere as a transmission medium through which radiation must travel from its source to the sensors, and can also be the result of instrumentation effects.</li>
+					</ul>				
+					</section>						
+				
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (1)</h2> 
+					<ul>
+					<li>An ideal detected radiation should be linear.</li>
+					<li>Real detectors will have some degree of non-linearity.</li>
+					<li>There will also be a small signal out, even when there is no radiation in.</li>
+					<li>Historically that is known as <strong>dark current </strong>and is the result of residual electronic noise present in the detector at any temperature other than absolute zero.</li>
+					<li>In remote sensing it is usually called a <strong>detector offset</strong>.</li>
+					<li>The slope of the detector curve is called its <strong>gain</strong>, or sometimes <strong>transfer </strong><strong>gain</strong>.</li>
+					</ul>			
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (2)</h2> 
+					<ul>
+					<li>An ideal radiation detector has a transfer characteristic such as that shown in Figure a.</li>
+					</ul>	
+					<br><img width="500" height="240" img src="./resources/Preprocessing-of-EO-data/Slide-09_el_signal_in-out.jpg" alt="sat1">
+					<p>a) Linear radiation detector transfer characteristic, and</p>
+					<p>b) hypothetical mismatches in detector characteristics</p>
+					<p><span style="color: #ff0000;"><strong>How dark current can be recorded?</strong></span></p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (3)</h2> 
+					<br><img width="520" height="450" img src="./resources/Preprocessing-of-EO-data/Slide-10_Atmosferic_scatering.jpg" alt="sat1">
+					<p>Atmospheric and particulate scattering.</p>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (4)</h2> 
+					<ul>
+					<li>Most imaging devices used in remote sensing are constructed from sets of detectors.</li>
+					<li>In the case of the Landsat ETM+ there are 16 per band.</li>
+					<li>Each will have slightly different transfer characteristics, such as those depicted in previous Figure b.</li>
+					<li>Those imbalances will lead to striping in the across swath direction.</li>
+					<li>For push broom scanners there are as many as 12,000 detectors across the swath in the panchromatic mode of operation.</li>
+					<li>For monolithic sensor arrays that is rarely a problem, compared with the line striping that can occur with mechanical across track scanners that employ discrete detectors.</li>
+					</ul>		
+					</section>					
+				
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (5)</h2> 
+					<br><img width="450" height="360" img src="./resources/Preprocessing-of-EO-data/Slide-12_Landsat 7 detector.jpg" alt="sat1">
+					<p>Landsat-7 detector projection at the prime focal plane.</p>
+					<p>Bands: 1) 0.45 - 0.52 VNIR; 2) 0.52 - 0.60 VNIR; 3) 0.63 - 0.69 VNIR; 4) 0.76 - 0.90 VNIR; 5) 1.55 - 1.75 SWIR; 7) 2.08 - 2.35 SWIR; 6) 10.4 - 12.5 TIR</p>
+					</section>					
+				
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (6)</h2> 
+					<br><img width="450" height="360" img src="./resources/Preprocessing-of-EO-data/Slide-13_striping_error.jpg" alt="sat1">
+					<p>Original Landsat MSS image with striping noise.</p>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Sources of Radiometric Distortion (7)</h2> 
+					<ul>
+					<li>Another common instrumentation error is the loss of a complete line of data resulting from a momentary sensor or communication link failure, or the loss of signal on individual pixels in a given band owing to instantaneous drop out of a sensor or signal link.</li>
+					<li>Those mechanisms lead to black lines across or along the image, depending on the sensor technology used to acquire the data, or to individual black pixels.</li>
+					</ul>	
+					</section>					
+				
+				</section>	
+				
+				
+				
+				
+
+				<section id="Corrections"> 
+
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors</h2> 
+					<ul>
+					<li>Errors in relative brightness can be rectified to a great extent in the following way.</li>
+					<li>First, it is assumed that the detectors used for data acquisition in each band produce signals statistically similar to each other.</li>
+					<li>If the means and standard deviations are computed for the signals recorded by each of the detectors over the full scene then they should almost be the same.</li>
+					<li>This requires the assumption that statistical detail within a band doesn&rsquo;t change significantly over a distance equivalent to that of one scan covered by the set of the detectors.</li>
+					<li>For most scenes this is usually a reasonable assumption in terms of the means and standard deviations of pixel brightness.</li>
+					</ul>	
+					</section>	
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping (1)</h2> 
+					<ul>
+					<li>Optical/mechanical scanners are subject to a kind of radiometric error known as <em>striping</em>, or <em>dropped scan lines</em>, which appear as a horizontal banding caused by small differences in the sensitivities of detectors within the sensor.</li>
+					<li>Within a given band, such differences appear on images as banding where individual scan lines exhibit unusually brighter or darker brightness values that contrast with the background brightnesses of the &ldquo;normal&rdquo; detectors.</li>
+					<li>Sensor mismatches of this type can be corrected by calculating pixel mean brightness and standard deviation using lines of image data known to come from a single detector.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping (2)</h2> 
+					<ul>
+					<li>Within the Landsat MSS this error is known as <em>sixth-line striping </em>due to the design of the instrument.</li>
+					<li>Because MSS detectors are positioned in arrays of six, an anomalous detector response appears as linear banding at intervals of six lines.</li>
+					<li>In the case of Landsat MSS that will require the data on every sixth line to be used.</li>
+					<li>In a like manner five other measurements of mean brightness and standard deviation are computed for the other five MSS detectors.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping - Example</h2> 
+					<img width="420" height="420" img src="./resources/Preprocessing-of-EO-data/Slide-18_striping_2.jpg" alt="sat1">
+					<p>Line striping in Landsat MSS data.</p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping (3)</h2> 
+					<ul>
+					<li>Correction of radiometric mismatches among the detectors can then be carried out by adopting one sensor as a standard and adjusting the brightnesses of all pixels recorded by each other detector.</li>
+					<li>This operation is called <span style="color: #ff0000;"><strong>destriping</strong></span>.</li>
+					<li><em>Destriping</em> refers to the application of algorithms to adjust incorrect brightness values to values thought to be near the correct values.</li>
+					<li>Some image processing software provides special algorithms to detect striping.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<table style="height: 287px;" width="782">
+					<tbody>
+					<tr>
+					<td style="width: 383.008px;"><img src="./resources/Preprocessing-of-EO-data/Slide-20_correcting_striping_error.jpg" alt="" width="412" height="600" /></td>
+					<td style="width: 383.008px;">
+					<h2><strong>Correcting</strong> <strong>Instrumentation</strong> <strong>Errors</strong><strong>: S</strong><strong>triping</strong><strong> &ndash; </strong><strong>Examples</strong><strong>&nbsp; </strong></h2>
+					<p>Reducing sensor induced striping noise in a Landsat MSS image:</p>
+					<p>a) original image, and</p>
+					<p>b) after destriping by matching sensor statistics.</p>
+					<p>&nbsp;</p>
+					<p><img src="./resources/Preprocessing-of-EO-data/Slide-20_Along-scanner_geometry_3.jpg" alt="" width="288" height="120" /></p>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					<p>&nbsp;</p>
+					</section>
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping (4)</h2> 
+					<ul>
+					<li>A variety of destriping algorithms have been devised.</li>
+					<li>All identify the values generated by the defective detectors by searching for lines that are noticeably brighter or darker than the lines in the remainder of the scene.</li>
+					<li>Then the destriping procedure estimates corrected values for the bad lines.</li>
+					<li>There are many different estimation procedures; most belong to one of two groups.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping (5)</h2> 
+					<ul>
+					<li>One approach - replaceing bad pixels with values based on the average of adjacent pixels not influenced by striping
+					<ul>
+					<li>this approach is based on the notion that the missing value is probably quite similar to the pixels that are nearby.</li>
+					</ul>
+					</li>
+					<li>A second strategy is to replace bad pixels with new values based on the mean and standard deviation of the band in question or on statistics developed for each detector.</li>
+					<li>Second approach - based on the assumption that the overall statistics for the missing data must resemble those from the good detectors.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Striping - Example</h2> 
+					<table style="height: 400px;" width="893">
+					<tbody>
+					<tr>
+					<td style="width: 360px;"><img src="./resources/Preprocessing-of-EO-data/Slide-23_correcting_striping_error_2.jpg" alt="" width="343" height="436" /></td>
+					<td style="width: 370px;">
+					<p>Two strategies for destriping.</p>
+					<ol style="list-style-type: lower-alpha;">
+					<li>Defective line identified with an array of pixels.</li>
+					<li>Local averaging &mdash; pixels in the defective line are replaced with an average of values of neighboring pixels in adjacent lines.</li>
+					<li>Histogram normalization &mdash; data from all lines are accumulated at intervals of six lines (for the Landsat MSS); the histogram for defective detectors displays an average different from the others. A correction shifts the values for the defective lines to match the positions for the other lines within the image.</li>
+					</ol>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+
+					<section>
+					<br>
+					<h2>Correcting Instrumentation Errors: Infilling</h2> 
+					<ul>
+					<li>Correcting lost lines of data or lost pixels can be carried out by averaging over the neighbouring pixels
+					<ul>
+					<li>using the lines on either side for line drop outs or the set of surrounding pixels for pixel drop outs.</li>
+					</ul>
+					</li>
+					<li>This is called <span style="color: #ff0000;"><strong>infilling</strong> </span>or sometimes <span style="color: #ff0000;"><strong>in-painting</strong></span>.</li>
+					</ul>
+					</section>
+
+					<section>
+					<table style="height: 558px;" width="961">
+					<tbody>
+					<tr>
+					<td style="width: 271.758px;"><img src="./resources/Preprocessing-of-EO-data/Slide-25_Infilling.gif" alt="" width="420" height="613" /></td>
+					<td style="width: 273.008px;">
+					<h2><strong>Correcting</strong> <strong>Instrumentation</strong> <strong>Errors</strong><strong>: </strong><strong>Infilling</strong><strong> - </strong><strong>Examples</strong></h2>
+					<p>&nbsp;</p>
+					<p><strong><img src="./resources/Preprocessing-of-EO-data/Slide-25_Destriping_sheme.jpg" alt="" width="431" height="278" /></strong></p>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+				
+				</section>
+	
+					
+				<section id="Radiometric preprocessing"> 
+				
+					<section>
+					<br>
+					<h1>Radiometric Preprocessing (1)</h1> 
+					<ul>
+					<li>Radiometric preprocessing influences the brightness values of an image to correct for sensor malfunctions or to adjust the values to compensate for atmospheric degradation.</li>
+					<li>Any sensor that observes the Earth&rsquo;s surface using visible or near visible radiation will record a mixture of two kinds of brightnesses:
+					<ul>
+					<li>the brightness derived from the Earth&rsquo;s surface &mdash; that is, the brightnesses that are of interest for remote sensing.</li>
+					<li>the sensor also observes the brightness of the atmosphere itself &mdash;the effects of atmospheric scattering.</li>
+					</ul>
+					</li>
+					<li>Thus an observed digital brightness value (e.g., &ldquo;56&rdquo;) might be in part the result of surface reflectance (e.g., &ldquo;45&rdquo;) and in part the result of atmospheric scattering (e.g., &ldquo;11&rdquo;).</li>
+					</ul>
+					</section>
+								
+					<section>
+					<br>
+					<h1>Radiometric Preprocessing (2)</h1> 
+					<ul>
+					<li>Of course we cannot immediately distinguish between the two brightnesses.</li>
+					<li>So, one objective of atmospheric correction is to identify and separate these two components.</li>
+					<li>Ideally, atmospheric correction should find a separate correction for each pixel in the scene.</li>
+					<li>In practice, we may apply the same correction to an entire band or apply a single factor to a local region within the image.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<table style="height: 370px;" width="992">
+					<tbody>
+					<tr>
+					<td style="width: 338.008px;"><img src="./resources/Preprocessing-of-EO-data/Slide-28_Solar_curve.jpg" alt="" width="420" height="573" /></td>
+					<td style="width: 338.008px;">
+					<h2><strong>S</strong><strong>olar</strong> <strong>C</strong><strong>urve</strong><strong> and the </strong><strong>E</strong><strong>ffect</strong><strong> of the </strong><strong>A</strong><strong>tmosphere</strong></h2>
+					<p>Distortion of the surface material reflectance spectrum by the spectral dependence of the solar curve and the effect of the atmosphere:</p>
+					<ol style="list-style-type: lower-alpha;">
+					<li>detection of the solar curve from a perfectly reflecting surface in the absence of an atmosphere,</li>
+					<li>effect of the atmosphere on detecting the solar curve,</li>
+					<li>detection of the real spectrum distorted by the atmosphere and the solar curve.</li>
+					</ol>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>					
+					
+					<section>
+					<br>
+					<h1>Compensating for the Solar Radiation Curve (1)</h1> 
+					<ul>
+					<li>The wavelength dependence of the radiation falling on the Earth&rsquo;s surface can be compensated by assuming that the Sun is an ideal black body.</li>
+					<li>For images recorded by instrumentation with fine spectral resolution
+					<ul>
+					<li>it is important to account for departures from black body behaviour,</li>
+					<li>effectively modelling the real emissivity of the sun, and</li>
+					<li>using that to normalise the recorded image data.</li>
+					</ul>
+					</li>
+					<li>Most radiometric correction procedures compensate for the solar curve using the actual wavelength dependence measured above the atmosphere.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h1>Compensating for the Solar Radiation Curve (2)</h1> 
+					<br><img width="450" height="300" img src="./resources/Preprocessing-of-EO-data/Slide-30_Spectral_irradiance.jpg" alt="sat1">
+					<p>Measured solar spectral irradiance of the sun above the Earth&rsquo;s atmosphere over the wavelength range common in optical remote sensing.</p>
+					</section>
+
+				</section>	
+
+
+<section id="Operations"> 
+				
+					<section>
+					<br>
+					<h2>Preprocessing operations: Radiative Transfer Code (1)</h2> 
+					<ul>
+					<li>Preprocessing operations to correct for atmospheric degradation fall into three rather broad categories.</li>
+					<li>First - procedures known as <span style="color: #ff0000;"><strong>radiative transfer code</strong> (<strong>RTC</strong>)</span> computer models.</li>
+					<li>Application of such models permits <span style="color: #ff0000;">observed brightnesses to be adjusted to approximate true values</span> that might be observed under a clear atmosphere
+					<ul>
+					<li>thereby improving image quality and accuracies of analyses.</li>
+					</ul>
+					</li>
+					<li>RTC models the physical process of scattering at the level of individual particles and molecules,
+					<ul>
+					<li><strong>this approach has</strong> <strong>important advantages with respect to </strong>rigor, accuracy, and applicability to a wide variety of circumstances.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Radiative Transfer Code (2)</h2> 
+					<ul>
+					<li>RTC also have significant disadvantages.</li>
+					<li>Often <strong>they are complex</strong>, usually <span style="color: #ff0000;">requiring detailed in situ data acquired</span> simultaneously with the image and/or satellite data describing the atmospheric column at the time and place of acquisition of an image.</li>
+					<li>Such data may be difficult to obtain in the necessary detail and may apply only to a few points within a scene.</li>
+					<li>Although meteorological satellites collect atmospheric data that can contribute to atmospheric corrections of imagery.</li>
+					</ul>
+					</section>					
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Image-based Atmospheric Correction (1)</h2> 
+					<ul>
+					<li>A second approach based on examination of spectra of objects of known or assumed brightness recorded by multispectral imagery.</li>
+					<li>From basic principles of atmospheric scattering - scattering is related to wavelength, sizes of atmospheric particles, and their abundance.</li>
+					<li>If a known target is observed using a set of multispectral measurements, the relationships between values in the separate bands can help assess atmospheric effects.</li>
+					<li>This approach is often known as &ldquo;<strong>image-based atmospheric correction</strong>&rdquo;.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Image-based Atmospheric Correction (2)</h2> 
+					<ul>
+					<li>Ideally, the target consists of a natural or man-made feature that can be observed with airborne or ground-based instruments at the time of image.</li>
+					<li>However, in practice we seldom have such measurements, and therefore we must look for features of known brightness that commonly, or fortuitously, appear within an image.</li>
+					<li>In its simplest form, this strategy can be implemented by identifying a very dark object or feature within the scene.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Image-based Atmospheric Correction (3)</h2> 
+					<ul>
+					<li>Such an object might be a large water body or possibly shadows cast by clouds or by large topographic features.</li>
+					<li>In the infrared portion of the spectrum, both water bodies and shadows should have brightness at or very near zero.</li>
+					<li>Analysts who examine such areas, or the histograms of the digital values for a scene, can observe that the lowest values are not zero but some larger value.</li>
+					<li>Typically, this value will differ from one band to the next.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Dark Object Subtraction</h2> 
+					<ul>
+					<li>These values, assumed to represent the value contributed by atmospheric scattering for each band, are then subtracted from all digital values for that scene and that band.</li>
+					<li>Thus the lowest value in each band is set to zero,
+					<ul>
+					<li>the dark black color assumed to be the correct tone for a dark object in the absence of atmospheric scattering.</li>
+					</ul>
+					</li>
+					<li>Direct methods for adjusting digital values for atmospheric degradation - known sometimes as the <span style="color: #ff0000;"><strong><em>histogram minimum</em></strong> <strong><em>method </em></strong>(<strong>HMM</strong>)</span> or the <span style="color: #ff0000;"><strong><em>dark object subtraction</em></strong> (<strong>DOS</strong>)</span> technique.</li>
+					<li>The haze will be removed and the dynamic range of image intensity will be improved.</li>
+					<li>Consequently this approach is also frequently referred to as <span style="color: #ff0000;"><strong>haze</strong> <strong>removal</strong></span>.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<table style="height: 414px;" width="900">
+					<tbody>
+					<tr>
+					<td style="width: 450px;"><img src="./resources/Preprocessing-of-EO-data/Slide-37_Atmospheric_effects.jpg" alt="" width="420" height="524" /></td>
+					<td style="width: 450px;">
+					<h2><strong>Preprocessing operations</strong><strong>: D</strong><strong>ark </strong><strong>O</strong><strong>bject</strong> <strong>S</strong><strong>ubtraction</strong><strong> (2)</strong></h2>
+					<p>Histogram minimum method for correction of atmospheric effects. The lowest brightness value in a given band is taken to indicate the added brightness of the atmosphere to that band and is then subtracted from all pixels in that band.</p>
+					<ol style="list-style-type: lower-alpha;">
+					<li>Histogram for an image acquired under clear atmospheric conditions; the darkest pixel is near zero brightness.</li>
+					<li>Histogram for an image acquired under hazy atmospheric conditions; the darkest pixels are relatively bright, due to the added brightness of the atmosphere.</li>
+					</ol>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Preprocessing operations: Dark Object Subtraction (3)</h2> 
+					<ul>
+					<li>This procedure has the advantages of simplicity, directness, and almost universal applicability.</li>
+					<li>Yet it must be considered as an approximation;
+					<ul>
+					<li>atmospheric effects change not only the position of the histogram on the axis but also its shape.</li>
+					</ul>
+					</li>
+					<li>The atmosphere can cause dark pixels to become brighter and bright pixels to become darker.</li>
+					<li>Thus, the DOS technique is capable of correction for additive effects of atmospheric scattering, but not for multiplicative effects.</li>
+					</ul>
+					</section>	
+
+					<section>
+					<table style="height: 405px; width: 651px;">
+					<tbody>
+					<tr>
+					<td style="width: 426.078px;"><img src="./resources/Preprocessing-of-EO-data/Slide-39_Atmospheric_effects.jpg" alt="" width="300" height="535" /></td>
+					<td style="width: 329.922px;">
+					<p><img src="./resources/Preprocessing-of-EO-data/Slide-39_2.jpg" alt="" width="222" height="395" /></p>
+					<p>Inspection of histograms for evidence of atmospheric effects.</p>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>	
+					
+					<section>
+					<br>
+					<h2>Preprocessing operations: Dark Object Subtraction (5)</h2> 
+					<ul>
+					<li>Although DOS is the least accurate of the other methods
+					<ul>
+					<li>its simplicity and the prospect of pairing it with other strategies might form the basis for a practical technique for operational use.</li>
+					</ul>
+					</li>
+					<li>Subtraction of a constant from all pixels in a scene will have a larger proportional impact on the spectra of dark pixels than on brighter pixels</li>
+					<li>Users should apply caution in using it for scenes in which spectral characteristics of dark features.</li>
+					<li>Despite such concerns, the technique, both in its basic form and in the various modifications, has been found to be satisfactory for a variety of remote sensing applications.</li>
+					</ul>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Preprocessing operations: Regression Technique</h2> 
+					<ul>
+					<li>A more sophisticated approach retains the idea of examining brightness of objects within each scene but attempts to exploit knowledge of interrelationships between separate spectral bands.</li>
+					<li>Chavez (1975) devised a procedure that paired values from each band with values from a near infrared spectral channel.</li>
+					<li>Whereas the HMM procedure is applied to entire scenes or to large areas
+					<ul>
+					<li>the regression technique can be applied to local areas, ensuring that the adjustment is tailored to conditions important within specific regions.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>							
+					
+					<section>
+					<br>
+					<h2>Preprocessing operations: Covariance Matrix Method</h2> 
+					<ul>
+					<li>An extension of the regression technique is to examine the <em>variance&ndash;covariance matrix</em>.</li>
+					<li>This is the <span style="color: #ff0000;"><em>covariance matrix method </em>[CMM]</span>.</li>
+					<li>Both procedures assume that within a specified image region, variations in image brightness are due to topographic irregularities and reflectivity is constant.</li>
+					<li>Therefore, variations in brightness are caused by small-scale topographic shadowing, and the dark regions reveal the contributions of scattering to each band.</li>
+					<li>Although these assumptions may not always be strictly met.</li>
+					</ul>
+					</section>						
+
+				</section>				
+				
+				
+				
+				
+				<section id="Tools"> 
+				
+					<section>
+					<br>
+					<h2>Advanced Atmospheric Correction Tools: MODTRAN</h2> 
+					<ul>
+					<li><span style="color: #ff0000;"><strong>MODTRAN</strong> (<strong>MOD</strong>erate resolution atmospheric <strong>TRAN</strong>smission)</span> is a computer model for estimating atmospheric transmission of electromagnetic radiation under specified conditions.</li>
+					<li>MODTRAN estimates atmospheric emission, thermal scattering, and solar scattering, incorporating effects of molecular absorbers and scatterers, aerosols, and clouds for wavelengths from the ultraviolet region to the far infrared.</li>
+					<li>It uses various standard atmospheric models based on common geographic locations and also permits the user to define an atmospheric profile with any specified set of parameters.</li>
+					<li>The model offers several options for specifying prevailing aerosols, based on common aerosol mixtures encountered in terrestrial conditions.</li>
+					<li>Within MODTRAN, the estimate of visibility serves as an estimate of the magnitude of atmospheric aerosols.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Calculating Radiances from DNs (1)</h2> 
+					<ul>
+					<li>Digital data formatted for distribution to the user community present pixel values as digital numbers (DNs),
+					<ul>
+					<li>expressed as integer values to facilitate computation and transmission and to scale brightnesses for convenient display.</li>
+					</ul>
+					</li>
+					<li>Although DNs have practical value.</li>
+					<li>They do not present brightnesses in the physical units necessary to understand the optical processes.</li>
+					<li>When image brightnesses are expressed as DNs, each image becomes an individual entity
+					<ul>
+					<li>without a defined relationship to other images or to features on the ground.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Calculating Radiances from DNs (2)</h2> 
+					<ul>
+					<li>DNs express accurate relative brightnesses within an image but cannot be used to examine brightnesses over time
+					<ul>
+					<li>to compare brightnesses from one instrument to another, to match one scene with another, nor to prepare mosaics of large regions.</li>
+					</ul>
+					</li>
+					<li>DNs cannot serve as input for models of physical processes in (for example) agriculture, forestry, or hydrology.</li>
+					<li>Therefore, conversion to radiances forms an important transformation to prepare remotely sensed imagery for subsequent analyses.</li>
+					</ul>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Calculating Radiances from DNs (3)</h2> 
+					<ul>
+					<li>DNs can be converted to radiances using data derived from the instrument calibration provided by the instrument&rsquo;s manufacturer.</li>
+					<li>Because calibration specifications can drift over time, recurrent calibration of aircraft sensors is a normal component of operation and maintenance.</li>
+					<li>However, satellite sensors, once launched, are unavailable for recalibration in the laboratory
+					<ul>
+					<li>although their performance can be evaluated by directing the sensor to view onboard calibration targets or by imaging a flat, uniform landscape, such as carefully selected desert terrain.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>						
+
+					<section>
+					<br>
+					<h2>Calculating Radiances from DNs (4)</h2> 
+					<ul>
+					<li>For a given sensor, spectral channel, and <strong>DN</strong>, the corresponding <strong>radiance value </strong>(<em>L</em>) can be calculated as:</li>
+					</ul>
+					<p>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; L = [(Lmax &ndash; Lmin)/(Qcalmax &ndash; Qcalmin)] &times; (Qcal &ndash; Qcalmin) + Lmin)</p>
+					<ul>
+					<li>where:</li>
+					<li><em>L</em> is the spectral radiance at the sensor&rsquo;s aperture [<em>W</em>/(m2 sr &mu;m)];</li>
+					<li><em>Q</em>cal is the quantized calibrated pixel value (DN);</li>
+					<li><em>Q</em>calmin is the minimum quantized calibrated pixel value corresponding to <em>L</em>min (DN);</li>
+					<li><em>Q</em>calmax is the maximum quantized calibrated pixel value corresponding to <em>L</em>max (DN);</li>
+					<li><em>L</em>min is the spectral at-sensor radiance that is scaled to <em>Q</em>calmin [<em>W</em>/(m2 sr &mu;m)]; and</li>
+					<li><em>L</em>max is the spectral at-sensor radiance that is scaled to <em>Q</em>calmax [<em>W</em>/(m2 sr &mu;m)].</li>
+					<li>For commercial satellite systems, essential calibration data are typically provided in header information accompanying image data or at websites describing specific systems and their data.</li>
+					</ul>
+					</section>						
+					
+				</section>						
+					
+					
+				<section id="Reflectance"> 
+				
+					<section>
+					<br>
+					<h1>Estimation of Top of Atmosphere Reflectance</h1> 
+					<ul>
+					<li>Accurate measurement of brightness, whether measured as radiances or as DNs, is not optimal because such values are subject to modification by differences in
+					<ul>
+					<li>Sun angle,</li>
+					<li>atmospheric effects,</li>
+					<li>angle of observation, and</li>
+					<li>other effects that introduce brightness errors unrelated to the characteristics we wish to observe.</li>
+					</ul>
+					</li>
+					<li>It is much more useful to observe the <span style="color: #ff0000;"><strong><em>proportion</em></strong> </span>of radiation reflected from varied objects relative to the amount of the same wavelengths incident upon the object.</li>
+					<li>This proportion, known as <span style="color: #ff0000;"><strong><em>reflectance</em></strong></span>, is useful for defining the distinctive spectral characteristics of objects.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (2)</h2> 
+					<ul>
+					<li>Reflectance (<em>R</em>rs) is relative brightness of a surface, as measured for a specific wavelength interval:</li>
+					</ul>
+					<p>Reflectance=Observed brightness/Irradiance</p>
+					<ul>
+					<li></li>
+					<li>As a ratio, reflectance is a dimensionless number (varying between 0 and 1), but it is commonly expressed as a percentage.</li>
+					<li>In the usual practice of remote sensing, <em>R</em>rs is not directly measurable</li>
+					<li>because normally we record only the observed brightness and must estimate the brightness incident upon the object.</li>
+					</ul>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (3)</h2> 
+					<ul>
+					<li>Reflectance (<em>R</em>rs) is relative brightness of a surface, as measured for a specific wavelength interval:</li>
+					</ul>
+					<p>Reflectance=Observed brightness/Irradiance</p>
+					<ul>
+					<li>Radiance is the variable directly measured by remote sensing instruments.</li>
+					<li>Radiance is the amount of light the instrument detects from the object being observed.</li>
+					<li>When looking through an atmosphere, some light scattered by the atmosphere will be seen by the instrument and included in the observed radiance of the target.</li>
+					<li>An atmosphere will also absorb light, which will decrease the observed radiance.</li>
+					<li>Reflectance is the ratio of the amount of light leaving a target to the amount of light striking the target.</li>
+					<li>Radiance depends on
+					<ul>
+					<li>the illumination,</li>
+					<li>the orientation and position of the target, and</li>
+					<li>the path of the light through the atmosphere.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>						
+
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (4)</h2> 
+					<ul>
+					<li>Precise estimation of reflectance would require detailed in situ measurement of wavelength, angles of illumination and observation, and atmospheric conditions at the time of observation.</li>
+					<li>Because such measurements are impractical on a routine basis, we must approximate the necessary values.</li>
+					<li>Usually, the analyst has a measurement of the brightness of a specific pixel at the lens of a sensor, sometimes known as <em>at-aperture,</em> <em>in-band </em>radiance, signifying that it represents radiance measured at the sensor for a specific spectral channel.</li>
+					</ul>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (5)</h2> 
+					<ul>
+					<li>To estimate the reflectance of the pixel, it is necessary to assess how much radiation was incident upon the object before it was reflected to the sensor.</li>
+					<li>In the ideal, the analyst could measure this brightness at ground level just before it was redirected to the sensor.</li>
+					<li>Although analysts sometimes collect this information in the field using specialized instruments known as spectroradiometers
+					<ul>
+					<li>typically the incident radiation must be estimated using a calculation of exoatmospheric radiation (ESUN&lambda;) for a specific time, date, and place.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>						
+
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (6)</h2> 
+					<p><em>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Q</em><em>Q</em> = (&pi; &times; <em>L</em>&lambda; &times; <em>d</em>&sup2;)/(ESUN&lambda; &times; cos&theta;)</p>
+					<ul>
+					<li>where <em>Q</em><em>Q</em> is the at-sensor, in-band reflectance;</li>
+					<li><em>L</em>&lambda; is the at-sensor, in-band radiance;</li>
+					<li>ESUN&lambda; is the band-specific, mean solar exoatmospheric irradiance;</li>
+					<li>&theta;s is the solar zenith angle; and</li>
+					<li><em>d </em>is the Earth&ndash;Sun distance (expressed in astronomical units) for the date in question.</li>
+					<li>To find the appropriate Earth&ndash;Sun distance, some need to generate an ephemeris for the overpass time indicated in the header information for the scene in question.</li>
+					<li>The value of <em>d </em>(delta in the ephemeris output) gives the Earth&ndash;Sun distance in astronomical units (AU).</li>
+					</ul>
+					</ul>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Estimation of Top of Atmosphere Reflectance (7)</h2> 
+					<ul>
+					<li>Such estimation of exoatmospheric radiation does not, by definition, allow for atmospheric effects that will alter brightness as it travels from the outer edge of the atmosphere to the object at the surface of the Earth.</li>
+					<li>However, for many purposes it forms a serviceable approximation that permits estimation of relative reflectances within a scene.</li>
+					</ul>
+					</section>					
+	
+				</section>						
+					
+				<section id="Identification"> 
+				
+					<section>
+					<br>
+					<h1>Identification of Image Features</h1> 
+					<ul>
+					<li>In the context of image processing, the terms <em>feature extraction </em>and <em>feature selection</em> have specialized meanings.</li>
+					<li>&ldquo;Features&rdquo; are &ldquo;statistical&rdquo; characteristics of image data.</li>
+					<li><em>Feature extraction </em>usually identifies specific bands or channels that are of greatest value for any analysis
+					<ul>
+					<li>whereas <em>feature selection </em>indicates selection of image information that is specifically tailored for a particular application.</li>
+					</ul>
+					</li>
+					<li>Thus these processes could also be known as &ldquo;information extraction&rdquo;.</li>
+					</ul>
+					</section>
+				
+					<section>
+					<br>
+					<h2>Identification of Image Features (2)</h2> 
+					<ul>
+					<li>In theory, discarded data contain noise and errors present in original data.</li>
+					<li>Thus feature extraction may increase accuracy.</li>
+					<li>In addition, these processes reduce the number of spectral channels, or bands, that must be analyzed, thereby reducing computational demands.</li>
+					<li>The analyst can work with fewer but more potent channels.</li>
+					<li>The reduced data set may convey almost as much information as does the complete data set.</li>
+					</ul>
+					</section>					
+						
+					<section>
+					<br>
+					<h2>Identification of Image Features (3)</h2> 
+					<ul>
+					<li>Multispectral data, by their nature, consist of several channels of data.</li>
+					<li>Although some images may have as few as 3, 4, or 7 channels, other image data may have many more, possibly 200 or more channels.</li>
+					<li>With so much data, processing of even modest-sized images requires considerable time.</li>
+					<li>In this context, feature selection assumes considerable practical significance, as image analysts wish to reduce the amount of data while retaining effectiveness and/or accuracy.</li>
+					</ul>
+					</section>						
+
+					<section>
+					<br>
+					<h2>Identification of Image Features - Example</h2>
+					<br><img width="700" height="200" img src="./resources/Preprocessing-of-EO-data/Slide-58.jpg" alt="sat1">
+					<ul>
+					<li>A variance &ndash; covariance matrix shows interrelationships between pairs of bands (TM have 7 bands).</li>
+					<li>Some pairs show rather strong correlations &mdash; for example, bands 1 and 3 and 2 and 3 both show correlations above 0.9.</li>
+					<li>High correlation between pairs of bands means that the values in the two channels are closely related.</li>
+					<li>Thus, as values in channel 2 rise or fall, so do those in channel 3; one channel tends to duplicate information in the other.</li>
+					<li>Feature selection attempts to identify, then remove, such duplication so that the dataset can include maximum information using the minimum number of channels.</li>
+					</ul>
+					</section>						
+					
+					<section>
+					<br>
+					<h2>Identification of Image Features - Example (2)</h2>
+					<ul>
+					<li>For data represented by previous Table, bands 3, 5, and 6 might include almost as much information as the entire set of seven channels, because band 3 is closely related to bands 1 and 2, band 5 is closely related to bands 4 and 7, and band 6 carries information largely unrelated to any others.</li>
+					<li>Therefore, the discarded channels (1, 2, 4, and 7) each resemble one of the channels that have been retained.</li>
+					<li>So a simple approach to feature selection discards unneeded bands, thereby reducing the number of channels.</li>
+					<li>Although this kind of selection can be used as a sort of rudimentary feature extraction, typically feature selection is a more complex process based on statistical interrelationships between channels.</li>
+					</ul>
+					</section>						
+					
+				</section>						
+					
+				
+<section id="Conclusion"> 
+
+					<section>
+					<br>
+					<h1>Conclusions and take-aways</h1> 
+					<ul>
+					<li>soon to be added</li>
+					</ul>
+					</section>
+
+				</section>
+				
+
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>exemplary doi:<br><br>
+				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
+				<br>
+				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
+				</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1080 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>OBIA - Intro</title>
+		<meta property="dc:title" content= "Object-based Image Analysis - An Introduction" />
+		<meta property="dc:creator" content="Stefan Lang, University of Salzburg" />
+		<meta property="dc:publisher" content="University of Salzburg" />
+		<meta property="dc:subject" content= "OBIA, image segmentation, EO4GEO, Earth observation, spatial image analysis" />
+		<meta property="dc:abstract" content= "These slides give an introduction to concepts and methods of object-based image analysis (OBIA). The slides have been prepared for and used in the virtual GEOBIA summer school in 2020." />
+		<meta property="dc:tableOfContents" content= "(1) Why spatial image analysis?; (2) Regions and image objects; (3) Image segmentation; 
+		(4) Knowledge representation; (5) Class modelling"  />
+		<meta property="dc:description" content= "Learning outcomes: Understand the principles of spatial image analysis; discuss specific advantages of OBIA over pixel-based approach; apply OBIA concepts and analyse complex image content; examine different segmentation and object-based classification methods" />
+		<meta property="dc:contributor" content= "Dirk Tiede, Eva Missoni, Barbara Hofer, Simon Donike" />
+		<meta property="dc:created" content="2020-08-27" />
+		<meta property="dc:type" content= "teaching material" />
+		<meta property="dc:format" content= "html" />
+		<meta property="dc:language" content= "EN" />
+		<meta property="dc:SizeOrDuration" content= "45min" />
+		<meta property="dc:audience" content= "students" />
+		<meta property="dc:educationLevel" content= "EQF 6" />
+		<meta property="dc:source" content= "GEOBIA Summer School Material" />
+		<meta property="dc:rightsHolder" content= "Stefan Lang, University of Salzburg" />
+		<meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:IP3-7" />	
+		<link rel="dc:relation" href="eo4geo:IP3" />	
+		<link rel="dc:relation" href="eo4geo:IP3-5" />	
+		<link rel="dc:relation" href="eo4geo:IP3-7-1" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-2" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-3" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-4-1" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-4-2" />
+		<link rel="dc:relation" href="eo4geo:IP3-7-4-3" />
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme"-->  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height: auto" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height: auto" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " ><small>Object-based Image Analysis (OBIA) - An Introduction</div></small>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				
+				<section >
+					<h1>Object-based Image Analysis (OBIA)</h1>
+					<h2>An introductory course</h2>
+					<em>Assoc-Prof Dr Stefan LANG | contributor: Assoc-Prof Dr Dirk Tiede</em><p><p><p>
+					
+					<b>[1]</b> Why spatial image analysis?  | <b>[2]</b> Regions and image objects | <b>[3]</b> Image segmentation | <b>[4]</b> Knowledge representation | 
+						<b>[5]</b> Class modelling</p>
+						<p><small>University of Salzburg, Department of Geoinformatics, 2021/22/23<br></small></p>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					This course introduces basic concepts of OBIA such as image segmentation, hierarchical representation, class modelling. 
+				</aside>
+				</section>
+				
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section ID="Chapter 1">
+					<section> 
+						<h1>[1] Why spatial image analysis?</h1>
+					</section>
+					<section>
+						<h2>Space and spatial image analysis</h2>
+						<img width=80% data-src="resources/02_0_space.png" alt="space">	
+						<small><a href="https://www.youtube.com/watch?v=c7OO3qCfH9Y">https://www.youtube.com/watch?v=c7OO3qCfH9Y</a></i></small>
+						<figcaption>View from ISS to Earth. Depending on observation distance and resolution we perceive 'objects' in a certain scale. 
+							Here we see the eye of a hurricane. © S. Lang (PLUS) / Photograph: A. Gerst (ESA)</figcaption>
+						<aside class="notes">
+						We assume it is a hurricane, even though we cannot be absolutely sure, it could either be a cyclone or taifun. 
+						And we only know the name of the storm ("Katrina?") when we know the acquisition date.
+						</aside>
+					</section>
+					
+					<section >
+						<h2 >Spatial image analysis - bridging remote sensing and GIS</h2>										
+						<div class="r-stack" style="position:relative; width:1024px; height:768px; margin:0 auto;" >
+						<img class="fragment" data-fragment-index="0" src="resources/03_0_conceptualbridge.png" alt="conceptualbridge" style="position:absolute; top:0; left:0" />
+						<img class="fragment fade-in" data-fragment-index="1" src="resources/03_1_conceptualbridge.png" alt="conceptualbridge" style="position:absolute; top:0; left:0" />	
+						
+						<figcaption>OBIA can be considered a bridging concept between raster representations (spatial continua) und vector representations (spatial discreta). © S Lang (PLUS)</figcaption>
+						</div>
+						<aside class="notes">
+							OBIA bridges concepts from geoinformatics and remote sensing. While the vector model (left) represents geographical objects with crisp boundaries, 
+							the raster model represents pixel brightness as a continous phenomenon (right). 
+						</aside>
+						
+					</section>
+					
+					<section >
+						<h2>Geographical OBIA (GEOBIA) - a paradigm in image analysis </h2>
+						<img data-src="resources/04_0_GEOBIA.png" alt="GEOBIA paradigm"></a>
+						<br><figcaption>A significant literature body and a suite of international conference supporting the idea of (GE)OBIA as a paradigm. © S. Lang (PLUS)</figcaption>
+					</section>
+					
+					<section >
+						<h2>GEOBIA - trans-application potential</h2>
+						<img data-src="resources/05_0_appl.png" alt="GEOBIA applications">
+						<br><figcaption>In a variety of application domains, OBIA may be used in bridging between geospatial models and 
+							imaged representations. © S. Lang (PLUS)</figcaption>
+					</section>
+				
+					<section>
+						<h2>GEOBIA provides real-world representations</h2>
+						<img  data-src="resources/06_0_RealityModel.png" alt="RealityModel" />
+						<br><figcaption>OBIA mimicking our conceptual understanding of reality, facilitates image understanding and 
+							complex representations of the real-world.  © S. Lang (PLUS)</figcaption>			
+					</section>
+					<section>
+					
+						<h2> Space over colour? </h2>
+						<p>Im image analysis, spatial properties (<b>structure</b>) are as important as spectral properties (<b>colour</b>). In vision, spatial information even typically dominates colour information (Matsuyama and Hwang, 1990)</p> 
+						<figure>
+							<img data-src="resources/07_0_spaceovercolor.jpg" alt="space over color" />
+							<figcaption>Once structural features make us understand there are agricultural fields shown on an image, we start exploring the type of fields. © S. Lang (PLUS)</figcaption>	
+						</figure>
+					</section>	
+						
+					<section>
+						<h2> Boundaries in images</h2>
+						<p>Image data do not explictly contain or store <b>boundaries</b>. However, boundaries appear in several scales and are commonly used in human perception for image understanding. Boundaries can be extracted from image data using <b>image segmentation</b> techniques. </p>
+						<img data-src="resources/08_0_boundaries.png" width=70% height=70% alt="boundaries" />
+						<figcaption>Different spatial information derived from images and other continous datasets (e.g. DEM) © B. Riedler, S. Lang (PLUS)</figcaption>
+					</section>	
+				
+					<section>
+						<h2>Real-world objects on images </h2>
+						<p><b>Spatial concepts</b> are inherent in human vision - like context and relationships between image components / objects / texels any visual image interpretation <b>relies heavily</b> on these concepts. In automated remote sensing image analysis such approaches exists for many years, but usage and applicability is fluctuating</p> 
+						<figure>
+							<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+							<img src="resources/13_0_Chiemsee.png" alt="Chiemsee" />
+							<figcaption>Real-world features can be characterised by spatial properties and spatial relations. © D. Tiede (PLUS)</figcaption>
+						</div>
+						</figure>
+						<aside class="notes">
+						Rivers and lakes have similar spectral behaviour but different spatial features (compact vs. elongated). Islands can appear in many different 
+						ways, but are surrounded by water bodies.
+						</aside>
+					</section>
+				
+					<section>
+						<h2>Spatial properties of objects</h2>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/14_0_spatialAspects.png" alt="spatialAspects" />
+						<figcaption>Spatial (i.e. geometrical, textural and contextual) aspects that can be addressed, even on grey-scale image. © S. Lang (PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Extended set of target classes in spatial image analysis </h2>
+						<p>OBIA allows to address target classes, which are spatially defined. Basically, we can distinguish between two groups,  <b>form-defined classes</b> (e.g. lake or river) and <b>spatio-relational classes</b> (context-related objects such as an island, an urban park, or composite objects such as a residential area).</p>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/12_0_spatialImageAnalysis.png" alt="spatialImageAnalysis" />
+						<figcaption>OBIA expands the set of target classes as compared to pixel-based analysis. Geometric or spatio-relational classes
+						can be derived. © S. Lang, D. Tiede (PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>	
+
+					<section>
+						<h2>Overview spatial image analysis - from image to information </h2>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/12_1_overview_spatial_image_analysis.png" alt="spatialImageAnalysis" />
+						<figcaption>Spatial image analysis - from image to information. © S. Lang, modified D. Tiede (PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>	
+
+					<section>
+						<h2>Spatial image analysis in AI </h2>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/12_2_Spatial_Image_Analysis_and_AI.png" alt="spatialImageAnalysis" />
+						<figcaption>An integrator for AI? (from https://www.geospatialworld.net/blogs/difference-between-ai-machine-learning-and-deep-learning , modified A. Baraldi, D. Tiede (PLUS))</figcaption>
+						</div>
+						</figure>
+					</section>	
+				</section>
+				
+				<section ID="Chapter 2">				
+					<section>
+						<h1>[2] Regions and image objects</h1>
+					</section>
+
+					<section>
+						<h2>Spatial auto-correlation</h2>
+						<p>According to Tobler's First Law of Geography (which states that "<i>near things are more related than distant ones</i>"), neighbouring pixels tend to be similar. Boundaries can be detected at discontinuities or gradients between these groups of similar pixels (see Segmentation below). Boundaries form objects on distinct levels (scales)</p>
+			
+						<div class="r-stack" style="position:relative; width:320px; height:339px; margin:0 auto;" >
+						<img class="fragment fade-out" src="resources/09_0_spatialprincle.png" alt="spatial principle" />
+						<img class="fragment fade-up" src="resources/09_1_spatialprincle.png" alt="spatial principle" style="position:absolute;top:0; left:0"/>
+						<figcaption>A simple image matrix is converted to random colours (left). When using graduated grey shades it reveals a familiar pattern (right). © S. Lang, PLUS</figcaption>
+						</div>
+						<aside class="notes">
+						Once recognizing a human head with a face, we instantly perceive different levels: the level of the parts (eyes, beard, forehead), level of the whole (head).
+						</aside>
+					</section>	
+				
+					<section>
+						<h2>Spatial auto-correlation and grouping</h2>
+						<p>Spatial auto-correlation is a key spatial principle in image analysis. We rely on this principle when grouping pixels according to their similarity.
+						Without spatial autocorrelation the number of grouping options would be arbitrary. However, there is also ambiguity in the grouping process.</p>
+						<div class="r-stack" style="position:relative; margin:0 auto;" >
+						<figure>
+						<img src="resources/10_0_samesimilar.png" alt="samesimilar" />
+						<figcaption>By spatial autocorrelation neighboring pixels can be grouped. It is, however, a matter of optimisation and ambivalence ('ill-posed'). © S. Lang, PLUS</figcaption>
+						</figure>
+						</div>
+						<aside class="notes">
+						It is not about grouping the same values, but grouping similar values. But how can we determine similarity? We will see that similarity corresponds to 
+						homogeneity (of regions), a fundamental principle of image segmentation.
+						</aside>
+					</section>	
+				
+					<section>
+						<h2>Spatial auto-correlation and boundaries</h2>
+						<figure>
+						<img src="resources/11_0_varianceRegions.png" alt="varianceRegions" />
+						<figcaption>Despite the similarity of neighbouring pixels, we eventually encounter gradients. Those gradients we can identify as boundaries. © S. Lang, PLUS</figcaption>
+						</figure>
+					</section>	
+							
+					<section>
+						<h2>Regions</h2>
+						<div class="ppt-txt" style="position: absolute; top: 100px; left: 10px; height: 150px;  width: 400px">
+						<p>
+						<ul>
+						<li style> <strong>Region</strong> = a spatially contiguous area with common attributes or uniform behaviour (internal <strong>‘homogeneity’</strong>) </li> <br>
+						<li style> <strong>Regionalisation = spatial classification</strong>, i.e. classification under <strong>spatial constraints</strong> (contiguity of an attribute in space) </li> <br>
+						<li style> Why does it work? Principle of <strong>spatial auto-correlation</strong> (“1st law of Geography”, W Tobler, 1970)</li>
+						</ul> </p>
+						</div>
+						<figure>
+						<div class="r-stack" style="position:relative; top: 35px; left: 240px; width:800px; height:420px; margin:0 auto;" >
+						<img src="resources/15_0_regions.png" alt="Regions" />
+						<figcaption> Different regions according to different DEM-derived properties (© S. Lang, PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>
+			
+					<section>
+						<h2>Image Objects </h2>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/16_0_imageObjects.png" alt="imageObjects" />
+						<figcaption>Image objects - different imagery (© S. Lang, PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Image Objects </h2>
+						<table>
+						<tr><td width="50%"><image src="resources/17_0_ImageObjects.png" alt="image_objects.png" align=left> </td>
+						<td> 
+						<figure>
+						<image src="resources/17_1_ImageObjects.png" alt="image_objects.png" align=left> </td>
+						</tr></table>
+						<figcaption>Image objects - different imagery and applications</figcaption>
+						</figure>
+					</section>
+				
+				<section>
+					<h2>What means homogeneous?</h2>
+						<div class="ppt-txt" style="position: absolute; top: 100px; left: 10px; height: 150px;  width: 500px">
+						<p> <i> not a trivial task... </i>
+						<ul>
+						<li style> Challenges in generating regions </li> <br>
+						They need to be spatially coherent <br>
+						They do not exist a priori <br><br>
+						<li style> Defining Homogeneity criterion <strong>H</strong> </li> <br>
+						Variance* of pixels within a region<br>
+						Spectral distance (SD) of pixels <br>
+						Vectors in n-dimensional feature space<br>
+						</ul> <br><br>
+						<font size=-1>*as one (statistical) measure to operationalize homogeneity </font> </p>
+					</div>
+					<figure></figure>
+						<div class="r-stack" style="position:relative; top: 20px; left: 250px; width:1050px; height:450px; margin:0 auto;" >
+						<img src="resources/18_0_homogeneity.png" alt="Regions" />		
+						<figcaption>Homogeneity vs spatial constraints (© S. Lang, PLUS)</figcaption> 
+						</div>
+					</figure>	
+					</section>
+				</section>
+				
+				<section ID="Chapter 3">
+					<section>
+						<h1>[3] Multispectral Segmentation</h1>
+					</section>
+					
+					<section>
+						<h2>Principles</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 10px; height: 150px;  width: 400px">
+						<p> Which image objects are we able to perceive?
+						<ul>
+							<li> From 252 digital numbers (14 x 18 image matrix) to ‘Abraham Lincoln’ (one individual person) </li>  
+						</ul> <p>
+						What do images evoke in our visual context and our brain?
+							<li> Trying to ignore pixels, to identify familiar structures </li> 
+							<li> Object hierarchy (here: exactly 2) </li> 
+							<li> Semantic enrichment </li> 
+							<li> Combination of experience and knowledge </li>
+						</ul> <p>
+						</div>
+						<figure>
+						<div class="r-stack" style="position:relative; top: 50px; left: 240px; width:800px; height:420px; margin:0 auto;" >
+						<img src="resources/19_0_segmentation.png" alt="Regions" />
+						<figcaption>Image segmentation happens in our human brain. © S. Lang (PLUS)</figcaption>	
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Grey-scale Segmentation </h2>
+						<figure>	
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/20_0_segmentation.png" alt="imageObjects" />
+						<figcaption>A boundary can be found along gradients between pixel values. © S. Lang (PLUS)</figcaption>	
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Multispectral Segmentation </h2>
+						<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/21_0_segmentation.png" alt="imageObjects" />
+						<figcaption>The same principle applies in multispectral images. © S. Lang (PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Segmentation Challenges </h2>
+						<strong>Conceptual boundaries in images </strong> <br>
+						Fiat boundaries, according to convention, expertise, etc. <br>
+ 						See lesson “Class modelling”
+						<table>
+						<tr><td width="50%"><image src="resources/22_0_segmentationChallenges.png" alt="image_challenges.png" align=left> </td>
+						<figure>
+							<td> <image src="resources/22_1_segmentationChallenges.png" alt="image_challenges.png" align=left> </td>
+						</tr>
+						</table>
+						<figcaption>Some boundaries in images appear distinctively, others are more conceptual. © S. Lang (PLUS)</figcaption>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Segmentation Challenges </h2>
+						<strong>Conceptual boundaries in images </strong> <br>
+						Complex classes, often defined by spectrally heterogeneous, but functionally homogenous units
+						Segmentation rarely provides these units directly 
+						Cyclic approach needed (class modelling)
+						Expert-based (object validity) 
+
+						<figure>
+						<table>
+						<tr><td width="50%"><image src="resources/23_0_segmentationChallenges.png" alt="image_challenges.png" align=left> </td>
+						<td> <image src="resources/23_1_segmentationChallenges.png" alt="image_challenges.png" align=left> </td>
+						</tr>
+						</table>
+						<figcaption>Semi-automatically delineated complex biotope types. Left: open orchard meadows; Right: mixed arable land and grassland area (© S. Lang, PLUS)</figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Image Segmentation</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 10px; height: 150px;  width: 400px">
+						<p> <strong> Local pixel neighborhood </strong>
+						<ul>
+							<li> Spatial autocorrelation among pixels </li> 
+							<li> neighbouring pixels tend to have similar values </li> 
+							<li> But not everywhere! </li>
+						</ul> <p>
+						</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 35px; left: 240px; width:800px; height:400px; margin:0 auto;" >
+							<img src="resources/25_0_segmentation.png" alt="Regions" />
+							<figcaption> Homogeneity and gradients in a small portion of an image matrix. © S. Lang (PLUS) </figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Segmentation and classification</h2>
+					<div class="ppt-txt" style="align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 750px">
+					<p> <strong> Two interrelated methodological pillars (Lang 2008) </strong> <br><br>
+					(1) segmentation / regionalisation for nested, scaled representations ('object scape')
+						<ul>
+							<li> Segmentation of different types of continuous data </li> 
+							<li> Optimizing segmentation (algorithms and parameterization) in terms of usability, theoretical foundation, etc. </li> 
+							<li> Systematic comparison of segmentation results </li>
+						</ul> <p>
+					(2) rule-based classifiers based on spectral and geometrical properties as well as spatial relationships
+					<ul>
+							<li> Ontology driven classification, advanced sets of target classes </li> 
+							<li> Process of OBIA not necessarily sequential (i.e. as described here), rather sequential, iterative (class modelling) </li> 
+							<li> Smooth transition to methods to further characterise and analyse classification results (e.g. landscape metrics) </li>
+						</ul> <p>
+						</div>
+
+						<figure>
+							<div class="r-stack" style="position:relative; top: 100px; left: 500px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/26_0_segmentationclassification.png" alt="segmentation_classification" />
+							<figcaption>Yin-Yang allegory of segmentation and classification in OBIA. © S. Lang (PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Multi-scale segmentation</h2>
+					<div class="ppt-txt" style="position: absolute; text-align: center; top: 80px; height: 150px; width: 400">
+					<p> Segmentation in several <strong>hierarchical </strong> scales <br><br>
+					scale-specific vs. scale-adapted segmentation
+						</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 150px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/27_0_multiscalesegmentation.png" alt="multiscale_segmentation" />
+							<figcaption>Hierarchical, i.e. multiscale, representation. © S. Lang (PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Multi-scale segmentation</h2>
+					<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 10px; height: 150px;  width: 400px"><br>
+					<p style = "text-align: left"> Representations in various nested levels <br>
+					Each object 'knows' its neighbours and hierarchical level
+						</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 50px; left: 240px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/28_0_multiscalesegmentation.png" alt="multiscale_segmentation" />
+						<figcaption>Schematic illustration of multi-scale segmentation. © F. Albrecht, S. Lang (PLUS)</figcaption>
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Multi-scale segmentation </h2>
+					<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/29_0_multiscalesegmentation.png" alt="multiscale_segmentation" />
+						<figcaption>Multi-scale segmentation in two hierarchical levels. © S. Lang (PLUS)</figcaption>	
+						</div>
+					</figure>
+					</section>
+					
+				</section>
+				
+				<section ID="Chapter 4">
+					<section>
+						<h1>[4] Knowledge representation</h1>	
+					</section>
+					
+					<section>
+						<h2>Why knowledge representation?</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> We all have a concept of  “cold”, “warm”, “hot” </p>
+							<ul>
+								<li> In remote sensing and image analysis a lot of expert knowledge exists </li> 
+								<li> Such knowledge is implicit or explicit </li> 
+								<li> The latter can be formalised and encoded in rules, (e.g. NDVI > 0.2 => vegetation)  </li>
+							</ul> 
+							
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/31_0_knowledgerepresentation.png" alt="knowledge_representation" />
+							<figcaption>Knowledge is used in remote sensing to convert primary data (images) into GIS-ready secondary data. © S. Lang (PLUS)</figcaption>	
+						</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>What type of knowledge can be used? </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> Knowledge in image interpretation: visual skills are complemented by explicit knowledge, enriched by experience and training </p> 
+							
+							<p><strong> Structural</strong> knowledge 
+							<ul>
+								<li> how concepts within a domain are interrelated  </li>
+								<li> links between image objects and real-world geographical features  </li>
+							</ul> <p> 
+							<p><strong>Procedural </strong> knowledge
+							<ul>
+								<li> specific computational functions, algorithms </li>
+								<li> Encoding of structural knowledge, e.g. by a set of rules … or by a set of representative samples </li>
+							</ul> <p> 
+							</div>
+						<figure>
+								<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:420px; margin:0 auto;" >
+								<img src="resources/32_0_knowledge.png" alt="knowledge_representation" />
+							<figcaption>Structured knowledge (screenshot of a ruleset). © S. Lang (PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+
+					<section>
+						<h2>Some facts we can take for granted... </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> 
+							<ul>
+								<li> Physical laws and principles <i>(e.g. Stefan Boltzmann‘s Law </i>: The hotter a body, the more energy is emitted; 
+								<i>Wien‘s Displacement Law</i>: The hotter a body, the shorter the wavelength of the maximum radiation) </li> 
+								<li> Different land surface types show specific spectral profiles </li>
+								<li> Spatial autocorrelation </li>
+								<li> ... </li>
+								</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/33_0_facts.png" alt="others" />
+							<figcaption>Laws and theories we can trust in image analysis. © S. Lang (PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>	
+
+					<section>
+						<h2>Others we know from experience... </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 520px">
+						<p>Heuristics describing certain geographical phenomena are encoded in a <strong> set of rules</strong>. Rules can address all kinds of features.</p>
+						<p>Example <i>soccer field</i> = a special kind of grassland patch with certain size and shape.
+							<ul>
+								<li> Grassland appears “red” in a false-colour band combination </li> 
+								<li> How does a football field look like on Sentinel-2? </li>
+								<li> Object features (color, shape, size, etc.)  </li>
+								<li> Object-to-neighbour relationships  </li>
+								<li> Hierarchical relationships>
+							</ul> 
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 50px; left: 320px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/34_0_others.png" alt="others" />
+							<figcaption>Heuristics of a soccer field translated into a rule-set © S. Lang (PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>	
+
+					<section>
+						<h2>Fuzzy (rule) set</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> We all have a concept of  “cold”, “warm”, “hot” <br><br>
+						<ul>
+							<li> We discretise a gradual phenomenon by categorizing it  </li> 
+							<li> Boundaries between these concepts are not crisp </li> 
+							<li> The category under concern gets more stable with increasing ‘distance’ from boundaries </li>
+							<li> Fuzzy sets: a way to model / operationalise vague knowledge </li> 
+						</ul> <p>
+						</div>
+						<figure>
+						<div class="r-stack" style="position:relative; top: 50px; left: 320px; width:800px; height:420px; margin:0 auto;" >
+						<img src="resources/30_0_fuzzysets.png" alt="fuzzy_rule_sets" />
+						<figcaption>Fuzzyfication of class boundaries (example water temperature). © S. Lang (PLUS)</figcaption>	
+						</div>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Class hierarchy (in eCognition) </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> Classes are embedded in a hierarchical heritage scheme <br>
+						(1) Feature-based inheritance<br>
+							<ul>
+								<li> child classes inherit all descriptive features from their parent classes </li> 
+								<li> Not confined to spectral values </li>
+								</ul>
+							<p>(2) Semantic inheritance <br>
+								<ul>
+								<li> Classes can be grouped semantically  </li>
+								<li> Belong to the same logical parent class  </li>
+								<li> Semantic inheritance may turn into feature-based when additional explicit information is provided </li>
+							</ul> <p> 
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/35_0_classhierarchy.png" alt="class_hierarchy" />
+							<figcaption>Feature-based and semantic grouping of classes. © S. Lang (PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>What is semantic querying? </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> Example: <i>Monitoring of water quality in swimming lakes over three seasons </i><br>
+						Image search criteria: [(0) sensor type], (1) <strong> time window </strong>, (2) <strong> geographical focus </strong> (AOI), 
+						(3) <strong> cloud cover </strong>, (4) <strong> thematic focus </strong>, (5) <strong>monitoring period</strong>.<br>
+							<ul>
+								<li> Use standard metadata (location) and cloud mask </li> 
+								<li> <strong>Thematic </strong> focus: requires a fundamental (i.e. low level semantic) concept of the existence and representation of (swimming) lakes.  </li>
+								<li> Temporal aspect: (constancy or change) implies the notion for changes in critical indicators, e.g. by indices in IR reflectance recorded by multi-temporal imagery  </li>
+							</ul> <p> 
+							</div>
+							<figure>
+							<div class="r-stack" style="position:relative; top: 50px; left: 300px; width:800px; height:420px; margin:0 auto;" >
+							<img src="resources/36_0_semanticquerying.png" alt="class_hierarchy" />
+							<figcaption>Semantic information stacked in a data cube through time © D. Tiede (PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Data to information</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> How to measure the information in an image?<br>
+							<ul>
+								<li> <strong>Histogram</strong> (distribution of values)</li> 
+								<li> Distribution of colours / colour levels </li>
+								<li> Image <strong>content</strong> (based on classification) </li>
+							</ul> <p> 
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:600px; height:305px; margin:0 auto;" >
+							<img src="resources/37_0_histogram.png" alt="histogram" />
+							<figcaption>Histogram of NIR band of Landsat satellite data. © S. Lang (PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Data to information <i>(cont.)</i> </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> Information measurement requires information <strong>units</strong><br> (bins, classified pixels, objects, etc.)<br>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 20px; left: 300px; width:800px; height:405px; margin:0 auto;" >
+							<img src="resources/38_0_information.png" alt="information" />
+								<figcaption>Information-as-a-thing (measurable) vs information-as-interpretation (semantic). © S. Lang (PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Quantifiable information content </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 30px;  width: 500px">
+						 <strong>Shannon's diversity</strong> is a measure of composition (information content). 
+							<ul>
+								<li> Image <strong>content</strong> can be measured based on classification </li> 
+								<li> Indices: <i>Diversity H, Dominance, Evenness</i> </li>
+								<li> Key elements: <b>categorised units</b>, number and percentages of classes</li>
+							</ul> <p> 
+							<img src="resources/39_0_formula.png" width=50% height="50%" alt="information" />
+							<br><i>where P = percentage, i = class 1 … i</i>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 20px; left: 300px; width:900px; height:505px; margin:0 auto;" >
+							<img src="resources/39_1_information.png" alt="information" />
+							<figcaption>Shannon's Diversity measures the information content of a landscape. © S. Lang, PLUS</figcaption>	
+							</div>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Knowledge organising systems (KOS) </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 450px">
+						<p> Structural knowledge can be organized in knowledge organizing systems (KOS) <br>
+							<ul>
+								<li> Realised as graphic notations such as semantic nets or frames </li> 
+								<li> Semantic knowledge representation  </li>
+								<li> using inheritance concept, e.g. <i>‘is part of’, ‘is more specific than’, ‘is an instance of’ </i> </li>
+								</ul>
+							<p>Semantic net <br>
+								<ul>
+								<li> Control over existing connections, once established  </li>
+								<li> Transparency and operability  </li>
+							</ul> <p> 
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 70px; left: 300px; width:600px; height:300px; margin:0 auto;" >
+							<img src="resources/40_0_KOS.png" alt="KOS" />
+							<figcaption>(© S. Lang)</figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+					<h2>Classification schemes </h2>
+					<figure>
+						<div class="r-stack" style="position:relative; width:1000px; height:440px; margin:0 auto;" >
+						<img src="resources/41_0_classificationschemes.png" alt="classification_schemes" />
+						<figcaption>Classification schemes (© S. Lang, PLUS)</figcaption>
+						</div>
+					</figure>
+					</section>
+					
+					<section>
+						<h2>Classification schemes / taxonomies </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 450px">
+						<br><p> Corine Land Cover (CLC) <br>
+							<ul>
+								<li> Standard EU mapping scheme (used by European Environmental Agency EEA) initiated in 1985 (reference year 1990) </li> 
+								<li> Updates produced in 2000, 2006, 2012, 2018 with the latest update (CLC+) under production - integrating the first time OBIA relevant segmentation techniques</li>
+								<li>CLC+ technical document: https://land.copernicus.eu/user-corner/technical-library/clc-core-consultations-for-the-technical-specifications</li>
+							</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:900px; height:450px; margin:0 auto;" >
+							<img src="resources/42_0_classificationschemes.png" alt="classification_schemes" />
+							<figcaption>(© S. Lang, PLUS)</figcaption>	
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Classification schemes </h2>
+						<figure>
+						<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:900px; height:450px; margin:0 auto;" >
+							<img src="resources/43_0_classificationschemes.png" alt="classification_schemes" />
+							<figcaption>Corine classification scheme (until 2018, before CLC+</figcaption>	
+							</div><br><br>
+							CLC consists of an inventory of 44 classes. It uses a Minimum Mapping Unit (MMU) of 25 ha for areal phenomena and a minimum width of 100 m for linear phenomena
+						</figure>
+						</section>
+					
+					<section>
+						<h2>Classification schemes </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> Land Cover Classification System (FAO-LCCS) <br>
+							<ul>
+								<li> capable to record any land cover type, independent of specific applications and/or geographical areas </li> 
+								<li> overcome problems associated with the interpretation of different land cover class definitions (Mucher et al. 2014)  </li>
+								<li> uses a set of independent diagnostic criteria strictly based on vegetation physiognomy and structure rather than establishing land cover classes based on terminology (Kosmidou et al. 2014) </li>
+								<li> comprehensive land cover characterization, regardless of mapping scale, data collection method or geographic location. </li>
+								</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:400px; margin:0 auto;" >
+							<img src="resources/44_0_clc.png" alt="classification_schemes" />
+							<figcaption>(© S. Lang, PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Classification schemes </h2>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:1000px; height:550px; margin:0 auto;" >
+							<img src="resources/45_0_classificationschemes.png" alt="classification_schemes" />
+							<figcaption>(© S. Lang, PLUS)</figcaption>
+							</div><br>
+						</figure>
+					</section>
+				
+					<section>
+						<h2>Spectral libraries </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 500px">
+						<p> <br>Spectral libraries represent spectral reflectance and physical properties of different land cover types <br>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 20px; left: 300px; width:600px; height:350px; margin:0 auto;" >
+							<img src="resources/46_0_spectrallibraries.png" alt="spectral_libraries" />
+							<i>simplified model!</i><br>
+						<figcaption>(© S. Lang, PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+				
+				</section>
+
+				<section id="Chapter 5">
+					<section>
+						<h1>[5] Class modelling</h1>
+					</section>
+					<section>
+						<h2>Composite objects</h2>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:1000px; height:550px; margin:0 auto;" >
+							<img src="resources/47_0_compositeobjects.png" alt="composite_objects" />
+							<figcaption>(© S. Lang, PLUS)</figcaption>	
+						</div><br>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Composite objects </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> Level of landscape elements <br>
+							<ul>
+								<li> Spectrally homogenous, correspond to agricultural fields, road segments, blocks of houses etc. </li> 
+								</ul>
+							Composite objects
+							<ul>
+							<li> Contain elements (building blocks)</li>
+								<li> Are spectrally heterogeneous, but functionally homogenous </li>
+								<li> Geons (Lang et al. 2014)</li>	
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 300px; width:800px; height:400px; margin:0 auto;" >
+							<img src="resources/48_0_compositeobjects.png" alt="composite_objects" />
+						<figcaption>(© S. Lang, PLUS)</figcaption>	
+						</div>
+						</figure>
+					</section>	
+				
+					<section>
+						<h2>Class modelling </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> <strong>Ambition: to delineate and classify composite objects in a complex real-world scene </strong> <br>
+							<ul>
+								<li> To represent the scene in at least in two hierarchical levels </li> 
+								<li> To delineate homogenous elementary units on lower level(s)  </li>
+								<li> To establish lateral and vertical relationships among objects (object-relationship modelling, ORM) </li>
+								<li> To characterise the composition of target classes based on the arrangement of elementary units </li>
+								</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 370px; width:800px; height:400px; margin:0 auto;" >
+							<img src="resources/49_0_classmodelling.png" alt="classification_schemes" /><br>
+							<figcaption>(© Lang & Tiede 2015, PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Class modelling</h2>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:1000px; height:550px; margin:0 auto;" >
+							<img src="resources/50_0_classmodelling.png" alt="class_modelling" />
+							<figcaption>(© Lang & Tiede 2015, PLUS)</figcaption>
+							</div><br>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Class modelling </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> A strategy to approach composite classes by applying multi-scale segmentation and spatial modelling <br>
+							<ul>
+								<li> The target classes represent functionally homogenous units – often spectrally heterogeneous –, as being composed by sub-units</li> 
+								<li> The delineation of target units may be ambiguous (but inter-subjectively agreeable – thus non-arbitrary) </li>
+								<li> The spatial properties of composite classes (or objects) can be described and their structural arrangements of building blocks (elements) can be characterised </li>
+							</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 370px; width:800px; height:400px; margin:0 auto;" >
+							<img src="resources/51_0_classmodelling.png" alt="classification_schemes" /><br>
+							<figcaption>(© Tiede et al. 2010)</figcaption>
+							</div>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>Class modelling</h2>
+							<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:1000px; height:550px; margin:0 auto;" >
+							<img src="resources/52_0_classmodelling.png" alt="class_modelling" />
+							<figcaption>(figures: © D. Tiede)</figcaption>
+							</div><br>
+					</section>	
+
+					<section>
+						<h2>Multiscale class modelling </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> “Multiscale” is implicit in the term class modelling <br>
+							<ul>
+								<li> A complex class (composite object) consists of several functional parts in a specific arrangement, such as: </li> 
+								<li> ‘mixed arable land’ composed by a mix of agricultural and grassland fields  </li>
+								<li> ‘residential area’ composed by family houses, gardens, shopping malls, etc. </li>
+								<li> Complex classes are hierarchically structured (‘body plan’) </li>
+							</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 370px; width:900px; height:500px; margin:0 auto;" >
+							<img src="resources/53_0_multiscalemodelling.png" alt="multiscale_class_modelling" /><br>
+						<figcaption>(© D. Tiede)</figcaption>	
+						</div>
+						</figure>
+					</section>		
+
+					<section>
+						<h2>Multiscale class modelling</h2>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 0px; width:1000px; height:550px; margin:0 auto;" >
+							<img src="resources/54_0_multiscalemodelling.png" alt="multiscale_class_modelling" />
+						<figcaption>(© S. Lang, PLUS)</figcaption>	
+						</div><br>
+						</figure>
+					</section>	
+					
+					<section>
+						<h2>Multiscale class modelling </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> <strong>Spectral signatures of elements </strong><br>
+							<ul>
+								<li> Spectral profiles are created by charting the object mean of representative class samples </li> 
+								<li> Profiles can be translated in rules </li>
+								<li> Fuzzy rules can be applied to translate uncertainty in class descriptions </li>
+							</ul>
+							<img src="resources/55_0_multiscalemodelling.png" alt="multiscale_class_modelling" />
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 320px; width:900px; height:500px; margin:0 auto;" >
+							<img src="resources/55_1_multiscalemodelling.png" alt="multiscale_class_modelling" /><br>
+						<figcaption>Spectral signatures</figcaption>	
+						</div>
+						</figure>
+					</section>	
+					
+					<section>
+						<h2>Multiscale class modelling </h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> Defining an object’s body-plan<br>
+							<ul>
+								<li> A higher-level objects consists of … </li> 
+								<li> x% of object type A </li>
+								<li> y% of object type B </li>
+								<li> z% of … </li>
+							</ul>
+							<br><p> Critical reconditions<br>
+							<ul>
+								<li> Elementary units need to be classified (‘Lego blocks’) </li> 
+								<li> Outline of composite object needs to be delineated </li>
+							</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 30px; left: 320px; width:900px; height:500px; margin:0 auto;" >
+							<img src="resources/56_0_multiscalemodelling.png" alt="multiscale_class_modelling" /><br>
+							<figcaption>(© S. Lang, PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>	
+					
+					<section>
+						<h2>Multiscale class modelling</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 550px">
+						<br><p> Specify set of target classes<br>
+							<ul>
+								<li> Define class descriptors </li> 
+								<li> Including non-target classes </li>
+								<li> Perform classification </li>
+							</ul><br>
+							<img src="resources/57_0_multiscalemodelling.png" alt="multiscale_class_modelling" />
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 0px; left: 320px; width:900px; height:500px; margin:0 auto;" >
+							<img src="resources/57_1_multiscalemodelling.png" alt="multiscale_class_modelling" /><br>
+						<figcaption>Target classes and definition with fuzzy rules (© S. Lang, PLUS)</figcaption>						
+							</div>
+						</figure>
+					</section>	
+					
+					<section>
+						<h2>Multiscale class modelling</h2>
+						<div class="ppt-txt" style="; align: left; position: absolute; top: 100px; left: 0px; height: 150px;  width: 450px">
+						<br><p>Composite object (yellow outline) consists of several components (sub-objects)<br>
+							<ul>
+								<li> Create customized feature </li> 
+								<li> Specify relative area of classified sub-objects </li>
+							</ul>
+							</div>
+						<figure>
+							<div class="r-stack" style="position:relative; top: 0px; left: 320px; width:900px; height:500px; margin:0 auto;" >
+							<img src="resources/58_0_multiscalemodelling.png" alt="multiscale_class_modelling" /><br>
+							<figcaption>Composite objects (© S. Lang, PLUS)</figcaption>
+							</div>
+						</figure>
+					</section>	
+					
+				</section>	
+				
+				<!--AUTHORS: Integration of Jupyter Notebooks from VITO-Platform - user authentification not solved yet -->
+				<!--section class="scrollable"> 
+					 <iframe src="https://notebooks.vgt.vito.be/user/emissoni/lab/tree/PLUS_Test.ipynb" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
+				</section-->	
+					
+					
+			
+				
+			<section> 
+				<h2> References </h2>
+				<br>
+				
+				<p style="font-size:18px;">	
+				
+				<reference_list>Lang, S., Hay, G., Baraldi, A., Tiede, D., & Blaschke, T. (2019). GEOBIA achievements and spatial opportunities in the era of big Earth observation data. ISPRS International Journal of Geo-Information, 8, pp. 474-483.
+				<br>doi: <a href="https://doi.org/10.3390/ijgi8110474">10.3390/ijgi8110474</a>
+				</reference_list><br><br>
+				
+				<reference_list>Lang, S., & Tiede, D. (2015). Geospatial data integration in OBIA – implications of accuracy and validity. In P. Thenkabail (Ed.), Remote Sensing Handbook (Vol. Vol I - Land Resources: Monitoring, Modeling, and Mapping, pp. 295-316). New York: Taylor & Francis
+				</reference_list><br><br>
+				
+				<reference_list>Blaschke, T., Hay, G. J., Kelly, M., Lang, S., Hofmann, P., Addink, E., . . . Tiede, D. (2014). Geographic Object-based Image Analysis: a new paradigm in Remote Sensing and Geographic Information Science. ISPRS Journal of Photogrammetry and Remote Sensing, 87(1), pp. 180-191 
+				<br> doi: <a href="https://doi.org/10.1016/j.isprsjprs.2013.09.014">10.1016/j.isprsjprs.2013.09.014</a>  
+				</reference_list><br><br>
+
+				<reference_list>Lang, S. (2008). Object-based image analysis for remote sensing applications: modeling reality – dealing with complexity. In T. Blaschke, S. Lang & G. J. Hay (Eds.), Object-Based Image Analysis - Spatial concepts for knowledge-driven remote sensing applications (pp. 3-28). Berlin: Springer
+				<br> doi: <a href="https://doi.org/10.1016/j.isprsjprs.2013.09.014">10.1016/j.isprsjprs.2013.09.014</a>  
+				</reference_list><br><br>
+				
+				<reference_list>Tiede, D., Lang, S., Albrecht, F., & Hölbling, D. (2010). Object-based class modeling for cadastre constrained delineation of geo-objects. Photogrammetric Engineering & Remote Sensing, 76(2), pp. 193-202. doi:10.14358/PERS.76.2.193 
+				<br> Retrieved from: <a href="http://essential.metapress.com/content/15u6x2189425705l/">http://essential.metapress.com/content/15u6x2189425705l/</a> 
+				</reference_list><br><br>
+				
+			</section>
+				
+
+			
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

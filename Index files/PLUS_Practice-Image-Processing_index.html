@@ -1,0 +1,2126 @@
+<!-- 	Author: Stefan Lang - PLUS-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Remote Sensing & Image Processing</title>
+		
+		<meta property="dc:title" content="Practice: image processing and analysis" />
+		<meta property="dc:creator" content="Stefan Lang" /> 
+		<meta property="dc:publisher" content="University of Salzburg" /> 
+		<meta property="dc:subject" content="Copernicus, EO4GEO, WP5, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="This introductory course in remote sensing and (satellite) image analysis covers the basic analysis workflow. It requires a lecture or any other introductory class in the theoretical fundamentals of remote sensing" />
+		<meta property="dc:tableOfContents" content="(1) Organisational issues and introduction; 
+		(2) Image repositories and data access; 
+		(3) Specifics of image data; 
+		(4) Visualising and exploring image data; 
+		(5) Spatial referencing; 
+		(6) Radiometric correction;
+		(7) Image pre-processing; 
+		(8) Image classification; 
+		(9) Validation; 
+		(10) Publishing results" />
+		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow including image acquisition, (pixel-based) image analysis, classification and validation; get to know online portals, data catalogues, and pricing schemes for satellite data; Familiarize with the European Copernicus Earth observation programme; Master standard image analysis routines as implemented in ArcGIS Pro" /> 
+		<meta property="dc:contributor" content="Barbara Hofer" />
+		<meta property="dc:contributor" content="Eva Missoni" />
+		<meta property="dc:created" content="2020-06-20" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="14units x 90min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="Existing training material of the course: Practice: image processing and analysis" />
+		<meta property="dc:rightsHolder" content="Stefan Lang" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:IP1-3-2" />
+		<link rel="dc:relation" href="eo4geo:IP1-7" />
+		<link rel="dc:relation" href="eo4geo:IP1" />	
+		<link rel="dc:relation" href="eo4geo:IP3-4" />
+		<link rel="dc:relation" href="eo4geo:IP4-2-1" />
+		<!-- plus a decent number of additional representative concepts -->
+				
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+	
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+		
+		<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+	</head>
+
+	<body onLoad="linkFunction()">
+		 
+		<!-- JAVASCRIPTS RUN HERE-->
+		<script type="text/javascript" src="internal_restricted/js/eo4geo.js"></script>
+		
+		<!-- REVEAL SLIDEDECK STARTS HERE-->
+		
+		<div class="reveal" >
+		
+			<div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			<div class = "partnerlogo" style="width: 15%;height : 11%" ></div>	
+			<div  class = "presentation_title" style=" text-align: center " ><small style="color:darkslategrey">Remote Sensing | Introductory Exercise Course</small> </div>	<!--The title of the presentation appears on each slide-->
+				
+				
+			
+			<div class="slides">
+				
+				<!-- slide metadata-->
+				<p hidden class ="slide_metadata" 
+					BoK_URI="www.uri1.com;www.uri2.com;....;www.uriN.com" 
+					> 
+				
+				<section>
+
+					<script type='text/javascript' src="http://code.jquery.com/jquery-latest.pack.js"></script>
+					<script type="text/javascript">
+
+						$(document).ready(function () {
+								
+							$('#title').click(function() {
+								$('#title').hide('slow');
+								$('#titlelight').show('slow');
+							});
+					
+						});
+					</script>
+					<h1>Remote Sensing &<br> Image Processing</h1>
+					<h2>Exercise course [UE] - 655.352</h2>
+					<em>Assoc-Prof Dr Stefan LANG</em><p>
+					
+					<a href="#" id="title"><img src="resources/cover2o.png" alt="title2 start"></a>
+					<div id="titlelight" style="display:none;"><img src="resources/cover2.png" alt="title2"></div>
+
+				<!-- AUTHORS: PUT YOUR PRESENTERNOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+
+				<!-- AUTHORS: DEFINE METADATA FOR THE SECOND SLIDE -->
+				<p hidden class ="slide_metadata" 
+				BoK_URI="www.uri2.com;....;www.uriN.com"
+				/>
+			
+					<section>
+						
+						<section>
+							<h1>Welcome to this course!</h1> 
+							<h2>Disclaimer</h2><p> 
+							This is an introductory exercise course to remote sensing. The course material has been developed using tools, concepts and guidelines under the framework of the <a href="www.eo4geo.eu">EO4GEO</a> project. 
+							Unless stated otherwise, all rights for figures and additional material are with the author(s). <p>
+							<small>(c) <a href="www.zgis.at">Z_GIS</a> (S Lang) | 2020</small>
+							<p class="fragment"><small>You can navigate through <em>vertical slides</em> by 
+							pressing the <em>Down / Up</em> keys on your keyboard or the navigation arrows 
+							at the bottom of each slide.</small></p>
+									
+						</section>
+
+						<section>
+							<h2>Table of content (ToC)</h2> 
+							<table>
+								<tr><td><a href="#ov_01"><b>1</b></a></td><td><i>Organisation and introduction</i></td><td><a href="#/2"><img src="resources/U1_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_02"><b>2</b></a></td><td><i>Image repositories and data access</i></td><td><a href="#/5"><img src="resources/U2_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_03"><b>3</b></a></td><td><i>Specifics of image data</i></td><td><a href="#/8"><img src="resources/U3_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_04"><b>4</b></a></td><td><i>Visualising and exploring image data</i></td><td><a href="#/11"><img src="resources/U4_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_05"><b>5</b></a></td><td><i>Spatial referencing</i></td><td><a href="#/15"><img src="resources/U5_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_06"><b>6</b></a></td><td><i>Radiometric correction</i></td><td><a href="#/18"><img src="resources/U6_sm.png"></a></td></tr>
+								<tr><td><a href="#ov_07"><b>7</b></a></td><td><i>Image pre-processing</i></td><td><img src="resources/U7_sm.png"></td></tr>
+								<tr><td><a href="#ov_08"><b>8</b></a></td><td><i>Image classification</i></td><td><img src="resources/U8_sm.png"></td></tr>
+								<tr><td><a href="#ov_09"><b>9</b></a></td><td><i>Validation (accuracy assessment)</i></td><td><img src="resources/U9_sm.png"></td></tr>
+								<tr><td><a href="#ov_10"><b>10</b></a></td><td><i>Publishing results</i></td><td><img src="resources/U10_sm.png"></td></tr>
+							</table>
+						</section>
+	
+						<section id="ov_01">
+							<h1>01 | Organisation and introduction</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>01.1</td><td>Course overview and syllabus</td><td>7</td></tr>
+								<tr><td>01.2</td><td>Earth observation in practice</td><td>6</td></tr>
+								<img src="resources/U1_ov.png" alt="U1 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+							<!-- get ToC elements from JSON-->
+
+						</section>
+	
+						<section id="ov_02">
+							<h1>02 | Image repositories and catalogues</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>02.1</td><td>Space and ground infrastructure</td><td>6</td></tr>
+								<tr><td>02.2</td><td>Data access</td><td>6</td></tr>
+								<img  src="resources/U2_ov.png" alt="U2 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+	
+						<section id="ov_03">
+							<h1>03 | Specifics of image data</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>03.1</td><td>Image data model</td><td>7</td></tr>
+								<tr><td>03.2</td><td>Histograms</td><td>3</td></tr>
+								<img src="resources/U3_ov.png" alt="U3 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+
+						<section id="ov_04">
+							<h1>04 | Visualising and exploring image data</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>04.1</td><td>Sensors and metadata</td><td>2</td></tr>
+								<tr><td>04.2</td><td>Image handling</td><td>3</td></tr>
+								<tr><td>04.3</td><td>Band combination</td><td>3</td></tr>
+								<img src="resources/U4_ov.png" alt="U4 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+
+						<section id="ov_05">
+							<h1>05 | Spatial referencing</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>05.1</td><td>Spatial vs. geometric correction</td><td>6</td></tr>
+								<tr><td>05.2</td><td>GCP collection and referencing</td><td>5</td></tr>
+								<img src="resources/U5_ov.png" alt="U5 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+
+						<section id="ov_06">
+							<h1>06 | Radiometric correction</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>06.1</td><td>Radiometric measurement</td><td>3</td></tr>
+								<tr><td>06.2</td><td>Atmospheric correction</td><td>2</td></tr>
+								<tr><td>06.3</td><td>Topographic correction</td><td>3</td></tr>
+								<img src="resources/U6_ov.png" alt="U6 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+
+						<section id="ov_07">
+							<h1>07 | Image pre-processing</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td># of topics</td></tr>
+								<tr><td>07.1</td><td>Band maths</td><td>3</td></tr>
+								<tr><td><a href="#072_0">07.2</a></td><td>Filtering</td><td>5</td></tr>
+								<tr><td>07.3</td><td>Image fusion and PCA</td><td>3</td></tr>
+								<img src="resources/U7_ov.png" alt="U7 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+						
+						<section id="ov_08">
+							<h1>08 | Image classification</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td>Topics</td></tr>
+								<tr><td><a href="#081_0">08.1</a></td><td>Multi-spectral classification</td><td>5</td></tr>
+								<tr><td>08.2</td><td>Supervised classification</td><td>5</td></tr>
+								<img src="resources/U8_ov.png" alt="U8 overview image">
+							</table>
+						</section>
+
+						<section id="ov_09">
+							<h1>09 | Validation (accuracy assessment)</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td>Topics</td></tr>
+								<tr><td>09.1</td><td>Ground reference and error matrix</td><td>4</td></tr>
+								<tr><td>09.2</td><td>Product validation</td><td>3</td></tr>
+								<img src="resources/U9_ov.png" alt="U9 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+
+						<section id="ov_10">
+							<h1>10 | Publishing results</h1> 
+							<table>
+								<tr style="color:lightgoldenrodyellow"><td><i>Lesson-#</i></td><td><b>Content</b></td><td>Topics</td></tr>
+								<tr><td>10.1</td><td>tbd</td><td>x</td></tr>
+								<tr><td>10.2</td><td>tbd</td><td>x</td></tr>
+								<img src="resources/U10_ov.png" alt="U10 overview image">
+							</table>
+							<a href="#/1/1">
+								<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+							</a>
+						</section>
+						
+					</section>
+
+			<!-- UNIT 1 STARTS HERE -->
+
+				<section>
+					<h1 id="u1">01 | Organisation and introduction</h1>
+					<h2><b>Remote Sensing & Image Processing</b></h2>
+					<img src="resources/U1.png" alt="U1 image"><br>
+					<a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>	
+				
+				<!-- Lesson 1.1 --> 		
+				
+				<section>
+
+					<section>
+						<h1>01.1 | Course overview and structure</h1> 
+						<h2>Learning objectives [lesson 1.1]</h2>
+							
+							<ul><li><p><i>Understand the structure and content of the course, as well as its requiements and objectives</li>
+							<li>Get an overview of the software environment and datasets being used</i></p></li></ul>
+					</section>
+
+					<section>
+						<h1>01.1 | Course overview and structure</h1>
+						<h2>Content and topics [lesson 1.1]</h2><p>  
+						<table>
+							<tr><td><i>#</i></td><td><b>Content</b></td></tr>
+							<tr><td><a href="#011_i">i</a></td><td>Overview course structure and learning objectives</td></tr>
+							<tr><td><a href="#011_ii">ii</a></td><td>Experience and prior knowledge</td></tr>
+							<tr><td><a href="#011_iii">iii</td><td>Road map and syllabus</td></tr>
+							<tr><td><a href="#011_iv">iv</td><td>Workload, assignments and grading</td></tr>
+							<tr><td><a href="#011_v">v</a></td><td>Literature and reference material</td></tr>
+							<tr><td><a href="#011_vi">vi</td><td>Software and data being used</td></tr>
+							<tr><td><a href="#011_vii">vii</td><td>Tutorials</td></tr>
+						</table>
+					</section>
+
+					<!-- A single content slide -->
+					<section id= 011_i>
+						<h2>01.1 <small>(i)</small> Course structure and learning objectives</h2> 
+						<p>The course is structured in the following way:<p>
+						<ul><li><p><b>Units</b></p></li>
+						<li><p><b>Lessons</b></p></li>
+						<li><p><b>Topics</b></p></li></ul></p>
+						<p><b>Learning objectives</b> are specified on the level of <b>lessons</b>, meaning there is one learning objective (or more related ones) provided for each lesson.</p>
+						<p>Altogether, there are <b>10 units</b> with 2-4 lessons each. Around one-hundred topics are 
+							covered by this course. Each <b>topic</b> is linked, when applicable, with a <b>concept</b> from the  
+							<em>EO4GEO Body of Knowledge (BoK) of the EO*GI sector</em> in the following form:</p><table>
+							<tr><td><i>#</i></td><td><b>Content</b></td><td><b>BoK concept</b></td></tr>
+							<tr><td><small>Topic number</small></td><td><small>Topic</small></td><td><small>Permalink to BoK</small></td></tr>
+						</table>
+					</section>
+
+					<section id= 011_ii>
+						<h2>01.1 <small>(ii)</small> Experience and prior knowledge</h2> 
+						<p>	The course relies on <b>general interest</b> and <b>prior knowledge</b> in remote sensing. While not a formal prerequisite, it is 
+							recommended to having completed or being enrolled in parallel to the introductory lecture course 
+							<em style="color:lightgoldenrodyellow">“Remote Sensing and Image Processing” (VL 655.351)</em>.
+						<p> This course conveys specific technical skills. If you want to familiarize even better with the software environment, you may
+							enroll to <em style="color:lightgoldenrodyellow">"Introduction to GIS" (UE 655.332)</em>.
+						<p> <b>General skills </b>are acquired according to <em>Bloom's taxonomy</em> of skills levels (see below, @Assignments).
+					
+					</section>
+
+					<section id= 011_iii>
+						<h2>01.1 <small>(iii)</small> Course schedule and syllabus</h2> 
+						<h3>Time and place</h3>  
+							<p>This course takes place <em>Wednesdays, 16.00 - 18.00</em> in the <b>GI Lab</b>. Press "show schedule" for more details
+							on the current syllabus and schedule for this semester. Updates or any occuring changes you may find in
+							<a href= "https://online.uni-salzburg.at/plus_online/wbLv.wbShowLVDetail?pStpSpNr=480447">PlusOnline</a>.<p>   
+							<img width=600 height=280 src ="resources/01/011_3.png" alt="Time plan">	
+							<br>Depending on the <a href="https://im.sbg.ac.at/spaces/viewspace.action?key=CORONAINFOS">Covid-19 regulations</a>, the course is offered in hybrid or online mode.</p> 
+										
+							<p><button id="btn">Show schedule</button>	 
+							<div id="syllabus"></div>
+							<script src="js/loadsyl.js"></script>
+						
+					</section>
+
+					<section id= 011_iv>
+						<h2>01.1 <small>(iv)</small> Workload, assignments and grading</h2> 
+						<h3>Workload</h3>  
+						<p>UE = <em>"continuous assessment course"</em>. What does that mean?
+								The course implies mandatory <b>presence</b>, active <b>participation</b>, and <b>submission</b> of all assignments; 
+								on the other hand, no final examination takes place!
+						<p>The course consists of <b>7-8 present dates</b> with 30 min theoretical background and revision
+							assignments; 60 min joint practical exercise including discussion of relevant concepts. 
+							Tutorials are offered <b>2-3 times</b> per semester.
+							<p><b>2 ECTS credits</b> = 50 h student workload (~ 1/3 course, 2/3 homework)</p>
+					</section>
+
+					<section>
+						<h2>01.1 <small>(iv <i>cont.</i>)</small> Workload, assignments and grading</h2> 
+						<h3 style="color:orange;">Assignments (A1 … A5)</h3>  
+							<ul><li>Assignments will be announced in the respective class</li>
+								<li>... need to be delivered <b>in time</b> to receive feedback (watch your calendar in BlackBoard)
+								<li>... one attempt at a time</li></ul>
+								
+						<p>Please obey the following naming convention: <br><b>A[n]_[lastname]</b>, e.g. <em>A1_Johnson</em></li>. Please 
+							use <b>PFD format</b> exclusively!
+						<p>Grading: < 50% = insufficient |...| > 85% = very good. Grade distribution:</p>
+							<small><table><tr><td>Assignment</td><td>Points</td></tr>
+								<tr><td>1</td><td>10</td></tr>
+								<tr><td>2</td><td>15</td></tr>
+								<tr><td>3</td><td>15</td></tr>
+								<tr><td>4</td><td>15</td></tr>
+								<tr><td>5</td><td>20</td></tr>
+							</table></small>
+						
+
+					</section>
+
+					<section>
+						<h2>01.1 <small>(iv <i>cont.</i>)</small> Workload, assignments and grading</h2> 
+						<h3 style="color:orange;">Assignments (A1 … A5)</h3>  
+							Assignments and the respective learning outcomes follow the Bloom's taxonomy of skills levels 
+							(Anderson 2001). That means skills acquired in the assignments range from basic 
+							(<em>remember</em>) in the earlier, to advanced (<em>create</em>) in the later, assignments.
+							<p><img width=600 height=360 src ="resources/01/011_4.png" alt="Bloom's taxonomy">
+					</section>
+
+					<section id="011_v">
+						<!-- move js to separate file, if possible -->
+						<script type="text/javascript">
+							$(document).ready(function () {
+								$('#books').click(function() {
+									  $('#booklist').show('slow');
+								});
+							});
+						</script>
+						
+						<!-- <script src="js/showbooklist.js"></script> -->
+						
+						<h2>01.1 <small>(v)</small> Literature and reference material</h2> 
+						Selected text books are available in the joint library (<b>Material Science</b> building, Booth <b>#32</b>)
+						<p>
+							<figure>
+									<img width=400 height=240 src ="resources/011_5.png" alt="RS books">
+							</figure>
+						<p>Please see the following table of <a href="recommended_books.html" id="books">recommended books</a>!
+						<!--div id="booklist" style="display:none; overflow:auto;">
+							<small><table><tr><td><i>Author and title</i></td><td>Cover</td><td><i>Author and title</i></td><td>Cover</td></tr>
+								<tr><td>P. Gamba & M. Herold (eds.), Global mapping of human settlement - 
+									experiences, datasets, and prospects. Boca Raton: CRC Press</td><td><img src="resources/011_5_1.png"></td>
+								<td>Chuvieco, E., & Huete, A. (2010). Fundamentals of satellite remote sensing. 
+									Boca Raton: CRC Press</td><td><img src="resources/011_5_2.png"></td></tr>
+								<tr><td>D. Li, J. Shan & J. Gong (eds.), Geospatial technologies for Earth 
+									observation. New York: Springer</td><td><img src="resources/011_5_3.png"></td>
+								<td>Adams, J. B., & Gillespie, A. R. (2006). Remote sensing of landscapes with spectral images - 
+									a physical modeling approach. Cambridge: Cambridge University Press.</td><td><img src="resources/011_5_4.png"></td></tr>
+								<tr><td>Mather, P. M. (2005). Computer processing of remotely-sensed images. 
+									Chichester: John Wiley & Sons</td><td><img src="resources/011_5_5.png"></td>
+								<td>Q. Weng (Ed.), Scale issues in remote sensing (pp. 141-169). Chichester: 
+									John Wiley & Sons</td><td><img src="resources/011_5_6.png"></td></tr>
+								<tr><td>Liang, S. (2004). Quantitative remote sensing of land surfaces. 
+									New Yersey: John Wiley & Sons</td><td><img src="resources/011_5_7.png"></td>
+								<td>Weng, Q. (2010). Remote sensing and GIS integration. McGraw Hill</td><td><img src="resources/011_5_8.png"></td></tr>
+							</table></small>
+						</div-->
+
+					</section>
+
+					<section id= 011_vi>
+						<h2>01.1 <small>(vi)</small> Software and data sets used</h2> 
+						<ul><li><b>Satellite data</b>
+							<ul><li>All data are located in the MyFiles share (see Blackboard)</li>
+								<li>Data are real data, no ‘fake’ or fabricated data</li> 
+								<li>NB: data may be subject to license agreements restricting their usage to research or educational purposes. 
+									Copying or using those data for any other purpose is prohibit.</lI>
+							</ul></li>
+							<li><b>Software</b>: ArcGIS Pro by ESRI (Image Analysis components)</li>
+							<ul><li>It is easy to use, convenient look & feel</li>
+							<li>Workflows are pre-defined and guided (‚one-click‘)</li>
+							<li>You can stay within one environment (no change of software, transfer of data, etc.)</li>
+							<li>But: ArcGIS Pro is a commercial software package</li>
+							</ul></li>
+					</ul>
+
+						<figure>
+							<img width=600 height=200 src ="resources/011_6.png" alt="Software and data">	
+						</figure>
+						</section>
+
+					<section id= 011_vii>
+						<h2>01.1 <small>(vii)</small> Tutorial</h2> 
+						<!-- <p style="color: red;"><b>[to be completed]</b></p>	-->
+						<p><b>Tutor:</b> Christina Zorenböhmer<br><b>Email:</b> christina.zorenboehmer@sbg.ac.at</p>
+						<p>Assignments and tutorials will give you the opportunity to get some hands-on experience with the platforms, software, and tools used in remote sensing.<br>Assignment 1 on image acquisition and online platforms will be handed out next week!</p>
+						<figure><img data-src="https://miro.medium.com/max/1400/0*2vXxJoSQtzFNjJ7D.jpg" alt="EO Browser" height="300px">
+							<figcaption>A1: We will be exploring different platforms for satellite image acquisition, e.g. <a href="https://medium.com/sentinel-hub">Sentinel Hub</a>.</figcaption>
+						</figure>				
+					</section>
+
+				</section>
+
+				<!-- Lesson 1.2 --> 
+
+				<section>
+					
+					<section>
+						<h1>01.2 | Earth observation in practice</h1> 
+						<h2>Learning objectives [lesson 1.2]</h2><p> 
+						<ul>
+							<li><em>Get to know the role of remote sensing in Earth observation and Copernicus</em></li>
+							<li><em>Familiarize with the practical dimension of satellite Earth observation 
+								by examples</li>
+							<li>Learn the principle of the image analysis workflow and image processing chain</li>
+							<li>Understand the difference between pixel- and object (or region-) based approach</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>01.2 | Earth observation in practice </h1>
+						<h2>Content and topics [lesson 1.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#012_i">i</a></td><td>Satellite remote sensing</td><td><a href="https://bok.eo4geo.eu/PS2"><small>Remote Sensing Platforms and Systems</small></td></tr>
+							<tr><td><a href="#012_ii">ii</a></td><td>What is Copernicus?</td><td><a href="https://bok.eo4geo.eu/TA7-5-2"><small>Copernicus Programme</small></td></tr>
+							<tr><td><a href="#012_iii">iii</a></td><td>EO @ Z_GIS</td><td>n/a</td></tr>
+							<tr><td><a href="#012_iv">iv</a></td><td>Image processing chain</td><td><a href="https://bok.eo4geo.eu/IP"><small>Image Processing</small></td></tr>
+							<tr><td><a href="#012_v">v</a></td><td>Pixel- vs. object-based approach</td><td><a href="https://bok.eo4geo.eu/IP-3-7"><small>Object-based image analysis (OBIA)</small></a></td></tr>
+						</table>
+					</section>
+
+					<section id="012_i">
+						<h2>01.2 <small>(i)</small> Satellite remote sensing</h2>  
+						<blockquote style="color: gray;">"From time immemorial people have used vantage points high above the landscape to 
+							view the terrain  below. From these lookouts they could get a ‘<b>bird’s eye view</b>’ of the 
+							region. They could study the landscape and interpret what they saw. The advantage of collecting <b>information about 
+								the landscape from a distance</b> was recognized long ago. Remote sensing as we know it 
+							today is the technique of collecting information from a distance. 
+							By convention, ‘from a distance’ is generally  considered to be <b>large</b> relative 
+							to what a person can reach out and touch, hundreds of meters, hundreds of kilometers, 
+							or more. The data collected from a distance are termed <b>remotely sensed data</b>." (Stan Aronoff,  1989)
+						</blockquote>
+						<figure> 
+							<img data-src="resources/01/012_1.png" style="left:200px;" alt="Fig. 012_1" >
+							<figcaption>Our ancestors practiced remote sensing from hills or trees (© XXX)</figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>01.2 <small>(i <i>cont.</i>)</small> Satellite remote sensing and Earth observation</h2>  
+							<p>Earth observation is one out of three main <em>space assets</em>.</p>
+							<ul>
+								<li>Satellite <b>navigation</b></li>
+								<li>Satellite <b>communication</b></li>
+								<li>Satellite / <b>Earth observation (EO)</b></li>
+							</ul>
+						<figure><img data-src="resources/01/012_2.png" alt="Fig. 012_2">
+								<figcaption>The three components of space assets. Combining (at least) two out of three is termed Integrated applications by ESA</figcaption>
+						</figure>
+					</section>
+						
+					<section >
+						<h2>01.2 <small>(1 <i>cont.</i>)</small> Satellite navigation</h2>
+						<p>The European satellite navigation (SatNav) programme is called <em>Galileo</em>. With EGNOS, the European differential global positioning system, it belongs to the world spanning <em>global navigation satellite systems</em> (GNSS).</p>
+						<br>
+						<figure><img src="resources/01/012_3.png" alt="SatNav">
+							<figcaption>Galileo-enabled smartphone devices can be used in many different <a href="https://www.usegalileo.eu/">applications</a>.</figcaption>
+						</figure>
+					</section>
+						
+					<section >
+						<h2>01.2 <small>(1 <i>cont.</i>)</small> Satellite communication</h2>
+						<p>Communication via satellites (SatCom) allows <em>telecommunication</em> all around the globe. Communication satellites receive signals from Earth and retransmit them by a <em>transponder</em>.</p>
+						<figure><img data-src="resources/01/012_4.png" alt="SatCom">
+							<figcaption>The satellite as a self-contained communications system: the example of <a href="https://www.intelsatgeneral.com/satellite-basics/">IntelSat</a>.</figcaption>
+						</figure>
+						</section>
+						
+					<section >
+						<h2>01.2 <small>(1 <i>cont.</i>)</small> Earth observation</h2>
+						<p>Earth observation (EO) is the systematic usage of <em>satellite remote 
+							sensing</em> technology for continuous or on-demand <em>imaging</em> 
+							or <em>measuring</em> of the Earth surface </p>
+						<figure><img data-src="resources/01/012_5.png" alt="ISSView">
+							<figcaption>A view from the Cupola, the observation deck of the International Space Station (ISS). 
+							Photograph taken by German astronaut <a href="https://twitter.com/astro_alex">A. Geerst</a>.</figcaption>
+						</figure>
+					</section>
+					
+					<section id="012_ii">
+						<h2>01.2 <small>(ii)</small> What is Copernicus?</h2> 
+						<a href="https://www.copernicus.eu">Copernicus </a>is the conjoint Earth observation programme by the 
+						<a href="www.esa.int">European Space Agency (ESA)</a> and the European Commission (EC) as laid out in the <em>European Space Policy</em>. 
+						<br>
+						<img width="75%" height="75%" src="resources/CopernicusLogo.png" alt="Copernicus logo">
+						<br>
+						<p style="font-size:22px">Copernicus uses satellite technology to support monitoring the state of our <em>environment</em> and our <em>social well-being</em>. 
+						Here are some of the main aspects observed by Copernicus (see lesson <a href="#022_vi"><b>2.2</b></a>):
+						<ul style="font-size:22px">
+							<li>the conditions of the <b>atmosphere</b> or our <b>land and marine</b> ecosystems</li>
+							<li>the use of the land for <b>forestry</b> and <b>agriculture</b></li>
+							<li>the process of <b>urbanisation</b></li>
+							<li>the likely <b>climate change</b> impacts</li>
+							<li>the natural and man-made <b>disasters</b></li>
+							<li>our <b>human security</b> and <b>public health</b></li>
+						</ul></p>
+					</section>
+
+					<section>
+						<h2>01.2 <small>(ii <i>cont.</i>)</small> What is Copernicus?</h2> 
+						<figure>
+						<img width="80%" height="80%" data-src="resources/01/012_6.png" alt="Fig. 012_6"><br>						
+							<figcaption>New EO data, depicted by the database symbol on the left-hand side of the seesaw, make 'Mr or Mrs Copernicus' better 
+							positioned for their observations. Thus, EO data leverage a better overview and understanding (© concept: S. Lang, drawing: A. Traun, 2016).
+							<!--Click image to <a ref="CopStory_short.mp3">listen</a> a bit to the story of Copernicus 
+							(text: S. Lang, speaker: S. Tumampos, 2020)-->
+							</figcaption>	
+						</figure>
+					</section>
+
+					<section>
+						<h2>01.2 <small>(ii <i>cont.</i>)</small> Copernicus idea</h2>
+						<p>Copernicus comprises three major  <em>components</em>.</p>
+						<ul>
+							<li>Space segment</li>
+							<li>Integrated ground segment</li>
+							<li>Data access and information services</li>
+						</ul>
+						<figure>
+							<img src="resources/01/012_7.png" alt="CopSat"></p>
+						<figcaption>(© XXX)</figcaption>
+						</figure>
+					</section>
+
+					<section id="012_iii">
+						<h2>01.3 <small>(iii)</small> EO @ Z_GIS</h2>
+						<p>... </p>
+
+						<p><img src="resources/xx.png" alt="xx"></p>
+
+					</section>
+
+					<section id="012_iv">
+						<h2>01.4 <small>(iv)</small> Image processing chain</h2>
+						<p>... </p>
+
+						<p><img src="resources/xx.png" alt="xx"></p>
+
+					</section>
+
+					<section id="012_v">
+						<h2>01.5 <small>(v)</small> Pixel- vs. object-based approach</h2>
+						<p>... </p>
+
+						<p><img src="resources/xx.png" alt="xx"></p>
+
+					</section>
+
+					
+ 
+
+				</section>
+
+				<!-- UNIT 1 ENDS HERE -->
+
+				<!-- UNIT 2 STARTS HERE -->
+
+
+				<section>
+					<h1>02 | Image repositories and data access</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U2.png" alt="U2 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>	
+
+				<!-- Lesson 2.1 --> 
+
+				<p hidden class ="lesson_metadata" 
+				author = "Stefan Lang, PLUS"
+				abstract = "Unit 2 ..."
+				structure = "ToC Lesson 2.1"
+				creationDate ="01.04.2020 0:00" 
+				durationMinutes="90"
+				learningOutcomes = "[list all learning outcomes]"
+				targetGroups = "Students"
+				courseLanguage = "English"
+				courseFormat = "Reveal JS"
+				BoK_URI="[list all Permalinks?]"
+				/>
+
+				<section>
+
+					<section>
+						<p hidden class ="slide_metadata" BoK_URI="https://bok.eo4geo.eu/PS1; https://bok.eo4geo.eu/OI4-6; https://bok.eo4geo.eu/IP3-10"/> 
+
+						<h1>02.1 | Space and ground infrastructure</h1> 
+						<h2>Learning objectives [lesson 2.1]</h2>
+						<ul>
+							<li><p><i>Get an overview of different types of satellite sensors and platforms</p></li>
+							<li><p>Compare two flagship satellite programmes (Landsat vs. Sentinel)</p></li>
+							<li><p>Conceptualise the term big EO data</p></li>
+							<li><p>Understand the principle of data acquisition and retrieval</p></li>
+							<li>Get to know the Copernicus data and information access service (DIAS)</i></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>02.1 | Space and ground infrastructure</h1>
+						<h2>Content and topics [lesson 2.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#021_i">i</a></td><td>Space segment - Earth observation satellites</td><td><a href="https://bok.eo4geo.eu/PS1"><small>Platforms and sensors</small></a></td></tr>
+							<tr><td><a href="#021_ii">ii</a></td><td>Examples: NASA Landsat & Copernicus Sentinel</td><td>*</td></tr>
+							<tr><td><a href="#021_iii">iii</a></td><td>Big EO data</td><td>*</td></tr>
+							<tr><td><a href="#021_iv">iv</a></td><td>Integrated ground segment</td><td><a href="https://bok.eo4geo.eu/OI4-6"><small>Next-generation SDIs</small></a></td></tr>
+							<tr><td><a href="#021_v">v</a></td><td>Data and information access service (DIAS)</td><td>*</td></tr>
+							<tr><td><a href="#021_vi">vi</a></td><td>(Semantic) content-based image retrieval</td><td><a href="https://bok.eo4geo.eu/IP3-10"><small>Semantic enrichment</small></a></td></tr>
+						</table>
+					</section>
+					
+					<section id="021_i">
+						<h2>02.1 <small>(i)</small> Space segment - EO satellites</h2>
+						<p>EO for societal (and environmental) benefit: <b>GEO/SS</b> <small>Many initiatives are in place to promote the peaceful use of EO satellites. 
+							The intergovernmental Group on Earth Observations (<a href="https://www.earthobservations.org/index.php">GEO</a>) is a strong 
+							driver behind the integration of various kinds of EO systems globally into a system of systems (GEOSS). Copernicus is the European 
+							contribution to GEO. </small>
+						<br>EO for sustainable development: <b>EO4SDG</b><small>EO (and GNSS) is crucial in supporting the achievement of the development goals (SDGs) as 
+							recognised by the UN. UNOOSA provides an <a href="https://www.unoosa.org/oosa/en/ourwork/space4sdgs/index.html">overview</a> 
+							on the potential of space in supporting the SDGs. </small></p>					
+						<figure>
+							<img width="75%" height="75%" src="resources/02/021_1.png" alt="Fig. 021_1">
+							<figcaption>The UN-SPIDER <a href="http://www.un-spider.org/">knowledge portal</a>, EO for SDGs, GEO/SS</figcaption>
+						</figure>
+					</section>
+
+					<section id="021_i">
+						<h2>02.1 <small>(i)</small> Space segment - EO satellites</h2>
+						<p>Copernicus is like a stage where different actors with their favourite instruments play together in a band. </p>
+						<figure>
+							<img width="80%" height="80%" src="resources/021_1b.png" alt="Fig. 021_1b">
+							<figcaption>Copernicus stage with its instruments - a galery of artistic satellite portraits (compilation: S Lang). An allegoric music video
+							 you can find here: <a href="https://www.youtube.com/watch?v=xZ20Y7efHak"><em>Bell' Earth</em></a></figcaption>
+						</figure>
+							</section>
+
+					<section  id="021_ii">
+						<h2>02.1 <small>(ii)</small> Examples: NASA Landsat & Copernicus Sentinel</h2>
+						<p><a href="https://landsat.usgs.gov/landsat-8">Landsat-8</a> is the flagship of the long-lasting Landsat programme by NASA and USGS in 
+						the United States. The onboard instruments (sensors) of Landsat-8 are called <em>OLI</em> (optical) and <em>TIRS</em> (thermal). 
+						The Sentinel family is the backbone of the Copernicus EO space asset with Sentinel-2 carrying the optical instrument <em>MSI</em>.</p> 
+						<figure>
+							<img width="80%" height="80%" src="resources/02/021_2.png" alt="Fig. 021_2"><br>
+							<figcaption>Sentinel-2 vs. Landsat-8. A good overview can be found at the Airbus <a href="https://www.airbus.com/space/earth-observation/copernicus.html">global monitoring </a> page. </figcaption>
+						</figure>
+					</section>
+
+					<section  id="021_iii">
+						<h2>02.1 <small>(iii)</small> Big EO data</h2>
+						<p>The 4 "Vs" (volume, velocity, veracity, variety) usually describe the big data paradigm. A 5th V ('value') in EO asummes the investment in 
+						 Space infrastructure stimulates an emerging market in the downstream sector. </p>
+						<figure>
+						 	<img width="80%" height="80%" src="resources/02/021_3.png" alt="Fig. 021_3">
+							<figcaption>The 4+1 "Vs" describing the new paradigm of 'big EO data' as discussed by <a href="www.doi.org/doi.10.1080/17538947.2019.1585976">Sudmans et al. (2018)</a>. </figcaption>
+						</figure>
+						</section>
+
+					<section>
+						<h2>02.1 <small>(iii <i>cont.</i>)</small> Big EO data</h2>
+						<p>The Copernicus space infrastructure programme is mainly represented by a suite of satellites called the 'Sentinels'.</p>
+						<figure><img width="82%" height="82%" src="resources/021_3b.png" alt="Fig. 021_3b">
+							<figcaption>Deployment schedule of the Copernicus Sentinel family (as by 2015)</figcaption>
+						</figure>
+					</section>
+
+					<section  id="021_iv">
+						<h2>02.1 <small>(iv)</small> Integrated ground segment</h2>
+						<p style="font-size: 22px">The Copernicus integrated ground segment (IGS) includes</p>
+						<ul style="font-size:22px">
+							<li>Receiving stations</li>
+							<li>Satellite data storage systems</li>
+							<li>Information access services</li>
+						</ul><br>
+						<figure>
+							<img width="85%" height="85%" src="resources/02/021_4.png" alt="Fig. 021_4">
+							<figcaption>An integrated view of Copernicus and the related ground segment including existing data infrastructures, DIAS, and the 
+							user uptake segment (focus: knowledge & skills). Links to the mentioned projects: <a href="www.cophub-ac.eu">CopHub.AC</a> | 
+							<a href="www.eo4geo.eu">EO4GEO</a>.</figcaption>
+						</figure>
+					</section>
+
+					<section  id="021_v">
+						<h2>02.1 <small>(v)</small> Data and information access service (DIAS)</h2>
+						<figure>
+						<img src="resources/02/021_5.png" alt="Fig. 021_5">
+						<figcaption>The five DIAS online platforms allow users to discover, manipulate, process and download Copernicus data and information. 
+							All DIAS platforms provide access to Copernicus Sentinel data, as well as to the information products from Copernicus’ six operational 
+							services. Examples: <a href="https://creodias.eu/">CREODIAS</a> (left) | <a href="https://www.onda-dias.eu/cms/">ONDA DIAS</a> (right)</figcaption>
+						</figure>
+					</section>
+
+					<section  id="021_vi">
+						<h2>02.1 <small>(vi)</small> (Semantic) content-based image retrieval</h2>
+						<p>How to find suitable imagery in a data catalogue (see lesson 2.2)? Consider the following scenario.</p>
+						<p><i>A public authority needs to report on water quality of large swimming lakes (could be in Austria, Switzerland, northern
+							Italy, southern Germany, etc.) during high season over the past three years. For this purpose a service provider (EO company)
+							 is contracted to deliver value-adding information products based on satellite images. The EO expert in the company needs to 
+							 search for a suitable set of images. (More Copernicus use cases you can find <a href="https://www.copernicus.eu/en/use-cases">here</a>.)<br>
+						</i>
+						The expert may consider the following search criteria: (1) time window, (2) geographical focus (AOI), (3) cloud cover, (4) thematic focus, 
+						(5) monitoring period, more specifically:</p>
+						<table>
+							<tr><td><ul><small>
+								<li>Time window, e.g. <b>seasonal coverage</b>, as well as <b>geographical location</b> can be derived from standard metadata. </li>
+								<li>The <b>cloud cover</b> can be an retrieved from image wide (i.e. ‘global’) meta-data as well, but it does make a difference a. how well 
+									clouds are detected (i.e. which algorithm is applied) and b. whether a 5% cloud coverage just hovers over the lake(s). </li>
+								<li>The <b>thematic focus</b> requires the operator to apply a general (i.e. low level semantic) concept of the presence and imaged 
+									representation of (swimming) lakes. Ideally, this information is extracted automatically and added to the images's metadata
+									(e.g, 'Existence.Lake = 1')</li>
+								<li>The <b>assessment over time</b> (constancy or change of quality) implies the notion for changes in critical indicators, e.g. revealed by indices 
+									utilizing infrared reflectance recorded by the multi-temporal imagery.</li>
+							</small></ul></td>
+						<td><img src="resources/02/021_6.png" alt="Fig. 021_6"></td>
+						</tr>
+						</table>
+						<br>
+					</section>
+
+				</section>
+
+				<!-- Lesson 2.2 --> 
+
+				<section>
+					<section >
+						<h1>02.2 | Data & information access</h1> 
+						<h2>Learning objectives [lesson 2.2]</h2> 
+							<ul><li><p><i>Get to know different sources and options for data search via free platforms</p></li>
+							<li><p>Understand how to search and acquire VHR satellite imagery ('tasking) from commercial data providers</p></lI>
+							<li>Learn how to access information layers from Copernicus services</i></li></ul>
+					</section>
+	
+					<section>
+						<h1>02.2 | Data & information access</h1>
+						<h2>Content and topics [lesson 2.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#022_i">i</a></td><td>Earth explorer (USGS)</td><td><a href=><small>*</small></a></td></tr>
+							<tr><td><a href="#022_ii">ii</a></td><td>Sentinel hub and playground</td><td><a href=><small>*</small></a></td></tr>
+							<tr><td><a href="#022_iii">iii</a></td><td>Commercial VHR data portals </td><td><a href=><small>*</small></a></td></tr>
+							<tr><td><a href="#022_iv">iv</a></td><td>Google Earth Engine </td><td><a href=><small>*</small></a></td></tr>
+							<tr><td><a href="#022_v">v</a></td><td>Proba-V mission exploitation platform<td><a href=><small>*</small></a></td></tr>
+							<tr><td><a href="#022_vi">vi</a></td><td>Copernicus service platforms</td><td><a href=><small>*</small></a></td></tr>
+						</table>
+					</section>
+
+					<section id="022_i">
+
+						<script type='text/javascript' src="http://code.jquery.com/jquery-latest.pack.js"></script>
+						<script type="text/javascript">
+	
+							$(document).ready(function () {
+									
+								$('#earthex').click(function() {
+									$('#earthex').hide('slow');
+									$('#earthexhow').show('slow');
+								});
+
+								$('#earthexhow').click(function() {
+									$('#earthexhow').hide('slow');
+									$('#earthexhow2').show('slow');
+								});
+						
+							});
+						</script>
+						<h2>02.2 <small>(i)</small> Earth explorer (USGS)</h2>
+						
+						<a href="#" id="earthex"><img src="resources/02/022_1.png" alt="earthexplorer"></a>
+						<div id="earthexhow" style="display:none;"><img src="resources/022_1b.png" alt="earthexplorer howto"></div>
+						<div id="earthexhow2" style="display:none;"><img src="resources/022_1c.png" alt="earthexplorer howto2"></div>
+						<figcaption>The USGS <a href="https://earthexplorer.usgs.gov/">Earth Explorer</a> contains the full Landsat repository and data from 
+							other NASA missions as well as the Sentinel-2 archive. Click image (2 steps) or <a href="#" id="earthex">here</a> for further instructions - searching for 
+							locations and download requires registration</figcaption>
+					</section>
+
+					<section id="022_ii">
+						<h2>02.2 <small>(ii)</small> Sentinel hub and playground</h2>
+						
+						<figure><img src="resources/02/022_2.png" alt="sentinel playground">
+							<figcaption>The so-called Sentinel <a href="http://apps.sentinel-hub.com/sentinel-playground">playground</a> that allows for real-time
+							data browsing and embedding of OGC services in GIS applications.</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>02.2 <small>(ii <i>cont.</i>)</small> Copernicus Open Access Hub</h2>
+						<figure>
+							<img src="resources/022_2b.png" alt="sentinel hub">
+							<figcaption>The Copernicus <a href="https://scihub.copernicus.eu/">Open Access Hub</a> ... </figcaption>
+						</figure>
+					</section>
+
+					<section id="022_iii">
+						
+						<script type='text/javascript' src="http://code.jquery.com/jquery-latest.pack.js"></script>
+						<script type="text/javascript">
+	
+							$(document).ready(function () {
+									
+								$('#commerc').click(function() {
+									$('#commerc').hide('slow');
+									$('#commerchow').show('slow');
+								});
+
+								$('#commerchow').click(function() {
+									$('#commerchow').hide('slow');
+									$('#commerchow2').show('slow');
+								});
+						
+							});
+						</script>
+						<h2>02.2 <small>(iii)</small> Commercial VHR data portals</h2>
+						
+						<a href="#" id="commerc"><img src="resources/02/022_3.png" alt="commercial portals"></a>
+						<div id="commerchow" style="display:none;"><img src="resources/022_3b.png" alt="earthexplorer howto"></div>
+						<div id="commerchow2" style="display:none;"><img src="resources/022_3c.png" alt="earthexplorer howto2"></div>
+					
+						<figcaption>The DigitalGlobe<a href="www.euspaceimaging.com/digitalglobe-archive"> ImageFinder</a> (left) provides the data archive for Worldview-2 and other 
+							VHR missions. The Airbus Space & Defence <a href="www.geo-airbusds.com/geostore/">GeoStore</a> (right) offers Pléiades 
+							images. Click image (2 steps) or <a href="#" id="commerc">here</a> for further instructions</figcaption>
+					</section>
+
+					<section>
+						<h2>02.2 <small>(iii <i>cont.</i>)</small> Commercial VHR data portals</h2>
+						<h3>A general note on pricing schemes</h3>
+						<p>Freely available data (Landsat, Sentinel, etc.) involve billions of public investment. Commercial satellites are run by 
+							private companies that seek for return of investment. </p>	
+						<table>
+							<tr><td>Cost model factors include:<ul>
+								<li>Spatial resolution (VHR data are usually commercial)</li>
+								<li>Versatility / flexibility (revisiting time)</li>
+								<li>Archive vs. tasking</li>
+								<li>Image quality (cloud coverage, incidence angle)</li>
+								<li>Window of acquisition / delivery mode</li></ul>
+								<p><figcaption>An example of Airbus / Pléiades is shown on the right</figcaption>
+							</td>
+							<td><img src="resources/02/022_4b.png" alt="Fig. 022_4b"></td></tr>
+						</table>
+						
+					</section>
+
+					<section id="022_iv">
+						<h2>02.2 <small>(iv)</small> Google Earth Engine</h2>
+						<figure>
+						<img src="resources/02/022_4.png" alt="Fig. 022_4">
+						<figcaption><a href="https://earthengine.google.com/">Google Earth Engine</a> (GEE) is the flagship in cloud-based EO data processing. Over recent years, it has revolutionized
+							the way how satellite data are being processed, meaning it has shifted the paradigm of desktop image processing to cloud solution.
+							The image repository is enourmous and steadily growing and together with a toolbox (such as TimeLapse) and the palette of 
+							Python-based tools and scripts allows for an inspiring and easy-to-use data processing globally. NB: getting results out of the system is not as straight-forward.  </figcaption>
+						</figure>
+					</section>
+
+					<section id="022_v">
+						<h2>02.2 <small>(v)</small> Proba-V mission exploitation platform</h2>
+						<figure>
+							<img src="resources/02/022_5.png" alt="Fig. 022_5">
+							<figcaption>The <a href="https://proba-v-mep.esa.int/">Proba-V mission exploitation platform </a> (MEP) is a mission-specific data access platform for 
+							the exploratory satellite Proba-V (V = Vegetation). Orginially designed for data access, it evolved to a widely usable 
+							cloud infrastructured for time-series analysis and spatially-constraint (i.e. polygon-based) paramater calculations, such as NDVI 
+							per country. Next to Proba-V also Sentinel-2 data are accessible. Pre-fabricated Jupyter notebooks are available for customized use.</small>
+							<figcaption>
+						</figure>		
+						</section>
+
+					<section id="022_vi">
+						<h2>02.2 <small>(vi)</small> Copernicus service platforms</h2>
+						<br>The fundamental objective of Copernicus is to support <em>policies, regulations, conventions, and directives</em> 
+						with a defined portfolio geospatial information services in the following areas:
+						<figure>
+							<img src="resources/02/022_6.png" alt="Fig. 022_6">
+							<figcaption>The overall Copernicus structure including data and services (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>02.2 <small>(v) <i>cont.</i></small> Copernicus service platforms</h2>
+						<h3 style="color:palevioletred">Copernicus services</h3>
+						<p>There are six so-called <em>Copernicus [core] services</em> in six major thematic areas.</p>
+						<table>
+							<tr>
+							<ul>
+								<li>Land monitoring</li>
+								<li>Ocean monitoring</li>
+								<li>Atmosphere monitoring</li>
+							</ul>	
+							</tr>
+							<tr><ul>
+								<li>Climate change</li>
+								<li>Emergency management</li>
+								<li>Human security</li>
+							</ul></tr>
+						</table>
+						<figure><img src="resources/02/022_6b.png" alt="Fig. 022_6b">
+							<figcaption>(© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<img src="resources/02/022_6t1.png">
+						<h2 style="color:#33cc80;">Land monitoring </h2>
+						<p>The Copernicus Land Monitoring service <a href="https://land.copernicus.eu">(CLMS)</a> aims at monitoring the Earth.</p>
+						<figure>
+							<img src="resources/02/022_6s1.png" alt="Fig. 022_6s1">
+							<figcaption>The four land monitoring service components (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<img src="resources/02/022_6t2.png">
+						<h2 style="color:#33adcc;">Ocean monitoring </h2>
+						<p>The Copernicus Marine Environment Monitoring service <a href="http://marine.copernicus.eu/services-portfolio/access-to-products">(CMEMS)</a> focuses on the global ocean.</p>
+						<figure>
+							<img src="resources/02/022_6s2.png" alt="Fig. 022_6s2">
+							<figcaption>The marine monitoring service portfolio (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<img src="resources/02/022_6t3.png">
+						<h2 style="color:#33adcc8c;">Atmosphere monitoring </h2>
+						<p>The Copernicus Marine Environment Monitoring service <a href="https://atmosphere.copernicus.eu/catalogue#/">(CAMS)</a> focuses on the global ocean.</p>
+						<figure>
+							<img src="resources/02/022_6s3.png" alt="Fig. 022_6s3"><br>
+							<figcaption>The atmosphere monitoring service portfolio (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<img height="50" src="resources/02/022_6t4.png">
+						<h2 style="color:#cc4533d3;">Climate change</h2>
+						<p>The Copernicus Climate Change service <a href="https://climate.copernicus.eu/about-c3s">(C3S)</a></p>
+						<figure>
+							<img src="resources/02/022_6s4.png" alt="Fig. 022_6s4"><br>
+							<figcaption>The C3S key products and services. See also the <a href="https://climate-adapt.eea.europa.eu/">Climate Adapt</a> platform of the European
+						Environment Agency (EEA)</figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<img height="50" src="resources/02/022_6t5.png">
+						<h2 style="color:#caae60b9;">Emergency management</h2>
+						<p>The Copernicus Emergency Management service <a href="https://emergency.copernicus.eu/">(CEMS)</a>  </p>
+						<figure>
+							<img src="resources/02/022_6s5.png" alt="Fig. 022_6s5"><br>
+							<figcaption>The emergency management service portfolio (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<img width="50%" src="resources/022_6t6.png">
+						<h2 style="color:#33adcc49;">Human security</h2>
+						<p>The Copernicus Security service contains of three subservices, (1) Maritime surveillance, (2) Border surveillance and the (3) support to 
+							European<a href="https://sea.security.copernicus.eu/"> External Action (SEA)</a>  </p>
+						<figure>
+							<img src="resources/02/022_6s6.png" alt="Fig. 022_6s6"><br>
+							<figcaption>The security SEA service (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>The Copernicus ecosystem</h2>
+						<p>Copernicus engages different <em>actor groups</em>.</p>
+						<ul>
+							<li style="color:#bbb7a8;">Data providers</li>
+							<li style="color:#c5b2ca8f;">Service providers</li>
+							<li style="color:#cc5733;">Users and stakeholders</li>
+						</ul>
+						<figure>
+							<img src="resources/02/022_5c.png" alt="Fig. 022_5c"><br>
+							<figcaption>A subset of the Copernicus ecosystem</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2 style="color:#bbb7a8;">Data providers</h2>
+						<p>Next to the Sentinel satellites there is a series of contributing missions, including commercial providers of very high (spatial) resolution (VHR)  data.</p>
+						<p><img src="resources/02/022_5d.png" alt="Fig. 022_5d"><br>
+							<figcaption>Copernicus contributing missions - the example of Worldview-2 (© XXX, Copyright Info)</figcaption>
+						<p style="color:#cc5733;">Include the example of Planet and Skysat (completion of constellation such that every location on 
+						Earth is visible by 7 satellites)</p>
+					</section>
+					<section>
+						<h2 style="color:#c5b2ca8f;">Service providers</h2>
+						<p>...</p>
+						<br>
+					</section>
+					<section>
+						<h2 style="color:#cc5733;">Users and stakeholders</h2>
+						<p>...</p>
+						<br>
+					</section>
+
+				</section>
+
+				<!-- UNIT 2 ENDS HERE -->
+
+			<!-- UNIT 3 STARTS HERE -->
+
+				<section>
+					<h1>03 | Specifics of image data</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U3.png" alt="U3 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 3.1 --> 
+
+				<section>
+
+					<section>
+						<h1>03.1 | Image data model</h1> 
+						<h2>Learning objectives [lesson 3.1]</h2><p> 
+<<<<<<< HEAD
+							<ul><li><p><i>Understand the specifics of image data as a special case of raster data</i></p></li>
+							<li><p><i>Familiarize with top-view characteristics of image data as well as the 
+								difference between panchromatic and multispectral images</i></p></li>
+							<li><p><i>Learn to distinguish between different resolution types</i></p></li>
+							<li><p><i>Learn how to use spectral profiles as an analysis tool</i></p></li>
+							<li><p><i>Understand different image storage strategies</i></li></p></ul>
+=======
+						<ul>
+							<li><p><em>Understand the specifics of image data as a special case of raster data</p></em></li>
+							<li><p><em>Familiarize with top-view characteristics of image data as well as the 
+								difference between panchromatic and multispectral images</p></em></li>
+							<li><p><em>Learn to distinguish between different resolution types</p></em></li>
+							<li><p><em>Learn how to use spectral profiles as an analysis tool</p></em></li>
+							<li><em>Understand different image storage strategies</em></li>
+						</ul>
+>>>>>>> a33e643c7a6a783c57d9828e569ea8030a2c4766
+					</section>
+	
+					<section>
+						<h1>03.1 | Image data model</h1>
+						<h2>Content and topics [lesson 3.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>What are image data?</td><td><a href="https://bok.eo4geo.eu/PS3-4"><small>Properties of digital imagery</small></a></td></tr>
+							<tr><td>ii</td><td>Vector vs. raster data representation</td><td><a href="https://bok.eo4geo.eu/DM3-2"><small>The raster model</small></a></td></tr>
+							<tr><td>iii</td><td>Resolution types</td><td><a href="https://bok.eo4geo.eu/PS3-4-1"><small>Spectral resolution</small></a></td></tr>
+							<tr><td>iv</td><td>Image matrix and image regions</td><td>*</td></tr>
+							<tr><td>v</td><td>Panchromatic vs. multi-band images, feature space</td><td><a href="https://bok.eo4geo.eu/IP4-3-3-2"><small>Radiometric resolution</small></a></td></tr>
+							<tr><td><a href="#031_vi">vi</a></td><td>Spectral profiles</td><td>*</td></tr>	
+							<tr><td><a href="#031_vii">vii</a></td><td>Storage options</td><td><a href="https://bok.eo4geo.eu/PS3-3"><small>Data storage</small></a></td></tr>						
+						</table>
+					</section>
+
+					<section>
+						<h2>03.1 <small>(i)</small> What are image data?</h2> 
+						<p>Image data are a specific type of raster data representing a subset of the Earth's surface by
+							 recording the continous phenomenon of <strong>radiation reflectance</strong>. Image data are captured by sensors mounted on different platforms, such as 
+							ballons, drones, aircrafts, and satellites.</p>	
+						<figure>
+							<img width=80% height=80% data-src="resources/03/031_1a.png" alt="Fig. 031_1a">
+							<figcaption>From oblique view to top-view (© Photos: S. Lang)</figcaption>	
+						</figure>
+					</section>
+
+					<section>
+						<h2>03.1 <small>(ii)</small> Vector vs. raster data representation</h2> 
+						<p>Vector data are used to represent <i>spatial discreta</i>, while raster data are the appropriate data model for <i>spatial continua</i>.</p>
+						<figure>
+						<img width=80% height=80% data-src="resources/031_2.png" alt="Fig. 031_2">
+						<figcaption>Object-based image analysis (OBIA) has been developed to bridge between continous observations and object representations.
+						</figcaption></p>
+					</figure>	
+					</section>	
+
+					<section>
+						<h2>03.1 <small>(iii)</small> Resolution types</h2> 
+						<p>There are four different resolution types: <b>spectral, spatial, radiometric, temporal </b>resolution</p>	
+						<br><img width=80% height=80% data-src="resources/03/031_3.png" alt="Fig. 031_3">
+						<br><small>Pléiades image of the city of Salzburg with 0.5m spatial resolution.</small></p>	
+					</section>
+
+					<section>
+						<h2>03.1 <small>(iv)</small> Image matrix and image regions</h2> 
+						<p>An image matrix (or pixel array) is defined by (i) <b>coordinates of origin</b>, (ii) <b>resolution</b> (pixel size), (iii) <b>extent</b> (dimension)</p>
+						<figure>
+							<img width=80% height=80% data-src="resources/03/031_4.png" alt="Fig. 031_4">
+							<figcaption>Image matrix as defined by origin, resolution, extent (left). Image regions as defined by pixel similarity (right) </figcaption></p>
+						</figure>
+					</section>
+					
+					<section>
+						<h2>03.1 <small>(v)</small> Panchromatic vs. multi-band images, feature space</h2> 
+						<p>Satellite imagery consists of several co-registered pixel arrays representing a <b>combination</b> of different spectral bands. </p>
+						<img width=90% height=90% data-src="resources/03/031_5.png" alt="Fig. 031_5">
+						<br><small>The visual effect of combining different spectral bands can be interpreted by humans or machines in order to derive semantic information (e.g. land cover classes).</small></p>	
+
+					</section>
+
+					<section id="031_vi">
+						<h2>03.1 <small>(vi)</small> Spectral profiles</h2> 
+						<p>Spectral profiles help determine the spectral properties of a given pixel (i.e., at a specific location) </p>	
+						<figure>
+						<img width=80% height=80% data-src="resources/03/031_6.png" alt="Fig 031_6">
+						<figcaption>A spectral profile of a selected pixel showing the DNs of the sequential Landsat-8 bands (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section id="031_vii">
+						<h2>03.1 <small>(vii)</small> Storage options</h2> 
+						<p>There are different  options for storing multi-band images, band-interleaved by line (<strong>BIL</strong>), band-interleaved by pixel (<strong>BIP</strong>), 
+							and band sequential (<strong>BSQ</strong>) </p>	
+						<figure>
+							<img width=80% height=80% data-src="resources/03/031_7.png" alt="Fig 031_7">
+							<figcaption>Different storage options BIL, BIP, and BSQ (© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+				</section>
+
+				<!-- Lesson 3.2 --> 
+
+				<section>
+					
+					<section>
+						<h1>03.2 | Histograms</h1> 
+						<h2>Learning objectives [lesson 3.2]</h2><p> 
+							<ul><li><p><i>Understand the frequency distribution of pixels in images</p></i></li>
+							<li><p><i>Learn how to generate and to read histograms</p></i></li>
+					</section>
+	
+					<section>
+						<h1>03.2 | Histograms</h1>
+						<h2>Content and topics [lesson 3.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#032_i">i</a></td><td>Value frequency distribution</td><td>*</td></tr>
+							<tr><td><a href="#032_ii">ii</a></td><td>Interpretation of histograms</td><td><a href="https://bok.eo4geo.eu/IP1-4-2"><small>Histograms</small></a></td></tr>
+							<tr><td><a href="#032_iii">iii</a></td><td>Histogram generation</td><td>*</td></tr>
+						</table>
+					</section>
+
+					<section id = "032_i">
+						<!-- URI in every slide or on ToC level?-->
+						<p hidden class ="slide_metadata" 
+						BoK_URI="https://bok.eo4geo.eu/IP1-4-2"" 
+						/> 
+						<h2>03.2 <small>(i)</small> Value frequency distribution</h2> 
+						<h3>Histograms</h3>
+						<p>What is a histogram? A histogram is a <strong> statistical chart</strong> technique providing a compact overview of the data 
+						in an image than knowing the exact value of every pixel. </p>
+						<figure>
+							<img src="resources/03/032_1.png" alt="032_1">
+							<figcaption>(© XXX, Copyright Info)</figcaption>
+						</figure>
+					</section>
+
+					<section id = "032_ii">
+						<p hidden class ="slide_metadata" 
+						BoK_URI="https://bok.eo4geo.eu/IP1-4-2"" 
+						/> 
+						<h2>03.2 <small>(ii)</small> Interpretation of histograms</h2> 
+						<figure>
+							<img src="resources/03/032_2.png" alt="032_2">
+							<figcaption>How to interpret different types histograms? (© XXX, Copyright Info) </figcaption>
+						</figure>
+					</section>
+
+					<section id = "032_iii">
+						<p hidden class ="slide_metadata" 
+						BoK_URI="https://bok.eo4geo.eu/IP1-4-2"" 
+						/> 
+						<h2>03.2 <small>(iii)</small> Histogram generation</h2> 
+						<h3>Interactive excercise</h3>
+						<img src="resources/03/032_3.png" alt="histogram Jupyter"><p>
+						Here you find a interactive Jupyter notebook on how to convert a sequence of digital numbers stored in a BIL format into a 
+						<a href="https://github.com/simon-donike/Histogram_tasks/blob/master/01_BIL_to_Histogram.ipynb">histogram</a>
+							
+					</section>
+
+				</section>
+
+				<!-- UNIT 3 ENDS HERE -->
+
+			<!-- UNIT 4 STARTS HERE -->
+
+				<section>
+					<h1>04 | Visualising and exploring image data</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U4.png" alt="U4 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 4.1 --> 
+
+				<section>
+
+					<section>
+						<h1>04.1 | Sensors and metadata</h1> 
+						<h2>Learning objectives [lesson 4.1]</h2><p> 
+						<ul>
+							<li><em>Learn what typical metadata are produced by satellite imagery</em></li>
+							<li><em>Understand how metadata of image collections (e.g. Sentinel-2) can be used 
+								to better understand the availabilty and quality of satellite data</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>04.1 | Sensors and metadata</h1>
+						<h2>Content and topics [lesson 4.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#041_i">i</a></td><td>Sensor characteristics (Landsat/Sentinel-2 vs. Worldview-2)</td><td><small>*</small></td></tr>
+							<tr><td><a href="#041_ii">ii</a></td><td>Satellite image metadata analysis (webtool EO Compass)</td><td><small>*</small></smal></td></tr>						
+						</table>
+					</section>
+				
+					<section id= 041_i>
+						<h2>04.1 <small>(i)</small> Sensor characteristics (Landsat/Sentinel-2 vs. Worldview-2)</h2> 
+						<h3 style="color:gray;">Typical features of HR vs. VHR sensors</h3>
+						<p>Using the examples of two representatives of the <b>high-resolution (HR)</b> optical satellites family (Landsat-8 & Sentinel-2) 
+						and a <b>VHR satellite</b> (Worldview-2) </p>
+						<!--@Stefan: you mention HR and VHR (Wordview), but worldview is not introduced here?-->
+						<figure>
+							<img width=80% data-src="resources/04/041_1.png" alt="Fig. 041_1">
+							<figcaption>Sensor characteristcs Sentinel-2 vs. Landsat-8. See <a href="https://earth.esa.int/web/sentinel/user-guides/sentinel-2-msi/overview">link</a>.</figcaption>				
+						</figure>
+					</section>
+
+					<section id= 041_ii>
+						<h2>04.1 <small>(ii)</small> Satellite image metadata analysis</h2> 
+						<h3 style="color:gray;">The EO Compass</h3>
+						<p>A stand-alone webtool to understand the global coverage and quality of Sentinel-2 image acquisition based on image metadata analysis. </p>
+						<figure>	
+							<img width=80% height=80% src="resources/04/041_2.png" alt="Fig. 041_2">	
+							<br><figcaption><a href="http://eo-compass.zgis.at">EO Compass</a> (Sudmanns et al., 2019) | © Z_GIS</figcaption>	
+						</figure>
+						</section>
+
+				</section>
+
+				<!-- Lesson 4.2 --> 
+				
+				<section>
+
+					<section>
+						<h1>04.2 | Image handling</h1> 
+						<h2>Learning objectives [lesson 4.2]</h2><p> 
+							<ul>
+							<li><em>Practice the handling of image data in dedicated software environment </em></li>
+							<li><em>Learn how to use the <em>ArcGIS Pro</em> Image Analysis module</em></li>
+							</ul>
+					</section>
+	
+					<section>
+						<h1>04.2 | Image handling</h1>
+						<h2>Content and topics [lesson 4.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td><a href="#042_i">i</a></td><td><em>ArcGIS Pro</em> Image Analysis module</td><td><small>*</small></td></tr>
+							<tr><td><a href="#042_ii">ii</a></td><td>Organising and loading image data</td><td><small>*</small></td></tr>
+							
+						</table>
+					</section>
+
+					<section id="042_i">
+						<h2>04.2 <small>i</small> ArcGIS Pro Image Analysis module</h2> 
+						<h3 style="color:gray;">Visualising images in <em>ArcGIS Pro</em></h3>
+						<figure>
+							<img width=100% data-src="resources/04/042_1.png" alt="Fig. 042_1">
+							<figcaption>Use the navigation pane to control interaction with image (left). The Swipe function allows to visualise and explore several images simultanously (right).</figcaption>
+						</figure>
+					</section>
+
+					<section id="042_ii">
+						<h2>04.2 <small>iii</small> Organising and loading image data</h2> 
+						<h3 style="color:gray;">Visualising images in <em>ArcGIS Pro</em></h3>
+						<img width=100% data-src="resources/04/042_2.png" alt="Fig. 042_2">
+						<small>Open multi-band image via container file (left). Make background transparent (right).</small>
+					</section>
+
+				</section>
+				
+				<!-- Lesson 4.3 --> 
+				
+				<section>
+
+					<section>
+						<h1>04.3 | Band combinations</h1> 
+						<h2>Learning objectives [lesson 4.3]</h2><p> 
+						<ul>
+							<li><em>Understand how to visualise, manipulate, and interact with, image data </em></li>
+							<li><em>Learn what general principles apply when interpretating them (including change of band combinations)</em></li>
+						</ul>
+						</section>
+		
+					<section>
+						<h1>04.3 | Band combinations</h1>
+						<h2>Content and topics [lesson 4.3]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Visualising image data</td><td><a href="https://bok.eo4geo.eu/IP1-1-2"><small>Layer stack</small></a></td></tr>
+							<tr><td>ii</td><td>Range adjustment and resampling for viewing</td><td><a href="https://bok.eo4geo.eu/AM13-5"><small>Raster resampling</small></a></td></tr>
+							<tr><td>iii</td><td>Band combinations (incl <em>ArcGIS Pro</em> presets)</td><td><a href=https://bok.eo4geo.eu/IP3-13"><small>Visual interpretation</small></a></td></tr>
+						</table>
+					</section>
+
+					<section id= 043_i>
+						<h2>04.3 <small>(i)</small> Visualising image data</h2> 
+						<h3 style="color:gray;">What do the colours mean?</h3>
+						<p>Going back to the <a href="#/11/0">starting</a> slide of this unit, we can see a scene which is dominated by red tones.</p>
+						<figure>	
+							<img width=80% height=80% src="resources/04/043_1.png" alt="Fig. 043_1">	
+							<br><figcaption>Different band combinations are used for specific analytical purposes (© XXX, Copyright Info)</figcaption>	
+						</figure>
+					</section>	
+
+					<section id= 043_ii>
+						<h2>04.3 <small>(iii)</small> Range adjustments</h2> 
+						<h3 style="color:gray;">...</h3>
+						<p> 
+							<br><img width=80% height=80% src="resources/043_3.png" alt="Fig. 043_3">	
+							<br><small>...</small>	
+					</section>
+
+					<section id= 043_iii>
+						<h2>04.3 <small>(iii)</small> Band combinations (incl <em>ArcGIS Pro</em> presets)</h2> 
+						<h3 style="color:gray;">Visualising visible and non-visible spectral ranges</h3>
+						<p> 
+							<br><img width=80% height=80% src="resources/043_3.png" alt="Fig. 043_3">	
+							<br><small>...</small>	
+					</section>					
+
+				</section>
+
+				<!-- UNIT 4 ENDS HERE -->
+
+				<!-- UNIT 5 STARTS HERE -->
+
+				<section>
+					<h1>05 | Spatial referencing</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U5.png" alt="U5 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 5.1 --> 
+
+				<section>
+
+					<section>
+						<h1>05.1 | Spatial referencing</h1> 
+						<h2>Learning objectives [lesson 5.1]</h2><p> 
+						<ul>
+							<li><em>Understand the general rationale for spatial referencing and geometric correction</em></li>
+							<li><em>Learn the purpose of orthorectification and georeferencing</em></li>
+							<li><em>Understand geodetic and geometric principles as well as the process of 
+								(mathematical) transformation and (technical) resampling</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>05.1 | Spatial referencing</h1>
+						<h2>Content and topics [lesson 5.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Rationale of spatial referencing</td><td><a href="https://bok.eo4geo.eu/IP1-3-2"><small>Spatial referencing</small></a></td></tr>
+							<tr><td>ii</td><td>Georeferencing vs. geometric correction</td><td>*</td></tr>	
+							<tr><td>iii</td><td>How to obtain real-world coordinates</td><td>*</td></tr>	
+							<tr><td>iv</td><td>Orthorectification via RPC</td><td><a href="https://bok.eo4geo.eu/IP1-3-1"><small>Orthorectification</small></a></td></tr>	
+							<tr><td>v</td><td>Geodetic principles, projections [<i>recap</i>]</td><td><a href="https://bok.eo4geo.eu/GD1-4"><small>Map projections</small></a></td></tr>	
+							<tr><td>vi</td><td>Transformations & resampling</td><td><a href="https://bok.eo4geo.eu/IP1-3-2"><small>Coordinate transformations</small></a></td></tr>						
+						</table>
+					</section>
+
+					<section>
+						<h2>05.1 <small>(i)</small> Rationale of spatial referencing</h2> 
+						<p>The purpose is to transform image data into a <b>spatial reference frame</b>. The process is carried out according to 
+							<b>geodetic principles</b> like the geodetic datum, projections, etc. </p>
+						<p><small>There are several ways to 'add' <b>spatial coordinates</b> to an image. This process also compensates 
+							for <b>distortion effects </b> that occur during image capturing (applies in particular to ortho-rectification). 
+							Usually, images obtained through one of the discussed image portals, are <b>pre-registered</b> or even 'ortho-ready'.</small></p>
+						
+						<figure>
+							<img src="resources/05/051_1.png" width=75% height=75%><br>
+							<figcaption> Registration is mandatory if one or more of the following conditions apply: 
+								(1) data sets from different sensors or time slots to be integrated (e.g., for time series / monitoring); 
+								(2) image scenes to be merged with adjacent scenes (mosaicing); (3) image data to be combined with existing 
+								geodata (e.g., background map); (4) image data to be transformed to another reference system (re-projection); (5)
+								Size and distance measurements to be taken</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>05.1 <small>(ii)</small> Georeferencing vs. geometric correction</h2> 
+						<p><b>Geometric correction</b> is a 'super-concept' comprising <b>georeferencing</b> (external orientation) and <b>ortho-rectification</b>
+							(internal orientation, depending on camera or sensor calibration). The latter is of 
+							particular importance for <b>VHR satellite images</b> or air photos. </p>
+						<p><b>Resampling</b> is the actual process of re-calculating an image matrix during geometric correction.</p>
+						<figure>
+							<img src="resources/05/051_2.png" style="position:relative;width:380px; height:300px";><br>
+							<figcaption> screenshot taken from EO4GEO BoK in the EO*GI sector<a href="https://bok.eo4geo.eu/IP1-3"> BoK visualization and search Tool</a></figcaption>
+						</figure>
+						</section>
+
+					<section>
+						<h2>05.1 <small>(iii)</small> How to obtain real-world coordinates?</h2> 
+						<p>You can obtain real-world coordinates (lat-long [DMS/DD] or metric) from various sources including <b>field visits</b> (GNSS 
+							measurements), <b>Google Maps</b>, <b>Online map portals</b> (e.g. <a href="http://www.austrianmap.at/">Austrian Map</a>), or any 
+							other <b>co-registered image</b>.
+						<figure><img src="resources/05/051_3.png"  alt="src coord"></figure>
+						<figcaption>Sources of real-world coordinates (© S. Lang, PLUS)</figcaption>
+					</section>
+
+					<section>
+						<h2>05.1 <small>(iii cont.)</small> How to obtain real-world coordinates?</h2> 
+						<p>On-the-fly projection (e.g. in <em>ArcGIS Pro</em>), only if spatial reference information exists.</p>
+						<p>Image co-registration requires well registered reference image in appropriate resolution</p>
+						<figure>
+							<img src="resources/051_3b.png" alt="img coreg">
+							<figcaption>Image-to-image coregistration of different sensors (© xxx/ xxx)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>05.1 <small>(iii cont.)</small> How to obtain real-world coordinates?</h2> 
+						<p>The <b>geometric quality</b> of an image (pre-registration) depends on the <b>purpose</b>. The pre-registered <em>level 1c / 1g</em> products of 
+							Landsat-8 or Sentine-2 are usually sufficient for a typical 'Landsat-like' application case. 
+						</p>	
+						<figure>
+							<img src="resources/051_3c.png" alt="geom qual">
+							<figcaption>Spatial accuracy of Sentinel-2 and Landsat-8 imagery</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>05.1 <small>(iv)</small> Orthorectification via RPC</h2> 
+						<p>Purpose and procedure
+							VHR Satellite date delivered pre-registered (z.B. UTM-33 / WGS-84)
+							Realized using sensor models (RPC) and differential rectification with DGM
+							Prerequisite: ‘Ortho-Ready‘ products
+							Interpolation of elevation over pixel and re-calculation into image matrix</p>
+							<figure>
+								<img src="resources/05/051_4.png" alt="ortho">
+								<figcaption>Components for ortho-rectification (© xxx/ xxx)</figcaption>			
+							</figure>
+						</section>
+
+					<section>
+						<h2>05.1 <small>(v)</small> Geodetic principles, projections</h2> 
+						<p>[add content here]
+					</section>
+
+					<section>
+						<h2>05.1 <small>(vi)</small> Transformation & resampling</h2> 
+						<p>[add content here]
+					</section>
+				
+				</section>
+				
+				<!-- Lesson 5.2 --> 
+
+				<section>
+
+					<section>
+						<h1>05.2 | GCP collection and referencing</h1> 
+						<h2>Learning objectives [lesson 5.2]</h2><p> 
+						<ul>
+							<li><em>Practice the procedure of GCP collection and spatial referencing in the software environmen</em></li>
+							<li><em>Learn how to assess and improve the quality of the result</em></li>
+						</ul> 
+					</section>
+		
+					<section>
+						<h1>05.2 | GCP collection and referencing</h1>
+						<h2>Content and topics [lesson 5.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Spatial referencing in <em>ArcGIS Pro</em></td><td>*</td></tr>
+							<tr><td>ii</td><td>Image co-registration</td><td><a href=https://bok.eo4geo.eu/IP1-3-2-1"><small>Image co-registration</small></a></td></tr>
+							<tr><td>iii</td><td>Mosaicing</td><td>*</td></tr>
+							<tr><td>iv</td><td>GCP collection</td><td><a href=https://bok.eo4geo.eu/IP1-3-1-4"><small>Ground Control Points (GCP)</small></a></td></tr>
+							<tr><td>v</td><td>Calculate and assess RMS error</td><td><a href=https://bok.eo4geo.eu/IP4-2-1-6"><small>Root mean square error (RMSE)</small></a></td></tr>
+						</table>
+					</section>
+
+				</section>
+			
+				<!-- UNIT 5 ENDS HERE -->
+
+				<!-- UNIT 6 STARTS HERE -->
+
+				<section>
+					<h1 id="u6">06 | Radiometric correction</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U6.png" alt="U6 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 6.1 -->
+
+				<section>
+
+					<section>
+						<h1>06.1 | Radiometric measurement<h1> 
+						<h2>Learning objectives [lesson 6.1]</h2><p> 
+						<ul>
+							<li><em>Understand the concept of radiometric resolution </em></li>
+							<li><em>Differentiate the terms reflectance and radiance, and understand the concept of image calibration </em></li>
+						</ul>
+						</section>
+
+					<section>
+						<h1>06.1 | Radiometric measurement</h1>
+						<h2>Content and topics [lesson 6.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Quantisation and radiometric resolution</td><td><a href="https://bok.eo4geo.eu/IP4-3-3-2"><small>Radiometric resolution</small></a></td></tr>
+							<tr><td>ii</td><td>Image calibration (radiance vs. reflectance)</td><td><a href="https://bok.eo4geo.eu/IP1-7"><small>Radiometric correction</small></a</td></tr>						
+							<tr><td>iii</td><td>Principle of atmospheric correction</td><td><a href="https://bok.eo4geo.eu/IP1-7-1"><small>Atmospheric correction</small></td></tr>
+						</table>
+					</section>
+
+					<section>
+						<h2>06.1 <small>(i)</small> Quantisation and radiometric resolution</h2> 
+						<p>The principle of <strong>quantisation</strong> is the transformation of a continous brightness range according to a specfied sampling distance, 
+							the so-called <strong>ground sample distance</strong> (GSD). The <strong>radiometric resolution</strong>
+						corresponds to the number of quantisation levels. </p>
+						<figure>
+						<img src="resources/06/061_1.png" alt="061_1" style="width:500px;height:400px;">>
+						<figcaption>In an 8-bit image we have digital numbers ranging from 0 ... 255. This corresponds to (2^8=) 256 quantisation levels 
+							and a radiometric resolution of <b>8-bit</b> (see histograms).  (© S. Lang, PLUS/xxx)</figcaption>
+							<!-- Image enhancement for visualisation purposes including contrast stretching -->
+						</figure>
+					</section>
+
+					<section>
+						<h2>06.1 <small>(ii)</small>	Image calibration (radiance vs. reflectance)</h2> 
+						<p>Depending on the radiometric resolution (quantisation levels), image calibration converts digital numbers (DN) into 
+							physical units of measurement (<strong>spectral radiance</strong>)
+						</p>
+						<figure>
+							<img src="resources/06/061_2.png">
+							<figcaption>Image calibration makes image data comparable  (© S. Lang, PLUS/xxx)</figcaption>	
+						</figure>							
+					</section>
+
+					<section>
+						<h2>06.1 <small>(ii <i>cont.</i>)</small> Image calibration (radiance vs. reflectance)</h2> 
+						<p>The general workflow of <strong>radiometric image enhancement</strong> contains radiometric calibration and radiometric correction. 
+						Radiometric correction can be separated in <strong>atmospheric correction</strong> and <strong>topographic correction</strong>.</p>
+					 	<figure>
+							<img src="resources/061_2b.png">
+						<figcaption>(© F. Albrecht, Z_GIS/xxx)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>06.1 <small>(ii <i>cont.</i>)</small> Image calibration (radiance vs. reflectance)</h2> 
+						<p>Image calibration converts digital numbers into radiance at the sensor.</p>
+						<img src="resources/061_2c.png">
+						<figure>
+						<figcaption>Spectral radiance as measured by a spectroradiometer (© xxx/xxx)</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h2>06.1 <small>(iii)</small> Atmospheric correction</h2> 
+						<p>Atmospheric correction is a part of radiometric correction compensating for interactions of electromagnetic radiation with gas absorption and aerosol scattering in the atmosphere. </p>
+						<figure>
+							<img src="resources/06/061_3.png" style="width:790px;height:450px;">
+							<figcaption>Several steps are involved with the final goal to achieve surface reflectance values (reflectance on the ground). (© xxx/xxx)</figcaption>	
+						</figure>
+					</section>
+
+				</section>
+
+				<!-- Lesson 6.2 --> 
+
+				<section>
+
+					<section>
+						<h1>06.2 | Atmospheric correction </h1> 
+						<h2>Learning objectives [lesson 6.2]</h2><p> 
+							<li><em>Understand the purpose of atmospheric image correction to generate TOA or 
+								surface reflectance values</em></li>
+					</section>
+
+					<section>
+						<h1>06.2 | Atmospheric correction</h1>
+						<h2>Content and topics [lesson 6.2]</h2><p>  
+						<table>
+							<ul>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Top-of-atmosphere correction</td><td><a href="https://bok.eo4geo.eu/IP1-7-3-1"><small>Converting DN to TOA reflectance</small></a></td></tr>
+							<tr><td>ii</td><td>Surface correction</td><td>*</td></tr>
+						</ul>
+						</table>
+					</section>
+
+					<section>
+						<h2>06.2 <small>(i)</small>	Top-of-atmosphere correction</h2> 
+						Top-of-atmosphere (TOA) correction is the most straight-forward radiometric 
+						correction based on orbit parameters and celestal constellation. The latter is 
+						approximated by the specific sun-earth distance on the particular Iulian day of 
+						image acquisition.
+					</section>
+
+					<section>
+						<h2>06.2 <small>(ii)</small>	Surface correction</h2> 
+						Surface (SURF) correction is a more advanced correction procedure.
+					</section>
+
+				</section>
+
+				<!-- Lesson 6.3 --> 
+
+				<section>
+
+					<section>
+						<h1>06.3 | Topographic correction</h1> 
+						<h2>Learning objectives [lesson 6.3]</h2><p>
+						<ul> 
+							<li><em>Understand the routine of topographic image correction</em></li>
+							<li><em>Get an overview of different techniques </em></li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>06.3 | Topographic correction</h1>
+						<h2>Content and topics [lesson 6.3]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Why topographic correction?</td><td><a href="https://bok.eo4geo.eu/IP1-7-5"><small>Topographic correction</small></a></td></tr>
+							<tr><td>ii</td><td>Lambertian correction</td><td>*</td></tr>
+							<tr><td>iii</td><td>Non-Lambertian correction</td><td>*</td></tr>
+						</table>
+					</section>
+
+					<section>
+						<h2>06.3 <small>(i)</small>	Why topographic correction?</h2> 
+						Topographic correction is the process of compensating over- or under-reflectance 
+						due to topographic effects and illumination angle. This leads to so-called <em>image 
+						'flattening'</em>, because any shading effect etc. disappears. 
+					</section>
+
+					<section>
+						<h2>06.3 <small>(ii)</small>	Lambertian correction</h2> 
+						 Lambertian correction ...
+					</section>
+
+					<section>
+						<h2>06.3 <small>(iii)</small>	Non-Lambertian correction</h2> 
+						Non-Lambertian correction ...
+					</section>
+
+				</section>
+
+				<!-- UNIT 6 ENDS HERE -->
+
+			<!-- UNIT 7 STARTS HERE -->
+
+				<section>
+					<h1>07 | Image pre-processing</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+				
+					<script type='text/javascript' src="http://code.jquery.com/jquery-latest.pack.js"></script>
+					<script type="text/javascript">
+
+						$(document).ready(function () {
+								
+							$('#imgproc').click(function() {
+								$('#img6').show('slow');
+							});
+					
+						});
+					</script>
+					<table>
+						<tr>
+							<td><a href="#" id="imgproc"><img width="370" height="280" data-src="resources/U7_left.png" alt="U6 image"></a></td>
+							<td><div id="img6" style="display:none;"><img width="370" height="280" data-src="resources/U7_right.png"></div></td>
+						</tr>
+					</table>
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				
+				</section>
+
+				<!-- Lesson 7.1 -->
+
+				<section>
+
+					<section>
+						<h1>07.1 | Band maths<h1> 
+						<h2>Learning objectives [lesson 7.1]</h2><p> 
+						<ul>
+							<li><em>Understand the purpose of arithmetic band combinations</em></li>
+							<li><em>Learn how to interpret index values (such as NDVI, NDSI) and their ranges</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>07.1 | Band maths</h1>
+						<h2>Content and topics [lesson 7.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Arithmetic combination of band values</td><td><a href="https://bok.eo4geo.eu/IP3-1"><small>Band maths</small></a></td></tr>
+							<tr><td>ii</td><td>Spectral ratioing and indices</td><td><a href="https://bok.eo4geo.eu/IP3-1-2"><small>Spectral indices</small></a></td></tr>
+							<tr><td>iii</td><td>Vegetation indices</td><td><a href="https://bok.eo4geo.eu/IP3-1-2-3"><small>Normalized Difference Vegetation Index (NDVI)</small></a></td></tr>
+						</table>
+					</section>
+				
+				</section>
+
+				<!-- Lesson 7.2 --> 
+				
+				<section>
+
+					<section id="072_0">
+						<h1>07.2 | Filtering</h1> 
+						<h2>Learning objectives [lesson 7.2]</h2><p> 
+						<ul>
+							<li><em>Understand the principle of contextual focal analysis of images using convolution kernels</em></li>
+							<li><em>Learn how to apply pre-defined filtering routines for dedicated purposes (sharpening, smoothing, edge detection, etc.)</em></li>
+							<li><em>Get an idea how filters are used for convolutional neural networks (CNNs) </em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>07.2 | Filtering</h1>
+						<h2>Content and topics [lesson 7.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Principle of filtering</td><td>*</td></tr>
+							<tr><td>ii</td><td>Low-pass vs. high-pass filters</td><td>*</td></tr>
+							<tr><td>iii</td><td>Weighted filters (Gaussian)</td><td>*</td></tr>
+							<tr><td>iv</td><td>Directional filters (edge enhancement)</td><td>*</td></tr>
+							<tr><td>v</td><td>Convolutional neural networks (CNN)</td><td>*</td></tr>
+						</table>
+					</section>
+
+				</section>
+				
+				<!-- Lesson 7.3 --> 
+				
+				<section>
+
+					<section>
+						<h1>07.3 | Image fusion & PCA</h1> 
+						<h2>Learning objectives [lesson 7.3]</h2><p> 
+						<ul>
+							<li><em>Understand the principle of image fusion</em></li>
+							<li><em>Learn how to perform pan-sharpening techniques (e.g. Gram-Schmid)</em></li>
+						</ul>
+					</section>
+		
+					<section>
+						<h1>07.3 | Image fusion & PCA</h1>
+						<h2>Content and topics [lesson 7.3]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>General idea of image fusion</td><td><a href="https://bok.eo4geo.eu/IP2-1"><small>Image fusion</small></a></td></tr>
+							<tr><td>ii</td><td>Pan-sharpening</td><td><a href=https://bok.eo4geo.eu/IP2-1-3"><small>Pan-sharpening</small></a></td></tr>
+							<tr><td>iii</td><td>Computing principle (image) components</td><td><a href="https://bok.eo4geo.eu/IP2-1-3-2"><small>PCA</small></a></td></tr>
+						</table>
+					</section>
+
+				</section>			
+				
+			<!-- UNIT 7 ENDS HERE -->
+				
+			<!-- UNIT 8 STARTS HERE -->
+
+				<section>
+					<h1>08 | Image classification</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U8.png" alt="U8 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+		
+				<!-- Lesson 8.1 -->
+
+				<section>
+
+					<section id="081_0">
+						<h1>08.1 | Multi-spectral classification</h1> 
+						<h2>Learning objectives [lesson 8.1]</h2><p>
+						<ul>
+							<li><em>Understand the purpose of multi-spectral image classification</em></li>
+							<li><em>Comprehend the difference between supervised and non-supervised classification</em></li>
+							<li><em>Get to know different classifiers and how they work</em></li>
+						</ul> 
+					</section>
+	
+					<section>
+						<h1>08.1 | Multi-spectral classification</h1>
+						<h2>Content and topics [lesson 8.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Purpose of digital image classification</td><td><a href="https://bok.eo4geo.eu/IP3"><small>Image understanding</small></a></td></tr>
+							<tr><td>ii</td><td>Spectral characteristics of geographic features [<i>recap</i>]</td><td><a href="https://bok.eo4geo.eu/PP1-3-3"><small>Spectral signatures</small></a></td></tr>	
+							<tr><td>iii</td><td>Multi-spectral classification</td><td><a href="https://bok.eo4geo.eu/IP3-4"><small>Image classification</small></a></td></tr>	
+							<tr><td>iv</td><td>Supervised vs. non-supervised classification (clustering)</td><td>*</td></tr>
+							<tr><td>v</td><td>Sample-based vs. knowledge-based classifiers</td><td>*</td></tr>
+						</table>
+					</section>
+
+					<section id="081_i">
+						<h2>08.1 <small>(i)</small> Purpose of digital image classification</h2> 
+						<h3 style="color:gray;">Why image classification?</h3>
+						Classification, the conversion of digital numbers into semantic, i.e. meaningful categories (e.g., forest, water, cultivated fields), is the <b>ultimate aim</b> of 
+						image analysis. Whenever we look at an image, we instantly ... 
+
+						<p>In pixel-based classification each single pixel is assigned to a given categorical class. This is done according its location 
+							in a feature space, but irrespective of its spatial location or surrounding. The general workflow of digital image classification 
+							includes:
+						</p>
+						<ul style="color:gray;"><li>...  </li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+						</ul>.
+					</section>
+
+					<section id="081_ii">
+						<h2>08.1 <small>(ii)</small> Spectral characteristics of geographic features</h2> 
+						
+						... 
+					
+					</section>
+				
+				</section>
+				
+				<!-- Lesson 8.2 --> 
+
+				<section>
+
+					<section>
+						<h1>08.2 | Supervised classification</h1> 
+						<h2>Learning objectives [lesson 8.2]</h2><p> 
+							<ul>
+								<li><em>Learn how to conduct the image classification workflow in ArcGIS Pro</em></li>
+								<li><em>Practice the collection of samples, the creation of a classification scheme 
+								and the selection of a suitable classifier</em></li>
+							</ul> 
+					</section>
+		
+					<section>
+						<h1>08.2 | Supervised classification</h1>
+						<h2>Content and topics [lesson 8.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Selection of training areas</td><td>*</td></tr>
+							<tr><td>ii</td><td>Class separability</td><td>*</td></tr>
+							<tr><td>iii</td><td>Sampling strategies</td><td><a href=https://bok.eo4geo.eu/IP3-4-9"><small>Sampling strategies</small></a></td></tr>
+							<tr><td>iv</td><td>Classification schemes</td><td><a href="https://bok.eo4geo.eu/IP3-4-3"><small>Classification schemes (taxonomies)</small></a></td></tr>
+							<tr><td>v</td><td>Classifiers in <em>ArcGIS Pro</em></td><td>*</td></tr>
+						</table>
+					</section>
+
+				</section>
+
+				<!-- UNIT 8 ENDS HERE -->
+				
+			<!-- UNIT 9 STARTS HERE -->
+
+				<section>
+					<h1>09 | Quality assessment</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U9.png" alt="U9 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 9.1 -->
+
+				<section>
+
+					<section>
+						<h1>09.1 | Ground reference & accuracy assessment</h1> 
+						<h2>Learning objectives [lesson 9.1]</h2><p> 
+						<ul>
+							<li><em>Understand the meaning of accuracy assessment and how it is performed</em></li>
+							<li><em>Know what post-process routines exist to improve results</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>09.1 | Ground reference & accuracy assessment</h1>
+						<h2>Content and topics [lesson 9.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Post-processing (majority filtering, reclass, merging classes)</td><td><a href=https://bok.eo4geo.eu/AM4-5"><small>Map algebra (focal analysis)</small></a></td></tr>
+							<tr><td>ii</td><td>Merging classes and reclass</td><td>*</td></tr>	
+							<tr><td>iii</td><td>Ground validation vs. reference layer</td><td><a href=https://bok.eo4geo.eu/IP4-2-1-3"><small>Ground reference</small></a></td></tr>	
+							<tr><td>iv</td><td>Site-specific accuracy assessment</td><td><a href=https://bok.eo4geo.eu/IP4-2-1"><small>Accuracy assessment</small></a></td></tr>
+							<tr><td>v</td><td>Error matrix</td><td><a href=https://bok.eo4geo.eu/IP4-2-1-1"><small>Error matrix</small></a></td></tr>
+						</table>
+					</section>
+				
+				</section>
+				
+				<!-- Lesson 9.2 --> 
+
+				<section>
+
+					<section>
+						<h1>09.2 | Product validation</h1> 
+						<h2>Learning objectives [lesson 9.2]</h2><p> 
+							<ul>
+							<li><em>Discuss the quality and usabilty of a classification product 
+								(and potentially a map generated out of it)</em></li>
+							</ul>
+					</section>
+		
+					<section>
+						<h1>09.2 | Product validation</h1>
+						<h2>Content and topics [lesson 9.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Paradoxon of validation</td><td>*</td></tr>
+							<tr><td>ii</td><td>Usability aspects</td><td>*</td></tr>
+							<tr><td>iii</td><td>Reproducibility</td><td>*</td></tr>
+						</table>
+					</section>
+
+				</section>
+
+				<!-- UNIT 9 ENDS HERE -->
+
+			<!-- UNIT 10 STARTS HERE -->
+
+				<section>
+					<h1>10 | Publishing results</h1>
+					<h2><b>Image Processing & Analysis</b></h2>
+					<img src="resources/U10.png" alt="U10 image">
+					<br><a href="#/1/1">
+						<img data-src="resources/arrow_toc.png" alt="ToC arrow">
+					</a>
+				</section>
+
+				<!-- Lesson 10.1 -->
+
+				<section>
+
+					<section>
+						<h1>10.1 | Geodata integration</h1> 
+						<h2>Learning objectives [lesson 10.1]</h2><p> 
+						<ul>
+							<li><em>Combine image data and with other layers from geodata infrastructures</em></li>
+							<li><em>Understand the importance of proper spatial referencing</em></li>
+						</ul>
+					</section>
+	
+					<section>
+						<h1>10.1 | Geodata integration</h1>
+						<h2>Content and topics [lesson 10.1]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Data compilation</td><td><a href="https://bok.eo4geo.eu/IP2-3"><small>data integration</small></a></td></tr>
+							<tr><td>ii</td><td>Harvest OGC compliant sources</td><td><a href="https://bok.eo4geo.eu/WB5-1"><small>integrating data from OGC web services</small></a></td></tr>
+							<tr><td>iii</td><td>(...)</td><td>*</td></tr>
+							<tr><td>iv</td><td>(...)</td><td>*</td></tr>
+							<tr><td>v</td><td>(...)</td><td>*</td></tr>
+						</table>
+					</section>
+				
+				</section>
+
+				<!-- Lesson 10.2 -->
+
+				<section>
+					<section>
+						<h1>10.2 | Map making</h1> 
+						<h2>Learning objectives [lesson 10.2]</h2><p> 
+						<ul>
+							<li><em>Create a map in the appropriate scale to the image resolution and classification depth</em></li>
+						</ul>
+						</section>
+	
+					<section>
+						<h1>10.2 | Map making</h1>
+						<h2>Content and topics [lesson 10.2]</h2><p>  
+						<table>
+							<tr><td>#</td><td>Content</td><td><b>BoK concept</b></td></tr>
+							<tr><td>i</td><td>Create a map</td><td><a href="https://bok.eo4geo.eu/CV5-3"><small>Traditional map making</small></a></td></tr>
+							<tr><td>ii</td><td>Web mapping</td><td><a href="https://bok.eo4geo.eu/CV5-2"><small>Web map making</small></a></td></tr>
+							<tr><td>iii</td><td>(...)</td><td>*</td></tr>
+							<tr><td>iv</td><td>(...)</td><td>*</td></tr>
+							<tr><td>v</td><td>(...)</td><td>*</td></tr>
+						</table>
+					</section>
+
+				</section>
+
+				<section><em>*** The End ***</em></section>
+
+            </div>
+		</div>
+
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+		
+	</body>
+</html>

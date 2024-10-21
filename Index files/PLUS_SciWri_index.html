@@ -1,0 +1,394 @@
+<!-- 	Author: Stefan Lang - PLUS 
+		Creation Date: Oct 2021 
+		Updated: March 2024
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Scientific Methods & Writing</title>
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">-->  <!-- anthrazit background design --> 
+		<link rel="stylesheet" href="unilogo.css" id="theme"> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body onLoad="linkFunction()">
+
+		<script type="text/javascript" src="internal_restricted/js/eo4geo.js"></script>
+		  
+		<div class="reveal">
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "unilogo" style="width: 11%;height : 11%" ></div>	
+				 <div  class = "presentation_title" style=" text-align: center " ><small style="color: rgb(134, 134, 134);">Scientific Methods & Writing [856.111 | 651.902]</small></div>
+				 
+
+			<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->
+			<meta name="DCTERMS.title" content="Scientific Methods & Writing">
+			<meta name="DCTERMS.author" content="Stefan Lang">
+			<meta name="DCTERMS.subject" content="Science theory, writing skills, logical reasoning, publishing">
+			<meta name="DCTERMS.description" content="Getting to know Copernicus as European Earth Observation programme">
+			<meta name="DCTERMS.publisher" content="Stefan Lang">
+			<meta name="DCTERMS.contributors" content="Hannah Augustin">
+			<meta name="DCTERMS.date" content="2024-03-07">
+			<meta name="DCTERMS.resource_type" content="slide presentation">
+			<meta name="DCTERMS.resource_format" content="html">
+			<meta name="DCTERMS.resource_uri" content="//localhost/EO4GEO/4_3_TrainingMaterial/Reveal/eo4geo_reveal_template/template.html">
+			<meta name="DCTERMS.language" content="EN"> <!-- please stick to the two-letter ISO 639-1 language codes -->
+			<meta name="DCTERMS.source" content="Workpackage 5">
+			<meta name="DCTERMS.relation" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<meta name="DCTERMS.coverage" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<meta name="DCTERMS.rights_management" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			<!--<meta name="DCTERMS.bok_concepts" content="https://bok.eo4geo.eu/TA7-5-2, https://bok.eo4geo.eu/TA7-5-1, https://bok.eo4geo.eu/GS3"-->
+			
+			<meta name="rdf" content="
+					@prefix dc: <http://purl.org/dc/terms/>.
+					@prefix eo4geo: <http://bok.eo4geo.eu/>.
+					<>dc:hasPart [ dc:type "Module";
+							dc:title "EO";
+							dc:relation eo4geo:TA7-5-1;
+							dc:relation eo4geo:TA7-5-2;
+							dc:relation eo4geo:GS3]. " >
+			 
+			
+			<meta name="DCTERMS.bok_skills" content="lorem ipsum, lorem ipsum2, lorem ipsum3">
+			
+			<div class="slides">
+				
+				<!-- AUTHORS: DEFINE METADATA FOR EACH SLIDE OF THE SLIDESET (copy and modify this section for each single slide!) -->
+				<meta name="DCTERMS.author" content="Stefan Lang">
+				<meta name="DCTERMS.slide_title" content="Scientific Methods and Writing">
+				
+				<meta name="DCTERMS.slide_description" content="Cover Slide">
+				<meta name="DCTERMS.slide_uri" content="//localhost/EO4GEO/4_3_TrainingMaterial/Reveal/eo4geo_reveal_template/template.html#/">
+
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Scientific Methods & Writing</h1>
+					<br><h3 style="color:#89b3e4b4;">This course introduces concepts of scientific thinking, research methodologies, and general scientific skills in geoinformatics</h3>
+					<br><p>Hannah AUGUSTIN & Lorena ABAD | Department of Geoinformatics, PLUS</p>
+					<p><small>This introduction complements other learning material available in Blackboard.</small></p>
+				<!--<script type="text/javascript">
+							let utterance = new SpeechSynthesisUtterance("Welcome to our course, which is on scientific methods and writing. This course introduces concepts of scientific thinking and research methodologies; together we develop transversal academic skills within in the field of geoinformatics.");
+							speechSynthesis.speak(utterance)
+						</script> -->
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Dear all, welcome to this course!
+				</aside>
+				</section>
+				
+				<!-- AUTHORS: DEFINE METADATA FOR THE FOLLOWING FIRST SLIDE OF THE SLIDESET (copy and modify this section for each single slide!) -->
+				<meta name="DCTERMS.slide_title" content="Scientific writing">
+				<meta name="DCTERMS.slide_subject" content="">
+				<meta name="DCTERMS.slide_description" content="">
+				<meta name="DCTERMS.slide_uri" content="">
+				
+					
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section>
+					<section><h2>0 Organisation and introduction</h2>
+						<p>Content and learning objectives | Roadmap and schedule | Introduction
+						</p>
+						<img src="resources/0_0x.png" alt="timeframe">
+						<p><citation>The preferable mode to implement this course is 'on-site' in a physical classroom setting. There are interactive sessions where attendance is mandatory, like the peer review workshop and final closing conference session.
+						</citation>
+						
+						
+					</section>
+					<section> 
+						<h2>0.1 Content and learning objectives</h2> 
+						<p>We get to know scientific concepts and research methodologies, and develop transversal writing skills – in general 
+							and <b>spatial sciences</b> in particular. The learning objectives are:  
+						<p><b style="color:#89b3e4e1;">Understand</b> what the scientific method entails and why we need scientific writing ...</p>
+						<p><b style="color:#286d2ee1;">Apply</b> the IMRaD method to structure scientific work ...</p>
+						<p><b style="color:#68e450e1;">Select</b> the right media to publish scientific content addressing different target audiences ...</p>
+						<p><b style="color:#f7da3ae1;">Compare</b> different methods and tools to operationalise a scientific problem by a set of research questions ...</p>
+						<p><b style="color:#e48989e1;">Create</b> a scientific paper along with abstract and blog entry, and a presentation ...</p>
+
+					</section>
+					
+					<section>
+						<h2>0.2 Course schedule</h2>
+						<p>
+
+						</p>
+						<img src="resources/0_2.png" alt="schedule">
+						<br><small>Please see PlusOnline for latest updates in schedule!</small>
+					</section>
+
+					<section>
+						<h2>0.3 Course position within curricula (AGI and CDE master's programmes)</h2>
+						<p>The Scientific Methods & Writing course is a <b>compulsory element</b> in the propaedeutics module (AGI) or supervision module (CDE) of our master's programmes.
+
+						</p>
+						<img src="resources/0_3st.png" alt="curriculum">
+						<br><small>Please see PlusOnline for further details.</small>
+					</section>
+					
+					<section>
+						<h2>0.4 Workload and overall structure</h2>
+						<p>This is a <strong>2-ECTS exercise course</strong> with <b style="color:#1c7be7b4;">continuous assessment</b> (<i>"P", German "UE = Übung"</i>). Participation requires
+							mandatory presence, absence is to be justified. </p>
+						<p>There are <b style="color:#1c7be7b4;">five (5) assignments</b>, building on each other. Please submit assignments in time (i.e. obeying the deadline) such that you benefit from 
+							feedback. </p>	
+						<p>The recognition of 2 ECTS for this course corresponds to a student workload of (ca.) <b>50 hours</b>, two third of which to be completed as 
+							homework.</p>
+						<p>We will have (7) <b>on-site sessions</b>. The course is structured in <b style="color:#1c7be7b4;">three phases</b> (Phase I - <i>Essay</i>, Phase II - <i>Paper</i>, Phase III - 
+							<i>Conference</i>), with a mutual weighting of 20 : 60 : 20. 
+						<p>Attendance to the <b style="color:#1c7be7b4;">Mini-Conference</b> at the end of the course is mandatory.</p> 
+						
+					</section>
+
+					<section>
+						<h2>0.5 Assignments</h2>
+						<p>
+						
+						</p>
+						<img src="resources/0_5.png" width=80% height=80% alt="assignments">
+						<br><small>Five mandatory assignments build on top of each other.</small>
+					</section>
+
+					<section>
+						<h2>0.6 Learning material in Blackboard</h2>
+						<p>
+						All <b style="color:#800505b4;">assignments </b>and <b>additional learning material</b> can be found in Blackboard. Deadlines for 
+						assignments appear in your personalised calendar.
+						</p>
+						<img src="resources/0_6.png" width=60% height=60% alt="Blackboard">
+						<br><small>Please ensure your Blackboard account is activated.</small>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2 style="color:#cc9c33;">1 Why scientific writing?</h2>
+
+					</section>
+
+					<section>
+						<h2>1.0 What is writing?</h2>
+						<p>Writing is a mix of <i>giftedness</i>, <i>creative aptitude</i> and <i>craftsmanship</i>.
+						</p>
+						<p>Scientific writing as a special kind of writing requires <b style="color:#1c7be7b4;">theoretical skills</b> (subject-related knowledge), 
+							<b style="color:#1c7be7b4;">general writing skills</b>, specific <b style="color:#1c7be7b4;">
+							writing experience</b> in a scientific context (academic craftsmanship), and - indeed - a portion of <b style="color:#1c7be7b4;">talent</b>.
+						</p>
+						<img src="resources/0_7.png" width=75% height=75% alt="sciwri">
+					</section>
+
+					<section>
+						<h2>1.1 Writing skills</h2>
+						<p>Skill is the ability to do an activity well because you have practiced it 
+							<small>[<a href="https://dictionary.cambridge.org/dictionary/english/skill">Cambridge Dictionary</a>]</small>. The term competence (or competenc<i>y</i>) 
+							 is more comprehensive and sometimes associated with a certain set of acquired skills over a longer time period.
+						</p>
+						<p>Scientific writing is a typical <b>transversal skill</b> (or transversal competence), because it is required horizontally 
+							across disciplines.</p>
+						<img src="resources/1_1.png" alt="skills_competences">
+						<br><small>Skills vs. competences (credits <a href="https://social.hays.com/">HAYS</a>)</small>
+					</section>
+
+					<section>
+						<h2>1.2 Task-oriented skills</h2>
+						<p>The knowledge about certain concepts based on the <a href="bok.eo4geo.eu">EO*GI Body of Knowledge</a> and the 
+							ability to apply them in a given context and perform tasks. 
+						</p>
+						
+						<img src="resources/1_2.png" alt="skills_tasks">
+						<br><small>a. Allegory on concepts, skills, tasks | b. generic business process notation model <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/tgis.12628">(Hofer et al. 2020)</a></small>
+					</section>
+
+					<section>
+						<h2>1.3 Skills of tomorrow</h2>
+						<p>Certain skills will be less important in the (near) future due to <b>process automation</b>.
+						</p>
+						
+						<img src="resources/1_3.png" width="80%" height="80%" alt="dying skills">
+						<br><small> <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/tgis.12628">(Hofer et al. 2020)</a></small>
+					</section>
+
+					<section>
+						<h2>1.4 Skill levels</h2>
+						<p>According to Bloom's taxonomy (revised by Anderson 2001) verbs represent activities on a certain skill levels (1-5) to 
+							classify learning outcomes on different <b>levels of complexity </b></p>
+						
+						<img src="resources/1_4.png" width="50%"  alt="Bloom">
+						<br><small>The Bloom's taxonomy with some relevant activities highlighted.</small>
+					</section>
+
+					<section>
+						<h2>1.5 Why writing? </h2>
+						<p>What's the purpose of writing</p>
+						<p class="fragment"> <b style="color:#1c7be7b4;">Record</b> and make permanent</p>
+						<p class="fragment"> <b style="color:#1c7be7b4;">Document</b> and make transparent</p>
+						<p class="fragment"> <b style="color:#1c7be7b4;">Expose</b> and make disputable</p>
+						<p class="fragment"> <b style="color:#1c7be7b4;">Digest</b> and make (yourself) understand </p>
+					</section>
+
+					<section>
+						<h2>1.5 Why writing? <small>cont.</small></h2>
+						<p>The <b>literature body </b> - an ever growing record of theories, observations, hypothesis testing, concepts, etc.</p>
+						<p>Through scientific writing, we make discoveries, findings, concepts known to others</p>
+						
+						<img src="resources/1_5.png" width="80%" alt="art">
+						<br><small>... the same applies to a scientific writer (?).</small>
+					</section>
+
+					<section>
+						<h2>1.6 Why scientifc writing? </h2>
+						<p><i>Note down three reasons why scientists must write ...</i></p>
+						<p class="fragment">Science <b style="color:#1c7be7b4;">progresses</b> through (written) communication
+						<p class="fragment">Scientific dissemination is a crucial step to <b style="color:#1c7be7b4;">promote</b> any research activities</p>
+						<p class="fragment">The society / the public <b style="color:#1c7be7b4;">finances</b> science and wants to be informed</p>
+						<p class="fragment">You can only <b style="color:#1c7be7b4;">change</b> something if you talk or write about what you are doing!</p>
+					</section>
+
+					<section>
+						<h2>1.7 Scientific dissemination </h2>
+						<p>The classical means of scientific dissemination is the <b>scientific publication</b>. </p>
+						<p>Other means of publication contain new media (blog, twitter, movies, etc.) and various ways to address different target 
+							audiences (two-way communication such as workshops or public events such as European Researcher Night, GIS Day, Open House, etc.</p>
+						<img src="resources/1_7.png" width="100%" alt="sci_diss">
+						<br><small>There are manifold ways of dissemination.</small>
+					</section>
+
+					<section>
+						<h2>1.8 Publishing </h2>
+						<p><i>"Publish or perish!"</i> - The value of a publication <i>value</i> depends on a journal's
+							<b style="color:#1c7be7b4;">impact factor</b>.</p>
+						<p>Pre-publication platforms, e.g. Research Gate, arXiv.org. Rapid communication of results (e.g. Corona immunology research) 
+							</p>
+						<img src="resources/1_8.png" width="100%" alt="journal">
+						<br><small>Publishing is the currency of science.</small>
+					</section>
+
+					<section>
+						<h2>1.9 Delivering a talk (presenting) </h2>
+						<p>Scientists must talk - too! While writing might be key to the advancement of science, talking is key to its promotion.
+							Some feel more comfortable in writing, others in talking. Effective science relies on both writing and talking (science is not silence!)
+						</p>
+						<img src="resources/1_9.png" width="100%" alt="talk">
+						<br><small>Promoting project results is a mandotory element of dissemination.</small>
+							
+						</p>
+					</section>
+
+					<section>
+						<h2>1.10 New forms of dissemination </h2>
+						<p>Scientific <b>social media</b>, e.g. <i>Research Gate</i>, <i>Linked-in groups</i>, <i>Facebook</i>.</p>
+						<p>Scientist should get exposed to a public audience. The public has a right to get informed of project outcomes, etc. <i>Science Slam</i> 
+							or <i>Ted Talk</i> formats increasingly popular.</p>
+						<img src="resources/1_10.png" width="80%" alt="new_talk">
+						<br><small>From science slams to music videos - new forms of dissemination require creativity and (sometimes) artistic skills even.</small>
+					</section>
+
+				</section>
+			
+				<!--
+				<section>
+					<section><h2  style="color:#cc9c33;">2 The scientific method</h2>
+		
+					</section>
+
+					<section><h2>2.1 ...</h2>
+						
+					</section>
+				</section>
+
+				<section>
+					<section><h2  style="color:#cc9c33;">3 Scientific writing as a transversal skill</h2>
+						
+					</section>
+
+					<section><h2>3.1 </h2>
+						<p>“Need to communicate” etc. // Part of day-to-day scientific work, while we … observe	 |     remember     | 	 think 	 |   plan 	|	revise …
+							A critical means to judge an unknown person (peer, student, teacher) // Show abilities, interact, compare, select // Writing needs to be trained and 
+							practiced as a key skill // NB: We can always improve our writing (and not leave this to editors, teachers, peers)</p>
+					</section>
+				</section>
+				
+				<section>
+					<section><h2  style="color:#cc9c33;">4 Science and research</h2>
+						
+					</section>
+
+					<section><h2>4.1 </h2>
+						
+					</section>
+				</section>
+
+
+				-->
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: 
+				<section> 
+				<h2>Further information</h2>
+				<br>
+				<reference_list><p>... </p>
+				</reference_list>
+				</section>-->
+				
+
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

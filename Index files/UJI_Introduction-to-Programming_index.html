@@ -1,0 +1,271 @@
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/
+              dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Programación SIG en entornos Web</title>
+		<meta property="dc:title" content="Programación SIG en entornos Web. Introducción a Leaflet.js"/>
+		<meta property="dc:creator" content="Carlos Granell"/>
+		<meta property="dc:contributor" content="Carlos Granell"/>
+		<meta property="dc:publisher" content="Universitat Jaume I de Castelló, Spain" />
+		<meta property="dc:subject" content="web programming, EO4GEO, WP5, GIS, Leaflet"/>
+		<meta property="dc:abstract" content="The programming course introduces the student the basics of the Leaflet library to create simple web-based maps. It provides examples to handle base maps and vector data with Leaflet.js. "/>
+		<meta property="dc:tableOfContents" content="(1) Ejemplos de aplicaciones web de mapas
+		(2) Capas base en Leaflet.js
+		(3) Capas vectoriales en Leaflet.js"/>
+		<meta property="dc:desription" content="Learning outcomes: Identify main components and functionality of Leaflet library; Describe Leaflet's main functions and how they are employed; Create a simple web-based map application"/>
+		<meta property="dc:contributor" content="Carlos Granell"/>
+		<meta property="dc:created" content="2020-09-04"/>
+		<meta property="dc:type" content="teaching material"/>
+		<meta property="dc:format" content="html"/>
+		<meta property="dc:language" content="ES"/>
+		<meta property="dc:SizeOrDuration" content="60min"/>
+		<meta property="dc:audience" content="students"/>
+		<meta property="dc:educationLevel" content="EQF 4"/>
+		<meta property="dc:source" content="Based on existing UOC course: Programación SIG en entornos Web"/>
+		<meta property="dc:rightsHolder" content="Carlos Granell, Universitat Jaume I de Castelló, Spain"/>
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en"/>
+		
+		<link rel="dc:relation" href="eo4geo:WB6" />
+		<link rel="dc:relation" href="eo4geo:WB7" />
+		<link rel="dc:relation" href="eo4geo:WB7-2" />
+		<link rel="dc:relation" href="eo4geo:DA1-6" />
+		<link rel="dc:relation" href="eo4geo:WB7-1" />
+		<link rel="dc:relation" href="eo4geo:DM4-4" />
+		
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">-->  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 5%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Programación SIG en entornos Web</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+				
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				
+				<section>
+				  <h1>Programación SIG en entornos Web</h1>
+				  <h2>Introducción a Leaflet.js</h2>
+				</section>
+				
+				<section>
+					<h2>Contenido</h2> 
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#337acc;">Ejemplos de aplicaciones web de mapas</li>
+							<li style="color:#337acc;">Capas base en <em>Leaflet.js</em></li>
+							<li style="color:#337acc;">Capas vectoriales en <em>Leaflet.js</em></li>
+						</ul>
+				</section>
+				
+
+
+		    <section class="scrollable"> 
+		    	<h2>Ejemplos de aplicaciones web de mapas</h2> 
+						<p>Un mapa es una visualización que cuenta una <em>historia</em> para educar, informar y/o explicar.</p>
+				<iframe src="https://www.youtube.com/embed/-5QpSUcZ4a8" width="640" height="360" frameborder="0" data-autoplay allowfullscreen></iframe>
+				
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					it shows sophisticated examples of map-based JS applications; what students could accomplish with the technology introduced here.
+				</aside>
+				</section>
+		
+		    <section>
+					<h2>Contenido</h2> 
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#89b3e479;">Ejemplos de aplicaciones web de mapas</li>
+							<li style="color:#337acc;">Capas base en <em>Leaflet.js</em></li>
+							<li style="color:#337acc;">Capas vectoriales en <em>Leaflet.js</em></li>
+						</ul>
+				</section>
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="capas_base">
+				  <section>
+				    <h2>Capas base en <em>Leaflet.js</em></h2>
+				    <p>En este bloque inicial de <em>Leaflet</em> veremos como </p>
+				    
+				    <h3>Cargar y visualizar un mapa base</h3>
+				    
+				    <h3>Añadir un control de capas bases al mapa</h3>
+				    
+				  </section>
+				  
+					
+					<section> 
+						<h2>Capas base</h2>
+						  <p>Carga y visualización de un mapa base</p> 
+						
+						  <!-- 02-capa-base.mp4 -->
+							<iframe src="https://www.youtube.com/embed/4YF8QLc2ugE" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					</section>
+					
+					
+					<section> 
+						<h2>Capas base [Demo]</h2>
+						<p>Carga de un mapa base en Leaflet</p> 
+						
+							<iframe src="https://cgranell.github.io/course-webmapping/examples-leaflet/01.html" width="1200" height="800" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+				      
+					</section>
+					
+					
+					
+					<section> 
+						<h2>Capas base [Demo]</h2>
+						<p>Control de capas para la selección de mapas base</p> 
+						
+							<iframe src="https://cgranell.github.io/course-webmapping/examples-leaflet/02.html" width="1200" height="800" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+				      
+					</section>
+					
+					
+				</section>
+
+
+        <section>
+					<h2>Contenido</h2> 
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<ul>
+							<li style="color:#89b3e479;">Ejemplos de aplicaciones web de mapas</li>
+							<li style="color:#89b3e479;">Capas base en <em>Leaflet.js</em></li>
+							<li style="color:#337acc;">Capas vectoriales en <em>Leaflet.js</em></li>
+						</ul>
+				</section>
+
+        <section id="capas_vectoriales">
+           <section>
+				    <h2>Capas vectoriales en <em>Leaflet.js</em></h2>
+				    <p>En este bloque inicial de <em>Leaflet</em> veremos como </p>
+				    
+				    <h3>Cargar una geometría (puntos) desde una variable local</h3>
+				    
+				    <h3>Cargar una geometría (puntos) desde un fichero</h3>
+				    
+				    <h3>Mostrar (<em>popups</em>) un atributo de una geometría (punto)</h3>
+				    
+				  </section>
+				  
+				  
+				  <section> 
+						<h2>Capas vectoriales</h2>
+					   <p>Carga de una geometría (punto)</p> 
+						
+						  <!-- 03-capa-vectorial.mp4 -->
+							<iframe src="https://www.youtube.com/embed/r_GEqFlGI-E" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					</section>
+					
+					
+					<section> 
+						<h2>Capas vectoriales [Demo]</h2>
+						<p>Carga de una geometría (puntos) desde una variable local</p> 
+						
+							<iframe src="https://cgranell.github.io/course-webmapping/examples-leaflet/03.html" width="1200" height="800" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+				      
+					</section>
+
+          <section> 
+						<h2>Capas vectoriales [Demo]</h2>
+						<p>Carga de una geometría (puntos) desde un fichero</p> 
+						
+							<iframe src="https://cgranell.github.io/course-webmapping/examples-leaflet/04.html" width="1200" height="800" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+				      
+					</section>
+					
+	
+	        <section> 
+						<h2>Capas vectoriales [Demo]</h2>
+						<p>Muestra un atributo asociado a una geometría (puntos) </p> 
+						
+							<iframe src="https://cgranell.github.io/course-webmapping/examples-leaflet/05.html" width="1200" height="800" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+				      
+					</section>
+					
+					
+        </section>  
+        
+     
+    		<!-- AUTHORS: 2nd Option to INCLUDE H5P CONTENT AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): -->
+    		<!--
+    		<section class="scrollable"> 
+					 <iframe src="https://ideaslab.sbg.ac.at/ideaslab/wp-admin/admin-ajax.php?action=h5p_embed&id=5" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
+					</section>
+		 -->
+     
+     
+        
+        <!-- Last slide -->
+      	<section>
+				  <h1>Programación SIG en entornos Web</h1>
+				  <h2>Introducción a Leaflet.js</h2>
+				</section>
+				
+    </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

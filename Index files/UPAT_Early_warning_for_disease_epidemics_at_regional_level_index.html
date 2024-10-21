@@ -1,0 +1,763 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>eo4geo template for Reveal JS</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Early Warning for Mosquito-borne epidemics at regional level" />
+		<meta property="dc:creator" content="Andreas Kazantzidis, Katerina Kyratzi, Ioannis Kioutsioukis" /> 
+		<meta property="dc:publisher" content="University of Patras, UPAT" /> 
+		<meta property="dc:subject" content="Early Warning for Mosquito-borne epidemics at regional level" />
+		<meta property="dc:abstract" content="This webinar aims to provide basic knowledge about the development and application of an early warning system to help prevent outbreaks for mosquito borne diseases The participants will be able to understand the basics about the development of an early warning system for mosquito borne diseases." />
+		<meta property="dc:tableOfContents" content="	(1) The BEYOND EO Center/EuroGEO Action Group on Vector-borne Diseases; 
+							     	(2) State-of-the-art in the field of epidemics; 
+							     	(3) Development of an Early Warning Decision Support System in Europe; 
+							     	(4) Human infectious disease modeling related to climatic change conditions; 
+							     	(5) Exploitation of satellite-based EO for Epidemics of mosquito-borne diseases;
+								(6) The Modeling Framework and validation of an early warning system at municipal (Greece) and regional (Venneto, Italy) level";/>
+		<meta property="dc:description" content="Know about the development of an early warning system; Understand how EO data used to forecast human cases; Explain the application of an early warning system and its benefits on disease outbreaks" /> 
+		<meta property="dc:contributor" content="UPATRAS" />
+		<meta property="dc:created" content="2021-06-11" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="90min" />
+		<meta property="dc:audience" content="Regional agencies/authorities, emergency responders, stakeholders WNV outbreaks effects mitigation strategies and decision making" />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source” content="Existing slideset: Early Warning for Mosquito-borne epidemics at regional level by UPATRAS & BEYOND, EO: https://eo4geocourses.github.io/GEOF_EO-Data-sources/#/Copernicus 
+Services Climate Change: https://eo4geocourses.github.io/ClimateKIC_Copernicus-Service-Climate-Change/#/">
+		<meta property="dc:rightsHolder" content="UPATRAS" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:AM8" />
+		<link rel="dc:relation" href="eo4geo:CV2" />
+		<link rel="dc:relation" href="eo4geo:CV6" />
+		<link rel="dc:relation" href="PP1-6" />
+		<link rel="dc:relation" href="eo4geo:PS3" />
+		<link rel="dc:relation" href="eo4geo:TA1" />
+		<link rel="dc:relation" href="eo4geo:TA2" />
+		
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 10%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 20%;height : 20%" ></div>					 
+				 <!--<div  class = "presentation_title" style=" text-align: center " >Early Warning for Mosquito-borne epidemics at regional level</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- CONTENT OF FIRST SLIDE --> 
+				<section >
+					<h1>Early Warning for Mosquito-borne epidemics at regional level</h1>
+					<em>Laboratory of Atmospheric Physics, University of Patras (UPAT)</em>
+					<br><br>
+					<em>Centre of EO Research and Satellite Remote Sensing (BEYOND)</em>
+				</section>
+			
+				
+				<!-- INTRODUCTORY SECTION-->
+					
+					<!-- 1. Introduction: description of the workshop-->				
+				<section id="Introduction">
+				    <section>
+					<h1>Introduction</h1>
+					...leveraging scientific knowledge and ultimately provin that <i>Earth Observation</i> can spend our understanding in the field of <i>Epidemics</i>...
+                    </section>
+					
+					<!-- 2. Description of the Agenda-->	
+					<section>
+					<h2>Agenda</h2>
+					<br><br>
+					<h4>
+					<ul>
+					<li>The BEYOND EO Center/EuroGEO Action Group on Vector-borne Diseases</li>
+                    <br>
+					<li>State-of-the-art in the field of epidemics</li>
+                    <br>
+					<li>Development of an Early Warning Decision Support System in Europe</li>
+                    <br>
+					<li>Human infectious disease modeling related to climatic change conditions</li>
+                    <br>
+					<li>Exploitation of satellite-based EO for Epidemics of mosquito-borne diseases</li>
+					<br>                    
+					<li>The Modeling Framework and validation of an early warning system at municipal (Greece) and regional (Venneto, Italy) level</li>
+					</ul>
+					</section>
+					
+					<!-- 3. Description of the Learning Outcomes-->
+					<section>
+					<h2>Learning outcomes</h2>
+					<br><br>
+					<h4>
+					<ul>
+					<li>Know about the development of an early warning system</li>
+                    <br>
+					<li>Understand how EO data used to forecast human cases</li>
+                    <br>
+					<li>Explain the application of an early warning system and its benefits on disease outbreaks</li>
+					</ul>
+					</h4>
+					</section>
+				</section>
+				
+				<!-- LABORATORY OF ATMOSPHERIC PHYSICS - UNIVERSITY OF PATRAS-->
+				<section>
+					<br>
+					<h1 style="text-align:CENTER"> Laboratory of Atmospheric Physics</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;"><img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/LAPUP_location.jpg" alt="" width="100%" /></td>
+					<td style="width: 500px;">
+					<h2 style="text-align:center">Research Axes</h2>
+					<h4>
+					<ul>
+					<li>Weather and atmospheric pollution forecasting modeling
+					<li>AI methods in atmospheric and environmental physics problems
+					<li>Ultraviolet and solar radiation
+					<li>Measurements, processing and homogenization of meteorological and environmental time series
+					<li>Stable isotopes in rain and water vapor
+					</ul>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+                </section>
+
+				<!-- THE EO4GEO PROJECT-->
+				<section>
+				    <!-- 1. Overview of EO4GEO project-->
+					<section>
+					<img width="340" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/logo_big.png" alt="eo4geo logo">
+				    <h3>The Space/Geospatial Sector Skills Alliance</h3>
+					<h4>Towards an innovative strategy for skills development and capacity building in the space geo-information sector supporting Copernicus User Uptake</h4>					
+				    <img width="340" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/erasmus_2.png" alt="erasmus_2">
+                    </section>
+					
+					<!-- 2. Copernicus program - Overview -->
+					<section>
+					<h1 style="text-align:CENTER"> Copernicus Program:</h1><h2>Europe's eyes on Earth</h2>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;"><img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Copernicus_overview.jpg" alt="copernicus-overview" width="120%" /></td>
+					<td style="width: 500px;">
+					<h4>
+					<br>
+					<b>Copernicus</b> is the EU Earth observation program, looking at our planet and its environment to benefit all European citizens.</br>
+					<br>
+					It offers information services that draw from <b>satellite Earth Observation and in-situ (non-space) data</b>.</br>
+					<br>
+					The information services provided are <b>free</b> and <b>openly</b> accessible to users.</br>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+                    </section>
+					
+					<!-- 3. EO4GEO Consortium and basic information-->
+					<section>
+                        <h1>The EO4GEO project</h1>					
+						<h4> 
+						<ul>
+							<li><b> Duration:</b>  4 years from January the 1st, 2018</li>
+							<li><b> Budget:</b>  3,87 million €</li>
+							<li><b> Partnership:</b>  25 Partners + 30+ Associated Partners (from 16 EU Countries) from Academia, Companies and networks </li>
+							<li><b> Coordinators:</b>  GISIG (General), KU Leuven (Scientific & Technological), PLUS (Education & Training), Climate-KIC (Exploitation)</li>
+						</ul>
+						</h4>
+					<img width="580" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/consortium.jpg" alt="eo4geo consortium">
+					<br>
+					<citation>The EO4GEO Consortium. 30th May 2018, Castellón de la Plana, Spain</citation>
+					</section>
+					
+					<!-- 4. Vision and Mission of EO4GEO-->
+					<section>
+					<h1>The EO4GEO project</h1> 
+					<br>
+					<h4><ul>
+					<li>EO4GEO aims to <b>bridge the skills gap between the supply and demand of education and training</b> in the space/geospatial sectors, fostering the uptake and integration of space/geospatial data and services in a broad range of application domains.</li>
+					<br><br>
+					<li>EO4GEO works in a multi and interdisciplinary way and apply <b>innovative solutions for its education and training actions</b>: case-based and collaborative learning scenarios; learning-while-doing in a living lab environment; on-the-job training and co-creation of knowledge, skills and competencies.</li> 
+					</h4></ul> 
+					</section>
+					
+					<!-- 5. EO4GEO is not only a project-->
+					<section>
+				    <h1>EO4GEO IS MUCH MORE </h1>
+					<br>
+					<h4>EO4GEO offers a series of tangible results that are usable for the broader EO/GI education/training community</h4>
+					<img width="1000" height='300' box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/EO4GEO_much_more.png" alt="eo4geo much more">
+					</section>
+				
+				</section>
+
+				<!-- 2nd Part: Operational application in EU -->
+				<section>
+				
+				    <!-- 1. Introductory slide for basics-->
+					<section>
+                    <h1>Early Warning for Mosquito-borne epidemics at regional level</h1>					
+					<img width="400px" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/basics.jpg" alt="basics">
+					<h2>
+					<i>Let's start from the basics...</i>
+					</h2>
+					</section>
+					
+					<!-- 2. Mosquito-borne diseases - Overview -->
+					<section>
+					<h1 style="text-align:CENTER"> Mosquito-Borne Diseases in Europe</h1><h2>An emerging threat</h2>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_1.png" alt="" width="400px" height="200px" />
+					<br>
+					<h4><b>Mosquitos & Diseases</b>
+					<ul><li>Culex - West Nile Virus</li>
+					<li>Anopheles - Malaria</li>
+					<li>Aedes albopictus - Dengue,  Zika, Chikungunya</li>
+					</ul></h4>
+					</td>
+					<td style="width: 500px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_2.png" alt="" width="100%" height="100%" />
+					</td>
+					</tr>
+					</tbody>
+					</table>      					
+					</section>
+					
+					<!-- 3. EUROGEO -->
+					<section>
+					<h1 style="text-align:CENTER"> EUROGEO</h1><h2>Action Group </h2>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_3.png" alt="" width="600px" height="400px" />
+					</section>
+				
+					<!-- 4. EYWA network -->
+					<section>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_4a.png" alt="" width="600px" height="200px" />
+					<br>
+					<h3 style="color: darkblue">EYWA is a vision, a network, a European and even global standard.</h3>
+					<ul><h4>EYWA offers a scalable, reliable and sustainable early warning system, relying on Earth observation big data combined  with entomological, epidemiological and socioeconomic data,  to forecast and monitor Mosquito-Borne Diseases.
+					<ul></h4>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_4.png" alt="" width="100%" />
+					</section>
+					
+					<!-- 5. EYWA triptych -->
+					<section>
+					<h1> EYWA </h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 700px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_5.png" alt="" width="100%" />
+					</td>
+					<td style="width: 300px;">
+					<ul><h3 style="color: darkblue">EYWA is built on the triptych:</h3>
+					<ul><li>ADVOCATE</li>
+					<li>ENGAGE</li>
+					<li>DELIVER</li>
+					</ul></ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 6. EYWA Team -->
+					<section>
+					<h1> EYWA </h1>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_6.png" alt="" width="700px" height="500px" />
+					</section>
+				
+					<!-- 7. EYWA Team -->
+					<section>
+					<h1>EYWA TEAM </h1><h2>"Together Everyone  Achieves More"</h2>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_7.png" alt="" width="800px" height="350 px" />
+					</section>
+				
+					<!-- 8. How EYWA competes -->
+					<section>
+                    <h1>How EYWA competes?</h1>				
+					<h4><b><i>EYWA</b></i> is a robust and scalable <b><i>Early Warning & Decision Support System</b></i> that welcomes new partners from around the world to share data and transform scientific knowledge into decision-making & mosquito control actions</h4>
+					<br>
+					<img width="700px" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_8.png" alt="">
+					</section>
+					
+					<!-- 9. EYWA system -->
+					<section>
+                    <h1>EYWA system architecture</h1>				
+					<h4>EYWA incorporates 10-years time-series of Copernicus (Sentinel-2) and other space-based data (Landsat-7 & -8, MODIS and ERA-5) in addition to in-situ entomological, epidemiological, socioeconomic and crowdsourcing data.</h4>
+					<br>
+					<img width="700px" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_9.png" alt="">
+					</section>
+					
+					<!-- 10a. EYWA system architecture -->
+					<section>
+					<h1>EYWA system architecture</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 600px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_10.png" alt="" width="600px" height="200 px" />
+					</td>
+					<td style="width: 400px;">
+					<ul>A suite of APIs is developed and publicly available through BEYOND-NOA’s GitHub profile for automatic:
+					<ul><li><b>Data harvesting</li></b>
+					<li><b>Data Pre-processing</li></b>
+					<li><b>EO-based indices derivation</li></b>
+					</ul>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					<ul>Satellite data harvesting and processing, exploiting European and non-European services:
+					<ul><li>Umbrella Sentinel Access Point of the Hellenic Mirror Site (an API  that constitutes 100% EU innovation and has been developed by BEYOND-NOA in the framework of the NextGEOSS and EOPEN EU projects)</li>
+					<li>CreoDIAS and Google Earth Engine</li>
+					</ul></ul>
+					</section>
+										
+					<!-- 10b. EYWA system architecture -->
+					<section>
+					<h1>EYWA system architecture</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 400px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_11.png" alt="" width="350px" height="500 px" />
+					</td>
+					<td style="width: 600px;">
+					<ul><li>Big Data management (<b>278 TB and counting</b>)</li>
+					<li><a href="https://www.opendatacube.org/"> Open Data Cube (ODC)</a> technology,state-of-the-art tool for Earth Observation and other data fusion, feature engineering and data analytics</li>
+					<li>All these processing steps are available through the dedicated Python API <b>"EYWAdcAPI"</b> at <a href="https://github.com/BEYOND-NOA"> BEYOND-NOA’s GitHub profile</a> in the <a href="https://github.com/BEYOND-NOA/epidemics"> epidemics repository</a></li>
+					</ul>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+					
+					<!-- 10c. EYWA system architecture -->
+					<section>
+					<h1>EYWA system architecture</h1>
+					<table style="height: 169px;" width="100%">
+					<tr>
+					<tbody>
+					<td style="width: 500px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_12.png" alt="" width="500px" height="150 px" />
+					</td>
+					<td style="width: 500px;">
+					<ul>A “mammoth” feature space of at least 10-years time-series of data for every mosquito-traps network in nine regions in Europe.
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_13.png" alt="" width="600px" height="150 px" /> 
+					<h4><ul>How is this plethora of independent data transformed into meaningful scientific knowledge?
+					</ul>
+					<br><br>
+					<ul>EYWA has a factory of dynamic and data-driven models, learning  about the dynamics of mosquitoes’ abundance and mosquito-borne diseases transmission, and providing monthly, weekly, daily predictions. 
+					</ul>
+					</h4>
+					</section>
+														
+					<!-- 10d. EYWA system architecture - the MAMOTH model -->
+					<section>
+					<h1>EYWA system architecture</h1><h2>the MAMOTH model</h2>
+					<ul><li><b>MAMOTH</b> (<b>M</b>osquitoes <b>A</b>bundance prediction <b>M</b>odel aut<b>O</b>-calibrated from features ple<b>TH</b>ora)</li>
+					<li><b>Generic data-driven</b> approach relying on open <b>EO data</b></li>
+					<li>Automated Feature Selection:</li>
+					<ul><li><b>No human bias</b> on feature selection is injected in the model</li>
+					<li><b>Transferable</b> and <b>replicable</b></li>
+					</li></ul>
+					<li><b>Knowledge expansion</b>: Operating under the <b>same architecture</b> and the same <b>mathematical principles</b> to different cases, offers extensive capability of comparative studies, responding to: "which characteristics seem important in one case and which on the other?"</li>
+					<li>MAMOTH is composed of 32 (up to now)in-housed developed Python functions that are organized in <b>5 operational Modules</b></li>
+					</ul>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_14.png" alt="" width="400px" height="150 px" />					
+					</section>
+					
+					<!-- 10e. EYWA system architecture - Predictions -->
+					<section>
+					<h1>EYWA system architecture</h1>
+					<h3>Predictions results dissemination to the relevant Public Health Authorities through monthly reports and the <a href="http://epidemics.space.noa.gr:8081/"> EYWA Web Platform</a></h3>
+					<br><br>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_15.png" alt="" width="700px" height="300 px" />					
+					</section>
+					
+					<!-- 10f. EYWA - data sharing -->
+					<section>
+					<h1>EYWA & open data sharing</h1>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_16.png" alt="" width="100%" height="100%" />
+					<br>
+					<h4>
+					<ul>EYWA is an autonomous European Initiative, building upon the Open Innovation, Open Science and Open to the World vision for Europe.</h4>
+					</ul>
+					<ul> Analysis ready 10-years’ time-series of environmental, meteorological and geomorphological data for every mosquito-traps network in 10 European regions. Accessible through:
+					<ul><li> The <a href="http://epidemics.space.noa.gr/api_v2/"> EYWAopenAPI</a></li>
+					<li>NextGEOSS DataHub</li>
+					</ul>
+					</ul>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_17.png" alt="" width="300px" height='150px'/>
+					</section>
+					
+					<!-- 11a. EYWA - actions -->
+					<section>
+					<h1>EYWA in action</h1>
+					<h4>
+					<ul>EYWA’s operational implementation in 2020 (TRL>7 ) with a demonstrated impact in: 
+					<ul><li>Greece (Regions of Central Macedonia, Thessaly, Western  Greece and Crete)</li>
+					<li>Italy (Veneto region)</li>
+					</ul>
+					</ul>
+					<ul>forecasting Culex mosquito populations and West Nile Virus outbreaks in 2020.
+					</ul>
+					<br><br>
+					<ul>EYWA’s pre-operational test in 2020 for:
+					<ul><li><i>Culex</i> (WNV) abundance prediction in Serbia (Vojvodina region) and Germany (Baden-Württemberg  region)</li>
+					<li><i>Anopheles</i> (Malaria) in Italy (Veneto region)</li>
+					<li><i>Aedes albopictus</i> (Chikungunya, Dengue, Zika) in France (Grand Est and Corsica regions)</li>
+					</ul>
+					</ul>
+					</section>
+					
+					<!-- 11b. EYWA - actions operational -->
+					<section>
+					<h1>EYWA in action</h1>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 600px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_18.png" alt="" width="600px" height="400 px" />
+					</td>
+					<td style="width: 400px;">
+					<ul><b>EYWA is now fully operational in all these areas and started delivering results again for the 2021 mosquito season in the end of April.</b>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+
+					<!-- 11c. EYWA - actions operational results -->
+					<section>
+					<h1>EYWA in action</h1><h2>Reports with operational results</h2>
+					<ul>EYWA produces knowledge in the form of reports,  statistics,  validated assessments and web GIS information layers, all available to the end-users through the EYWA Web Platform.
+					</ul>
+					<table style="height: 50px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 300px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_19.png" alt="" width="300px" height="150 px" />
+					</td>
+					<td style="width: 700px;">
+					<ul>The reports indicate:
+					<ul><li>Up-to-date epidemiological status of the Region</li>
+					<li>The state-of-the-art models used</li>
+					<li>The mosquito abundance predictions for the month </li>
+					<li>The estimated human risk</li>
+					</ul>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					<ul>The EYWA Reports:
+					<ul><li>are delivered operationally from April to October every year to the relevant Public Health Authorities and decision makers.</li>
+					<li>assist the authorities in organizing their mosquito control strategy and actions. Measurable performance indicators are used to evaluate the level of EYWA’s effectiveness toward the protection of the engaged communities against the disease outbreak.</li>
+					</ul>
+					</ul>
+					</section>
+
+					<!-- 12. EYWA - nutshell -->
+					<section>
+					<h1>EYWA in a nutshell</h1>
+					<ul><li>Plethora of satellite Earth Observation data</li>
+					<li>Entomological, epidemiological, crowdsourced, socioeconomic and auxiliary data</li>
+					<li>State-of-the-art technological tools</li>
+					</ul>
+					<br><br><br>
+					Leveraging scientific knowledge and ultimately proving that EO can upend our understanding in the field of epidemics
+					<br><br><br>
+					<b>The pivotal role of EYWA is to become a key lever for Public Health authorities and decision makers, support preparedness and timely strategic design of the health system response actions, and raise citizens awareness on the expected risk, with a view to fight Mosquito-Borne Diseases
+					</b>
+					</section>
+					
+					<!-- 13. Partners -->
+					<section>
+					<h1>Partners</h1>
+					<table style="height: 364px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<ul><b>Greece</b>
+					<ul><p style="font-size:14px">National Observatory of Athens (NOA) – BEYOND Centre of EO Research & Satellite Remote Sensing</p>
+					<p style="font-size:14px">Ecodevelopment S.A</p>
+					<p style="font-size:14px">University of Patras – Physics Department - Laboratory of Atmospheric Physics (LapUP)</p>
+					<p style="font-size:14px">Dimitrios Vallianatos (IDCOM)</p>
+					<p style="font-size:14px">Aristotle University of Thessaloniki</p>
+					<p style="font-size:14px">University of Thessaly, Medical School. Laboratory of Hygiene and Epidemiology</p>
+					</ul>
+					</ul>
+					<ul><b>Italy</b>
+					<ul><p style="font-size:14px">Istituto Zooprofilattico Sperimentale delle Venezie (IZSVe)</p>
+					<p style="font-size:14px">Edmund Mach Foundation</p>
+					<p style="font-size:14px">University of Trento</p>
+					</ul>
+					</ul>
+					</td>
+					<td style="width: 500px;">
+					<ul><b>Serbia</b>
+					<ul><p style="font-size:14px">University of "Novi Sad", Faculty of Agriculture, Laboratory for Medical and Veterinary Entomology</p>
+					<p style="font-size:14px">Scientific Veterinary Institute "Novi Sad"</p>
+					<p style="font-size:14px">University of Novi Sad, Faculty of Medicine</p>
+					</ul>
+					</ul>
+					<ul><b>Germany</b>
+					<ul><p style="font-size:14px">German Mosquito Control Association (KABS)</p>
+					<p style="font-size:14px">Bernhard Nocht Institute for Tropical Medicine</p>
+					</ul>
+					</ul>
+					<ul><b>France</b>
+					<ul><p style="font-size:14px">EID Méditerranée</p>
+					</ul>
+					</ul>
+					</td>
+					</tr>
+					</tbody>
+					</table>
+					</section>
+
+				</section>
+				
+				<!-- 3rd Part: Epidemics case studies - Greece and Veneto -->
+				<section>
+					<!-- 1. WNV at a glance -->
+					<section>
+					<h1 style="text-align:CENTER"> West Nile Virus (WNV)</h1><h2>Europe's eyes on Earth</h2>
+					<br>
+					<img width="100%" height='100%' box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_20.jpg" alt="wnv">
+					<br>
+					<citation>European Centre for Disease Prevention and Control (ECDC), 2013</citation>
+					</section>
+					
+					<!-- 2. WNV at continental and regional level -->
+					<section>
+					<h1 style="text-align:CENTER"> West Nile Virus (WNV)</h1><h2>continental/regional scale</h2>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 500px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_21.png" alt="" width="450px" height="250px" />
+					<br>
+					<citation>EFSA and ECDC, 2021</citation>
+					<br><br>
+					<h4><b>2018</b>: All seasons were warmer than usual, with late spring, summer and autumn all seeing temperatures more than 1 <span>&#8451;</span> above average </h4>
+					</td>
+					<td style="width: 500px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_22.png" alt="" width="350px" height="400px" />
+					</td>
+					</tr>
+					</tbody>
+					</table>      					
+					</section>
+					
+					<!-- 3. WNV at prefecture/province/municipality scale -->
+					<section>
+                    <h1 style="text-align:CENTER"> West Nile Virus (WNV)</h1><h2>prefecture/province/municipality scale </h2>
+					<table style="height: 364px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 600px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_23.png" alt="" width="400px" height="400 px" />
+					<h4><b>2014-16</b>: A minimum occurs after ~5y cycle.</h4>
+					</td>
+					<td style="width: 400px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_24.png" alt="" width="350px" height="400 px" />
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 4. WNV dynamics - EYWA -->
+					<section>
+					<h1 style="text-align:CENTER"> West Nile Virus (WNV) dynamics</h1><h2>the EYWA approach</h2>
+					<table style="height: 369px;" width="100%">
+					<tbody>
+					<tr>
+					<td style="width: 300px;">
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_25.png" alt="" width="100%" height='200px' />
+					</td>
+					<td style="width: 500px">
+					<h3 style="color: orange">Mesoscale monthly to seasonal</h3>
+					<h4>
+					<li style="color: orange">Causality Driven (forecasting)</li>
+					<ul><i>Seek predictable signals in Input Data:</i>
+					<ul><li>Environmental</li>
+					<li>Epidemiological</li>
+					<li>Entomological</li>
+					<li>Geographical</li>
+					<li>Demographical</li>
+					</ul></ul>
+					<br>
+					<ul><i>Key elements of the prediction process:</i>
+					<ul><li>Meteorological Uncertainty</li>
+					<li>Epidemiological Uncertainty</li>
+					</ul></ul>
+					<br>
+					<h3 style="color: orange">Microscale weekly to monthly</h3>
+					<h4>
+					<li style="color: orange">Data Driven (nowcasting)</li>
+					</h4>
+					</td>
+					</tr>
+					</tbody>
+					</table>      
+					</section>
+					
+					<!-- 5. MIMESIS model -->
+					<section>
+                    <h1>Dynamical core of the EYWA system: the MIMESIS model</h1>					
+					<h3 style='color: darkblue'><b>MIMESIS</b>: spatial dyna<b>MI</b>cal <b>M</b>odel for w<b>ES</b>t n<b>I</b>le viru<b>S</b></h3>
+					<img src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/Figure_26.png" alt="" width="600" height="250 px" />
+					<br>
+					<citation>Kioutsioukis and Stylianakis, 2019</citation>
+					<br>
+					<citation>Angelou, Kioutsioukis and Stilianakis, 2021 (under review)</citation>
+					<br>
+					<citation>Kioutsioukis et al., 2021 (submitted)</citation>
+					</section>
+					
+					<!-- 6. Conclusions -->
+					<section>
+                    <h1>Conclusions</h1>					
+					<ul>Quantitative early warning assessments (t~months) of the spatial and temporal variability of WNV circulation in mosquitoes, birds and humans is a major challenge and requires a causative attribution.
+					</ul>
+					<br><br>
+					<ul>The <b><i>MIMESIS</b></i> model, developed at the <b><i>LapUP</b></i>, operates spatially at the mesoscale and temporally at the monthly to seasonal scale. It is a <i>dynamic model</i> nested in an <i>ensemble framework</i> to account for the meteorological and epidemiological uncertainty.
+					<br><br>
+					<ul><li>Meteorological uncertainty: ensemble seasonal forecasts.</li>
+					<li>Epidemiological uncertainty: relies in an ensemble model developed for this purpose.</li>
+					</ul></ul>
+					<br><br>
+					<ul>Average detection probability is 72% in GR and 94% in VE, in optimal sense. In forecast mode for 2020, it reached 66-83%.
+					</ul>
+					<br><br>
+					<ul>The May temperatures are found most critical in shaping the WNV dynamics.
+					</ul>
+					</section>
+					
+				</section>
+				
+				<!-- 4th part: Final Slide-->
+				<section >
+					<h1>Thank you!</h1>
+					<table style="height: 150px;" width="847">
+					<h3 style ="text-align:center; font-size:25px">More <b>training material</b> available at:</h3> 
+					<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-material-catalogue/"> http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+					<br>
+					<h3 style ="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3> 
+					<h3 style ="text-align:center; font-size:25px"><strong><a href="http://www.eo4geo.eu/training-actions/"> http://www.eo4geo.eu/training-actions/</a></strong></h3>
+					<tr>
+					<td>
+					<img width="70" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/link.png" alt="connection">
+					</td>
+					<td>
+					<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3> 
+					</td>
+					<td>
+					<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3> 
+					</td>
+					</tr>
+					</table>
+					<table style="height: 150px;" width="847">
+					<tr>
+					<td>
+					<img width="150" box-shadow="none" data-src="./resources/Early_warning_for_disease_epidemics_at_regional_level/resources/lapup.jpg" alt="connection">
+					</td>
+					<td>
+					<h3 style="font-size: 25px;"><strong><a href="https://www.atmosphere-upatras.gr/en/">https://www.atmosphere-upatras.gr/en/</a></strong></h3> 
+					</td>
+					</tr>
+					</table>
+				</section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

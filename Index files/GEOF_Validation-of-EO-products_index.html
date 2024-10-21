@@ -1,0 +1,845 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en">
+
+	<head>
+		<title>EO4GEO_GEOF: Validation of EO Products</title>
+		<meta property="dc:title" content="Validation of EO Products" />
+		<meta property="dc:creator" content="Andrija Krtalic" />
+		<meta property="dc:publisher" content="University of Zagreb, Faculty of Geodesy" />
+		<meta property="dc:subject" content="Copernicus, EO4GEO, WP4, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="This is a lesson on Validation of EO products. Errors in satellite, aero and drone data products are known unknowns. However, quantifying the quality of these products by decomposing the inherent uncertainty components is a very challenging task. Validation refers to the process of assessing the uncertainty of higher level, satellite sensor derived products by analytical comparison to reference data, which is presumed to represent the true value of an attribute. This course provides an overview of EO data validation procedures and frameworks." />
+		<meta property="dc:tableOfContents" content= "Errors in satellites, aero and drone products, satellite sensors, data validation procedures and frameworks" />
+		<meta property="dc:description" content= "Learning outcomes: Understand the basic terms in EO data validation; Understand and distinguish terms ‘’error’’ and ‘’uncertainty’’ of EO data; Understand EO data validation processes; Categorization of EO data validation methods; Understand goal of EO data validation." />
+		<meta property="dc:contributor" content="Andrija Krtalic" />
+		<meta property="dc:created" content="2020-09-20" />
+		<meta property="dc:type" content="teaching material" />
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="45min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 6" />
+		<meta property="dc:source" content="" />
+		<meta property="dc:rightsToHolder" content="Andija Krtalic, University of Zagreb Faculty of Geodesy" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:GD4" />	
+		<link rel="dc:relation" href="eo4geo:TA14" />	
+		<link rel="dc:relation" href="eo4geo:IP4" />	
+		
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 8%;height : 9%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Validation of EO Products</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Validation of EO Products</h1>
+					(EO4GEO - Faculty of Geodesy University of Zagreb)
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+				Abstract
+				In the context of remote sensing, validation refers to the process of assessing the uncertainty of higher level, satellite sensor derived products by analytical comparison to reference data, which is presumed to represent the true value of an attribute. Naturally, validation is an essential component of any earth observation program, since it enables the independent verification of the physical measurements obtained by a sensor as well as any derived products. After presenting some relevant definitions, this chapter draws on international and national validation campaigns to summarize some of the major components involved when using ground-reference data to validate biophysical products derived through Earth Observation (EO) data. These include site selection, site extent, and sampling design. The process of up-scaling, which enables the validation of coarse resolution products via the comparison of measurements made at various scales (i.e., ground-based, intermediate-airborne) is also reviewed. The chapter concludes with a brief section on alternative validation methods.
+				Key Points
+				• The Committee of Earth Observing Satellites has identified four stages of validation, each of which is progressively more comprehensive.
+				• Satellite derived products can be validated directly using an independent data source that is representative of the target values or indirectly through product inter-comparison and/or by collecting measurements across various scales and upscaling.
+				• Sites chosen for validation should meet certain criteria, including the following: be accessible to researchers; encompass existing facilities such as flux towers which collect measurements of biophysical variables over extended periods of time; have long-term commitment to scientific studies; represent significant areas of homogenous or uniformly mixed land cover.
+				• The site extent of a validation site must be large enough to represent the pixel size of the sensor being validated.
+				• The sampling design implemented for ground-based measurements is driven by two main factors: (a) the footprint of the field measurements and (b) up-scaling process used to integrate the field measurements and high resolution imagery
+				• Field activities should be carried out within a week of satellite/airborne acquisition to prevent significant changes in vegetation. However, the rate at which the state of the vegetation evolves varies for different ecosystems and is also influenced by its successional state.
+				• When devising a sampling design, many projects choose a sampling scheme based on elementary and secondary sampling units. Elementary sampling units (ESU) aim to capture the variability of the product being validated across the study site (this can be determined from a current land cover or floristic map, surface reflectance as characterized by recently acquired satellite imagery). Secondary sampling units (SSU) are distributed across the ESU and represent the specific locations where measurements are recorded. Different sampling designs can be implemented within SSU including fixed pattern, transect, randomized designs.
+				• Up-scaling is generally achieved via the integration of field measurements and a high-resolution image, which results in the production of a high resolution map of the parameter measured in the field.				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+				
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="intro">
+					
+					<section class="scrollable">
+						<h1>Definitions and Their Source for Some Terms Commonly Used in EO Validation</h1> 
+						<table style="height: 446px;" width="795">
+						<tbody>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p><strong>Term</strong></p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p><strong>Definition</strong></p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p><strong>Source</strong></p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Verification</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>Confirmation, through the provision of objective evidence, that specified requirements have been fulfilled</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>ISO:9000</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Validation</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>(1) The process of assessing, by independent means, the quality of the data products</p>
+						<p>derived from the system outputs</p>
+						<p>(2) Verification, where the specified requirements are adequate for an</p>
+						<p>intended use</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>CEOS/ISO:19159</p>
+						<p>VIM/ISO:99</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Evaluation</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>The process of judging something&rsquo;s quality</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>The Cambridge Dictionary</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Quality</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>Degree to which a set of inherent characteristics of an object fulfills requirements</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>ISO:9000</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Quality indicator</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>&nbsp;A means of providing a user of data or derived product with sufficient information to assess its suitability for a particular application</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>QA4EO</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Accuracy</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>Closeness of agreement between a measured quantity value and a true quantity</p>
+						<p>value of a measurand. Note that it is not a quantity and it is not given a numerical</p>
+						<p>quantity value</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>VIM/ISO:99, GUM</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Measurement error</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>Measured quantity value minus a reference quantity value difference of quantity value obtained by measurement and true value of the measurand</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>VIM def. 2.16</p>
+						<p>CEOS/ISO:19159</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px; text-align: center;">
+						<p>Measurement uncertainty</p>
+						</td>
+						<td style="width: 373.008px; text-align: center;">
+						<p>&nbsp;Nonnegative parameter characterizing the dispersion of the quantity values being</p>
+						<p>attributed to a measurand</p>
+						</td>
+						<td style="width: 193.008px; text-align: center;">
+						<p>VIM def. 2.26</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+					</section>
+					
+					<section > 
+						<br>
+						<h2>Validation in Earth Observation (Remote Sensing)</h2> 
+						<br>
+						<ul>
+						<li>Validation refers to the process of assessing the uncertainty of higher level, satellite sensor derived products by analytical comparison to reference data, which is presumed to represent the true value of an attribute.</li>
+						<li>Validation of the satellite data itself (images and other directly measured values) is also performed.</li>
+						<li>Validation is an essential component of any Earth observation program</li>
+						<li>It enables the independent verification of the physical measurements obtained by a sensor as well as any derived products.</li>
+						</ul>
+					</section>					
+					
+					<section > 
+						<br>
+						<h2>Validation Framework</h2> 
+						<br>
+						<ul>
+						<li>Validation and uncertainty assessment - crucial requirement of a satellite data product (from the end user perspective).</li>
+						<li>The term validation - mean many things.</li>
+						<li>The geometric aspects of satellite images are validated.</li>
+						<li>The radiometric aspects of satellite images are validated.</li>
+						<li>The results of satellite image processing (spectral indices, extraction of individual objects, classification, LST, ...) can also be validated.</li>
+						<li>Validation of land products - a procedure for assessing the accuracy of satellite derivatives and quantifying their uncertainty by analytical comparison with reference data.</li>
+						</ul>
+					</section>						
+					
+					<section > 
+						<br>
+						<h2>Verification in Earth Observation (Remote Sensing)</h2> 
+						<br>
+						<ul>
+						<li>Verification - here means confirmation (through the provision of objective evidence) that requirements have been fulfilled.</li>
+						<li>Validation is a specific case of verification, which takes into account the intended use of the data products.</li>
+						</ul>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>Reference Measurements</h2> 
+						<br>
+						<ul>
+						<li>A key component of any validation is to check the consistency (comparison) of remote sensing data with reference measurements</li>
+						<li>Reference measurements are assumed to represent the truth (at least within their own uncertainties).</li>
+						<li>The EO and reference data are (in an ideal case) both linked to a stated metrological reference through an unbroken chain of calibrations or comparisons.</li>
+						<li>In practice, reference data can range from fully SI (Syst&egrave;me International) traceable to loosely agreed community standards.</li>
+						<li>Ground measurements - fully characterized and traceable are often called Fiducial Reference Measurements (FRM).</li>
+						</ul>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>Reference Measurements: 2</h2> 
+						<br>
+						<ul>
+						<li>In practice, EO data are rarely fully traceable.</li>
+						<li>Basic calibrations were performed under laboratory conditions can&rsquo;t repeat in Space.</li>
+						<li>Therefore - a comparison with a reference measurements in a validation exercise are often the only way to validate EO data back with an agreed standard.</li>
+						</ul>
+					</section>
+
+				</section>					
+					
+				<section id="errors">
+					
+					<section > 
+						<br>
+						<h1>“error” and “uncertainty”</h1> 
+						<br>
+						<ul>
+						<li>What exactly is meant by measurement uncertainty?</li>
+						<li>The terms "error" and "uncertainty" are often used interchangeably in the scientific community.</li>
+						<li>In metrology, measurement uncertainty is the expression of the statistical dispersion of the values attributed to a measured quantity.</li>
+						<li>The measurement error - the difference between the measured value and the true value.</li>
+						<li>The measurement error can contain both a random and a systematic component.</li>
+						</ul>
+					</section>					
+
+					<section class="scrollable">
+						<br>
+						<h2>Uncertainty in Systems and Reference Data</h2> 
+						<br>
+						<ul>
+						<li>Uncertainties in the reference and EO measurements are derived from a consideration of the calibration chain in each system and the statistical properties of outputs of the measurement system.</li>
+						<li>The Guide to the expression of Uncertainty in Measurement (GUM) [JCGM, 2008, 2009, 2011] prescribes how these component uncertainties are combined to give an overall uncertainty associated with measurements from each system, denoted in the current paper with ux and uy.</li>
+						</ul>
+						<p>Joint Committee for Guides in Metrology (<strong>JCGM</strong>) (<strong>2008</strong>), Evaluation of measurement data&mdash;Guide to the expression of uncertainty in measurement, Tech. Rep., BIPM, S&egrave;vres, France. (<a href="https://www.bipm.org/utils/common/documents/jcgm/JCGM_100_2008_E.pdf">https://www.bipm.org/utils/common/documents/jcgm/JCGM_100_2008_E.pdf</a>)</p>
+						<p>Joint Committee for Guides in Metrology (<strong>JCGM</strong>) (<strong>2009</strong>), Evaluation of measurement data&mdash;An introduction to the &lsquo;Guide to the expression of uncertainty in measurement&rsquo; and related documents, Tech. Rep., BIPM, S&egrave;vres, France. (<a href="https://www.bipm.org/utils/common/documents/jcgm/JCGM_104_2009_E.pdf">https://www.bipm.org/utils/common/documents/jcgm/JCGM_104_2009_E.pdf</a>)</p>
+						<p>Joint Committee for Guides in Metrology (<strong>JCGM</strong>) (<strong>2011</strong>), Evaluation of measurement data&mdash;Supplement 2 to the &ldquo;Guide to the expression of uncertainty in measurement&rdquo;: Extension to any number of output quantities, Tech. Rep., BIPM, S&egrave;vres, France. (<a href="https://www.bipm.org/utils/common/documents/jcgm/JCGM_102_2011_E.pdf">https://www.bipm.org/utils/common/documents/jcgm/JCGM_102_2011_E.pdf</a>)</p>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>Uncertainty due to Imperfect Spatiotemporal Collocation </h2> 
+						<br>
+						<ul>
+						<li>In the validation process, this uncertainty must be taken into account in the consistency check.</li>
+						<li>This uncertainty is not related to an individual measurement</li>
+						<li>It&rsquo;s related to the differences in sampling and smoothing properties of different measurement systems.</li>
+						</ul>
+					</section>	
+					
+				</section>
+
+				<section id="validation">
+					
+					<section > 
+						<br>
+						<h1>The Validation Process</h1> 
+						<br>
+						<ul>
+						<li>Validation aim is in principle straightforward</li>
+						<li>The actual implementation represents an extensive process
+						<ul>
+						<li>each individual step is subject to various assumptions and</li>
+						<li>potentially requires user decisions which might make it a subjective approach.</li>
+						</ul>
+						</li>
+						<li>Within most communities, detailed validation protocols have been established, tailored to the specific products and validation aims.</li>
+						</ul>
+					</section>		
+
+					<section class="scrollable">
+						<br>
+						<h2>Uncertainty in Systems and Reference Data</h2> 
+						<img width="600" height="475" img src="./resources/Validation-of-EO-products/Schematic overview of the general validation process.jpg" alt="sat1">
+						<p style="text-align: center;">Schematic overview of the general validation process</p>
+						<p style="text-align: center;">&nbsp;(<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562</a></p>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process - Data</h2> 
+						<br>
+						<ul>
+						<li>In ideal perspective the input data x and y (e.g., satellite data and reference data) to the validation process would be traceable to SI reference standards.</li>
+						<li>In practice this is rarely the case</li>
+						<li>The choice of reference data is often a pragmatic decision.</li>
+						</ul>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process - Data 2</h2> 
+						<br>
+						<ul>
+						<li>These decisions, therefore, affect the overall credibility of the validation results.</li>
+						<li>Typical considerations in this regard include the following questions:
+						<ul>
+						<li>(1) Do the data provide scientifically meaningful estimates of the investigated geophysical quantity?</li>
+						<li>(2) Do these data sufficiently cover the potential parameter space?</li>
+						<li>(3) Are the data expected to be accurate enough to be able to draw desired conclusions from the validation process?</li>
+						<li>(4) Are the data publicly available and accessible?</li>
+						</ul>
+						</li>
+						</ul>
+					</section>						
+
+					<section > 
+						<br>
+						<h2>The Validation Process - Quality Checking</h2> 
+						<br>
+						<ul>
+						<li>Many data providers include information on data quality within their data sets.</li>
+						<li>Data quality information can be provided as simple binary flags (good/poor data quality) or gradated flags representing a number of different quality levels.</li>
+						<li>Alternatively, data may be provided with quantitative uncertainty measures.</li>
+						<li>In some cases, additional checks may be required, such as:
+						<ul>
+						<li>checking the physical probability of a particular measurement,</li>
+						<li>visually inspecting the data, or</li>
+						<li>testing the time consistency.</li>
+						</ul>
+						</li>
+						</ul>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process - Spatiotemporal Collocation</h2> 
+						<br>
+						<p>The following concerns are to be addressed:</p>
+						<ol>
+						<li>Collocated measurements should be close to each other relative to the spatiotemporal scale on which the variability of the geophysical field becomes comparable to the measurement uncertainties.</li>
+						<li>If possible, differences in spatiotemporal resolution (horizontal, vertical, and temporal) should be minimized.</li>
+						<li>The collocation criteria should take into account the need for sufficient collocated pairs for robust statistical analysis. This need is often at odds with the first concern, and a compromise must be made</li>
+						</ol>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process - Spatiotemporal Collocation 2</h2> 
+						<br>
+						<p>Broadly speaking, there are two categories of collocation methods</p>
+						<ol>
+						<li>Those that keep the data on their original grids and select the closest matches and</li>
+						<li>Those that use interpolation and aggregation techniques (e.g., regridding, resampling, and kriging) to bring both data sets onto the same grid and temporal scale.</li>
+						</ol>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process – Homogenization -  Metric Calculation</h2> 
+						<br>
+						<ul>
+						<li>In many cases, further homogenization between the two data sets is necessary before actual differences can be computed.</li>
+						<li>Homogenization (transformation) of radiometric and spatial resolutions between data sets.</li>
+						<li>Units and other representation conversions are often required, and these can introduce additional uncertainties.</li>
+						<li>The choice of metrics used within the validation process depends on the application and data available.</li>
+						</ul>
+					</section>	
+
+					<section > 
+						<br>
+						<h2>The Validation Process – Analysis and Interpretation</h2> 
+						<br>
+						<ul>
+						<li>Once the final metrics have been obtained, it needs to be judged if the results are compliant with the requirements.</li>
+						<li>Following the definition of validation (see Slide 1), this implies verification that the data set is suitable for a specific application.</li>
+						<li>In many cases a single application does not exist.</li>
+						<li>Requirements may be numerous and, thus, validation targets would need to be defined</li>
+						<li>Which could then be checked for compliance on an individual basis.</li>
+						</ul>
+					</section>					
+				
+				</section>
+
+				<section id="applied">
+
+					<section > 
+						<br>
+						<h1>The Validation Process – Activities and Tools for Quality Assurance and EO Data Validation</h1> 
+						<br>
+						<ul>
+						<li>A couple of research projects have been devoted to establish best practices for the production of traceable, quality-assured EOdata products aswell as practices for their validation.</li>
+						<li>The deliverables of these projects and international activities are not necessarily published in the peer reviewed literature but represent nevertheless a rich set of valuable information.</li>
+						</ul>
+					</section>	
+				
+					<section class="scrollable">
+						<br>
+						<h2>Some Projects and Activities Related to EO Data Validation and Available Resources</h2> 
+						<table style="width: 800px; height: 566px;">
+						<tbody>
+						<tr>
+						<td style="width: 208.008px;">
+						<p><strong>Project</strong></p>
+						</td>
+						<td style="width: 360.508px;">
+						<p><strong>De</strong><strong>scription</strong></p>
+						</td>
+						<td style="width: 210.508px;">
+						<p><strong>References</strong></p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>IPWG</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Validation resources and server for precipitation data validation</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>http://www.isac.cnr.it/&sim;ipwg/calval.html</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>QA4ECV (FP7)</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Quality assurance for essential climate variables</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>http://www.qa4ecv.eu; online traceability</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>GAIA-CLIM (H2020)</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Improving nonsatellite atmospheric reference data, supporting their use in satellite</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>http://www.gaia-clim.eu; The GAIA-CLIM</p>
+						<p>Virtual Observatory; Deliverables D2.8,</p>
+						<p>validation, and identifying gaps</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>CEOS-LPV</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Protocols for variable-specific validation and coordination of validation across land product products</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>https://lpvs.gsfc.nasa.gov/</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>ESA CCI</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>CCI Project guidelines</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>http://cci.esa.int/sites/default/files/</p>
+						<p>ESA_CCI_Project_Guidlines_V1.pdf</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>GEWEX water vapor assessment</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Overview of satellite, in situ, and ground-based water vapor data records, an archive of global long-term water vapor data records on common grid and period for intercomparison and collocated radiosonde data from two different multistation long-term radiosonde archive</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>http://gewex-vap.org/</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>RFA</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Overview of satellite and ground-based radiation data records on common grid for intercomparison</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>https://gewex-rfa.larc.nasa.gov/</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 208.008px;">
+						<p>OLIVE</p>
+						</td>
+						<td style="width: 360.508px;">
+						<p>Evaluation and cross comparison of land variables</p>
+						</td>
+						<td style="width: 210.508px;">
+						<p>Weiss et al. [2014]</p>
+						<p>http://calvalportal.ceos.org/web/olive</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+						<p>These and some other projects can be found at: <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562</a></p>
+					</section>		
+				
+				</section>
+
+				<section id="math">
+
+					<section class="scrollable">
+						<br>
+						<h1>Mathematical Basis - Differences Between Data Sets</h1> 
+						<table style="height: 525px; width: 797px;">
+						<tbody>
+						<tr>
+						<td style="width: 506.703px;"><img src="./resources/Validation-of-EO-products/General%20sketch%20of%20the%20validation%20problem.jpg" alt="" width="600" height="367" /></td>
+						<td style="width: 250.297px;">
+						<p style="text-align: center;">General sketch of the validation problem.</p>
+						<p style="text-align: center;">A true, but unknown field of a geophysical variable <em>𝜃 </em>is observed by&nbsp;different measurement systems on different spatial (and temporal) scales, denoted as <em>𝛼, 𝛽</em>, and <em>𝛾</em>, using nonlinear&nbsp;mapping functions (<em>h</em><em>, </em><em>k</em>).</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+					</section>	
+				
+					<section class="scrollable">
+						<br>
+						<h2>Mathematical Basis - Probability Density Functions</h2> 
+						<br>
+						<ul>
+						<li>For validation purposes, we are not primarily interested in the differences for each individual pair of observations, but the underlying probability density function (PDF) of 𝛿, f𝛿</li>
+						<li>The uncertainty assessment requires detailed understanding of the individual contributions to the PDF, i.e.,
+						<ol>
+						<li>systematic effects due to individual measurement devices and retrieval procedures (h, k), including large-scale systematic effects due to instrument calibration or harmonization;</li>
+						<li>random measurement and retrieval errors; and</li>
+						<li>differences in the representativeness of different data sets (again including random and systematic components).</li>
+						</ol>
+						</li>
+						</ul>
+					</section>		
+				
+				</section>
+
+				<section id="advancedmethods">
+
+					<section class="scrollable">
+						<br>
+						<h1>Advanced Validation Approaches and Strategies - Spectral Methods</h1> 
+						<br>
+						<ul>
+						<li>Several studies in different communities have demonstrated approaches to apply spectral-based methods as validation techniques over a broad range of data sources and timescales.</li>
+						</ul>
+					</section>	
+				
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - Fourier-Based Approaches</h2> 
+						<ul>
+						<li>These approach finds expression in the standard Fourier transform, which resolves the frequencies underlying the signal of interest.</li>
+						<li>A mathematical description of the mean-square error (MSE) as an index of accuracy in estimating the ground measurement (point gauges) using spaceborne measurements.</li>
+						<li>Another approach detects characteristic features of erroneous SM estimates fromEO data in the frequency domain.
+						<ul>
+						<li>Results indicate that higher retrieval error standard deviations go along with higher vegetation/leaf area index, rainfall, and SM.</li>
+						</ul>
+						</li>
+						</ul>
+					</section>		
+
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - Consistency Through Process Models</h2> 
+						<ul>
+						<li>Process models reflect our understanding of the relevant processes governing the system under observation and of their interaction.</li>
+						<li>They can ensure properties such as conservation of mass, energy, or momentum.</li>
+						<li>Such models can be used in the validation context in various ways.</li>
+						</ul>
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - Indirect Validation</h2> 
+						<ul>
+						<li>Indirect validation approaches map the observational data product to a secondary variable, which is then compared against reference data of the same geophysical variable.</li>
+						<li>The performance of the secondary variable (in comparison with reference data) provides information on the quality of the observational data product</li>
+						</ul>
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - The Role of Data Assimilation for EO Validation</h2> 
+						<ul>
+						<li>Satellite data plays a key role in current data assimilation systems within numerical weather prediction models.</li>
+						<li>The direct assimilation of passive microwave and infrared radiance data has had a particularly large beneficial impact on analysis and forecast quality [Joo et al., 2013].</li>
+						<li>Key challenges include the lack of traceable radiometric measurements from on-orbit satellite radiometers and a lack of traceable ground truth observations against which to validate the satellite observations.</li>
+						</ul>
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - Assessing Uncertainty From Scale Mismatch</h2> 
+						<ul>
+						<li>In the atmospheric range, when measuring temperature, water vapor, or trace gas concentration, reference measurements are usually sparsely distributed in space and time with respect to measurements based on a wider resolution universe.</li>
+						<li>This makes it difficult to find strict collocation criteria, magnification methods, or even an estimate of the collocation uncertainty involved in the comparison.</li>
+						</ul>
+					</section>					
+
+					<section class="scrollable">
+						<br>
+						<h2>Spectral Methods - Assessing Uncertainty From Scale Mismatch 2</h2> 
+						<p>Several strategies have been devised to overcome this issue:</p>
+						<ol>
+						<li>Taking more than one reference point measurement.</li>
+						<li>Estimate the collocation errors (and resulting uncertainties) when comparing single-reference measurements with satellite data using.</li>
+						<li>When only a single-reference measurement is made,&nbsp;for example, a radiosonde measurement compared to a satellite-based one, the collocation uncertainties become nonnegligible.</li>
+						</ol>
+					</section>
+					
+				</section>
+
+				<section id="ultimates">
+
+					<section class="scrollable">
+						<br>
+						<h1>The Ultimate Goal of a Validation</h1> 
+						<br>
+						<ul>
+						<li>To assess whether a data set is compliant with predefined benchmarks (requirements) that quantify whether a data set is suitable for a particular purpose.</li>
+						<li>It is therefore essential that the metric itself is not ambiguous and allows to fully capture the data quality.</li>
+						</ul>
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>The Ultimate Goal of a Validation</h2> 
+						<br>
+						<p>Prerequisites apply for a proper definition of requirements to be used as such validation targets or benchmarks</p>
+						<ol>
+						<li>A clear specification of the spatial and temporal domains for each metric is essential.</li>
+						<li>The mathematical details of the metric calculations have to be provided.</li>
+						<li>It needs to be specified under which conditions a data set would be considered to fulfill the specified requirements.</li>
+						<li>Clear separation between systematic and random error components is required.</li>
+						</ol>
+					</section>
+
+					<section class="scrollable">
+						<br>
+						<h2>Recommendations for Validation Frameworks</h2> 
+						<ul>
+						<li>Refine user requirements.
+						<ul>
+						<li>Current definitions of user requirements are very often based on scalar metrics.</li>
+						<li>The motivation for these scalar metrics needs to be much more traceable.</li>
+						</ul>
+						</li>
+						<li>Beyondscalar metrics
+						<ul>
+						<li>Advanced validation methods should gain widespread use.</li>
+						<li>These require a thorough understanding of the error characteristics of both the satellite and the reference data.</li>
+						</ul>
+						</li>
+						<li>Collection of reference data.
+						<ul>
+						<li>Traceable approaches for the collection of reference data for EO validation are needed.</li>
+						<li>The standards developed by the Committee on Earth Observation Satellites working group on calibration and validation define good standards already, but they are not necessarily available for all Essential Climate Variables</li>
+						</ul>
+						</li>
+						</ul>
+					</section>					
+
+					<section class="scrollable">
+						<br>
+						<h2>Recommendations for Validation Frameworks 2</h2> 
+						<ul>
+						<li>Traceable data production.
+						<ul>
+						<li>Traceable data production chains are required that allow to trace back the method used for the production including full traceability of the satellite and ancillary data used, including their uncertainties.</li>
+						</ul>
+						</li>
+						<li>Sustained fiducial references.
+						<ul>
+						<li>The sustained availability of fiducial reference data is not ensured for any of the communitiesworking withEOdata.</li>
+						<li>Validation with fiducial references covering the spectrum of the natural variability of a geophysical variable is considered essential for all validation approaches.</li>
+						</ul>
+						</li>
+						<li>Validation tools.
+						<ul>
+						<li>Traceable and open source-based tools for the validation of EO data currently do not exist.</li>
+						</ul>
+						</li>
+						</ul>
+					</section>	
+					
+				</section>				
+				
+				
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Thank you for attention.</h2>
+				<br>
+				<p>All references can be found at: <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017RG000562</a></p>				
+
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</htm

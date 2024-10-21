@@ -1,0 +1,176 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Active Fire Detection with Sentinel-3 data</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Active fire detection with Sentinel-3" />
+		<meta property="dc:creator" content="Tereza Roth" /> 
+		<meta property="dc:creator" content="Ewelina Dobrowolska, Georgia Karadimou" /> 
+		<meta property="dc:publisher" content="SERCO UK&E" /> 
+		<meta property="dc:subject" content="Copernicus, EO4GEO, Sentinel-3, Satellite, Earth Observation, Active fire detection, Image processing" />
+		<meta property="dc:abstract" content="These materials provides an introduction to concepts and methods of Sentinel-3 data processing and their application in active fires detection. The slides have been prepared for webinar organized by Serco EO Training and promoted by EO4GEO" />
+		<meta property="dc:tableOfContents" content="(1) Introduction to the exercise; 
+							     (2) Concepts of Copernicus Programme data and Services; 
+							     (3) Sentinel-3 characteristics and applications; 
+							     (4) Exercise - Active Fire Detection with Sentinel-3 data:
+								 (4.1) Image preprocessing - Day and Night data; 
+							     (4.2) Active Fire Detection (day and night-time);
+								 (4.3) Exporting results;
+								 (4.4) Comparing results with operational monitoring
+								 (5) Extra Steps
+							     (6) Reference list;" />
+		<meta property="dc:description" content="Learning outcomes: Understand satellite data acquisition from Copernicus Open Access Hub; Understand principles of data processing; Understand the concept and characteristics of Sentinel-3 SLSTR instrument and data it provides; Become familiar with the concept of active fire detection using Sentinel-3 data (night and day-time detection); Create a fire detection algorithm (night and day-time) and visualize areas with active fires; Compare results with operational monitoring from Global Wildfire Information System" /> 
+		<meta property="dc:contributor" content="Tereza Roth" />
+		<meta property="dc:created" content="2021-10-28" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="60 min" />
+		<meta property="dc:audience" content="Students, researchers, environmentalists interested in active fire detection and applications of Sentinel-3 data " />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source" content="Existing youtube-video on ESA; existing presentation on EO4GEO project: https://eo4geocourses.github.io/GISIG_Introduction_to_EO4GEO/, websites: https://www.copernicus.eu/en/opportunities/education/copernicus-mooc;  https://sentinel.esa.int/web/sentinel/missions/sentinel-3; https://step.esa.int/main/; Serco EO Training website: https://eotraining-serco.com/tutorials/active-fire-detection-with-sentinel-3/" />
+		<meta property="dc:rightsHolder" content="Tereza Roth" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:CF" />
+		<link rel="dc:relation" href="eo4geo:IP6" />
+		<link rel="dc:relation" href="eo4geo:GS3-4" />
+		<link rel="dc:relation" href="eo4geo:TA12" />	
+		<link rel="dc:relation" href="eo4geo:TA12-1" />
+		<link rel="dc:relation" href="eo4geo:TA13" />
+		<link rel="dc:relation" href="eo4geo:TA13-3" />
+		<link rel="dc:relation" href="eo4geo:TA13-3-2" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			<!-- FORMATTING FOR HEADER -->
+			
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 10%;height : 7%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Active fire detection with Sentinel-3 data</div>	<!--The title of the presentation appears on each slide-->
+
+				<div class="slides">
+				
+			
+				<!-- HEADER SLIDE: Put title of your training action here! --> 
+
+				<section >
+					<h1>Active fire detection with Sentinel-3 data</h1> 
+					<br>
+					<h2>EO4GEO webinar material collection<h2>
+					<br>
+				</section>
+
+				<!-- LINKS TO INDIVIDUAL COURSE LECTURES/MATERIALS -->
+
+				<section id="intro1" class="scrollable"> 
+				<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+					   <h1 style="font-size:60px">Index</h1>
+				</div>
+				<br><br><br>
+				
+					<table width="800px">
+						<br>
+						
+						<tr><td><a href="#slide4">1</a></td><td>EO4GEO Project overview</td><td width="30%">
+							<a href="https://eo4geocourses.github.io/GISIG_Introduction_to_EO4GEO/">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide10">2</a></td><td>COPERNICUS Programme data and services</td><td width="30%">
+							<a href="https://www.copernicus.eu/en/opportunities/education/copernicus-mooc">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+							</a></td></tr>
+						<tr><td><a href="#slide16">3</a></td><td>Sentinel-3 mission overview</td><td width="30%">
+							<a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-3">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+						    </a></td></tr>
+						<tr><td><a href="#slide29">4</a></td><td>Active fire detection with Sentinel-3: Theoretical background</td><td width="30%">	
+							<a href="./resources/Serco_EO4Geo_ActiveFireDetection_final.pdf"> 
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>	
+							</a></td></tr>
+						<tr><td><a href="#slide29">5</a></td><td>Active fire detection with Sentinel-3: Exercise</td><td width="30%">	
+							<a href="https://eotraining-serco.com/tutorials/active-fire-detection-with-sentinel-3/"> 
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide29">6</a></td><td>More information on SNAP software</td>
+						<td width="30%">
+							<a href="https://step.esa.int/main/">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+					
+					</table>
+			
+			</section>
+
+              </div>
+
+		<!--RESTRICTED SECTION FOLLOWING (no need to adapt for materials) -->
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

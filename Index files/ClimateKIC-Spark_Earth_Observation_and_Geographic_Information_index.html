@@ -1,0 +1,233 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Spark! - Earth Observation and Geographic Information: a crucial tool to monitor and tackle climate change</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="Spark! - Earth Observation and Geographic Information: a crucial tool to monitor and tackle climate change" />
+		<meta property="dc:creator" content="Juliette Hunault" /> 
+		<meta property="dc:publisher" content="EIT Climate-KIC" /> 
+		<meta property="dc:subject" content="Teach students and young innovators what information is available, how EO*GI is used today and which stakeholders can support them to tackle climate challenges" />
+		<meta property="dc:abstract" content="Spark! is an initiative from EIT Climate-KIC to inspire university students, PhD students and citizens to take climate action. For this October edition, EIT Climate-KIC and EO4GEO have partnered to give the participants of "Spark!" an overview of the use and applications of satellite data in climate-change related challenges. This training action aims at the crucial role Earth observation and geographic information plays in monitoring, forecasting, and mitigating climate change in various end-sectors such as forestry, agriculture or urban planning to name a few.
+							Stakeholders from the institutional, academic, and private sector will give context on the sector and main ongoing initiatives. They will also present their activities and use-cases where they are using Earth observation and geographic information to tackle climate change. " />
+		<meta property="dc:tableOfContents" content="(1) Spark!; 
+							     (2) The context of EO*GI in EUrope, EUSPA; 
+							     (3) Copernicus data for renewable energy, University of Patras; 
+							     (4) Satellite and remote sensing data for forest conservation, Pachamas; 
+							     (5) Conclusion;" />
+		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow including image acquisition, (pixel-based) image analysis, classification and validation; get to know online portals, data catalogues, and pricing schemes for satellite data; Familiarize with the European Copernicus Earth observation programme; Master standard image analysis routines as implemented in ArcGIS Pro" /> 
+		<meta property="dc:contributor" content="" />
+		<meta property="dc:created" content="2021-10-26" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="75 min" />
+		<meta property="dc:audience" content="Master and PhD European students from various backgrounds (also non-technical),Young professionals, Citizens" />
+		<meta property="dc:educationLevel" content="EQF 4" />
+		<meta property="dc:source" content="Training used to design the cases: Training material on Sentinel-2 data and vegetation indices;Training recommended to the students to deepen their knowledge: Training action on Solar resource and forecasting at municipality level" />
+		<meta property="dc:rightsHolder" content="EIT Climate-KIC" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:CF" />
+		<link rel="dc:relation" href="eo4geo:GS" />
+		<link rel="dc:relation" href="eo4geo:GS3-4" />	
+		<link rel="dc:relation" href="eo4geo:OI" />
+		<link rel="dc:relation" href="eo4geo:OI5-1" />
+		<link rel="dc:relation" href="eo4geo:IP" />
+		<link rel="dc:relation" href="eo4geo:TA" />
+		<link rel="dc:relation" href="eo4geo:TA12" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>	
+				 <div  class = "presentation_title" style=" text-align: center; margin-top: 2vh; font-size:3vh " >EO*GI: A crucial tool to monitor and tackle climate change</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>EO*GI: A crucial tool to monitor and tackle climate change</h1>
+					An EO4GEO and Climate-KIC workshop on the use of satellite and remote sensing data to tackle climate change challenges. With EUSPA, University of Patras and Pachama.
+				</section>
+				
+			<section id="intro1" class="scrollable">
+				<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+					   <h1 style="font-size:60px">Overview</h1>
+					</div><br><br><br>
+				
+					<table width="500px">
+
+						<br>
+						<tr></tr>
+						<tr><td><a href="#slide1">1</a></td><td>Spark! lectures</td><td width="30%">
+						</td></tr>
+						<tr><td><a href="#slide4">2</a></td><td>EO*GI context and trends</td><td width="30%">
+							<a href="./resources/Spark/EUSPA.pdf">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+							</a></td></tr>
+						<tr><td><a href="#slide10">3</a></td><td>EO*GI for forestry challenges</td><td width="30%">
+							<a href="./resources/Spark/Forestry_challenge_Climate-KIC_Solutions.pdf">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+						</a></td></tr>
+						<tr><td><a href="#slide16">4</a></td><td>EO*GI for forest protection</td><td width="30%">
+							<a href="./resources/Spark/Pachama.pdf">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">
+						</a></td></tr>
+						<tr><td><a href="#slide29">5</a></td><td>EO*GI for solar energy challenges</td><td width="30%">	
+							<a href="./resources/Spark/Solar_energy_challenge_UniPatras_Solutions.pdf"> 
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+						</a></td></tr>
+						<tr><td><a href="#slide29">6</a></td><td>EO*GI for new Challenges in Solar Energy Resources</td>
+						<td width="30%">
+							<a href="./resources/Spark/University_of_Patras.pdf">
+								<img height="30px" data-src="./resources/template_WhatCopernicus/image4689.png" class="plain" alt="link icon">	
+						</a> </td></tr>
+
+					</table>
+			
+			</section>
+
+						
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR SECOND SLIDE--> 
+				<section >
+						<a href="#intro1"><h1 style="font-size:58px">1 | Spark! lectures</h1></a>
+						<p style="text-align: justify;">Spark lectures are community events organised by EIT Climate-KIC 5 times a year. The events are meant to trigger fruitful discussions and inspire the participants to take climate action via presentations and interactions with thought provoking innovators and opinion leaders.</p>
+					<p style="text-align: justify;"> For its October edition this year, EIT Climate-KIC partnered with the EO4GEO project to design an event about Earth observation and geoinformation as a tool help solving climate change challenges. This event is therefore a hybrid training action from EO4GEO based on a EIT Climate-KIC event.</p>
+					<br><img width="600" height="300" img src ="./resources/Spark/Banner.png" alt="Spark-EO4GEO training action">	
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro2"><h1 style="font-size:58px">2 | EO*GI context and trends</h1></a>
+						<h2>EUSPA</h2>
+						New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="./resources/Spark/EUSPA.pdf"><img  class="plain" data-src="./resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro3"><h1 style="font-size:58px">3 | Forestry challenge</h1></a>
+						<h2>ClimateKIC</h2>
+						New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="./resources/Spark/Forestry_challenge_Climate-KIC_Solutions.pdf"><img  class="plain" data-src="./resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>	
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro4"><h1 style="font-size:58px">4 | EO*GI for forest protection</h1></a>
+						<h2>Pachama</h2>
+						New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="./resources/Spark/Pachama.pdf"><img  class="plain" data-src="./resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>	
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro5"><h1 style="font-size:58px">5 | EO*GI for solar energy</h1></a>
+						<h2>The University of Patras</h2>
+						New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="./resources/Spark/Solar_energy_challenge_UniPatras_Solutions.pdf"><img  class="plain" data-src="./resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>	
+
+				<section >
+					<div class="ppt-h2" style="position: absolute; top: 45px; left: 00px; height: 58px;  width: 1028px">
+						<a href="#intro6"><h1 style="font-size:58px">6 | EO*GI for new Challenges in Solar Energy Resources</h1></a>
+						<h2>The University of Patras</h2>
+						New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					</div>
+					<div class="img-icons" style="position: absolute; top: 430px; left: 365px; height: 80px; width: 250px">
+						<a href="#intro1" target="_self"><img class="plain" data-src="./resources/template_WhatCopernicus/Home_Menu.png" alt="Go to Menu" align=center-right></a>
+						<a href="./resources/Spark/University_of_Patras.pdf"><img  class="plain" data-src="./resources/template_WhatCopernicus/GO_To_Course.png" alt="Go to course" align=center-right></a>
+					</div>
+				</section>	
+				
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

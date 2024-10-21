@@ -1,0 +1,866 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>Sentinel-2 data and vegetation indices</title>
+		<meta property="dc:title" content= "Sentinel-2 data and vegetation indices" />
+		<meta property="dc:creator" content= "Agata Hościło" />
+		<meta property="dc:publisher" content="Institute of Geodesy and Cartography (IGiK)" /> 
+		<meta property="dc:subject" content= "Sentinel-2, spectral index, remote sensing, EO4GEO, WP5, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content= "This is a training material on Sentinel-2 data and vegetation indices. It is divided into two modules: 1) Introduction to spectral indices and 2) Application of vegetation spectral indices." />
+		<meta property="dc:tableOfContents" content="Modul 1:(1) Spectral Indices Background, 
+		      (2) Spectral vegetation signatures, 
+		      (3) How to calculate spectral indices; 
+		      (4) Sentinel-2 spectral characteristic;
+		      (5) Simple Band Ratio; 
+		      (6) Combination of multispectral bands;;
+		Modul 2: (1) Agriculture, 
+		      (2) Forestry, 
+		      (3) Vineyards, 
+		      (4) Windstorm, 
+		      (5) Fire" />
+		<meta property="dc:description" content= "Learn about the principle of the spectral index calculation; Familiarize with different vegetation spectral indices; Get to know the Sentinel-2 spectral bands; Learn about the index database and tools available to calculate indices; Learn how the spectral indices are used in different applications: agriculture, forestry, vineyards, natural hazards: fires, windstorms." />
+		<meta property="dc:contributor" content="Valerio Tramutoli, Nicola Capece, Valeria Satriano - University of Basilicata; Sara Wiman, Greger Lindeberg - Geografiska informationsbyrån" />
+		<meta property="dc:created" content="2020-09-14" />
+		<meta property="dc:type" content="teaching material"/>
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN"/>
+		<meta property="dc:SizeOrDuration" content="2X45min" />
+		<meta property="dc:audience" content="students"/>
+		<meta property="dc:educationLevel" content="EQF 6"/>
+		<meta property="dc:source" content=""/>
+		<meta property="dc:rightsHolder" content="Agata Hościło, Institute of Geodesy and Cartography"/>
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:IP3-1-2" />
+		<link rel="dc:relation" href="eo4geo:PP1-3-4" /> 
+		<link rel="dc:relation" href="eo4geo:PP1-1" /> 
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 12%;height : 10%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Sentinel-2 data and vegetation indices</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Sentinel-2 Data and Vegetation Indices</h1>
+					<!-- <p>Exercise course [UE] - XXXX</p>-->
+					<br><img width="800" height="250" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\NDVI_sl1.jpeg" alt="sat1">
+					
+					<br>
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+<!-- Slide 1_1 -->
+				<section id="EO">
+					<h2>Learning outcomes</h2> 
+					<ul>
+						<li>Learn the principle of the spectral index calculation </li>
+						<li>Familiarize with different vegetation spectral indices </li>
+						<li>Get to know the Sentinel-2 spectral bands</li>
+						<li>Learn about the index database and tools available to calculate indices </li>
+						<li>Learn how the spectral indices are used in different applications: agriculture, forestry, vineyards, natural hazards: fires, windstorms </li>
+					</ul>
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+					
+				</section>				
+<!-- Slide 1_2 -->
+				<section id="EO">
+					<h2>BoK Concepts</h2> 
+					<ul>
+						<li>[IP3-1-2] Spectral indices</li>
+						<li>[[PP1-3-4] Spectral Signature of Vegetation, Water, Soil</li>
+						<li>[PP1-1] EM radiation</li>
+						
+					</ul>
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+					
+				</section>				
+							
+				
+<!-- Slide 3 -->
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+	<!-- Slide 1-->				
+				<section > 
+					<h2>Module 1</h2>
+					<br/>
+					<h1 style="color:#FF6600;">Introduction to spectral indices</h1>
+				
+				</section>
+	<!-- Slide 2-->	
+				<section>
+					<h2>Spectral Indices Background</h2>
+
+					<p>Spectral indices are used to enhance particular land surface features or properties, e.g. vegetation, soil, water.</p>
+
+					<p>There are developed based on the spectral properties of the object of interest. </p>
+					
+					<br><img width="600" height="300" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\spectral_curve_2.jpg" alt="sat1">
+					<br>
+
+				</section>
+				
+<!-- Slide 3-->	<section> 
+
+					<h2>Spectral Indices Background</h2>
+					<p>Spectral signatures of clean/turbid water (in reflectance)<p>
+					<img class="myimage" width="70%" data-src="./resources/slide-45.png">
+					<br>
+					<small>Source: Ma, M., et al. (2007) Change in area of Ebinur Lake during the 1998–2005 period. International Journal of Remote Sensing, 28(24), 5523-5533. </small>
+					<br>
+				</section>
+<!-- Slide 4-->
+				<section> 
+					 
+					<h2>Spectral Indices Background</h2>
+					<p> Spectral signatures of snow and clouds (in reflectance)<p>
+					<img class="myimage" width="70%" data-src="./resources/slide-47.png">
+					<br>
+					<small>Source: Dong, C. (2018) Remote sensing, hydrological modelling and in situ observations in snow cover research: A review. Journal of Hydrology, 561, 573-583. </small>
+					<br>
+				</section>
+<!-- Slide 5-->				
+				<section >
+					<h2>Spectral Vegetation Principles</h2>
+
+					<p>Knowledge of the leaf cell, plant structure, status, condition and its spectral properties is essential to perform the vegetation analysis using remote sensed data. </p>
+
+					<br><img width="400" height="300" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\leaf_structure.jpeg" alt="sat1">
+					<br>
+					
+					<p> The structure of a chloroplast, and its location within a plant cell and leaf. </p>
+					<small> Source: Levetin and McMahon (2008) </small>
+					<br>
+				</section>
+<!-- Slide 6-->				
+				<section >
+					<h2>Spectral Vegetation Signatures</h2>
+
+					<br><img width="700" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\leaf_reflectance.png" alt="sat1">
+					<br>
+					<p>Dominant factor controlling leaf reflectance. </p>
+					<small>Vegetation spectra correspond to bundles of leaves and steams of Spartina alternifora, a wetland perennial grass from Kokaly et al. (2017), Soil spectrum from Clark (1999). Figure adapted by Denis, A. (2018) from Kokaly et al. (1998), Bowker et al. (1985), Curran (1989) and Thenkabail et al. (2013) </small>
+					<br>
+				</section>
+<!-- Slide 7-->	
+				<section >
+					<h2>Spectral Vegetation Signatures</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<ul>In green healthy plant
+									<li>chlorophyll absorbs large proportion of red and blue spectrum for photosynthesis and strongly reflects in green</li>
+									<li>strong reflectance in near infrared (NIR) due to leaf structure and condition</li>
+									<li>lower reflectance in shortwave infrared (SWIR) influenced by water content, which absorbs infrared energy.</li>
+								</ul>
+
+							</td>
+							<td style="width:50%">
+								
+								<br><img width="400" height="200" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\plant_spectral_properties.jpeg" alt="sat1">
+															</td>
+						</tr>
+					</table>
+				</section>
+
+<!-- Slide 8-->	
+				<section> 
+					<br/>
+					<h2>Spectral Vegetation Signatures</h2>
+					
+					<p> Monitoring vegetation disease</p>
+					<br><img width="700" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\veg_health.png" alt="sat1">
+					<br>
+					<small> Source:  Ashraf, M. A., Maah, M. J., & Yusoff, I., (2011) Introduction to remote sensing of biomass. In Biomass and remote sensing of biomass, 129-170. IntechOpen. </small>
+					<br>
+					
+
+				</section>
+<!-- Slide 9-->						
+				<section >
+					<h2>Vegetation indices</h2>
+
+					<p>Spectral indices dedicated to vegetation analysis are developed based on the principle that the healthy vegetation reflects strongly in the near-infrared (NIR) spectrum while absorbing strongly in the visible red.</p>
+
+					<img width="600" height="350" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\healthy_unhealthy_tree.jpeg" alt="sat1">
+					<!--<br>
+					<small>Wu et. al. 2014.<small>
+					<br>-->
+					<br>
+
+					<small>Source: Wu Ch-D., et al. (2014) </small>
+					<br>
+					</section>		
+<!-- Slide 10-->							
+				<section>
+					<h2>Rational for Vegetation Indices</h2>
+
+					<p>To explore and highlight the unique spectral signatures of vegetation, which allows to delineate it from the other earth objects.</p>
+
+					<p>To delineate the subtle changes in the spectral signatures of vegetation caused by changes in plant vigour and health that cannot be distinguished by human eye.</p>
+
+					<p>Spectral vegetation indices have been found to be related to various biophysical parameters, i.e. Leaf Area Index (LAI), percent vegetation cover, fraction of absorbed photosynthetically active radiation (fAPAR), photosynthetic capacity, and carbon dioxide fluxes.</p>
+
+				</section>
+<!-- Slide 11-->			
+				<section>
+					<h2>How to calculate spectral indices?</h2>
+					
+					<p>There are calculated using a mathematical equation applied to two or more wavelengths across the optical spectrum. </p>
+
+					<p>Spectral indices varied from a simple spectral rationing to more complicated combination of multispectral bands. </p>
+
+					<p>They are used to combine the multiple spectral bands into a single image, which highlights particular land surface features or properties.</p>
+
+					<!--<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	-->
+				</section>
+<!-- Slide 12-->	
+			
+			     <section >
+					<h2>Sentinel-2 Spectral Bands</h2>
+
+					<br><img width="700" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\S2-2020_ESA.jpeg" alt="sat1">
+					<br>
+
+					<small> Sentinel-2 spectral characteristics, © ESA <!--<<a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.--></small>
+					<br>
+				</section>
+				
+<!-- Slide 13-->	
+
+				<section >
+					<h2>Simple band ratio</h2>
+
+					<p>A common practice in remote sensing is the use of band ratio to eliminate various effects such as:</p>
+						<li>irradiance (topography)</li>
+						<li>transmittance (atmospheric effects)</li>
+					</p>
+
+					<p style="text-align: left">Example of simple ratio index:</p>
+
+					<p style="text-align: left">
+						<br><b>RVI</b> - <b>R</b>atio <b>V</b>egetation <b>I</b>ndex
+						<br>
+						<br>RVI = (NIR / Red)
+						<br>For Sentinel-2 the formula is: B8 / B4, where: B8 = 842 nm, B4 = 665 nm
+					</p>
+
+				</section>
+<!-- Slide 14-->	
+				<section >
+					<h2>Simple band ratio</h2>
+
+					<p style="text-align: left">Examples:</p>
+
+					<p style="text-align: left">
+						<b>PSSRa</b> - <b>P</b>igment <b>S</b>pecific <b>S</b>imple <b>R</b>atio (chlorophyll index) algorithm (Blackburn, 1998) investigates the potential of a range of spectral approaches for quantifying pigments at the scale of the whole plant canopy. 
+					</p>
+
+					<p style="text-align: left">
+						<br>PSSRa = (NIR) / (Red)
+						<br>For Sentinel-2 the formula is: B7 / B4, where: B7 = 783 nm, B4 = 665 nm
+					</p>
+
+				</section>
+<!-- Slide 15---->	
+				<section >
+					<h2>Combination of multispectral bands</h2>
+
+					<p><b>NDVI</b> - <b>N</b>ormalized <b>D</b>ifference <b>V</b>egetation <b>I</b>ndex
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:50%">
+								<p>Effective for quantifying green vegetation. Positively correlated with vegetation greenness.</p>
+
+								<p>
+									<br>NDVI = (NIR – Red) / (NIR + R)
+									
+									<br>For Sentinel-2 the formula is: (B8 - B4) / (B8 + B4)
+									<br>where: B8 = 842 nm, B4 = 665 nm
+								</p>
+
+								<p>NDVI range value is -1 to 1</p>
+
+							</td>
+							<td style="width:60%">
+								
+								<a<br><img width="400" height="350" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\NDVI_trees.png" alt="sat1">
+								<br>
+					<small>Source: Wu Ch-D., et al. (2014) </small>
+					<br>
+							</td>
+						</tr>
+					</table>
+				</section>
+<!-- Slide 16-->
+				<section >
+					<h2>Examples of the NDVI related indices</h2>
+
+					<p><b>TNDVI</b> - <b>T</b>ransformed <b>N</b>ormalized <b>D</b>ifference <b>V</b>egetation <b>I</b>ndex, indicates a relation between the amount of green biomass that is found in a pixel. It has always positive values and the variances of the ratio are proportional to mean values (Senseman et al. 1996). </p>
+
+					<p>TNDVI =  (sqrt(NDVI + 0.5))</p>
+
+					<p>
+						<br><b>NDI45M</b> - <b>N</b>ormalized <b>D</b>ifference <b>I</b>ndex (Delegido et al. 2011), is more linear, with less saturation at higher values than the NDVI
+						<br>
+						<br>NDI45 = (NIR – R) / (NIR + R)
+						<br>
+						<br>For Sentinel-2 the formula is: (B5 - B4) / (B5 + B4), where: B5 = 705 nm, B4 = 665 nm
+					</p>
+
+
+				</section>
+<!-- Slide 17---->
+				<section >
+				<h2>Examples of the NDVI related indices</h2>
+
+					<br><img width="600" height="450" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\S2_NDVI_TNDVI.jpeg" alt="sat1">
+					<br>
+							<small>NDVI and TNDVI calculated based on Sentinel-2 data © IGIK </small>
+					<!--<small>Miejsce na opis obrazka oraz ewentualny link do <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small> -->
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 18---->
+				<section >
+					<h2>Indices with green wavelength</h2>
+
+					<p>Green spectral band was found to be more efficient than the red spectral band to discriminate nitrogen.</p>
+
+					<p><b>GNDVI</b> - <b>G</b>reen <b>N</b>ormalized <b>D</b>ifference <b>V</b>egetation <b>I</b>ndex (Gitelson et al. 1996) is more sensitive than NDVI to different concentration rates of chlorophyll, which is highly correlated at nitrogen.</p>
+
+					<p>GNDVI = NIR - Green / NIR + Green</p>
+
+				</section>
+<!-- Slide 19---->
+				<section >
+					<h2>Indices with green wavelength</h2>
+
+					<p>
+						<br><b>MCARI</b> - <b>M</b>odified <b>C</b>hlorophyll <b>A</b>bsorption <b>R</b>atio <b>I</b>ndex - is responsive to both leaf chlorophyll concentrations and ground reflectance.
+						<br>
+						<br>MCARI = ((Red2 - Red1) - 0.2 * (Red2 - Green)) * (Red2 / Red1)
+							<br>
+					</p>
+
+					<p>
+						<br>For Sentinel-2 the formula is:
+						<br>[(B5 - B4) - 0.2 * (B5 - B3)] * (B5 - B4),
+						<br>where: B5 = 705 nm, B4 = 665 nm, B3 = 560 nm
+					</p>
+<!-- Slide 15---->
+				</section>
+
+				<section >
+					<h2>Indices with red-edge wavelengths</h2>
+
+					<p>The 'red edge' is the name given to the abrupt reflectance change in the 680 ± 740 nm region of vegetation spectra that is caused by the combined effects of strong chlorophyll absorption and leaf internal scattering. </p>
+
+					<p>Red edge, as the inflection point of the strong red absorption to near infrared reflectance, includes the information of chlorophyll content,  nitrogen and growth status.</p>
+
+				</section>
+<!-- Slide 16---->
+				<section >
+					<h2>Indices with red-edge wavelengths</h2>
+
+					<p><b>S2REP</b> - <b>S</b>entinel-<b>2</b> <b>R</b>ed-<b>E</b>dge <b>P</b>osition Index is sensitive to both crop (chlorophyll content) N and growth status. Generally, the higher the S2REP value, the higher is the chlorophyll content (Guyot and Baret, 1988). The Sentinel-2 Band 6 (740 nm) measures the reflectance situated at the top of the linear part of the 'red edge' slope.<p>
+
+					<p>S2REP = 705 + 35 * ((Red1 + NIR)/2) - Red2 / (Red3 - Red2))</p>
+
+					<p>
+						<br>For Sentinel-2 the formula is:
+						<br>705 + 35 * ((B4 + B7)/2) - B5 / (B6 - B5)),
+						<br>where: B7 = 783 nm, B6 = 740 nm, B5 = 705 nm, B4 = 665 nm
+					</p>
+
+				</section>
+<!-- Slide 17---->
+				<section >
+					<h2>Indices with red-edge wavelengths</h2>
+
+					<p><b>IRECI</b> - <b>I</b>nverted <b>R</b>ed-<b>E</b>dge <b>C</b>hlorophyll <b>I</b>ndex algorithm incorporates the reflectance in four bands to estimate canopy chlorophyll content (Guyot and Baret, 1988; Clevers et al., 2000).<p>
+
+					<p>IRECI = (NIR - Red1) / (Red2 / Red3)</p>
+
+					<p>
+						<br>For Sentinel-2 the formula is:
+						<br>(B7 - B4) / (B5 / B6),
+						<br> where: B7 = 783 nm, B6 = 740 nm, B5 = 705 nm,
+						<br>B4 = 665 nm 
+					</p>
+
+				</section>
+<!-- Slide 18---->
+				<section >
+					<h2>Vegetation Indices Issues</h2>
+
+					<li>Atmospheric interference – best practice to perform the atmospheric correction. </li>
+					<br>
+					<li>Empirically derived NDVI products have been shown to be unstable, varying with soil color, soil moisture, and saturation effects from high density vegetation.</li>
+					<br>
+					<li>Soil brightness variations complicate the vegetation indices response especially when the vegetation cover is low – it is necessary to remove the effect of soil brightness and isolate reflectance changes from vegetation.</li>
+
+				</section>
+<!-- Slide 19---->
+				<section >
+					<h2>Indices dedicated to reduction of soil noise</h2>
+
+					<li>Reduce soil noise at the cost of decreasing the dynamic range of the index.</li>
+					<br>
+					<li>These are slightly less sensitive to changes in vegetation cover than NDVI at low levels of vegetation cover.</li>
+					<br>
+					<li>These are more sensitive to atmospheric variations than NDVI.</li>
+
+				</section>
+<!-- Slide 21---->
+				<section >
+				
+					<h2>Indices dedicated to reduction of soil noise</h2>
+
+					<p><b>SAVI</b> - <b>S</b>oil <b>A</b>djusted <b>V</b>egetation <b>I</b>ndex - use a transformation technique that minimizes soil brightness influences from spectral vegetation indices involving red and near-infrared (NIR) wavelengths. <p>
+
+					<p>SAVI = (1+L) * (NIR - Red) / (NIR + Red + L)</p>
+
+					<p>
+						<br>For Sentinel-2 the formula is:
+						<br>(B08 - B04) / (B08 + B04 + L) * (1.0 + L); L = 0.428
+						<br>where: L is a soil brightness correction factor ranging from 0 to 1
+						<br>L = 1 low vegetation cover, L = 0 high vegetation cover, L = 0.5 intermediate vegetation cover.
+					</p>
+
+				</section>
+<!-- Slide 20---->
+				<section >
+					<h2>Indices dedicated to reduction of soil noise</h2>
+					<p>Sentinel-2 - SAVI</p>
+<!--<br>-->
+					<a href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/savi/">https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/savi/</a></small>
+					<br>
+					<img width="800" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\SAVI_v2.jpeg" alt="sat1">
+					
+				</section>
+<!-- Slide 29---->
+				<section >
+					<h2>Vegetation Moisture Sensitive Indices</h2>
+
+					<p>The moisture sensitive indices are calculated using SWIR and NIR.</p>
+
+					<p>The SWIR bands are sensitive to vegetation water content and spongy mesophyll structure in the vegetation canopy. The NIR reflectance is affected by leaf internal structure and leaf dry matter content but not by water content. </p>
+
+					<p>There are used to assess the vegetation moisture decline that is particularly useful for drought monitoring.</p>
+
+					<p>There are widely applied in agricultural and ecological applications including surface water body characteristics, vegetation water stress, soil water content assessment and wetlands monitoring.</p>
+
+				</section>
+	<!-- Slide 20---->			
+				<!--<section >
+				<br/>
+				<h2>Vegetation Moisture Sensitive Indices</h2>
+
+					<br/>
+					<p>Spectral signatures of vegetation in different condition of water stress water content. <p>
+					<p>The moisture sensitive indices are calculated using SWIR and NIR.</p>
+				
+					<img width="600" height="300" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\veg_water stress.JPG" alt="sat1">
+					
+				</section>
+<!-- Slide 21---->				
+				<section >
+					<h2>Vegetation Moisture Sensitive Indices</h2>
+
+					<p><b>NDMI</b> - <b>N</b>ormalized <b>D</b>ifference <b>M</b>oisture <b>I</b>ndex (Gao, 1995).</p>
+
+					<img width="800" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\NDMI.jpeg" alt="sat1">
+					<br>
+					<small> .</small>
+					<br>
+				</section>
+<!-- Slide 21---->
+				<section >
+				<br>
+					<h2>Index Database</h2>
+
+					<p>
+						<br>! 249 spectral indices available !
+						<br><a href="https://www.indexdatabase.de/db/is.php?sensor_id=96">https://www.indexdatabase.de/db/is.php?sensor_id=96</a>.
+					</p>
+
+					<img width="800" height="450" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\Index_DataBase.jpeg" alt="sat1">
+					
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 22---->
+				<section >
+				<br>
+					<h2>Sentinel-2 Indices</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Large collection of Sentinel-2 spectral indices and Java scripts available on</p>
+								<p>
+									<a href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/">https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/</a>
+								</p>
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="700" height="450" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\custom_scripts.jpeg" alt="sat1">
+								
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+<!-- Slide 22---->
+				<section>
+				<br>
+					<h2>Sentinel-2 Indices</h2>
+
+					<br><img width="700" height="500" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\SNAP.png" alt="sat1">
+					<!--<br>
+					<small>Miejsce na opis obrazka oraz ewentualny link do <a href="https://cdn.galleries.smcloud.net/t/galleries/gf-MGsz-4Hoc-QBGe_sennik-zrodlo-znaczenie-snu-zrodlo-664x442-nocrop.jpg">źródła</a>.</small>
+					<br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+<!-- Slide 23--->
+				<section >
+					<h2>Module 2</h2>
+					<br>
+					<h1> Application of vegetation spectral indicess</h1>
+				<br/>
+				</section>
+
+				<section >
+				
+					<h2>Agriculture</h2>
+
+					<p>Analysing the crop health and vigour</p>
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Variation of maize condition depending on drought conditions. The condition of maize, expressed by the vegetation index - NDVI, calculated using Sentinel-2 data compared with the maps of agricultural droughts for the same decades of the year, calculated on the basis of NOAA AVHRR data.</p>
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="500" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\droughts.jpeg" alt="sat1">
+								<br>
+								<small>© IGIK </small>
+								</br>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<br>
+					<h2>Agriculture</h2>
+
+					<p>Using multi-temporal vegetation indices can help management of individual fields during the growing season. They can also be used for within-field monitoring of growth and application of fertilizers.</p>
+
+					<img width="550" height="300" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\multitemporal.png" alt="sat1">
+					
+					</br>
+					<small>© Geografiska informationsbyrån </small>
+					</br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+				<section >
+					<br>
+					<h2>Forestry</h2>
+
+					<p>Analysing the crop health and vigour</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Forest health and condition</p>
+
+								<p>Combination of different spectral Spectral-2 indices (NDVI, NDMI and PSSRa) allows to assess and monitor forest health condition over time.</p>
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="500" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\Fcon_2018.jpg" alt="sat1">
+								<br>
+								<small>© IGIK </small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					</br>
+				</section>
+
+				<section >
+					<br>
+					<h2>Forestry</h2>
+
+					<p>Multi-temporal Sentinel-2 vegetation indices are applied to monitor bark beetle outbreak in Białowieża National Park - Poland</p>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p><b>DSWI</b> - <b>D</b>isease <b>W</b>ater <B>S</B>tress <b>I</b>ndex sensitive to stress due to water shortage and plant damage</p>
+
+								<p>DSWI = (NIR-GREEN) / (SWIR1 + RED)</p>
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="550" height="400" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\kornik_Bialowieza2.jpeg" alt="sat1">
+								<br>
+								<small>Source: Hoscilo et al. (2016) </small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					</br>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+				<section >
+					<br>
+					<h2>Vineyards</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Monitoring condition of vineyards using NDVI </p>
+								<p>(April-September 2019)</p>
+								<p> Vineyards Srebrna Góra, Poland</p>
+								<br>Sentinel-2
+								<br>
+								<img width="300" height="250" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\Vinnice_NIR.png" alt="sat1">
+	
+
+							</td>
+							<td style="width:60%">
+								<br><img width="480" height="480" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\VIN_NDVI_2019.jpeg" alt="sat1">
+								<small>© IGIK & VINUM 4.0 Sp z o.o </small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+				<section >
+				<br>
+					<h2>Vineyards</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Monitoring condition of vineyards using Sentinel-2 moisture index (NDMI)</p>
+								<p>(April-September 2019)</p>
+								<p> Vineyards Srebrna Góra, Poland</p>
+
+								<p style="text-align: right;">
+									<b>NDMI</b>
+									<br>
+									<img width="70" height="100" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\scale.png" alt="sat1">
+								</p>
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="480" height="480" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\VIN_NDWI_2019.jpeg" alt="sat1">
+								<br> <small>© IGIK & VINUM 4.0 Sp z o.o.</small>
+								</br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+				<section >
+					<br>
+					<h2>Natural hazards - Fire</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:35%">
+								<p>Mapping burnt areas with Normalized Burnt Ratio index (NBR). Example from forest fire 2014 in Sala, Sweden.</p>
+
+								<br>Sentinel-2 image
+								<br>
+								<img width="300" height="200" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\burn_areas_s2_image.png" alt="brakuje mi tu obrazka">
+
+							</td>
+							<td style="width:65%">
+								
+								<br><img width="500" height="450" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\burn_areas_s2_image2.png" alt="sat1">
+								<br>
+					<small>© Geografiska informationsbyrån </small>
+								<br>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section >
+					<br>
+					<h2>Natural hazards - Windstorm</h2>
+
+					<table style="width:100%">
+						<tr>
+							<td style="width:65%">
+								<p>Assessment of forest damage caused by the windstorm </p>
+								<p>11-12 August 2017 in Poland, using Sentinel-2</p>
+
+								<p style="text-align: left">
+									<b>NDMI</b> - <b>N</b>ormalized <b>D</b>ifference <b>M</b>oisture <b>I</b>ndex
+									<br>NDMI = (NIR−SWIR) / (NIR+SWIR)
+									<br>NIR (band 8) = 842 nm
+									<br>SWIR (band 11) = 1610 nm
+								</p>
+
+								<br>
+								<img width="500" height="250" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\Windstorm_S2.jpeg">
+
+							</td>
+							<td style="width:35%">
+								
+								<img width="400" height="500" data-src="./resources/Sentinel-2_Data_and_Vegetation_Indices\windstorm_NDWI.jpg">
+								<small>Source: Hoscilo and Lewandowska (2018)</small>
+								<br>
+							</td>
+						</tr>
+					</table>
+					<!--<a href="#/EO"> Back to top </a>-->
+				</section>
+
+		
+				
+				<section>Thank you for your attention</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>EO for urban greenery management</title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="EO for urban greenery management" />
+		<meta property="dc:creator" content="Anna Adamowicz, Zbigniew Szkop" /> 
+		<meta property="dc:publisher" content="UNEP/GRID-Warsaw Centre" /> 
+		<meta property="dc:subject" content="remote sensing, image properties, ecosystem services, greenery management" />
+		<meta property="dc:abstract" content="Future cities are set to face ever-increasing population and climate pressures, while ecosystem services offered by urban greenery have been recognized as providing significant mitigation for these pressures. Therefore, the ability to accurately quantify the extent and structure of urban greenery, across large and highly dynamic cities, is vital for determining the value of services provided and to assess the effectiveness of policy to promote these important assets. Current inventory methods used in urban greenery management are mostly reliant on plot networks measuring a range of structural metrics. However, limited sampling cannot fully capture the dynamics and spatial heterogeneity of the urban matrix. Using remotely sensed data for urban trees and their attributes analysis (e.g. tree species, canopy area, total height, dieback) together with dedicated processing tools, offers an opportunity for more accurate quantification of urban trees structure and services they provide." />
+		<meta property="dc:tableOfContents" content="(1) EO4GEO project; 
+							     (2) Introduction; 
+							     (3) Ecosystem services provided by urban vegetation; 
+							     (4) Remote sensing data; 
+							     (5) Warsaw case study - the Tree Crown Map; 
+							     (6) Learn more; 
+							     (7) Reference list; />
+		<meta property="dc:description" content="Learning outcomes: Understand how to acquire data on urban greenery using remote sensing methods; Understand how the acquired data can be used to improve urban greenery management, especially in the context of climate change adaptation; Get to know the concepts of remote sensing and where to look for satellite data;" /> 
+		<meta property="dc:contributor" content="Maria Andrzejewska" />
+		<meta property="dc:contributor" content="Monika Szewczyk" />
+		<meta property="dc:created" content="2021-04-26" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="60min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source” content="Existing EO4GEO training materials: Introduction to Remote Sensing (IGiK), Sentinel-2 data and vegetation indices (IGiK), EO Data sources (GEOF); websites: https://www.copernicus.eu/, https://sentinel.esa.int/web/sentinel/home, https://www.radiant.earth/, https://apps.sentinel-hub.com/eo-browser/, https://mapa.um.warszawa.pl/mapaApp1/mapa?service=zielen; Publication: Szymalski W., Kassenberg A., Świerkula E., "Warszawa z kosmosu" Instytut na rzecz Ekorozwoju, Warszawa 2019;" />
+		<meta property="dc:rightsHolder" content="UNEP/GRID-Warsaw Centre" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:TA12-1" />
+		<link rel="dc:relation" href="eo4geo:TA14-6-1" />
+		<link rel="dc:relation" href="eo4geo:PS3-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-11" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+
+		<div class="reveal" >
+
+			 <!-- FORMATTING FOR HEADER -->
+
+
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>
+
+				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>
+				 <div  class = "presentation_title" style=" text-align: center " >EO for urban greenery management</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+
+
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE -->
+				<section >
+					<h1>EO for urban greenery management</h1>
+					<br><iframe width="560" height="315" src="https://www.youtube.com/embed/vTEcv6Jkznc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<br>
+					Recording of the Webinar, 26. April 2021
+					<br>
+					<a href="https://www.youtube.com/embed/vTEcv6Jkznc">Click on the Link here</a>
+					
+				</section>
+
+
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+
+				]
+			});
+
+		</script>
+
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false }
+			]
+			});
+		</script>
+
+	</body>
+</html>

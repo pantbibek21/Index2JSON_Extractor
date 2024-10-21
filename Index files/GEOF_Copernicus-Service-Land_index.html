@@ -1,0 +1,758 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>EO4GEO_GEOF: Copernicus Service - Land</title>
+		<meta property="dc:title" content= "Copernicus Service - Land" />
+		<meta property="dc:creator" content= "Andrija Krtalic" />
+		<meta property="dc:publisher" content="University of Zagreb, Faculty of Geodesy" /> 
+		<meta property="dc:subject" content= "Copernicus, EO4GEO, WP4, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content= "This is an introductory course about The Copernicus Land Monitoring Service (CLMS) and its components and the data they provide. Copernicus is a European programme for monitoring the Earth. It combines satellite observation data with data from sensor networks on the Earth’s surface to build a comprehensive picture of our planet and its environment. Three components make up Copernicus: Space, Services and In Situ. The one of Services Component is for land areas: CLMS. Within these services, the data collected are processed to give reliable and up-to-date information about the land areas. CLMS provides geographical information on land cover to a broad range of users in the field of environmental terrestrial applications. The land theme is divided into four main components: Global, Pan-European, Local and Imagery and reference data. This includes information on land cover characteristics and changes, land use, vegetation state, water cycle and Earth surface energy variables. Copernicus products and services are continually evolving. The course provides an overview of search engines through which data on land cover can be obtained." />
+		<meta property="dc:tableOfContents" content= "About Copernicus; 
+							      Land cover and land use; 
+							      Land theme; 
+							      Global, Pan-European, Local Imagery; 
+							      Copernicus Data and Products." />
+		<meta property="dc:description" content= "Learning outcomes: Understand the basic concepts of Copernicus Service – Land; Recognize and select necessary data for a specific purpose within the GI/EO; Select objects using attribute and spatial queries; Categorize data within the components of the Copernicus Land Monitoring Service." />
+		<meta property="dc:contributor" content= "Andrija Krtalic, kandrija@geof.hr" />
+		<meta property="dc:created" content= "2020-08-20" />
+		<meta property="dc:type" content= "teaching material" />
+		<meta property="dc:format" content= "html" />
+		<meta property="dc:language" content= "EN" />
+		<meta property="dc:SizeOrDuration" content= "45min" />
+		<meta property="dc:audience" content= "students" />
+		<meta property="dc:educationLevel" content= "EQF 6" />
+		<meta property="dc:source" content= "" />
+		<meta property="dc:rightsHolder" content= "Andrija Krtalic, University of Zagreb Faculty of Geodesy" />
+		<meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href= "eo4geo:AM10" />
+		<link rel="dc:relation" href= "eo4geo:TA11" />
+		<link rel="dc:relation" href= "eo4geo:TA12" />
+		<link rel="dc:relation" href= "eo4geo:TA13" />
+		<link rel="dc:relation" href= "eo4geo:TA14" />
+		
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 8%;height : 9%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Copernicus Service - Land</div>	<!--The title of the presentation appears on each slide-->
+
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Copernicus Service - Land</h1>
+					(EO4GEO - Faculty of Geodesy University of Zagreb)
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+				Copernicus is an EU programme aimed at developing European information services based on satellite Earth Observation and in situ (non space) data.
+				Copernicus is implemented by the European Commission (EC) with the support from the European Space Agency (ESA) for the Space component and the European Environment Agency (EEA) for the in situ component.
+				The objective of Copernicus is to monitor and forecast the state of the environment on land, sea and in the atmosphere, in order to support climate change mitigation and adaptation strategies, the efficient management of emergency situations and the improvement of the security of every citizen. Information provided by Copernicus improves people's safety, e.g. by providing information on natural disasters such as forest fires or floods, and thus help to prevent the loss of lives and property, and damages to the environment.
+				Copernicus is a user driven programme and the information services provided are available to its Users, mostly public authorities, on a full, open and free-of-charge basis.
+				The Copernicus Programme is served by dedicated satellites (the Copernicus Sentinel families) and a set of additional Contributing Missions (satellites run by various commercial and national agencies). Since the launch of Sentinel-1A in 2014, the European Union set in motion a process to place a constellation of almost 20 more satellites in orbit before 2030. This satellite data is complemented by and validated with in situ data. 
+				Six Copernicus Services transform the full, free and open data into value-added information by processing and analyzing the data and transforming them into services and products such as informative maps and data sets: 
+				•	The Copernicus Atmosphere Monitoring Service
+				•	The Copernicus Marine Environment Monitoring Service
+				•	The Copernicus Land Monitoring Service
+				•	The Copernicus Climate Change Service
+				•	The Copernicus Emergency Management Service
+				•	The Copernicus Security Service
+				Copernicus
+				European Environment Agency (EEA)
+				
+				Copernicus is a European programme for monitoring the Earth. It combines satellite observation data with data from sensor networks on the Earth’s surface to build a comprehensive picture of our planet and its environment.
+				Three components make up Copernicus: Space, Services and In Situ. The Services Component is made up of six areas: land, marine, atmosphere, climate change, emergency management and security. Within these services, the data collected are processed to give reliable and up-to-date information about the six thematic areas.
+				EEA and Copernicus
+				The European Environment Agency (EEA) has been entrusted with the coordination of the Copernicus Land Monitoring Service (CLMS) and the Copernicus In Situ Component, under a Delegation Agreement with the European Commission
+				
+				Copernicus Land Monitoring Service (CLMS)
+				The Copernicus Land Monitoring Service has been jointly implemented by the European Environment Agency (EEA) and the Joint Research Centre (JRC) since 2011.
+				The Copernicus Land Monitoring Service (CLMS) provides geographical information on land cover to a broad range of users in the field of environmental terrestrial applications. This includes information on land cover characteristics and changes, land use, vegetation state, water cycle and Earth surface energy variables.
+				CLMS products are divided into five categories:
+				•	Systematic biophysical monitoring
+				•	Land cover and land use mapping
+				•	Thematic hotspot mapping
+				•	Reference data
+				•	Ground motion service
+				These categories enable applications to be developed in a wide range of areas, including:
+				•	Spatial and urban planning
+				•	Forest management
+				•	Water management
+				•	Agriculture and food security
+				•	Nature conservation and restoration
+				•	Ecosystem accounting
+				•	Climate change mitigation
+				Copernicus products and services are continually evolving. They are defined, created and developed in consultation with the Copernicus User Forum, which liaises with stakeholder communities. The European Commission and EU Member States, as well as participating countries in the Copernicus Committee set priorities for products. The European Environment Agency (EEA) also works in cooperation with other Copernicus Services, such as Copernicus Marine Environment Monitoring and Copernicus Emergency Management, to create new products.
+
+				</aside>
+				</section>
+				
+
+				<section id="intro"> 
+
+					<section > 
+					<h1>What is Copernicus?</h1> 
+					<ul>
+					<li>
+					<p>Copernicus is an&nbsp;<strong>EU programme&nbsp;</strong>aimed at developing European information&nbsp;<strong>services based on&nbsp;</strong>satellite Earth Observation&nbsp;<strong>and</strong>in situ (non space) data.</p>
+					</li>
+					<li>
+					<p><strong>Copernicus is implemented by&nbsp;</strong>the European Commission (EC) with the support from the European Space Agency (ESA) for the Space component and the European Environment Agency (EEA) for the in situ component (<u><a href="https://emergency.copernicus.eu/mapping/ems/what-copernicus">https://emergency.copernicus.eu/mapping/ems/what-copernicus</a></u>).</p>
+					</li>
+					</ul>
+					</section>
+				
+					<section > 
+					<br>
+					<h2>The objective of Copernicus</h2> 
+					<br>
+					<ul>
+					<li>
+					<p><strong>To monitor </strong>and forecast the state of the environment on land, sea and in the atmosphere, <strong>in order to support </strong>climate change mitigation <strong>and</strong> adaptation strategies, the efficient management of emergency situations and the improvement of the security of every citizen (<a href="https://emergency.copernicus.eu/mapping/ems/what-copernicus">https://emergency.copernicus.eu/mapping/ems/what-copernicus</a> ).</p>
+					</li>
+					<li>
+					<p><strong>It combines </strong>satellite observation data with data from sensor networks on the Earth&rsquo;s surface to build a comprehensive picture of our planet and its environment (<a href="https://www.eea.europa.eu/about-us/who/copernicus-1">https://www.eea.europa.eu/about-us/who/copernicus-1</a> ).</p>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>The Components of Copernicus</h2> 
+					<ul>
+					<li><strong>Three components </strong>make up Copernicus: Space, Services and <em>In Situ</em>.</li>
+					<li><strong>The Services Component </strong>is made up of six thematic areas: land, marine, atmosphere, climate change, emergency management and security (<u><strong><a href="https://www.eea.europa.eu/about-us/who/copernicus-1">https://www.eea.europa.eu/about-us/who/copernicus-1</a></strong></u>).</li>
+					</ul>
+					<br><img width="700" height="400" img src="./resources/Copernicus-land-services/Slide-04_The_Components_of_Copernicus.jpg" alt="sat1">
+					<p><u><a href="https://">https://</a></u><u>https://twitter.com/CopernicusEU/status/1037690292193947648/photo/1</u></p>
+					</section>
+				</section>
+					
+				<section id="CLMS"> 
+
+					<section > 
+					<br>
+					<h1>Copernicus Land Monitoring Service (CLMS)</h1> 
+					<br>
+					<ul>
+					<li>CLMS provides <strong>geographical information </strong>on land cover and its changes, land use, vegetation state, water cycle and earth surface energy variables <strong>to a broad range of users</strong> in Europe and across the World.</li>
+					<li>It <strong>supports applications </strong>in a variety of domains such as spatial and urban planning, forest management, water management, agriculture, food,...</li>
+					<li>CLMS is <strong>jointly implemented by </strong>the European Environment Agency (EEA) and the European Commission DG Joint Research Centre (JRC).</li>
+					<li>The Land Monitoring Service has been in operational use since 2012 (<a href="https://www.copernicus.eu/en/services/land">https://www.copernicus.eu/en/services/land</a> ).</li>
+					</ul>
+					</section>
+				
+					<section > 
+					<br>
+					<h2>CLMS Main Components</h2> 
+					<br>
+					<ul>
+					<li>Systematic biophysical monitoring</li>
+					<li>Land cover and land use mapping</li>
+					<li>Thematic hotspot mapping</li>
+					<li>Reference data</li>
+					<li>Ground motion service</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Posible Application</h2> 
+					<ul>
+					<li>Spatial and urban planning</li>
+					<li>Forest management</li>
+					<li>Water management</li>
+					<li>Agriculture and food security</li>
+					<li>Nature conservation and restoration</li>
+					<li>Ecosystem accounting</li>
+					<li>Climate change mitigation</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Systematic biophysical monitoring </h2> 
+					<ul>
+					<li>Produces mainly a series <strong>of qualified bio-geophysical products </strong>on the status and evolution of the land surface.</li>
+					<li><strong>P</strong><strong>roduced</strong><strong> at a global scale </strong>every ten days with a <strong>mid spatial resolution</strong> and is complemented by a long term time series.</li>
+					<li>The products are used to monitor</li>
+					<li>vegetation,</li>
+					<li>crops,</li>
+					<li>water cycle,</li>
+					<li>energy budget and</li>
+					<li>terrestrial cryosphere variables.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Land cover and land use mapping </h2> 
+					<ul>
+					<li>Produces <strong>land cover classifications </strong>at various level of detail</li>
+					<li>Both within <strong>a pan-European and global </strong>context.</li>
+					<li>At the <strong>pan-European level</strong>, these are complemented by detailed layers on land cover characteristics.</li>
+					<li><strong>L</strong><strong>and cover characteristics</strong>, such as imperviousness, forests, grassland, water and wetness and small woody features.</li>
+					<li><strong>At global level</strong>, the land cover mapping follows the modular-hierarchical Land Cover Classification System of FAO.</li>
+					</ul>
+					</section>					
+					
+					<section>
+					<br>
+					<h2>Thematic hotspot mapping </h2> 
+					<ul>
+					<li>Aims to provide tailored and <strong>more detailed information on specific areas of interest</strong>, known as hot-spots.</li>
+					<li>Hotspots in the context of CLMS are prone to specific environmental challenges.</li>
+					<li>Data and products are based on medium to high and very high resolution satellite images.</li>
+					<li>Change assessment frequency between 1 to 20 years.</li>
+					</ul>
+					</section>						
+					
+					
+				</section>	
+
+				<section id="Explorer"> 
+
+					<section>
+					<br>
+					<h2>Copernicus HotSpot Land Cover Change Explorer </h2> 
+					<br><img width="700" height="400" img src="./resources/Copernicus-land-services/Slide-11_Copernicus HotSpot Land Cover Change Explorer.jpg" alt="sat1">
+					<p><u><a href="https://land.copernicus.eu/global/hsm">https://land.copernicus.eu/global/hsm</a></u></p>
+					</section>	
+
+					<section>
+					<br>
+					<h2>Reference data</h2> 
+					<ul>
+					<li>Provide <strong>satellite image mosaic </strong>in high and very high resolutions and reference datasets.</li>
+					<li>This include satellite image mosaic from contributing missions covering the territory of Europe as well as Sentinel-2 image mosaic production at global level.</li>
+					<li><strong>I</strong><strong>t consists of reference datasets </strong>providing homogeneous pan-European coverage of some key geospatial themes, such as hydrography and elevation.</li>
+					</ul>
+					</section>	
+					
+					<section>
+					<br>
+					<h2>The Land Theme </h2> 
+					<ul>
+					<li>The land theme is divided into four main components:</li>
+					</ul>
+					<br><img width="900" height="250" img src="./resources/Copernicus-land-services/Slide-13_ALL.jpg" alt="sat1">
+					<p><a href="https://land.copernicus.eu/">https://land.copernicus.eu/</a></p>					
+					</section>
+
+					<section>
+					<br>
+					<ul>
+					</ul>
+					<br><img width="600" height="440" img src="./resources/Copernicus-land-services/Slide-14_Copernicus Global Land Service_Products.jpg" alt="sat1">
+					<p><a href="https://land.copernicus.eu/">https://land.copernicus.eu/global/</a></p>					
+					</section>					
+
+					<section>
+					<br>
+					<ul>
+					</ul>
+					<br><img width="600" height="440" img src="./resources/Copernicus-land-services/Slide-15_Land Service Products.jpg" alt="sat1">
+					<p><a href="https://land.copernicus.vgt.vito.be/PDF/portal/Application.html#Home">https://land.copernicus.vgt.vito.be/PDF/portal/Application.html#Home/</a></p>					
+					</section>
+
+					
+				</section>	
+
+				<section id="Vegetation"> 
+					<section>
+					<br>
+					<h1>Copernicus Global Land Service - Vegetation</h1> 
+					<ul>
+					<li>To monitor the changes on continental biomes,</li>
+					<li>In a timely manner, a set of biophysical variables describing:
+					<ul>
+					<li>the state,</li>
+					<li>the dynamism and</li>
+					<li>the disturbances of the terrestrial vegetation.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Copernicus Global Land Service  – Vegetation - Products</h2> 
+					<ul>
+					<li><strong>Normalized difference vegetation index</strong>, and its derived condition and productivity indices.
+					<ul>
+					<li>it is an indicator of the greenness of the biomes</li>
+					</ul>
+					</li>
+					<li><strong>Leaf area index</strong>
+					<ul>
+					<li>defined as half the total area of green elements of the canopy per unit horizontal ground area</li>
+					</ul>
+					</li>
+					<li><strong>Fraction of green vegetation cover</strong>
+					<ul>
+					<li>corresponds to the fraction of ground covered by green vegetation</li>
+					</ul>
+					</li>
+					<li><strong>Vegetation condition index</strong>
+					<ul>
+					<li>compares the current NDVI to the range of values observed in the same period in previous years</li>
+					</ul>
+					</li>
+					<li><strong>Vegetation productivity index</strong>
+					<ul>
+					<li>assesses the overall vegetation condition by referencing the current value of the NDVI with the long-term statistics for the same period</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+
+					<section>
+					<h2>Browser for search of NDVI, VCI and VPI data</h2> 
+					<ul>
+					<li>To access the data (In all browsers), you need to register, here.</li>
+					<li>The part of the browser where the type of product is selected.</li>
+					<li>In these fields, the date and area for which the data is requested are selected.</li>
+					</ul>
+					<br><img width="600" height="440" img src="./resources/Copernicus-land-services/Slide-18_NDVI_Browser.jpg" alt="sat1">
+					<p><a href="https://land.copernicus.vgt.vito.be/PDF/portal/">https://land.copernicus.vgt.vito.be/PDF/portal/</a></p>					
+					</section>
+					
+					<section>
+					<h2>NDVI</h2> 
+					<img width="700" height="550" img src="./resources/Copernicus-land-services/Slide-19_NDVI_Browser_Data.jpg" alt="sat1">
+					</section>
+					
+					<section>
+					<img width="800" height="550" img src="./resources/Copernicus-land-services/Slide-20_NDVI_300_v1_333m_with-legend.png" alt="sat1">
+					</section>
+					
+				</section>	
+
+
+<section id="Vegetation2"> 
+					<section>
+					<br>
+					<h1>Copernicus Global Land Service  – Vegetation – Products 2</h1> 
+					<ul>
+					<li><strong>Fraction of absorbed photosynthetically active radiation </strong>(FAPAR)
+					<ul>
+					<li>quantifies the fraction of the solar radiation absorbed by live leaves for the photosynthesis activity</li>
+					</ul>
+					</li>
+					<li><strong>D</strong><strong>ry matter productivity features</strong>
+					<ul>
+					<li>represents the overall growth rate or dry biomass increase of the vegetation and is directly related to ecosystem Net Primary Productivity (NPP)</li>
+					</ul>
+					</li>
+					<li><strong>Surface soil moisture</strong>
+					<ul>
+					<li>relative water content of the top few centimeters soil,</li>
+					<li>describing how wet or dry the soil is in its topmost layer, expressed in percent saturation.</li>
+					</ul>
+					</li>
+					<li><strong>Soil water index</strong>
+					<ul>
+					<li>quantifies the moisture condition at various depths in the soil</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<h2>Dry matter productivity features</h2> 
+					<img width="700" height="500" img src="./resources/Copernicus-land-services/Slide-22_Dry matter production.jpg" alt="sat1">
+					</section>				
+
+					<section>
+					<h2>Surface soil moisture</h2> 
+					<img width="700" height="500" img src="./resources/Copernicus-land-services/Slide-23_Surface soil moisture.jpg" alt="sat1">
+					</section>	
+					
+				</section>
+
+
+<section id="Vegetation3"> 
+					<section>
+					<br>
+					<h1>Copernicus Global Land Service  – Vegetation – Products 3</h1> 
+					<ul>
+					<li><strong>Burnt area</strong>
+					<ul>
+					<li>shows burned areas and provides information about the fire season</li>
+					</ul>
+					</li>
+					<li><strong>Land cover</strong>
+					<ul>
+					<li>land cover maps represent spatial information on different types (classes) of physical coverage of the Earth's surface, e.g. forests, grasslands, croplands, lakes, wetlands</li>
+					<li>These biophysical products are useful for a wide range of thematic areas (the global crop monitoring, the food security applications; forest, water, and natural resources management; &hellip;)</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<h2>Burnt areas</h2> 
+					<img width="700" height="500" img src="./resources/Copernicus-land-services/Slide-25_Burnet area.jpg" alt="sat1">
+					</section>				
+
+					<section>
+					<h2>Land cover</h2> 
+					<img width="700" height="500" img src="./resources/Copernicus-land-services/Slide-26_Land cover.jpg" alt="sat1">
+					</section>	
+					
+				</section>
+				
+<section id="Energy"> 
+					<section>
+					<br>
+					<h1>Copernicus Global Land Service  - Energy</h1> 
+					<ul>
+					<li>The incoming solar radiation controls the life on our planet Earth.</li>
+					<li>To quantify the main responses of the continents to sun illumination, the Copernicus Global Land Service provides, in a timely manner, biophysical variables assessing the energy budget at the land surface.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<h2>Copernicus Global Land Service  - Energy - Products</h2> 
+					<ul>
+					<li><strong>Land Surface Temperature</strong>
+					<ul>
+					<li>is the radiative skin temperature of the land surface, as measured in the direction of the remote sensor</li>
+					</ul>
+					</li>
+					<li><strong>Surface Albedo</strong>
+					<ul>
+					<li>quantifies the fraction of the sunlight reflected by the surface of the Earth</li>
+					<li>The directional albedo or directional-hemispherical reflectance (also called black-sky albedo)</li>
+					<li>The hemispherical albedo or bi-hemispherical reflectance (also called white-sky albedo)</li>
+					</ul>
+					</li>
+					<li><strong>Top Of Canopy </strong><strong>Reflectances</strong>
+					<ul>
+					<li>The Top-Of-Canopy spectral reflectance quantifies the fraction of the sunlight reflected by the surface of the Earth, in a given spectral band.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>				
+
+					<section>
+					<h2>Albedo</h2> 
+					<img width="700" height="500" img src="./resources/Copernicus-land-services/Slide-29_Albedo.jpg" alt="sat1">
+					</section>	
+					
+				</section>				
+
+<section id="Water"> 
+					<section>
+					<br>
+					<h1>Copernicus Global Land Service  - Water</h1> 
+					<ul>
+					<li>To contribute to a better understanding of Earth&rsquo;s water cycle, the Copernicus Global Land Service helps to monitor:
+					<ul>
+					<li><strong>Water surface temperature and water quality </strong>of medium and large-sized lakes.</li>
+					<li><strong>Water bodies </strong>- surface extent covered by water on a permanent basis</li>
+					<li><strong>Water level of lakes and rivers</strong></li>
+					</ul>
+					</li>
+					<li>These products are useful for hydrological modelling as well as short- and medium-term meteorological forecasting since they control the water and heat exchanges between land and atmosphere.</li>
+					<li>Provided for the full globe in a timely manner.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<h2>Copernicus Global Land Service  - Cryosphere</h2> 
+					<ul>
+					<li>Snow cover has a strong influence on the Earth's radiation and energy balance.</li>
+					<li>Snow cover parameters are crucial for the prediction of water balance, streamflow and river runoff in hydrological models and water resource management.</li>
+					<li>The key cryosphere parameters monitored within the Copernicus Global Land Service:
+					<ul>
+					<li><strong>snow </strong><strong>cover</strong> <strong>extent</strong>,</li>
+					<li><strong>snow water equivalent</strong> and</li>
+					<li><strong>lake ice extent</strong>.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>				
+
+					<section>
+					<h2>Snow cover extent</h2> 
+					<img width="600" height="500" img src="./resources/Copernicus-land-services/Slide-32_Snow Cover Extent.jpg" alt="sat1">
+					<p>Snow Cover Extent over continental Europe, 500 m resolution, in late March 2017</p>
+					</section>	
+					
+				</section>
+
+<section id="GBOV"> 
+					<section>
+					<br>
+					<h1>Ground-Based Observations for Validation (GBOV) of Copernicus Global Land Products</h1> 
+					<ul>
+					<li>The GBOV service provides multiple years of high quality in-situ measurements to validate 7 core land products:
+					<ul>
+					<li><strong>Top-of-canopy </strong><strong>reflectances</strong>,</li>
+					<li><strong>Surface albedo</strong>,</li>
+					<li><strong>Fraction of Absorbed Photosynthetically Active Radiation</strong>,</li>
+					<li><strong>Leaf Area Index</strong>,</li>
+					<li><strong>Fraction of green Vegetation Cover</strong>,</li>
+					<li><strong>Land Surface Temperature </strong>and</li>
+					<li><strong>Soil Moisture</strong></li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<h2>GBOV browser with accessible data</h2> 
+					<img width="800" height="600" img src="./resources/Copernicus-land-services/Slide-34_GBOV.jpg" alt="sat1">
+					</section>				
+
+					<section>
+					<h2>Pan-European Component</h2> 
+					<ul>
+					<li>Coordinated by the European Environment Agency (EEA) and produces land cover / land use (LC/LU) information in the CORINE
+					<ul>
+					<li><strong>Land Cover </strong>data,</li>
+					<li><strong>High Resolution </strong>Layers,</li>
+					<li><strong>Biophysical parameters </strong>and</li>
+					<li><strong>European Ground Motion Service</strong>.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>	
+
+					<section>
+					<ul>
+					<li>
+					<p>The CORINE Land Cover is provided for 1990, 2000, 2006, 2012, and 2018. This vector-based dataset includes 44 land cover and land use classes. The example shows the classification for 2018.</p>
+					</li>
+					</ul>
+					<img width="600" height="460" img src="./resources/Copernicus-land-services/Slide-36_CORINE.jpg" alt="sat1">
+					</section>	
+					
+					<section>
+					<br>
+					<h2>European Ground Motion Service (EGMS)</h2> 
+					<ul>
+					<li>Aims to <strong>provide consistent, regular, standardised, harmonised and reliable information</strong> regarding natural and anthropogenic ground motion phenomena over Europe and across national borders.</li>
+					<li><strong>The main objective </strong>&ndash; measuring of ground displacements, including landslides and subsidence, as well as deformation of infrastructure.</li>
+					<li>The EGMS will also provide <strong>tools for visualisation, interactive data exploration and user uptake elements</strong> for further ground investigations.</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>European Ground Motion Service (EGMS)</h2> 
+					<ul>
+					<li>The timetable for the EEA&rsquo;s implementation of the EGMS.</li>
+					</ul>
+					<img width="600" height="160" img src="./resources/Copernicus-land-services/Slide-38_Status_of_EGMS.jpg" alt="sat1">
+					<p><u><a href="https://land.copernicus.eu/user-corner/technical-library/european-ground-motion-service">https://land.copernicus.eu/user-corner/technical-library/european-ground-motion-service</a></u></p>
+					</section>
+			
+				</section>
+
+
+<section id="Local"> 
+
+					<section>
+					<br>
+					<h1>Local component</h1> 
+					<ul>
+					<li>Aims to provide <strong>specific and more detailed information </strong>that is complementary to the information obtained through the Pan-European component.</li>
+					<li><strong>F</strong><strong>ocus</strong><strong> on different hotspots</strong> (areas that are prone to specific environmental challenges and problems).</li>
+					<li>It will be <strong>based on very high resolution imagery </strong>(2,5 x 2,5 m pixels) in combination with other available datasets (high and medium resolution images) over the pan-European area.</li>
+					</ul>
+					</section>		
+
+					<section>
+					<br>
+					<h2>Local Component - Products</h2> 
+					<ul>
+					<li><strong>Urban Atlas</strong>
+					<ul>
+					<li>provides pan-European comparable LC/LU data covering a number of Functional Urban Areas (mayor EU city area)</li>
+					</ul>
+					</li>
+					<li><strong>Riparian</strong><strong> Zone</strong>
+					<ul>
+					<li>addresses LC/LU in areas along rivers, i.e. the riparian zones.</li>
+					</ul>
+					</li>
+					<li><strong>Natura 2000</strong>
+					<ul>
+					<li>the aim is to map LC/LU in a selection of grassland rich sites and to assess whether those selected sites are being effectively preserved as well as, if a decline of certain grassland habitat types is being halted.</li>
+					</ul>
+					</li>
+					<li><strong>Coastal</strong> <strong>Zones</strong>
+					<ul>
+					<li>LC/LU product maps from the European baseline a 10 km landwards buffer.</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+
+					<section>
+					<br>
+					<h2>Imagery and Reference Data Component</h2> 
+					<ul>
+					<li>Copernicus land services need <strong>both satellite images and </strong><strong><em>in-situ</em></strong> data in order to create reliable products and services.</li>
+					<li>Satellite imagery <strong>forms the input </strong>for the creation of many information products and services.</li>
+					<li>Many in-situ data are managed and made accessible at national level.</li>
+					<li>Copernicus services and particularly CLMS relies on pan-European <em>in-situ</em> datasets created and/or coordinated at European level.</li>
+					<li>This <em>in-situ</em> data used for <strong>verification and validation </strong>of several information services in the CLMS portfolio.</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<h2>Imagery and Reference Data Component - Products</h2> 
+					<ul>
+					<li><strong>EU-DEM</strong>
+					<ul>
+					<li>(v1.0) is a digital surface model (DSM) of EEA39 countries representing the first surface as illuminated by the sensors</li>
+					<li>EU-DEM v1.1 has not been validated yet</li>
+					</ul>
+					</li>
+					<li><strong>EU-Hydro (</strong><strong>River</strong> <strong>and</strong> <strong>Coastline</strong><strong>)</strong>
+					<ul>
+					<li>a dataset for all EEA39 countries providing a photo-interpreted river network, consistent of surface interpretation of water bodies (lakes and wide rivers)</li>
+					</ul>
+					</li>
+					<li>
+					<ul>
+					<li>EU-Hydro has not been validated yet</li>
+					</ul>
+					</li>
+					<li><strong>LUCAS </strong><strong>Survey</strong>
+					<ul>
+					<li>carried out by EUROSTAT on a three-yearly basis since 2006, focuses on the state and the dynamics of changes in land use and cover in the European Union. The survey is carried out <em>in-situ </em></li>
+					</ul>
+					</li>
+					<li><strong>European </strong><strong>Image</strong> <strong>Mosaics</strong>
+					<ul>
+					<li>High Resolution satellite imagery forms the input for the creation of many information products and services</li>
+					</ul>
+					</li>
+					</ul>
+					</section>
+					
+					<section>
+					<br>
+					<img width="600" height="480" img src="./resources/Copernicus-land-services/Slide-43_LUCAS_1.jpg" alt="sat1">
+					<p>Green - the area on which in-situ measurements were performed</p>
+					<p><a href="https://land.copernicus.eu/imagery-in-situ/lucas/lucas-2018">https://land.copernicus.eu/imagery-in-situ/lucas/lucas-2018</a></p>					
+					</section>					
+					
+					<section>
+					<br>
+					<img width="600" height="480" img src="./resources/Copernicus-land-services/Slide-44_LUCAS_2.jpg" alt="sat1">
+					<p>Multicolored points - locations where specific in-situ measurements were performed</p>
+					<p><a href="https://land.copernicus.eu/imagery-in-situ/lucas/lucas-2018">https://land.copernicus.eu/imagery-in-situ/lucas/lucas-2018</a></p>
+					</section>	
+					
+				</section>
+
+<section id="Local"> 
+
+					<section>
+					<br>
+					<h1>Conclusions and take-aways</h1> 
+					<ul>
+					<li>soon to be added</li>
+					</ul>
+					</section>
+
+				</section>
+				
+
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>exemplary doi:<br><br>
+				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
+				<br>
+				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
+				</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

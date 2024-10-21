@@ -1,0 +1,767 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+
+		 
+		<title>eo4geo Urban Heat Islands</title>
+		<meta property="dc:title" content= "Urban Heat Islands" /> 
+		<meta property="dc:creator" content= "Veronika Krieger" /> 
+		<meta property="dc:publisher" content= "Spatial Services GmbH" /> 
+		<meta property="dc:subject" content= "EO4GEO, WP5, Satellite, Earth Observation, Climate" /> 
+		<meta property="dc:abstract" content= "This slideset is a tutorial for a basic analysis of urban heat islands. Within the tutorial SNAP, QGIS and eCognition are used." /> 
+		<meta property="dc:tableOfContents" content= "(1) Background; 
+							      (2) Download of Data; 
+							      (3) Pre-Processing; 
+							      (4) Analysis"  /> 
+		<meta property="dc:description" content= "Learning outcomes: Interpret EO-derived temperature maps; Identify local heat islands; See how different land cover affects temperature; Understand how urban-scale weather/climate information may be usefully employed at urban management" /> 
+		<meta property="dc:contributor" content= "Zahra Dabiri, Sara Wimann" /> 
+		<meta property="dc:created" content= "2020-07-21" /> 
+		<meta property="dc:type" content= "teaching material" /> 
+		<meta property="dc:type" content= "learning material" /> 
+		<meta property="dc:format" content= "html" /> 
+		<meta property="dc:language" content= "EN" /> 
+		<meta property="dc:SizeOrDuration" content= "90min" /> 
+		<meta property="dc:audience" content= "students; authorities" /> 
+		<meta property="dc:educationLevel" content= "EQF 6" /> 
+		<meta property="dc:source" content= "Analysis of GIB" /> 
+		<meta property="dc:rightsHolder" content= "Veronika Krieger, Spatial Services GmbH" /> 
+		<meta property="dc:license" content= "https://creativecommons.org/licenses/by-sa/4.0/deed.en" /> 
+		
+		<link rel="dc:relation" href="eo4geo:TA11" />
+		<link rel="dc:relation" href="eo4geo:TA12" />	
+		<link rel="dc:relation" href="eo4geo:TA13-1" />
+		<link rel="dc:relation" href="eo4geo:TA13-5-1" />
+		<link rel="dc:relation" href="eo4geo:IP3-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-5" />
+		<link rel="dc:relation" href="eo4geo:PS4" />
+		<link rel="dc:relation" href="eo4geo:GD1" />
+		<link rel="dc:relation" href="eo4geo:CV6-2" />
+		<link rel="dc:relation" href="eo4geo:AM5" />
+		
+		<link rel="dc:relation" href="eo4geo:TA11-5" />
+		<link rel="dc:relation" href="eo4geo:TA11-7" />
+		<link rel="dc:relation" href="eo4geo:TA12-1" />
+		<link rel="dc:relation" href="eo4geo:TA12-6" />
+		<link rel="dc:relation" href="eo4geo:TA12-7" />
+		<link rel="dc:relation" href="eo4geo:TA12-10" />
+		<link rel="dc:relation" href="eo4geo:TA13-1-1" />
+		<link rel="dc:relation" href="eo4geo:TA13-1-2" />
+		<link rel="dc:relation" href="eo4geo:IP6" />
+		<link rel="dc:relation" href="eo4geo:PS1-5-3" />
+
+			
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+		
+		<!--<link rel="stylesheet" media="print" href="reveal.js/css/print/pdf.css" />-->
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+		  if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'internal_restricted/v1.0/css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		  }
+		</script>
+		<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%; padding-left:1em" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 15%;height : 5%; padding-top:1em; padding-right:1em" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " ><small>Urban Heat Islands</small></div>	<!--The title of the presentation appears on each slide-->
+				 
+	
+
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Urban Heat Islands</h1>
+					<!-- (A demo slide deck using the <em>Reveal.js</em> framework) -->
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+				
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="Why analyse urban heat islands?">
+					<section > 
+						<h2 style="text-align:left">Definition:</h2> 
+						<br>
+						<!-- <p>EO is one out of three main <em>space assets</em>.</p> -->
+						<!-- AUTHORS: CREATE BULLETED LIST: --> 
+						<p style ="text-align:left;">The German Weather Service (DWD) defines urban heat islands as follows:<br><br>
+						<i>“The urban heat island is a typical feature of the urban climate. It is characterised by the difference in air temperature 
+						between the hotter city and its cooler surrounding countryside and reaches its maximum during night-time under 
+						cloudless and calm weather conditions. This difference can be as much as 10 Kelvin in large cities. The air temperature 
+						in cities depends strongly in part on building geometry, the thermal properties of the building fabric, radiation 
+						properties of the urban surfaces and anthropogenic thermal release, e.g. domestic heating, traffic and industry.”</i></p>
+						<br>
+						<p style ="text-align:right; font-size:15px"><a href="https://www.dwd.de/EN/research/climateenvironment/climate_impact/urbanism/urban_heat_island/urbanheatisland_node.html">https://www.dwd.de/EN/research/climateenvironment/climate_impact/urbanism/urban_heat_island/urbanheatisland_node.html</a></p>
+						
+						<aside class="notes">
+						You can find your presenter notes here (hit »S« on your keyboard).
+						</aside>
+					</section>
+					
+					<section >
+						<h2 style="text-align:left"> History:</h2> 
+						
+						<p style ="text-align:left;">Urban heat islands have been recognized and described a long time ago:<br><br>
+						<i>“The generally higher temperatures inside towns have been noted for a long time, indeed Luke Roward (Roward, 1818), 
+						a pioneer of urban climatology though more famous for his work on cloud classification, first measured temperature 
+						differences in London as early as 1809. And yet, in spite of the numerous studies in urban temperatures, it still remains 
+						to quantify, even relatively, the heat exchange mechanisms leading to the excess heat of towns. There are obviously 
+						four contributory factors: changes in the thermal characteristics (albedo, heat conductivity and thermal capacity) of the 
+						surface following the substitution of buildings and roads for farms and fields; changes in the airflow patterns with a 
+						reduced diffusion of heat from streets and courtyards; changes in evaporation rates and heat losses and, the heat 
+						added by humans and human activities. These seem to be of differing importance in different cities so that the 
+						character of temporal variations also varies. In many cities of western Europe, heat islands are strongest in summer 
+						whilst in central and northern Europe there is, apparently, little difference between summer and winter intensities. In 
+						several Japanese cities, maximum heat island intensities occur in winter.”</i></p>
+						
+						<p style ="text-align:right; font-size:15px">(T. J. Chandler, Urban climatology - Inventory and prospect, Urban climates: proceedings of the WMO Symposium on Urban Climates 
+						and Building Climatology, WMO, 1970)</p>
+					</section>
+					
+					<section >
+						<h2 style="text-align:left"> Why analyse urban heat islands? </h2> 
+						<br>
+						<div style ="text-align:left;">UHIs have several impacts on environment and population, for example:<br><br>
+						<ul>
+							<li>Increased Energy Consumption</li>
+							<li>Elevated Emissions of Air Pollutants and Greenhouse Gases</li>
+							<li>Compromised Human Health and Comfort</li>
+							<li>Impaired Water Quality</li>
+						</ul>
+						</div>
+						<br>
+						<p style ="text-align:right; font-size:15px">(Heat Island Impacts, <a href="https://www.epa.gov/heat-islands/heat-island-impacts"> https://www.epa.gov/heat-islands/heat-island-impacts </a>; 'Heat island' effect could double climate change costs 
+						for world's cities, <a href="https://phys.org/news/2017-05-island-effect-climate-world-cities.html"> https://phys.org/news/2017-05-island-effect-climate-world-cities.html </a>)</p>
+					
+					</section>
+					
+					<section >
+						<h2 style="text-align:left"> State of the art:</h2> 
+						<br>
+						<p style ="text-align:left;">Recently, the dependency of UHI on a city’s layout could be shown:<br><br>
+						<i>“The arrangement of a city's streets and buildings plays a crucial role in the local urban heat island effect, which causes 
+						cities to be hotter than their surroundings, researchers have found. The new finding could provide city planners and 
+						officials with new ways to influence those effects.<br>
+						Some cities, such as New York and Chicago, are laid out on a precise grid, like the atoms in a crystal, while others such 
+						as Boston or London are arranged more chaotically, like the disordered atoms in a liquid or glass. The researchers 
+						found that the "crystalline" cities had a far greater buildup of heat compared to their surroundings than did the "glass-
+						like" ones.<br>
+						The study […] found these differences in city patterns, which they call "texture," was the most important determinant 
+						of a city's heat island effect.” </i></p>
+						<br>
+						<p style ="text-align:right; font-size:15px">(Urban heat island effects depend on a city's layout, <a href="https://phys.org/news/2018-02-urban-island-effects-city-layout.html"> https://phys.org/news/2018-02-urban-island-effects-city-layout.html </a></p>
+					</section>
+					
+				</section>
+				
+				
+				<section>
+					<section >
+						<h2 style="text-align:left"> Learning objectives of this session:</h2> 
+						<br>
+						<div style ="text-align:left;">
+						<ul>
+							<li>Interpret EO-derived temperature maps</li>
+							<li>Identify local heat islands</li>
+							<li>See how different land cover affects temperature</li>
+							<li>Understand how urban-scale weather/climate information may be usefully employed at urban management</li>
+						</ul>
+						</div>
+						
+					</section>
+				</section>
+				
+				<section>
+					<section >
+						<h2 style="text-align:left"> How to analyse urban heat islands?</h2> 
+						<br>
+						<p style ="text-align:left;">Detecting UHIs is done by using the land surface temperature (LST). Be aware that 
+						this is equal to the air temperature that people will experience in that place. However, it a good and easy-to-access indicator.<br><br>
+						Data from Sentinel-3 will be used, which has thermal bands included and thus 
+						provides LST. Another alternative would be Landsat-8 which has a higher resolution 
+						- Sentinel-3: 300m, Landsat-8: 100m (resampled to 30m). At the moment, there are two 
+						satellites, Sentinel-3A and Sentinel-3B, which have the same resolution.</p>
+						
+					</section>		
+				</section>
+				
+				<section>
+					<section >
+						<h2 style="text-align:left"> And now... Hands on!</h2> 
+						<br>	
+						<div style ="text-align:left;">
+						During this hands-on session following steps will be done:<br><br>
+						<ul>
+							<li>Download the image from Copernicus Open Access Hub</li>
+							<li>Pre-process it in SNAP and QGIS</li>
+							<li>Segment it in eCognition</li>
+							<li>Analyse it in QGIS</li>
+						</ul>
+						</div>
+						
+					</section>
+				</section>
+				
+				<section>
+					<section >
+						<h2 style="text-align:left"> Download Satellite Image</h2> 
+						
+						<p style ="text-align:left;"> Access the data via the Copernicus Open Access Hub. Go to <a href="https://scihub.copernicus.eu/"> https://scihub.copernicus.eu/ </a>
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;width: auto; height:auto;min-width:700px;" data-src="http://eo4geo.sbg.ac.at/SPASE/pic1a.png" alt="cop_open_access1"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em;font-size:15px"> Sentinel-1 to Sentinel-3 data can be found in the Open Hub.</p>
+						</div>
+					</section>
+				
+					<section >
+						<h2 style="text-align:left"> Download Satellite Image</h2> 
+						
+						<p style ="text-align:left;"> Log in or register to Copernicus Open Access Hub
+						</p>
+						<div>
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;" data-src="http://eo4geo.sbg.ac.at/SPASE/pic2a.png" alt="cop_open_access2"> </p>
+						</div>
+					</section>
+				
+					<section >
+						<h2 style="text-align:left"> Download Satellite Image</h2> 
+						
+						<p style ="text-align:left;"> Mark the region around Salzburg by switching to Navigation mode. To look for an appropriate image, use the Filter. You can access it by clicking the filter symbol next to the search bar.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;" data-src="http://eo4geo.sbg.ac.at/SPASE/pic3a.png" alt="cop_open_access3"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> To get rid of influence of clouds, it is better to get maximum land surface temperature over a season, but this would be out of scope of this tutorial. So, only use one image with little cloud coverage. <br>
+							Filter settings:<br>
+							Sensing period: 12.04.2020 to 12.04.2020<br>
+							Mission: Sentinel-3<br>
+							Product type: SL_2_LST__</p>
+						</div>
+					</section>
+					
+					<section >
+						<h2 style="text-align:left"> Download Satellite Image</h2> 
+						
+						<p style ="text-align:left;"> Select the file beginning with <b>S3A_SL_2_LST____20200412T091345</b>. The name indicates that image is from Sentinel 3A. The Sensing date is 12 th of April 2020 at 9:13 am. Download the file and unzip it.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;" data-src="http://eo4geo.sbg.ac.at/SPASE/pic4.png" alt="cop_open_access4"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> You can have a quicklook on the image by clicking on the eye</p>
+						</div>
+					</section>
+				</section>
+				
+				<section >
+					<section>
+						<h2 style="text-align:left"> Pre-process Image</h2> 
+						
+						<p style ="text-align:left;"> For pre-processing the Sentinel-3 product use the Sentinel Application Platform (SNAP) and QGIS<br><br>
+						Download Sentinel Application Platform SNAP, if not already installed:<br>
+						<br>
+						<a style ="font-size:30px" href="https://step.esa.int/main/download/snap-download/"> https://step.esa.int/main/download/snap-download/</a><br>
+						<small>(Use only the Sentinel Toolboxes)</small><br>
+						<br>
+						Same for QGIS:<br>
+						<br>
+						<a style ="font-size:30px" href="https://qgis.org/en/site/forusers/download.html"> https://qgis.org/en/site/forusers/download.html</a>
+						</p>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;"> In SNAP, navigate to the downloaded folder and open the <b>xfdumanifest.xml</b> file.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic5.png" alt="pre-proc1"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px">Expand the product in the Product Explorer <b>(S3A…> Bands > LST)</b>. Visualize LST by double clicking it.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;"> First, select the area around Salzburg to further investigate it.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:200px;max-width:400px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic6.png" alt="pre-proc2"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px">  In the menu bar got to <b>Raster>Subset</b>. In the <b>Specify Product Subset</b> window, select Geo Coordinates in the <b>Spatial Subset</b> tab and enter following values: <br>
+							<b>North latitude bound: 48.5<br>
+							West longitude bound: 12.5<br>
+							South latitude bound: 46.5<br>
+							East longitude bound: 14.0</b><br>
+							<br>
+							In the <b>Band Subset</b> tab only choose <b>LST, x_in, y_in, latitude_in, and longitude_in</b>. Click OK, then click No in the pop-up window (no flag dataset subset).<br>
+							</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;"> Visualize the LST Band in the subset. You now can see the region around Salzburg. For further processing, reproject the Sentinel-3 product. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:200px;max-width:350px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic7.png" alt="pre-proc3"> </p>
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:200px;max-width:350px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic8.png" alt="pre-proc4"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> In the menu bar go to <b>Raster>Geometric Operations>Reprojection.</b> <br><br>
+							In the Reprojection window check if the subset is selected as the Source Product. <br><br>
+							Name the Reprojection <b>S3A_LST_20200412T091345_reproj</b>. <br>
+							In the Reprojection Parameters tab select <b>UTM/WGS 84 (Automatic)</b>.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;">If you visualise the projection you’ll see distortions at the egdes. To get rid of them, do another subset.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic9.png" alt="pre-proc5"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> <b>Raster>Subset:<br>
+							North latitude bound: 48.1<br>
+							West longitude bound: 12.7<br>
+							South latitude bound: 47.3<br>
+							East longitude bound: 13.7</b><br><br>
+							Choose only <b>LST, x_in, y_in, latitude_in, and longitude_in.</b></p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;">Apply a colour map. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic10.png" alt="pre-proc6"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> In the Colour Mapping tab choose:<br>
+							<b>Editor: basic<br>
+							Colour ramp: derived from 5_colours</b><br>
+							Finally, click on <b>Range from data</b>.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - SNAP</h2> 
+						
+						<p style ="text-align:left;"> Now, export the LST Band to GeoTIFF. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:200px;max-width:350px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic11.png" alt="pre-proc7"> </p>
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:200px;max-width:350px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic12.png" alt="pre-proc8"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Therefore, mark LST Band in Product Explorer. Then, in the menu bar go to <b>File>Export>GeoTIFF</b>.<br>
+							<b>File name: S3A_LST_20200412T091245.tif</b><br>
+							Choose only the <b>LST</b> Band by clicking on <b>Subset…</b>.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">Open a new Project, choose a base map and open the raster file which is exported from SNAP.  
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic13.png" alt="pre-proc9"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> In the menu bar select:<br>
+							<b>Layer>Add layer>Add raster layer</b><br>
+							Open the <b>S3A_LST_20200412T091345.tif</b> that is exported from SNAP.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">You can change the colour ramp by right clicking the raster layer <b>Properties>Symbology</b>.  
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:350px;max-width:400px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic14.png" alt="pre-proc10"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Select the Render type <b>Paletted/Unique values</b>, and an appropriate colour ramp for temperature.<br><br>
+							Warmer and colder parts are shown. Cold areas often are caused by mountains (where high elevation leads to lower temperatures), but as well the impact of lakes can be seen. </p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">Again, clip the file to a specific region. Therefore, the outline of Salzburg an its surrounding is needed. Looking on the red spots, the location of Salzburg can be already seen.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic15.png" alt="pre-proc11"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> <b>Layer>Add layer> Add vector layer </b><br><br>
+							Choose <b>Salzburg(S_SL_HA)_Area.shp</b> which is available from the Download section of this Tutorial. <br><br>
+							Select the coordinate system <b>Inverse of Austria Lambert + MGI to WGS 84 (3) + Popular Visualisation Pseudo-Mercator</b> in the popup window.<br><br>
+							Finally, change the style to outline (Right click the shape <b>Properties>Symbology</b>).</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">To clip the raster file to this area select <b>Raster>Extraction>Clip Raster by Mask Layer</b> in the menu bar.   
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:350px;max-width:400px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic16.png" alt="pre-proc12"> </p>
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:350px;max-width:400px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic17.png" alt="pre-proc13"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Make sure to select the right layers as Input and as Mask.<br>
+							<b> Keep resolution of input raster</b>.</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">After clipping it should look like this:
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic18.png" alt="pre-proc14"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Some more things have to be changed…</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">Copy the style from raster layer (<b>Right click>Styles>Copy style</b>) to clipped layer (<b>Right click>Styles>Paste style</b>).
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic19.png" alt="pre-proc15"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Uncheck the original raster layer</p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Pre-process Image - QGIS</h2> 
+						
+						<p style ="text-align:left;">Now, do some classification with eCognition. <br><br>
+						Export a GeoTIFFs by selecting the clipped raster file. <br><br>
+						<b>Right click>Export>Save as… </b><br><br>
+						In the popup window specify:<br>
+						Output mode: <b>Raw data</b><br>
+						Name: <b>S3A_LST_20200412T091345_clipped.tiff</b><br><br>
+						<b>Don´t forget to SAVE your QGIS project!</b>
+						</p>
+					</section>
+				</section>
+				<section>				
+					<section>
+						<h2 style="text-align:left"> Analysis - eCognition</h2> 
+						
+						<p style ="text-align:left;">Start the eCognition software, and open the <b>S3A_LST_20200412T091345_clipped</b> image.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic20.png" alt="analysis1"> </p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - eCognition</h2> 
+						
+						<p style ="text-align:left;">Now, do a segmentation. Therefore, in the <b>Process Tree</b> right click and open <b>Append new</b>.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic21.png" alt="analysis2"> </p>
+							<div style ="text-align:left;padding-left:1em;padding-bottom: 3em; font-size:15px"> <b>Settings:<br><br>
+							Algorithm: Multiresolution <br>
+							Segmentation<br>
+							Domain: pixel level<br>
+							Image Layer weights: <br>
+							<p style="margin-left:-70px; margin-top:0px; margin-bottom: 0px">	Layer 1: 1</p>
+							Scale parameter: 10<br>
+							Shape: 0.1<br>
+							Compactness: 0.4<br><br>
+							Execute</b></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - eCognition</h2> 
+						
+						<p style ="text-align:left;">Finally, export the result in a vector layer, including the mean temperature for each segment.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:650px;max-width:700px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic23.png" alt="analysis3"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> In the <b>Process Tree</b> right click and open <b>Append new<br><br>
+							Settings:<br>
+							Algorithm: export vector layer<br>
+							Class filter: unclassified<br>
+							Export path: choose a path and a name <br>
+							Attribute: select mean for the temperature layer<br>
+							Shape type: Polygons<br><br>
+							Execute</b></p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - QGIS</h2> 
+						
+						<p style ="text-align:left;">Again, add the vector file to a QGIS layer (<b>Layer>Add layer>Add vector layer</b>).
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic24.png" alt="analysis4"> </p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - QGIS</h2> 
+						
+						<p style ="text-align:left;">Right click the raster file><b>Attribute Table</b>. Toggle editing mode, order by mean layer ascending, and delete the first six entries by clicking on the trash bin.
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:750px;max-width:850px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic25.png" alt="analysis5"> </p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - QGIS</h2> 
+						
+						<p style ="text-align:left;">Finally, specify the symbology (<b>Right click>Properties>Symbology</b>).
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:450px;max-width:550px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic26.png" alt="analysis6"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> In the <b>Process Tree</b> click right and open <b>Append new<br><br>
+							Settings:<br>
+							Graduated<br>
+							Symbol: make the colour transparent<br>
+							Precision: 1<br>
+							Mode: Natural breaks (Jenks)<br>
+							Classes: 5</b>
+							Adjust Values<br></p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - QGIS</h2> 
+						
+						<p style ="text-align:left;">By making the Symbol transparent one can see the underlying map. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic27.png" alt="analysis7"> </p>
+						</div>
+					</section>
+					
+					<section>
+						<h2 style="text-align:left"> Analysis - QGIS</h2> 
+						
+						<p style ="text-align:left;">Finally, specify the symbology (<b>Right click>Properties>Symbology</b>).
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:450px;max-width:550px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic28.png" alt="analysis8"> </p>
+							<div style ="text-align:left;padding-left:1em;padding-bottom: 3px; font-size:15px"> Adding the outline of the city of Salzburg - it matches very well with the UHI. Except from the southern part of the city… Why?<br><br>
+							Knowing Salzburg, or looking at the natural colour satellite image, there are way more green areas in the south.
+								<p style="float: middle;"><img  style="background-color:#293133; box-shadow: none;min-width:250px;max-width:300px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic29.png" alt="analysis9"> </p>
+							</div>
+						</div>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2 style="text-align:left"> More detailed Analyses</h2> 
+						
+						<p style ="text-align:left;">The analysis shows the impact of different land cover on land surface temperature. However, urban planners are interested as well in heat islands within the city. In the following pages, you can see a more detailed analysis that was done with Landsat-8 data and the Google Earth Engine. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<div style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:400px;max-width:470px; margin-bottom:0px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic30.png" alt="analysis10"> </div>
+							<div style="position: absolute; bottom: 8px;right: 51%; font-size:15px"> Summer mean surface temperature 2013-2017</div>
+							<div style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:400px;max-width:462px; margin-left:10px; margin-bottom:0px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic31.png" alt="analysis11"> </div>
+							<div style="position: absolute; bottom: 8px;right: 2%; font-size:15px"> Summer max surface temperature 2013-2017</div>
+						</div>
+					</section>
+					<section>
+						<h2 style="text-align:left"> More detailed Analyses</h2> 
+						
+						<p style ="text-align:left;">Like in the large scale the impact of green structures within the city can be seen. 
+						</p>
+						<div style="display:flex;align-items:flex-end;">
+							<p style="float: left;"><img  style="background-color:#293133; box-shadow: none;min-width:700px;max-width:750px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic32.png" alt="analysis12"> </p>
+							<p style ="text-align:left;padding-left:1em;padding-bottom: 1.5em; font-size:15px"> Normalized difference vegetation index (NDVI) 2013-2017</p>
+						</div>
+					</section>
+					<section>
+						<h2 style="text-align:left"> More detailed Analyses</h2> 
+						
+						<p style ="text-align:left;">The temperature transect clearly shows the correlation between NDVI and heat islands.
+						</p>
+						<div style="display:flex;align-items:flex-start;">
+							<p style="float: left;">
+								<img  style="background-color:#293133; box-shadow: none;min-width:250px;max-width:300px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic33.png" alt="analysis13"> </p>
+							<p style="float: left"><img  style="background-color:#293133; box-shadow: none;min-width:550px;max-width:650px; margin-left:10px; padding-left:10px; padding-top:2px" data-src="http://eo4geo.sbg.ac.at/SPASE/pic34a.png" alt="analysis14"> </p>
+						</div>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<p style ="text-align:center; font-size:35px">Thank you for following this session!
+						<!--<br>Don’t forget to do the assignment!-->
+						</p>
+					</section>
+				</section>
+				
+				<!-- AUTHORS: INCLUDE AN IMAGE IN YOUR SLIDE: 
+				<section ><h2> ... a little allegory on the benefit of Copernicus</h2>
+					<br>New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\EOlever.jpg" alt="Copernicus allegory">
+					<br>
+					
+					<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... 
+					<citation>(St Lang & A Traun, 2015) [set border to zero, set background to transparent, figure to be obtained via JQuery from pic/caption collection]</citation>
+				</section>
+				
+				<!-- AUTHORS:   Option to Jupyter Notebook (Python) AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): 
+				<section data-background-iframe="https://nbviewer.jupyter.org/github/carljv/Will_it_Python/blob/master/ARM/ch5/arsenic_wells_switching.ipynb">
+				</section>
+				
+				<!-- AUTHORS: 1st Option to INCLUDE H5P CONTENT AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): 
+				<section data-background-iframe="https://ideaslab.sbg.ac.at/ideaslab/wp-admin/admin-ajax.php?action=h5p_embed&id=5">
+				</section>
+				
+				<!-- AUTHORS: 2nd Option to INCLUDE H5P CONTENT AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): 
+				<section class="scrollable"> 
+					 <iframe src="https://ideaslab.sbg.ac.at/ideaslab/wp-admin/admin-ajax.php?action=h5p_embed&id=5" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
+					</section>
+				<!--AUTHORS: Integration of Jupyter Notebooks from VITO-Platform - user authentification not solved yet -->
+				<!--section class="scrollable"> 
+					 <iframe src="https://notebooks.vgt.vito.be/user/emissoni/lab/tree/PLUS_Test.ipynb" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
+				</section-->	
+					
+				
+				
+				
+
+				
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: 
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>exemplary doi:<br><br>
+				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
+				<br>
+				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
+				</reference_list>
+				</section>-->
+				
+				
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1003 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>EO for urban greenery management </title>
+		
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
+		<meta property="dc:title" content="EO for urban greenery management" />
+		<meta property="dc:creator" content="Anna Adamowicz, Zbigniew Szkop" /> 
+		<meta property="dc:publisher" content="UNEP/GRID-Warsaw Centre" /> 
+		<meta property="dc:subject" content="remote sensing, image properties, ecosystem services, greenery management" />
+		<meta property="dc:abstract" content="Future cities are set to face ever-increasing population and climate pressures, while ecosystem services offered by urban greenery have been recognized as providing significant mitigation for these pressures. Therefore, the ability to accurately quantify the extent and structure of urban greenery, across large and highly dynamic cities, is vital for determining the value of services provided and to assess the effectiveness of policy to promote these important assets. Current inventory methods used in urban greenery management are mostly reliant on plot networks measuring a range of structural metrics. However, limited sampling cannot fully capture the dynamics and spatial heterogeneity of the urban matrix. Using remotely sensed data for urban trees and their attributes analysis (e.g. tree species, canopy area, total height, dieback) together with dedicated processing tools, offers an opportunity for more accurate quantification of urban trees structure and services they provide." />
+		<meta property="dc:tableOfContents" content="(1) EO4GEO project; 
+							     (2) Introduction; 
+							     (3) Ecosystem services provided by urban vegetation; 
+							     (4) Remote sensing data; 
+							     (5) Warsaw case study - the Tree Crown Map; 
+							     (6) Learn more; 
+							     (7) Reference list; />
+		<meta property="dc:description" content="Learning outcomes: Understand how to acquire data on urban greenery using remote sensing methods; Understand how the acquired data can be used to improve urban greenery management, especially in the context of climate change adaptation; Get to know the concepts of remote sensing and where to look for satellite data;" /> 
+		<meta property="dc:contributor" content="Maria Andrzejewska" />
+		<meta property="dc:contributor" content="Monika Szewczyk" />
+		<meta property="dc:created" content="2021-04-26" />
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" />
+		<meta property="dc:language" content="EN" />
+		<meta property="dc:SizeOrDuration" content="60min" />
+		<meta property="dc:audience" content="students" />
+		<meta property="dc:educationLevel" content="EQF 3" />
+		<meta property="dc:source” content="Existing EO4GEO training materials: Introduction to Remote Sensing (IGiK), Sentinel-2 data and vegetation indices (IGiK), EO Data sources (GEOF); websites: https://www.copernicus.eu/, https://sentinel.esa.int/web/sentinel/home, https://www.radiant.earth/, https://apps.sentinel-hub.com/eo-browser/, https://mapa.um.warszawa.pl/mapaApp1/mapa?service=zielen; Publication: Szymalski W., Kassenberg A., Świerkula E., "Warszawa z kosmosu" Instytut na rzecz Ekorozwoju, Warszawa 2019;" />
+		<meta property="dc:rightsHolder" content="UNEP/GRID-Warsaw Centre" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+		<link rel="dc:relation" href="eo4geo:TA12-1" />
+		<link rel="dc:relation" href="eo4geo:TA14-6-1" />
+		<link rel="dc:relation" href="eo4geo:PS3-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-11" />
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+	<body>
+		  
+		<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="height : 13vh; max-height: 100px; width: auto; margin: 2vh; " ></div>	
+			
+				 <div class = "partnerlogo" style="height : 11vh; max-height: 80px; width: auto; margin: 2vh;" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center; margin-top: 2vh; font-size: 3vh; color: #666666; " >EO for urban greenery management</div>	<!--The title of the presentation appears on each slide-->
+				 
+
+				<div class="slides">
+				<section >
+					<section>
+					<h1>EO for urban greenery management</h1>
+					
+					<img height="300" src="./resources/EO-for-Urban-Greenery-Management/title_slide.png" alt="intro">
+					<table>
+						<tr style="vertical-align:middle;">
+						<td style="vertical-align:middle;">
+							<p>The presentation is also available in:</p>
+						</td>
+						<td  style="vertical-align:middle;">
+							<img style="margin-top:20px; margin-left: 10px; margin-right: 10px;" width="50" box-shadow="none" src="./resources/EO-for-Urban-Greenery-Management/polish.png" alt="tools"> 
+						</td>
+						<td style="vertical-align:middle;">
+							<a href="https://eo4geocourses.github.io/UNEP-GRID_EO-for-Urban-Greenery-Management/pl.html" target="_blank"><strong>Polish</strong></a>
+						</td>
+					</table>
+					
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+				</aside>
+					</section>
+					
+					<section>
+						<h1>Table of content</h1>
+						<h2>EO for urban greenery management</h2>
+						<br>
+						<table>
+			
+							<tr><td><b>1</b></td><td><b><a href="#/1">Introduction</a></b></td></tr>
+							<tr><td><b>2</b></td><td><b><a href="#/2">Ecosystem services</a></b></td></tr>
+							<tr><td><b>3</b></td><td><b><a href="#/3">Remote sensing data</a></b></td></tr>
+							<tr><td><b>4</b></td><td><b><a href="#/4">Warsaw case study</a></b></td></tr>
+							<tr><td><b>5</b></td><td><b><a href="#">Questions and answers</a></b></td></tr>
+						</table>
+					</section>
+					
+				</section>
+					
+				<section>
+					<section>
+						<h1>Introduction</h1>
+						<h2>to the webinar</h2>
+						<br><img height="300" src="./resources/EO-for-Urban-Greenery-Management/title_slide_u1.png" alt="Title_slide_unit1">
+					</section>
+				
+					<section>
+						<h1>UNEP/GRID-Warsaw Centre</h1>
+						<br><div>
+							<div style="float: left; width: 45%;">
+							<p style="text-align: justify">Since <b>1991</b> we have been working for sustainable development, fulfilling the mission of the <b>United Nations Environment Programme (UNEP)</b> in Poland being a part of the <b>GRID network</b>, embedded in the <b>Science Division of the UN Environment Programme.</b></p>
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/logo_grid_en.png" alt="Logo_GRIDW">
+							<img src="./resources/EO-for-Urban-Greenery-Management/logo_sdgs.png" alt="Logo_SDGs">
+							</div>
+						</div>
+					</section>
+					<section >
+						<h1 style=" font-size:55px;">EO4GEO is an ERASMUS+ Sector Skills Alliance </h1> 
+						<h3> Sector Skills Alliances are transnational projects which aim to <strong>tackle skills gaps</strong> with regard to one or more occupational profiles in a specific sector through a coherent and comprehensive set of activities and outputs.</h3> 
+						<img width="500" box-shadow="none" data-src="http://eo4geo.sbg.ac.at/GISIG/logo+erasmus.jpg" alt="eo4geo logo and erasmus">
+					</section>
+					
+					<section>
+						<h1>Learning outcomes</h1>
+						<h2>EO for urban greenery management</h2>
+						<br><p><b>Main learning outcomes</b></p>
+						<p style="text-align: justify">The participants of the webinar:</p>
+						<ul style="text-align: justify; margin: 0 0 0 -10px">
+							<li>Understand how to acquire data on urban greenery using remote sensing methods</li>
+							<li>Understand how the data acquired can be used to improve urban greenery management, especially in the context of climate change adaptation</li>
+							<li>Get to know the concepts of remote sensing and where to look for satellite data</li>
+						</ul>
+					</section>
+				
+					<section>
+						<h2>Importance</h2>
+						<br><div>
+							<div style="float:left; width: 60%;">
+							<p style="text-align: justify"><b>This topic is in line with many strategies <br>and other policy documents, such as:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -10px">
+								<li><u>European Green Deal</u></li>
+								<li><u>EU Biodiversity Strategy for 2030</u></li>
+								<li>Green Infrastructure (GI) - Enhancing Europe’s Natural Capital</li>
+								<li>SPA 2020 - a strategic adaptation plan for sectors and areas sensitive to climate changes by 2020, with an outlook by 2030</li>
+								<li>National Urban Policy 2023</li>
+								<li>The 2030 National Environmental Policy</li>
+							</ul>
+							</div>
+							<div style="float:right; width: 35%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/importance.png" alt="Importance">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>European Green Deal</h2>
+						<br><div>
+							<div style="float:left; width: 40%;">
+							<p style="text-align: justify"><b>The most important proposed objectives are:</b></p>
+							<ul style="margin: 0 0 0 -10px">
+								<li>Adopting a binding climate neutrality target by 2050</li>
+								<li>Revision of the short-term target</li>
+							</ul>
+							<p style="text-align: justify;"><b>It provides an action plan to:</b></p>
+							<ul style="margin: 0 0 0 -10px">
+								<li>Boost the efficient use of resources</li>
+								<li>Restore biodiversity and reduce pollution</li>
+							</ul>
+							</div>
+							<div style="float:right; width: 55%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/green_deal.png" alt="European_Green_Deal">
+							</div>
+							</div>
+					</section>
+					
+					<section>
+						<h2>EU Biodiversity Strategy for 2030</h2>
+						<br><div>
+							<div style="float:left; width: 50%;">
+							<p style="text-align:justify">It assumes the synergy of actions to combat the climate crisis, among others through actions to protect biodiversity, presented in the EU Biodiversity strategy until 2030.</p>
+							<br><p style="text-align:justify">EU Nature Restoration Plan (key commitments by 2030) includes Urban Greening Plan for cities with at least 20,000 inhabitants.</p>
+							</div>
+							<div style="float:right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/biodiversity.png" alt="Biodiversity">
+							</div>
+						</div>
+					</section>
+					
+				</section>
+					
+				<section>
+					<section>
+						<h1>Ecosystem services</h1>
+						<h2>provided by urban vegetation</h2>
+						<br><img height="150" width="1783" src="./resources/EO-for-Urban-Greenery-Management/title_slide_u2.png" alt="Title_slide_unit2">
+					</section>
+					
+					<section>
+                    				<iframe style="width: 960px; height: 500px; border: none;" allowfullscreen="false" frameBorder="0" src="https://wall.sli.do/event/qd2zjo4k?section=ecda63a0-101f-42ec-8923-3a9c8043eba4"></iframe>
+                			</section>
+					
+					<section>
+						<h2>Carbon control</h2>
+						<br><div>
+							<div style="float:left; width: 42%;">
+							<br><p style="text-align: justify;">50% of dry weight of a tree comes from the carbon present in the atmosphere as carbon dioxide</p>
+							<p style="text-align: justify;">When trees die the carbon goes back to the atmosphere</p>
+							<p style="text-align: justify;">Urban trees act as "carbon sink”</p>
+							<p style="text-align: justify;">However, carbon sequestration (climate mitigation) is not the key ecosystem service of urban trees</p>
+							</div>
+							<div style="float:right; width: 55%;"><img src="./resources/EO-for-Urban-Greenery-Management/es_carbon_control.png" alt="Carbon_control"></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Local climate control</h2>
+						<br><div>
+							<div style="float:left; width: 42%;">
+							<br><p style="text-align: justify;">Urban Heat Island (UHI) occurs when the city proper records are much higher temperatures than nearby rural areas</p>
+							<p style="text-align: justify;">Trees reduce the UHI in the summer period by:</p>
+								<ul style="text-align: justify; margin: 0 0 0 -132px">
+									<li>Evapotranspiration</li>
+									<li>Deflection of solar radiation</li>
+								</ul>
+							</div>
+							<div style="float:right; width: 55%;"><img src="./resources/EO-for-Urban-Greenery-Management/es_microclimate_control.png" alt="Microclimate_control"></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Energy conservation</h2>
+						<div>
+							<div style="float:left; width: 42%;">
+							<br><p style="text-align: justify;">Trees provide shade and block wind</p>
+							<p style="text-align: left;">Potential energy conservation results:</p>
+							<ul style="text-align: justify; margin: 0 0 0 -60px">
+								<li>Heating savings (MBTU and Kwh)</li>
+								<li>Cooling savings (Kwh)</li>
+							</ul>
+							</div>
+							<div style="float:right; width: 55%;"><img src="./resources/EO-for-Urban-Greenery-Management/es_energy_conservation.png" alt="Energy_conservation"></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Stormwater control</h2>
+						<br><div>
+							<div style="float:left; width: 35%;">
+							<p style="text-align: justify;">Impervious surfaces are the main contributor excess stormwater runoff</p>
+							<p style="text-align: justify;">The trees can help to manage the runoff by:</p>
+							<ul style="text-align: justify; margin: 0 0 0 -10px">
+								<li>Retention of precipitation water in canopies</li>
+								<li>Water interception and uptake by roots</li>
+							</ul>
+							</div>
+							<div style="float:right; width: 60%;"><img src="./resources/EO-for-Urban-Greenery-Management/es_stormwater.png" alt="Stormwater"></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2><em>In situ</em> urban trees inventory</h2>
+						<br><p style="text-align: justify">Optimal management of urban trees requires certain tree data, e.g: location, dbh, total height, canopy size, dieback etc.</p>
+						<div>
+							<div style="float:left; width: 50%;">
+							<p style="text-align: justify"><b>Challenges:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -120px">
+								<li>Expensive</li>
+								<li>Time consuming</li>
+								<li>Limited access to private areas</li>
+								<li>Lack of coherence in data collection</li>
+								<li>Quickly outdated</li>
+							</ul>
+							</div>
+							<div style="float:right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/trees_inventory.jpg" alt="Trees_inventory">
+							<p style="margin: 0"><small>Source: 
+							<a href="https://portalkomunalny.pl/trwa-inwentaryzacja-drzew-w-warszawie-w-trosce-o-ich-ochrone-407570/">portalkomunalny.pl</a>, K. Babicki</small>
+							</div>
+						</div>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h1>Remote sensing data</h1>
+						<h2>as an alternative to <em>in situ</em> studies</h2>
+						<br><img height="300" src="./resources/EO-for-Urban-Greenery-Management/title_slide_u3.jpg" alt="Title_slide_unit3">
+					</section>
+					
+					 <section>
+                    				<iframe style="width: 960px; height: 500px; border: none;" allowfullscreen="false" frameBorder="0" src="https://wall.sli.do/event/qd2zjo4k?section=ecda63a0-101f-42ec-8923-3a9c8043eba4"></iframe>
+                			</section>
+					
+					<section>
+						<h2>Earth Observation</h2>
+						<table>
+							<td width=43%>
+							<p style="text-align: justify;"><b>Sources:</b></p>
+							<ul style="margin: 0 0 0 -15px"><li>Satellites, airplanes and drones</li></ul>
+							<br>
+							<p style="text-align: justify;"><b>Collected data:</b></p>
+							<ul style=" margin: 0 0 0 -15px"><li>An image of the Earth's surface captured by remote sensors</li></ul>
+							<br>
+							<p style="text-align: justify;"><b>Benefits:</b></p>
+							<ul style="margin: 0 0 0 -15px">
+								<li>Relatively cheap for the user</li>
+								<li>Spatially continous</li>
+								<li>Objective</li>
+								<li>Showing the current state of phenomena</li>
+								<li>Collected regularly in short intervals</li>
+							</ul>
+							</td>
+							<td><img src="./resources/EO-for-Urban-Greenery-Management/various_platforms.png" alt="Various_platforms">
+							<p><small>Various platforms and sensors used for remote sensing<br>(Source: 
+							<a href="https://www.researchgate.net/figure/Various-platforms-and-sensors-used-for-remote-sensing_fig1_307351403">Research Gate</a>)</small></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Advantages of using remote sensing data</h2>
+						<br>
+						<ol style="text-align: justify;">
+							<li>Earth observation data - unique source of information. Earth observation can provide a unique and timely source of data that is comparable across countries, regions and cities.</li>
+							<li>It can be combined with administrative, social and economic data at multiple scales for in-depth policy analysis.</li>
+							<li>It can help harmonise reporting on natural resources, ecosystems and environmental risks.</li>
+							<li>Remote sensing allows to capture an image of a large area in shortintervals and is relatively cheap for the user.</li>
+							<li>Information obtained by Earth observation is objective and can be automatically classified.</li>
+						</ol>
+					</section>
+					
+					<section>
+						<h2>EO data - short history</h2>
+						<br><div>
+							<div style="float:right; width: 43%;">
+								<ul style="margin: 0 0 0 -10px">
+									<li>1957 - Sputnik-1</li>
+									<li>1972 - Landsat-1 (NASA & USGS)</li>
+									<li>1986 - SPOT</li>
+									<li>1998 - GMES Programme</li>
+									<li>2014 - COPERNICUS Programme</li>
+									<ul style="text-align: justify; margin: 0 0 0 -5px">
+										<li>2014/16 - Sentiel-1</li>
+										<li>2015/17 - Sentiel-2</li>
+										<li>2016/18 - Sentiel-3</li>
+										<li>new missions planned</li>
+									</ul>
+									<li>Selected commercial satellites (spatial resolution less than 1m):</br>
+										IKONOS, QuickBird, WorldView GeoEye, Pleidades, KOMPSAT
+									</li>
+								</ul>
+								
+							</div>
+							<div style="float:left; width: 57%;">
+								<img src="./resources/EO-for-Urban-Greenery-Management/satellites.png" alt="Satellites">
+								<p><small>Satellites around the Earth (Source: <a href="https://www.esa.int/">ESA</a>/Rex Features)</small></p>
+							</div>
+						</div>
+						
+					</section>
+					
+					<section>
+						<h2>Data characteristics</h2>
+						<table>
+							<td >
+							<p style="text-align: justify;">Altitude and orbital parameters</p>
+							<p style="text-align: justify;">Satellite scene swath</p>
+							<p style="text-align: justify;">Resolution:</p>
+								<ul style="text-align: justify; margin: 0 0 0 -10px">
+									<li>Spatial</li>
+									<li>Spectral</li>
+									<li>Radiometric</li>
+									<li>Temporal</li>
+								</ul>
+							</td>
+							<td><img src="./resources/EO-for-Urban-Greenery-Management/eo_data_theory.png" alt="Remote_sensing_theory">
+							<p><small>Remote sensing (Source: 
+							<a href="https://www.whymap.org/EN/Themen/GG_Fernerkundung/Bilder/hyperspektrale_Fe_p_en.html?view=render[NeuesFenster]">WhyMap</a>)</small></td>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Spatial resolution</h2>
+						<br>
+						<div style="width:900px">
+							<div style="float:left; width:400px">
+							<p style="text-align: justify;"><b><font style="color:#ea9b2d">Spatial resolution</font></b> - the size of one pixel on the ground.</p>
+							<p style="text-align: justify;">Spatial resolution is a measure of the smallest object that can be resolved by the sensor, or the ground area imaged for the instantaneous field of view (IFOV) of the sensor, or the linear dimension on the ground represented by each pixel.</br>
+							(Advanced Remote Sensing, 2012)
+							</p>
+							</div>
+							<div style="float:right; width:490px">
+							<img src="./resources/EO-for-Urban-Greenery-Management/spatial_resolution.jpg" alt="Spatial_resolution">
+							<p><small>(Source: <a href="https://www.radiant.earth/">Radiant Earth Foundation</a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Spectral resolution</h2>
+						<br><p style="text-align: justify;"><b><font style="color:#ea9b2d">Spectral resolution</font></b> - refers to the spectral bandwidth and the number of bands.</p>
+						<p style="text-align: justify;">The finer spectral resolution, the narrower the wavelength range for the particular band.</p>
+						<img src="./resources/EO-for-Urban-Greenery-Management/spectral_resolution.png" alt="Spectral_resolution">
+						<p style="margin: 0"><small>(Source: ResearchGate.net)</small></p>
+					</section>
+					
+					<section>
+						<h2>Radiometric resolution</h2>
+						<br>
+						<div style="width:900px">
+							<div style="float:left; width:400px">
+							<p style="text-align:justify"><b><font style="color:#ea9b2d">Radiometric resolution</font></b> - the sensitivity to the magnitude of the electromagnetic energy. It describes the actual information content in an image, expressed in units of bits.</p>
+							<p style="text-align: justify;">The finer the radiometric resolution, the more sensitive it is to detect small differences in reflected or emitted energy.</p>
+							</div>
+							<div style="float:right; width:490px">
+							<img height="400px" src="./resources/EO-for-Urban-Greenery-Management/radiometric_resolution.jpg" alt="Radiometric_resolution"> 
+							<p style="margin-top: 0"><small>(Source: <a href="https://www.researchgate.net/figure/Effect-of-Radiometric-Resolution-18_fig5_341164804">Research Gate</a>)</small></p></div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Temporal resolution</h2>
+						<p style="text-align: justify;"><b><font style="color:#ea9b2d">Temporal resolution</font></b> - frequency at which the same place is observed <br>(revisit capability).</p>
+						<p style="text-align: justify;">It is particularly important for change mapping.</p>
+						<img src="./resources/EO-for-Urban-Greenery-Management/temporal_resolution.jpg" alt="Temporal_resolution">
+						<p style="margin: 0"><small>(Source: <a href="https://www.radiant.earth/">Radiant Earth Foundation</a>)</small></p>
+					</section>
+					
+					<section>
+						<h2>EO Data as open data</h2>
+						<br><p style="text-align: justify;">Examples of EO browsers:</p>
+						<ul style="text-align: justify; margin: 0 0 0 -188px">
+							<li>Sentinel-Hub: <a href="https://apps.sentinel-hub.com/eo-browser/">https://apps.sentinel-hub.com/eo-browser/</a></li>
+							<li>Sentinel-Playground: <a href="https://apps.sentinel-hub.com/sentinel-playground/">https://apps.sentinel-hub.com/sentinel-playground/</a></li>
+							<li>Copernicus Open Access Hub (ESA): <a href="https://scihub.copernicus.eu/dhus/#/home">https://scihub.copernicus.eu/dhus/#/home</a></li>
+							<li>Creodias: <a href="https://browser.creodias.eu/">https://browser.creodias.eu/</a></li>
+							<li>Earthdata Search (NASA): <a href="https://search.earthdata.nasa.gov/search">https://search.earthdata.nasa.gov/search</a></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>EO browser - open data</h2>
+						<img src="./resources/EO-for-Urban-Greenery-Management/sentinel_hub_rgb.png" alt="Sentinel_2_browser">
+						<p style="margin: 0"><small>Sentinel-2 RGB satellite imagery (Source: EO Browser <a href="https://apps.sentinel-hub.com/eo-browser/">Sentinel-Hub</a>)</small></p>
+					</section>
+					
+					<section>
+						<h2>EO browser - open data</h2>
+						<br><div>
+							<div style="float:left; width:50%">
+							<img src="./resources/EO-for-Urban-Greenery-Management/sentinel_hub_ndvi.png" alt="Sentinel_NDVI">
+							<p><small>Sentinel-2 NDVI image (Source: EO Browser <a href="https://apps.sentinel-hub.com/eo-browser/">Sentinel-Hub</a>)</small></p>
+							</div>
+							<div style="float:right; width:50%">
+							<img src="./resources/EO-for-Urban-Greenery-Management/creodias_sentinel_glc.png" alt="Sentinel_GLC">
+							<p><small>Sentinel-2 Global Land Cover (Source: <a href="https://browser.creodias.eu/#">Creodias Browser</a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Sentinel-2</h2>
+						<br>
+						<ul style="text-align: justify; margin: 0 0 0 -10px">
+							<li><b>Launch:</b> 23 June 2015 (Sentinel-2A) and 7 March 2017 (Sentinel-2B)</li>
+							<li><b>Orbital height:</b>  799 km</li>
+							<li><b>Instrument:</b> the Multi-Spectral Instrument (MSI)</li>
+							<li><b>Spatial resolution:</b> 10 m / 20 m / 60 m</li>
+							<li><b>Spectral resolution:</b> 13 spectral bands (VI/Red Edge/NIR/SWIR)</li>
+							<li><b>Temporal resolution:</b> 10 days (1 satellites) 5 days (2 satellites)</li>
+							<li><b>Swath width:</b> 290 km</li>
+							<li><b>Main applications:</b> agriculture, land ecosystems monitoring, forests management, inland and coastal water quality monitoring, disasters mapping, civil security</li>
+							<li><b>Copernicus Services:</b></li>
+						</ul>
+						<img src="./resources/EO-for-Urban-Greenery-Management/copernicus_services_selectes.png" alt="Copernicus_services">
+					</section>
+
+					<section>
+						<h2>Urban Atlas</h2>
+						<br>
+						<div>
+							<div style="float:left; width:40%">
+								<p style="text-align:justify;"><b>Spatial extent:</b></br>
+								EU27, EFTA, West Balkans, Turkey, UK</p>
+								<p style="text-align:left;"><b>Classification:</b></br>
+								17 urban classes with MMU 0.25ha
+								</br>10 rural classes with MMU 1ha, </br>MMW 10m</p>
+							<p style="text-align:justify;"><b>Products:</b></p>
+									<p style="text-align: left; font-size:18px; margin: 0;">&#8594; Land Cover/Land Use - edition 2018</p>
+									<p style="text-align: left; font-size:18px; margin: 0;">&#8594; 2012-2018 change product</p>
+									<p style="text-align: left; font-size:18px; margin: 0;">&#8594; Revised 2012 edition of Urban Atlas</p>
+									<p style="text-align: left; font-size:18px; margin: 0;">&#8594; Street Tree Layer (STL)</p>
+							</div>
+							<div style="float:right; width:55%">
+							<img src="./resources/EO-for-Urban-Greenery-Management/urban_atlas_extent.png" alt="Urban_Atlas">
+							<p><small>Extent of Urban Atlas 2018 (Source: <a href="https://land.copernicus.eu/local/urban-atlas/urban-atlas-2018">Land Monitoring Service</a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Street Tree Layer</h2>
+						<div>
+							<div style="float:left; width:40%">
+							<p style="text-align:justify;">The <b>Street Tree Layer (STL)</b> is a separate layer from the Urban Atlas 2012 LU/LC layer produced within the level 1 urban mask.</p>
+							<p style="text-align:justify;">It includes contiguous rows or a patches of trees covering 500 m² or more and with a minimum width of </br>10 m over "Artificial surfaces" (nomenclature class 1) inside FUA (i.e. rows of trees along the road network outside urban areas or forest adjacent to urban areas should not be included).</p>
+							</div>
+							<div style="float:right; width:55%">
+							<img src="./resources/EO-for-Urban-Greenery-Management/tree_street_layer_extent.png" alt="Tree_Street_Layer">
+							<p><small>Street Tree Layer 2012 (Source: <a href="https://land.copernicus.eu/local/urban-atlas/street-tree-layer-stl">Land Monitoring Service</a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>High Resolution Layers (HRL)</h2>
+						<p style="text-align: justify;">Pan-European HRL provide information on specific land cover characteristics, and are complementary to land cover/land use mapping such as in the CORINE land cover (CLC) datasets.
+						</br>The main sources of data are the Sentinel satellites (in particular Sentinel-2 and Sentinel-1).</p>
+						<p style="text-align: justify;">Five themes identified so far:</p>
+						<img src="./resources/EO-for-Urban-Greenery-Management/hrl.png" alt="High_resolution_layer">
+						<p style="margin-top: 0;"><small>High resolution layers (Source: <a href="https://land.copernicus.eu/pan-european/high-resolution-layers">Land Monitoring Service</a>)</small></p>
+					</section>
+					
+					<section>
+						<h2>Applications - example</h2>
+						<br>
+						<div>
+							<div style="float: left; width: 30%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/logo_adaptcity.png" alt="Adaptcity_logo">
+							</div>
+							<div styl="float: right; width: 60%;"></div>
+							<p style="text-align: justify;">Use of satellite images for development of the climate adaptation strategy, based on the results of</p>
+							<p style="text-align: justify;"><b>LIFE_ADAPTCITY_PL project</b></p>
+							<p style="text-align: justify;"><em>Preparation of a strategy of adaptation to climate change with use of city climate mapping and public participation</em></p>
+							<p style="text-align: justify;">and the publication <a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><b>"Warsaw from space"</b></a>.</p>
+						</div>
+					</section>					
+					
+					<section>
+						<h2>Applications - example (1)</h2>
+						<div>
+						<div style="float: left; width: 30%;">
+						<br><p style="text-align: left;">Land cover change detection:</p>
+							<ul style="margin: 0 0 0 -10px">
+								<li>increase/decrease of green areas in the city</li>
+								<li>determination of change trend</li>
+							</ul>
+						</div>
+						<div style="float: right; width: 70%;">
+						<img src="./resources/EO-for-Urban-Greenery-Management/ex_1_land_cover.png" alt="Application_example_1_land_cover">
+						<p style="margin: 0"><small>(A) Land cover in Warsaw - Urban Atlas 2018, (B) Land cover changes in Warsaw between 2012 and 2018 (Source: Publication
+						<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+						</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Applications - example (2)</h2>
+						<p style="text-align: justify;">Impermeable (artificial) vs. permeable (biologically functional) surfaces</p>
+						<div>
+							<div style="float: left; width: 50%;">
+								<img height="400px" src="./resources/EO-for-Urban-Greenery-Management/ex_2a_surface.png" alt="Application_example_2a_surface">
+							</div>
+							<div style="float: right; width: 50%;">
+								<img height="400px" src="./resources/EO-for-Urban-Greenery-Management/ex_2b_surface.png" alt="Application_example_2b_surface">
+							</div>
+						<p><small>(A) Surface impermeability in 2014, (B) Percentage of biologically functional surface in 2018 (Source: Publication
+						<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+						<div>
+					</section>
+					
+					<section>
+						<h2>Applications - example (3)</h2>
+						<div>
+						<div style="float: left; width: 55%;">
+							<img height="450px" src="./resources/EO-for-Urban-Greenery-Management/ex_3_surface_change.png" alt="Application_example_3_surface_change">
+							<p style="margin: 0"><small> Change of biologically functional surface - comparison of the situation in 2006 and 2014 (Source: Publication
+							<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+						</div>
+						<div style="float: right; width: 40%;">
+							<p style="text-align: justify;">Change detection: <br>increase of impermeable surfaces</p>
+							<img src="./resources/EO-for-Urban-Greenery-Management/ex_3a_surface_change.png" alt="Application_example_3a_surface_change">
+							<p><small>Biologically functional surface in Fort Służew in 2016 and 2018 (Source: Publication
+							<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+						</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Applications - example (4)</h2>
+						<div>
+							<div style="float: left; width: 40%;">
+							<p style="text-align: justify;"><b>NDVI - Normalized Difference Vegetation Index</b></p>
+							<p style="text-align: justify;">Effective for quantifying green vegetation. Positively correlated with vegetation greenness.</p>
+							<p style="text-align: justify;">NDVI = (NIR – Red) / (NIR + R)</p>
+							<p style="text-align: justify;">NDVI range value is -1 to 1</p>
+							<img height="150px" src="./resources/EO-for-Urban-Greenery-Management/ex_4_ndvi_legend.png" alt="Application_example_4_ndvi_legend">
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/ex_4_ndvi.png" alt="Application_example_4_ndvi" height="450">
+							<p style="margin-top: 0;"><small>NDVI value on 12.09.2018 (Source: Publication
+							<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Applications - example (5)</h2>
+						<div>
+							<div style="float: left; width: 45%;">
+								<br><ul style="margin: 0 0 0 -10px">
+									<li><b>NDII</b> (Normalized Difference Infrared Index)</li>
+									<li><b>MSI</b> (Moisture Stress Index)</li>
+									<li><b>NDWI</b> (Normalized Difference Water Index)</li>
+									<li><b>SAVI</b> (Soil Adjusted Vegetation Index)</li>
+									<li><b>EVI</b> (Enhanced Vegetation Index)</li>
+								</ul>
+							<br><p>
+							<a href="https://www.indexdatabase.de/db/is.php?sensor_id=96">Index database</a></p>
+							<img height="150px" src="./resources/EO-for-Urban-Greenery-Management/ex_5_ndii_legend.png" alt="Application_example_5_ndii_legend">
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/ex_5_ndii.png" alt="Application_example_5_ndii" height="450">
+							<p style="margin-top: 0;"><small>NDII value on 31.08.2017 (Source: Publication
+							<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Applications - example (6)</h2>
+						<div>
+							<div style="float: left; width: 50%;">
+							<img height="450px" src="./resources/EO-for-Urban-Greenery-Management/ex_6a_temperature_surface.png" alt="Application_example_6_temp_surface">
+							</div>
+							<div style="float: right; width: 50%;">
+							<img height="450px" src="./resources/EO-for-Urban-Greenery-Management/ex_6b_albedo.png" alt="Application_example_6_albedo">
+							</div>
+							<p><small>(A) Surface temperature on 20.06.2013, (B) Albedo gaps (%) 8.09.2013 - 12.09.2018 (Source: Publication
+							<a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><i>Warszawa z kosmosu</i></a>)</small></p>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Applications and limitations</h2>
+						<div>
+						<div style="float: left; width: 45%;"><p style="text-align: justify;"><b>Applications:</b></p>
+						<ul style="margin: 0 0 0 -18px">
+							<li>Identification and classification of different types of green areas</li>
+							<li>Estimation of green urban areas</li>
+							<li>Proximity of green urban areas</li>
+							<li>Change detection</li>
+							<li>Vegetation and water indices</li>
+						</ul>
+						<br>
+						<p style="text-align: justify;"><b>Limitations:</b></p>
+						<ul style="margin: 0 0 0 -18px">
+							<li>Lack of attributes for the single tree (taxon, height, ...)</li>
+							<li>Impossible single tree health assessment</li>
+						</ul></div>
+						<div style="float: right; width: 50%;">
+						<img src="./resources/EO-for-Urban-Greenery-Management/resolution_comparison.png" alt="Resolution_images">
+						<p><small>Comparison of images with different spatial resolution <br>- 10 m (left: Sentinel-2) and 1 m (right: orthophoto)</small></p>
+						</div>
+						</div>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h1>Warsaw case study</h1>
+						<h2>- the Tree Crown Map</h2>
+						<br><img height="300" src="./resources/EO-for-Urban-Greenery-Management/title_slide_u4.png" alt="Title_slide_unit_4">
+					</section>
+					
+					
+					<section>
+						<h2>Urban greenery management in Warsaw</h2>
+						<br><div>
+							<div style="float: left; width: 60%;">
+							<p style="text-align: justify;"><b>Actions undertaken by city authorities:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -260px">
+								<li>Declaration of Tree Rights</li>
+								<li>Urban Greening Guidelines</li>
+								<li>Tree Crown Map</li>
+								<li>Tree Trunks Location Map</li>
+								<li>Tree Risk Management</li>
+							</ul>
+							</div>
+							<div style="float: right; width: 40%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/warsaw_greenery.jpg" alt="Warsaw_greenery">
+							</div>
+						</div>
+					</section>
+					
+					
+					<section>
+						<h2>Tree Crown Map - content</h2>
+						<br><p style="text-align: center;"><b>Tree Crown Map include the following types of data about trees:</b></p>
+						<ul style="text-align: justify; margin: 0 0 0 -15px; left: 0;">
+							<li>Location, height and size of their canopy</li>
+							<li>Taxonomic affiliation of species</li>
+							<li>Canopy health</li>
+						</ul>
+						<br>
+						<img src="./resources/EO-for-Urban-Greenery-Management/tcm_data.png" alt="TreeCrownMap_data">
+					</section>
+					
+					<section>
+						<h2>Tree Crown Map - methods</h2>
+						<br><div>
+							<div style="float: left; width: 40%;">
+							<p style="text-align: justify;">Methods of developing the Tree Crown Map (TCM) included:</p>
+							<ul style="text-align: left; margin: 0 0 0 -15px">
+								<li>It was developed with the use of aerial remote sensing</li>
+								<li>The analyses included three types of remote sensing data and data obtained from tree inventory</li>
+								<li>Machine learning was used in the analyses</li>
+							</ul>
+							</div>
+							<div style="float: right; width: 60%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/tcm_methodology.png" alt="TreeCrownMap_methodology">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Tree Crown Map - what is included?</h2>
+						<div>
+							<div style="float: left; width: 50%;">
+							<br><p style="text-align: justify;"><b>Trees included:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -15px">
+								<li>23606 trees under inventory</li>
+								<li>8 mln of trees investigated (out of 9 mln)</li>
+							</ul>
+							<p style="text-align: justify;"><b>Criteria:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -15px">
+								<li>Canopy is visible from aerial perspective</li>
+								<li>Canopy area > 7m<sup>2</sup></li>
+								<li>Tree height > 3m</li>
+							</ul>
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/tree_crown.png" alt="Tree_crown">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>I. "Location, height and size" data type</h2>
+						<div>
+							<div style="float: left; width: 50%;">
+							<p style="text-align: justify;"><b>Information gained from the data:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -272px">
+								<li>Number of trees</li>
+								<li>Canopy size</li>
+								<li>Total canopy area</li>
+							</ul>
+							<p style="text-align: justify;"><b>Potential use:</b></p>
+							<ul style="text-align: left; margin: 0 0 0 -15px">
+								<li>Urban greenery per 1 inhabitant/ha of land</li>
+								<li>Most precious trees</li>
+								<li>Supplementary plantings</li>
+								<li>New investment planning</li>
+								<li>Recognition of age/size structure of trees</li>
+								<li><u>Adaptation to climate change</u></li>
+							</ul>
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/data_type_1.png" alt="Tree_location">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Adaptation to climate change - local climate control</h2>
+						<br><div>
+							<div style="float: left; width: 40%;">
+							<p style="text-align: justify;"><b>Example of analysis:</b></p>
+							<ul style="text-align: left; margin: 0 0 0 -15px">
+								<li>Selection of areas without tree canopies</li>
+								<li>Including them as a priority for reclamation</li>
+								<li>Planting trees and/or changing surfaces for high albedo surfaces</li>
+							</ul>
+							</div>
+							<div style="float: right; width: 60%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/climate_control.png" alt="Microclimate_control">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Adaptation to climate change - energy conservation</h2>
+						<br><div>
+							<div style="float: left; width: 40%;">
+							<p style="text-align: justify;"><b>Example of analysis:</b></p>
+							<ul style="margin: 0 0 0 -15px">
+								<li>Selection of buildings where energy consumption is affected by trees</li>
+								<li>Improving the optimal performance of new tree plantings</li>
+							</ul>
+							</div>
+							<div style="float: right; width: 60%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/energy_conservation.png" alt="Energy_conservation">
+							</div>
+						</div>
+						<div>
+						<img src="./resources/EO-for-Urban-Greenery-Management/energy_conservation_table.png" alt="Table">
+						</div>
+					</section>
+					
+					<section>
+						<h2>Adaptation to climate change - stormwater control</h2>
+						<br><div>
+							<div style="float: left; width: 40%;">
+							<p style="text-align: justify;"><b>Example of analysis:</b></p>
+							<ul style="text-align: left; margin: 0 0 0 -15px">
+								<li>Identification of areas with impervious surfaces and lack of trees</li>
+								<li>Including them as a priority for reclamation</li>
+								<li>Planting trees and/or changing surfaces for pervious surfaces</li>
+							</div>
+							<div style="float: right; width: 60%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/stormwater_control.png" alt="Stormwater_control">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>II. "Taxonomic affiliation" data type</h2>
+						<div>
+							<div style="float: left; width: 40%; text-align: left;">
+							<p style="text-align: left;"><b>Information gained from the data:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -15px">
+								<li>Taxonomic differentiation</li>
+								<li>Spatial distribution of taxa</li>
+							</ul>
+							<p style="text-align: justify;"><b>Potential use:</b></p>
+							<ul style="margin: 0 0 0 -15px">
+								<li>Analysis of taxonomic differentiation of a specific area</li>
+								<li>Planning new planting</li>
+								<li>Recognition of the age/size structure of trees of a given species</li>
+								<li><u>Adaptation to climate change</u></li>
+							</ul>
+							</div>
+							<div style="float: right; width: 60%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/data_type_2.png" alt="Tree_taxonomy">
+							</div>
+						</div>
+					</section>
+					
+					<section>
+						<h2>III. "Canopy health" data type</h2>
+						<br><div>
+							<div style="float: left; width: 50%;">
+							<p style="text-align: justify; "><b>Information gained from the data:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -15px">
+								<li>Differentiation of canopy condition</li>
+								<li>Diversity in the health of selected tree species</li>
+							</ul>
+							<p style="text-align: justify;"><b>Potential use:</b></p>
+							<ul style="text-align: justify; margin: 0 0 0 -15px">
+								<li>Identification of dead and dying trees</li>
+								<li>Identification of disease/victimites sites</li>
+								<li>Help in identifying the sources of poor tree condition</li>
+								<li><u>Adaptation to climate change</u></li>
+							</ul>
+							</div>
+							<div style="float: right; width: 50%;">
+							<img src="./resources/EO-for-Urban-Greenery-Management/data_type_3.png" alt="Tree_health">
+							</div>
+						</div>
+					</section>
+					
+				</section>
+					
+					
+					
+				
+					
+					<section>
+						<h1>Learn more...</h1>
+						<br><ul>
+							<li>About remote sensing - <a href="https://eo4geocourses.github.io/IGIK_Introduction-to-Remote-Sensing/#/">see presentation</a></li>	
+							<li>About Sentinel-2 data and vegetation indices - <a href="https://eo4geocourses.github.io/IGIK_Sentinel2-Data-and-Vegetation-Indices/#/">see presentation</a></li>
+							<li>About EO data sources - <a href="https://eo4geocourses.github.io/GEOF_EO-Data-sources/#/">see presentation</a></li>
+							<li>About Copernicus services - <a href="https://www.copernicus.eu/">see website</a></li>
+							<li>About Warsaw's Tree Crown Map - <a href="http://zzw.waw.pl/tag/mapa-koron-drzew/#">see website</a></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h1>Reference list:</h1>
+						<br><ul>
+						<p style="text-align: justify;">Szymalski W., Kassenberg A., Świerkula E., <a href="https://www.pine.org.pl/wp-content/uploads/2019/07/atlas-web.pdf"><em>Warszawa z kosmosu</em></a>, Fundacja na rzecz Ekorozwoju, Warszawa 2019</p>
+							<p style="text-align: justify;">Existing EO4GEO training materials: 
+							<a href="https://eo4geocourses.github.io/IGIK_Introduction-to-Remote-Sensing/#/">Introduction to Remote Sensing</a>,
+							<a href="https://eo4geocourses.github.io/IGIK_Sentinel2-Data-and-Vegetation-Indices/#/">Sentinel-2 data and vegetation indices </a>and 
+							<a href="https://eo4geocourses.github.io/GEOF_EO-Data-sources/#/">EO Data sources</a></p>
+							<p style="text-align: justify;">Websites:</p>
+								<ul style="text-align: justify; margin: 0 0 0 -10px">
+									<li><a href="https://www.copernicus.eu/">Copernicus Services (https://www.copernicus.eu/)</a></li>
+									<li><a href="https://sentinel.esa.int/web/sentinel/home">ESA - Sentinel (https://sentinel.esa.int/web/sentinel/home)</a></li>
+									<li><a href="https://mapa.um.warszawa.pl/mapaApp1/mapa?service=zielen">Warsaw's Greenery Map (https://mapa.um.warszawa.pl/mapaApp1/mapa?service=zielen)</a></li>
+								</ul>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section >
+					<h1>Thank you!</h1>
+						<h3 style ="text-align:center; font-size:25px">More <b>training material</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px; margin-top: 0;"><strong><a href="http://www.eo4geo.eu/training-material-catalogue/"> http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+						<br>
+						<h3 style ="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3> 
+						<h3 style ="text-align:center; font-size:25px; margin-top: 0;"><strong><a href="http://www.eo4geo.eu/training-actions/"> http://www.eo4geo.eu/training-actions/</a></strong></h3>
+						<table width="847">
+							<tr>
+							<td>
+							<img width="70" box-shadow="none" data-src="http://eo4geo.sbg.ac.at/GISIG/link.png" alt="connection">
+							</td>
+							<td>
+							<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3> 
+							</td>
+							<td>
+							<img width="70" box-shadow="none" data-src="http://eo4geo.sbg.ac.at/GISIG/twitter.png" alt="connection">
+							</td>
+							<td>
+							<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3> 
+							</td>
+							</tr>
+						</table>
+						<div style="height: 120px;">
+							<img width="280" src="./resources/EO-for-Urban-Greenery-Management/logo_grid_en.png" alt="Logo_GRIDW">
+							<h3 style="font-size: 25px;"><strong><a href="https://gridw.pl/">https://gridw.pl/</a></strong></h3>
+						</div>
+				</section>
+					
+				
+			
+				
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>

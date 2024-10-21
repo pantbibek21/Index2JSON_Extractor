@@ -1,0 +1,773 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  AUTHORS: DEFINE ... -->
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md
+		-->
+
+
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+<head>
+    <meta charset="utf-8">
+		<title>Accessing EO Data Using Terrascope Platform</title>
+		<meta property="dc:title" content= "Accessing EO Data Using Terrascope Platform" />
+		<meta property="dc:creator" content= "VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
+		<meta property="dc:publisher" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
+		<meta property="dc:subject" content= "Terrascope, MEP, Copernicus, EO4GEO" />
+		<meta property="dc:abstract" content= "This training material provides an overview of 'Terrascope', which is one of the EO platforms that are being used within EO4GEO project. With this material, you can familiarize yourself with Terrascope and learn how to access to the data and process it." />
+		<meta property="dc:tableOfContents" content= "Learning Outcomes;
+							      What is Terrascope?;
+							      Stop downloading, start using cloud processing!;
+							      Terrascope Features;
+							      How to use Terrascope;
+							      Analysis Ready Data;
+							      Data and Products;
+							      How to access the data on Terrascope?;
+							      Downloading data using Terrascope Viewer;
+							      Downloading data using OpenSearch Catalogue;
+							      Downloading data using web services;
+							      Downloading data using the time series service;
+							      Accessing data using the virtual research environment" />
+		<meta property="dc:description" content= "Learning outcomes: Identify different types of Copernicus satellite data and derived products available on Terrascope Platform; Compare various Terrascope tools and methods that can be leveraged to access and process data; Demonstrate understanding of the platform by performing the instructions to access the Copernicus data " />
+		<meta property="dc:contributor" content= "Jurgen Everaerts, Hande Erdem, Jeroen Dries" />
+		<meta property="dc:created" content= "2020-08-20" />
+		<meta property="dc:type" content= "training material" />
+		<meta property="dc:format" content= "html" />
+		<meta property="dc:language" content= "EN" />
+		<meta property="dc:SizeOrDuration" content= "45min" />
+		<meta property="dc:audience" content= "Scientists, managers, public sector, general public" />
+		<meta property="dc:educationLevel" content= "EQF 6" />
+		<meta property="dc:source" content= "Terrascope content" />
+		<meta property="dc:rightsToHolder" content= "VITO" />
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+		
+		<link rel="dc:relation" href="eo4geo:PS3-7" />
+		<link rel="dc:relation" href="eo4geo:CV5-2" />	
+		<link rel="dc:relation" href="eo4geo:IP3-11-2" />	
+		<link rel="dc:relation" href="eo4geo:IP3-1-2-3" />	
+		<link rel="dc:relation" href="eo4geo:IP3-1-1" />	
+		<link rel="dc:relation" href="eo4geo:WB1-4" />	
+
+    <link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+
+    <link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
+
+
+    <!-- EO4GEO FONT ROBOTO SLAB -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link rel="stylesheet" href="partnerLogo.css" id="theme">
+    <link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a separate tab"-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- FORMATTING FOR HEADER -->
+
+
+    <div class="eo4geologo" style="width: 11%;height : 11%"></div>
+
+    <div class="partnerlogo" style="width: 17%;height : 10%"></div>
+    <div class="presentation_title" style=" text-align: center ">Accessing EO Data Using Terrascope Platform</div>
+    <!--The title of the presentation appears on each slide-->
+
+
+    <div class="slides">
+
+        <!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE -->
+        <section>
+
+            <!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+            <img src="resources\terrascope\terrascope.png">
+            <aside class="notes">
+            </aside>
+        </section>
+        <section>
+            <h2>Learning Outcomes</h2>
+            <ul>
+                <li class="fragment">Identify different types of Copernicus satellite data and derived products available on Terrascope Platform.
+                </li>
+                <li class="fragment">Compare various Terrascope tools and methods that can be leveraged to access and process data.
+                </li>
+                <li class="fragment">Demonstrate understanding of the platform by performing the instructions to access the Copernicus data</li>
+            </ul>
+        </section>
+        <section id="whatisterrascope">
+            <h2>What is Terrascope?</h2>
+            <p class="fragment">Terrascope is the Belgian Collaborative Ground Segment for Sentinel missions. <br>It
+                provides easy access
+                to:</p>
+            <ul class="fragment">
+                <li style="color:#337acc;">satellite data</li>
+                <li style="color:#337acc;">products derived from satellite data</li>
+                <li style="color:#337acc;">services (webservices, time series service)</li>
+                <li style="color:#337acc;">cloud processing capacity (Jupyter notebooks, virtual machines)</li>
+            </ul>
+            <p class="fragment">Terrascope is <em>open and free to use for everyone</em>.</p>
+            <aside class="notes">
+                Terrascope is open and free to use for everyone (scientists, public authorities, industry, citizens).
+                Terrascope is developed, hosted and maintained by Flemish Institute for Technological Research and it is
+                funded by Belspo.
+            </aside>
+        </section>
+
+        <section id="terrascopecluster">
+            <h2>Stop downloading, start using cloud processing!</h2>
+            <br>
+            <p class="fragment">Terrascope cluster consists of:</p>
+            <ul class="fragment">
+                <li style="color:#337acc;">> 3700 cores</li>
+                <li style="color:#337acc;">> 13TB memory</li>
+                <li style="color:#337acc;">> 6.5 PB storage</li>
+            </ul>
+            <p class="fragment">...and growing!</p>
+            <p class="fragment">You can access all data directly using</p>
+            <ul class="fragment">
+                <li style="color:#337acc;">Web services</li>
+                <li style="color:#337acc;">Virtual machines</li>
+                <li style="color:#337acc;">Jupyter notebooks</li>
+            </ul>
+            <p class="fragment">You can also make platform independent code with <a href="https://openeo.org">OpenEO</a>.
+            </p>
+            <aside class="notes">
+                Terrascope cluster resides within a data center which provides more than 3700 CPU cores, 13 TB memory
+                and
+                6.5 PB storage. This cluster is growing consistently to accommodate the needs of the users.
+            </aside>
+        </section>
+
+
+        <section id="terrascopefeatures">
+            <h2>Terrascope Features</h2>
+            <br>
+            <ul>
+                <li style="color:#337acc;"><em>Viewer</em> - easy access; basic analysis methods</li>
+                <li style="color:#337acc;"><em>Webservices</em> - integrate data and products without downloading</li>
+                <li style="color:#337acc;"><em>Virtual Machines</em> - your desktop running on the Terrascope cluster
+                </li>
+                <li style="color:#337acc;"><em>Notebooks</em> - development environment on Terrascope cluster</li>
+            </ul>
+            <p class="fragment">...but how do you choose what to use?</p>
+            <aside class="notes">
+                It might get confusing for novice users when they're presented with multiple tools.
+                We have prepared the following chart for you to make it easy to decide on which tool to use depending on
+                your use case.
+            </aside>
+        </section>
+        <!--section-- class="fig-container"
+                 data-fig-id="fig-intro"
+                 data-file="flowchart.html"
+                 id="flow">
+            <aside class="notes">This flow chart describes how a user could use Terrascope based on their use case
+                needs.
+                For example, if you just want to explore satellite data, you can simply use the Terrascope Viewer. On
+                the other hand, if you want
+                to look for trends, you could either use Terrascope Viewer or openEO API to do timeseries extraction.
+            </aside>
+        </section-->
+        <section id="howtouseterrascope">
+            <h2>How to use Terrascope</h2>
+            <img src="resources\terrascope\howToUse.png">
+            <aside class="notes">This flow chart describes how a user could use Terrascope based on their use case
+                needs.
+                For example, if you just want to explore satellite data, you can simply use the Terrascope Viewer. On
+                the other hand, if you want
+                to look for trends, you could either use Terrascope Viewer or openEO API to do timeseries extraction.
+            </aside>
+        </section>
+        <section id="ard">
+            <h2>Analysis Ready Data</h2>
+            <br>
+            <ul>
+                <li style="color:#337acc;">
+                Converted to usable format (Cloud Optimized Geotiff)</li>
+                Enables easy integration into geospatial analysis.
+                <li style="color:#337acc;">Delivery of standard products</li>
+                It allows you to get to work immediately by taking away the hassle of pre-processing.
+                <li style="color:#337acc;">Integration into web services</li>
+                You can use <em>Time series extraction</em> service to see evolution over time.<br>
+                <em>CROPSAR</em> service shows evolution over time, even through the clouds. <br>
+                <em>WM(T)S</em> allows you to integrate the data in geospatial software without having to download it.
+            </ul>
+            <aside class="notes">
+                Terrascope provides analysis ready data in cloud optimized geotiff format which allows users to
+                integrate the data easily into their geospatial analysis.
+                Terrascope also provides useful webservices such as (1)time series extraction to see the evolution over
+                time,
+                (2) Cropsar which combines Sentinel-1 and Sentinel-2 data to show evolution over time, even through the
+                clouds,
+                or (3) WM(T)S service to be able to integrate the data into GIS without having to download it.
+            </aside>
+        </section>
+        <section id="dataproducts">
+            <section>
+                <h2>Data and Products</h2>
+                <br><br>
+                <p>Terrascope offers <em style="color:#337acc;">satellite data</em> and <em style="color:#337acc;">derived
+                    products</em></p>
+
+                <br><br>
+                <p>Scroll down for details...</p>
+            </section>
+            <section>
+                <h3>Satellite data</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Sentinel 1</th>
+                        <th>Sentinel 2</th>
+                    </tr>
+                    <tr>
+                        <td>Instrument</td>
+                        <td>Synthetic Aperture RADAR</td>
+                        <td>Multispectral camera</td>
+                    </tr>
+                    <tr>
+                        <td>Characteristics</td>
+                        <td>X-band,
+                            VV/VH polarization,
+                            ascending/descending orbits
+                        </td>
+                        <td>12 bands (440nm - 2200nm) (VIS&SWIR)</td>
+                    </tr>
+                    <tr>
+                        <td>Resolution</td>
+                        <td>~ 5x20 m2 per pixel</td>
+                        <td>10x10, 20x20 or 60x60 m2</td>
+                    </tr>
+                    <tr>
+                        <td>Revisit Rate</td>
+                        <td>6 days (same orbit)<br>
+                            1-2 days (all orbits)
+                        </td>
+                        <td>5 days (same orbit)<br>
+                            2-3 days (all orbits)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Overpass Time</td>
+                        <td>~8 AM or ~8PM (summer)<br>
+                            ~7 AM or ~7PM (winter)
+                        </td>
+                        <td>~1 PM (summer)<br>
+                            ~12 PM (winter)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Coverage</td>
+                        <td>Belgium</td>
+                        <td>EEA countries (Europe)</td>
+                    </tr>
+                    <tr>
+                        <td>Archive</td>
+                        <td>Since 2015</td>
+                        <td>Since 2015 (Belgium),
+                            2-year rolling archive (other areas)
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>Derived Products - Sentinel 1</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>What is it?</th>
+                    </tr>
+                    <tr>
+                        <td>Single Look Complex (SLC)</td>
+                        <td>Full information of data acquisition (signal strength, phase, polarization) – needed for
+                            advanced analyses
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ground Range Detected (GRD)</td>
+                        <td>Signal strength, projected - can be visualized and overlaid with other georeferenced data
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Coherence</td>
+                        <td>Similarity between data takes 6 days apart, projected – can be used to detect changes
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>Derived Products - Sentinel 2</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>What is it?</th>
+                    </tr>
+                    <tr>
+                        <td>Normalized Differential Vegetation Index (NDVI)</td>
+                        <td>Information about the greenness of the vegetation</td>
+                    </tr>
+                    <tr>
+                        <td>Fraction of Absorbed Photosynthetically Active Radiation (FAPAR)</td>
+                        <td>Information about the photosynthetic activity of green vegetation</td>
+                    </tr>
+                    <tr>
+                        <td>Leaf Area Index (LAI)</td>
+                        <td>Information about the biomass</td>
+                    </tr>
+                    <tr>
+                        <td>Fraction of vegetation Cover (FCOVER)</td>
+                        <td>Information about the extent of vegetation</td>
+                    </tr>
+                    <tr>
+                        <td>Canopy Water Content (CWC)</td>
+                        <td>Information about vegetation drought stress</td>
+                    </tr>
+                    <tr>
+                        <td>Canopy Chlorophyl Content (CCC)</td>
+                        <td>Information about photosynthetic activity</td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+
+        <section id="howtoaccessdata">
+            <h2>How to access the data on Terrascope?</h2>
+            <p class="fragment">There are several options available. You can...</p>
+            <ul>
+                <li class="fragment">...<em>download</em> them</li>
+                <ul class="fragment">
+                    <li>using Terrascope viewer interface</li>
+                    <li>or using the OpenSearch catalogue</li>
+                    <li>factor in the time for downloading and the cost of storage</li>
+                </ul>
+                <li class="fragment">...use <em>web services</em></li>
+                <ul class="fragment">
+                    <li>WM(T)S</li>
+                    <li>time series, including CROPSAR, openEO</li>
+                    <li>no need to download</li>
+                </ul>
+                <li class="fragment">...work with them on <em>Terrascope virtual environments</em></li>
+                <ul class="fragment">
+                    <li>no need to download</li>
+                </ul>
+            </ul>
+            <aside class="notes"></aside>
+        </section>
+
+        <section id="download">
+            <section>
+                <h2>Downloading data using Terrascope Viewer</h2>
+                <ol>
+                    <li>Log in using your Terrascope credentials</li>
+                    <li>Select the <em>Download</em> tab</li>
+                    <li>Expand the orange bar</li>
+                    <li>Adapt the search criteria (also advanced ones)</li>
+                    <li>Select products, press <em>Next</em></li>
+                    <li>Select file types to download, then press <em>Next</em></li>
+                    <li>Wait for download to finish</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Log In</h3>
+                <br>
+                <img src="resources\terrascope\download1.jpg">
+            </section>
+            <section>
+                <h3>Enter Credentials</h3>
+                <br>
+                <img src="resources\terrascope\download2.jpg">
+            </section>
+            <section>
+                <h3>Select the Download Tab</h3>
+                <br>
+                <img src="resources\terrascope\download3.jpg">
+            </section>
+            <section>
+                <h3>Expand the Orange Bar</h3>
+                <br>
+                <img src="resources\terrascope\download4.jpg">
+            </section>
+            <section>
+                <h3>Adapt Search Criteria</h3>
+                <br>
+                <img src="resources\terrascope\download5.jpg">
+            </section>
+            <section>
+                <h3>Select Products</h3>
+                <br>
+                <img src="resources\terrascope\download6.jpg">
+            </section>
+            <section>
+                <h3>Select Files</h3>
+                <br>
+                <img src="resources\terrascope\download7.jpg">
+            </section>
+            <section>
+                <h3>Wait for the Download to Complete</h3>
+                <br>
+                <img src="resources\terrascope\download8.jpg">
+            </section>
+        </section>
+        <section id="oscars">
+            <section>
+                <h2>Downloading data using OpenSearch Catalogue</h2>
+                <ul>
+                    <li class="fragment">Terrascope provides a catalogue service based on <em>OpenSearch</em> and <em>GeoJSON</em>
+                        collection and product metadata.
+                    </li>
+                    <li class="fragment"><em>The OpenSearch Interface</em> is an <em>Open Geospatial Consortium
+                        (OGC)</em> standard based
+                        interface for the discovery of available Remote Sensing data collections and products.
+                    </li>
+                    <li class="fragment">Users can discover the Terrascope Remote Sensing data using the web service,
+                        while OpenSearch
+                        clients can launch requests to the OpenSearch Interface for EO data discovery and download.
+                    </li>
+                    <li class="fragment">Next to the standard GeoJSON format, the catalogue service supports also ATOM.
+                    </li>
+                    <li class="fragment">For more information, visit <a
+                            href="https://docs.terrascope.be/#/Developers/WebServices/TerraCatalogue/TerraCatalogue">https://docs.terrascope.be/#/Developers/WebServices/TerraCatalogue/TerraCatalogue</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 1</h3>
+                <h4>Discover all collections:</h4>
+
+                <p><a href="https://services.terrascope.be/catalogue/description">https://services.terrascope.be/catalogue/description</a>
+                </p>
+                <img src="resources\terrascope\oscars1.jpg">
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 1</h3>
+                <h4>Discover all collections</h4>
+                <h5>Result Summary:</h5>
+                <table>
+                    <tr>
+                        <td>TERRASCOPE_S1_SLC_COHERENCE_V1</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_CCC_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_CWC_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_LAI_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_NDVI_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_FAPAR_V2</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_FCOVER_V2</td>
+                    </tr>
+                    <tr>
+                        <td>CGS_S1_GRD_L1</td>
+                    </tr>
+                    <tr>
+                        <td>CGS_S1_GRD_SIGMA0_L1</td>
+                    </tr>
+                    <tr>
+                        <td>CGS_S1_SLC_L1</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 2</h3>
+                <h4>Find all SENTINEL-2 TOC products (V2) for a specific tile:</h4>
+                <p>
+                    <a href="https://services.terrascope.be/catalogue/products?collection=urn:eop:VITO:TERRASCOPE_S2_TOC_V2&tileId=32TPN">https://services.terrascope.be/catalogue/products?collection=urn:eop:VITO:TERRASCOPE_S2_TOC_V2&tileId=32TPN</a>
+                </p>
+                <img src="resources\terrascope\oscars2.jpg">
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 2</h3>
+                <h4>Find all SENTINEL-2 TOC products for a specific tile</h4>
+                <h5>Result Summary (limited to 100):</h5>
+                <table>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2:S2A_20180303T102021_32TPN_TOC_V200</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2:S2A_20180221T102031_32TPN_TOC_V200</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2:S2A_20180129T101251_32TPN_TOC_V200</td>
+                    </tr>
+                    <tr>
+                        <td><em><...></em></td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2:S2B_20190419T101029_32TPN_TOC_V200</td>
+                    </tr>
+                    <tr>
+                        <td>TERRASCOPE_S2_TOC_V2:S2A_20190401T100031_32TPN_TOC_V200</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 3</h3>
+                <h4>Find all SENTINEL-2 CCC products between 01/01/2020 and 31/01/2020 with cloudcover between 6% and
+                    17% (both included) over Europe</h4>
+                <p>
+                    <a href="https://services.terrascope.be/catalogue/products?collection=urn%3Aeop%3AVITO%3ATERRASCOPE_S2_CCC_V2&start=2020-01-01T00%3A00%3A00&end=2020-01-31T23%3A59%3A59&cloudcover=[6,17]&name=Europe">https://services.terrascope.be/catalogue/products?collection=urn:eop:VITO:TERRASCOPE_S2_CCC_V2&start=2020-01-01T00:00:00&end=2020-01-31T23:59:59&cloudcover=[6,17]&name=Europe</a>
+                </p>
+                <img src="resources\terrascope\oscars3.jpg">
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 3</h3>
+                <h4>Find all SENTINEL-2 CCC products between 01/01/2020 and 31/01/2020 with cloudcover between 6% and
+                    17% (both included) over Europe</h4>
+                <h5>Result Summary (limited to 100):</h5>
+                <img src="resources\terrascope\oscars4.jpg">
+            </section>
+            <section>
+                <h3>OpenSearch Catalogue Example 4</h3>
+                <h4>Product download</h4>
+                <p>To download individual products, you can follow these steps:</p>
+                <ol>
+                    <li>Find all SENTINEL-2 LAI products for the tile "32TPN" between 06/08/2020 and 07/08/2020</li>
+                    <li>Identify the file that you want to download</li>
+                    <li>Download the image</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>OpenSearch Catalogue Example 4</h3>
+                <h4>Product download</h4>
+                <a href="https://services.terrascope.be/catalogue/products?collection=urn:eop:VITO:TERRASCOPE_S2_LAI_V2&start=2020-08-05T00:00:00&end=2020-08-07T00:00:00&tileId=32TPN">Find
+                    all SENTINEL-2 LAI products for the tile "32TPN" between 06/08/2020 and 07/08/2020:
+                </a>
+                <img src="resources\terrascope\oscars5.jpg">
+            </section>
+
+            <section>
+                <h3>OpenSearch Catalogue Example 4</h3>
+                <h4>Navigate to the contents</h4>
+                <p>For each product, you will find the following set of files:</p>
+                <table>
+                    <tr>
+                        <td>Quick look</td>
+                        <td>A small sized image representing the product</td>
+                    </tr>
+                    <tr>
+                        <td>Inspire metadata</td>
+                        <td>An XML file containing the metadata of the parameters</td>
+                    </tr>
+                    <tr>
+                        <td>Scene classification</td>
+                        <td>Scene classification layer to distinguish between snow, cloud, vegetation etc. For more info
+                            [insert link here]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Product image</td>
+                        <td>Actual product image</td>
+                    </tr>
+                </table>
+                <img src="resources\terrascope\oscars6.jpg">
+            </section>
+
+            <section>
+                <h3>OpenSearch Catalogue Example 4</h3>
+                <h4>Download the products</h4>
+                <img src="resources\terrascope\oscars7.jpg">
+            </section>
+        </section>
+        <section id="gis">
+            <section>
+                <h2>Downloading data using web services</h2>
+                <ul>
+                    <li>WMS</li>
+                    <li>WMTS</li>
+                    <li>Both can be used to import the data into GIS or other web applications</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>In QGIS: Add WMS/WMTS Layer</p>
+                <img src="resources\terrascope\gis1.jpg">
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>WMTS</p>
+                <p>https://services.terrascope.be/wmts/v2/wmts?service=wmts&request=GetCapabilities</p>
+                <img src="resources\terrascope\gis2.jpg">
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>Connect</p>
+
+                <img src="resources\terrascope\gis3.jpg">
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>Watch out! Change the Layer name before you press "Add"</p>
+                <img src="resources\terrascope\gis4.jpg">
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>Select the date, then press OK</p>
+
+                <img src="resources\terrascope\gis5.jpg">
+            </section>
+            <section>
+                <h3>Importing image into GIS via web services</h3>
+                <p>Layer is now available</p>
+
+                <img src="resources\terrascope\gis6.jpg">
+            </section>
+        </section>
+
+        <section id="timeseries">
+            <section>
+                <h2>Downloading data using the time series service</h2>
+                <ul>
+                    <li>Via Terrascope Viewer</li>
+                    <li>Directly, using time series web service</li>
+                </ul>
+
+                <p class="fragment">Note that downloading data to your own machine is not recommended. Rather, you can
+                    use virtual environments to access the data or process on the fly directly.</p>
+                <aside class="notes"> Time series data can be downloaded via the Terrascope viewer interface or using
+                    the time series web service.
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing Time Series Service via Terrascope Viewer</h3>
+                <p>The Terrascope time series service allows you to retrieve time series for a number of Sentinel-1 and
+                    Sentinel-2 data layers:</p>
+                <ul>
+                    <li>Sentinel-1 σ0 ascending VV polarization</li>
+                    <li>Sentinel-1 σ0 descending VV polarization</li>
+                    <li>Sentinel-2 NDVI</li>
+                    <li>Sentinel-2 LAI</li>
+                    <li>CropSAR fAPAR</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Accessing Time Series Service via Terrascope Viewer</h3>
+                <h4>Define Area of Interest</h4>
+                <p>Step 1. Login / Step 2. Open 'Areas of Interest' tab / Step 3. Select a point or draw a polygon /
+                    Step 4. Click 'Save'</p>
+                <img src="resources\terrascope\ts1.jpg">
+                <aside class="notes">After you logged into the Terrascope Viewer interface, open the 'Areas of Interest'
+                    tab on the left side of your screen.
+                    Select a point or area by clicking 'Draw' and select 'Point' or 'Polygon'. Then, select one of the
+                    listed data layers.
+                    A third option is to upload a shapefile, which is done by clicking the 'Import' button. A dialogue
+                    window will open and you can browse to the shape file location.
+                    Please note that all supporting files (dbf, prj, shx, qpj) should be selected upon proper import.
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing Time Series Service via Terrascope Viewer</h3>
+                <h4>Extract Time Series</h4>
+                <p>Click on 'Show Info' to see the graph</p>
+                <img src="resources\terrascope\ts2.jpg">
+                <aside class="notes">In this example, the Sentinel-2 NDVI for a single pixel is extracted. By clicking
+                    'Show info', the values for the given point or polygon are extracted.
+                    When the results are loaded, by default the upper panel plots the entire available time
+                    series.Alternatively, you can select a different time period from the buttons above the upper panel.
+                    The alternative choices are 1 month, 3 months, 6 months, the current from 1 January until today
+                    (YTD).
+                    The bottom panel always shows an overview with the time series of the entire available archive.
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing Time Series Service via Terrascope Viewer</h3>
+                <h4>Export Options</h4>
+                <p>Click on the circle button and choose the preferred export option:</p>
+                <img src="resources\terrascope\ts2.jpg">
+                <aside class="notes">The plot can be printed on paper or exported as PNG, JPG, PDF or SVG image by
+                    clicking on the circle button in the upper right.
+                    Alternatively, you can have the data values behind the plot exported as CSV file.
+                    Files are exported with filename 'NEWPOINT' or 'new area of interest', with the filename extension
+                    being, png, jpeg, pdf, svg or csv, for point or polygon extractions, respectively.
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing Time Series Webservice Service via Jupyter Notebooks</h3>
+                <p>Check out this notebook for inspiration!</p>
+                <a href="https://github.com/jurgeneveraerts/Terrascope-Notebooks/blob/master/TimeSeriesDemo.ipynb">https://github.com/jurgeneveraerts/Terrascope-Notebooks/blob/master/TimeSeriesDemo.ipynb</a>
+            </section>
+            <section
+                    data-background-iframe="https://nbviewer.jupyter.org/github/jurgeneveraerts/Terrascope-Notebooks/blob/master/TimeSeriesDemo.ipynb">
+
+            </section>
+        </section>
+
+        <section id="virtual">
+            <section>
+                <h2>Accessing data using the virtual research environment</h2>
+                <ul>
+                    <li>Virtual Machines</li>
+                    <li>Jupyter Notebooks</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Accessing data through Virtual machines</h3>
+                <p class="fragment">With a user Virtual Machine (VM), a developer or scientist can use a Virtual
+                    Research Environment, with access to the available data archives, as well as a powerful tool set and
+                    libraries
+                    for further data exploration and analysis (using e.g. the SNAP toolbox, GRASS GIS, and QGIS) or to
+                    develop-debug-test applications (in e.g. R, Python or Java). </p>
+                <img class="fragment" src="resources\terrascope\vm1.jpg">
+                <aside class="notes">The VM comes with several pre-installed command line tools, desktop applications,
+                    and developer tools, which are useful for data exploration
+                    (e.g. GDAL, QGIS, GRASS GIS, SNAP, Python, etc.). Targeted users are scientists and programmers
+                    developing applications that utilize the Terrascope data.
+                    After the prototyping phase, the Terrascope processing environment can be used for upscaled
+                    processing. The end goal should be an application running on the Terrascope computation platform.
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing data through Virtual machines</h3>
+                <p>Once you have a VM assigned to you, you can easily access the data by exploring the 'data' folder on
+                    the desktop.</p>
+                <img src="resources\terrascope\vm2.jpg">
+            </section>
+            <section>
+                <h3>Accessing data through Jupyter Notebooks</h3>
+                <p  class="fragment">Data can be accessed directly through Jupyter Notebooks.</p>
+                <p  class="fragment">For more information, please follow "Terrascope Application Development" training.</p>
+            </section>
+        </section>
+        <section>Thank you.</section>
+    </div>
+</div>
+
+    <script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+    <script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true },
+					{ src: './customer_content/plugin/tableofcontents/tableofcontents.js' },
+				]
+			});
+    </script>
+</body>
+</html>

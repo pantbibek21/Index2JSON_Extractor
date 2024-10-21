@@ -1,0 +1,454 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS:  
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... -->
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>eo4geo template for Reveal JS</title>
+
+	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->
+	<meta property="dc:title" content="Air Quality Monitoring and Management" />
+	<meta property="dc:creator" content="Andreas Kazantzidis, Vasileios Salamalikis" />
+	<meta property="dc:publisher" content="University of Patras, UPAT" />
+	<meta property="dc:subject" content="Air Quality Monitoring and Management" />
+	<meta property="dc:abstract"
+		content="This webinar addresses the concepts of air quality monitoring and management and its linkages to the urban environment and public health." />
+	<meta property="dc:tableOfContents" content="The EO4GEO Program  ; 
+							     (1) Session A: The basics of air quality monitoring and management ;
+									- Air quality basics / Copernicus program ;
+									- Air quality management basics and EU regulations ;
+									- Air quality assessment in Italy: ISPRA activities in the EU directives framework;
+								 (2) Session B:The ground-truth: air quality measurements in urban scale  ;
+									- Low-cost sensors for measuring PM2.5: Field evaluation, calibration and insights from medium size urban area ;
+									- Air quality monitoring through low-cost networks in large metropolitan areas: The case of Athens, Greece;
+							     (3) Session C: Transforming Earth Observation data into real insights for air quality ; 
+									- Deriving NO2 values in the troposphere from Sentinel 5P data during coronavirus outbreak in Romania; 
+									- Airborne dust identification from space: a new, MSG/SEVIRI-based method for air quality assessment ;
+									- EO data to support estimation of wildfires atmospheric emissions: a contribution to the assessment of the air quality ;
+								 (4) Session D: Air pollution modelling: what is it and what can it tell us? ; 
+									- Forecasting Particulate Pollution in an Urban Area: From Copernicus to Sub-Km Scale; 
+									- High resolution spatio-temporal modeling of air quality based on empirical-statistical approaches  ;
+									- Urban air pollution mapping towards protecting human health: from SMURBS practice to e-shape pilots" />
+	<meta property="dc:description"
+		content="Recognize the basic atmospheric pollutants and their impact on climate and health ; Demonstrate knowledge of the natural processes involved in gas and particulate pollutants ; Apply this cognitive knowledge to explain state-of-the-art problems; Process environmental information for the estimation of air pollution from individual sources ; Know computational tools and databases to record / visualize air pollution" />
+	<meta property="dc:contributor" content="UPATRAS" />
+	<meta property="dc:created" content="2021-12-17" />
+	<meta property="dc:type" content="teaching material" />
+	<meta property="dc:format" content="html" />
+	<meta property="dc:language" content="EN" />
+	<meta property="dc:SizeOrDuration" content="4 hours" />
+	<meta property="dc:audience"
+		content="Graduate and master students, planners on regional/city/municipal scale; professionals with background in air quality" />
+	<meta property="dc:educationLevel" content="EQF 5-6" />
+	<meta property="dc:source” content=" Existing slideset "Air Quality Monitoring and Management" by UPATRAS />
+	<meta property="dc:rightsHolder" content="UPATRAS" />
+	<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
+
+	<link rel="dc:relation" href="eo4geo:IP3-11" />
+	<link rel="dc:relation" href="eo4geo:PP1-1-7" />
+	<link rel="dc:relation" href="eo4geo:TA13-5-1" />
+	<link rel="dc:relation" href="eo4geo:TA14" />
+	<link rel="dc:relation" href="eo4geo:TA14-2" />
+
+
+	<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+	<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+	<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
+	<!-- white background design -->
+	<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+	<!--link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design -->
+	<!-- EO4GEO FONT ROBOTO SLAB -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+	<link rel="stylesheet" href="partnerLogo.css" id="theme">
+	<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+	<base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- FORMATTING FOR HEADER -->
+
+
+		<div class="eo4geologo" style="width: 10%;height : 11%"></div>
+
+		<div class="partnerlogo" style="width: 20%;height : 12%"></div>
+		<!--<div  class = "presentation_title" style=" text-align: center " >Air Quality Monitoring and Management</div>	<!--The title of the presentation appears on each slide-->
+
+
+		<div class="slides">
+
+
+			<!-- CONTENT OF FIRST SLIDE -->
+			<section>
+				<h1>Air Quality Monitoring and Management</h1>
+				<em>Laboratory of Atmospheric Physics, University of Patras (UPAT)</em>
+			</section>
+
+
+			<!-- INTRODUCTORY SECTION-->
+
+			<!-- 1. Introduction: description of the workshop-->
+			<section id="Introduction">
+				<section>
+					<h1>Introduction</h1>
+					This workshop addresses the concepts of <b><i>air quality monitoring and management</i></b> and its
+					linkages to the urban environment and public health.
+					<br><br>
+					It is organized by the <b><i>University of Patras (UPAT)</i></b>, in the framework of the
+					<b><i>EO4GEO</i></b> project.
+
+				</section>
+			</section>
+
+			<!-- LABORATORY OF ATMOSPHERIC PHYSICS - UNIVERSITY OF PATRAS-->
+			<section>
+				<br>
+				<h1 style="text-align:CENTER"> Laboratory of Atmospheric Physics</h1>
+				<table style="height: 369px;" width="100%">
+					<tbody>
+						<tr>
+							<td style="width: 500px;"><img src="resources/LAPUP_location.jpg" alt="" width="100%" />
+							</td>
+							<td style="width: 500px;">
+								<h3 style="text-align:center">Research Axes</h3>
+								<h5>
+									<ul>
+										<li>Measurements, processing and homogenization of meteorological and
+											environmental time series
+											<br><br>
+										<li>Stable isotopes in rain and water vapor
+											<br><br>
+										<li>Ultraviolet and solar radiation
+											<br><br>
+										<li>AI methods in atmospheric and environmental physics problems
+											<br><br>
+										<li>Weather and atmospheric pollution forecasting modeling
+									</ul>
+								</h5>
+								<h6>More info on <i><a href='https://www.atmosphere-upatras.gr/en'>
+											https://www.atmosphere-upatras.gr/en</a></i></h6>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<!-- THE EO4GEO PROJECT-->
+			<section>
+				<!-- 1. Overview of EO4GEO project-->
+				<section>
+					<img width="340" box-shadow="none" data-src="resources//logo_big.png" alt="eo4geo logo">
+					<h3>The Space/Geospatial Sector Skills Alliance</h3>
+					<h4>Towards an innovative strategy for skills development and capacity building in the space
+						geo-information sector supporting Copernicus User Uptake</h4>
+					<img width="340" box-shadow="none" data-src="resources//erasmus.jpg" alt="erasmus">
+				</section>
+
+				<!-- 2. EO4GEO Consortium and basic information-->
+				<section>
+					<h1>The EO4GEO project</h1>
+					<h4>
+						<ul>
+							<li><b> Duration:</b> 4 years from January the 1st, 2018</li>
+							<li><b> Budget:</b> 3,87 million €</li>
+							<li><b> Partnership:</b> 25 Partners + 30+ Associated Partners (from 16 EU Countries) from
+								Academia, Companies and networks </li>
+							<li><b> Coordinators:</b> GISIG (General), KU Leuven (Scientific & Technological), PLUS
+								(Education & Training), Climate-KIC (Exploitation)</li>
+						</ul>
+					</h4>
+					<img width="680" box-shadow="none" data-src="resources/consortium.jpg" alt="eo4geo consortium">
+					<br>
+					<citation>The EO4GEO Consortium. 30th May 2018, Castellón de la Plana, Spain</citation>
+				</section>
+
+				<!-- 3. Vision and Mission of EO4GEO-->
+				<section>
+					<h1>The VISION </h1>
+					<h3>To foster the growth of the European Earth Observation / Geographic Information (EO/GI) sector
+						ensuring a workforce with the
+						<b>right skills, in the right place, at the right time. </b>
+					</h3>
+					<br><br>
+					<h1>The MISSION </h1>
+					<h3>To ensure the strategic cooperation among stakeholders on skills development in the EO/GI
+						sector.
+					</h3>
+				</section>
+
+				<!-- 4. EO4GEO is not only a project-->
+				<section>
+					<h1>EO4GEO IS MUCH MORE </h1>
+					<br><br>
+					<h4>
+						<ul>
+							<li>A series of <b>pre-defined curiculla</b> in support of Copernicus</li>
+							<br>
+							<li>A portfolio of <b>training modules</b> directly usable in the context of Copernicus and
+								other relevant prograns</li>
+							<br>
+							<li>A series of <b>training actions (webinars, academic courses, etc.)</b> in the three
+								sub-sectors - integrated applications, smart cities and climate change</li>
+							<br>
+							<li>A <b>mobility program</b> to promote internships and on-the-job training</li>
+							<br>
+							<li>A <b>Long-term Action plan</b> to sustain the proposed solutions</li>
+						</ul>
+					</h4>
+				</section>
+			</section>
+
+			<!-- 2. Description of the Learning Outcomes-->
+			<section>
+				<h2>Learning outcomes</h2>
+				<br><br>
+				<h4>
+					<ul>
+						<li>Recognize the basic atmospheric pollutants and their impact on climate and health </li>
+						<br>
+						<li>Demonstrate knowledge of the natural processes involved in gas and particulate pollutants
+						</li>
+						<br>
+						<li>Apply this cognitive knowledge to explain state-of-the-art problems</li>
+						<br>
+						<li>Process environmental information for the estimation of air pollution from individual
+							sources </li>
+						<br>
+						<li>Know computational tools and databases to record / visualize air pollution</li>
+					</ul>
+				</h4>
+			</section>
+
+			<!-- 3 Description of the Agenda-->
+			<section>
+
+				<!-- 3a: Description of the Agenda - Session A -->
+				<section>
+					<h1>Agenda</h1>
+					<br><br>
+					<ul>
+						<h3><b>The EO4GEO program</b></h3>
+						<br>
+						<h3><b> A: The basics of air quality monitoring and management</b></h3>
+						<h4>
+							<ul>
+								<br>
+								<li><a
+										href='./resources/presentations/Session_A_P1_SalamalikisB.pdf'>
+										Air quality basics - Copernicus
+										program</a></li>
+								<li style="list-style-type:none"><i>(V. Salamalikis - University of Patras, UPAT)</li>
+								</i>
+								<br>
+								<li><a
+										href='./resources/presentations/Session_0_Kazantzidis.pptx'>
+										Air quality monitoring and
+										management </a></li>
+								<li style="list-style-type:none"><i>(A. Kazantzidis - University of Patras, UPAT)</li>
+								</i>
+								<br>
+								<li><a
+										href='./resources/presentations/Session_A_P3_Cattani.pptx'>
+										Air quality assessment in Italy: ISPRA
+										activities in the EU directives framework </a></li>
+								<li style="list-style-type:none"><i>(G. Cattani - Italian National Institute for
+										Environmental Protection and Research, ISPRA)</li></i>
+							</ul>
+						</h4>
+					</ul>
+				</section>
+
+				<!-- 3b: Description of the Agenda - Session B -->
+				<section>
+					<h1>Agenda</h1>
+					<br><br>
+					<h3><b> B: The ground-truth: air quality measurements in urban scale </b></h3>
+					<h4>
+						<ul>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_B_P1_Kosmopoulos.pptx'>
+									Low-cost sensors for measuring
+									PM<sub>2.5</sub>: Field evaluation, calibration and insights from medium size urban
+									area </a></li>
+							<li style="list-style-type:none"><i>(G. Kosmopoulos - University of Patras, UPAT)</li></i>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_B_P2_Grivas.pptx'>
+									Air quality monitoring through sensor-based
+									networks in large metropolitan areas: The case of Athens, Greece </a></li>
+							<li style="list-style-type:none"><i>(G. Grivas - National Observatory of Athens, NOA)</li>
+							</i>
+					</h4>
+					</ul>
+				</section>
+
+				<!-- 3c: Description of the Agenda - Session C -->
+				<section>
+					<h1>Agenda</h1>
+					<br><br>
+					<h3><b> C: Transforming Earth Observation data into real insights for air quality </b></h3>
+					<h4>
+						<ul>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_C_P1_Vlad_Lazar.pptx'>
+									Satellite data for air quality
+									monitoring NO<sub>2</sub> during pandemic times in Romania </a></li>
+							<li style="list-style-type:none"><i>(M.-I. Vlad Sandru & A. Lazar - Agentia Spatiala Romana,
+									ROSA)</li></i>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_C_P2_TramutoliB.pdf'>
+									Airborne dust identification from space:
+									a new, MSG/SEVIRI-based method for air quality assessment </a></li>
+							<li style="list-style-type:none"><i>(V. Tramutoli - University of Basilicata, UNIBAS)</li>
+							</i>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_C_P3_Tornato_Filipponi.pptx'>
+									EO data to support estimation of
+									wildfires atmospheric emissions: a contribution to the assessment of the air quality
+								</a></li>
+							<li style="list-style-type:none"><i>(A. Tornato & F. Filipponi - Italian National Institute
+									for Environmental Protection and Research, ISPRA)</li></i>
+					</h4>
+					</ul>
+				</section>
+
+				<!-- 3d: Description of the Agenda - Session D -->
+				<section>
+					<h1>Agenda</h1>
+					<br><br>
+					<h3><b> D: Air pollution modelling: what is it and what can it tell us? </b></h3>
+					<h4>
+						<ul>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_D_P1_Kioutsioukis.pptx'>
+									Forecasting particulate pollution in
+									an urban area: from Copernicus to sub-km scale </a></li>
+							<li style="list-style-type:none"><i>(I. Kioutsioukis - University of Patras, UPAT)</li></i>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_D_P2_Cattani.pptx'>
+									High resolution spatio-temporal modeling of
+									air quality based on empirical-statistical approaches </a></li>
+							<li style="list-style-type:none"><i>(G. Cattani - Italian National Institute for
+									Environmental Protection and Research, ISPRA)</li></i>
+							<br>
+							<li><a
+									href='./resources/presentations/Session_D_P3_AthanassopoulouB.pdf'>
+									Urban air pollution mapping towards
+									protecting human health: from SMURBS practice to e-shape pilots </a></li>
+							<li style="list-style-type:none"><i>(E. Athanasopoulou - National Observatory of Athens, NOA
+									)</li></i>
+					</h4>
+					</ul>
+				</section>
+
+			</section>
+
+
+			<!-- 5 part: You tube video -->
+			<section>
+				<h1>Find the workshop in the web!</h1>
+				<br><br>
+				<a href='https://www.youtube.com/watch?v=UEbt182_iPY'>Watch the full video on youtube
+				</a>
+			</section>
+
+
+			<!-- 5b part: final slide-->
+			<section>
+				<h1>Thank you!</h1>
+				<table style="height: 150px;" width="847">
+					<h3 style="text-align:center; font-size:25px">More <b>training material</b> available at:</h3>
+					<h3 style="text-align:center; font-size:25px"><strong><a
+								href="http://www.eo4geo.eu/training-material-catalogue/">
+								http://www.eo4geo.eu/training-material-catalogue/</a></strong></h3>
+					<br>
+					<h3 style="text-align:center; font-size:25px">More <b>training actions</b> available at:</h3>
+					<h3 style="text-align:center; font-size:25px"><strong><a
+								href="http://www.eo4geo.eu/training-actions/">
+								http://www.eo4geo.eu/training-actions/</a></strong></h3>
+					<tr>
+						<td>
+							<img width="70" box-shadow="none" data-src="resources/link.png" alt="connection">
+						</td>
+						<td>
+							<h3><strong><a href="http://www.eo4geo.eu">www.eo4geo.eu</a></strong></h3>
+						</td>
+						<td>
+							<h3><strong><a href="https://twitter.com/EO4GEOtalks">@EO4GEOtalks</a></strong></h3>
+						</td>
+					</tr>
+				</table>
+				<table style="height: 150px;" width="847">
+					<tr>
+						<td>
+							<img width="150" box-shadow="none" data-src="resources/lapup.jpg" alt="connection">
+						</td>
+						<td>
+							<h3 style="font-size: 25px;"><strong><a
+										href="https://www.atmosphere-upatras.gr/en/">https://www.atmosphere-upatras.gr/en/</a></strong>
+							</h3>
+						</td>
+					</tr>
+				</table>
+			</section>
+
+		</div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' }, { src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+
+				]
+			});
+
+		</script>
+
+		<!-- rauslöschen?? -->
+		<script>Reveal.initialize({
+				simplemenu: {
+					menuselector: '.menu a'
+				},
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false }
+				]
+			});
+		</script>
+
+</body>
+
+</html>

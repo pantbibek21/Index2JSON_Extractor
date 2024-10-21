@@ -1,0 +1,747 @@
+<!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
+		Template Creation Date: March-June 2020 
+		
+		IMPORTANT NOTICES FOR USERS/AUTHORS: 
+		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
+<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
+		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
+		-->
+		
+		
+<!doctype html>
+<html prefix="eo4geo: http://bok.eo4geo.eu/" prefix="dc: http://purl.org/dc/terms/" lang="en" >
+
+	<head>
+		<meta charset="utf-8">
+		 
+		<title>EO4GEO_GEOF: Basic GIS knowledge vector and raster data</title>
+		<meta property="dc:title" content="Basic GIS knowledge vector and raster data - for the case of Urban Heat Islands" />
+		<meta property="dc:creator" content="Marijan Grgic, mgrgic@geof.hr" />
+		<meta property="dc:publisher" content="University of Zagreb, Faculty of Geodesy" />
+		<meta property="dc:subject" content="Copernicus, EO4GEO, WP4, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="This is a lesson on monitoring the urban heat islands. This beginner's lesson introduces the student to GIS and vector/raster data" />
+		<meta property="dc:tableOfContents" content="What is urban heat island? 
+							     How to detect it? 
+							     What are the measuring techniques? 
+							     Which data could be used in GIS for that purpose? Raster vs vector data." />
+		<meta property="dc:description" content="Design and develop methods for local heat islands detection to support city planning, Understand basics of RS/EO/GI knowledge, Modify spatial data, Understand GIS vector and raster data, Identify different remote sensing methods" />
+		<meta property="dc:contributor" content="Marijan Grgic, mgrgic@geof.hr" /> 
+		<meta property="dc:created" content="2020-09-20" /> 
+		<meta property="dc:type" content="teaching material" /> 
+		<meta property="dc:format" content="html" /> 
+		<meta property="dc:language" content="EN" /> 
+		<meta property="dc:SizeOrDuration" content="45min" /> 
+		<meta property="dc:audience" content="students" /> 
+		<meta property="dc:educationLevel" content="EQF 6" /> 
+		<meta property="dc:source" content="" /> 
+		<meta property="dc:rightsToHolder" content="Marijan Grgic, University of Zagreb Faculty of Geodesy" /> 
+		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" /> 
+		
+		<link rel="dc:relation" href="eo4geo:DA3-7" />
+		<link rel="dc:relation" href="eo4geo:AM13-4" />
+		<link rel="dc:relation" href="eo4geo:IP3-11" />
+		<link rel="dc:relation" href="eo4geo:PP1-7-1" />
+		<link rel="dc:relation" href="eo4geo:TA13-5-1" />	
+
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
+		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<!-- EO4GEO FONT ROBOTO SLAB -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
+		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
+		<link rel="stylesheet" href="customer_content/css/eo4geo_override.css" id="theme">
+
+    <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
+ 
+	</head>
+
+<div class="reveal" >
+		
+			 <!-- FORMATTING FOR HEADER -->
+			
+					
+				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
+			
+				 <div class = "partnerlogo" style="width: 8%;height : 9%" ></div>		
+				 <div  class = "presentation_title" style=" text-align: center " >Basic GIS knowledge vector and raster data</div>	<!--The title of the presentation appears on each slide-->
+
+	
+				<div class="slides">
+				
+			
+				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
+				<section >
+					<h1>Basic GIS knowledge vector and raster data</h1>
+					<h2> - for the case of Urban Heat Islands </h2>
+					
+
+				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
+				<aside class="notes">
+				https://www.elsevier.com/books/the-urban-heat-island/mills/978-0-12-815017-7		</aside>
+				</section>
+				
+				
+				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section class="scrollable">
+					<h1>Copernicus</h1> 
+					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
+					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+				</section>
+				
+					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
+				<!--<section >
+					<h1>Copernicus</h1> 
+					<br>
+					 
+					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
+					 
+				</section>
+				
+				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
+				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
+				                    <script type="text/template">
+                        # What is Copernicus?
+                        (A demo slide deck using the Reveal.js framework)
+					
+						
+                        ---
+						
+                        # Copernicus
+                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
+						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
+						
+						
+						--
+						
+						# Earth observation (EO)
+						EO is one out of three main space assets
+						- SatNav
+                        - SatCom
+						- SatObs (EO)
+						
+						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
+                    </script>
+                </section-->
+				
+			
+				
+				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
+				<section id="intro">
+					
+					<section > 
+						<h1>What are Urban Heat Islands?</h1> 
+						<ul>
+						<li>a difference in temperature of urban and suburban areas compared to their outlying rural surroundings
+						<ul>
+						<li>E.g. the annual mean air temperature of a city with one million or more people can be 1 to 3&deg;C warmer than its surroundings,</li>
+						<li>Usually the difference decreases as city size decreases,</li>
+						<li>We can differ <em>surface</em> and <em>atmospheric</em> urban heat islands.</li>
+						</ul>
+						</li>
+						</ul>
+						<br><img width="800" height="200" img src="./resources/Basic-GIS-knowledge-and-raster-data/uhi1.jpg" alt="sat1">
+					</section>
+
+					<section class="scrollable">
+						<br>
+						<h2>Surface vs atmospheric UHI</h2> 
+						<table style="width: 828px; height: 234px;">
+						<tbody>
+						<tr style="height: 33px;">
+						<td style="width: 155px; height: 33px; text-align: center;">
+						<p><strong>Feature</strong></p>
+						</td>
+						<td style="width: 324.333px; height: 33px; text-align: center;">
+						<p><strong>Surface UHI</strong></p>
+						</td>
+						<td style="width: 324.667px; height: 33px; text-align: center;">
+						<p><strong>Atmospheric UHI</strong></p>
+						</td>
+						</tr>
+						<tr style="height: 33px;">
+						<td style="width: 155px; height: 66.6667px; text-align: center;" rowspan="2">
+						<p><strong>Temporal Development</strong></p>
+						</td>
+						<td style="width: 324.333px; height: 33px; text-align: center;">
+						<p>Present at all times of the day and night</p>
+						</td>
+						<td style="width: 324.667px; height: 33px; text-align: center;">
+						<p>May be small or non-existent during the day</p>
+						</td>
+						</tr>
+						<tr style="height: 33.6667px;">
+						<td style="width: 324.333px; height: 33.6667px; text-align: center;">
+						<p>Most intense during the day and in the summer</p>
+						</td>
+						<td style="width: 324.667px; height: 33.6667px; text-align: center;">
+						<p>Most intense at night or predawn and in the winter</p>
+						</td>
+						</tr>
+						<tr style="height: 60px;">
+						<td style="width: 155px; height: 60px; text-align: center;">
+						<p><strong>Peak Intensity (Most intense UHI conditions)</strong></p>
+						</td>
+						<td style="width: 324.333px; height: 60px; text-align: center;">
+						<p>More spatial and temporal variation:<br /> Day: 10 to 15&deg;C<br /> Night: 5 to 10&deg;C</p>
+						</td>
+						<td style="width: 324.667px; height: 60px; text-align: center;">
+						<p>Less variation:<br /> Day: -1 to 3&deg;C<br /> Night: 7 to 12&deg;C</p>
+						</td>
+						</tr>
+						<tr style="height: 60px;">
+						<td style="width: 155px; height: 60px; text-align: center;">
+						<p><strong>Typical Identification Method</strong></p>
+						</td>
+						<td style="width: 324.333px; height: 60px; text-align: center;">
+						<p>Indirect measurement:<br /> Remote sensing</p>
+						</td>
+						<td style="width: 324.667px; height: 60px; text-align: center;">
+						<p>Direct measurement:<br /> Fixed weather stations<br /> Mobile traverses</p>
+						</td>
+						</tr>
+						<tr style="height: 9px;">
+						<td style="width: 155px; height: 9px; text-align: center;">
+						<p><strong>Typical Depiction</strong></p>
+						</td>
+						<td style="width: 324.333px; height: 9px; text-align: center;">
+						<p>Thermal image</p>
+						</td>
+						<td style="width: 324.667px; height: 9px; text-align: center;">
+						<p>Isotherm map</p>
+						<p>Temperature graph</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+					</section>					
+
+					<section class="scrollable">
+						<br>
+						<h2>Surface UHI</h2>
+						<ul>
+						<li>On a sunny day &ndash; exposed urban surfaces heated 27 to 50&deg;C more than the air while shaded or moist surfaces (more often in rural areas) remain close to air temperatures
+						<ul>
+						<li>The magnitude of temperature differences of developed and rural areas varies with seasons &ndash; UHI larges during summer (especially when the sky is clear and winds are calm)!</li>
+						</ul>
+						</li>
+						</ul>
+						<br><img width="700" height="450" img src="./resources/Basic-GIS-knowledge-and-raster-data/zurich.jpg" alt="sat1">
+						<p style="text-align: center;">Summer UHI in Zurich</p>
+						<p style="text-align: center;">See video: <a href="https://youtu.be/HNqm0ae6DY4">https://youtu.be/HNqm0ae6DY4</a></p>
+					</section>					
+
+					<section>
+						<br>
+						<h2>Atmospheric UHI</h2>
+						<ul>
+						<li>Canopy layer urban heat islands exist in the layer of air where people live, from the ground to below the tops of trees and roofs.</li>
+						<li>Boundary layer urban heat islands start from the rooftop and treetop level and extend up to the point where urban landscapes no longer influence the atmosphere. This region typically extends no more than 1.5 km from the surface</li>
+						</ul>
+					</section>	
+					
+					<section class="scrollable">
+						<br>
+						<h2>Surface vs atmospheric temperatures</h2>
+						<br><img width="500" height="350" img src="./resources/Basic-GIS-knowledge-and-raster-data/temperatures uhi.gif" alt="sat1">					
+						<p style="text-align: center;">Surface temperatures have an indirect, but significant, influence on air temperatures, especially in the canopy layer, which is closest to the surface. For example, parks and vegetated areas, which typically have cooler surface temperatures, contribute to cooler air temperatures. Dense, built-up areas, on the other hand, typically lead to warmer air temperatures. Because air mixes within the atmosphere, though, the relationship between surface and air temperatures is not constant, and air temperatures typically vary less than surface temperatures across an area</p>
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>Conceptual Drawing of the Diurnal Evolution of the Urban Heat Island during Calm and Clear Conditions</h2>
+						<table style="width: 772px;">
+						<tbody>
+						<tr style="height: 392.667px;">
+						<td style="width: 373px; height: 392.667px;">Atmospheric urban heat islands primarily result from different cooling rates between urban areas and their surrounding rural or non-urban surroundings (section (a) of Figure). The differential cooling rates are most pronounced on clear and calm nights and days when rural areas can cool more quickly than urban areas. The heat island intensity (section (b)) typically grows from mid- to late afternoon to a maximum a few hours after sunset. In some cases, a heat island might not reach peak intensity until after sunrise.</td>
+						<td style="width: 403px; height: 592.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/urn_cambridge.org_id_binary_20170831085823188-0871_9781139016476_84950fig7_14.png" alt="" width="350" height="506" /></td>
+						</tr>
+						</tbody>
+						</table>
+						<p style="text-align: center;">&nbsp;</p>
+					</section>	
+					
+					<section class="scrollable">
+						<br>
+						<h2>Forming of the UHI</h2>
+						<ul>
+						<li>Reduced Vegetation in Urban Areas
+						<ul>
+						<li>Rural areas &ndash; mostly vegetation and open land &ndash; trees provide shades that cause lower surface temperatures. Additionally, through a process of the evapotranspiration &ndash; vegetation reduces air temperature.</li>
+						<li>Built up areas evaporate less water, which contributes to elevated surface and air temperatures.</li>
+						</ul>
+						</li>
+						</ul>
+						<br><img width="600" height="350" img src="./resources/Basic-GIS-knowledge-and-raster-data/evapotranspiration.png" alt="sat1">					
+					</section>						
+					
+					<section class="scrollable">
+						<br>
+						<h2>Forming of the UHI</h2>
+						<ul>
+						<li>Properties of Urban Materials - solar reflectance (SL), thermal emissivity (TE), and heat capacity (HC)
+						<ul>
+						<li>SL, or albedo, is the percentage of solar energy reflected by a surface (much of sun&rsquo;s energy is found in visible wavelengths so it is correlated with a material&rsquo;s color &ndash; darker surfaces tend to have lower SL)
+						<ul>
+						<li>Roofing and paving in the urban areas cause less reflectance and more absorption resulting in higher temperatures.</li>
+						</ul>
+						</li>
+						<li>TE is a measure of a surface&rsquo;s ability to shed heat, or emit long-wave (infrared) radiation
+						<ul>
+						<li>Most construction materials, with the exception of metal, have high thermal emittance values</li>
+						</ul>
+						</li>
+						<li>HC is defined as the ability to store heat
+						<ul>
+						<li>Many building materials, such as steel and stone, have higher heat capacities than rural materials, such as dry soil and sand</li>
+						</ul>
+						</li>
+						</ul>
+						</li>
+						</ul>
+						<br><img width="600" height="350" img src="./resources/Basic-GIS-knowledge-and-raster-data/solar emission.png" alt="sat1">					
+					</section>	
+
+					<section class="scrollable">
+						<br>
+						<h2>Forming of the UHI</h2>
+						<ul>
+						<li>Urban geometry (UG)
+						<ul>
+						<li>i.e. the dimensions and spacing of buildings within a city
+						<ul>
+						<li>influences wind flow, energy absorption, and a given surface&rsquo;s ability to emit long-wave radiation back to space</li>
+						<li>often cause partial or full obstruction of the surfaces and structures, which obstructs heat release</li>
+						<li>urban canyons &ndash; see how the geometry influences temperature flow:</li>
+						</ul>
+						</li>
+						</ul>
+						</li>
+						</ul>
+						<p><iframe src="https://www.youtube.com/watch?v=oV0bK2NS3nU&ab_channel=B%C3%A1lintPapp" width="560" height="314" data-autoplay></iframe></p>					
+						<p>If video does not load automatically, please go to <a href="https://youtu.be/oV0bK2NS3nU">https://youtu.be/oV0bK2NS3nU</a></p>
+					</section>	
+
+					<section>
+						<br>
+						<h2>Factors that Create Urban Heat Islands</h2>
+						<ul>
+						<li>Factors Communities are Focusing On
+						<ul>
+						<li>Reduced vegetation in urban regions: Reduces the natural cooling effect from shade and evapotranspiration.</li>
+						<li>Properties of urban materials: Contribute to absorption of solar energy, causing surfaces, and the air above them, to be warmer in urban areas than those in rural surrounding.</li>
+						</ul>
+						</li>
+						<li>Future Factors to Consider
+						<ul>
+						<li>Urban geometry: The height and spacing of buildings affects the amount of radiation received and emitted by urban infrastructure.</li>
+						<li>Anthropogenic heat emissions: Contribute additional warmth to the air.</li>
+						</ul>
+						</li>
+						</ul>
+					</section>	
+					
+					<section>
+						<br>
+						<h2>Why UHI are important?</h2>
+						<p style="text-align: left;">Most impacts (if not all) of the UHI are negative:</p>
+						<ul style="text-align: left;">
+						<li>Increased energy consumption</li>
+						<li>Elevated emissions of air pollutants and greenhouse gases</li>
+						<li>Compromised human health and comfort</li>
+						<li>Impaired water quality</li>
+						</ul>
+						<p style="text-align: left;">Details on the UHI and&nbsp;the mitigating strategies presented here are defined and shown in:</p>
+						<p style="text-align: left;">Akbari, H., Bell, R., Brazel, T., Cole, D., Estes, M., Heisler, G., ... &amp; Oke, T. (2008). <a href="https://www.epa.gov/sites/production/files/2014-06/documents/basicscompendium.pdf">Reducing Urban Heat Islands: Compendium of Strategies Urban Heat Island Basics.</a> Environmental Protection Agency: Washington, DC, USA, 1-22.</p>
+					</section>						
+					
+				</section>
+
+
+				<section id="GIS load">
+					
+					<section class="scrollable">
+						<h1>GIS in support of UHI monitoring</h1> 
+						<ul>
+						<li>A geographic information system (GIS) is a framework for gathering, managing, and analyzing data.</li>
+						<li>GIS integrates many types of data within different layers of information into visualizations using maps and 3D scenes.</li>
+						<li>GIS reveals deeper insights into data, such as patterns, relationships, and situations&mdash;helping users make smarter decisions.</li>
+						<li>Desktop or web interface</li>
+						</ul>
+						<br><img width="450" height="500" img src="./resources/Basic-GIS-knowledge-and-raster-data/gislayers.jpg" alt="sat1">
+						<p style="text-align: center;">https://media.nationalgeographic.org/assets/photos/000/322/32282.jpg</p>
+					</section>	
+
+					<section>
+						<br>
+						<h2>GIS in support of UHI monitoring</h2>
+						<ul>
+						<li>GIS products
+						<ul>
+						<li>Spatial analysis</li>
+						<li>Map representation</li>
+						<li>New data</li>
+						<li>Routes such as in traveling salesman problem</li>
+						<li>Continuous monitoring</li>
+						<li>Government and local support</li>
+						</ul>
+						</li>
+						</ul>
+					</section>					
+
+					<section>
+						<br>
+						<h2>GIS data types</h2>
+						<ul>
+						<li>GIS products
+						<table style="height: 370px;" width="832">
+						<tbody>
+						<tr>
+						<td style="width: 382px;">
+						<p>The two primary types of spatial data are vector and raster data in GIS.</p>
+						<ul>
+						<li>Vector data
+						<ul>
+						<li>location represented by points, lines and polygons</li>
+						<li>stored as a series of X, Y coordinate pairs inside the computer&rsquo;s memory</li>
+						</ul>
+						</li>
+						<li>Raster data
+						<ul>
+						<li>stored as a grid of values</li>
+						<li>location represented by cells in the cell matrix</li>
+						</ul>
+						</li>
+						</ul>
+						</td>
+						<td style="width: 383.333px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/rastervector.png" alt="" width="500" height="363" /></td>
+						</tr>
+						</tbody>
+						</table>
+					</section>					
+					
+					<section class="scrollable">
+						<br>
+						<h2>Vector vs raster - raster is faster, but vector is corrector</h2>
+						<table style="margin-left: auto; margin-right: auto; width: 805px;">
+						<tbody>
+						<tr>
+						<td style="width: 103px;">&nbsp;</td>
+						<td style="width: 335.333px;">
+						<p><strong>Vector</strong></p>
+						</td>
+						<td style="width: 343.667px;">
+						<p><strong>Raster</strong></p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 103px;">
+						<p><strong>Advantages</strong></p>
+						</td>
+						<td style="width: 335.333px;">
+						<p>&bull; Data can be represented at its original resolution and form without generalization.</p>
+						<p>&bull; Graphic output is usually more aesthetically pleasing (traditional cartographic representation);</p>
+						<p>&bull; Since most data, e.g. hard copy maps, is in vector form no data conversion is required.</p>
+						<p>&bull; Accurate geographic location of data is maintained.</p>
+						<p>&bull; Allows for efficient encoding of topology, and as a result more efficient operations that require topological information, e.g. proximity, network analysis.</p>
+						</td>
+						<td style="width: 343.667px;">
+						<p>&bull; The geographic location of each cell is implied by its position in the cell matrix. Accordingly, other than an origin point, e.g. bottom left corner, no geographic coordinates are stored.</p>
+						<p>&bull; Due to the nature of the data storage technique data analysis is usually easy to program and quick to perform.</p>
+						<p>&bull; The inherent nature of raster maps, e.g. one attribute maps, is ideally suited for mathematical modeling and quantitative analysis.</p>
+						<p>&bull; Discrete data, e.g. forestry stands, is accommodated equally well as continuous data, e.g. elevation data, and facilitates the integrating of the two data types.</p>
+						<p>&bull; Grid-cell systems are very compatible with raster-based output devices, e.g. electrostatic plotters, graphic terminals.</p>
+						</td>
+						</tr>
+						<tr>
+						<td style="width: 103px;">
+						<p><strong>Disadvantages</strong></p>
+						</td>
+						<td style="width: 335.333px;">
+						<p>&bull; The location of each vertex needs to be stored explicitly.</p>
+						<p>&bull; For effective analysis, vector data must be converted into a topological structure. This is often processing intensive and usually requires extensive data cleaning. As well, topology is static, and any updating or editing of the vector data requires re-building of the topology.</p>
+						<p>&bull; Algorithms for manipulative and analysis functions are complex and may be processing intensive. Often, this inherently limits the functionality for large data sets, e.g. a large number of features.</p>
+						<p>&bull; Continuous data, such as elevation data, is not effectively represented in vector form. Usually substantial data generalization or interpolation is required for these data layers.</p>
+						<p>&bull; Spatial analysis and filtering within polygons is impossible</p>
+						</td>
+						<td style="width: 343.667px;">
+						<p>&bull; The cell size determines the resolution at which the data is represented.;</p>
+						<p>&bull;It is especially difficult to adequately represent linear features depending on the cell resolution. Accordingly, network linkages are difficult to establish.</p>
+						<p>&bull; Processing of associated attribute data may be cumbersome if large amounts of data exists. Raster maps inherently reflect only one attribute or characteristic for an area.</p>
+						<p>&bull; Since most input data is in vector form, data must undergo vector-to-raster conversion. Besides increased processing requirements this may introduce data integrity concerns due to generalization and choice of inappropriate cell size.</p>
+						<p>&bull; Most output maps from grid-cell systems do not conform to high-quality cartographic needs.</p>
+						</td>
+						</tr>
+						</tbody>
+						</table>
+					</section>	
+
+					<section>
+						<br>
+						<h2>Understanding the difference between the vector and raster in GIS</h2>
+						<p><iframe src="//www.youtube.com/embed/-673CMknhh0" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+						<p>If video does not load automatically, please go to <a href="https://youtu.be/-673CMknhh0">https://youtu.be/-673CMknhh0</a></p>
+					</section>
+
+				</section>
+
+				<section id="RasterizeMe">
+					
+					<section>
+						<h1>Where to find raster data?</h1> 
+						<p>USGS EARTH EXPLORER <a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></p>
+						<table style="height: 425px; width: 856px;">
+						<tbody>
+						<tr>
+						<td style="width: 224.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/usgs1.png" alt="" width="222" height="405" /></td>
+						<td style="width: 224.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/usgs2.png" alt="" width="222" height="405" /></td>
+						<td style="width: 330px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/usgs3.png" alt="" width="391" height="321" /></td>
+						</tr>
+						</tbody>
+						</table>
+					</section>	
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>USGS EARTH EXPLORER <a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></p>
+						<table style="height: 397px;" width="827">
+						<tbody>
+						<tr style="height: 301.667px;">
+						<td style="width: 404.667px; height: 301.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/usgs4.png" alt="" width="400" height="267" /></td>
+						<td style="width: 406px; height: 301.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/usgs5.png" alt="" width="400" height="267" /></td>
+						</tr>
+						</tbody>
+						</table>
+					</section>						
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>Landviewer <a href="https://eos.com/landviewer/">https://eos.com/landviewer/</a></p>						
+						<table style="height: 418px; width: 800px;">
+						<tbody>
+						<tr>
+						<td style="width: 447px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/lviewer1.png" alt="" width="450" height="303" /></td>
+						<td style="width: 335px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/lviewer2.png" alt="" width="322" height="303" /></td>
+						</tr>
+						</tbody>
+						</table>
+					</section>						
+					
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>Landviewer <a href="https://eos.com/landviewer/">https://eos.com/landviewer/</a></p>						
+						<p><video controls="controls" width="640" height="480">
+						<source src="./resources/Basic-GIS-knowledge-and-raster-data/Media1.mp4" type="video/mp4" /></video></p>
+					</section>	
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>Landviewer <a href="https://eos.com/landviewer/">https://eos.com/landviewer/</a></p>						
+						<img width="600" height="450" img src="./resources/Basic-GIS-knowledge-and-raster-data/timelapse.gif" alt="sat1">					
+						<p style="text-align: center;">Please pay attention - Zagreb, Croatia is shown in different epochs - this is timeseries!</p>
+					</section>	
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>SENTINEL HUB <a href="https://apps.sentinel-hub.com/">https://apps.sentinel-hub.com/</a><br />SENTINEL PLAYGROUND <a href="https://apps.sentinel-hub.com/sentinel-playground/">https://apps.sentinel-hub.com/sentinel-playground/</a></p>
+						<table style="height: 382px;" width="866">
+						<tbody>
+						<tr>
+						<td style="width: 424.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/sentinel1.png" alt="" width="400" height="268" /></td>
+						<td style="width: 424.667px;"><img src="./resources/Basic-GIS-knowledge-and-raster-data/sentinel2.png" alt="" width="398" height="268" /></td>
+						</tr>
+						</tbody>
+						</table>						
+					</section>	
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>NASA EARTHDATA SEARCH <a href="https://search.earthdata.nasa.gov/">https://search.earthdata.nasa.gov/</a></p>					
+						<br><img width="650" height="410" img src="./resources/Basic-GIS-knowledge-and-raster-data/nasaearth.png" alt="sat1">
+					</section>	
+
+					<section>
+						<h2>Where to find raster data?</h2> 
+						<p>COPERNICUS OPEN ACCESS HUB <a href="https://scihub.copernicus.eu/">https://scihub.copernicus.eu/</a></p>						
+						<br><img width="650" height="410" img src="./resources/Basic-GIS-knowledge-and-raster-data/copernicushub.png" alt="sat1">
+					</section>	
+
+				</section>
+
+				<section id="VectorizeMeSoftly">
+					
+					<section>
+						<h1>Where to find vector data?</h1> 
+						<p>USGS EARTH EXPLORER <a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></p>
+						<p>Open Street map <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org</a></p>
+						<p>USGS EARTH EXPLORER <a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></p>
+						<p>Natural Earth &ndash; Vector&nbsp; <a href="http://www.naturalearthdata.com/">http://www.naturalearthdata.com/</a></p>
+						<p>GLOBAL MAPS <a href="https://globalmaps.github.io/">https://globalmaps.github.io/</a></p>
+						<p>DIVA-GIS Country Data <a href="http://www.diva-gis.org/gdata">http://www.diva-gis.org/gdata</a></p>
+						<p>MapCruzin <a href="https://mapcruzin.com/">https://mapcruzin.com/</a></p>
+						<p>European Environment Agency <a href="https://www.eea.europa.eu/">https://www.eea.europa.eu/</a></p>
+						<p>GeoNetwork <a href="http://www.fao.org/geonetwork/srv/en/main.home">http://www.fao.org/geonetwork/srv/en/main.home</a></p>
+						<p>Esri Open Data Hub <a href="https://hub.arcgis.com/">https://hub.arcgis.com/</a></p>
+						<p>Open Topography <a href="https://opentopography.org/">https://opentopography.org/</a></p>
+					</section>	
+
+				</section>
+
+				<section id="ShowYourLicence">
+					
+					<section>
+						<h1>Data licencing</h1> 
+						<ul>
+						<li>Public Domain</li>
+						<li>CC-0 Creative Commons Public Domain Dedication</li>
+						<li>PDDL Open Data Commons Public Domain Dedication and License</li>
+						<li>CC-BY Creative Commons Attribution 4.0 International</li>
+						<li>CDLA-Permissive-1.0 Community Data License Agreement &ndash; Permissive, Version 1.0</li>
+						<li>ODC-BY Open Data Commons Attribution License</li>
+						<li>ODC-ODbL Open Data Commons Open Database License</li>
+						</ul>
+						<p>&nbsp;</p>
+						<ul>
+						<li>For more see: https://help.data.world/hc/en-us/articles/115006114287-Common-license-types-for-datasets</li>
+						</ul>
+					</section>	
+
+				</section>
+
+				<section id="ShowYourLicenceVol2">
+					
+					<section>
+						<h1>GIS software</h1> 
+						<p>Desktop GIS - open source</p>
+						<ul>
+						<li><a href="https://en.wikipedia.org/wiki/GRASS_GIS">GRASS GIS</a>&ndash; Geospatial data management, vector and raster manipulation - developed by the&nbsp;<a href="https://en.wikipedia.org/wiki/U.S._Army_Corps_of_Engineers">U.S. Army Corps of Engineers</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/GvSIG">gvSIG</a>&ndash; Mapping and geoprocessing with a 3D rendering plugin</li>
+						<li><a href="https://en.wikipedia.org/wiki/ILWIS">ILWIS</a>(Integrated Land and Water Information System) &ndash; Integrates image, vector and thematic data.</li>
+						<li><a href="https://en.wikipedia.org/wiki/JUMP_GIS">JUMP GIS</a>/ OpenJUMP ((Open) Java Unified Mapping Platform) &ndash; The desktop GISs OpenJUMP, SkyJUMP, deeJUMP and&nbsp;<a href="https://en.wikipedia.org/wiki/Kosmo">Kosmo</a>all emerged from JUMP.<a href="https://en.wikipedia.org/wiki/List_of_geographic_information_systems_software">[3]</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/MapWindow_GIS">MapWindow</a><a href="https://en.wikipedia.org/wiki/MapWindow_GIS"> GIS</a>&ndash; Free desktop application with plugins and a programmer library&nbsp;<a href="https://en.wikipedia.org/wiki/List_of_geographic_information_systems_software">[4]</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/QGIS">QGIS</a>(previously known as Quantum GIS) &ndash; Powerful cartographic and geospatial data processing tools with extensive plug-in support</li>
+						<li><a href="https://en.wikipedia.org/wiki/SAGA_GIS">SAGA GIS</a>(System for Automated Geoscientific Analysis) &ndash;- Tools for environmental modeling, terrain analysis, and 3D mapping</li>
+						<li><a href="https://en.wikipedia.org/wiki/UDig">uDig</a>&ndash; API and source code (Java) available.</li>
+						</ul>
+						<p>&nbsp;</p>
+						<ul>
+						<li>For more see <a href="https://en.wikipedia.org/wiki/List_of_geographic_information_systems_software">https://en.wikipedia.org/wiki/List_of_geographic_information_systems_software</a></li>
+						</ul>
+					</section>	
+
+					<section>
+						<h2>GIS software</h2> 
+						<p><strong>Web map servers</strong></p>
+						<ul>
+						<li><a href="https://en.wikipedia.org/wiki/GeoServer">GeoServer</a>&ndash; Written in Java and relies on&nbsp;<a href="https://en.wikipedia.org/wiki/GeoTools">GeoTools</a>. Allows users to share and edit geospatial data.</li>
+						<li><a href="https://en.wikipedia.org/wiki/MapGuide_Open_Source">MapGuide</a><a href="https://en.wikipedia.org/wiki/MapGuide_Open_Source"> Open Source</a>&ndash; Runs on Linux or Windows, supports Apache and IIS web servers, and has APIs (PHP, .NET, Java, and JavaScript) for application development.</li>
+						<li><a href="https://en.wikipedia.org/wiki/Mapnik">Mapnik</a>&ndash; C++/Python library for rendering - used by&nbsp;<a href="https://en.wikipedia.org/wiki/OpenStreetMap">OpenStreetMap</a>.</li>
+						<li><a href="https://en.wikipedia.org/wiki/MapServer">MapServer</a>&ndash; Written in C. Developed by the&nbsp;<a href="https://en.wikipedia.org/wiki/University_of_Minnesota">University of Minnesota</a>.</li>
+						</ul>
+					</section>	
+
+					<section>
+						<h2>GIS software</h2> 
+						<p><strong>Spatial database management systems</strong></p>
+						<ul>
+						<li><a href="https://en.wikipedia.org/wiki/PostGIS">PostGIS</a>&ndash; Spatial extensions for the open source&nbsp;<a href="https://en.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>database, allowing geospatial queries.</li>
+						<li><a href="https://en.wikipedia.org/wiki/ArangoDB">ArangoDB</a>&ndash; Builtin features available for Spatial data management, allowing geospatial queries.</li>
+						<li><a href="https://en.wikipedia.org/wiki/SpatiaLite">SpatiaLite</a>&ndash; Spatial extensions for the open source&nbsp;<a href="https://en.wikipedia.org/wiki/SQLite">SQLite</a>database, allowing geospatial queries.</li>
+						<li><a href="https://en.wikipedia.org/wiki/TerraLib">TerraLib</a>&ndash; Provides advanced functions for GIS analysis.</li>
+						<li><a href="https://en.wikipedia.org/wiki/OrientDB">OrientDB</a>&ndash; Builtin features available for Spatial data management, allowing geospatial queries.</li>
+						</ul>
+					</section>	
+					
+				</section>
+
+
+				<section id="Finally">
+					
+					<section>
+						<h1>Geodetic reference frames</h1> 
+						<ul>
+						<li>The position can be defined by differented coordinates (e.g. longitude and latitude or Cartesian three-dimensional coordinates) related to the different frame (e.g. to the Earth&rsquo;s center or to the set of the local geodetic points)</li>
+						<li>In order to use data from different sources &ndash; one should be aware of coordinate reference frame the data are referred to and the desired coordinate system</li>
+						<li>Transformation between the coordinate systems can be done using transformation parameters</li>
+						<li>More on coordinate reference frames and the transformation: https://epsg.io/</li>
+						</ul>
+					</section>	
+
+				</section>
+
+				<section id="Conclusions">
+					
+					<section>
+						<h1>Take-aways</h1> 
+						<ul>
+						<li>GIS is a standard tool for processing and visualization of the spatial data</li>
+						<li>GIS enables combining the vector and raster data</li>
+						<li>GIS-ready data are commonly available for free from different web services</li>
+						<li>When using different data sets, coordinate transformations play significant role</li>
+						</ul>
+					</section>	
+
+					<section>
+						<h1>Thanks!</h1> 
+						<p>Feel free to contact EO4GEO for more!</p>
+					</section>	
+					
+				</section>
+
+				
+				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
+				<section> 
+				<h2> Reference list </h2>
+				<br>
+				<reference_list>exemplary doi:<br><br>
+				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
+				<br>
+				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
+				</reference_list>
+				</section>
+				
+				
+				<section>Slide show ends</section>
+			
+                </section>
+
+              </div>
+
+
+		<script src="internal_restricted/v1.0/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: './internal_restricted/v1.0/plugin/notes/notes.js' },{ src: 'socket.io/socket.io.js', async: true },
+					{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
+					
+				]
+			});
+
+		</script>
+		
+		<!-- rauslöschen?? --> 
+		<script>Reveal.initialize({
+			simplemenu: {
+				menuselector: '.menu a'
+			},
+			dependencies: [
+				{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false } 
+			]
+			});
+		</script>
+
+	</body>
+</html>
