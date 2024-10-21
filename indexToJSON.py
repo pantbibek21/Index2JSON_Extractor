@@ -58,7 +58,7 @@ def extract_metadata_from_html(file_path):
                         if isinstance(metadata[relation_attr[3:]], list):
                             metadata[relation_attr[3:]].append(tag.get('href'))
                         else:
-                            metadata[relation_attr[3:]] = [metadata[relation_attr], tag.get('href')]
+                            metadata[relation_attr[3:]] = [metadata[relation_attr[3:]], tag.get('href')]
                     else:
                         # Initialize with the href value
                         metadata[relation_attr[3:]] = [tag.get('href')]
